@@ -1,0 +1,25 @@
+# Xcode
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Supabase
+.branches/
+.temp/
+
+# Local runtime data
+orbit-backend/data/
+
+# Xcode user state
+**/xcuserdata/
