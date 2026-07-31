@@ -9,6 +9,7 @@ dependencies = [
     "uvicorn[standard]>=0.32.0",
     "typer>=0.15.0",
     "chess>=1.11.0",
+    "numpy>=2.1.0",
 ]
 
 [project.scripts]
