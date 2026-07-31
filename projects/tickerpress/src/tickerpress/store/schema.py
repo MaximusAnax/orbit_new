@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS aliases (
   prior          REAL NOT NULL DEFAULT 0.0 CHECK (prior BETWEEN 0.0 AND 0.3),
   generated      INTEGER NOT NULL DEFAULT 0,
   created_at     TEXT NOT NULL,
-  UNIQUE (company_ticker, text COLLATE NOCASE)
+  UNIQUE (company_ticker, text COLLATE NOCASE, kind)
 );
 
 CREATE TABLE IF NOT EXISTS feeds (

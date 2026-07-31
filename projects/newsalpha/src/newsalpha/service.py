@@ -212,13 +212,27 @@ class NewsAlphaService:
         start: str,
         end: str,
     ) -> int:
-        """Pull bars for the given assets (default: every gazetteer asset) and store them."""
-        wanted = assets or list(self.datasets.assets)
+        """Pull bars for the given assets and store them.
+
+        Without an explicit list the default is every asset the provider can serve:
+        a fixture directory advertises the series it actually ships (asking it for
+        a gazetteer asset it does not carry is a user error, not a data gap), and
+        anything else falls back to the whole gazetteer.
+        """
+        wanted = assets or self.available_assets(market)
         start_date, end_date = date.fromisoformat(start), date.fromisoformat(end)
         bars: list[PriceBar] = []
         for asset_id in wanted:
             bars.extend(market.daily_bars(asset_id, start_date, end_date))
         return self.repository.add_price_bars(bars)
+
+    def available_assets(self, market: MarketData) -> list[str]:
+        advertise = getattr(market, "available_assets", None)
+        if callable(advertise):
+            served = [asset_id for asset_id in advertise() if asset_id in self.datasets.assets]
+            if served:
+                return served
+        return list(self.datasets.assets)
 
     # -- backtests --------------------------------------------------------- #
 

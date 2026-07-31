@@ -42,3 +42,51 @@ def clean(table_in: RawTable, policy_in: Policy | None = None):
         content_sha256=CONTENT_SHA,
         engine_version=ENGINE_VERSION,
     )
+
+
+def _sample_rows() -> list[str]:
+    """One defect per auto class plus exactly one review-tier proposal.
+
+    Sized so the `country` column clears FR-5's categorical thresholds and the
+    lone `Slovenia` clears D10b's rarity guard (ratio ≤ 0.05, majority ≥ 20) —
+    otherwise the surface tests would have no review queue to work with.
+    """
+    rows: list[str] = []
+    for index in range(40):
+        name = {0: " Ana ", 1: "JosÃ©"}.get(index, f"Name{index:02d}")
+        country = "Slovenia" if index == 7 else "Slovakia"
+        # RFC 4180 quoting: the thousands separator is a comma, so the cell has
+        # to be quoted or the reader would (correctly) see a ragged long row.
+        amount = '"1,234.56"' if index == 2 else f"{(index + 1) * 3}.50"
+        signup = {3: "25/03/2023", 4: "07/04/2023"}.get(index, f"2023-01-{index % 28 + 1:02d}")
+        rows.append(f"{name},{country},{amount},{signup}")
+    rows.append(rows[5])  # an exact duplicate row (DUP, auto)
+    return rows
+
+
+#: A small CSV carrying WS, ENC, TYPE, DATE and DUP defects at auto tier plus a
+#: single `fix.label_merge_nn` proposal at review tier.
+SAMPLE_CSV = "name,country,amount,signup\n" + "".join(row + "\n" for row in _sample_rows())
+SAMPLE_ROWS = 41
+
+
+def write_sample(directory, name: str = "sales.csv", text: str = SAMPLE_CSV):
+    """Write ``text`` into ``directory`` and return the path as a string."""
+    from pathlib import Path
+
+    path = Path(directory) / name
+    path.write_text(text, encoding="utf-8")
+    return str(path)
+
+
+def service_for(directory, **kwargs):
+    """A hermetic service: in-memory store, fixed clock, no notifications."""
+    from datasweep.adapters.clock import FixedClock
+    from datasweep.adapters.notifier import NullNotifier
+    from datasweep.services import DatasweepService
+    from datasweep.store.memory import InMemoryRepository
+
+    kwargs.setdefault("clock", FixedClock(FIXED_NOW, step_seconds=1))
+    kwargs.setdefault("notifier", NullNotifier())
+    kwargs.setdefault("engine_version", ENGINE_VERSION)
+    return DatasweepService(kwargs.pop("repository", None) or InMemoryRepository(), **kwargs)

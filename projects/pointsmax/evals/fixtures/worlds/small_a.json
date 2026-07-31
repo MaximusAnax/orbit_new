@@ -55,13 +55,13 @@
       "bookable_until": null,
       "cabin": "business",
       "city": null,
-      "destination": "NYC",
-      "fees_cents": 12800,
-      "id": "ac_bus_par_nyc",
+      "destination": "PAR",
+      "fees_cents": 90000,
+      "id": "fb_saver_nyc_par",
       "kind": "flight",
-      "origin": "PAR",
-      "points_price": 70000,
-      "program_id": "ac",
+      "origin": "NYC",
+      "points_price": 30000,
+      "program_id": "fb",
       "round_trip": false,
       "seats_available": 4,
       "source_note": "eval fixture",
@@ -687,7 +687,7 @@
   ],
   "version.json": {
     "as_of": "2026-07-01",
-    "content_hash": "19a9a93b0ce3b4317092e0193637db3d847ce2092da624acd414d6ae80806edc",
+    "content_hash": "e60482d5535a11bbda1840b19a82813e3f132b7d8859b2e4bf7803d3e12ea1b4",
     "version": "1.0.0"
   }
 }

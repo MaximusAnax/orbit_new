@@ -267,10 +267,13 @@ layer that touches both I/O and engine); API and CLI call services only.
   `score_order(order, matrix | features) -> FlowReport` (FR-6, FR-7, FR-10).
 - `optimizer.py` — `reorder(matrix, seed, anchors, max_passes) ->
   ReorderResult` implementing multi-start greedy + Or-opt + 2-opt (FR-8, FR-9);
-  also `exact_optimal(matrix, start=None, end=None)` (Held-Karp dynamic
-  programming with fixed-endpoint variants for anchors, guarded to n ≤ 14)
-  used by evals as ground truth — itself pinned by an independent brute-force
-  cross-check (EVALS.md §3-M4).
+  `construct(matrix, seed, start=None, end=None)`, the D6 construction phase on
+  its own — i.e. what `reorder` returns with its local search removed — which
+  the eval suite scores live as the degenerate baseline the M4 gates must
+  reject (EVALS.md §3-M4b); and `exact_optimal(matrix, start=None, end=None)`
+  (Held-Karp dynamic programming with fixed-endpoint variants for anchors,
+  guarded to n ≤ 14) used by evals as ground truth — itself pinned by an
+  independent brute-force cross-check (EVALS.md §3-M4).
 - `explain.py` — render `Transition`/`FlowReport` into human-readable lines and
   the flag vocabulary (FR-11's stored breakdown, US-4).
 

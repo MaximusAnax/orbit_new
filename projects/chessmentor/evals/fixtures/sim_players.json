@@ -1,0 +1,644 @@
+{
+  "seed": 20260731,
+  "draw_probability": 0.08,
+  "true_rating_bounds": {
+    "expression": "[elo_L1 + 80, elo_L10 - 80] (jump cohort: elo_L10 - 380)",
+    "lo": 480.0,
+    "hi": 1670.0,
+    "jump_hi": 1370.0
+  },
+  "ladder_elo": {
+    "1": 400.0,
+    "2": 550.0,
+    "3": 700.0,
+    "4": 850.0,
+    "5": 1000.0,
+    "6": 1150.0,
+    "7": 1300.0,
+    "8": 1450.0,
+    "9": 1600.0,
+    "10": 1750.0
+  },
+  "players": [
+    {
+      "id": "sp-001",
+      "cohort": "base",
+      "true_rating": 509.49,
+      "seed": 16557994324459425071,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-002",
+      "cohort": "base",
+      "true_rating": 1303.1,
+      "seed": 17433783209879389241,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-003",
+      "cohort": "base",
+      "true_rating": 1150.83,
+      "seed": 10650456721200190118,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-004",
+      "cohort": "base",
+      "true_rating": 612.99,
+      "seed": 1789531951363408348,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-005",
+      "cohort": "base",
+      "true_rating": 1526.94,
+      "seed": 15053927062826495150,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-006",
+      "cohort": "base",
+      "true_rating": 901.48,
+      "seed": 14160863098715495130,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-007",
+      "cohort": "base",
+      "true_rating": 1591.21,
+      "seed": 3920130959592519066,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-008",
+      "cohort": "base",
+      "true_rating": 499.05,
+      "seed": 339835747103302501,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-009",
+      "cohort": "base",
+      "true_rating": 931.73,
+      "seed": 217462881744863908,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-010",
+      "cohort": "base",
+      "true_rating": 1365.31,
+      "seed": 5828873401990516468,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-011",
+      "cohort": "base",
+      "true_rating": 1200.12,
+      "seed": 8021490750992608948,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-012",
+      "cohort": "base",
+      "true_rating": 586.48,
+      "seed": 4749050797441818067,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-013",
+      "cohort": "base",
+      "true_rating": 862.03,
+      "seed": 9187960719116045945,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-014",
+      "cohort": "base",
+      "true_rating": 1324.25,
+      "seed": 8049429254897941045,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-015",
+      "cohort": "base",
+      "true_rating": 1649.77,
+      "seed": 14426400763105894137,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-016",
+      "cohort": "base",
+      "true_rating": 1275.63,
+      "seed": 9353594799710346335,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-017",
+      "cohort": "base",
+      "true_rating": 780.74,
+      "seed": 11515943407840721798,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-018",
+      "cohort": "base",
+      "true_rating": 552.38,
+      "seed": 2877100505430456606,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-019",
+      "cohort": "base",
+      "true_rating": 1402.48,
+      "seed": 8086063143451698419,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-020",
+      "cohort": "base",
+      "true_rating": 1575.39,
+      "seed": 7801639329209390666,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-021",
+      "cohort": "base",
+      "true_rating": 977.53,
+      "seed": 1817723273643280136,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-022",
+      "cohort": "base",
+      "true_rating": 508.03,
+      "seed": 11646723545281390733,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-023",
+      "cohort": "base",
+      "true_rating": 1438.93,
+      "seed": 3555251466718853453,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-024",
+      "cohort": "base",
+      "true_rating": 640.58,
+      "seed": 14664157896960444901,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-025",
+      "cohort": "base",
+      "true_rating": 1122.83,
+      "seed": 14576706692745108891,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-026",
+      "cohort": "base",
+      "true_rating": 1169.46,
+      "seed": 6154996669786823370,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-027",
+      "cohort": "base",
+      "true_rating": 1189.86,
+      "seed": 16828273924531867494,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-028",
+      "cohort": "base",
+      "true_rating": 616.19,
+      "seed": 5947663456520656622,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-029",
+      "cohort": "base",
+      "true_rating": 534.15,
+      "seed": 14143040340576870446,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-030",
+      "cohort": "base",
+      "true_rating": 1368.44,
+      "seed": 11608818860443043612,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-031",
+      "cohort": "base",
+      "true_rating": 810.66,
+      "seed": 5977444890750153145,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-032",
+      "cohort": "base",
+      "true_rating": 1356.5,
+      "seed": 5553581146283916782,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-033",
+      "cohort": "base",
+      "true_rating": 1461.77,
+      "seed": 7494098868723757021,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-034",
+      "cohort": "base",
+      "true_rating": 1660.95,
+      "seed": 12145088050635829371,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-035",
+      "cohort": "base",
+      "true_rating": 653.84,
+      "seed": 8710740274184482790,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-036",
+      "cohort": "base",
+      "true_rating": 1535.25,
+      "seed": 894072458117759888,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-037",
+      "cohort": "base",
+      "true_rating": 1618.7,
+      "seed": 15976857439923937582,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-038",
+      "cohort": "base",
+      "true_rating": 572.74,
+      "seed": 13495021563499102038,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-039",
+      "cohort": "base",
+      "true_rating": 822.08,
+      "seed": 5267533617975240041,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-040",
+      "cohort": "base",
+      "true_rating": 859.48,
+      "seed": 3822638620934481007,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-041",
+      "cohort": "jump",
+      "true_rating": 608.88,
+      "seed": 13757683481651213693,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-042",
+      "cohort": "jump",
+      "true_rating": 512.89,
+      "seed": 8999503649405411399,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-043",
+      "cohort": "jump",
+      "true_rating": 1347.72,
+      "seed": 88793474692945707,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-044",
+      "cohort": "jump",
+      "true_rating": 780.51,
+      "seed": 15426070032699336656,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-045",
+      "cohort": "jump",
+      "true_rating": 1341.44,
+      "seed": 6809539060599673307,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-046",
+      "cohort": "jump",
+      "true_rating": 505.99,
+      "seed": 4075757309549903455,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-047",
+      "cohort": "jump",
+      "true_rating": 714.26,
+      "seed": 6440386036903157345,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-048",
+      "cohort": "jump",
+      "true_rating": 719.56,
+      "seed": 2994241332715141111,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-049",
+      "cohort": "jump",
+      "true_rating": 528.85,
+      "seed": 15269674728627401845,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-050",
+      "cohort": "jump",
+      "true_rating": 913.17,
+      "seed": 15382424464462298000,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-051",
+      "cohort": "jump",
+      "true_rating": 910.2,
+      "seed": 1210560285316876523,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-052",
+      "cohort": "jump",
+      "true_rating": 591.87,
+      "seed": 10134971879336662157,
+      "games": 20,
+      "jump_after_game": 10,
+      "jump_delta": 300.0,
+      "acpl_channel_bias": 0.0
+    },
+    {
+      "id": "sp-053",
+      "cohort": "biased",
+      "true_rating": 1666.54,
+      "seed": 13207808546527693049,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-054",
+      "cohort": "biased",
+      "true_rating": 1518.76,
+      "seed": 4817707965886448897,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-055",
+      "cohort": "biased",
+      "true_rating": 1419.79,
+      "seed": 12034432451528221710,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-056",
+      "cohort": "biased",
+      "true_rating": 597.7,
+      "seed": 5552256722022109216,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-057",
+      "cohort": "biased",
+      "true_rating": 1087.13,
+      "seed": 14923168294732992760,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-058",
+      "cohort": "biased",
+      "true_rating": 1501.35,
+      "seed": 16177786034595655992,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-059",
+      "cohort": "biased",
+      "true_rating": 1273.95,
+      "seed": 4998498116383482142,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-060",
+      "cohort": "biased",
+      "true_rating": 1004.05,
+      "seed": 16881196748472735513,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-061",
+      "cohort": "biased",
+      "true_rating": 1562.13,
+      "seed": 12816529915230333351,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    },
+    {
+      "id": "sp-062",
+      "cohort": "biased",
+      "true_rating": 1245.5,
+      "seed": 10672131102205171281,
+      "games": 20,
+      "jump_after_game": null,
+      "jump_delta": 0.0,
+      "acpl_channel_bias": -250.0
+    }
+  ]
+}

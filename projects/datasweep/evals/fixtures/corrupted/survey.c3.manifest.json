@@ -11,6 +11,15 @@
   "WS": 0.224044
  },
  "column_truth": {
+  "income": {
+   "agree": 0.985816,
+   "decisive": {
+    "COMMA": 8,
+    "DOT": 556
+   },
+   "mixed_conventions": false,
+   "number_convention": "DOT"
+  },
   "submitted": {
    "date_order": "provable",
    "format": "%Y/%m/%d",

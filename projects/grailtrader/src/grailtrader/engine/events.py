@@ -263,10 +263,7 @@ def _counterparty_brand(event: FashionEvent, gazetteer: Gazetteer) -> str | None
     counterparty = event.attributes.get("counterparty")
     if not counterparty:
         return None
-    try:
-        return gazetteer.resolve_brand(counterparty)
-    except ValueError:
-        return None
+    return gazetteer.find_brand(counterparty)
 
 
 def applies_to(event: FashionEvent, leaf: str, gazetteer: Gazetteer) -> bool:

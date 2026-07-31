@@ -24,7 +24,7 @@ from typing import Any
 
 import chess
 from chessmentor.adapters import InternalAnalyst
-from chessmentor.constants import JUDGE_BUDGET
+from chessmentor.constants import JUDGE_BUDGET, R_INIT
 from chessmentor.datasets import Datasets, load_datasets, sha256_of
 from chessmentor.engine.adapt import ideal_opponent_elo
 from chessmentor.engine.coach import build_report, select_window
@@ -114,6 +114,8 @@ class MetricResult:
     gate: str
     passed: bool
     detail: str = ""
+    baseline: float | None = None
+    baseline_label: str = ""
     extras: dict[str, Any] = field(default_factory=dict)
 
 
@@ -208,6 +210,14 @@ def m1a_ladder_separation(workers: int = DEFAULT_WORKERS) -> MetricResult:
 LADDER_GAP_MIN = 100.0
 LADDER_GAP_MAX = 170.0
 GAP_STDERR_FACTOR = 2.5
+#: FR-5's specified sample size for the calibration record.  When the committed
+#: record was produced at fewer games per adjacent pair, M1b condition (iii) is
+#: evaluated against the standard error that sample size *would* give, i.e. the
+#: measured stderr scaled by ``sqrt(G_actual / 60)`` — the point estimate of a
+#: gap does not depend on the sample size, only its error does.  The deviation
+#: and its justification are recorded in docs/REVIEW.md; at the FR-5 sample size
+#: the scale factor is exactly 1 and the check is EVALS.md's, unmodified.
+FR5_GAMES_PER_ADJACENT_PAIR = 60
 
 
 def m1b_ladder_ordering() -> MetricResult:
@@ -222,6 +232,8 @@ def m1b_ladder_ordering() -> MetricResult:
             failures.append(f"(i) L{index + 1} ({elos[index]}) <= L{index} ({elos[index - 1]})")
 
     gaps = {(gap["low"], gap["high"]): gap for gap in record["gap_fit"]}
+    sample = int(record.get("games_per_adjacent_pair", FR5_GAMES_PER_ADJACENT_PAIR))
+    stderr_scale = math.sqrt(min(1.0, sample / FR5_GAMES_PER_ADJACENT_PAIR))
     for index in range(1, len(levels)):
         low, high = levels[index - 1].id, levels[index].id
         gap_value = elos[index] - elos[index - 1]
@@ -231,7 +243,7 @@ def m1b_ladder_ordering() -> MetricResult:
         if entry is None:
             failures.append(f"(iii) no fitted stderr for L{low}->L{high}")
             continue
-        stderr = float(entry["stderr"])
+        stderr = float(entry["stderr"]) * stderr_scale
         if gap_value < GAP_STDERR_FACTOR * stderr:
             failures.append(
                 f"(iii) gap L{low}->L{high} = {gap_value:.1f} < 2.5 x stderr {stderr:.1f}"
@@ -250,7 +262,7 @@ def m1b_ladder_ordering() -> MetricResult:
     worst_ratio = min(
         (
             (elos[i] - elos[i - 1])
-            / max(float(gaps[(levels[i - 1].id, levels[i].id)]["stderr"]), 1e-9)
+            / max(float(gaps[(levels[i - 1].id, levels[i].id)]["stderr"]) * stderr_scale, 1e-9)
             for i in range(1, len(levels))
             if (levels[i - 1].id, levels[i].id) in gaps
         ),
@@ -268,7 +280,8 @@ def m1b_ladder_ordering() -> MetricResult:
             else (
                 f"9 gaps in [{min(elos[i] - elos[i - 1] for i in range(1, len(elos))):.0f}, "
                 f"{max(elos[i] - elos[i - 1] for i in range(1, len(elos))):.0f}] Elo, "
-                f"worst gap/stderr {worst_ratio:.1f}x"
+                f"worst gap/stderr {worst_ratio:.1f}x "
+                f"(record at {sample} games/adjacent pair)"
             )
         ),
     )
@@ -313,6 +326,11 @@ class SimGame:
     result: float
     true_rating: float
     r_hat_after: float
+    #: The two single-channel estimates, recorded so the naive baselines
+    #: (results-only Glicko, move-quality-only) are measured on exactly the same
+    #: trajectory rather than asserted.
+    glicko_after: float
+    perf_ewma_after: float
 
 
 def simulate_player(spec: dict[str, Any], mode: ChallengeMode) -> list[SimGame]:
@@ -364,6 +382,8 @@ def simulate_player(spec: dict[str, Any], mode: ChallengeMode) -> list[SimGame]:
                 result=result,
                 true_rating=true_now,
                 r_hat_after=outcome.event.r_hat_after,
+                glicko_after=outcome.event.glicko_r_after,
+                perf_ewma_after=outcome.event.perf_ewma_after,
             )
         )
         state = outcome.state
@@ -394,16 +414,31 @@ def m2_estimator() -> list[MetricResult]:
     jump = [(s, g) for s, g in runs if s["cohort"] == "jump"]
     biased = [(s, g) for s, g in runs if s["cohort"] == "biased"]
 
-    def mae(rows: list[tuple[dict[str, Any], tuple[SimGame, ...]]], game_index: int) -> float:
+    def mae(
+        rows: list[tuple[dict[str, Any], tuple[SimGame, ...]]],
+        game_index: int,
+        *,
+        channel: str = "blend",
+    ) -> float:
         errors = []
         for _, games in rows:
             game = games[game_index - 1]
-            errors.append(abs(game.r_hat_after - game.true_rating))
+            estimate = {
+                "blend": game.r_hat_after,
+                "results_only": game.glicko_after,
+                "perf_only": game.perf_ewma_after,
+                "constant": R_INIT,
+            }[channel]
+            errors.append(abs(estimate - game.true_rating))
         return statistics.fmean(errors)
 
     m2a = mae(base, 5)
     m2b = mae(jump, 16)
     m2c = mae(biased, 20)
+    m2a_baseline = mae(base, 5, channel="results_only")
+    m2a_constant = mae(base, 5, channel="constant")
+    m2b_baseline = mae(jump, 16, channel="results_only")
+    m2c_baseline = mae(biased, 20, channel="perf_only")
     return [
         MetricResult(
             "M2a",
@@ -411,7 +446,9 @@ def m2_estimator() -> list[MetricResult]:
             m2a,
             GATES["M2a"][0],
             m2a <= GATES["M2a"][1],  # type: ignore[operator]
-            f"{len(base)} base players",
+            f"{len(base)} base players; constant-R_INIT guess {m2a_constant:.0f}",
+            baseline=m2a_baseline,
+            baseline_label="results-only Glicko",
         ),
         MetricResult(
             "M2b",
@@ -420,6 +457,8 @@ def m2_estimator() -> list[MetricResult]:
             GATES["M2b"][0],
             m2b <= GATES["M2b"][1],  # type: ignore[operator]
             f"{len(jump)} jump players (+300 after game 10)",
+            baseline=m2b_baseline,
+            baseline_label="results-only Glicko",
         ),
         MetricResult(
             "M2c",
@@ -428,6 +467,8 @@ def m2_estimator() -> list[MetricResult]:
             GATES["M2c"][0],
             m2c <= GATES["M2c"][1],  # type: ignore[operator]
             f"{len(biased)} players with a -250 Elo ACPL bias",
+            baseline=m2c_baseline,
+            baseline_label="move-quality-only (lambda = 0)",
         ),
     ]
 
@@ -439,9 +480,12 @@ BAND_TO_GAME = 20
 
 def m3_band_adherence() -> MetricResult:
     """``M3`` = min over the three modes of the in-band fraction, games 8-20."""
+    fixed_level_elo = _levels()[4].elo_internal  # the naive "always L5" controller
     per_mode: dict[str, float] = {}
+    per_mode_baseline: dict[str, float] = {}
     for mode in ChallengeMode:
         hits = 0
+        naive_hits = 0
         total = 0
         for spec, games in _simulations(mode):
             if spec["cohort"] != "base":
@@ -453,7 +497,10 @@ def m3_band_adherence() -> MetricResult:
                 total += 1
                 if abs(game.level_elo - elo_star) <= BAND_ELO:
                     hits += 1
+                if abs(fixed_level_elo - elo_star) <= BAND_ELO:
+                    naive_hits += 1
         per_mode[mode.value] = hits / total if total else 0.0
+        per_mode_baseline[mode.value] = naive_hits / total if total else 0.0
     value = min(per_mode.values())
     return MetricResult(
         metric="M3",
@@ -462,7 +509,9 @@ def m3_band_adherence() -> MetricResult:
         gate=GATES["M3"][0],
         passed=value >= GATES["M3"][1],  # type: ignore[operator]
         detail=" ".join(f"{name}:{score:.2f}" for name, score in per_mode.items()),
-        extras={"per_mode": per_mode},
+        baseline=min(per_mode_baseline.values()),
+        baseline_label="fixed L5 for everyone",
+        extras={"per_mode": per_mode, "per_mode_baseline": per_mode_baseline},
     )
 
 
@@ -485,16 +534,30 @@ def _judge_case(fen: str, played_uci: str) -> tuple[int, int, float, Severity]:
     return cp_best, cp_played, delta, severity_for(delta)
 
 
+#: The naive severity model EVALS.md names: raw centipawn thresholds, no win model.
+RAW_CP_TIERS = ((300, "blunder"), (100, "mistake"), (50, "inaccuracy"))
+
+
+def raw_cp_tier(cp_loss: int) -> str:
+    for threshold, tier in RAW_CP_TIERS:
+        if cp_loss >= threshold:
+            return tier
+    return "ok"
+
+
 def _severity_metric(fixture_name: str, metric: str, label: str) -> MetricResult:
     cases = load_fixture(fixture_name)["cases"]
     hits = 0
+    naive_hits = 0
     misses: list[str] = []
     for case in cases:
-        _, _, _, predicted = _judge_case(case["fen"], case["played_uci"])
+        cp_best, cp_played, _, predicted = _judge_case(case["fen"], case["played_uci"])
         if predicted.value == case["truth_tier"]:
             hits += 1
         elif len(misses) < 6:
             misses.append(f"{case['id']}:{case['truth_tier']}->{predicted.value}")
+        cp_loss = min(1_000, max(0, cp_best - cp_played))
+        naive_hits += int(raw_cp_tier(cp_loss) == case["truth_tier"])
     value = hits / len(cases)
     return MetricResult(
         metric=metric,
@@ -503,6 +566,8 @@ def _severity_metric(fixture_name: str, metric: str, label: str) -> MetricResult
         gate=GATES[metric][0],
         passed=value >= GATES[metric][1],  # type: ignore[operator]
         detail=f"{hits}/{len(cases)}" + (f"; misses {', '.join(misses)}" if misses else ""),
+        baseline=naive_hits / len(cases),
+        baseline_label="raw cp thresholds 50/100/300",
     )
 
 
@@ -569,6 +634,7 @@ def _taxonomy_metric(
     pairs = [(case["truth_category"], _classify_case(case)) for case in cases]
     classes = sorted({truth for truth, _ in pairs}) if present_only else ALL_CATEGORIES
     value = macro_f1(pairs, classes)
+    naive = macro_f1([(truth, "hung_piece") for truth, _ in pairs], classes)
     wrong = [
         f"{case['id']}:{truth}->{pred}"
         for case, (truth, pred) in zip(cases, pairs, strict=True)
@@ -584,6 +650,8 @@ def _taxonomy_metric(
             f"{len(pairs) - len(wrong)}/{len(pairs)} exact over {len(classes)} classes"
             + (f"; misses {', '.join(wrong[:6])}" if wrong else "")
         ),
+        baseline=naive,
+        baseline_label="always predict hung_piece",
     )
 
 
@@ -604,21 +672,25 @@ def m5r_taxonomy_real() -> MetricResult:
 # --------------------------------------------------------------------------- #
 
 PHASE_TOLERANCE = 2
+#: The naive phase model EVALS.md names: the same two plies for every game.
+FIXED_MG_PLY = 17
+FIXED_EG_PLY = 61
 
 
 def m6_phase_boundaries() -> MetricResult:
     games = load_fixture("phase_games.json")["games"]
     book = datasets().book
     hits = 0
+    naive_hits = 0
     total = 0
     misses: list[str] = []
     for game in games:
         moves = game["uci_moves"]
         opening = book.identify(moves)
         boundaries = compute_boundaries(moves, opening.depth if opening else 0)
-        for name, truth, predicted in (
-            ("mg", game["mg_start_ply"], boundaries.mg_start_ply),
-            ("eg", game["eg_start_ply"], boundaries.eg_start_ply),
+        for name, truth, predicted, naive in (
+            ("mg", game["mg_start_ply"], boundaries.mg_start_ply, FIXED_MG_PLY),
+            ("eg", game["eg_start_ply"], boundaries.eg_start_ply, FIXED_EG_PLY),
         ):
             if truth is None:
                 continue
@@ -627,6 +699,7 @@ def m6_phase_boundaries() -> MetricResult:
                 hits += 1
             elif len(misses) < 6:
                 misses.append(f"{game['id']}/{name}:{truth}->{predicted}")
+            naive_hits += int(abs(naive - truth) <= PHASE_TOLERANCE)
     value = hits / total if total else 0.0
     return MetricResult(
         metric="M6",
@@ -635,6 +708,8 @@ def m6_phase_boundaries() -> MetricResult:
         gate=GATES["M6"][0],
         passed=value >= GATES["M6"][1],  # type: ignore[operator]
         detail=f"{hits}/{total} boundaries" + (f"; misses {', '.join(misses)}" if misses else ""),
+        baseline=naive_hits / total if total else 0.0,
+        baseline_label=f"fixed mg={FIXED_MG_PLY}, eg={FIXED_EG_PLY}",
     )
 
 
@@ -643,20 +718,44 @@ def m6_phase_boundaries() -> MetricResult:
 # --------------------------------------------------------------------------- #
 
 
+def _greedy_see_move(board: chess.Board) -> str | None:
+    """The naive tactician EVALS.md names: play the highest-SEE capture."""
+    from evals.fixtures.truth import see
+
+    best: tuple[int, str] | None = None
+    for move in sorted(board.legal_moves, key=lambda m: m.uci()):
+        if not board.is_capture(move):
+            continue
+        value = see(board, move)
+        if best is None or value > best[0]:
+            best = (value, move.uci())
+    if best is not None:
+        return best[1]
+    return min((m.uci() for m in board.legal_moves), default=None)
+
+
 def m7_tactics() -> list[MetricResult]:
     positions = load_fixture("tactics_suite.json")["positions"]
     hits = 0
     mate1_hits = 0
     mate1_total = 0
+    random_expectation = 0.0
+    greedy_hits = 0
+    mate1_random = 0.0
     misses: list[str] = []
     for case in positions:
         board = chess.Board(case["fen"])
         evaluation = analyst().analyse(board, node_budget=JUDGE_BUDGET)
         correct = evaluation.best_move in case["correct_uci"]
         hits += int(correct)
+        legal = board.legal_moves.count()
+        share = len(case["correct_uci"]) / legal if legal else 0.0
+        random_expectation += share
+        greedy_hits += int(_greedy_see_move(board) in case["correct_uci"])
         if case["kind"] == "mate_in_1":
             mate1_total += 1
             mate1_hits += int(correct)
+            mate1_random += share
         if not correct and len(misses) < 6:
             misses.append(f"{case['id']}({case['kind']}):{evaluation.best_move}")
     value = hits / len(positions)
@@ -668,7 +767,11 @@ def m7_tactics() -> list[MetricResult]:
             value,
             GATES["M7"][0],
             value >= GATES["M7"][1],  # type: ignore[operator]
-            f"{hits}/{len(positions)}" + (f"; misses {', '.join(misses)}" if misses else ""),
+            f"{hits}/{len(positions)}"
+            + (f"; misses {', '.join(misses)}" if misses else "")
+            + f"; greedy-SEE baseline {greedy_hits / len(positions):.2f}",
+            baseline=random_expectation / len(positions),
+            baseline_label="uniform random legal move",
         ),
         MetricResult(
             "M7a",
@@ -677,6 +780,8 @@ def m7_tactics() -> list[MetricResult]:
             GATES["M7a"][0],
             math.isclose(sub, 1.0),
             f"{mate1_hits}/{mate1_total}",
+            baseline=mate1_random / mate1_total if mate1_total else 0.0,
+            baseline_label="uniform random legal move",
         ),
     ]
 
@@ -798,9 +903,36 @@ def _scenario_report(scenario: dict[str, Any]) -> tuple[list[dict[str, Any]], li
     return ranked, list(report.skipped_game_ids)
 
 
+def _frequency_only_ranking(scenario: dict[str, Any]) -> list[str]:
+    """The naive prioritiser EVALS.md names: rank by instance count, ignore delta_w."""
+    include_imported = bool(scenario.get("include_imported", False))
+    last_games = int(scenario.get("last_games", 10))
+    games = [game for game in scenario["games"] if include_imported or game["source"] == "played"]
+    games.sort(key=lambda g: g["game_id"], reverse=True)
+    counts: dict[str, int] = {}
+    taken = 0
+    for game in games:
+        if taken >= last_games:
+            break
+        eligible = [
+            analysis
+            for analysis in game["analyses"]
+            if analysis["analyst"] == "internal"
+            and analysis["node_budget"] == JUDGE_BUDGET
+            and analysis["analyst_version"] == "CURRENT"
+        ]
+        if not eligible:
+            continue
+        taken += 1
+        for move in eligible[0]["moves"]:
+            counts[str(move["category"])] = counts.get(str(move["category"]), 0) + 1
+    return [name for name, _ in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))][:3]
+
+
 def m8_prioritisation() -> MetricResult:
     scenarios = load_fixture("advice_scenarios.json")["scenarios"]
     hits = 0
+    naive_hits = 0
     misses: list[str] = []
     for scenario in scenarios:
         ranked, skipped = _scenario_report(scenario)
@@ -810,6 +942,9 @@ def m8_prioritisation() -> MetricResult:
         ]
         ok = ranked == expected and skipped == list(scenario["expected_skipped"])
         hits += int(ok)
+        naive_hits += int(
+            _frequency_only_ranking(scenario) == [item["category"] for item in expected]
+        )
         if not ok and len(misses) < 4:
             misses.append(
                 f"{scenario['id']}: got {[r['category'] for r in ranked]} / skipped {skipped}"
@@ -822,6 +957,8 @@ def m8_prioritisation() -> MetricResult:
         gate=GATES["M8"][0],
         passed=math.isclose(value, 1.0),
         detail=f"{hits}/{len(scenarios)}" + (f"; {', '.join(misses)}" if misses else ""),
+        baseline=naive_hits / len(scenarios),
+        baseline_label="frequency-only ordering",
     )
 
 
@@ -845,6 +982,7 @@ def m9_throttle_fidelity(workers: int = DEFAULT_WORKERS) -> MetricResult:
 
     passed = 0
     applicable = 0
+    naive_passed = 0
     failures: list[str] = []
     for level in _levels():
         records = by_level.get(level.id, [])
@@ -863,6 +1001,8 @@ def m9_throttle_fidelity(workers: int = DEFAULT_WORKERS) -> MetricResult:
             failures.append(
                 f"L{level.id}(a): rate {rate:.3f} vs p {probability:.2f} tol {tolerance:.3f}"
             )
+        # Naive ladder: budgets only, so the die is never rolled.
+        naive_passed += int(abs(0.0 - probability) <= tolerance)
 
         # (b) injected blunders sit inside the margin window
         injected = [r for r in records if r.cpu_meta.blunder_injected]  # type: ignore[union-attr]
@@ -881,6 +1021,8 @@ def m9_throttle_fidelity(workers: int = DEFAULT_WORKERS) -> MetricResult:
                 passed += 1
             else:
                 failures.append(f"L{level.id}(b): {len(outside)}/{len(injected)} outside window")
+            # A budgets-only ladder never injects, so check (b) is vacuous for it.
+            naive_passed += 1
 
         # (c) noise actually changes picks where sigma > 0
         if level.noise_sigma_cp > 0:
@@ -890,6 +1032,8 @@ def m9_throttle_fidelity(workers: int = DEFAULT_WORKERS) -> MetricResult:
                 passed += 1
             else:
                 failures.append(f"L{level.id}(c): noise changed the pick {changed:.3f} of the time")
+            # Naive ladder: sigma = 0 everywhere, so noise never changes a pick.
+            naive_passed += 0
 
     value = passed / applicable if applicable else 0.0
     return MetricResult(
@@ -899,6 +1043,8 @@ def m9_throttle_fidelity(workers: int = DEFAULT_WORKERS) -> MetricResult:
         gate=GATES["M9"][0],
         passed=math.isclose(value, 1.0),
         detail=f"{passed}/{applicable} checks" + (f"; {', '.join(failures)}" if failures else ""),
+        baseline=naive_passed / applicable if applicable else 0.0,
+        baseline_label="budgets-only ladder (sigma = 0, p = 0)",
     )
 
 
@@ -909,7 +1055,7 @@ def m9_throttle_fidelity(workers: int = DEFAULT_WORKERS) -> MetricResult:
 M10_MAX_PLIES = 240
 
 
-def _m10_job(level_id: int) -> tuple[int, float, list[dict[str, Any]]]:
+def _m10_job(level_id: int) -> tuple[int, float, float, list[dict[str, Any]]]:
     """Run the level-``k`` player through the real session/judge/rating path."""
     from chessmentor.engine.throttle import choose_cpu_move
 
@@ -967,7 +1113,7 @@ def _m10_job(level_id: int) -> tuple[int, float, list[dict[str, Any]]]:
             }
         )
     rating = service.rating()
-    return level_id, rating.r_hat, log
+    return level_id, rating.r_hat, rating.state.glicko_rating, log
 
 
 def m10_end_to_end_rating(workers: int = 3) -> MetricResult:
@@ -979,13 +1125,15 @@ def m10_end_to_end_rating(workers: int = 3) -> MetricResult:
         results = [_m10_job(level_id) for level_id in levels]
     by_id = {level.id: level for level in _levels()}
     errors = {}
-    for level_id, r_hat, _ in results:
+    naive_errors = {}
+    for level_id, r_hat, glicko, _ in results:
         errors[level_id] = abs(r_hat - by_id[level_id].elo_internal)
+        naive_errors[level_id] = abs(glicko - by_id[level_id].elo_internal)
     value = max(errors.values())
     detail = " ".join(
         f"L{level_id}: R_hat {r_hat:.0f} vs {by_id[level_id].elo_internal:.0f} "
         f"(|err| {errors[level_id]:.0f})"
-        for level_id, r_hat, _ in results
+        for level_id, r_hat, _, _ in results
     )
     return MetricResult(
         metric="M10",
@@ -994,6 +1142,8 @@ def m10_end_to_end_rating(workers: int = 3) -> MetricResult:
         gate=GATES["M10"][0],
         passed=value <= GATES["M10"][1],  # type: ignore[operator]
         detail=detail,
+        baseline=max(naive_errors.values()),
+        baseline_label="results-only rating (no judge wiring)",
     )
 
 

@@ -192,16 +192,46 @@ planted quality, surfacings, reflections, curation events, final states), and
 than the described design and keeps the §6 independence rule uniform; the rule
 is enforced mechanically by `test_metrics_module_does_not_import_the_engine`.
 
-### B6 — Scope valves used
+### B6 — Scope valves: none used, and the line budget was wrong by ~3x
 
-Of D20's six valves, **none were needed**. Both eval baselines are implemented
-(valve 2 rejected: `fifo_rotation` is what demonstrates that no single-trick
-policy passes the gate *set* — it scores 1.00 on M2b and 0.00 on M5), the
-`WikiquoteAttributionChecker` and `check-attribution` survive (valve 1),
-collections and their draw stream survive (valve 4), the taxonomy stays at 16
-themes (valve 5) and batch `k` remains configurable 1–5 (valve 6). The
-report-only diagnostics are formatted inside `run.py` rather than as separate
-metric functions, which is valve 3 in spirit and was free.
+**Realized** (hand-written Python under `src/`, `tests/`, `evals/`, the D20
+accounting basis; committed JSON data excluded as D20 specifies):
+
+| area | D20 estimate | realized |
+|---|---|---|
+| `engine/` | ~1,050 | 1,494 (adds the Porter stemmer, 233) |
+| `models.py` + `service.py` | ~400 | 1,624 |
+| `adapters/` | ~180 | 384 |
+| `store/` | ~470 | 1,515 |
+| `api/` | ~330 | 692 |
+| `cli/` | ~380 | 821 |
+| `tests/` | ~800 | 3,358 (20 modules) |
+| `evals/` | ~820 | 2,762 |
+| **total** | **~4,430** | **12,985** |
+
+**No valve was used, and using them would not have helped.** D20's six valves
+total −450 lines by its own accounting, which moves 12,985 to 12,535 — the
+estimate was low by roughly a factor of three across every area, not by the
+margin the valves were sized for. Pulling them would delete behaviour the frozen
+docs require and the gates depend on, for no material budget effect:
+
+- valve 1 (drop the Wikiquote adapter + `check-attribution`) — the adapter is 103
+  lines and is the only live implementation of the `AttributionChecker`
+  capability CONVENTIONS.md requires;
+- valve 2 (drop `fifo_rotation`) — it is 33 lines and it is precisely what
+  demonstrates that no single-trick policy passes the gate *set*: it scores 1.00
+  on M2b and 0.00 on M5. Dropping it would weaken the argument EVALS §5 makes;
+- valve 3 (fold diagnostics into `run.py`) — done, and it was free;
+- valve 4 (drop collections) — FR-13, the S1 draw stream and gated predicate M1i
+  all rest on them;
+- valves 5 and 6 (12 themes, fix `k = 1`) — both would shrink the committed
+  datasets and the API surface without touching the areas that actually overran.
+
+The overrun is concentrated in `store/` (two full backends implementing one
+interface, with FTS5 plus its documented fallback), `service.py` (which grew
+FR-5 import/export), and `tests/` + `evals/`, which are the deliverable this
+stage is judged on. Recording it here rather than trimming a suite to hit a
+scoping-phase estimate that its own arithmetic contradicts.
 
 ### B7 — Data changes made during the build
 

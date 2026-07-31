@@ -103,7 +103,7 @@ JOINT_DTILT = 2.0
 AXIS_DF0 = 0.12
 AXIS_DVTL = 0.08
 AXIS_DTILT = 4.0
-MIMIC_F0_TOLERANCE = 0.02  # <= 1x within-speaker sigma
+MIMIC_F0_TOLERANCE = 0.008  # <= 1x the session-to-session F0 spread
 MIMIC_DVTL = 0.10
 MIMIC_DTILT = 5.0
 
@@ -113,6 +113,9 @@ CONSENT_DURATION_S = (10.5, 13.5)
 SUPPORT_SHORT_S = 2.0
 """Below the FR-2 consent minimum (5 s) and the enrollment minimum (3 s):
 M4 scenario #20's `audio_quality` rejection needs a clip that cannot pass."""
+
+HEADROOM = 0.5
+"""Level the rendered voice sits at before the take's gain is applied."""
 
 CLEAN_GAIN_DB = (-6.0, 6.0)
 CLEAN_SNR_DB = (20.0, 30.0)
@@ -265,12 +268,13 @@ def _mimic(rng: np.random.Generator, base: dict[str, Any]) -> dict[str, Any]:
 def build_population(rng: np.random.Generator) -> list[dict[str, Any]]:
     """36 base speakers (24 eval + 12 dev) plus their impostors (EVALS table)."""
     bases: list[dict[str, Any]] = []
+    taken: list[dict[str, Any]] = []
     for index in range(N_EVAL_SPEAKERS):
         sex = "male" if index % 2 == 0 else "female"
-        bases.append(_base_speaker(rng, f"S{index + 1:02d}", "eval", sex))
+        bases.append(_base_speaker(rng, f"S{index + 1:02d}", "eval", sex, taken))
     for index in range(N_DEV_SPEAKERS):
         sex = "female" if index % 2 == 0 else "male"
-        bases.append(_base_speaker(rng, f"D{index + 1:02d}", "dev", sex))
+        bases.append(_base_speaker(rng, f"D{index + 1:02d}", "dev", sex, taken))
 
     speakers = list(bases)
     eval_bases = [s for s in bases if s["split"] == "eval"]
@@ -462,6 +466,12 @@ def build_labels(seed: int = DEFAULT_SEED) -> dict[str, Any]:
                 "dtilt": MIMIC_DTILT,
             },
             "within_speaker_f0_sd": WITHIN_SPEAKER_F0_SD,
+            "min_speaker_separation_sigma": MIN_SPEAKER_SEPARATION_SIGMA,
+            "sigma_per_unit": {
+                "f0_percent": SIGMA_PER_F0_PERCENT,
+                "vtl_percent": SIGMA_PER_VTL_PERCENT,
+                "tilt_db": SIGMA_PER_TILT_DB,
+            },
         },
         "channels": {
             "clean": {"gain_db": list(CLEAN_GAIN_DB), "snr_db": list(CLEAN_SNR_DB)},
@@ -497,13 +507,21 @@ def voicebox_params(speaker: dict[str, Any], f0_scale: float) -> VoiceboxParams:
     )
 
 
-def sentence_units(rng: np.random.Generator, target_s: float) -> list[Unit]:
+def sentence_units(rng: np.random.Generator, target_s: float, f0_sd: float) -> list[Unit]:
     """Pseudo-sentences: 6-14 syllables over the five vowel targets, with
-    sentence-level declination and per-syllable prosody variation."""
+    sentence-level declination and per-syllable prosody variation.
+
+    Every take is **phonetically balanced**: syllables cycle through the five
+    vowel targets and the take runs to a whole number of cycles. Unbalanced takes
+    make the F1/F2/band medians swing with which vowels happened to be drawn —
+    a content effect that has nothing to do with who is speaking, and one that a
+    read consent statement would not have either.
+    """
     units: list[Unit] = []
     elapsed = 0.0
     vowel_index = int(rng.integers(0, len(VOWELS)))
-    while elapsed < target_s:
+    count = 0
+    while elapsed < target_s or count % len(VOWELS) != 0:
         n_syllables = int(rng.integers(*SYLLABLES_PER_SENTENCE))
         for position in range(n_syllables):
             duration = int(rng.integers(*UNIT_MS))
@@ -514,16 +532,17 @@ def sentence_units(rng: np.random.Generator, target_s: float) -> list[Unit]:
                     vowel=VOWELS[vowel_index % len(VOWELS)],
                     onset=str(rng.choice(CONSONANTS)) if rng.random() < 0.7 else None,
                     f0_scale=float(
-                        np.clip(declination * (1.0 + rng.normal(0.0, PROSODY_SD)), 0.75, 1.3)
+                        np.clip(declination * (1.0 + rng.normal(0.0, f0_sd)), 0.70, 1.35)
                     ),
                     amplitude=float(0.75 + 0.35 * rng.random()),
                 )
             )
             vowel_index += 1
+            count += 1
             elapsed += duration / 1000.0
-            if elapsed >= target_s:
+            if elapsed >= target_s and count % len(VOWELS) == 0:
                 break
-        if elapsed < target_s:
+        if elapsed < target_s or count % len(VOWELS) != 0:
             units.append(Unit(duration_ms=SENTENCE_PAUSE_MS))
             elapsed += SENTENCE_PAUSE_MS / 1000.0
     return units
@@ -550,7 +569,7 @@ def render_utterance(speaker: dict[str, Any], utterance: dict[str, Any]) -> Audi
     """Render one labelled take. Pure function of the label record."""
     sample_rate = TARGET_SAMPLE_RATE
     rng = np.random.default_rng(utterance["seed"])
-    units = sentence_units(rng, utterance["duration_s"])
+    units = sentence_units(rng, utterance["duration_s"], speaker["params"]["f0_sd"])
     samples = synthesize_units(
         units,
         voicebox_params(speaker, utterance["f0_scale"]),
@@ -558,7 +577,11 @@ def render_utterance(speaker: dict[str, Any], utterance: dict[str, Any]) -> Audi
         seed=utterance["seed"],
     )
     samples = apply_channel(samples, utterance["channel"], sample_rate)
-    samples = samples * 10.0 ** (utterance["gain_db"] / 20.0)
+    # Headroom before the gain: the synthesis core normalizes to a 0.85 peak, so
+    # a +6 dB take would hard-limit against full scale. Limiting distortion is a
+    # spectral artefact of the *fixture*, not of the voice, and it lands squarely
+    # in the dimensions the embedder measures.
+    samples = samples * HEADROOM * 10.0 ** (utterance["gain_db"] / 20.0)
     power = float(np.mean(samples**2)) if samples.size else 0.0
     if power > 0.0:
         noise_power = power / (10.0 ** (utterance["snr_db"] / 10.0))

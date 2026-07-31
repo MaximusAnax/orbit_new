@@ -149,7 +149,9 @@ def normalize(caveats: list[dict[str, Any]]) -> list[dict[str, Any]]:
         subset = {}
         for key in keys:
             if key == "subject":
-                subset["subject"] = params.get("edge_id") or params.get("option_id")
+                subset["subject"] = (
+                    params.get("subject") or params.get("edge_id") or params.get("option_id")
+                )
             else:
                 subset[key] = params.get(key)
         rows.append({"code": code, "params": subset})

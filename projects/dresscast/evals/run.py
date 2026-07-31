@@ -36,9 +36,7 @@ def format_scorecard(report: EvalReport, elapsed: float) -> str:
             f"{result.comparator} {result.gate:.3f}" if result.gate is not None else "-"
         )
         baseline = f"{result.baseline:.4f}" if result.baseline is not None else "-"
-        margin = (
-            f"{result.value - result.baseline:+.4f}" if result.baseline is not None else "-"
-        )
+        margin = f"{result.margin:+.4f}" if result.margin is not None else "-"
         status = "PASS" if result.passed else "FAIL"
         lines.append(
             f"{result.name:<34}{result.value:>10.4f}{gate:>12}{baseline:>11}{margin:>10}"

@@ -22,6 +22,7 @@ import sys
 from pathlib import Path
 
 import pytest
+
 from evals import metrics as M
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
@@ -95,8 +96,7 @@ def test_gate_m6_progression_accuracy_fr6(scorecard):
 def test_baselines_are_beaten_by_gates(scorecard):
     """Every gate must be strictly harder than its naive baseline scores."""
     unbeaten = [
-        f"{r.key}: gate {r.gate_text()} does not beat baseline {r.baseline:.4f} "
-        f"({r.baseline_name})"
+        f"{r.key}: gate {r.gate_text()} does not beat baseline {r.baseline:.4f} ({r.baseline_name})"
         for r in scorecard[0].values()
         if not r.baseline_beaten
     ]
@@ -165,9 +165,7 @@ def test_regeneration_reproduces_the_committed_fixtures(tmp_path):
     generator.generate(generator.DEFAULT_SEED, tmp_path)
     committed = json.loads((FIXTURES / "labels.json").read_text(encoding="utf-8"))
     regenerated = json.loads((tmp_path / "labels.json").read_text(encoding="utf-8"))
-    for (path_a, a), (path_b, b) in zip(
-        _walk(committed), _walk(regenerated), strict=True
-    ):
+    for (path_a, a), (path_b, b) in zip(_walk(committed), _walk(regenerated), strict=True):
         assert path_a == path_b
         if isinstance(a, float) and isinstance(b, float):
             assert abs(a - b) <= 1e-9, path_a

@@ -323,29 +323,35 @@ HAND_DERIVED = [
     S(
         "hd_05", "hand_derived", "small_c", ["mrx_card"], {"mrx": 60000},
         flight("NYC", "MIA", "2026-10"), D,
-        hand={"objective_cents": 62000, "plan_count": 1, "verdict": "book_with_points"},
+        hand={"objective_cents": 62000, "plan_count": 2, "verdict": "book_with_points"},
         rationale=(
-            "Three awards match NYC->MIA business and only one is reachable. uax needs "
-            "95,000 miles and mrx__uax is 1:1, more than the 60,000 held. alx needs "
-            "55,000 miles through mbx (3:1, +5,000 per 60,000, 3,000 increments): "
-            "delivered(135000) = 45000 + 10000 = 55000, so 135,000 MBX would be needed "
-            "and MBX must itself be funded 1:1 from MRX - again more than 60,000. The "
-            "MRX portal is gated behind mrx_premium, which is not held. That leaves dlx "
-            "at 40,000 miles + $56.00: send 40,000 over mrx__dlx, whose fee is "
-            "ceil(40000*60/1000) = 2400c, under the 4800c cap. "
-            "gross = 150000c; outlay = 5600 + 2400 = 8000c; V(H0) = 60000*2000//1000 = "
-            "120000c; H1 = 20,000 MRX = 40000c; points_cost = 80000c; "
-            "net = 150000-8000-80000 = 62000c; cpp = (150000-5600)*1000//40000 = 3610."
+            "Four awards match NYC->MIA business and only the two DLX ones are "
+            "reachable. uax needs 95,000 miles over a 1:1 edge, more than the 60,000 "
+            "held. alx needs 55,000 miles through mbx (3:1, +5,000 per 60,000, 3,000 "
+            "increments): delivered(135000) = 45000 + 10000 = 55000, so 135,000 MBX "
+            "would be needed and MBX must itself be funded 1:1 from MRX. The MRX portal "
+            "is gated behind mrx_premium, which is not held.\n"
+            "Plan A (dlx_bus_nyc_mia, 40,000 miles + $56.00): send 40,000 over mrx__dlx, "
+            "fee = ceil(40000*60/1000) = 2400c (under the 4800c cap). gross = 150000c; "
+            "outlay = 5600 + 2400 = 8000c; V(H0) = 120000c; H1 = 20,000 MRX = 40000c; "
+            "points_cost = 80000c; net = 62000c; cpp = (150000-5600)*1000//40000 = 3610.\n"
+            "Plan B (dlx_saver_nyc_mia, 20,000 miles + $500.00 of surcharges): send "
+            "20,000, fee = 1200c. outlay = 51200c; H1 = 40,000 MRX = 80000c; "
+            "points_cost = 40000c; net = 58800c; cpp = (150000-50000)*1000//20000 = "
+            "5000. B has the higher realized cents-per-point and the lower net value, "
+            "so A must rank first: this is exactly the cpp-vs-net conflict FR-9's "
+            "objective exists to resolve."
         ),
     ),
     S(
-        "hd_06", "hand_derived", "small_d", [], {"urd": 50000, "mrd": 30000},
+        "hd_06", "hand_derived", "small_d", ["gold"], {"urd": 50000, "mrd": 30000},
         cash(), "2026-05-01",
         hand={"objective_cents": 74000, "plan_count": 5, "verdict": "cash_plan"},
         rationale=(
             "Liquid options only: urd_credit 1,000 mcpp, mrd_credit 600, mrd_deposit "
             "650 (1,000-point increments); urd_portal_* are portal_travel and are "
-            "excluded, and no card is held anyway. mrd->hild is 1:2 into a 400 mcpp "
+            "excluded, and their cards are not held anyway. The gold card enables MRD "
+            "transfers, and mrd->hild is 1:2 into a 400 mcpp "
             "statement credit, i.e. 800 mcpp per MRD point, which beats 650, so the "
             "chain is cash-improving: 30,000 MRD -> 60,000 HILD -> 60000*400//1000 = "
             "24000c, versus 30000*650//1000 = 19500c direct. Best plan = urd_credit on "
@@ -364,8 +370,8 @@ STRESS = [
       flight("NYC", "PAR", "2026-10"), D, tier="stress"),
     S("st_02", "stress_hub", "stress_a", ["c1"], {"b1": 60000, "h1": 120000},
       flight("NYC", "PAR", "2026-10"), D, tier="stress"),
-    S("st_03", "stress_split", "stress_a", ["c1", "c2"], {"b1": 40000, "b2": 40000},
-      flight("NYC", "PAR", "2026-10"), D, tier="stress"),
+    S("st_03", "stress_split", "stress_a", ["c1", "c2"], {"b1": 30000, "b2": 30000},
+      flight("CHI", "ROM", "2026-10"), D, tier="stress"),
     S("st_04", "stress_promo", "stress_a", ["c1"], {"b1": 100000},
       flight("NYC", "PAR", "2026-10"), "2026-08-05", tier="stress"),
     S("st_05", "stress_fee_merge", "stress_a", ["c2"], {"b2": 120000},

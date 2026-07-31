@@ -17,26 +17,38 @@ What it produces
 Ground-truth notes
 ------------------
 
-* The **reference greedy** (:func:`reference_greedy`) is a standalone
-  all-starts best-next construction with *no imports from* ``src/flowlist`` —
-  EVALS §4's discrimination invariant depends on it being an independent
-  implementation, not the engine's own construction phase.
+* Two **degenerate baselines** are measured, and the exact suite must defeat
+  *both*:
+
+  1. :func:`reference_greedy` — a standalone all-starts best-next construction
+     with *no imports from* ``src/flowlist``.  Independent by location, which
+     is what keeps the discrimination claim from being purely self-referential.
+  2. ``flowlist.engine.optimizer.construct`` — the engine's *own* construction
+     phase, i.e. exactly what ``reorder`` would return if Or-opt and 2-opt were
+     deleted.  This is the baseline that actually matters, because it is the
+     degenerate implementation a reviewer would write.  It is *stronger* than
+     the reference greedy under anchors (D6 diversifies anchored constructions
+     on seeded near-ties), so requiring only the reference greedy to fail —
+     as this generator did before the harden pass — leaves the M4 gates
+     passable by a construction-only flowlist.  See REVIEW.md finding #24.
+
 * The **discrimination invariant** is asserted here at generation time: at
   least :data:`MIN_TRAP_INSTANCES` exact-suite instances must have a
-  reference-greedy optimality ratio below :data:`TRAP_RATIO`.  Two exact slots
-  are dedicated *trap* instances built from the cross-genre blueprint in
+  degenerate optimality ratio below :data:`TRAP_RATIO`, *and* both degenerate
+  baselines must fail both M4 gates suite-wide.  Two exact slots are dedicated
+  *trap* instances built from the cross-genre blueprint in
   :func:`_trap_features` — a spread where most seams are poor and one
   high-scoring cluster is reachable through a single good hop, so a
   locally-best first hop strands it.  The blueprint's jitter seed is searched
-  (bounded, deterministic) until the instance actually traps the reference
-  greedy; the winning seed is recorded in the fixture and in ``expected.json``
-  so the search never has to be re-run to reproduce the file.
+  (bounded, deterministic) until the instance actually traps both baselines;
+  the winning seed is recorded in the fixture and in ``expected.json`` so the
+  search never has to be re-run to reproduce the file.
 * Everything else about a playlist (its features, its stored order) is drawn
   from a seeded ``random.Random`` and never from the system under test.
 
 Only the *scoring* of candidate instances uses the engine (``build_matrix``,
-``exact_optimal``): the fixtures have to be scored under the same rulebook the
-evals use, or the recorded ratios would mean nothing.
+``exact_optimal``, ``construct``): the fixtures have to be scored under the
+same rulebook the evals use, or the recorded ratios would mean nothing.
 """
 
 from __future__ import annotations
@@ -59,6 +71,13 @@ SEED = 42
 #: greedy, so passing the M4 gate provably requires the local search.
 MIN_TRAP_INSTANCES = 3
 TRAP_RATIO = 0.97
+
+#: Headroom demanded of the *suite-level* discrimination invariant.  A
+#: degenerate baseline landing at 0.9699 against a 0.97 gate would technically
+#: fail it, but so narrowly that ordinary float or fixture drift could flip the
+#: claim; the searched slots aim low enough that both baselines miss both gates
+#: by a visible margin.
+DISCRIMINATION_MARGIN = 0.005
 
 #: The M4 gates (EVALS §5), restated here so generation can prove the fixtures
 #: reject construction-only greedy against the very thresholds the evals use.
@@ -247,18 +266,20 @@ def cluster_track(namer: Namer, rng: random.Random, cluster: str) -> dict[str, A
 #:
 #: Selecting on the *baseline's* difficulty is what gives M4 teeth, and it
 #: cannot flatter the system under test: an instance that is hard for greedy is
-#: if anything harder for the heuristic too.
+#: if anything harder for the heuristic too.  The targets are set below the
+#: level the suite-level invariant needs, because three slots sit at 1.0 by
+#: design and drag the mean up.
 EXACT_RECIPES: tuple[tuple[int, tuple[str, ...], str, float | None], ...] = (
     (8, ("house",), "plain", None),
     (9, ("house", "indie"), "plain", None),
     (10, ("hiphop", "dnb"), "plain", None),
-    (11, ("house", "hiphop"), "plain", 0.96),
-    (12, ("indie", "dnb"), "plain", 0.96),
-    (13, ("house", "dnb"), "plain", 0.96),
-    (14, ("house", "indie", "hiphop"), "plain", 0.96),
-    (11, (), "trap", 0.96),
-    (12, (), "trap", 0.96),
-    (13, ("house", "indie"), "anchored", 0.88),
+    (11, ("house", "hiphop"), "plain", 0.93),
+    (12, ("indie", "dnb"), "plain", 0.93),
+    (13, ("house", "dnb"), "plain", 0.93),
+    (14, ("house", "indie", "hiphop"), "plain", 0.93),
+    (11, (), "trap", 0.93),
+    (12, (), "trap", 0.93),
+    (13, ("house", "indie"), "anchored", 0.85),
 )
 
 #: Tempo anchors of the trap blueprint: three genre centres that do not
@@ -489,21 +510,38 @@ def _shuffled(order: Sequence[int], seed: int) -> list[int]:
 #: generation always terminates; the suite-level invariant is what actually
 #: fails the run if the search came up short).
 TRAP_ATTEMPTS = 300
+def construction_only(
+    matrix: Sequence[Sequence[float]], start: int | None, end: int | None
+) -> float:
+    """Total the engine's *own* construction phase reaches — the degenerate flowlist.
+
+    Uses the shipped ``optimizer.construct`` rather than a re-implementation,
+    so the number is what a flowlist with its local search deleted would score.
+    """
+    from flowlist.engine.optimizer import construct
+
+    return construct(matrix, seed=7, start=start, end=end).total
+
+
 def _greedy_shortfall(
     matrix: Sequence[Sequence[float]], start: int | None, end: int | None
 ) -> float:
-    """Cheap, sound upper bound on the reference greedy's optimality ratio.
+    """Cheap, sound upper bound on the *worse* baseline's optimality ratio.
 
-    ``greedy / optimum <= greedy / heuristic`` because the heuristic can never
-    beat the optimum, so a bound below :data:`TRAP_RATIO` already proves the
-    instance defeats construction-only greedy — no Held-Karp needed while
-    searching.
+    ``baseline / optimum <= baseline / heuristic`` because the heuristic can
+    never beat the optimum, so a bound below :data:`TRAP_RATIO` already proves
+    the instance defeats that baseline — no Held-Karp needed while searching.
+
+    The bound is taken over the *stronger* of the two degenerate baselines
+    (the max of their totals), so a searched instance is hard for the engine's
+    own construction phase and not merely for the standalone reference greedy.
     """
     from flowlist.engine.optimizer import reorder
 
     _, greedy_total = reference_greedy(matrix, start, end)
+    degenerate = max(greedy_total, construction_only(matrix, start, end))
     heuristic = reorder(matrix, seed=7, start=start, end=end).total
-    return greedy_total / heuristic if heuristic else 1.0
+    return degenerate / heuristic if heuristic else 1.0
 
 
 def _build_exact_suite(namer: Namer) -> list[dict[str, Any]]:
@@ -679,10 +717,13 @@ def _measure(playlist: dict[str, Any]) -> dict[str, Any]:
         ),
     }
     anchors = playlist["anchors"]
-    # The reference greedy runs under the *same* anchors the heuristic gets, so
-    # the anchored instance's ratio compares like with like (EVALS §3-M4).
+    # Both degenerate baselines run under the *same* anchors the heuristic
+    # gets, so the anchored instance's ratios compare like with like
+    # (EVALS §3-M4).
     _, greedy_total = reference_greedy(matrix, anchors["start"], anchors["end"])
+    construct_total = construction_only(matrix, anchors["start"], anchors["end"])
     stats["greedy_only_mean"] = round(greedy_total / (n - 1), 6) if n > 1 else 0.0
+    stats["construction_only_mean"] = round(construct_total / (n - 1), 6) if n > 1 else 0.0
 
     heuristic = reorder(matrix, seed=7, start=anchors["start"], end=anchors["end"])
     stats["heuristic_mean"] = round(heuristic.total / (n - 1), 6) if n > 1 else 0.0
@@ -691,6 +732,9 @@ def _measure(playlist: dict[str, Any]) -> dict[str, Any]:
         optimum = _exact_total(matrix, anchors["start"], anchors["end"])
         stats["exact_total"] = round(optimum, 6)
         stats["greedy_only_ratio"] = round(greedy_total / optimum, 6) if optimum else 1.0
+        stats["construction_only_ratio"] = (
+            round(construct_total / optimum, 6) if optimum else 1.0
+        )
         stats["heuristic_ratio"] = round(heuristic.total / optimum, 6) if optimum else 1.0
     if playlist["planted_order"] is not None:
         planted = playlist["planted_order"]
@@ -699,6 +743,9 @@ def _measure(playlist: dict[str, Any]) -> dict[str, Any]:
         stats["planted_mean"] = round(planted_mean, 6)
         stats["planted_min"] = round(min(edges), 6)
         stats["greedy_only_recovery"] = round(greedy_total / (n - 1) / planted_mean, 6)
+        stats["construction_only_recovery"] = round(
+            construct_total / (n - 1) / planted_mean, 6
+        )
         stats["heuristic_recovery"] = round(heuristic.total / (n - 1) / planted_mean, 6)
     return stats
 
@@ -724,25 +771,35 @@ def build() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     return playlists, expected
 
 
-def greedy_m4(expected: dict[str, Any]) -> tuple[float, float]:
-    """What M4 would score if the *reference greedy* were the system under test.
+#: The two degenerate baselines, by their ``expected.json`` ratio key.
+BASELINE_KEYS = ("greedy_only_ratio", "construction_only_ratio")
 
-    The whole point of the exact suite is that these two numbers fail the M4
-    gates; if they ever pass, M4 certifies nothing about the local search.
+
+def baseline_m4(expected: dict[str, Any], key: str) -> tuple[float, float]:
+    """What M4 would score if a degenerate baseline were the system under test.
+
+    The whole point of the exact suite is that these numbers fail the M4 gates
+    for *both* baselines; if either ever passes, M4 certifies nothing about the
+    local search.
     """
     ratios = [
-        row["greedy_only_ratio"]
-        for pid, row in expected["playlists"].items()
-        if pid.startswith("exact_")
+        row[key] for pid, row in expected["playlists"].items() if pid.startswith("exact_")
     ]
     return sum(ratios) / len(ratios), min(ratios)
+
+
+def greedy_m4(expected: dict[str, Any]) -> tuple[float, float]:
+    """M4 for the standalone reference greedy (kept for the printed summary)."""
+    return baseline_m4(expected, "greedy_only_ratio")
 
 
 def check_invariants(playlists: Sequence[dict[str, Any]], expected: dict[str, Any]) -> None:
     """Fail generation rather than commit fixtures that cannot gate anything."""
     stats = expected["playlists"]
     ratios = {
-        pid: row["greedy_only_ratio"] for pid, row in stats.items() if pid.startswith("exact_")
+        pid: min(row[key] for key in BASELINE_KEYS)
+        for pid, row in stats.items()
+        if pid.startswith("exact_")
     }
     traps = [pid for pid, ratio in ratios.items() if ratio < TRAP_RATIO]
     assert len(traps) >= MIN_TRAP_INSTANCES, (
@@ -752,16 +809,19 @@ def check_invariants(playlists: Sequence[dict[str, Any]], expected: dict[str, An
     # The claim EVALS §4 makes about the fixtures is that construction-only
     # greedy *fails* M4 on them.  Per-instance traps alone do not establish
     # that (three sub-0.97 instances can still average above 0.97), so the
-    # suite-level property is asserted directly.
-    greedy_mean, greedy_min = greedy_m4(expected)
-    assert greedy_mean < M4_MEAN_GATE, (
-        f"construction-only greedy would PASS the M4_mean gate "
-        f"({greedy_mean:.4f} >= {M4_MEAN_GATE}); the exact suite is not discriminative: {ratios}"
-    )
-    assert greedy_min < M4_MIN_GATE, (
-        f"construction-only greedy would PASS the M4_min gate "
-        f"({greedy_min:.4f} >= {M4_MIN_GATE}); no instance is hard enough: {ratios}"
-    )
+    # suite-level property is asserted directly — and for *both* baselines,
+    # because the one that matters is the engine's own construction phase
+    # (REVIEW.md #24).
+    for key in BASELINE_KEYS:
+        mean, minimum = baseline_m4(expected, key)
+        assert mean < M4_MEAN_GATE - DISCRIMINATION_MARGIN, (
+            f"{key}: this degenerate baseline would PASS the M4_mean gate "
+            f"({mean:.4f} vs {M4_MEAN_GATE}); the exact suite is not discriminative: {ratios}"
+        )
+        assert minimum < M4_MIN_GATE - DISCRIMINATION_MARGIN, (
+            f"{key}: this degenerate baseline would PASS the M4_min gate "
+            f"({minimum:.4f} vs {M4_MIN_GATE}); no instance is hard enough: {ratios}"
+        )
     for pid, row in stats.items():
         if "heuristic_ratio" in row:
             assert row["heuristic_ratio"] <= 1.0 + 1e-9, f"{pid}: heuristic beat the exact optimum"
@@ -816,7 +876,15 @@ def write_goldens() -> None:
 
 
 #: The three fixtures M7 checks, one per suite (EVALS §3-M7).
-GOLDEN_FIXTURES = ("exact_07", "planted_00", "messy_00")
+#:
+#: ``planted_02`` replaced ``planted_00`` in the harden pass: the seed genuinely
+#: changes the answer there, so M7's "same seed, same order" half can actually
+#: fail.  On seed-insensitive fixtures — which the original three all were —
+#: repeatability holds even for an implementation that ignores its seed
+#: entirely, making that half of the gate vacuous (REVIEW.md #26).  M7
+#: re-asserts the seed sensitivity live, so a regeneration cannot quietly lose
+#: it.
+GOLDEN_FIXTURES = ("exact_07", "planted_02", "messy_00")
 
 
 def _catalog_index() -> dict[str, dict[str, Any]]:
@@ -846,21 +914,24 @@ def main(argv: Sequence[str] | None = None) -> int:
         write_goldens()
 
     tracks = sum(len(p["_tracks"]) for p in playlists)
-    ratios = {
-        pid: row["greedy_only_ratio"]
-        for pid, row in expected["playlists"].items()
-        if "greedy_only_ratio" in row
+    rows = {
+        pid: row for pid, row in expected["playlists"].items() if "greedy_only_ratio" in row
     }
     print(f"wrote {len(playlists)} playlists / {tracks} catalog tracks to {FIXTURES}")
-    print("reference greedy-only optimality ratios (exact suite):")
-    for pid, ratio in ratios.items():
-        flag = "  <- defeats construction greedy" if ratio < TRAP_RATIO else ""
-        print(f"  {pid}: {ratio:.4f}{flag}")
-    greedy_mean, greedy_min = greedy_m4(expected)
-    print(
-        f"construction-only greedy would score M4_mean={greedy_mean:.4f} "
-        f"(gate {M4_MEAN_GATE}) / M4_min={greedy_min:.4f} (gate {M4_MIN_GATE}) -> FAILS both"
-    )
+    print("degenerate-baseline optimality ratios (exact suite): ref greedy / engine construction")
+    for pid, row in rows.items():
+        worst = min(row[key] for key in BASELINE_KEYS)
+        flag = "  <- defeats both" if worst < TRAP_RATIO else ""
+        print(
+            f"  {pid}: {row['greedy_only_ratio']:.4f} / "
+            f"{row['construction_only_ratio']:.4f}{flag}"
+        )
+    for key in BASELINE_KEYS:
+        mean, minimum = baseline_m4(expected, key)
+        print(
+            f"{key}: M4_mean={mean:.4f} (gate {M4_MEAN_GATE}) / "
+            f"M4_min={minimum:.4f} (gate {M4_MIN_GATE}) -> FAILS both"
+        )
     return 0
 
 

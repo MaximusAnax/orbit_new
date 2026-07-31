@@ -32,17 +32,17 @@ def client(service: GrailTraderService) -> Iterator[TestClient]:
 
 
 @pytest.fixture
-def loaded(
-    client: TestClient, mini_feed: tuple[Path, Path], mini_weeks: list[str]
-) -> TestClient:
+def loaded(client: TestClient, mini_feed: tuple[Path, Path], mini_weeks: list[str]) -> TestClient:
     """A client whose store has listings, an index and one confirmed event."""
     listings, events = mini_feed
-    assert client.post(
-        "/listings/load", json={"source": "fixture", "path": str(listings)}
-    ).status_code == 200
-    assert client.post(
-        "/events/ingest", json={"source": "fixture", "path": str(events)}
-    ).status_code == 200
+    assert (
+        client.post("/listings/load", json={"source": "fixture", "path": str(listings)}).status_code
+        == 200
+    )
+    assert (
+        client.post("/events/ingest", json={"source": "fixture", "path": str(events)}).status_code
+        == 200
+    )
     assert client.post("/index/build", json={"as_of": mini_weeks[-1]}).status_code == 200
     return client
 
@@ -55,9 +55,7 @@ def test_fr12_health_reports_the_loaded_state(client: TestClient) -> None:
     assert body["listings"] == 0
 
 
-def test_fr12_listings_load_is_idempotent(
-    client: TestClient, mini_feed: tuple[Path, Path]
-) -> None:
+def test_fr12_listings_load_is_idempotent(client: TestClient, mini_feed: tuple[Path, Path]) -> None:
     listings, _ = mini_feed
     first = client.post("/listings/load", json={"path": str(listings)}).json()
     assert first["ingested"] == 60 * 3 * 9
@@ -99,9 +97,7 @@ def test_fr12_events_ingest_add_and_detail(loaded: TestClient) -> None:
     rows = loaded.get("/events").json()
     assert len(rows) == 1
     detail = loaded.get(f"/events/{rows[0]['id']}").json()
-    assert detail["targets"] == [
-        {"kind": "era", "stratum": "helmut-lang/helmut"}
-    ]
+    assert detail["targets"] == [{"kind": "era", "stratum": "helmut-lang/helmut"}]
     assert detail["priors"][0]["key"] == "designer_departure.resignation"
     assert detail["retirement_age_weeks"] == pytest.approx(26.0)
     assert detail["corroboration"] == 1
@@ -218,9 +214,7 @@ def test_fr12_backtest_run_and_fetch(loaded: TestClient, mini_weeks: list[str]) 
             "date": mini_weeks[10],
         },
     )
-    created = loaded.post(
-        "/backtests", json={"start": mini_weeks[20], "end": mini_weeks[-1]}
-    )
+    created = loaded.post("/backtests", json={"start": mini_weeks[20], "end": mini_weeks[-1]})
     assert created.status_code == 201
     run = created.json()
     assert run["aggregates"]["n_decisions"] == 40

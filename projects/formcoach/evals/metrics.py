@@ -42,10 +42,8 @@ from formcoach.engine.programming import (
     MAX_DIRECT_SETS_PER_MUSCLE_PER_SESSION,
     REST_BANDS,
     SETS_PER_SESSION_BUDGET,
-    WEEK_TARGET_RIR,
     choose_split,
     generate_program,
-    prescription_for,
     select_target_muscles,
 )
 from formcoach.engine.progression import next_prescription
@@ -58,7 +56,6 @@ from formcoach.models import (
     Datasets,
     DeclaredView,
     Equipment,
-    Exercise,
     Experience,
     FindingStatus,
     Goal,
@@ -85,9 +82,7 @@ CREATED_AT = "2026-07-31T09:00:00+00:00"
 SEED = 20260731
 
 #: M3 splits features by unit; the miss penalty is 3x the gate in each unit.
-ANGLE_FEATURES = frozenset(
-    {"trunk_lean_deg", "fppa_deg", "elbow_angle_deg", "hip_ext_angle_deg"}
-)
+ANGLE_FEATURES = frozenset({"trunk_lean_deg", "fppa_deg", "elbow_angle_deg", "hip_ext_angle_deg"})
 RATIO_FEATURES = frozenset(
     {
         "depth_ratio",
@@ -163,9 +158,7 @@ def naive_boundaries(sequence, profile) -> list[RepBoundary]:
     """
     signal = extract_signal(sequence, profile.primary_signal) or []
     work = (
-        list(signal)
-        if profile.direction is RepDirection.DOWN_UP
-        else [-value for value in signal]
+        list(signal) if profile.direction is RepDirection.DOWN_UP else [-value for value in signal]
     )
     peaks = local_maxima(work)
     if not peaks:
@@ -215,9 +208,7 @@ def _analyze_unsmoothed(sequence, profile, declared, *, engine_boundaries: bool)
     )
     reps = []
     for boundary in boundaries:
-        findings, metrics = evaluate_rep(
-            sequence, profile, boundary, resolution.view, facing
-        )
+        findings, metrics = evaluate_rep(sequence, profile, boundary, resolution.view, facing)
         reps.append(
             _RawRep(
                 rep_index=boundary.rep_index,
@@ -275,9 +266,7 @@ class Alignment:
     unmatched_pred: list[int]
 
 
-def align_reps(
-    true_reps: Sequence[dict], pred_reps: Sequence, fps: float | None
-) -> Alignment:
+def align_reps(true_reps: Sequence[dict], pred_reps: Sequence, fps: float | None) -> Alignment:
     """EVALS.md § "Rep alignment" — the single shared true/predicted pairing.
 
     Candidate pairs are those within ``0.4 * fps`` frames of one another by
@@ -342,9 +331,7 @@ def class_f1(counts: dict[tuple[str, str], dict[str, int]]) -> dict[tuple[str, s
         tp, fp, fn = c["tp"], c["fp"], c["fn"]
         precision = tp / (tp + fp) if (tp + fp) else 0.0
         recall = tp / (tp + fn) if (tp + fn) else 0.0
-        scores[key] = (
-            2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
-        )
+        scores[key] = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
     return scores
 
 
@@ -436,9 +423,7 @@ def m2_rep_count_accuracy(labels: dict, run: EngineRun) -> float:
     for clip in clips:
         result = run.result(clip["clip_id"])
         predicted = (
-            result.analysis.rep_count
-            if isinstance(result, AnalysisResult)
-            else len(result.reps)
+            result.analysis.rep_count if isinstance(result, AnalysisResult) else len(result.reps)
         )
         hits += int(predicted == clip["rep_count"])
     return hits / len(clips)
@@ -481,15 +466,15 @@ def feature_errors(labels: dict, run: EngineRun) -> tuple[list[float], list[floa
                 if not info["assessable"]:
                     continue
                 feature = info["feature"]
-                bucket = angles if feature in ANGLE_FEATURES else ratios
-                penalty = M3A_PENALTY if feature in ANGLE_FEATURES else M3B_PENALTY
+                is_angle = feature in ANGLE_FEATURES
+                assert is_angle or feature in RATIO_FEATURES, f"unclassified feature {feature}"
+                bucket = angles if is_angle else ratios
+                penalty = M3A_PENALTY if is_angle else M3B_PENALTY
                 if pj is None:
                     bucket.append(penalty)
                     continue
                 measured = pred_reps[pj].metrics.get(info["metric_key"])
-                bucket.append(
-                    penalty if measured is None else abs(measured - info["true_value"])
-                )
+                bucket.append(penalty if measured is None else abs(measured - info["true_value"]))
     return angles, ratios
 
 
@@ -562,18 +547,14 @@ def m4b_never_guess(labels: dict, run: EngineRun) -> tuple[float, int, int]:
                     continue
                 total += 1
                 finding = predicted.get(fault_id)
-                hits += int(
-                    finding is not None and finding.status is FindingStatus.NOT_ASSESSED
-                )
+                hits += int(finding is not None and finding.status is FindingStatus.NOT_ASSESSED)
         mismatched = _clip_view_mismatched_rules(clip)
         for pj in alignment.unmatched_pred:
             predicted = _findings_by_id(pred_reps[pj])
             for fault_id in mismatched:
                 total += 1
                 finding = predicted.get(fault_id)
-                hits += int(
-                    finding is not None and finding.status is FindingStatus.NOT_ASSESSED
-                )
+                hits += int(finding is not None and finding.status is FindingStatus.NOT_ASSESSED)
     return (hits / total if total else 0.0), hits, total
 
 
@@ -708,9 +689,7 @@ def program_constraint_results(
         by_week.setdefault(session.week, []).append(session)
 
     def allocations(sessions):
-        return [
-            (data.exercise(p.exercise_id), p.sets) for s in sessions for p in s.prescriptions
-        ]
+        return [(data.exercise(p.exercise_id), p.sets) for s in sessions for p in s.prescriptions]
 
     effective = {w: accumulate_effective(allocations(by_week.get(w, []))) for w in range(1, 6)}
     ok = [True] * 15
@@ -913,9 +892,7 @@ def _scenario_prescription(scenario: dict) -> Prescription:
 
 def run_scenario(scenario: dict, data: Datasets):
     exercise = data.exercise(scenario["exercise_id"])
-    variant = (
-        data.exercise(exercise.harder_variant_id) if exercise.harder_variant_id else None
-    )
+    variant = data.exercise(exercise.harder_variant_id) if exercise.harder_variant_id else None
     return next_prescription(
         _scenario_history(scenario),
         _scenario_prescription(scenario),

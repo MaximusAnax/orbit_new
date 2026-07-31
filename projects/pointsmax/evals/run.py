@@ -111,7 +111,7 @@ def regen_and_diff() -> int:
             ("generate_random_cases.py", "random_cases.json", ["--seeds", "1..10"]),
         ):
             out = Path(tmp) / name
-            proc = subprocess.run(  # noqa: S603
+            proc = subprocess.run(
                 [sys.executable, str(HERE / script), "--out", str(out), *extra],
                 capture_output=True,
                 text=True,

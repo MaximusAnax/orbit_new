@@ -61,7 +61,7 @@ def render(report: EvalReport) -> str:
     invariants = fixture_invariants()
     lines += [
         "-" * WIDTH,
-        "fixture invariants (EVALS.md §4)",
+        "fixture invariants (EVALS.md §4) — all recomputed live from the committed fixtures",
         "-" * WIDTH,
         f"bpm_only_auc                    {invariants['bpm_only_auc']:>10.4f}  "
         f"<=     0.80  {'PASS' if invariants['bpm_only_auc'] <= 0.80 else 'FAIL':<7} "
@@ -69,12 +69,15 @@ def render(report: EvalReport) -> str:
         f"exact instances below 0.97      {invariants['instances_below_0.97']:>10d}  "
         f"{'>=       3':>10}  "
         f"{'PASS' if invariants['instances_below_0.97'] >= 3 else 'FAIL':<7} "
-        "construction-only greedy provably fails on them",
-        f"greedy reference M4_mean        {invariants['greedy_M4_mean']:>10.4f}  "
-        f"{'<   0.97':>10}  "
-        f"{'PASS' if invariants['greedy_M4_mean'] < 0.97 else 'FAIL':<7} "
-        "the baseline the M4 gate must reject",
+        "a degenerate baseline provably fails on them",
     ]
+    for name, (mean, minimum) in sorted(invariants["degenerate_m4"].items()):
+        rejected = mean < 0.97 and minimum < 0.90
+        lines.append(
+            f"{name + ' M4_mean/min':<32}{mean:>10.4f}  {'<   0.97':>10}  "
+            f"{'PASS' if rejected else 'FAIL':<7} "
+            f"min {minimum:.4f} < 0.90 — the degenerate baseline the M4 gates must reject"
+        )
 
     failures = [m.name for m in gated if not m.passed]
     lines += ["=" * WIDTH]

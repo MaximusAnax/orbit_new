@@ -321,7 +321,7 @@ def enumerate_booking_sets(
         if leg_candidates and all(leg_candidates):
             combos: list[list[Booking]] = [[]]
             for column in leg_candidates:
-                combos = [row + [item] for row in combos for item in column]
+                combos = [[*row, item] for row in combos for item in column]
             sets.extend(tuple(row) for row in combos)
 
     elif goal["kind"] == "stay":
@@ -681,7 +681,6 @@ def best_funding(
     candidates = _candidate_edges(world, edges, targets, max_hops) if targets else []
     ceilings = _edge_ceilings(candidates, {p: needs[p] for p in targets})
 
-    booking_fees = sum(b.fees_cents for b in bookings)
     base_value = portfolio_value(opening, world.mcpp)
     best_transfers: tuple[Transfer, ...] | None = None
     best_key: tuple | None = None
@@ -915,7 +914,7 @@ def cash_plans(
             columns.append(column)
         combos: list[list[Booking | None]] = [[]]
         for column in columns:
-            combos = [row + [item] for row in combos for item in column]
+            combos = [[*row, item] for row in combos for item in column]
         for combo in combos:
             bookings = tuple(sorted((b for b in combo if b), key=lambda b: b.sort_key()))
             if not bookings:

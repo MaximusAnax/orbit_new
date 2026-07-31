@@ -166,3 +166,52 @@ def test_t2_fr14_live_adapter_is_not_imported_by_the_adapters_package():
     )
     assert completed.returncode == 0, completed.stderr
     assert completed.stdout.strip() == "OK"
+
+
+EVAL_PROBE = textwrap.dedent(
+    """
+    import socket
+    import sys
+
+
+    class _Blocked(socket.socket):
+        def __init__(self, *args, **kwargs):
+            raise AssertionError("the eval path must not open a socket")
+
+
+    socket.socket = _Blocked
+    socket.create_connection = lambda *a, **k: (_ for _ in ()).throw(
+        AssertionError("the eval path must not open a connection")
+    )
+
+    sys.path.insert(0, sys.argv[1])
+    from evals import metrics, run  # the scorecard's own entry point module
+    from evals.harness import load_scenario, run_pipeline
+
+    result = run_pipeline(load_scenario("scenario_b"))
+    card_rows = metrics.index_fidelity(result)
+    assert card_rows.n_cells > 0
+    assert result.real.aggregates["n_decisions"] > 0
+    assert run.VALIDITY_CAVEAT
+
+    banned = [name for name in sys.modules if "news_rss" in name or "feedparser" in name]
+    assert not banned, f"live adapter imported on the eval path: {banned}"
+    assert "requests" not in sys.modules and "urllib.request" not in sys.modules
+    print("OK")
+    """
+)
+
+
+def test_t2_fr14_eval_suite_is_hermetic(tmp_path):
+    """T2: the eval entry point itself runs with sockets blocked and no live adapter."""
+    project_root = Path(__file__).resolve().parents[1]
+    script = tmp_path / "eval_probe.py"
+    script.write_text(EVAL_PROBE, encoding="utf-8")
+    completed = subprocess.run(
+        [sys.executable, str(script), str(project_root)],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert completed.returncode == 0, completed.stderr
+    assert completed.stdout.strip().endswith("OK")

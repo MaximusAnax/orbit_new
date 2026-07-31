@@ -38,7 +38,7 @@ from flowlist.engine.models import (
     Track,
     TransitionWeights,
 )
-from flowlist.engine.optimizer import exact_optimal, reorder
+from flowlist.engine.optimizer import construct, exact_optimal, reorder
 from flowlist.engine.scoring import (
     bpm_component,
     build_matrix,
@@ -50,6 +50,7 @@ from flowlist.engine.scoring import (
 )
 from flowlist.store.memory import InMemoryRepository
 
+from evals.fixtures.generate import reference_greedy
 from flowlist import services
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
@@ -66,6 +67,7 @@ GATES: dict[str, float | None] = {
     "M3_component_monotonicity": 1.00,
     "M4_exact_optimality_mean": 0.97,
     "M4_exact_optimality_min": 0.90,
+    "M4b_degenerate_rejection": 1.00,
     "M5_planted_chain_recovery": 0.92,
     "M5_planted_chain_recovery_min": 0.85,
     "M6_baseline_margin": 0.08,
@@ -328,6 +330,100 @@ def bpm_sort_order(fixture: Fixture) -> list[int]:
 def heuristic_order(fixture: Fixture, seed: int = EVAL_SEED) -> list[int]:
     """What the system under test proposes for this fixture."""
     return reorder(matrix_of(fixture.id), seed=seed, start=fixture.start, end=fixture.end).order
+
+
+# ------------------------- degenerate baselines (EVALS §3-M4b, computed live) #
+
+
+def construction_only_order(fixture: Fixture, seed: int = EVAL_SEED) -> list[int]:
+    """What a flowlist with its local search deleted would propose.
+
+    ``optimizer.construct`` *is* the shipped construction phase (D6 step 1), so
+    this baseline is the real degenerate implementation, not a re-implementation
+    of it.  That distinction is load-bearing: the standalone
+    :func:`reference_greedy` is weaker under anchors, and gating only against
+    it left the M4 thresholds passable by construction-only flowlist
+    (REVIEW.md #24).
+    """
+    return construct(matrix_of(fixture.id), seed=seed, start=fixture.start, end=fixture.end).order
+
+
+def reference_greedy_order(fixture: Fixture) -> list[int]:
+    """The standalone all-starts best-next walk from ``evals/fixtures/generate.py``.
+
+    Independent of ``src/flowlist`` by construction, which is what keeps the
+    discrimination claim from being entirely self-referential.
+    """
+    order, _ = reference_greedy(matrix_of(fixture.id), fixture.start, fixture.end)
+    return order
+
+
+#: The degenerate baselines M4b must reject, as ``name -> order function``.
+DEGENERATE_BASELINES: dict[str, Any] = {
+    "construction_only": construction_only_order,
+    "reference_greedy": reference_greedy_order,
+}
+
+
+@lru_cache(maxsize=1)
+def degenerate_m4() -> dict[str, tuple[float, float]]:
+    """M4 (mean, min) for each degenerate baseline — computed live, never read.
+
+    EVALS §4's discrimination invariant asserts these *fail* the M4 gates; the
+    whole point is that a value read out of ``expected.json`` could go stale
+    against edited fixtures, so the numbers the scorecard prints and the gate
+    checks are recomputed from the committed matrices every run.
+    """
+    out: dict[str, tuple[float, float]] = {}
+    for name, order_for in DEGENERATE_BASELINES.items():
+        ratios = []
+        for fixture in suite("exact"):
+            matrix = matrix_of(fixture.id)
+            optimum = exact_optimal(matrix, fixture.start, fixture.end).total
+            ratios.append(order_total(order_for(fixture), matrix) / optimum if optimum else 1.0)
+        out[name] = (sum(ratios) / len(ratios), min(ratios))
+    return out
+
+
+@lru_cache(maxsize=1)
+def degenerate_recovery() -> dict[str, float]:
+    """M5-style planted-chain recovery for each degenerate baseline, live."""
+    out: dict[str, float] = {}
+    for name, order_for in DEGENERATE_BASELINES.items():
+        ratios = []
+        for fixture in suite("planted"):
+            assert fixture.planted_order is not None
+            matrix = matrix_of(fixture.id)
+            planted = order_mean(fixture.planted_order, matrix)
+            ratios.append(order_mean(order_for(fixture), matrix) / planted if planted else 1.0)
+        out[name] = sum(ratios) / len(ratios)
+    return out
+
+
+def m4b_degenerate_rejection() -> MetricResult:
+    """1.0 iff every degenerate baseline fails *both* M4 gates on this suite.
+
+    This is EVALS §4's discrimination invariant promoted to a gate, so a
+    fixture suite that stops discriminating fails the run instead of quietly
+    certifying nothing.  Written as a gate rather than a margin because the
+    property is exactly "the thresholds M4 uses reject the degenerate
+    implementation" — no second threshold to argue about.
+    """
+    mean_gate = GATES["M4_exact_optimality_mean"]
+    min_gate = GATES["M4_exact_optimality_min"]
+    assert mean_gate is not None and min_gate is not None
+    scores = degenerate_m4()
+    rejected = {
+        name: (mean < mean_gate and minimum < min_gate) for name, (mean, minimum) in scores.items()
+    }
+    detail = "; ".join(
+        f"{name} M4_mean={mean:.4f}/M4_min={minimum:.4f} "
+        f"{'rejected' if rejected[name] else 'WOULD PASS M4'}"
+        for name, (mean, minimum) in sorted(scores.items())
+    )
+    return gated(
+        "M4b_degenerate_rejection", 1.0 if all(rejected.values()) else 0.0, detail
+    )
 
 
 # --------------------------------------------------------------------------- #
@@ -656,14 +752,8 @@ def m4_exact_optimality() -> tuple[MetricResult, MetricResult]:
 
 
 def greedy_reference_m4() -> tuple[float, float]:
-    """What M4 would score for the committed reference greedy (informational).
-
-    Read from ``expected.json``: this is a *fixture* property (EVALS §4's
-    discrimination invariant), not a measurement of the system under test.
-    """
-    rows = expected()["playlists"]
-    ratios = [row["greedy_only_ratio"] for pid, row in rows.items() if pid.startswith("exact_")]
-    return sum(ratios) / len(ratios), min(ratios)
+    """M4 for the standalone reference greedy — computed live (EVALS §3-M4b)."""
+    return degenerate_m4()["reference_greedy"]
 
 
 # --------------------------------------------------------------------------- #
@@ -671,7 +761,7 @@ def greedy_reference_m4() -> tuple[float, float]:
 # --------------------------------------------------------------------------- #
 
 
-def m5_planted_recovery() -> tuple[MetricResult, MetricResult, float]:
+def m5_planted_recovery() -> tuple[MetricResult, MetricResult]:
     """Heuristic mean over planted-chain mean, clamped at 1.0 before averaging."""
     ratios: dict[str, float] = {}
     for fixture in suite("planted"):
@@ -686,13 +776,9 @@ def m5_planted_recovery() -> tuple[MetricResult, MetricResult, float]:
     detail = f"{len(ratios)} chains, n=50-150; unclamped " + ", ".join(
         f"{k}={v:.3f}" for k, v in ratios.items()
     )
-    greedy_recovery = sum(
-        expected()["playlists"][fid]["greedy_only_recovery"] for fid in ratios
-    ) / len(ratios)
     return (
         gated("M5_planted_chain_recovery", sum(clamped) / len(clamped), detail),
         gated("M5_planted_chain_recovery_min", min(ratios.values()), f"worst instance {worst}"),
-        greedy_recovery,
     )
 
 
@@ -806,6 +892,7 @@ def m7_determinism() -> tuple[MetricResult, list[str]]:
     notes: list[str] = []
     ok = True
     goldens = golden_orderings()
+    seed_sensitive = False
 
     for fixture_id in sorted(goldens):
         fixture = by_id(fixture_id)
@@ -822,6 +909,7 @@ def m7_determinism() -> tuple[MetricResult, list[str]]:
         if sorted(other) != list(range(fixture.n)):
             ok = False
             notes.append(f"{fixture_id}: seed {EVAL_SEED + 1} did not return a permutation")
+        seed_sensitive = seed_sensitive or other != first
 
         if [fixture.track_ids[i] for i in first] != goldens[fixture_id]:
             ok = False
@@ -857,7 +945,21 @@ def m7_determinism() -> tuple[MetricResult, list[str]]:
             ok = False
             notes.append(f"{fixture_id}: the persisted run disagrees with the pure-engine order")
 
-    detail = f"{len(goldens)} fixtures: repeatability, run-aggregate consistency, goldens"
+    # Vacuity guard: "same seed, same order" is satisfied for free by an
+    # implementation that ignores its seed, so at least one M7 fixture must be
+    # one where the seed genuinely changes the answer.  Without this the
+    # repeatability half of the gate certifies nothing (REVIEW.md #26).
+    if not seed_sensitive:
+        ok = False
+        notes.append(
+            "no M7 fixture is seed-sensitive: the repeatability check cannot fail, "
+            "so it certifies nothing — put a seed-sensitive fixture in golden_orderings.json"
+        )
+
+    detail = (
+        f"{len(goldens)} fixtures: repeatability, run-aggregate consistency, goldens; "
+        f"seed-sensitive fixture present={seed_sensitive}"
+    )
     if notes:
         detail += "; " + "; ".join(notes[:3])
     return gated("M7_determinism", 1.0 if ok else 0.0, detail), notes
@@ -868,12 +970,13 @@ def m7_determinism() -> tuple[MetricResult, list[str]]:
 # --------------------------------------------------------------------------- #
 
 
-def report_rows(rows: Sequence[MessyRow], greedy_recovery: float) -> list[MetricResult]:
+def report_rows(rows: Sequence[MessyRow]) -> list[MetricResult]:
     worst_improvement = sum(row.min_after - row.min_before for row in rows) / len(rows)
     seamless_fraction = sum(row.seamless_after for row in rows) / sum(
         row.transitions for row in rows
     )
-    greedy_mean, greedy_min = greedy_reference_m4()
+    scores = degenerate_m4()
+    recovery = degenerate_recovery()
 
     largest = max(suite("planted"), key=lambda f: f.n)
     matrix = matrix_of(largest.id)  # built outside the timed section
@@ -881,7 +984,7 @@ def report_rows(rows: Sequence[MessyRow], greedy_recovery: float) -> list[Metric
     reorder(matrix, seed=EVAL_SEED)
     elapsed = time.perf_counter() - started
 
-    return [
+    out = [
         report_only(
             "worst_transition_improvement",
             worst_improvement,
@@ -892,23 +995,30 @@ def report_rows(rows: Sequence[MessyRow], greedy_recovery: float) -> list[Metric
             seamless_fraction,
             f"transitions >= {SEAMLESS_THRESHOLD:.2f} on the messy suite",
         ),
-        report_only(
-            "greedy_only_recovery",
-            greedy_recovery,
-            "reference construction-only greedy on the planted suite (from expected.json)",
-        ),
-        report_only(
-            "greedy_only_M4_mean",
-            greedy_mean,
-            f"reference greedy would score M4_mean={greedy_mean:.4f} / "
-            f"M4_min={greedy_min:.4f} - it fails both gates, which is what makes M4 bite",
-        ),
+    ]
+    for name in sorted(DEGENERATE_BASELINES):
+        mean, minimum = scores[name]
+        out += [
+            report_only(
+                f"{name}_M4_mean",
+                mean,
+                f"degenerate baseline, live: M4_mean={mean:.4f} / M4_min={minimum:.4f} "
+                "- it fails both M4 gates, which is what makes M4 bite (M4b)",
+            ),
+            report_only(
+                f"{name}_recovery",
+                recovery[name],
+                "the same degenerate baseline's M5-style recovery on the planted suite",
+            ),
+        ]
+    out.append(
         report_only(
             "reorder_wall_time_s",
             elapsed,
             f"{largest.id} (n={largest.n}), informational; the n=500 NFR is a slow-marked test",
-        ),
-    ]
+        )
+    )
+    return out
 
 
 def baseline_rows(rows: Sequence[MessyRow]) -> list[MetricResult]:
@@ -954,7 +1064,8 @@ def evaluate() -> EvalReport:
     m4_mean, m4_min = m4_exact_optimality()
     report.add(m4_mean)
     report.add(m4_min)
-    m5, m5_min, greedy_recovery = m5_planted_recovery()
+    report.add(m4b_degenerate_rejection())
+    m5, m5_min = m5_planted_recovery()
     report.add(m5)
     report.add(m5_min)
     rows = messy_rows()
@@ -962,24 +1073,61 @@ def evaluate() -> EvalReport:
     report.add(m6)
     report.add(m6_min)
     report.add(m7_determinism()[0])
-    for extra in baseline_rows(rows) + report_rows(rows, greedy_recovery):
+    for extra in baseline_rows(rows) + report_rows(rows):
         report.add(extra)
     return report
 
 
+#: ``expected.json`` ratio key per degenerate baseline, for the live-vs-committed
+#: reconciliation below.
+_EXPECTED_RATIO_KEYS = {
+    "construction_only": "construction_only_ratio",
+    "reference_greedy": "greedy_only_ratio",
+}
+
+
+def live_degenerate_ratios() -> dict[str, dict[str, float]]:
+    """Per-instance degenerate ratios, recomputed rather than read."""
+    out: dict[str, dict[str, float]] = {}
+    for name, order_for in DEGENERATE_BASELINES.items():
+        per_instance: dict[str, float] = {}
+        for fixture in suite("exact"):
+            matrix = matrix_of(fixture.id)
+            optimum = exact_optimal(matrix, fixture.start, fixture.end).total
+            per_instance[fixture.id] = (
+                order_total(order_for(fixture), matrix) / optimum if optimum else 1.0
+            )
+        out[name] = per_instance
+    return out
+
+
 def fixture_invariants() -> dict[str, Any]:
-    """The fixture properties EVALS §4 requires CI to re-assert."""
+    """The fixture properties EVALS §4 requires CI to re-assert.
+
+    Everything here is *live* except the planted-chain band and the committed
+    ratios, which are kept only so the test can prove ``expected.json`` still
+    matches what the fixtures actually do (a stale generator-measured file is
+    the one way a committed number could quietly stop being true).
+    """
     rows = expected()["playlists"]
-    ratios = {
-        pid: row["greedy_only_ratio"] for pid, row in rows.items() if pid.startswith("exact_")
+    live = live_degenerate_ratios()
+    worst_per_instance = {
+        fixture_id: min(live[name][fixture_id] for name in live) for fixture_id in live["construction_only"]
     }
-    greedy_mean, greedy_min = greedy_reference_m4()
     return {
         "bpm_only_auc": bpm_only_auc(),
-        "greedy_only_ratios": ratios,
-        "instances_below_0.97": sum(1 for r in ratios.values() if r < 0.97),
-        "greedy_M4_mean": greedy_mean,
-        "greedy_M4_min": greedy_min,
+        "degenerate_ratios": live,
+        "worst_degenerate_ratios": worst_per_instance,
+        "instances_below_0.97": sum(1 for r in worst_per_instance.values() if r < 0.97),
+        "degenerate_m4": degenerate_m4(),
+        "committed_ratios": {
+            name: {
+                pid: row[key]
+                for pid, row in rows.items()
+                if pid.startswith("exact_") and key in row
+            }
+            for name, key in _EXPECTED_RATIO_KEYS.items()
+        },
         "planted": {
             pid: (row["planted_mean"], row["planted_min"])
             for pid, row in rows.items()
@@ -989,6 +1137,7 @@ def fixture_invariants() -> dict[str, Any]:
 
 
 __all__ = [
+    "DEGENERATE_BASELINES",
     "EPOCH",
     "GATES",
     "EvalReport",
@@ -1001,6 +1150,9 @@ __all__ = [
     "bpm_sort_order",
     "by_id",
     "catalog",
+    "construction_only_order",
+    "degenerate_m4",
+    "degenerate_recovery",
     "evaluate",
     "expected",
     "fixture_invariants",
@@ -1010,14 +1162,17 @@ __all__ = [
     "heuristic_order",
     "identity_order",
     "key_relation_table",
+    "live_degenerate_ratios",
     "m1_key_relation_accuracy",
     "m2_pair_ranking_auc",
     "m3_checks",
     "m3_component_monotonicity",
     "m4_exact_optimality",
+    "m4b_degenerate_rejection",
     "m5_planted_recovery",
     "m6_baseline_margin",
     "m7_determinism",
+    "reference_greedy_order",
     "matrix_of",
     "messy_rows",
     "order_mean",

@@ -6,10 +6,9 @@ auditable, as CONVENTIONS.md requires.
 
 from __future__ import annotations
 
-import pytest
-
 import baselines
 import metrics
+import pytest
 from d0 import check_determinism, check_ledger_replay, check_world_pin
 
 

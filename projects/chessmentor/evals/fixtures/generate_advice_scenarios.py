@@ -192,19 +192,17 @@ def scenarios() -> list[dict[str, object]]:
         }
     )
 
-    # 7 — sum, count and recency tie broken by category name.
+    # 7 — sum, count and ply tie broken by which *game* is more recent.
     data.append(
         {
             "id": "as-07",
-            "description": "a total tie falls through to alphabetical category order",
+            "description": (
+                "equal sums, counts and plies across two games; the category whose worst "
+                "instance is in the more recent game ranks first"
+            ),
             "games": [
-                _game(
-                    1,
-                    [
-                        _move(21, "Nd5", "hung_piece", "middlegame", 0.25),
-                        _move(21, "Bg5", "bad_trade", "middlegame", 0.25),
-                    ],
-                )
+                _game(1, [_move(21, "Nd5", "hung_piece", "middlegame", 0.25)]),
+                _game(2, [_move(21, "Bg5", "bad_trade", "middlegame", 0.25)]),
             ],
             "intent": ["bad_trade", "hung_piece"],
         }

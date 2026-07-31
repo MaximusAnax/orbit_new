@@ -266,7 +266,8 @@ src/almanac/
     stats.py      FR-14 report and the capacity identity
   adapters/       Clock, IdFactory, PromptPersonalizer, AttributionChecker
   store/          Repository interface, SQLite (FTS5) + in-memory backends
-  api/  cli/      thin edges
+  api/            FastAPI app (routes.py) — `uvicorn almanac.api:app`
+  cli/            Typer app (main.py) and the plain-text renderers
 data/             themes, prompts, scheduler params, misattributions, starter pack
 evals/            fixtures, personas, simulate, metrics, run, test_gates
 ```

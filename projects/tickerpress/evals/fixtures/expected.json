@@ -59,71 +59,67 @@
     ],
     "v003-1": [
       "alt_title",
-      "outlet_prefix",
-      "drop:1,3",
+      "drop:3",
       "boilerplate"
     ],
     "v003-2": [
       "alt_title",
+      "outlet_prefix",
       "drop:3",
       "boilerplate"
     ],
     "v003-3": [
       "alt_title",
       "outlet_prefix",
-      "drop:3",
       "boilerplate"
     ],
     "v003-4": [
       "alt_title",
-      "outlet_prefix",
       "boilerplate"
     ],
     "v004-1": [
       "alt_title",
+      "outlet_prefix",
       "boilerplate"
     ],
     "v004-2": [
       "alt_title",
-      "outlet_prefix",
+      "drop:3",
       "boilerplate"
     ],
     "v004-3": [
       "alt_title",
+      "outlet_prefix",
       "drop:3",
       "boilerplate"
     ],
     "v004-4": [
       "alt_title",
-      "outlet_prefix",
-      "drop:3",
       "boilerplate"
     ],
     "v005-1": [
       "alt_title",
-      "drop:0",
+      "outlet_prefix",
       "boilerplate",
       "same_canonical_url"
     ],
     "v005-2": [
       "alt_title",
       "outlet_prefix",
-      "drop:0",
       "boilerplate"
     ],
     "v006-1": [
       "alt_title",
-      "outlet_prefix",
       "boilerplate",
       "same_canonical_url"
     ],
     "v006-2": [
       "alt_title",
-      "drop:0",
       "boilerplate"
     ],
     "v007-1": [
       "alt_title",
+      "outlet_prefix",
       "boilerplate"
     ],
     "v007-2": [
@@ -134,7 +130,6 @@
     "v008-1": [
       "alt_title",
       "outlet_prefix",
-      "drop:0",
       "boilerplate"
     ],
     "v008-2": [
@@ -145,12 +140,11 @@
     ],
     "v009-1": [
       "alt_title",
-      "outlet_prefix",
-      "drop:0",
       "boilerplate"
     ],
     "v009-2": [
       "alt_title",
+      "drop:0",
       "boilerplate"
     ],
     "v010-1": [
@@ -160,26 +154,24 @@
     ],
     "v010-2": [
       "alt_title",
-      "drop:0",
       "boilerplate"
     ],
     "v011-1": [
       "alt_title",
+      "outlet_prefix",
       "boilerplate"
     ],
     "v011-2": [
       "alt_title",
-      "outlet_prefix",
       "boilerplate"
     ],
     "v012-1": [
       "alt_title",
-      "outlet_prefix",
       "boilerplate"
     ],
     "v012-2": [
       "alt_title",
-      "drop:0",
+      "outlet_prefix",
       "boilerplate"
     ],
     "v013-1": [
@@ -215,7 +207,6 @@
     "v018-1": [
       "alt_title",
       "outlet_prefix",
-      "drop:0,2",
       "boilerplate",
       "same_canonical_url"
     ],

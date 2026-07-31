@@ -55,6 +55,23 @@
       "bookable_until": null,
       "cabin": "business",
       "city": null,
+      "destination": "MIA",
+      "fees_cents": 50000,
+      "id": "dlx_saver_nyc_mia",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 20000,
+      "program_id": "dlx",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
       "destination": "NYC",
       "fees_cents": 5600,
       "id": "uax_bus_mia_nyc",
@@ -569,7 +586,7 @@
   ],
   "version.json": {
     "as_of": "2026-07-01",
-    "content_hash": "c4c53de38d1e7b43d9bc6c1f298b2713ca0bc4b45c2c62982826112bf3001c25",
+    "content_hash": "aa4182894b032e7f47322270e4bfa31868c24770f7f8e1ed82435977782a7259",
     "version": "1.0.0"
   }
 }

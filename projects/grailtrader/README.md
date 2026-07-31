@@ -232,7 +232,7 @@ clean-sale counts and outlier labels all come from `generate_scenario.py`'s
 construction parameters, and the FR-9 compliance check is re-implemented
 independently in `evals/metrics.py` so the engine cannot grade itself.
 
-**29/29 gates pass in ~60 s.** Headline numbers (full table on the scorecard):
+**29/29 gates pass in ~45 s** (the whole `pytest grailtrader/` suite, 294 tests including the gates, takes ~75 s). Headline numbers (full table on the scorecard):
 
 | Metric | Measured | Gate | Naive baseline |
 |---|---|---|---|

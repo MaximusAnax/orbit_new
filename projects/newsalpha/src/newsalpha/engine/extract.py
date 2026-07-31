@@ -237,7 +237,23 @@ def _extraction_confidence(pattern: EventPattern, attributes: dict[str, object])
 
 
 def extract_from_article(article: Article, datasets: Datasets) -> list[TriggerMatch]:
-    """Every surviving pattern firing in one article, in (sentence, pattern id) order."""
+    """Every surviving pattern firing in one article, in (sentence, pattern id) order.
+
+    Memoized per article id: the id is derived from the content hash
+    (DATA_MODEL.md), so the same id always carries the same analysis text and the
+    memo cannot change an answer.  It matters because FR-15's active-window
+    recompute re-runs this pass over every stored in-window article on every
+    ingest.  Callers must not mutate the returned list.
+    """
+    cache: dict[str, list[TriggerMatch]] = datasets.gazetteer_cache.setdefault("triggers", {})
+    cached = cache.get(article.id)
+    if cached is None:
+        cached = _extract_from_article(article, datasets)
+        cache[article.id] = cached
+    return cached
+
+
+def _extract_from_article(article: Article, datasets: Datasets) -> list[TriggerMatch]:
     text = article.analysis_text
     sentences = split_sentences(text, datasets.lexicons.abbreviations)
     article_year = parse_iso(article.published_at).year

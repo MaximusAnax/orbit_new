@@ -243,7 +243,12 @@ class SQLiteRepository:
         self.path = str(path)
         if self.path != ":memory:":
             Path(self.path).parent.mkdir(parents=True, exist_ok=True)
-        self.connection = sqlite3.connect(self.path)
+        # ``check_same_thread=False``: FastAPI runs synchronous endpoints in a
+        # worker thread, so the connection outlives the thread that opened it.
+        # FormCoach is single-user and every write below runs inside a
+        # ``with self.connection`` transaction, so serialization is sqlite3's
+        # own module-level lock rather than anything this class has to invent.
+        self.connection = sqlite3.connect(self.path, check_same_thread=False)
         self.connection.row_factory = sqlite3.Row
         self.connection.execute("PRAGMA foreign_keys = ON")
 

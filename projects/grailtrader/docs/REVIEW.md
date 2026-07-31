@@ -85,3 +85,35 @@ updated to match. The revised estimate is **~3,000–3,800 lines** of
   formulas (λ = 1, σ_w = 0.035, z₄ = 1.6597 ⇒ H* = 4, r̂ = 0.1232,
   conf = 0.65 ⇒ **buy**) and its fair value is formula-verifiable
   (1,236.00 × 125.0/118.0 = 1,309.32).
+
+---
+
+## Implementation-stage findings (surface + evals build)
+
+The scoping loop above froze the three specification documents. Building the eval
+suite against them surfaced four places where a *fixture construction parameter*
+or an *implementation detail* stated in EVALS/SCOPE could not be satisfied as
+written. Each is recorded here with its derivation, in the spirit of EVALS'
+own rule that "if fixture composition changes, every baseline number, every
+construction estimate and `z_half` must be re-derived in the same commit".
+
+**No gate threshold was lowered, weakened or removed.** All 29 gates run at the
+values EVALS specifies, and all 29 pass.
+
+| # | Change | Why it was forced | Effect |
+|---|---|---|---|
+| G1 | **Planted diffusion lag: a flat 2 weeks → 3–12 weeks, assigned per event type** (viral news — a designer's death, collabs, co-signs — diffuses in 3–4 weeks; structural re-ratings — departures, appointments, scandals — over 8–12). | Two independent arithmetic problems with a flat 2. (a) *M1a-p90 becomes unachievable.* The recovered index at week t is a 4-week trailing median, so it estimates the truth at ≈ t−1.5; an impact of size Δ (log) phased in over L weeks moves the truth Δ/L per week, so the tracking error inside the phase-in is ≈ 1.5·Δ/L. The largest planted move is a death (Δ = ln 1.45 = 0.372): at L = 2 that is a **0.28** error on the ~10 % of cells inside impact windows, which blows the `M1a-p90 ≤ 0.14` gate for *any* correct implementation. L ≥ 1.5·0.372/0.14 = 4.0 is required, and the split above gives 0.09–0.14 for the fast events and 0.03–0.05 for the slow ones. (b) *The buy leg becomes a coin flip.* Entry is week t+1 and the index lags ~2 weeks, so with L = 2 the truth has finished moving before the advisor can act on it; the advisor still buys (its observed index has not caught up) and the realized move is the decay. Hand-simulating a resignation prior gives ≈ 50 % hits at L = 2 versus ≈ 90 % at L ≥ 6 — SCOPE D-9's "sellers reprice slowly, and the gap *is* the trade" only holds if repricing is slower than the index's own smoothing. | M1a-p90 = 0.073 (gate 0.14); M2a = 0.834 (gate 0.70). The fast-diffusing death clusters are what keep the sell-into-decay regime reachable (M0d = 94, gate 15). |
+| G2 | **Latent GBM: weekly σ 2 % → 0.8 %.** | An event stays active for up to `A_e = 26` weeks (FR-6) and FR-8 holds the baseline `B` fixed at the last observation before the earliest active event, so the modelled-vs-observed gap is exposed to the stratum's own random walk for the whole window. At 2 %/week the 20-week drift has sd 0.089, so \|r̂\| clears `theta = 0.12` on ≈ 27 % of late-window cells **from noise alone**. Those cells are coin flips by construction — a driftless random walk has no mean reversion, and the realized return is measured on the truth, so the noise that created the signal cannot also predict it. They would have capped M2a near 0.65 for any implementation, contradicting EVALS' own "M2a ≈ 0.82 achievable". At 0.8 %/week the same figure is ≈ 7 %. | σ_w on dense strata is ≈ 0.027 rather than EVALS' derived 0.033–0.039; `z_half = 0.5` is unchanged and still maps a marginal candidate to `z_term` ≈ 0.95. The confidence buckets remain populated (50 / 238 / 303) and M3b's margin is +0.24, so the curve is not overclaiming at the new noise level. |
+| G3 | **M6c is computed over scenario-B buckets with ≥ 10 candidates**, and the skipped buckets are printed on the scorecard. | EVALS sets the ≥ 25-per-bucket population floor as **M0c, for scenario A only**, and deliberately sizes scenario B at a sixth of A (20 garments, 80 weeks, 16 events). Its `lo` bucket holds 3 candidates, and a 3-sample hit rate cannot support an anti-overclaim comparison in either direction: it is a coin flip, not a measurement. Gating it would be gating noise; ignoring the population entirely would violate EVALS' denominator rule. The floor is therefore explicit, printed, and the metric names the buckets it gated. | M6c = 0.169 over `mid` (n = 122) and `hi` (n = 136); the `lo` bucket is reported (n = 3) and excluded. |
+| G4 | **`displace_events` now takes the replay's observable week span** and does not draw offsets that push an event outside it (`engine/backtest.py`). | The FR-10 redraw rule rejects an offset whose displaced active window overlaps a true impact window. Outside the scenario's own timeline nothing overlaps, so the rule *preferred* offsets that evacuated the fixture: on scenario A only **11–15 of 44** events survived inside the observable range, placebo `N_actionable` fell to 267 (M0e floor is 400) and the surviving handful of episodes made the placebo hit rate a 0.57 outlier — a false positive for leakage. The span constraint is the missing half of the rule's intent, not a relaxation of it: the fallback when *every* offset overlaps now also picks the least-overlapping offset rather than a uniform draw. | Placebo `N_actionable` 484–496 per seed; M4a = 0.017 and M4b = 0.001 on the worst of the three committed seeds. |
+
+Fixture composition otherwise matches EVALS exactly: 8 fictional brands / 18 eras
+/ 36 leaf strata (30 dense + 6 sparse) / 120 weeks / 34,890 sold + 3,087 ask-only
+listings / 44 events in the specified type-and-attribute mix (4 reported twice,
+none impact-bearing after week 90) / 36 garments, 3 of whose labels carry
+forbidden-lexicon words; and scenario B at 5 brands / 20 dense leaves / 80 weeks /
+15,177 sold listings / 16 events, 3 of which contradict their prior. The sparse
+strata sit at λ = 1.45–1.6 (inside EVALS' documented 0.8–1.6 band) — at the low
+end of that band a single stratum's per-window sample falls to ~4.8 clean sales
+and its median error to 0.134, over the `M1a-sparse ≤ 0.12` bound that the same
+document derives for n ≈ 5–7.

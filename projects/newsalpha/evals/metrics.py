@@ -83,9 +83,11 @@ REFERENCE_FORBIDDEN_LEXICON: tuple[str, ...] = (
     "you must",
 )
 
+#: `"..." -- domain` or `"..." (domain)`.  The dash class covers the ASCII hyphen
+#: plus the en and em dashes, spelled as escapes so they cannot be misread.
 _ATTRIBUTED_QUOTE_RE = re.compile(
-    r"[\"“]([^\"“”]*)[\"”]\s*(?:[-–—]{1,2}\s*|\(\s*)"
-    r"[A-Za-z0-9][A-Za-z0-9._\- ]*"
+    '["\u201c]([^"\u201c\u201d]*)["\u201d]'
+    "\\s*(?:[-\u2013\u2014]{1,2}\\s*|\\(\\s*)[A-Za-z0-9][A-Za-z0-9._\\- ]*"
 )
 
 
@@ -257,8 +259,7 @@ def alignment() -> dict[str, Event]:
     pred = prediction()
     external = {article.id: article.external_id for article in pred.articles}
     members = {
-        cluster.id: frozenset(external[a] for a in cluster.article_ids)
-        for cluster in pred.clusters
+        cluster.id: frozenset(external[a] for a in cluster.article_ids) for cluster in pred.clusters
     }
     out: dict[str, Event] = {}
     for truth_event in corpus().events:
@@ -266,9 +267,9 @@ def alignment() -> dict[str, Event]:
         for event in pred.events:
             got = members[event.cluster_id]
             overlap = len(got & want)
-            if overlap * 2 > len(got) and overlap * 2 > len(want):
-                if event.event_type.value == truth_event["event_type"]:
-                    out[truth_event["key"]] = event
+            aligned = overlap * 2 > len(got) and overlap * 2 > len(want)
+            if aligned and event.event_type.value == truth_event["event_type"]:
+                out[truth_event["key"]] = event
     return out
 
 
@@ -278,9 +279,7 @@ def predicted_families() -> dict[str, str]:
     pred = prediction()
     families = corpus().truth["families"]
     external = {article.id: article.external_id for article in pred.articles}
-    members = {
-        cluster.id: [external[a] for a in cluster.article_ids] for cluster in pred.clusters
-    }
+    members = {cluster.id: [external[a] for a in cluster.article_ids] for cluster in pred.clusters}
     out: dict[str, str] = {}
     for event in pred.events:
         labels = [families[m] for m in members[event.cluster_id]]
@@ -403,9 +402,7 @@ def m2a(family: str = "val") -> tuple[float, dict[str, int]]:
 @lru_cache(maxsize=1)
 def _mentions_by_article() -> dict[str, list[Any]]:
     pred = prediction()
-    return {
-        article.external_id: scan_mentions(article, datasets()) for article in pred.articles
-    }
+    return {article.external_id: scan_mentions(article, datasets()) for article in pred.articles}
 
 
 def m2b() -> tuple[float, list[dict[str, Any]]]:
@@ -421,10 +418,7 @@ def m2b() -> tuple[float, list[dict[str, Any]]]:
             if m.start < trap["end"] and trap["start"] < m.end
         ]
         linked = {m.asset_id for m in overlapping}
-        if trap["asset_id"] is None:
-            ok = not linked
-        else:
-            ok = trap["asset_id"] in linked
+        ok = not linked if trap["asset_id"] is None else trap["asset_id"] in linked
         if ok:
             correct += 1
         else:
@@ -450,9 +444,7 @@ def m3() -> tuple[float, list[dict[str, Any]]]:
     for decision in decisions:
         event = aligned.get(decision["event_key"])
         roles = (
-            {link.asset_id: link.role.value for link in grouped.get(event.id, [])}
-            if event
-            else {}
+            {link.asset_id: link.role.value for link in grouped.get(event.id, [])} if event else {}
         )
         if event is None:
             ok = False
@@ -460,8 +452,7 @@ def m3() -> tuple[float, list[dict[str, Any]]]:
             ok = roles.get(decision["asset_id"]) == decision["expected_role"]
         elif decision["kind"] == "abstention":
             ok = not any(role in ("acquirer", "target") for role in roles.values()) and not any(
-                signals_by_asset.get((event.id, asset_id))
-                for asset_id in decision["asset_ids"]
+                signals_by_asset.get((event.id, asset_id)) for asset_id in decision["asset_ids"]
             )
         else:
             ok = roles.get(decision["subject_asset_id"]) == "subject"
@@ -501,7 +492,7 @@ def scored_signals() -> tuple[Signal, ...]:
 @lru_cache(maxsize=8)
 def _bars_for_seed(seed: int) -> tuple[Any, ...]:
     market = FixtureMarketData(FIXTURES / "market" / f"seed_{seed}")
-    wanted = sorted({s.asset_id for s in scored_signals()}) + ["idx:US", "idx:CX"]
+    wanted = [*sorted({s.asset_id for s in scored_signals()}), "idx:US", "idx:CX"]
     start, end = date(2000, 1, 1), date(2100, 1, 1)
     bars: list[Any] = []
     for asset_id in wanted:
@@ -534,9 +525,7 @@ def run_seed(seed: int, placebo_seed: int | None = None) -> SeedRun:
         excluded_by_reason=dict(aggregates.excluded_by_reason),
         hit_rate=sum(1 for r in included if r.hit) / len(included) if included else 0.0,
         ic=spearman(scores, ars),
-        buckets={
-            name: (stats.n, stats.hit) for name, stats in sorted(aggregates.buckets.items())
-        },
+        buckets={name: (stats.n, stats.hit) for name, stats in sorted(aggregates.buckets.items())},
     )
 
 
@@ -582,8 +571,8 @@ def m6() -> tuple[float, list[float], dict[str, int]]:
     occupancy: dict[str, int] = {}
     for seed in market_seeds():
         run = run_seed(seed)
-        lo_n, lo_hit = run.buckets["lo"]
-        hi_n, hi_hit = run.buckets["hi"]
+        _lo_n, lo_hit = run.buckets["lo"]
+        _hi_n, hi_hit = run.buckets["hi"]
         per_seed.append((hi_hit or 0.0) - (lo_hit or 0.0))
         for name, (count, _hit) in run.buckets.items():
             occupancy[name] = count
@@ -692,8 +681,11 @@ def abstentions() -> tuple[int, int, dict[str, int]]:
         for note in notes:
             counts[note] = counts.get(note, 0) + 1
     expected = counts.get("link:mna_role_unresolved", 0) + counts.get("score:unclear_abstain", 0)
-    other = sum(value for key, value in counts.items() if key not in
-                {"link:mna_role_unresolved", "score:unclear_abstain"})
+    other = sum(
+        value
+        for key, value in counts.items()
+        if key not in {"link:mna_role_unresolved", "score:unclear_abstain"}
+    )
     return expected, other, dict(sorted(counts.items()))
 
 
@@ -797,9 +789,7 @@ def m8() -> tuple[float, list[FrameOutcome]]:
         expected = case["expected"]
         if expected == "violation":
             correct = (
-                engine_verdict == "violation"
-                and not persisted
-                and reference_verdict == "violation"
+                engine_verdict == "violation" and not persisted and reference_verdict == "violation"
             )
         else:
             correct = engine_verdict == "pass" and persisted and reference_verdict == "pass"
@@ -901,8 +891,9 @@ def naive_m1b_m1c(family: str = "val") -> tuple[float, float]:
         if not typed:
             continue
         conditional_n += 1
-        ok = truth_event["stage"] == "confirmed" and dict(truth_event["attributes"]) == (
-            NAIVE_POLARITY[truth_event["event_type"]]
+        ok = (
+            truth_event["stage"] == "confirmed"
+            and dict(truth_event["attributes"]) == (NAIVE_POLARITY[truth_event["event_type"]])
         )
         conditional_ok += ok
         unconditional_ok += ok
@@ -953,7 +944,7 @@ def naive_m2b() -> float:
 
 
 def naive_m3() -> float:
-    """"The first linked asset in the trigger sentence takes the signal-bearing role"."""
+    """ "The first linked asset in the trigger sentence takes the signal-bearing role"."""
     pred = prediction()
     correct = 0
     decisions = corpus().truth["role_decisions"]
@@ -961,9 +952,9 @@ def naive_m3() -> float:
     for decision in decisions:
         truth_event = truth_by_key[decision["event_key"]]
         article = pred.by_external[truth_event["article_external_ids"][0]]
-        order = _first_positions(article.analysis_text, [
-            link["asset_id"] for link in truth_event["links"]
-        ])
+        order = _first_positions(
+            article.analysis_text, [link["asset_id"] for link in truth_event["links"]]
+        )
         if decision["kind"] == "mna_role":
             guessed = "acquirer" if order and order[0] == decision["asset_id"] else "target"
             correct += guessed == decision["expected_role"]

@@ -1,0 +1,368 @@
+{
+  "note": "Author-measured anchors, informational only. Gates are asserted against live-computed values, never against this file (EVALS.md \u00a74).",
+  "metrics": {
+    "M1 physics_conformance": 1.0,
+    "M2 comfort_fit": 0.999304,
+    "M2_worst": 0.988422,
+    "M2 margin over mean_static": 0.2267,
+    "M2b_mean search_optimality": 1.0,
+    "M2b_min": 1.0,
+    "M2c saturation_maximality": 1.0,
+    "M3 layering_advantage": 0.222222,
+    "M3_min": 0.133333,
+    "M4 output_validity": 1.0,
+    "M5 palette_style_auc": 1.0,
+    "M5_color": 0.800296,
+    "M5_style": 1.0,
+    "M5b anti_gaming_margin": 0.202663,
+    "M5_mono good-borderline": 0.177548,
+    "M5_mono borderline-bad": 0.145785,
+    "M6 no_repeat_window_3": 1.0,
+    "M6 novel_item_rate": 0.649351,
+    "M6 consec_sim": 0.051748,
+    "M6 utilization": 0.661017,
+    "M6 utilization margin": 0.101695,
+    "M6 rollout_comfort": 0.986283,
+    "M7 determinism": 1.0,
+    "M8 lift_protection": 1.0,
+    "M8 lift_color": 0.719932,
+    "M8 lift_style": 0.516557,
+    "M8 lift_variety": 0.581775,
+    "M9 protection_response": 1.0,
+    "M10 degradation_correctness": 1.0
+  },
+  "baselines": {
+    "mean_static": {
+      "S_thermal": 0.9064,
+      "sd": 0.1477,
+      "inband": 0.7578,
+      "cases": 30
+    },
+    "random_valid": {
+      "S_thermal": 0.5374,
+      "sd": 0.3319,
+      "inband": 0.2835,
+      "draws": 6000
+    }
+  },
+  "per_scenario": {
+    "01_winter_calm/small": {
+      "thermal": 0.999333,
+      "inband": 0.0,
+      "saturated_hours": 15
+    },
+    "01_winter_calm/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "02_winter_windy/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "02_winter_windy/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "03_winter_snow/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "03_winter_snow/medium": {
+      "thermal": 0.999333,
+      "inband": 0.0,
+      "saturated_hours": 15
+    },
+    "04_spring_swing/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "04_spring_swing/medium": {
+      "thermal": 0.988422,
+      "inband": 0.8,
+      "saturated_hours": 0
+    },
+    "05_spring_swing_windy_am/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "05_spring_swing_windy_am/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 2
+    },
+    "06_fall_swing_rain_pm/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "06_fall_swing_rain_pm/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "07_cold_rain_allday/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 2
+    },
+    "07_cold_rain_allday/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "08_mild_drizzle/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "08_mild_drizzle/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "09_summer_hot/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "09_summer_hot/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "10_summer_thunderstorm/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "10_summer_thunderstorm/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "11_shoulder_mild_steady/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "11_shoulder_mild_steady/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "12_autumn_windy_mild/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "12_autumn_windy_mild/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 15
+    },
+    "13_frontal_drop/small": {
+      "thermal": 0.993444,
+      "inband": 0.6667,
+      "saturated_hours": 5
+    },
+    "13_frontal_drop/medium": {
+      "thermal": 0.998573,
+      "inband": 0.9333,
+      "saturated_hours": 0
+    },
+    "14_midday_dip/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "14_midday_dip/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 0
+    },
+    "15_cold_snap_swing/small": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 2
+    },
+    "15_cold_snap_swing/medium": {
+      "thermal": 1.0,
+      "inband": 1.0,
+      "saturated_hours": 5
+    }
+  },
+  "layering": {
+    "04_spring_swing/small": {
+      "engine_inband": 1.0,
+      "static_best": 0.6667,
+      "delta": 0.3333
+    },
+    "05_spring_swing_windy_am/small": {
+      "engine_inband": 1.0,
+      "static_best": 0.7333,
+      "delta": 0.2667
+    },
+    "06_fall_swing_rain_pm/small": {
+      "engine_inband": 1.0,
+      "static_best": 0.8667,
+      "delta": 0.1333
+    },
+    "13_frontal_drop/small": {
+      "engine_inband": 0.6667,
+      "static_best": 0.5333,
+      "delta": 0.1333
+    },
+    "14_midday_dip/small": {
+      "engine_inband": 1.0,
+      "static_best": 0.8,
+      "delta": 0.2
+    },
+    "15_cold_snap_swing/small": {
+      "engine_inband": 1.0,
+      "static_best": 0.7333,
+      "delta": 0.2667
+    }
+  },
+  "rollouts": {
+    "a": {
+      "eligible": 59,
+      "utilization": 0.678,
+      "static_utilization": 0.5424,
+      "no_repeat_window_3": 1.0,
+      "novel_item_rate": 0.868,
+      "consec_sim": 0.0287,
+      "repeat_free": 1.0,
+      "comfort": 0.9863
+    },
+    "b": {
+      "eligible": 59,
+      "utilization": 0.661,
+      "static_utilization": 0.5593,
+      "no_repeat_window_3": 1.0,
+      "novel_item_rate": 0.8697,
+      "consec_sim": 0.0155,
+      "repeat_free": 1.0,
+      "comfort": 0.9992
+    },
+    "c": {
+      "eligible": 59,
+      "utilization": 0.661,
+      "static_utilization": 0.4068,
+      "no_repeat_window_3": 1.0,
+      "novel_item_rate": 0.6494,
+      "consec_sim": 0.0517,
+      "repeat_free": 1.0,
+      "comfort": 0.9936
+    }
+  },
+  "components": {
+    "protection": {
+      "top1": 1.0,
+      "random_valid": 0.9353,
+      "brute_max": 1.0,
+      "denominator": 0.0647,
+      "discriminating_scenarios": 3,
+      "suite_top1": 1.0,
+      "suite_random": 0.9871,
+      "suite_brute_max": 1.0
+    },
+    "color": {
+      "top1": 0.982,
+      "random_valid": 0.9358,
+      "brute_max": 1.0,
+      "denominator": 0.0642,
+      "discriminating_scenarios": 12,
+      "suite_top1": 0.9835,
+      "suite_random": 0.9461,
+      "suite_brute_max": 1.0
+    },
+    "style": {
+      "top1": 0.8173,
+      "random_valid": 0.6364,
+      "brute_max": 0.9867,
+      "denominator": 0.3502,
+      "discriminating_scenarios": 14,
+      "suite_top1": 0.8295,
+      "suite_random": 0.6607,
+      "suite_brute_max": 0.9876
+    },
+    "variety": {
+      "top1": 0.7144,
+      "random_valid": 0.5822,
+      "brute_max": 0.8094,
+      "denominator": 0.2272,
+      "discriminating_scenarios": 15,
+      "suite_top1": 0.7144,
+      "suite_random": 0.5822,
+      "suite_brute_max": 0.8094
+    }
+  },
+  "enumeration": {
+    "01_winter_calm/small": {
+      "raw": 9900,
+      "hc_valid": 9899
+    },
+    "02_winter_windy/small": {
+      "raw": 288,
+      "hc_valid": 288
+    },
+    "03_winter_snow/small": {
+      "raw": 2640,
+      "hc_valid": 2639
+    },
+    "04_spring_swing/small": {
+      "raw": 1320,
+      "hc_valid": 1319
+    },
+    "05_spring_swing_windy_am/small": {
+      "raw": 1320,
+      "hc_valid": 1319
+    },
+    "06_fall_swing_rain_pm/small": {
+      "raw": 4950,
+      "hc_valid": 4949
+    },
+    "07_cold_rain_allday/small": {
+      "raw": 144,
+      "hc_valid": 144
+    },
+    "08_mild_drizzle/small": {
+      "raw": 1320,
+      "hc_valid": 1319
+    },
+    "09_summer_hot/small": {
+      "raw": 4950,
+      "hc_valid": 4949
+    },
+    "10_summer_thunderstorm/small": {
+      "raw": 4950,
+      "hc_valid": 1980
+    },
+    "11_shoulder_mild_steady/small": {
+      "raw": 16,
+      "hc_valid": 16
+    },
+    "12_autumn_windy_mild/small": {
+      "raw": 8,
+      "hc_valid": 8
+    },
+    "13_frontal_drop/small": {
+      "raw": 288,
+      "hc_valid": 288
+    },
+    "14_midday_dip/small": {
+      "raw": 4950,
+      "hc_valid": 4949
+    },
+    "15_cold_snap_swing/small": {
+      "raw": 2640,
+      "hc_valid": 2639
+    }
+  }
+}

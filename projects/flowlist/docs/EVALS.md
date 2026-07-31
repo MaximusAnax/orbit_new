@@ -131,6 +131,36 @@ ratio_p = total(heuristic order for p) / total*(p)      # must be ≤ 1 + 1e-9
 M4_mean = mean_p ratio_p          M4_min = min_p ratio_p
 ```
 
+### M4b — degenerate_rejection (H2, anti-gaming)
+
+M4 only means something if its thresholds *reject* an ordering solver that
+does no ordering work. M4b asserts exactly that, on live-computed values:
+
+```
+M4b = 1.0 if, for every degenerate baseline B,
+         M4_mean(B) < 0.97 AND M4_min(B) < 0.90
+      else 0.0
+```
+
+Two baselines are measured, both under the same anchors and the same score
+matrices the heuristic receives:
+
+- **`construction_only`** — `flowlist.engine.optimizer.construct`, the shipped
+  D6 construction phase on its own. This *is* the degenerate flowlist: what
+  `reorder` returns with Or-opt and 2-opt deleted. It is the baseline that
+  matters, because it is the implementation a reviewer would actually write.
+- **`reference_greedy`** — the standalone all-starts best-next walk in
+  `evals/fixtures/generate.py`, which imports nothing from `src/flowlist`.
+  Weaker than the above under anchors (D6 diversifies anchored constructions on
+  seeded near-ties), but independent by location, so the discrimination claim
+  is not purely self-referential.
+
+Requiring the *stronger* of the two to fail is what makes the invariant
+load-bearing: gating on the reference greedy alone left M4 passable by a
+construction-only flowlist (REVIEW.md #24). Both baselines' M4 scores and
+planted-chain recoveries are printed as report-only rows, recomputed every run
+rather than read from `expected.json`.
+
 ### M5 — planted_chain_recovery (H2)
 
 Over the planted-chain suite (6 playlists, n = 50–150). Each fixture is built
@@ -174,13 +204,24 @@ overperformance on the other three.
 ### M7 — determinism (FR-15, guards both H1 and H2)
 
 On 3 fixtures spanning all suites: run `reorder` twice with seed 7 →
-orderings byte-identical; run with seed 8 → allowed to differ (no assert);
-recompute each run's `after` aggregates from its per-transition breakdowns →
-must match stored aggregates exactly; compare the seed-7 orderings against the
-committed golden file `golden_orderings.json`.
+orderings byte-identical; run with seed 8 → allowed to differ (no assert, but
+see the vacuity guard below); recompute each run's `after` aggregates from its
+per-transition breakdowns → must match stored aggregates exactly; compare the
+seed-7 orderings against the committed golden file `golden_orderings.json`.
+
+**Vacuity guard (added in the harden pass).** "Same seed, same order" is
+satisfied for free by an implementation that ignores its seed entirely, so it
+only bites on a fixture where the seed *does* change the answer. The original
+three golden fixtures were all seed-insensitive — a `reorder` patched to draw a
+random seed per call still scored M7 = 1.00. `planted_02` (the seed genuinely
+moves the result there) replaced `planted_00` in the golden set, and M7 now
+fails if *no* golden fixture is seed-sensitive, so a later regeneration cannot
+quietly restore the vacuous situation. See REVIEW.md #26.
 
 ```
-M7 = 1.0 if all identity/consistency/golden checks pass else 0.0
+M7 = 1.0 if all identity/consistency/golden checks pass
+         AND at least one golden fixture is seed-sensitive
+     else 0.0
 ```
 
 Scope of the claim (FR-15): this gate certifies *within-platform*
@@ -196,11 +237,17 @@ machines instead of being silently absorbed.
   before) on the messy suite. Diagnostic: the objective maximizes the sum, so
   we watch (not gate) the worst seam.
 - `seamless_fraction_after` on the messy suite.
-- `greedy_only_recovery`: the reference construction-only greedy's M5-style
-  recovery per planted playlist (from `expected.json`, §4) — shows how much
-  M5 headroom bare greedy has, i.e. how much the local search is earning.
+- `construction_only_M4_mean` / `reference_greedy_M4_mean`: the two M4b
+  baselines' optimality on the exact suite — **computed live**, so the number
+  the scorecard prints is what the committed fixtures actually produce today.
+- `construction_only_recovery` / `reference_greedy_recovery`: the same two
+  baselines' M5-style recovery per planted playlist, also computed live —
+  shows how much M5 headroom bare construction has, i.e. how much the local
+  search is earning.
 - `reorder_wall_time` on the largest planted fixture (n=150) — informational
-  timing row (the FR-8 n=500 NFR is checked by a slow-marked test, §7).
+  timing row (the FR-8 n=500 NFR is checked by a slow-marked test, §7). This is
+  the one row whose value legitimately differs between two runs of the same
+  suite; every metric is byte-identical.
 
 (`bpm_only_auc` is defined under M2 above; it is gated via M2b, so it does
 not belong in this list.)
@@ -264,22 +311,28 @@ evals/fixtures/
     high-scoring cluster — the classic construction-greedy failure); one
     instance carries anchors and is scored against fixed-endpoint exact
     ground truth (§3-M4).
-  - **Discrimination invariant (generation-time, re-checked in CI):**
-    `generate.py` also runs a *reference construction-only greedy* — all-starts
-    best-next over the same matrix, implemented as a standalone ~20-line
-    function inside `generate.py` with no imports from `src/flowlist` — on
-    every exact-suite instance and records its optimality ratio per instance
-    in `expected.json`. Generation asserts that **at least 3 exact instances
-    have greedy-only ratio < 0.97** (regenerating with an incremented seed, or
-    adjusting the trap constructions, until true). This makes the M4 gate's
-    discriminative power a *verified property of the fixtures*, not an
-    assertion: construction-only greedy provably fails M4_mean, so passing it
-    requires the local search to work. The same reference greedy's recovery
-    ratio is recorded per planted instance (informational — printed as the
-    `greedy_only_recovery` report row). `evals/test_gates.py::
-    test_fixture_invariants` re-asserts the ≥ 3-instances-below-0.97 property
-    from the committed `expected.json` so a later regeneration cannot quietly
-    drop it.
+  - **Discrimination invariant (generation-time, re-checked live in CI):**
+    generation measures the two M4b degenerate baselines (§3-M4b) — the
+    standalone `reference_greedy` inside `generate.py` and the engine's own
+    `optimizer.construct` — on every exact-suite instance, and asserts both
+    that **at least 3 instances have a degenerate ratio < 0.97** and that
+    **each baseline's suite-level `M4_mean` and `M4_min` fall below the M4
+    gates** (with a 0.005 margin, so ordinary drift cannot flip the claim).
+    The searched slots are chosen against the *stronger* of the two baselines.
+    This makes the M4 gates' discriminative power a *verified property of the
+    fixtures*: a construction-only flowlist provably fails M4, so passing it
+    requires the local search to work. `evals/test_gates.py` re-asserts all of
+    it from **live** recomputation (not from `expected.json`) plus
+    `test_fixture_expected_json_is_not_stale`, which reconciles the committed
+    measurements against the live ones so a fixture edit cannot leave the
+    published numbers behind.
+
+    *Why both baselines:* the pre-harden suite gated only on `reference_greedy`
+    and satisfied that literally, yet the engine's own construction phase
+    scored M4_mean 0.9714 / M4_min 0.9302 and **passed both gates** — the
+    reference greedy is weaker under anchors, where D6 diversifies
+    constructions on seeded near-ties. REVIEW.md #24 records the finding and
+    the fix.
   - **Planted suite:** chains constructed by walking the Camelot wheel with
     steps from {same, relative, ±1} and BPM steps ≤ 2%, energy drift ≤ 0.06
     per hop — by construction every planted transition scores ≥ 0.8 (mean
@@ -296,12 +349,13 @@ evals/fixtures/
     `tests/test_scoring.py::test_fr10_profiles`.
 - **`expected.json`** — the generator also *measures* and records, per
   playlist: planted-chain mean, identity mean, 20-shuffle random mean,
-  bpm-sort mean, and the reference greedy-only ratios (discrimination
-  invariant above). These are informational anchors for reviewing gate levels;
-  gates themselves are asserted against live-computed values (§5), so
-  `expected.json` can never mask a regression — the sole exception is the
-  discrimination invariant, which is a property of the *fixtures*, and is
-  therefore legitimately asserted from the committed file.
+  bpm-sort mean, and both degenerate baselines' ratios/recoveries. These are
+  informational anchors for reviewing gate levels; **every** gate and every
+  invariant is asserted against live-computed values (§5), including the
+  discrimination invariant, which the harden pass moved off the committed file.
+  `expected.json` is now only cross-checked for staleness
+  (`test_fixture_expected_json_is_not_stale`), so it can neither mask a
+  regression nor publish a number that is no longer true.
 
 **Ground truth summary:** M1/M2 truth = hand-encoded published practice;
 M4 truth = exact DP recomputed at eval time — engine code, so *not*
@@ -336,16 +390,34 @@ a random scorer sits at 0.50 by construction of AUC.
 | M2 pair_ranking_auc | ≥ 0.90 | Far above random (0.50) and the bpm-only scorer (≈0.70); below 1.0 because a handful of authored `workable` cases sit deliberately on rule boundaries. |
 | M2b anti-gaming margin | M2 − bpm_only_auc ≥ 0.10 | Proves the harmonic/energy/loudness components carry real ranking weight; a bpm-only regression cannot pass. Feasibility is guaranteed by the fixture-authoring invariant bpm_only_auc ≤ 0.80 (§4), CI-enforced by `test_fixture_invariants`. |
 | M3 component_monotonicity | = 1.00 | Properties are exact consequences of the formulas in SCOPE.md D3–D5; any failure is an implementation error. |
-| M4_mean exact_optimality_ratio | ≥ 0.97 | Not justified by TSP folklore alone (those ~5%-of-optimum figures are for large random instances): the fixtures are *generation-verified* to include ≥ 3 exact instances where construction-only greedy scores < 0.97 (§4 discrimination invariant), so this gate provably requires the local search to work. Any ratio > 1 + 1e-9 hard-fails the run (broken exact solver, §3-M4). |
+| M4_mean exact_optimality_ratio | ≥ 0.97 | Not justified by TSP folklore alone (those ~5%-of-optimum figures are for large random instances): the fixtures are *verified live* to reject both degenerate baselines at these very thresholds (M4b / §4 discrimination invariant), so this gate provably requires the local search to work. Any ratio > 1 + 1e-9 hard-fails the run (broken exact solver, §3-M4). |
 | M4_min | ≥ 0.90 | No single instance may fall off a cliff (guards degenerate anchor/tie-break bugs; includes the anchored instance, scored against fixed-endpoint exact truth). |
+| M4b degenerate_rejection | = 1.00 | The anti-gaming counterpart of M2b, for H2. Both degenerate baselines — the engine's own construction phase and the standalone reference greedy — must fail *both* M4 gates on this suite. A binary gate rather than a margin, because the property is exactly "the thresholds M4 already uses reject a solver that does no ordering work"; no second threshold to argue about. Computed live every run. |
 | M5 planted_chain_recovery | ≥ 0.92 (clamped mean) | The planted chain is recoverable in principle; allowing 8% slack acknowledges the heuristic may find a *different* near-optimal path. Per-playlist ratios are clamped at 1.0 before averaging (§3), so overperformance cannot subsidize a failure. Random sits near 0.45/0.88 ≈ 0.51 on this ratio; bpm_sort near 0.75 (planted chains are key-coherent, which bpm_sort ignores). |
 | M5_min | ≥ 0.85 | Per-instance floor mirroring M4_min: one collapsed realistic-scale playlist (17% of the suite) must fail loudly, not vanish into a mean. |
 | M6 baseline_margin | ≥ +0.08 | The whole product claim: beat the best naive strategy by a clear margin (≈ one flag-level of quality per transition: 0.08 mean ≈ turning ~1 in 4 workable seams into seamless ones). Vacuous-pass check: bpm_sort itself scores margin 0. |
 | M6_min per-playlist margin | > 0 | The heuristic must beat bpm_sort on *every* messy playlist, not just on average — with only 4 instances, one hidden regression is 25% of the suite. |
-| M7 determinism | = 1.00 | CONVENTIONS.md hermeticity; also what makes every other number trustworthy. Certifies within-platform determinism; the golden-orderings check surfaces cross-platform drift as a CI diff (§3-M7, FR-15). |
+| M7 determinism | = 1.00 | CONVENTIONS.md hermeticity; also what makes every other number trustworthy. Certifies within-platform determinism; the golden-orderings check surfaces cross-platform drift as a CI diff (§3-M7, FR-15). Includes the seed-sensitivity vacuity guard so the repeatability half cannot pass for free. |
 
 Gates are asserted on live-computed values inside the eval run — never against
 `expected.json`.
+
+**Gate falsification (harden pass).** Each gate was checked by breaking the
+engine logic it guards and confirming the metric drops below its threshold.
+Results, against the *current* fixtures:
+
+| Mutation | Metric that catches it |
+|---|---|
+| local search removed (`construct` only) | **M4b = 0**, M4_mean, M4_min, M7 |
+| Or-opt removed / 2-opt removed | M7 (golden diff) |
+| key relation shifted by a semitone | M1, M2 |
+| key component made constant | M1, M6, M7 |
+| BPM octave folding disabled | M3, M7 |
+| BPM curve made linear | M3, M7 |
+| loudness component made constant | M3, M7 |
+| arc-profile asymmetry removed | M3 |
+| `exact_optimal` replaced by the heuristic | `tests/test_optimizer.py::test_fr8_exact_matches_bruteforce` (by design: no eval metric can catch this — §3-M4) |
+| `reorder` given a random seed per call | M7 (seed-sensitivity guard + golden diff) |
 
 ## 6. How the suite runs
 
@@ -362,10 +434,12 @@ Mirrors `orbit-backend/evals/`:
 - **`evals/test_gates.py`** — pytest gates: one test per gate in §5 (test
   names carry FR ids, e.g. `test_fr8_exact_optimality_gate`), each calling the
   same metric functions directly (not via subprocess), plus
-  `test_fixture_invariants` (discrimination invariant from `expected.json`;
-  live `bpm_only_auc ≤ 0.80` — §4) and `test_eval_runner_passes` which
-  executes `run.py` end-to-end and asserts exit code 0.
-  `uv run pytest flowlist/` therefore fails on any quality regression.
+  `test_fixture_invariants` (live discrimination invariant and
+  `bpm_only_auc ≤ 0.80` — §4), `test_fixture_expected_json_is_not_stale`,
+  `test_fr8_local_search_is_load_bearing_on_the_exact_suite`,
+  `test_fr15_m7_repeatability_check_is_not_vacuous`, and
+  `test_eval_runner_passes` which executes `run.py` end-to-end and asserts exit
+  code 0. `uv run pytest flowlist/` therefore fails on any quality regression.
 
 Runtime budget: full suite < 45 s on a laptop (largest costs: Held-Karp at
 n=14 and 2-opt passes at n=150), so it runs in every CI invocation. The FR-8
@@ -375,17 +449,17 @@ n=500 perf smoke test is slow-marked and excluded from the default run.
 
 | FR | Covered by |
 |---|---|
-| FR-1, FR-2 | `tests/test_import.py` (unit; malformed rows, sentinel mapping `Key=-1`/`Tempo=0` → nulls with warnings, `--replace`/`--force` semantics, dedupe, tag-vs-filename fallback, directory scan) |
+| FR-1, FR-2 | `tests/test_adapters.py` (readers: malformed rows, sentinel mapping `Key=-1`/`Tempo=0` → nulls with warnings, tag-vs-filename fallback, directory scan) + `tests/test_store.py` / `tests/test_cli.py` / `tests/test_api.py` (`--replace`/`--force` semantics) + `tests/test_services.py::test_fr1_import_is_idempotent_in_the_catalog` (dedupe). *The build phase kept the reader tests in `test_adapters.py` rather than a separate `test_import.py`; see `docs/FR_COVERAGE.md` for the authoritative per-FR mapping.* |
 | FR-3 | `tests/test_resolution.py` (precedence, idempotence, coverage report) |
 | FR-4 | `tests/test_resolution.py::test_fr4_manual_override_wins` |
 | FR-5 | **M1** + `tests/test_keys.py` (round-trip all 24 keys, wraparound) |
 | FR-6 | **M2, M3** + `tests/test_scoring.py` (formula unit tests; `test_fr6_weight_normalization`: renormalization, rejection of negative/all-zero weights) |
 | FR-7 | `tests/test_scoring.py::test_fr7_flow_report` + M7 consistency check |
-| FR-8 | **M4, M5, M6** + `tests/test_optimizer.py` (n≤3 edge cases, n-cap error; `test_fr8_exact_matches_bruteforce`: Held-Karp vs brute-force at n ≤ 7 incl. anchored variants; slow-marked `test_fr8_perf_smoke` for the n=500 NFR, excluded from the default suite) |
+| FR-8 | **M4, M4b, M5, M6** + `tests/test_optimizer.py` (n≤3 edge cases, n-cap error; `test_fr8_exact_matches_bruteforce`: Held-Karp vs brute-force at n ≤ 7 incl. anchored variants; `test_fr8_construct_is_the_construction_phase`; slow-marked `test_fr8_perf_smoke` for the n=500 NFR, excluded from the default suite) + `evals/test_gates.py::test_fr8_local_search_is_load_bearing_on_the_exact_suite` |
 | FR-9 | `tests/test_optimizer.py::test_fr9_anchors` (start-only, end-only, both, n=2 degenerate) + anchored fixture in the M4 suite scored against fixed-endpoint exact ground truth |
 | FR-10 | M3 build/cool checks + `tests/test_scoring.py::test_fr10_profiles` on `arc_01.json` (build ≠ neutral, strictly greater mean signed energy delta — US-5 acceptance) |
 | FR-11 | `tests/test_store.py` (append-only, run snapshot self-containment) |
-| FR-12 | `tests/test_export.py` (M3U/CSV/JSON golden files, apply transaction) |
+| FR-12 | `tests/test_adapters.py` (M3U/CSV/JSON writers), `tests/test_store.py` (apply transaction), `tests/test_services.py`, `tests/test_cli.py`, `tests/test_api.py`. *Built as writer tests in `test_adapters.py` rather than a separate `test_export.py`; see `docs/FR_COVERAGE.md`.* |
 | FR-13 | `tests/test_api.py` (FastAPI TestClient, full error-code catalog incl. `invalid_weights`, `name_conflict`, `playlist_has_runs` 409/force) |
 | FR-14 | `tests/test_cli.py` (Typer CliRunner, exit codes, `--json`) |
-| FR-15 | **M7** (incl. `golden_orderings.json` comparison) |
+| FR-15 | **M7** (incl. `golden_orderings.json` comparison and the seed-sensitivity vacuity guard) + `evals/test_gates.py::test_fr15_m7_repeatability_check_is_not_vacuous` |

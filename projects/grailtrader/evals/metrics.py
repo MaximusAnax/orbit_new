@@ -18,7 +18,6 @@ from typing import Any
 
 from grailtrader.ids import listing_id
 from grailtrader.models import (
-    Advice,
     AdviceAction,
     AdviceDecision,
     AdviceTemplateCatalog,
@@ -802,6 +801,8 @@ def build_scorecard(
         "parent_index_max_median_error": fidelity.parent_max,
         "placebo_per_seed": placebo.per_seed,
         "render_refusals": compliance.n_refused,
+        "decision_mix": advice_population(scenario_a_result.decisions),
+        "horizon_mix": horizon_mix(real),
         "frame_cases": [
             {"id": o.case_id, "expected": o.expected, "actual": o.actual, "detail": o.detail}
             for o in outcomes
@@ -824,7 +825,7 @@ def build_scorecard(
 
 
 def advice_population(decisions: Iterable[AdviceDecision]) -> dict[str, int]:
-    """Small helper for the scorecard's context block."""
+    """Action / hold-reason mix over the whole replay (scorecard context)."""
     counts: dict[str, int] = {}
     for decision in decisions:
         key = decision.action.value
@@ -834,36 +835,14 @@ def advice_population(decisions: Iterable[AdviceDecision]) -> dict[str, int]:
     return dict(sorted(counts.items()))
 
 
-def staleness_profile(result: PipelineResult) -> dict[str, int]:
-    """How stale the advisory stratum was, per decision (context for q_index)."""
+def horizon_mix(replay: Replay) -> dict[str, int]:
+    """How often each H* was chosen among candidates (scorecard context)."""
     counts: dict[str, int] = {}
-    for decision in result.decisions:
-        if decision.stratum_staleness_weeks is None:
-            continue
-        bucket = (
-            "0"
-            if decision.stratum_staleness_weeks == 0
-            else ("1-2" if decision.stratum_staleness_weeks <= 2 else "3-8")
-        )
-        counts[bucket] = counts.get(bucket, 0) + 1
-    return dict(sorted(counts.items()))
-
-
-def advice_ages(advice: Sequence[Advice], weeks: Sequence[str]) -> int:
-    """Number of distinct garment-weeks the replay rendered advice for."""
-    return len({(row.garment_id, row.as_of_week) for row in advice}) if weeks else 0
-
-
-def horizon_mix(replay: Replay) -> dict[int, int]:
-    counts: dict[int, int] = {}
     for row in replay.results:
         if row.is_candidate:
-            counts[row.horizon_weeks] = counts.get(row.horizon_weeks, 0) + 1
-    return dict(sorted(counts.items()))
-
-
-def weeks_of(replay: Replay) -> int:
-    return len({row.week for row in replay.results})
+            key = str(row.horizon_weeks)
+            counts[key] = counts.get(key, 0) + 1
+    return dict(sorted(counts.items(), key=lambda item: int(item[0])))
 
 
 def entry_invariant_holds(replay: Replay) -> bool:

@@ -34,7 +34,6 @@ __all__ = [
     "AdviseRequest",
     "BacktestRequest",
     "BacktestRunResponse",
-    "BrandResponse",
     "EventCreateRequest",
     "EventDetailResponse",
     "EventIngestRequest",
@@ -146,10 +145,6 @@ class EventDetailResponse(BaseModel):
     retirement_age_weeks: float
     source_refs: list[str]
     corroboration: int
-
-
-class BrandResponse(BaseModel):
-    brands: list[Any]
 
 
 class GarmentCreateRequest(BaseModel):

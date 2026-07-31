@@ -18,9 +18,9 @@ from pathlib import Path
 if __package__ in (None, ""):  # pragma: no cover - direct-script execution
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from evals.metrics import build_scorecard  # noqa: E402
+from evals.metrics import build_scorecard
 
-HEADER = f"{'metric':<6}{'what it measures':<36}{'baseline':>10}{'value':>11}{'gate':>10}   verdict"
+HEADER = f"{'metric':<7}{'what it measures':<36}{'baseline':>10}{'value':>11}{'gate':>10}   verdict"
 LINE = "-" * len(HEADER)
 
 
@@ -42,7 +42,7 @@ def main() -> int:
         if not result.passing:
             failures.append(result)
         print(
-            f"{result.key:<6}{result.name:<36}"
+            f"{result.key:<7}{result.name:<36}"
             f"{_fmt(result.baseline, result.unit):>10}"
             f"{_fmt(result.value, result.unit):>11}"
             f"{result.gate_text():>10}   {verdict}"
@@ -59,11 +59,13 @@ def main() -> int:
     m8 = extras.get("m8")
     print()
     if m8 is None:
-        print("M8    Real-clip agreement                        NOT AVAILABLE (reported, never gated)")
+        print(
+            "M8     Real-clip agreement                       NOT AVAILABLE (reported, never gated)"
+        )
         print("      Drop hand-labelled clips into evals/fixtures/real/ to populate this row.")
     else:
         print(
-            f"M8    Real-clip agreement: {m8['clips']} clips, "
+            f"M8     Real-clip agreement: {m8['clips']} clips, "
             f"rep-count agreement {m8['rep_count_agreement']:.3f}, "
             f"fault Jaccard {m8['fault_jaccard']:.3f}  (reported, never gated)"
         )
@@ -76,9 +78,10 @@ def main() -> int:
     print()
     unbeaten = [r for r in results if not r.baseline_beaten]
     if unbeaten:
-        print("WARNING: gate no longer strictly beats its naive baseline: " + ", ".join(
-            r.key for r in unbeaten
-        ))
+        print(
+            "WARNING: gate no longer strictly beats its naive baseline: "
+            + ", ".join(r.key for r in unbeaten)
+        )
     if failures:
         print(f"FAILED {len(failures)} gate(s): " + ", ".join(r.key for r in failures))
         return 1

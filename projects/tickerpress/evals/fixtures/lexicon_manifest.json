@@ -1,0 +1,19 @@
+{
+  "_comment": [
+    "SCOPE D19 lexicon freeze protocol. cues_corporate.txt and cues_anti.txt were",
+    "authored from general finance/news vocabulary BEFORE the eval corpus; these",
+    "hashes pin every committed data/ lexicon. Gate M6_lex fails if a file drifts",
+    "from its hash, or if any cue/anti entry occurs in exactly one base article.",
+    "Editing a lexicon is a reviewed change: update this manifest deliberately and",
+    "re-run M6_lex and M1_amb_abl."
+  ],
+  "sha256": {
+    "abbreviations.txt": "13fd1a5fef34414b9b9b86dce891b33c16da5c4d14f38a984cb7a800a0f04a50",
+    "common_words.txt": "d43d203dfa87a8a16d03d1dc3c9d4a2470f4d49f1f150863da082c588b1df0b1",
+    "cues_anti.txt": "395658e1384c409f2ceb9c4b5df5804f798cb76c3c9a9c88b1fc1d952d16e89f",
+    "cues_corporate.txt": "f1e3f6874e73698759d75a984c9d26785a199be38792ce773cdbbac260947012",
+    "digest_template.md": "142f83ec306d04f0a27cfe1cb55610766a7096a9e5d2720ff7c7c77b00c869e1",
+    "legal_suffixes.txt": "05ae98807c6ce7d56c1e6e1d9f52d28d6275e9f22ae620f3ce19a4497fc766e2",
+    "tracking_params.txt": "1611e51c5e1c08334b61add2b7dd6712f858d9eef9dbdb8cfda2cc294a960a1a"
+  }
+}

@@ -192,8 +192,15 @@ def window_hours(forecast: DayForecast, params: RequestParams) -> list[Hour]:
     return out
 
 
-def required_cover(hour: Hour) -> int:
+def required_cover(hour: Hour, *, lower_moderate: bool = False) -> int:
+    """Worn waterproofness this hour demands (FR-9).
+
+    ``lower_moderate`` applies FR-14's R3 relaxation: a moderate-intensity rain
+    hour accepts one level lower.  Heavy rain is never relaxed.
+    """
     if hour.hard_rain:
+        if lower_moderate and hour.intensity == "moderate":
+            return max(1, hour.need_hard - 1)
         return hour.need_hard
     if hour.soft_rain:
         return hour.need_soft
@@ -468,10 +475,10 @@ def resolve_worn(
     )
 
 
-def protect_hour(worn: WornHour, umbrella: bool) -> float:
+def protect_hour(worn: WornHour, umbrella: bool, *, lower_moderate: bool = False) -> float:
     hour = worn.hour
     p = 1.0
-    need = required_cover(hour)
+    need = required_cover(hour, lower_moderate=lower_moderate)
     worn_ok = need == 0 or worn.cover >= need
     umbrella_ok = (not worn_ok) and hour.umbrella_ok and umbrella
     if not (worn_ok or umbrella_ok):

@@ -244,7 +244,7 @@ class TickerPressService:
                 for alias in generate_aliases(company.ticker, company.name, moment, self.lexicons):
                     try:
                         # e.g. a name that is just the ticker collides with it
-                        check_duplicate_surface(aliases, alias.text)
+                        check_duplicate_surface(aliases, alias.text, alias.kind)
                     except DuplicateAliasError:
                         continue
                     aliases.append(self.repository.add_alias(alias))
@@ -271,8 +271,8 @@ class TickerPressService:
         current = (
             list(existing) if existing is not None else self.repository.list_aliases(company_ticker)
         )
-        check_duplicate_surface(current, text)
         resolved_kind = kind if kind is not None else self._infer_kind(company_ticker, text)
+        check_duplicate_surface(current, text, resolved_kind)
         resolved_strength = (
             strength
             if strength is not None
@@ -866,11 +866,11 @@ def load_watchlist(
         known = list(generated)
         for alias in aliases:  # type: ignore[assignment]
             text = str(alias["text"])
+            kind = AliasKind(str(alias["kind"])) if alias.get("kind") else None
             try:
-                check_duplicate_surface(known, text)
+                check_duplicate_surface(known, text, kind)
             except DuplicateAliasError:
                 continue
-            kind = AliasKind(str(alias["kind"])) if alias.get("kind") else None
             strength = Strength(str(alias["strength"])) if alias.get("strength") else None
             prior = float(alias["prior"]) if alias.get("prior") is not None else None
             known.append(

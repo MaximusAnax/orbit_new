@@ -123,6 +123,8 @@ def print_scorecard(card: M.Scorecard, *, elapsed: float) -> None:
     print(f"By driving event type:  {json.dumps(diagnostics['by_event_type'])}")
     print(f"Backtest exclusions:    {json.dumps(diagnostics['excluded'])}")
     print(f"Placebo per seed:       {json.dumps(diagnostics['placebo_per_seed'])}")
+    print(f"Decision mix (A):        {json.dumps(diagnostics['decision_mix'])}")
+    print(f"Chosen horizon mix (A): {json.dumps(diagnostics['horizon_mix'])}")
     print(f"Parent index max median error: {diagnostics['parent_index_max_median_error']:.4f}")
     print(f"Advice the engine refused to render: {diagnostics['render_refusals']}")
 

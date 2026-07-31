@@ -19,13 +19,14 @@ from __future__ import annotations
 import argparse
 import subprocess
 import sys
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import metrics as M  # noqa: E402  (path shim above must run first)
+import metrics as M
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 
@@ -263,16 +264,21 @@ def print_scorecard(gates: list[Gate], context: dict[str, Any]) -> None:
     )
     g2p_value, g2p_reasons = context["g2p"]
     print(
-        f"placebo exclusion rate (reported only): {g2p_value:.4f}  by reason "
-        f"{g2p_reasons or '{}'}"
+        f"placebo exclusion rate (reported only): {g2p_value:.4f}  by reason {g2p_reasons or '{}'}"
     )
     print(f"placebo windows overlapping a planted window: {context['placebo_overlap']}")
 
     for label, rows in (
         ("M1b/M1c failures", context["m1_failures"]),
-        ("M2b wrong decisions", [f"{w['id']} {w['surface']!r} -> {w['predicted']}" for w in context["m2b_wrong"]]),
+        (
+            "M2b wrong decisions",
+            [f"{w['id']} {w['surface']!r} -> {w['predicted']}" for w in context["m2b_wrong"]],
+        ),
         ("M3 wrong decisions", [f"{w['id']} {w['predicted_roles']}" for w in context["m3_wrong"]]),
-        ("M8 wrong verdicts", [f"{o.subject} expected {o.expected} got {o.engine}" for o in context["m8_failures"]]),
+        (
+            "M8 wrong verdicts",
+            [f"{o.subject} expected {o.expected} got {o.engine}" for o in context["m8_failures"]],
+        ),
     ):
         if rows:
             print(f"\n{label}:")
@@ -313,7 +319,10 @@ def main(argv: list[str] | None = None) -> int:
     failed = [gate for gate in gates if not gate.passing]
     print("")
     if failed:
-        print(f"FAILED {len(failed)} of {len(gates)} gates: " + ", ".join(g.name.split()[0] for g in failed))
+        print(
+            f"FAILED {len(failed)} of {len(gates)} gates: "
+            + ", ".join(g.name.split()[0] for g in failed)
+        )
         return 1
     print(f"ALL {len(gates)} GATES PASS")
     return 0

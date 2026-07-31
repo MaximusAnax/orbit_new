@@ -68,14 +68,18 @@ def _dump(model: Any) -> Any:
     return model.model_dump(mode="json")
 
 
-@app.callback()
+@app.callback(invoke_without_command=True)
 def main_callback(
+    ctx: typer.Context,
     version: Annotated[
         bool, typer.Option("--version", help="Print the datasweep version and exit.")
     ] = False,
 ) -> None:
     if version:
         typer.echo(__version__)
+        raise typer.Exit()
+    if ctx.invoked_subcommand is None:
+        typer.echo(ctx.get_help())
         raise typer.Exit()
 
 

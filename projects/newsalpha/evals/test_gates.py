@@ -22,9 +22,7 @@ HERE = Path(__file__).resolve().parent
 
 
 def _load_metrics() -> Any:
-    spec = importlib.util.spec_from_file_location(
-        "newsalpha_eval_metrics", HERE / "metrics.py"
-    )
+    spec = importlib.util.spec_from_file_location("newsalpha_eval_metrics", HERE / "metrics.py")
     assert spec is not None and spec.loader is not None
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
@@ -97,7 +95,9 @@ def test_gate_m4_hit_rate_fr6_fr10():
 
 def test_gate_m4_transfer_fr6():
     gap, dev, val = M.m4_transfer()
-    assert gap <= 0.10, f"M4 transfer gap is {gap:.4f} (DEV {dev:.4f} / VAL {val:.4f}), gate <= 0.10"
+    assert gap <= 0.10, (
+        f"M4 transfer gap is {gap:.4f} (DEV {dev:.4f} / VAL {val:.4f}), gate <= 0.10"
+    )
 
 
 def test_gate_m5_ic_fr6():
@@ -165,7 +165,9 @@ def test_gate_g2_exclusion_rate_fr10():
 
 def test_gate_expected_abstentions_are_the_documented_seven_fr5_fr6():
     expected, other, notes = M.abstentions()
-    assert expected == 7, f"expected abstentions {expected} != 7 (4 symmetric M&A + 3 denied): {notes}"
+    assert expected == 7, (
+        f"expected abstentions {expected} != 7 (4 symmetric M&A + 3 denied): {notes}"
+    )
     assert other == 0, f"unexpected abstentions: {notes}"
 
 
@@ -228,9 +230,7 @@ def test_fr14_d0_determinism_on_the_eval_corpus():
         repository.initialize()
         articles, result = _ingest(raws, as_of)
         repository.add_articles(articles)
-        repository.replace_derived(
-            list(result.clusters), list(result.events), list(result.links)
-        )
+        repository.replace_derived(list(result.clusters), list(result.events), list(result.links))
         repository.add_signals(list(result.new_signals))
         repository.add_briefs(list(result.briefs))
         exports.append(

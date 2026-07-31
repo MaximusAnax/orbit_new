@@ -357,7 +357,7 @@ class RepTiming:
     end: int
 
 
-def _cycle_layout(fps: float, n_reps: int, rng: random.Random, deadlift: bool) -> dict:
+def _cycle_layout(fps: float, n_reps: int, rng: random.Random) -> dict:
     """Frame counts for pauses and travel phases, with per-rep tempo variation."""
     pause_out = max(3, int(round(0.14 * fps)))
     pause_mid = max(3, int(round(0.13 * fps)))
@@ -367,7 +367,7 @@ def _cycle_layout(fps: float, n_reps: int, rng: random.Random, deadlift: bool) -
         down = max(4, int(round(0.55 * tempo * fps)))
         up = max(4, int(round(0.62 * tempo * fps)))
         reps.append((down, up))
-    return {"pause_out": pause_out, "pause_mid": pause_mid, "reps": reps, "deadlift": deadlift}
+    return {"pause_out": pause_out, "pause_mid": pause_mid, "reps": reps}
 
 
 def _phase_track(layout: dict) -> tuple[list[tuple[int, float]], list[RepTiming]]:
@@ -1146,7 +1146,7 @@ def clip_specs(rng: random.Random) -> list[ClipSpec]:
 
 
 def build_clip(spec: ClipSpec, rng: random.Random) -> dict:
-    layout = _cycle_layout(spec.fps, spec.n_reps, rng, spec.exercise == "deadlift")
+    layout = _cycle_layout(spec.fps, spec.n_reps, rng)
     track, _ = _phase_track(layout)
     if spec.exercise == "squat" and spec.view == "front":
         frames, timings, truths = build_squat_front(spec.height, spec.levels, layout, spec.narrow)

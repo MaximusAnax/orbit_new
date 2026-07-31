@@ -11,10 +11,9 @@ and even that is injected (``clock``) so tests and evals stay deterministic.
 from __future__ import annotations
 
 import os
-from collections.abc import Callable, Iterable, Sequence
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime
-from pathlib import Path
 from typing import Any
 
 from .datasets import build_context
@@ -697,18 +696,11 @@ class GrailTraderService:
             raise PreconditionError("no index points: run `index build` first")
         return max(weeks)
 
+    def latest_index_week(self) -> str:
+        """The newest week the current index covers — the default ``as_of`` everywhere."""
+        return self._latest_index_week(self.index_view())
+
     def stratum_context(self, leaf: str) -> list[str]:
         """The leaf and its ancestors, most specific first (used by ``portfolio show``)."""
         self.ctx.gazetteer.validate_stratum(leaf)
         return ancestors(leaf)
-
-
-def default_garments(rows: Iterable[dict[str, Any]]) -> list[Garment]:
-    """Parse portfolio rows (used by the CLI's ``portfolio add --from-json``)."""
-    return [Garment.model_validate(row) for row in rows]
-
-
-def data_dir_hint() -> Path:
-    from .datasets import DEFAULT_DATA_DIR
-
-    return DEFAULT_DATA_DIR

@@ -1,0 +1,383 @@
+{
+  "_comment": [
+    "Derived by derive_expected.py from labels + watchlist; hand-reviewed and",
+    "committed. M4 step 1 asserts the engine's file-channel digest item set,",
+    "mapped from story ids to group ids, equals `expected`.",
+    "`alerted` is the step-1 alert set on the same channel (TSLA, mode=both)."
+  ],
+  "alerted": [
+    {
+      "ticker": "TSLA",
+      "group_id": 102
+    }
+  ],
+  "expected": [
+    {
+      "ticker": "AAPL",
+      "group_id": 1
+    },
+    {
+      "ticker": "AAPL",
+      "group_id": 101
+    },
+    {
+      "ticker": "AAPL",
+      "group_id": 115
+    },
+    {
+      "ticker": "AAPL",
+      "group_id": 135
+    },
+    {
+      "ticker": "ALL",
+      "group_id": 109
+    },
+    {
+      "ticker": "ALL",
+      "group_id": 133
+    },
+    {
+      "ticker": "AMZN",
+      "group_id": 13
+    },
+    {
+      "ticker": "AMZN",
+      "group_id": 103
+    },
+    {
+      "ticker": "AMZN",
+      "group_id": 120
+    },
+    {
+      "ticker": "CAT",
+      "group_id": 16
+    },
+    {
+      "ticker": "CAT",
+      "group_id": 107
+    },
+    {
+      "ticker": "F",
+      "group_id": 14
+    },
+    {
+      "ticker": "F",
+      "group_id": 106
+    },
+    {
+      "ticker": "F",
+      "group_id": 140
+    },
+    {
+      "ticker": "GOOGL",
+      "group_id": 110
+    },
+    {
+      "ticker": "META",
+      "group_id": 20
+    },
+    {
+      "ticker": "META",
+      "group_id": 104
+    },
+    {
+      "ticker": "META",
+      "group_id": 136
+    },
+    {
+      "ticker": "SHEL",
+      "group_id": 15
+    },
+    {
+      "ticker": "SHEL",
+      "group_id": 108
+    },
+    {
+      "ticker": "TGT",
+      "group_id": 7
+    },
+    {
+      "ticker": "TGT",
+      "group_id": 111
+    },
+    {
+      "ticker": "TSLA",
+      "group_id": 2
+    },
+    {
+      "ticker": "V",
+      "group_id": 105
+    },
+    {
+      "ticker": "V",
+      "group_id": 128
+    }
+  ],
+  "story_relevance": [
+    {
+      "ticker": "AAPL",
+      "group_id": 1,
+      "relevance": 50
+    },
+    {
+      "ticker": "AAPL",
+      "group_id": 5,
+      "relevance": 6
+    },
+    {
+      "ticker": "AAPL",
+      "group_id": 101,
+      "relevance": 94
+    },
+    {
+      "ticker": "AAPL",
+      "group_id": 115,
+      "relevance": 94
+    },
+    {
+      "ticker": "AAPL",
+      "group_id": 135,
+      "relevance": 88
+    },
+    {
+      "ticker": "ALL",
+      "group_id": 6,
+      "relevance": 6
+    },
+    {
+      "ticker": "ALL",
+      "group_id": 109,
+      "relevance": 94
+    },
+    {
+      "ticker": "ALL",
+      "group_id": 133,
+      "relevance": 50
+    },
+    {
+      "ticker": "ALL",
+      "group_id": 137,
+      "relevance": 6
+    },
+    {
+      "ticker": "AMZN",
+      "group_id": 5,
+      "relevance": 6
+    },
+    {
+      "ticker": "AMZN",
+      "group_id": 13,
+      "relevance": 50
+    },
+    {
+      "ticker": "AMZN",
+      "group_id": 103,
+      "relevance": 94
+    },
+    {
+      "ticker": "AMZN",
+      "group_id": 120,
+      "relevance": 94
+    },
+    {
+      "ticker": "AMZN",
+      "group_id": 141,
+      "relevance": 6
+    },
+    {
+      "ticker": "CAT",
+      "group_id": 6,
+      "relevance": 6
+    },
+    {
+      "ticker": "CAT",
+      "group_id": 16,
+      "relevance": 50
+    },
+    {
+      "ticker": "CAT",
+      "group_id": 107,
+      "relevance": 94
+    },
+    {
+      "ticker": "CAT",
+      "group_id": 121,
+      "relevance": 6
+    },
+    {
+      "ticker": "CAT",
+      "group_id": 138,
+      "relevance": 6
+    },
+    {
+      "ticker": "F",
+      "group_id": 5,
+      "relevance": 6
+    },
+    {
+      "ticker": "F",
+      "group_id": 14,
+      "relevance": 50
+    },
+    {
+      "ticker": "F",
+      "group_id": 106,
+      "relevance": 94
+    },
+    {
+      "ticker": "F",
+      "group_id": 118,
+      "relevance": 6
+    },
+    {
+      "ticker": "F",
+      "group_id": 140,
+      "relevance": 88
+    },
+    {
+      "ticker": "GOOGL",
+      "group_id": 6,
+      "relevance": 6
+    },
+    {
+      "ticker": "GOOGL",
+      "group_id": 17,
+      "relevance": 25
+    },
+    {
+      "ticker": "GOOGL",
+      "group_id": 110,
+      "relevance": 94
+    },
+    {
+      "ticker": "GOOGL",
+      "group_id": 142,
+      "relevance": 6
+    },
+    {
+      "ticker": "META",
+      "group_id": 6,
+      "relevance": 6
+    },
+    {
+      "ticker": "META",
+      "group_id": 20,
+      "relevance": 50
+    },
+    {
+      "ticker": "META",
+      "group_id": 104,
+      "relevance": 94
+    },
+    {
+      "ticker": "META",
+      "group_id": 119,
+      "relevance": 6
+    },
+    {
+      "ticker": "META",
+      "group_id": 136,
+      "relevance": 88
+    },
+    {
+      "ticker": "ORCL",
+      "group_id": 6,
+      "relevance": 6
+    },
+    {
+      "ticker": "ORCL",
+      "group_id": 18,
+      "relevance": 50
+    },
+    {
+      "ticker": "ORCL",
+      "group_id": 112,
+      "relevance": 94
+    },
+    {
+      "ticker": "ORCL",
+      "group_id": 122,
+      "relevance": 6
+    },
+    {
+      "ticker": "SHEL",
+      "group_id": 6,
+      "relevance": 6
+    },
+    {
+      "ticker": "SHEL",
+      "group_id": 15,
+      "relevance": 50
+    },
+    {
+      "ticker": "SHEL",
+      "group_id": 108,
+      "relevance": 94
+    },
+    {
+      "ticker": "SHEL",
+      "group_id": 117,
+      "relevance": 6
+    },
+    {
+      "ticker": "TGT",
+      "group_id": 5,
+      "relevance": 6
+    },
+    {
+      "ticker": "TGT",
+      "group_id": 7,
+      "relevance": 50
+    },
+    {
+      "ticker": "TGT",
+      "group_id": 111,
+      "relevance": 94
+    },
+    {
+      "ticker": "TSLA",
+      "group_id": 2,
+      "relevance": 50
+    },
+    {
+      "ticker": "TSLA",
+      "group_id": 5,
+      "relevance": 6
+    },
+    {
+      "ticker": "TSLA",
+      "group_id": 102,
+      "relevance": 94
+    },
+    {
+      "ticker": "TSLA",
+      "group_id": 118,
+      "relevance": 6
+    },
+    {
+      "ticker": "TSLA",
+      "group_id": 139,
+      "relevance": 6
+    },
+    {
+      "ticker": "V",
+      "group_id": 5,
+      "relevance": 6
+    },
+    {
+      "ticker": "V",
+      "group_id": 105,
+      "relevance": 94
+    },
+    {
+      "ticker": "V",
+      "group_id": 116,
+      "relevance": 6
+    },
+    {
+      "ticker": "V",
+      "group_id": 128,
+      "relevance": 50
+    }
+  ]
+}

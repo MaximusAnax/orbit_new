@@ -12,7 +12,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass, field
 from datetime import date, timedelta
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
 from typing import Any
 
@@ -44,22 +44,22 @@ LIQUID_METHODS = {"statement_credit", "bank_deposit"}
 # --------------------------------------------------------------------------
 
 
-@lru_cache(maxsize=None)
+@cache
 def world_files(name: str) -> dict[str, Any]:
     return json.loads((FIXTURES / "worlds" / f"{name}.json").read_text(encoding="utf-8"))
 
 
-@lru_cache(maxsize=None)
+@cache
 def eval_world(name: str) -> World:
     return build_world(world_files(name), validate=True)
 
 
-@lru_cache(maxsize=None)
+@cache
 def shipped_files() -> dict[str, Any]:
     return CommittedWorldProvider().raw_files()
 
 
-@lru_cache(maxsize=None)
+@cache
 def shipped_world() -> World:
     return CommittedWorldProvider().load()
 
@@ -227,7 +227,7 @@ def _raw_portal_points(fare_cents: int, option: dict[str, Any]) -> int:
     return max(-((-raw) // inc) * inc, option["min_points"])
 
 
-def validate_plan(  # noqa: PLR0912, PLR0915 - one branch per documented check
+def validate_plan(
     files: dict[str, Any],
     case: dict[str, Any],
     plan: Plan,

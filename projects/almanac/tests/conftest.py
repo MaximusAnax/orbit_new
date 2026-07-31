@@ -119,7 +119,7 @@ def entry_factory(params):
 @pytest.fixture
 def api_client(service):
     """FastAPI TestClient wired to the in-memory, offline service."""
-    from almanac.api.app import create_app
+    from almanac.api.routes import create_app
     from fastapi.testclient import TestClient
 
     with TestClient(create_app(lambda: service)) as client:

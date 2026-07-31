@@ -26,6 +26,13 @@ delta to 12 decimals before any comparison (D6).
 :func:`exact_optimal` is the Held-Karp ground truth the evals compare against;
 it is guarded to ``n <= 14`` and supports fixed endpoints so anchored
 instances are scored under the same constraints the heuristic receives (FR-9).
+
+:func:`construct` exposes step 1 on its own.  It is the *degenerate* flowlist —
+what :func:`reorder` would return if the local search did nothing — and the
+eval suite measures it live as the baseline the M4 gates have to reject
+(EVALS.md §3-M4b).  Keeping it a real entry point rather than an eval-local
+copy is what makes that baseline the shipped construction phase instead of a
+straw man.
 """
 
 from __future__ import annotations
@@ -335,6 +342,73 @@ def _local_search(
 # --------------------------------------------------------------------------- #
 
 
+def _prepare(
+    matrix: Sequence[Sequence[float]], start: int | None, end: int | None
+) -> tuple[np.ndarray, int]:
+    """Shared entry validation for :func:`reorder` and :func:`construct`."""
+    array = _as_array(matrix)
+    n = array.shape[0]
+    if n > MAX_PLAYLIST_SIZE:
+        raise PlaylistTooLargeError(
+            f"playlist has {n} entries; the optimizer caps at {MAX_PLAYLIST_SIZE}",
+            entries=n,
+            cap=MAX_PLAYLIST_SIZE,
+        )
+    _validate_anchors(n, start, end)
+    return array, n
+
+
+def _degenerate(n: int, seed: int) -> ReorderResult | None:
+    """The n <= 1 answers, shared by both entry points."""
+    if n == 0:
+        return ReorderResult(
+            order=[], total=0.0, construction_total=0.0, passes=0, moves=0, starts=0, seed=seed
+        )
+    if n == 1:
+        return ReorderResult(
+            order=[0], total=0.0, construction_total=0.0, passes=0, moves=0, starts=1, seed=seed
+        )
+    return None
+
+
+def construct(
+    matrix: Sequence[Sequence[float]],
+    seed: int = 0,
+    start: int | None = None,
+    end: int | None = None,
+) -> ReorderResult:
+    """Step 1 of D6 alone: the best of the k greedy constructions, no local search.
+
+    This is the *degenerate flowlist* — precisely what :func:`reorder` would
+    return if Or-opt and 2-opt were removed — and the eval suite scores it live
+    as the baseline M4 must reject (EVALS.md §3-M4b, §4).  Measuring the
+    shipped construction phase rather than a re-implementation is what makes
+    that rejection mean something: a weaker stand-in can be defeated by
+    fixtures the real construction still solves.
+
+    ``passes`` and ``moves`` are 0 by construction, and ``total`` equals
+    ``construction_total``.
+    """
+    array, n = _prepare(matrix, start, end)
+    if (small := _degenerate(n, seed)) is not None:
+        return small
+
+    orders = _constructions(array, seed, start, end)
+    # ``max`` keeps the first maximal element: the D6 lowest-index tie-break.
+    best_order = max(orders, key=lambda order: total_of(order, array))
+    total = total_of(best_order, array)
+    return ReorderResult(
+        order=list(best_order),
+        total=total,
+        construction_total=total,
+        passes=0,
+        moves=0,
+        starts=len(orders),
+        seed=seed,
+        algorithm=Algorithm.GREEDY_2OPT,
+    )
+
+
 def reorder(
     matrix: Sequence[Sequence[float]],
     seed: int = 0,
@@ -347,26 +421,11 @@ def reorder(
     ``start``/``end`` are optional anchors (FR-9): the returned order begins
     and/or ends with them and no local-search move may displace them.
     """
-    array = _as_array(matrix)
-    n = array.shape[0]
-    if n > MAX_PLAYLIST_SIZE:
-        raise PlaylistTooLargeError(
-            f"playlist has {n} entries; the optimizer caps at {MAX_PLAYLIST_SIZE}",
-            entries=n,
-            cap=MAX_PLAYLIST_SIZE,
-        )
     if max_passes < 1:
         raise ValueError("max_passes must be >= 1")
-    _validate_anchors(n, start, end)
-
-    if n == 0:
-        return ReorderResult(
-            order=[], total=0.0, construction_total=0.0, passes=0, moves=0, starts=0, seed=seed
-        )
-    if n == 1:
-        return ReorderResult(
-            order=[0], total=0.0, construction_total=0.0, passes=0, moves=0, starts=1, seed=seed
-        )
+    array, n = _prepare(matrix, start, end)
+    if (small := _degenerate(n, seed)) is not None:
+        return small
 
     orders = _constructions(array, seed, start, end)
     lo = 1 if start is not None else 0
@@ -485,6 +544,7 @@ __all__ = [
     "MAX_STARTS",
     "TIE_WINDOW",
     "PathSolution",
+    "construct",
     "exact_optimal",
     "reorder",
     "total_of",

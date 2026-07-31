@@ -265,7 +265,7 @@ def create_app() -> FastAPI:
         service: ServiceDep, as_of: str | None = None
     ) -> PortfolioValuationResponse:
         rows = service.value_portfolio(as_of=as_of)
-        week = week_key(as_of) if as_of else service._latest_index_week(service.index_view())
+        week = week_key(as_of) if as_of else service.latest_index_week()
         values = [_valuation(garment, result, week) for garment, result in rows]
         return PortfolioValuationResponse(
             as_of_week=week,
@@ -298,7 +298,7 @@ def create_app() -> FastAPI:
     ) -> ValuationResponse:
         garment = service.get_garment(garment_id)
         result = service.value_one(garment, as_of=as_of)
-        week = week_key(as_of) if as_of else service._latest_index_week(service.index_view())
+        week = week_key(as_of) if as_of else service.latest_index_week()
         return _valuation(garment, result, week)
 
     # -- FR-8 advice -------------------------------------------------------------- #

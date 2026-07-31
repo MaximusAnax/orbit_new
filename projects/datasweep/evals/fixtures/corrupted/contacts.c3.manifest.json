@@ -15,6 +15,15 @@
    "date_order": "provable",
    "format": "%d/%m/%Y",
    "proof_row": 15
+  },
+  "value": {
+   "agree": 0.981383,
+   "decisive": {
+    "COMMA": 7,
+    "DOT": 369
+   },
+   "mixed_conventions": false,
+   "number_convention": "DOT"
   }
  },
  "columns": [

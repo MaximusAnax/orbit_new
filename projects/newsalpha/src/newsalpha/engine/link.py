@@ -131,7 +131,22 @@ def scan_mentions(article: Article, datasets: Datasets) -> list[Mention]:
 
     Overlapping candidate mentions are resolved by (longest span, highest
     confidence, earliest start); the surviving mentions never overlap.
+
+    Memoized per article id, which is a pure function of the article's content
+    hash (DATA_MODEL.md's id scheme): the same id can only ever carry the same
+    analysis text, so the memo cannot change an answer.  A cluster's articles are
+    re-scanned once per event without it, and the active-window recompute repeats
+    the whole pass on every ingest.  Callers must not mutate the returned list.
     """
+    cache: dict[str, list[Mention]] = datasets.gazetteer_cache.setdefault("mentions", {})
+    cached = cache.get(article.id)
+    if cached is None:
+        cached = _scan_mentions(article, datasets)
+        cache[article.id] = cached
+    return cached
+
+
+def _scan_mentions(article: Article, datasets: Datasets) -> list[Mention]:
     text = article.analysis_text
     sentences = split_sentences(text, datasets.lexicons.abbreviations)
     symbols = _symbol_index(datasets)

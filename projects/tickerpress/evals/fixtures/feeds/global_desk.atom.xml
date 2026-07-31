@@ -8,7 +8,7 @@
     <title>Tesla museum in Belgrade reopens after restoration</title>
     <link href="https://globaldesk.example.com/tesla-museum-belgrade"/>
     <summary>The museum holds the inventor's notebooks and a working replica of his coil.</summary>
-    <content type="html">&lt;p&gt;The curator said the work took two years.&lt;/p&gt;&lt;p&gt;Letters between the inventor and Ford are shown in a new gallery from Friday.&lt;/p&gt;&lt;p&gt;Visitors can see the replica coil on the ground floor.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;The curator said the work took two years.&lt;/p&gt;&lt;p&gt;Letters between the inventor and Ford are shown in a new gallery from Friday.&lt;/p&gt;&lt;p&gt;Visitors can see the replica coil on the ground floor.&lt;/p&gt;&lt;p&gt;An actor reads the letters in the audio guide, and the small cinema shows a short film by a local director.&lt;/p&gt;&lt;p&gt;A visiting display from the Oracle of Delphi site opens in the same wing in June.&lt;/p&gt;</content>
     <published>2026-02-28T17:05:00Z</published>
     <updated>2026-02-28T17:05:00Z</updated>
   </entry>
@@ -17,52 +17,61 @@
     <title>Regulators propose new caps on card fees</title>
     <link href="https://globaldesk.example.com/card-fee-rules-proposal"/>
     <summary>A draft rule would cap the fees merchants pay on debit transactions across the domestic market.</summary>
-    <content type="html">&lt;p&gt;The consultation runs for ninety days and a final rule is expected late in the year.&lt;/p&gt;&lt;p&gt;Bank lobbyists said the change would shift costs onto cardholders.&lt;/p&gt;&lt;p&gt;Shares of $V were little changed after the proposal.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;The consultation runs for ninety days and a final rule is expected late in the year.&lt;/p&gt;&lt;p&gt;A parallel suit is still before the court, and the draft adds a disclosure requirement at checkout.&lt;/p&gt;&lt;p&gt;Bank lobbyists said the change would shift costs onto cardholders.&lt;/p&gt;&lt;p&gt;Shares of $V were little changed after the proposal.&lt;/p&gt;</content>
     <published>2026-02-28T11:20:00Z</published>
     <updated>2026-02-28T11:20:00Z</updated>
   </entry>
   <entry>
     <id>tag:globaldesk.example.com,2026:global_desk-g007-2</id>
     <title>Global Desk | Grocery pricing pressure is squeezing margins</title>
-    <link href="https://globaldesk.example.com/grocery-pricing-pressure?utm_source=rss&amp;utm_medium=feed"/>
+    <link href="https://globaldesk.example.com/grocery-pricing-pressure?utm_source=rss&amp;utm_medium=feed&amp;utm_content=variant"/>
     <summary>Supermarket chains cut list prices on staples for a second quarter running.</summary>
-    <content type="html">&lt;p&gt;Suppliers said Target had pushed hardest on private-label pricing this year.&lt;/p&gt;&lt;p&gt;Analysts said Target would protect trips rather than basket size.&lt;/p&gt;&lt;p&gt;One supplier said Target asked for longer payment terms.&lt;/p&gt;&lt;p&gt;Shelf space at Target for national brands narrowed again, suppliers said.&lt;/p&gt;&lt;p&gt;Additional reporting from the regional bureaux.&lt;/p&gt;</content>
-    <published>2026-02-28T01:15:00Z</published>
-    <updated>2026-02-28T01:15:00Z</updated>
+    <content type="html">&lt;p&gt;Suppliers said Target had pushed hardest on private-label pricing this year.&lt;/p&gt;&lt;p&gt;Analysts said Target would protect trips rather than basket size.&lt;/p&gt;&lt;p&gt;One supplier said Target asked for longer payment terms.&lt;/p&gt;&lt;p&gt;Chains said holiday volumes had already normalised, and one retailer trimmed its forecast for the spring.&lt;/p&gt;&lt;p&gt;Shelf space at Target for national brands narrowed again, suppliers said.&lt;/p&gt;&lt;p&gt;Additional reporting from the bureaux.&lt;/p&gt;</content>
+    <published>2026-02-27T23:10:00Z</published>
+    <updated>2026-02-27T23:10:00Z</updated>
+  </entry>
+  <entry>
+    <id>tag:globaldesk.example.com,2026:global_desk-g019-1</id>
+    <title>Global Desk | In northern woodlands, Caterpillar and moth numbers rebound</title>
+    <link href="https://wireone.example.com/caterpillar-woodlands?utm_source=rss&amp;utm_medium=feed"/>
+    <summary>Surveys found larvae counts up by a third after two poor seasons.</summary>
+    <content type="html">&lt;p&gt;Warm springs favour the species that feed on birch.&lt;/p&gt;&lt;p&gt;Caterpillar damage was heaviest in the Apple orchards, the survey said.&lt;/p&gt;&lt;p&gt;Conservation groups said deforestation elsewhere still threatens habitat, and the canopy along the riverbank has thinned.&lt;/p&gt;&lt;p&gt;A similar rebound was recorded in the Amazon basin last season.&lt;/p&gt;&lt;p&gt;Additional reporting from the bureaux.&lt;/p&gt;</content>
+    <published>2026-02-27T15:00:00Z</published>
+    <updated>2026-02-27T15:00:00Z</updated>
   </entry>
   <entry>
     <id>tag:globaldesk.example.com,2026:global_desk-065</id>
     <title>Port traffic recovered after the strike</title>
     <link href="https://globaldesk.example.com/port-traffic-recovered"/>
-    <summary>Volumes in February were 2 percent above the same month last year.</summary>
-    <content type="html">&lt;p&gt;The port authority said in a statement that container traffic returned to normal levels within three weeks of the settlement.&lt;/p&gt;&lt;p&gt;It said the backlog of vessels waiting at anchor cleared on the ninth of the month.&lt;/p&gt;&lt;p&gt;A spokesperson said rail connections were the last part of the network to recover.&lt;/p&gt;</content>
+    <summary>Volumes in February were 2 percent above the same month last year. Dockworkers returned to a schedule agreed in mediation, with overtime capped until the summer.</summary>
+    <content type="html">&lt;p&gt;The port authority said in a statement that container traffic returned to normal levels within three weeks of the settlement.&lt;/p&gt;&lt;p&gt;It said the backlog of vessels waiting at anchor cleared on the ninth of the month.&lt;/p&gt;&lt;p&gt;A spokesperson said rail connections were the last part of the network to recover.&lt;/p&gt;&lt;p&gt;Cruise passengers returned in February, though tourists paid higher visa fees at the terminal.&lt;/p&gt;</content>
     <published>2026-02-27T11:45:00Z</published>
     <updated>2026-02-27T11:45:00Z</updated>
-  </entry>
-  <entry>
-    <id>tag:globaldesk.example.com,2026:global_desk-g019-1</id>
-    <title>Global Desk | In northern woodlands, Caterpillar and moth numbers rebound</title>
-    <link href="https://wireone.example.com/caterpillar-woodlands?utm_source=rss&amp;utm_medium=feed&amp;utm_content=variant"/>
-    <summary>Surveys found larvae counts up by a third after two poor seasons.</summary>
-    <content type="html">&lt;p&gt;Warm springs favour the species that feed on birch.&lt;/p&gt;&lt;p&gt;Caterpillar damage was heaviest in the Apple orchards, the survey said.&lt;/p&gt;&lt;p&gt;Additional reporting from the regional bureaux.&lt;/p&gt;</content>
-    <published>2026-02-27T10:15:00Z</published>
-    <updated>2026-02-27T10:15:00Z</updated>
   </entry>
   <entry>
     <id>tag:globaldesk.example.com,2026:global_desk-045</id>
     <title>Visa fees rose for long-stay travellers</title>
     <link href="https://globaldesk.example.com/visa-fees-long-stay"/>
     <summary>The consulate said the new schedule applies to applications filed after April 1.</summary>
-    <content type="html">&lt;p&gt;Tourists on short stays are not affected by the change.&lt;/p&gt;&lt;p&gt;Tourists booking Amazon river cruises need the same documents, the consulate said.&lt;/p&gt;&lt;p&gt;Visa applications from students will be processed under the old fee, the embassy said.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;Tourists on short stays are not affected by the change.&lt;/p&gt;&lt;p&gt;Tourists booking Amazon river cruises need the same documents, the consulate said.&lt;/p&gt;&lt;p&gt;Applications from students will be processed under the old fee, the embassy said.&lt;/p&gt;</content>
     <published>2026-02-27T07:30:00Z</published>
     <updated>2026-02-27T07:30:00Z</updated>
+  </entry>
+  <entry>
+    <id>tag:globaldesk.example.com,2026:global_desk-g010-2</id>
+    <title>Five habits that save time in Shell scripting for beginners</title>
+    <link href="https://globaldesk.example.com/shell-scripting-habits?utm_source=rss&amp;utm_medium=feed&amp;utm_content=variant"/>
+    <summary>The tutorial covers quoting, exit codes and how to keep a script readable.</summary>
+    <content type="html">&lt;p&gt;Each example runs with the standard interpreter and no extra packages.&lt;/p&gt;&lt;p&gt;Bind the Meta key before you start, the tutorial says.&lt;/p&gt;&lt;p&gt;Scripts in the examples avoid subshells where a repeat will do.&lt;/p&gt;&lt;p&gt;Additional reporting from the bureaux.&lt;/p&gt;</content>
+    <published>2026-02-26T08:30:00Z</published>
+    <updated>2026-02-26T08:30:00Z</updated>
   </entry>
   <entry>
     <id>tag:globaldesk.example.com,2026:global_desk-008</id>
     <title>Shell approves a North Sea gas development</title>
     <link href="https://globaldesk.example.com/shell-north-sea-project"/>
     <summary>Shell plc (LSE: SHEL) approved a $2.1 billion North Sea gas development that will feed its liquefied natural gas plant from 2029.</summary>
-    <content type="html">&lt;p&gt;The project is expected to produce 45,000 barrels of oil equivalent a day.&lt;/p&gt;&lt;p&gt;Suppliers will be selected before the end of the year.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;The project is expected to produce 45,000 barrels of oil equivalent a day.&lt;/p&gt;&lt;p&gt;Suppliers will be selected before the end of the year, and the plant will run at full capacity from 2030.&lt;/p&gt;</content>
     <published>2026-02-26T07:15:00Z</published>
     <updated>2026-02-26T07:15:00Z</updated>
   </entry>
@@ -71,18 +80,9 @@
     <title>Amazon basin survey finds insect numbers rebounding</title>
     <link href="https://globaldesk.example.com/amazon-basin-survey"/>
     <summary>Ecologists said larvae counts in the basin rose for a second season after years of decline.</summary>
-    <content type="html">&lt;p&gt;Caterpillar species tracked by the survey recovered fastest in protected habitat.&lt;/p&gt;&lt;p&gt;Deforestation in the Amazon basin slowed 8 percent, the survey said.&lt;/p&gt;&lt;p&gt;Shell fragments of river molluscs were counted along the same riverbank.&lt;/p&gt;&lt;p&gt;Conservation groups said the canopy is still thinner than in 2015.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;Caterpillar species tracked by the survey recovered fastest in protected habitat.&lt;/p&gt;&lt;p&gt;Deforestation in the Amazon basin slowed 8 percent, the survey said.&lt;/p&gt;&lt;p&gt;Shell fragments of river molluscs were counted along the same riverbank.&lt;/p&gt;&lt;p&gt;Conservation groups said the canopy is still thinner than in 2015.&lt;/p&gt;&lt;p&gt;Butterflies and moth larvae were counted along the same transects.&lt;/p&gt;</content>
     <published>2026-02-26T06:40:00Z</published>
     <updated>2026-02-26T06:40:00Z</updated>
-  </entry>
-  <entry>
-    <id>tag:globaldesk.example.com,2026:global_desk-g010-2</id>
-    <title>Five habits that save time in Shell scripting for beginners</title>
-    <link href="https://globaldesk.example.com/shell-scripting-habits?utm_source=partner&amp;utm_campaign=syndication"/>
-    <summary>The tutorial covers quoting, exit codes and how to keep a script readable in the terminal window.</summary>
-    <content type="html">&lt;p&gt;Bind the Meta key before you start, the tutorial says.&lt;/p&gt;&lt;p&gt;Shell scripts in the examples avoid subshells where a loop will do.&lt;/p&gt;&lt;p&gt;Additional reporting from the regional bureaux.&lt;/p&gt;</content>
-    <published>2026-02-26T04:15:00Z</published>
-    <updated>2026-02-26T04:15:00Z</updated>
   </entry>
   <entry>
     <id>tag:globaldesk.example.com,2026:global_desk-039</id>
@@ -96,11 +96,11 @@
   <entry>
     <id>tag:globaldesk.example.com,2026:global_desk-g002-4</id>
     <title>Global Desk | Rival vehicles gain access to charging networks</title>
-    <link href="https://globaldesk.example.com/charging-networks-open?utm_source=rss&amp;utm_medium=feed"/>
+    <link href="https://globaldesk.example.com/charging-networks-open?utm_source=newsletter&amp;utm_medium=email"/>
     <summary>Three operators said cross-brand access will be available at most sites by the summer.</summary>
-    <content type="html">&lt;p&gt;Operators said Tesla had opened the largest share of its connectors so far.&lt;/p&gt;&lt;p&gt;Analysts said Tesla earns a margin on every session sold to other brands.&lt;/p&gt;&lt;p&gt;One operator said Tesla hardware needed only a firmware change.&lt;/p&gt;&lt;p&gt;Drivers using Tesla connectors pay a small premium, the operators said.&lt;/p&gt;&lt;p&gt;Additional reporting from the regional bureaux.&lt;/p&gt;</content>
-    <published>2026-02-25T09:20:00Z</published>
-    <updated>2026-02-25T09:20:00Z</updated>
+    <content type="html">&lt;p&gt;Operators said Tesla had opened the largest share of its connectors so far.&lt;/p&gt;&lt;p&gt;Analysts said Tesla earns a margin on every session sold to other brands.&lt;/p&gt;&lt;p&gt;One operator said Tesla hardware needed only a firmware change.&lt;/p&gt;&lt;p&gt;Drivers using Tesla connectors pay a small premium, the operators said.&lt;/p&gt;&lt;p&gt;Additional reporting from the bureaux.&lt;/p&gt;</content>
+    <published>2026-02-25T10:20:00Z</published>
+    <updated>2026-02-25T10:20:00Z</updated>
   </entry>
   <entry>
     <id>tag:globaldesk.example.com,2026:global_desk-031</id>
@@ -115,8 +115,8 @@
     <id>tag:globaldesk.example.com,2026:global_desk-052</id>
     <title>Oracle of Delphi site yields new inscriptions</title>
     <link href="https://globaldesk.example.com/delphi-inscriptions"/>
-    <summary>Archaeologists said the inscriptions name two temple officials and a treasurer.</summary>
-    <content type="html">&lt;p&gt;The excavation ran for three seasons on the lower terrace.&lt;/p&gt;&lt;p&gt;One inscription names the Apple of discord, the myth that opens the Trojan war.&lt;/p&gt;&lt;p&gt;Fragments of an earlier sanctuary were found beneath the ruins.&lt;/p&gt;</content>
+    <summary>The site museum said the new finds name two officials and a treasurer.</summary>
+    <content type="html">&lt;p&gt;The curator said the work ran for three seasons on the lower terrace.&lt;/p&gt;&lt;p&gt;Apple of discord, the ancient myth that opens the Trojan war, appears on one fragment.&lt;/p&gt;&lt;p&gt;Tourists returning in spring will see the finds in the new gallery.&lt;/p&gt;&lt;p&gt;Shell offerings from the votive deposit were catalogued this winter.&lt;/p&gt;</content>
     <published>2026-02-25T06:25:00Z</published>
     <updated>2026-02-25T06:25:00Z</updated>
   </entry>
@@ -125,7 +125,7 @@
     <title>Oil prices slip as producers signal higher output</title>
     <link href="https://globaldesk.example.com/opec-output-signal"/>
     <summary>Crude settled 1.4 percent lower after producers signalled that quotas would be relaxed in the second half.</summary>
-    <content type="html">&lt;p&gt;Refining margins in northwest Europe narrowed for a third week in a row.&lt;/p&gt;&lt;p&gt;Shares of $SHEL fell 0.8 percent in London trading.&lt;/p&gt;</content>
+    <content type="html">&lt;p&gt;Refining margins in northwest Europe narrowed for a third week in a row.&lt;/p&gt;&lt;p&gt;One trader said the curve had flattened since January.&lt;/p&gt;&lt;p&gt;Shares of $SHEL fell 0.8 percent in London trading.&lt;/p&gt;</content>
     <published>2026-02-24T16:50:00Z</published>
     <updated>2026-02-24T16:50:00Z</updated>
   </entry>

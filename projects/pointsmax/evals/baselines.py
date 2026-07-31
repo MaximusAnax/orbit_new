@@ -116,7 +116,7 @@ def greedy_plan_set(
             try:
                 value = value_plan(opening, uses, bookings, world.mcpp_map())
                 arrival, hop_index = _arrival_and_hops(tuple(uses))
-            except Exception:  # noqa: BLE001 - a broken greedy plan simply scores zero
+            except Exception:
                 continue
             drafts.append(
                 PlanDraft(
@@ -208,12 +208,11 @@ def greedy_random_runner(case: dict[str, Any]) -> bool:
 
 
 def cpp_first(plans: list[Plan]) -> list[Plan]:
-    """Correct plans, wrong objective: rank by realized cents-per-point."""
-    return sorted(
+    """Correct plans, wrong objective: rank by realized cents-per-point, ties by rank."""
+    ordered = sorted(
         enumerate(plans), key=lambda item: (-(item[1].realized_cpp_milli or -1), item[0])
-    ) and [plan for _, plan in sorted(
-        enumerate(plans), key=lambda item: (-(item[1].realized_cpp_milli or -1), item[0])
-    )]
+    )
+    return [plan for _, plan in ordered]
 
 
 # --------------------------------------------------------------------------

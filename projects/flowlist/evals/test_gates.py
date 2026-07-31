@@ -18,19 +18,23 @@ import pytest
 
 from evals import run as eval_run
 from evals.metrics import (
+    DEGENERATE_BASELINES,
     GATES,
     ExactSolverBroken,
     bpm_only_auc,
     by_id,
+    construction_only_order,
+    degenerate_m4,
     evaluate,
     exact_optimal,
     expected,
     fixture_invariants,
     fixtures,
     golden_orderings,
-    greedy_reference_m4,
     heuristic_order,
     matrix_of,
+    order_total,
+    reorder,
     suite,
 )
 
@@ -90,6 +94,50 @@ def test_fr8_exact_optimality_gate() -> None:
 def test_fr8_exact_optimality_min_gate() -> None:
     """M4_min >= 0.90: no single instance may fall off a cliff."""
     _assert_gate("M4_exact_optimality_min")
+
+
+def test_fr8_degenerate_rejection_gate() -> None:
+    """M4b = 1.00: the M4 thresholds must reject a construction-only flowlist."""
+    _assert_gate("M4b_degenerate_rejection")
+
+
+def test_fr8_local_search_is_load_bearing_on_the_exact_suite() -> None:
+    """The gate above, restated as the concrete failure it prevents.
+
+    ``optimizer.construct`` is literally what ``reorder`` returns with its local
+    search deleted, so if these numbers cleared the M4 gates then M4 would
+    certify nothing about the hard part.  Checked here as well as through the
+    gate so the failure message names the algorithm, not a metric id.
+    """
+    mean, minimum = degenerate_m4()["construction_only"]
+    assert mean < GATES["M4_exact_optimality_mean"], (
+        f"construction-only flowlist scores M4_mean={mean:.4f} and would PASS the gate: "
+        "the exact suite no longer separates construction from local search"
+    )
+    assert minimum < GATES["M4_exact_optimality_min"], (
+        f"construction-only flowlist scores M4_min={minimum:.4f} and would PASS the gate"
+    )
+    # ... and the shipped optimizer must clear the same bar it rejects.
+    assert evaluate().get("M4_exact_optimality_mean").value > mean
+    assert evaluate().get("M4_exact_optimality_min").value > minimum
+
+
+def test_fr8_local_search_lifts_every_hard_instance() -> None:
+    """On every instance the degenerate baseline fails, local search recovers it."""
+    lifted = 0
+    for fixture in suite("exact"):
+        matrix = matrix_of(fixture.id)
+        degenerate = order_total(construction_only_order(fixture), matrix)
+        found = order_total(heuristic_order(fixture), matrix)
+        assert found >= degenerate - 1e-12, (
+            f"{fixture.id}: local search made the construction worse "
+            f"({found:.6f} < {degenerate:.6f})"
+        )
+        lifted += found > degenerate + 1e-12
+    assert lifted >= MIN_TRAP_INSTANCES, (
+        f"local search improved only {lifted} of {len(suite('exact'))} exact instances; "
+        "the exact suite is too easy to exercise it"
+    )
 
 
 def test_fr8_heuristic_never_beats_the_exact_optimum() -> None:
@@ -179,9 +227,9 @@ def test_fixture_invariants() -> None:
 
     * ``bpm_only_auc <= 0.80`` keeps M2 and M2b simultaneously satisfiable, so
       a label-mix drift fails CI instead of silently making M2b impossible.
-    * At least three exact instances defeat construction-only greedy, and — the
-      property EVALS §4 actually claims — that reference greedy *fails* both M4
-      gates on this suite, so passing M4 requires the local search to work.
+    * At least three exact instances defeat a degenerate baseline, and — the
+      property EVALS §4 actually claims — *both* degenerate baselines fail both
+      M4 gates, so passing M4 requires the local search to work.
     """
     invariants = fixture_invariants()
     assert invariants["bpm_only_auc"] <= BPM_ONLY_CEILING, (
@@ -190,16 +238,57 @@ def test_fixture_invariants() -> None:
     )
     below = invariants["instances_below_0.97"]
     assert below >= MIN_TRAP_INSTANCES, (
-        f"only {below} exact instance(s) score below {TRAP_RATIO} against "
-        f"construction-only greedy: {invariants['greedy_only_ratios']}"
+        f"only {below} exact instance(s) score below {TRAP_RATIO} against a degenerate "
+        f"baseline: {invariants['worst_degenerate_ratios']}"
     )
-    greedy_mean, greedy_min = greedy_reference_m4()
-    assert greedy_mean < GATES["M4_exact_optimality_mean"], (
-        f"construction-only greedy would PASS M4_mean ({greedy_mean:.4f}); the exact "
-        "suite no longer discriminates construction from local search"
-    )
-    assert greedy_min < GATES["M4_exact_optimality_min"], (
-        f"construction-only greedy would PASS M4_min ({greedy_min:.4f})"
+    for name in DEGENERATE_BASELINES:
+        mean, minimum = invariants["degenerate_m4"][name]
+        assert mean < GATES["M4_exact_optimality_mean"], (
+            f"{name} would PASS M4_mean ({mean:.4f}); the exact suite no longer "
+            "discriminates construction from local search"
+        )
+        assert minimum < GATES["M4_exact_optimality_min"], (
+            f"{name} would PASS M4_min ({minimum:.4f})"
+        )
+
+
+def test_fixture_expected_json_is_not_stale() -> None:
+    """The committed generator measurements still describe the committed fixtures.
+
+    Gates are asserted on live values (EVALS §5), but ``expected.json`` is
+    printed and reviewed, so a fixture edit that left it behind would publish
+    numbers that are no longer true.  Reconciling the two is cheap and turns
+    that into a CI failure.
+    """
+    invariants = fixture_invariants()
+    for name, committed in invariants["committed_ratios"].items():
+        live = invariants["degenerate_ratios"][name]
+        assert set(committed) == set(live), f"{name}: expected.json covers a different suite"
+        for fixture_id, value in committed.items():
+            assert value == pytest.approx(live[fixture_id], abs=1e-6), (
+                f"expected.json {name} ratio for {fixture_id} is {value}, but the committed "
+                f"fixtures score {live[fixture_id]:.6f} — regenerate the fixtures"
+            )
+
+
+def test_fr15_m7_repeatability_check_is_not_vacuous() -> None:
+    """At least one M7 fixture must actually depend on the seed.
+
+    "Same seed, same order" is free for an implementation that ignores its
+    seed; without a seed-sensitive fixture in the golden set that half of M7
+    can never fail (REVIEW.md #26).
+    """
+    varies = []
+    for fixture_id in golden_orderings():
+        fixture = by_id(fixture_id)
+        matrix = matrix_of(fixture_id)
+        seven = reorder(matrix, seed=7, start=fixture.start, end=fixture.end).order
+        eight = reorder(matrix, seed=8, start=fixture.start, end=fixture.end).order
+        if seven != eight:
+            varies.append(fixture_id)
+    assert varies, (
+        "no golden fixture changes with the seed, so M7's repeatability check "
+        "cannot fail — swap in a seed-sensitive fixture"
     )
 
 

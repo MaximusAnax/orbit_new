@@ -21,13 +21,7 @@ from typing import Any
 from pydantic import BaseModel, ConfigDict
 
 from . import __version__
-from .adapters.artifacts import (
-    ArtifactWriter,
-    LocalArtifactWriter,
-    artifact_dir_name,
-    audit_filename,
-    cleaned_filename,
-)
+from .adapters.artifacts import ArtifactWriter, LocalArtifactWriter, artifact_dir_name
 from .adapters.clock import Clock, SystemClock
 from .adapters.notifier import Notifier, NullNotifier
 from .adapters.readers import FileMeta, TableReader, default_readers, reader_for
@@ -895,7 +889,5 @@ __all__ = [
     "RevertCheck",
     "RunDetail",
     "ScanResult",
-    "audit_filename",
-    "cleaned_filename",
     "sha256_file",
 ]

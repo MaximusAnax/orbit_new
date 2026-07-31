@@ -41,6 +41,18 @@ MAX_FORMANT_BANDWIDTH_HZ = 700.0
 TILT_BAND_HZ = (150.0, 3500.0)
 ROLLOFF_FRACTION = 0.85
 
+SPEECH_BAND_HZ = (300.0, 3400.0)
+"""Band the spectral-shape features are measured over.
+
+The classical telephone band, and not by accident: VoiceKin's own intake mixes a
+phone-recorded consent statement with an ``arecord`` enrollment, so every
+dimension measured outside 300-3400 Hz is a dimension where a band-limited take
+has *no* signal and the embedding ends up describing the channel instead of the
+speaker. Restricting the mel bands, the centroid and the rolloff to the band the
+narrowest realistic channel preserves is what makes cross-channel scoring
+possible at all (EVALS M1c); the cost is the fricative energy above 3.4 kHz,
+which is dominated by the recording's noise floor anyway."""
+
 _EPS = 1e-12
 
 
@@ -366,10 +378,13 @@ def mel_to_hz(mel: np.ndarray | float) -> np.ndarray | float:
     return 700.0 * (10.0 ** (np.asarray(mel, dtype=np.float64) / 2595.0) - 1.0)
 
 
-def mel_filterbank(n_bands: int, n_fft: int, sample_rate: int) -> np.ndarray:
-    """Triangular mel filterbank, shape ``(n_bands, n_fft // 2 + 1)``."""
+def mel_filterbank(
+    n_bands: int, n_fft: int, sample_rate: int, band: tuple[float, float] | None = None
+) -> np.ndarray:
+    """Triangular mel filterbank over ``band``, shape ``(n_bands, n_fft // 2 + 1)``."""
     freqs = np.fft.rfftfreq(n_fft, d=1.0 / sample_rate)
-    edges = mel_to_hz(np.linspace(hz_to_mel(0.0), hz_to_mel(sample_rate / 2.0), n_bands + 2))
+    lo, hi = (band or SPEECH_BAND_HZ)[0], min((band or SPEECH_BAND_HZ)[1], sample_rate / 2.0)
+    edges = mel_to_hz(np.linspace(hz_to_mel(lo), hz_to_mel(hi), n_bands + 2))
     bank = np.zeros((n_bands, freqs.shape[0]), dtype=np.float64)
     for b in range(n_bands):
         lo, mid, hi = edges[b], edges[b + 1], edges[b + 2]
@@ -431,27 +446,47 @@ def spectral_tilt(power: np.ndarray, sample_rate: int) -> np.ndarray:
     floor = np.max(envelope, axis=1, keepdims=True) * 10.0 ** (-TILT_DYNAMIC_RANGE_DB / 10.0)
     db = 10.0 * np.log10(np.maximum(envelope, np.maximum(floor, _EPS)))
     octaves = np.log2(freqs[mask])
-    x = octaves - octaves.mean()
-    denom = float(np.sum(x**2))
-    return (db - db.mean(axis=1, keepdims=True)) @ x / max(denom, _EPS)
+    # Weight each bin by 1/f, i.e. equally per *octave*. An unweighted fit over a
+    # linear frequency grid spends ~90 % of its leverage on the top octave, so the
+    # "slope per octave" it returns is really the shape of the 2-3 kHz region and
+    # barely moves when the speaker's source slope does.
+    weights = 1.0 / np.maximum(freqs[mask], _EPS)
+    weights = weights / weights.sum()
+    centre = float(weights @ octaves)
+    x = octaves - centre
+    denom = float(weights @ (x**2))
+    residual = db - (db @ weights)[:, None]
+    return (residual * weights) @ x / max(denom, _EPS)
+
+
+def _speech_band_mask(power: np.ndarray, sample_rate: int) -> tuple[np.ndarray, np.ndarray]:
+    """``(freqs, mask)`` restricting a spectrum to :data:`SPEECH_BAND_HZ`."""
+    n_fft = 2 * (power.shape[1] - 1)
+    freqs = np.fft.rfftfreq(n_fft, d=1.0 / sample_rate)
+    mask = (freqs >= SPEECH_BAND_HZ[0]) & (freqs <= SPEECH_BAND_HZ[1])
+    if not mask.any():  # pragma: no cover - impossible at 16 kHz
+        mask = np.ones_like(freqs, dtype=bool)
+    return freqs, mask
 
 
 def spectral_centroid(power: np.ndarray, sample_rate: int) -> np.ndarray:
-    n_fft = 2 * (power.shape[1] - 1)
-    freqs = np.fft.rfftfreq(n_fft, d=1.0 / sample_rate)
-    total = np.maximum(power.sum(axis=1), _EPS)
-    return (power @ freqs) / total
+    """Energy-weighted mean frequency inside the speech band."""
+    freqs, mask = _speech_band_mask(power, sample_rate)
+    banded = power[:, mask]
+    total = np.maximum(banded.sum(axis=1), _EPS)
+    return (banded @ freqs[mask]) / total
 
 
 def spectral_rolloff(
     power: np.ndarray, sample_rate: int, fraction: float = ROLLOFF_FRACTION
 ) -> np.ndarray:
-    n_fft = 2 * (power.shape[1] - 1)
-    freqs = np.fft.rfftfreq(n_fft, d=1.0 / sample_rate)
-    cumulative = np.cumsum(power, axis=1)
+    """Frequency below which ``fraction`` of the speech band's energy lies."""
+    freqs, mask = _speech_band_mask(power, sample_rate)
+    banded = power[:, mask]
+    cumulative = np.cumsum(banded, axis=1)
     total = np.maximum(cumulative[:, -1:], _EPS)
     index = np.argmax(cumulative >= fraction * total, axis=1)
-    return freqs[index]
+    return freqs[mask][index]
 
 
 # --------------------------------------------------------------------------- #

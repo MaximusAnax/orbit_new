@@ -683,6 +683,11 @@ def watch_add(asset_id: str) -> None:
     """Add an asset to the watchlist (unknown ids suggest the nearest, FR-11)."""
     try:
         service = state.service()
+        if asset_id not in service.datasets.assets:
+            raise errors.UnknownAssetError(
+                f"no asset {asset_id!r} in the committed gazetteer",
+                suggestion=service.suggest_asset(asset_id),
+            )
         service.repository.replace_assets(list(service.datasets.assets.values()))
         added = service.add_watch(asset_id, _now_iso())
     except Exception as exc:
@@ -756,7 +761,9 @@ def prices_load(
             directory=directory or DEFAULT_FIXTURE_MARKET,
             benchmarks=service.datasets.benchmarks,
         )
-        wanted = [a.strip() for a in assets.split(",")] if assets else list(service.datasets.assets)
+        wanted = (
+            [a.strip() for a in assets.split(",")] if assets else service.available_assets(market)
+        )
         loaded = service.load_prices(
             market,
             assets=wanted,

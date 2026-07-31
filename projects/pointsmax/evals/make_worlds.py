@@ -81,7 +81,14 @@ def small_a() -> dict[str, Any]:
             flight("fb_bus_nyc_par", "fb", "NYC", "PAR", points_price=60000, fees_cents=25100),
             flight("fb_bus_par_nyc", "fb", "PAR", "NYC", points_price=60000, fees_cents=25100),
             flight("ac_bus_nyc_par", "ac", "NYC", "PAR", points_price=70000, fees_cents=12800),
-            flight("ac_bus_par_nyc", "ac", "PAR", "NYC", points_price=70000, fees_cents=12800),
+            flight(
+                "fb_saver_nyc_par",
+                "fb",
+                "NYC",
+                "PAR",
+                points_price=30000,
+                fees_cents=90000,
+            ),
             flight(
                 "fb_rt_nyc_par",
                 "fb",
@@ -309,6 +316,7 @@ def small_c() -> dict[str, Any]:
             flight("dlx_bus_nyc_mia", "dlx", "NYC", "MIA", points_price=40000, fees_cents=5600),
             flight("dlx_bus_mia_nyc", "dlx", "MIA", "NYC", points_price=40000, fees_cents=5600),
             flight("uax_bus_nyc_mia", "uax", "NYC", "MIA", points_price=95000, fees_cents=5600),
+            flight("dlx_saver_nyc_mia", "dlx", "NYC", "MIA", points_price=20000, fees_cents=50000),
             flight("uax_bus_mia_nyc", "uax", "MIA", "NYC", points_price=95000, fees_cents=5600),
             flight("alx_bus_nyc_mia", "alx", "NYC", "MIA", points_price=55000, fees_cents=8000),
             flight("alx_bus_mia_nyc", "alx", "MIA", "NYC", points_price=55000, fees_cents=8000),

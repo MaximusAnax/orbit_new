@@ -99,7 +99,7 @@ def build_random_world(rng: random.Random) -> dict[str, Any]:
 
     offers = []
     for index, air in enumerate(("x0", "x1")):
-        points = rng.randrange(20000, 60000, 2000)
+        points = rng.randrange(14000, 46000, 2000)
         fees = rng.randrange(2000, 30000, 100)
         seats = rng.choice([None, 2, 4, 6])
         for origin, dest in (("NYC", "PAR"), ("PAR", "NYC")):
@@ -132,12 +132,15 @@ def build_case(rng: random.Random, case_id: str) -> dict[str, Any] | None:
     """One random scenario, or None when it violates the tractability budget."""
     files = build_random_world(rng)
     cards = [c for c in ("cb0", "cb1") if rng.random() < 0.75] or ["cb0"]
-    programs = ["b0", "b1", "ho", "x0", "x1"]
+    # Always fund at least one bank, so scenarios are mostly plannable rather
+    # than trivially "insufficient_points".
+    programs = ["ho", "x0", "x1", "b0" if rng.random() < 0.5 else "b1"]
     rng.shuffle(programs)
+    anchor = "b0" if "b0" not in programs else "b1"
     balances: dict[str, int] = {}
-    for name in programs[: rng.randint(1, 3)]:
+    for name in [anchor, *programs][: rng.randint(1, 3)]:
         step = 3000 if name == "ho" else 2000
-        balances[name] = rng.randrange(step * 4, step * 21, step)
+        balances[name] = rng.randrange(step * 10, step * 41, step)
     kind = rng.choices(["flight_ow", "flight_rt", "cash"], weights=[5, 3, 2])[0]
     if kind == "cash":
         goal: dict[str, Any] = {"kind": "cash", "cash_programs": None, "cash_max_points": None}

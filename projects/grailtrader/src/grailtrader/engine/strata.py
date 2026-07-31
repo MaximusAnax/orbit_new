@@ -143,11 +143,20 @@ class Gazetteer:
 
     # -- reference resolution ---------------------------------------------- #
 
+    def find_brand(self, reference: str) -> str | None:
+        """Resolve a brand reference, or ``None`` — no exception, no suggestion search.
+
+        Used where a miss is expected and cheap (a collab counterparty is free
+        text and usually *not* a gazetteer brand); building the nearest-match
+        suggestion is a fuzzy scan of every alias and must not run per lookup.
+        """
+        return self._aliases.get(reference.strip().casefold())
+
     def resolve_brand(self, reference: str) -> str:
         """Resolve a brand id, display name or alias (case-insensitive) to a brand id."""
-        key = reference.strip().casefold()
-        if key in self._aliases:
-            return self._aliases[key]
+        resolved = self.find_brand(reference)
+        if resolved is not None:
+            return resolved
         raise UnknownReferenceError("brand", reference, self.suggest_brand(reference))
 
     def resolve_era(self, brand_id: str, reference: str) -> str:

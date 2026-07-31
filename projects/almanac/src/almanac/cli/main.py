@@ -98,17 +98,15 @@ def _dump(payload: object) -> None:
 
 
 def _confirm(question: str, default: bool) -> bool:
-    """``typer.confirm`` that treats a closed stdin as the default answer."""
+    """``typer.confirm`` that treats a closed stdin as the default answer.
+
+    Keeps the command usable in a pipe or a cron job, where there is nobody to
+    ask: the safe default stands in for the answer.
+    """
     try:
         return typer.confirm(question, default=default)
-    except (EOFError, typer.Abort, click_abort()):
+    except (EOFError, typer.Abort):
         return default
-
-
-def click_abort():  # pragma: no cover - tiny indirection to avoid importing click twice
-    import click
-
-    return click.exceptions.Abort
 
 
 @app.callback()

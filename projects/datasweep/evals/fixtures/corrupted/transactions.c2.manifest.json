@@ -11,6 +11,15 @@
   "WS": 0.221843
  },
  "column_truth": {
+  "amount": {
+   "agree": 0.989167,
+   "decisive": {
+    "COMMA": 13,
+    "DOT": 1187
+   },
+   "mixed_conventions": false,
+   "number_convention": "DOT"
+  },
   "date": {
    "date_order": "provable",
    "format": "%d.%m.%Y",

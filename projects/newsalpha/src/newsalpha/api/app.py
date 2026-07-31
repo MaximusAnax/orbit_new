@@ -346,13 +346,14 @@ def _register(app: FastAPI) -> None:
 
     @app.post("/prices/load", response_model=PricesLoadResponse, status_code=201, tags=["prices"])
     def load_prices(service: ServiceDep, payload: PricesLoadRequest) -> PricesLoadResponse:
-        wanted = payload.assets or list(service.datasets.assets)
+        wanted: list[str] = []
         try:
             market = resolve_marketdata(
                 payload.source,
                 directory=payload.directory or DEFAULT_FIXTURE_MARKET,
                 benchmarks=service.datasets.benchmarks,
             )
+            wanted = payload.assets or service.available_assets(market)
             loaded = service.load_prices(
                 market, assets=wanted, start=payload.start, end=payload.end
             )

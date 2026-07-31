@@ -42,12 +42,12 @@ DEFAULT_SEED = 4242
 #: Outlet boilerplate a syndicating outlet appends. Contains no watchlist
 #: surface (asserted below).
 BOILERPLATE = {
-    "wire_one": "This report was produced by the newsroom's markets desk.",
-    "wire_two": "Reporting by the newsroom; editing by the standards desk.",
-    "biz_daily": "Our newsroom publishes corrections at the foot of every page.",
-    "tech_ledger": "Sign up for the daily briefing to get this in your inbox.",
-    "market_minute": "Figures are indicative and are not a recommendation to trade.",
-    "global_desk": "Additional reporting from the regional bureaux.",
+    "wire_one": "Reporting by the markets desk.",
+    "wire_two": "Editing by the standards desk.",
+    "biz_daily": "Corrections appear at the foot of the page.",
+    "tech_ledger": "Sign up for the daily briefing.",
+    "market_minute": "Figures are indicative only.",
+    "global_desk": "Additional reporting from the bureaux.",
 }
 
 TRACKING_SUFFIXES = (
@@ -204,7 +204,11 @@ def build_items(corpus: dict, watchlist: dict, seed: int) -> list[Item]:
 
             content = list(base["content"])
             droppable = list(base.get("drop_ok", []))
-            drop_count = min(len(droppable), rng.randint(0, 2))
+            # At most one paragraph is dropped, and only from an article long
+            # enough that the copy still reads as the same story: a syndicating
+            # outlet trims, it does not rewrite (and M2 recall depends on it).
+            drop_budget = 1 if len(base["content"]) >= 3 else 0
+            drop_count = min(len(droppable), drop_budget, rng.randint(0, 1))
             dropped = sorted(rng.sample(droppable, drop_count), reverse=True)
             for position in dropped:
                 if has_surface(content[position], surfaces):
@@ -359,10 +363,15 @@ def write_fixtures(out_dir: Path, seed: int = DEFAULT_SEED) -> dict:
             "hand-reviewed, committed: this is M2's same_true truth (EVALS §2).",
             "Ids 1-20 are the syndication groups; 100+base_id marks a singleton.",
             "base_of carries the label-inheritance map (archived article -> the base",
-            "article whose hand-written labels it inherits, EVALS §2).",
+            "article whose hand-written labels it inherits, EVALS §2), and",
+            "base_article_ids names the archived row of each base article, which is",
+            "what M1_amb_base restricts to.",
         ],
         "groups": groups,
         "base_of": base_of,
+        "base_article_ids": {
+            str(item.base_id): ids[item.key] for item in ordered if item.variant_of is None
+        },
     }
     (out_dir / "labels" / "story_groups.json").write_text(
         json.dumps(story_groups, indent=2) + "\n", encoding="utf-8"

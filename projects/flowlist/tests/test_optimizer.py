@@ -17,6 +17,7 @@ from flowlist.engine.models import (
 )
 from flowlist.engine.optimizer import (
     MAX_STARTS,
+    construct,
     exact_optimal,
     reorder,
     total_of,
@@ -162,6 +163,56 @@ def test_fr8_local_search_earns_its_keep() -> None:
         improvements.append(result.improvement)
     assert max(improvements) > 0.0
     assert sum(improvements) / len(improvements) > 0.0
+
+
+def test_fr8_construct_is_the_construction_phase() -> None:
+    """``construct`` returns D6 step 1 on its own — the degenerate flowlist.
+
+    The eval suite scores it as the baseline the M4 gates must reject
+    (EVALS §3-M4b), so it has to be genuinely construction-only: no local
+    search, never better than the full solver, and equal to it exactly when the
+    local search finds nothing to do.
+    """
+    for trial in range(6):
+        features = make_features(30, seed=900 + trial)
+        matrix = build_matrix(features)
+        bare = construct(matrix, seed=3)
+        full = reorder(matrix, seed=3)
+
+        assert sorted(bare.order) == list(range(30))
+        assert bare.passes == 0 and bare.moves == 0
+        assert bare.total == bare.construction_total
+        assert bare.starts == full.starts
+        # Construction-only can never beat construction + improvement.
+        assert bare.total <= full.total + 1e-12
+        # ... and it is at least as good as the construction the winning
+        # improved order started from, because it maximises over all k.
+        assert bare.total >= full.construction_total - 1e-12
+        if full.moves == 0:
+            assert bare.order == full.order
+
+
+def test_fr8_construct_honours_anchors_and_edge_cases() -> None:
+    matrix = build_matrix(make_features(12, seed=4242))
+    assert construct(matrix, seed=7, start=3).order[0] == 3
+    assert construct(matrix, seed=7, end=9).order[-1] == 9
+    both = construct(matrix, seed=7, start=3, end=9)
+    assert both.order[0] == 3 and both.order[-1] == 9
+    assert sorted(both.order) == list(range(12))
+
+    assert construct([]).order == []
+    assert construct([[0.0]]).order == [0]
+    with pytest.raises(InvalidAnchorError):
+        construct(matrix, start=99)
+    with pytest.raises(PlaylistTooLargeError):
+        construct([[0.0] * (MAX_PLAYLIST_SIZE + 1)] * (MAX_PLAYLIST_SIZE + 1))
+
+
+def test_fr8_construct_is_deterministic() -> None:
+    matrix = build_matrix(make_features(25, seed=17))
+    first = construct(matrix, seed=7).order
+    for _ in range(3):
+        assert construct(matrix, seed=7).order == first
 
 
 def test_fr8_beats_naive_strategies() -> None:

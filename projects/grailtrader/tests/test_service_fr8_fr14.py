@@ -42,7 +42,9 @@ def loaded(mini_feed: tuple[Path, Path], mini_weeks: list[str]) -> GrailTraderSe
     return api
 
 
-def test_fr14_index_rebuild_is_idempotent(loaded: GrailTraderService, mini_weeks: list[str]) -> None:
+def test_fr14_index_rebuild_is_idempotent(
+    loaded: GrailTraderService, mini_weeks: list[str]
+) -> None:
     first = loaded.repo.list_index_points()
     report = loaded.build_index(as_of=mini_weeks[-1])
     second = loaded.repo.list_index_points()

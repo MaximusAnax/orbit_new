@@ -33,6 +33,7 @@ import math
 import random
 import unicodedata
 import zipfile
+from collections import Counter
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -76,8 +77,8 @@ NULL_RATE = 0.06
 
 HARD_SENTINEL_TOKENS = ("NA", "N/A", "null", "NaN", "#N/A")
 CURRENCY_SYMBOL = "€"
-NBSP = " "
-ZWSP = "​"
+NBSP = "\u00a0"
+ZWSP = "\u200b"
 
 EXCEL_EPOCH = date(1899, 12, 30)
 
@@ -373,12 +374,7 @@ def damerau_levenshtein(left: str, right: str) -> int:
         for j in range(1, cols):
             cost = 0 if left[i - 1] == right[j - 1] else 1
             grid[i][j] = min(grid[i - 1][j] + 1, grid[i][j - 1] + 1, grid[i - 1][j - 1] + cost)
-            if (
-                i > 1
-                and j > 1
-                and left[i - 1] == right[j - 2]
-                and left[i - 2] == right[j - 1]
-            ):
+            if i > 1 and j > 1 and left[i - 1] == right[j - 2] and left[i - 2] == right[j - 1]:
                 grid[i][j] = min(grid[i][j], grid[i - 2][j - 2] + cost)
     return grid[-1][-1]
 
@@ -417,7 +413,7 @@ class Golden:
 def uniform_floats(rng: random.Random, n: int, low: float, high: float, places: int) -> list[str]:
     """Bounded uniform draws — Tukey-tame by construction (EVALS.md §4.1).
 
-    A uniform sample's fences sit at Q1 − 1.5·range and Q3 + 1.5·range, i.e.
+    A uniform sample's fences sit at Q1 - 1.5*range and Q3 + 1.5*range, i.e.
     outside its own support, so a golden numeric column cannot contain a
     self-inflicted outlier.  That is what makes ``M3_clean_findings = 0``
     an honest bar rather than a lucky one.
@@ -583,9 +579,7 @@ def build_sensors(rng: random.Random) -> Golden:
         temperature[row_index] = reading
         extremes.append({"row": row_index, "col": 2, "value": reading})
 
-    rows = [
-        [stamps[i], devices[i], temperature[i], humidity[i], status[i]] for i in range(n)
-    ]
+    rows = [[stamps[i], devices[i], temperature[i], humidity[i], status[i]] for i in range(n)]
     return Golden(
         name="sensors.jsonl",
         fmt="jsonl",
@@ -722,9 +716,7 @@ CORRUPTIONS_PER_GOLDEN = {
 def write_delimited(path: Path, golden: Golden, rows: list[list[str | None]]) -> None:
     delimiter = "\t" if golden.fmt == "tsv" else ","
     buffer = io.StringIO(newline="")
-    writer = csv.writer(
-        buffer, delimiter=delimiter, lineterminator="\n", quoting=csv.QUOTE_MINIMAL
-    )
+    writer = csv.writer(buffer, delimiter=delimiter, lineterminator="\n", quoting=csv.QUOTE_MINIMAL)
     writer.writerow(golden.headers)
     for row in rows:
         writer.writerow(["" if cell is None else cell for cell in row])
@@ -1276,7 +1268,7 @@ class Corrupter:
             multiplier = self.rng.uniform(8.0, 15.0)
             sign = 1 if self.rng.random() < 0.5 else -1
             candidate = stats.median + sign * multiplier * max(stats.iqr, 1.0)
-            text = f"{candidate:.{places}f}" if places else str(int(round(candidate)))
+            text = f"{candidate:.{places}f}" if places else f"{round(candidate)}"
             if not stats.trips_both(float(text)):
                 continue
             used = self._extremes.setdefault(col, set())
@@ -1285,6 +1277,40 @@ class Corrupter:
             used.add(text)
             return text
         raise AssertionError(f"could not build a clean outlier for column {col}")
+
+    def record_number_conventions(self) -> None:
+        """Record each numeric column's true convention (EVALS.md §4.2).
+
+        Computed from what the corrupter *wrote*, never by asking an engine
+        parser: a golden float cell is decisive DOT (its fractional run is 1 or
+        2 digits, so no comma-decimal reading exists), `decimal_comma` makes a
+        cell decisive COMMA, and `thousands_sep` keeps it decisive DOT.  The
+        ``mixed_conventions`` flag is D7.6 evaluated on that ground truth, and
+        no corrupted column is ever marked ambiguous — ambiguity truth lives
+        only in the traps.
+        """
+        comma_cells: dict[int, int] = Counter()
+        for op in self.ops:
+            if op.op == "decimal_comma" and op.col is not None:
+                comma_cells[op.col] += 1
+        for col, kind in enumerate(self.golden.kinds):
+            if kind != "float":
+                continue
+            decisive_dot = sum(
+                1
+                for value in self.golden.column(col)
+                if value is not None and "." in value and 1 <= len(value.split(".")[1]) <= 2
+            )
+            comma = comma_cells.get(col, 0)
+            dot = decisive_dot - comma
+            total = dot + comma
+            agree = max(dot, comma) / total if total else 0.0
+            self.column_truth[self.golden.headers[col]] = {
+                "number_convention": "DOT" if dot >= comma else "COMMA",
+                "decisive": {"DOT": dot, "COMMA": comma},
+                "agree": round(agree, 6),
+                "mixed_conventions": total >= 3 and agree < 0.95,
+            }
 
     def _column_stats(self, col: int, values: list[float]) -> RobustStats:
         cached = self._stats_cache.get(col)
@@ -1299,9 +1325,7 @@ def _even_split(items: list[int], count: int) -> list[tuple[int, int]]:
     if not items:
         return []
     base, remainder = divmod(count, len(items))
-    return [
-        (item, base + (1 if index < remainder else 0)) for index, item in enumerate(items)
-    ]
+    return [(item, base + (1 if index < remainder else 0)) for index, item in enumerate(items)]
 
 
 def _split(
@@ -1378,6 +1402,7 @@ def corrupt(golden: Golden, variant: int, seed: int) -> tuple[Corrupter, dict[st
     corrupter.cat_variants(targets["CAT_AUTO"])
     corrupter.cat_typos(targets["CAT_TYPO"])
     corrupter.outliers(targets["OUT"])
+    corrupter.record_number_conventions()
 
     manifest = {
         "golden": golden.name,

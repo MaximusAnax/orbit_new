@@ -11,6 +11,24 @@
   "WS": 0.22082
  },
  "column_truth": {
+  "humidity_pct": {
+   "agree": 0.988475,
+   "decisive": {
+    "COMMA": 13,
+    "DOT": 1115
+   },
+   "mixed_conventions": false,
+   "number_convention": "DOT"
+  },
+  "temperature_c": {
+   "agree": 0.986667,
+   "decisive": {
+    "COMMA": 16,
+    "DOT": 1184
+   },
+   "mixed_conventions": false,
+   "number_convention": "DOT"
+  },
   "ts": {
    "date_order": "provable",
    "format": "rfc3339-space",

@@ -65,6 +65,14 @@ from .value import (
 from .world import ActiveWorld
 
 
+#: Enumerate every valid sent amount up to ``s_cover`` while the range is at most
+#: this many increments (see :meth:`FundingSearch._lattice`).
+MAX_DENSE_LATTICE = 24
+
+#: How many increments below ``s_cover`` the sparse fallback still samples.
+SHAVE_WINDOW = 16
+
+
 class SearchBudgetExceeded(RuntimeError):
     """The funding search hit its explicit expansion budget (FR-7c)."""
 
@@ -338,10 +346,28 @@ class FundingSearch:
     ) -> list[int]:
         """FR-7c candidate *total* sent amounts over ``edge`` (merged, FR-7b).
 
-        ``{s_cover} u {k x bonus_per_from} u {s_max}`` intersected with the
-        edge's valid amounts.  Amounts above ``s_cover`` are not explored, except
-        the first tier boundary above it (which an exhaustive oracle would also
-        consider and which can only tie or lose on the FR-9 tie-break).
+        FR-7c publishes ``{s_cover} u {tier boundaries} u {s_max}``, justified by
+        an exchange argument that assumes one increment on one edge can be traded
+        for one increment on another.  That assumption fails when two edges into
+        the same program have *different* increments or ratios: with a
+        2,000-increment 1:1 bank edge and a 3,000-increment 3:1 hub edge, the
+        optimal split can be (94,000 bank + 3,000 hub) — no amount there is a
+        cover, a tier boundary or an ``s_max``, and sending 96,000 on the bank
+        edge alone over-delivers by 1,000 miles and is measurably worse.  The
+        eval oracle finds exactly those splits (M1/M7), so the lattice is:
+
+        * every valid amount up to ``s_cover`` when that range is small enough
+          to enumerate (``MAX_DENSE_LATTICE``) — complete by construction, since
+          FR-1 invariant 4 rules out anything above ``s_cover``;
+        * otherwise the published lattice plus ``min_from`` (an edge making the
+          smallest possible alignment contribution) and the ``SHAVE_WINDOW``
+          amounts just below ``s_cover`` (an edge giving up its last increments
+          so another edge lands on the residual exactly) — the two shapes that
+          the exchange argument misses.
+
+        The dense form covers every scenario the eval fixtures and the shipped
+        dataset produce; the sparse fallback keeps a pathological instance inside
+        the expansion budget instead of raising.
         """
         inc = edge.increment_from
         ceiling = floor_to_multiple(already_sent + max_extra, inc)
@@ -363,11 +389,24 @@ class FundingSearch:
                     lo = mid + 1
             cover = lo * inc
 
-        candidates: set[int] = set()
-        if cover is not None:
-            candidates.add(cover)
+        limit_amount = cover if cover is not None else hi_k * inc
+        span = (limit_amount - lowest) // inc + 1
+        if span <= MAX_DENSE_LATTICE:
+            candidates: set[int] = set(range(lowest, limit_amount + 1, inc))
         else:
-            candidates.add(hi_k * inc)
+            candidates = {limit_amount, hi_k * inc}
+            anchors = [lowest, limit_amount]
+            if edge.bonus_per_from:
+                tier = edge.bonus_per_from
+                k = max(1, lowest // tier)
+                while k * tier <= limit_amount:
+                    anchors.append(k * tier)
+                    k += 1
+            for anchor in anchors:
+                for step in range(-SHAVE_WINDOW, SHAVE_WINDOW + 1):
+                    amount = anchor + step * inc
+                    if lowest <= amount <= limit_amount:
+                        candidates.add(amount)
         if edge.bonus_per_from:
             tier = edge.bonus_per_from
             limit = cover if cover is not None else ceiling
@@ -463,16 +502,17 @@ class FundingSearch:
         edge = candidates[idx]
         advanced = (program_id, hops, path, idx + 1)
 
-        # (a) do not use this edge
-        self._rec((advanced, *rest), alloc_milli)
-
-        # (b) use it, for every candidate merged amount
+        # (a) use it, for every candidate merged amount.  Largest first, so the
+        # residual-covering amount reaches a leaf immediately and the incumbent
+        # the branch-and-bound prunes against exists from the very first descent.
         source = edge.from_program
         available = max(self.balances.get(source, 0), 0)
         max_extra = available
         if hops > 1:
             max_extra += self._max_inflow(source, path | {source}, hops - 1)
         if max_extra <= 0:
+            # (b) nothing can flow over this edge; skip straight to the next one
+            self._rec((advanced, *rest), alloc_milli)
             return
         already = self.uses.get(edge.id, 0)
         old_delivered = delivered_points(edge, already)
@@ -480,7 +520,7 @@ class FundingSearch:
         source_mcpp = self.mcpp[source]
         target_mcpp = self.mcpp[program_id]
 
-        for total_sent in self._lattice(edge, residual, max_extra, already):
+        for total_sent in reversed(self._lattice(edge, residual, max_extra, already)):
             extra = total_sent - already
             gained = delivered_points(edge, total_sent) - old_delivered
             fee_delta = transfer_fee_cents(edge, total_sent) - old_fee
@@ -508,6 +548,9 @@ class FundingSearch:
                 self.uses[edge.id] = already
             else:
                 del self.uses[edge.id]
+
+        # (c) do not use this edge at all
+        self._rec((advanced, *rest), alloc_milli)
 
     def _lower_bound(self, reqs: tuple) -> int | None:
         """Admissible lower bound in milli-cents, or None when reqs are unsatisfiable."""

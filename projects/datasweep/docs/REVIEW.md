@@ -62,3 +62,121 @@ different fix for the same finding, noted inline and summarised at the bottom.
 - **No FR was renumbered**; FR-1…FR-16 and entity names are unchanged, and the
   three documents were re-checked for mutual consistency on FR ids, entity
   names, rule ids, metric names, and gate values after every edit.
+
+---
+
+## Implementation notes (SURFACE + EVALS stage)
+
+**No gate threshold was adjusted.** All thirteen gates in EVALS.md §5 are
+implemented and asserted at exactly the documented values, and all thirteen
+pass. What follows records where the *implementation* had to make a call the
+docs left open, and where a measured number differs from a doc's estimate.
+
+### 1. Naive-baseline estimates vs live-measured values
+
+EVALS.md §5 tabulates *expected* baseline scores; `run.py` prints the
+live-computed ones. Six differ materially, and each difference is a property of
+the fixtures rather than of the baseline implementation, which follows the
+specified recipe exactly (decode UTF-8 with `errors="replace"`, `str.strip()`
+every cell, drop exact duplicate rows, type by all-or-nothing parse):
+
+| metric | EVALS estimate | measured | why |
+|---|---|---|---|
+| M1 | ≈ 0.55–0.65 | **0.12** | all-or-nothing parsing is harsher than the estimate assumed: with ≤ 6% cell damage, essentially *every* structured column contains at least one cell that will not parse, so almost everything collapses to `text` |
+| M3 | ≈ 0.90–0.97 | **1.00** | the estimate assumed `errors="replace"` would mangle mojibake cells. It cannot: `mojibake_encode` produces *text* (`JosÃ©`) stored as valid UTF-8, which is the realistic on-disk representation, so the naive decode reads it cleanly and simply never repairs it — an M4 miss, not an M3 error |
+| M3_trap | > 0 | **0** | the trap files are hand-authored clean of whitespace damage and exact duplicates (their ambiguity is semantic), so a strip-and-dedupe script has nothing to touch there |
+| M4 | ≈ 0.28 | **0.17** | `str.strip()` repairs `pad_whitespace` and `insert_nbsp` but not `insert_zero_width` or `double_internal_space`, so it earns roughly half of the WS share, not all of it |
+| M5 | 0.0 | **0.28** | measured live rather than assumed: with no audit log a run is reconstructible only if the cleaner changed nothing, which is true of the five golden control runs |
+| M7 | 0.0 | **0.33** | three of the nine trap expectations are `expect: "none"`, which a baseline that proposes nothing satisfies vacuously. This is a property of M7's shape, not a capability of the baseline; the gate is unaffected because it sits at 1.0 |
+
+The load-bearing comparisons are unchanged: M1 0.12 → gate 0.95, M2 0.21 →
+0.85, M4 0.17 → 0.85, M5 0.28 → 1.0, M7 0.33 → 1.0. M3 and
+`M3_clean_findings` remain one-sided *safety* gates that a do-nothing baseline
+passes trivially — EVALS.md §5 already says exactly that about
+`M3_clean_findings`, and the measured M3 = 1.00 shows it is equally true of M3.
+The capability load is carried by M2, M4 and M7, as designed.
+
+### 2. Corrupter constraints tightened beyond EVALS.md §4.2
+
+- **CAT variant budget 25% → 4%.** §4.2's collision-hygiene rule 5 caps CAT ops
+  at ≤ 25% of a label's occurrences so the golden spelling stays the cluster
+  canonical. That is necessary but not sufficient for the *tier* the same table
+  pins: `fix.label_merge_fingerprint`'s confidence **is** the cluster dominance
+  (D12), so at 25% dominance is 0.75 and the merge lands in `review`, not the
+  pinned `auto`. The generator therefore caps variants at 4% of a label's
+  occurrences (dominance ≥ 0.96) and additionally emits **one** variant spelling
+  per (column, label) — a second spelling would split the cluster and lower
+  dominance again. `assert_corruption_hygiene` enforces the budget.
+- **One typo cell per variant.** D10b only proposes a nearest-neighbour merge
+  when the minority is rare (ratio ≤ 0.05) *and* the majority has ≥ 20
+  occurrences. A `typo_label` op repeated dozens of times would be *correctly*
+  ignored by a correct engine and would silently cost CAT recall, so each typo
+  is a distinct one-cell variant, and `_make_typo` rejects any candidate that
+  lands inside D10b's window around a different label — the fixture can never
+  hand the engine an unwinnable choice.
+- **Categorical columns must survive FR-5's ceiling.** Every whitespace,
+  encoding and label op adds a distinct raw value, and the pipeline re-profiles
+  the working table at each of D13's nine stages. A column that drifted past 50
+  distinct values at, say, the WS stage would type as `text`, silently demoting
+  `fix.collapse_spaces` to review (D12 scores it 0.6 in text columns) and
+  leaving un-repaired variants for CAT to re-detect. The vocabularies are sized
+  so this cannot happen and `assert_categorical_still_categorical` re-checks it
+  on the raw corrupted column.
+- **Bounded-uniform numeric columns.** §4.1 asks for "tame distributions so
+  goldens are genuinely alarm-free". Log-normal amounts are *not* tame under
+  Tukey-3.0 (a wide log range puts its own upper tail outside the fence), so the
+  goldens use bounded uniform draws, whose fences provably sit outside their own
+  support. `assert_golden_is_tame` re-checks every golden numeric cell against
+  both tests. `sensors.jsonl`'s four labeled heat-wave readings (≈ 41 °C) are
+  placed inside both fences by construction, as §4.1 requires.
+
+### 3. Measured M2 = 1.00 where EVALS.md §5 expected "not 1.0"
+
+The M2 rationale anticipated a few points lost to boundary ops — "an injected
+outlier landing near a fence, a typo the fingerprint rule already absorbs". The
+generator eliminates both categories by construction: `inject_outlier` resamples
+until the value trips *both* of D11's tests, and typos are guaranteed
+unambiguous. That makes the fixture stricter, not weaker — the gate still fails
+on any real regression — but the headroom the 0.85 gate was sized for is spent
+on future fixture growth rather than on known boundary noise.
+
+### 4. Op total 2,835, not ≈ 3,050
+
+`op_rate` is drawn per file from [0.03, 0.06] exactly as §4.2 specifies; the
+seeded draws happen to average 4.3% rather than the 4.6% the estimate assumed.
+Every per-class share is within the asserted ±2 pp, and every class carries
+≥ 137 injected instances, so M2_min is still not sampling noise.
+
+### 5. `sensors.jsonl` DATE ops
+
+§4.2's `date_reformat` rewrites a cell into an alternate format from D9's list.
+`sensors.jsonl` has a `datetime` column (`ts`) and no `date` column, so its DATE
+ops use the RFC 3339 space-separated variant (`2024-03-05 14:22:31`), which
+canonicalizes back to the golden exactly and keeps the op
+information-preserving. Golden timestamps therefore carry no timezone suffix —
+with one, the space form would not round-trip and the op would be illegal under
+§2's constraint.
+
+### 6. Error catalog extended by one code
+
+FR-14 names five detail codes. Services distinguishes "no such run" from "no
+such review item **on this run**", so `unknown_item` (404) was added rather than
+overloading `unknown_run`. The five documented codes are implemented unchanged.
+
+### 7. Run rows are written in two phases
+
+DATA_MODEL.md §4 requires that "readers never observe a half-written run".
+Services inserts a provisional row with `status = failed` and
+`error = "run did not complete"`, then finalizes it once with the real status,
+counts and artifact directory. A crash therefore leaves an honest `failed`
+record — and per FR-2 a `failed` run never suppresses reprocessing, so the file
+is picked up again on the next pass.
+
+### 8. `revert` is verified against the persisted artifacts
+
+FR-9's CLI/API check re-reads `cleaned.*` and `audit.*` **from disk** and
+compares the reconstruction with a fresh parse of the source file. The cleaned
+artifact is parsed by a dedicated mechanical inverse of the serializer, not by
+the reader stack: the reader applies dialect sniffing and the FR-3 headerless
+heuristic, which are decisions about an *unknown* file, and using it here would
+test the sniffer instead of the audit.

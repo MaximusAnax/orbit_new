@@ -19,7 +19,7 @@ import metrics
 from pointsmax.adapters.world_provider import build_world
 from pointsmax.engine.advisor import compute_plan_set, plan_set_fingerprint
 from pointsmax.engine.execution import WorldPinMismatch
-from pointsmax.models import GoalSpec, Goal, Wallet
+from pointsmax.models import Goal, GoalSpec, Wallet
 from pointsmax.service import PointsMaxService
 from pointsmax.store import InMemoryRepository
 

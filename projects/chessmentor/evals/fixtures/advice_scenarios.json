@@ -465,7 +465,7 @@
     },
     {
       "id": "as-07",
-      "description": "a total tie falls through to alphabetical category order",
+      "description": "equal sums, counts and plies across two games; the category whose worst instance is in the more recent game ranks first",
       "games": [
         {
           "game_id": 1,
@@ -482,7 +482,20 @@
                   "category": "hung_piece",
                   "phase": "middlegame",
                   "delta_w": 0.25
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "game_id": 2,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
                 {
                   "ply": 21,
                   "san": "Bg5",

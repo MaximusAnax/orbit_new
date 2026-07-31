@@ -452,7 +452,6 @@ def stocked_service(service):
 def client(stocked_service):
     """FastAPI TestClient bound to the stocked in-memory service."""
     from fastapi.testclient import TestClient
-
     from pointsmax.api.app import create_app
 
     return TestClient(create_app(stocked_service))

@@ -57,13 +57,9 @@ def mini_feed(tmp_path_factory: pytest.TempPathFactory) -> tuple[Path, Path]:
                         "category": category,
                         "platform_condition": "Gently Used" if index % 3 else "New with tags",
                         "status": "sold",
-                        "listed_at": (
-                            MINI_START + timedelta(weeks=offset, days=-10)
-                        ).isoformat(),
+                        "listed_at": (MINI_START + timedelta(weeks=offset, days=-10)).isoformat(),
                         "sold_at": week,
-                        "sold_price": round(
-                            price * (1.25 if index % 3 == 0 else 1.0), 2
-                        ),
+                        "sold_price": round(price * (1.25 if index % 3 == 0 else 1.0), 2),
                     }
                 )
             rows.append(
