@@ -2,7 +2,7 @@
 
 Produced by the hardening pass (2026-07-31). Every FR in SCOPE.md is mapped to
 the tests and/or eval gates that exercise it; status is the observed result of
-`uv run python verify_all.py tickerpress` on this tree (393 tests passing,
+`uv run python verify_all.py tickerpress` on this tree (377 tests passing,
 27/27 eval metrics passing, lint clean, CLI exercised end to end).
 
 Eval metric names refer to `evals/run.py` / `evals/test_gates.py`; test names
