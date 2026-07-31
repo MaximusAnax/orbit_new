@@ -36,7 +36,11 @@ match the rules?") risks testing the code against itself. We split the suite:
   does not directly encode: ranking labeled good/bad pairs where several
   components interact, and recovering near-optimal orderings against
   independent ground truth (exact Held-Karp solutions, planted constructions).
-  Hard-coding the golden table would not move these.
+  Hard-coding the golden table would not move these. One honest caveat: M4's
+  Held-Karp truth is engine code (`exact_optimal`), so it is not independent
+  *by location* — it is made trustworthy by an independent brute-force
+  cross-check and a hard sanity assert (§3-M4), not by residing outside the
+  package.
 
 ## 3. Metrics
 
@@ -72,6 +76,13 @@ M2 = mean of the three AUCs
 This is threshold-free (a pure ranking metric), so it cannot be gamed by
 rescaling scores.
 
+**`bpm_only_auc` (gated input, not report-only):** M2 recomputed with weights
+`{bpm: 1}`. It shows how much ranking skill comes from harmony vs tempo, and
+it is a load-bearing input to the gated M2b anti-gaming margin (§5) — it must
+be computed exactly (same AUC code, same fixture), never approximated or made
+optional. A fixture-authoring invariant keeps M2/M2b simultaneously
+satisfiable (§4).
+
 ### M3 — component_monotonicity (H1)
 
 Property sweeps, each a pass/fail check; `M3 = passed / total` over ~30 checks:
@@ -85,17 +96,38 @@ Property sweeps, each a pass/fail check; `M3 = passed / total` over ~30 checks:
 - `S_loud` equals 1.0 for Δ≤2 dB, 0 for Δ≥10 dB, non-increasing between.
 - Missing-field handling: null key on either side ⇒ key component exactly 0.5
   and `missing_key` flag present; total stays in [0,1].
-- Weight algebra: with `weights = {bpm: 1.0, others: 0}`, `S == S_bpm`.
+- Weight algebra: with `weights = {bpm: 1.0, others: 0}`, `S == S_bpm`;
+  scaling all weights by a positive constant leaves every transition score
+  unchanged (verifies FR-6 renormalization, which is what keeps
+  `S ∈ [0,1]` and the D12 constants valid for user-supplied weights).
 
 ### M4 — exact_optimality_ratio (H2)
 
-Over the small-instance suite (8 playlists, n = 8–12). Ground truth `total*`
-is computed at eval time by Held-Karp dynamic programming
-(`engine.optimizer.exact_optimal`, O(n²·2ⁿ), < 1 s at n=12) — recomputed, not
-stored, so it can never go stale.
+Over the small-instance suite (10 playlists, n = 8–14, including 2
+hand-designed nearest-neighbor-trap instances and 1 anchored instance — §4).
+Ground truth `total*` is computed at eval time by Held-Karp dynamic
+programming (`engine.optimizer.exact_optimal`, O(n²·2ⁿ), a few seconds at
+n=14) — recomputed, not stored, so it can never go stale. For the anchored
+instance, `total*` comes from fixed-endpoint Held-Karp
+(`exact_optimal(matrix, start, end)`) under the *same* anchors the heuristic
+receives, so the ratio compares like with like (SCOPE.md FR-9).
+
+`exact_optimal` is engine code — inside the system under test — so two
+safeguards keep this truth trustworthy:
+
+1. **Independent cross-check:**
+   `tests/test_optimizer.py::test_fr8_exact_matches_bruteforce` verifies
+   `exact_optimal` against brute-force permutation enumeration (trivial at
+   n ≤ 7: 7! = 5,040 paths) over ~20 seeded random matrices, including
+   start-anchored, end-anchored, and both-anchored variants. A fake or buggy
+   DP cannot survive this.
+2. **Hard sanity assert in the eval itself:** the M4 run fails (gate FAIL,
+   non-zero exit) if any `ratio_p > 1 + 1e-9` — a heuristic "beating" the
+   exact optimum is proof the DP is broken, which catches the degenerate
+   implement-exact-as-the-heuristic case directly.
 
 ```
-ratio_p = total(heuristic order for p) / total*(p)
+ratio_p = total(heuristic order for p) / total*(p)      # must be ≤ 1 + 1e-9
 M4_mean = mean_p ratio_p          M4_min = min_p ratio_p
 ```
 
@@ -106,10 +138,15 @@ Over the planted-chain suite (6 playlists, n = 50–150). Each fixture is built
 transitions are engineered to be excellent (mean ≈ 0.88), then shuffled with a
 fixed seed. The planted chain's `mean(chain)` is a strong lower bound on the
 achievable optimum (not necessarily the optimum itself, hence "recovery"
-not "optimality"):
+not "optimality") — which means a per-playlist ratio can legitimately exceed
+1.0. Each ratio is therefore **clamped at 1.0 before averaging**, so
+overperformance on one playlist can never subsidize a collapse on another,
+and a separate per-instance floor is gated:
 
 ```
-M5 = mean_p [ mean(heuristic order for p) / mean(planted chain for p) ]
+ratio_p = mean(heuristic order for p) / mean(planted chain for p)
+M5      = mean_p [ min(1.0, ratio_p) ]
+M5_min  = min_p ratio_p                  (unclamped; gated ≥ 0.85)
 ```
 
 ### M6 — baseline_margin (H2)
@@ -125,19 +162,33 @@ Over the realistic messy suite (4 playlists, n = 30–80, mixed genres/tempos,
   BPM–energy correlation) much of energy continuity for free.
 
 ```
-M6 = mean_p [ mean(heuristic_p) − mean(bpm_sort_p) ]
+margin_p = mean(heuristic_p) − mean(bpm_sort_p)
+M6       = mean_p margin_p
+M6_min   = min_p margin_p                (gated > 0)
 ```
+
+`M6_min` mirrors `M4_min`/`M5_min`: with only 4 messy playlists, a
+catastrophic regression on one is 25% of the suite and must not hide behind
+overperformance on the other three.
 
 ### M7 — determinism (FR-15, guards both H1 and H2)
 
 On 3 fixtures spanning all suites: run `reorder` twice with seed 7 →
 orderings byte-identical; run with seed 8 → allowed to differ (no assert);
 recompute each run's `after` aggregates from its per-transition breakdowns →
-must match stored aggregates exactly.
+must match stored aggregates exactly; compare the seed-7 orderings against the
+committed golden file `golden_orderings.json`.
 
 ```
-M7 = 1.0 if all identity/consistency checks pass else 0.0
+M7 = 1.0 if all identity/consistency/golden checks pass else 0.0
 ```
+
+Scope of the claim (FR-15): this gate certifies *within-platform*
+determinism. Cross-platform reproducibility cannot be proven inside a
+hermetic single-machine suite; the golden-file comparison is the honest
+proxy — any platform-dependent float drift (e.g. libm `log2` last-bit
+differences flipping a near-tie) surfaces as a golden diff in CI on other
+machines instead of being silently absorbed.
 
 ### Report-only metrics (printed, not gated)
 
@@ -145,8 +196,14 @@ M7 = 1.0 if all identity/consistency checks pass else 0.0
   before) on the messy suite. Diagnostic: the objective maximizes the sum, so
   we watch (not gate) the worst seam.
 - `seamless_fraction_after` on the messy suite.
-- `bpm_only_auc`: M2 recomputed with weights `{bpm:1}` — shows how much of
-  the ranking skill comes from harmony vs tempo.
+- `greedy_only_recovery`: the reference construction-only greedy's M5-style
+  recovery per planted playlist (from `expected.json`, §4) — shows how much
+  M5 headroom bare greedy has, i.e. how much the local search is earning.
+- `reorder_wall_time` on the largest planted fixture (n=150) — informational
+  timing row (the FR-8 n=500 NFR is checked by a slow-marked test, §7).
+
+(`bpm_only_auc` is defined under M2 above; it is gated via M2b, so it does
+not belong in this list.)
 
 ## 4. Fixture strategy
 
@@ -160,11 +217,13 @@ evals/fixtures/
   transition_pairs.json     # M2 labeled pairs (hand-authored)
   catalog.json              # ~200 synthetic tracks with features
   playlists/
-    exact_XX.json           # 8 small instances (n=8–12), entry lists over catalog
+    exact_XX.json           # 10 small instances (n=8–14), incl. 2 NN-traps + 1 anchored
     planted_XX.json         # 6 planted-chain instances (n=50–150) + planted order
     messy_XX.json           # 4 realistic mixed playlists (5% missing fields)
+    arc_01.json             # symmetric-energy fixture for US-5 / FR-10 (build ≠ neutral)
+  golden_orderings.json     # committed seed-7 orderings for the 3 M7 fixtures
   generate.py               # seeded generator for catalog + playlists (committed)
-  expected.json             # generator-measured baseline stats (informational)
+  expected.json             # generator-measured stats incl. greedy-only ratios (informational)
 ```
 
 - **`key_relations.json`** — hand-authored from the published Camelot
@@ -182,7 +241,12 @@ evals/fixtures/
   `workable`. Includes ~12 pairs modeled on well-known real-world pairings
   (e.g. an 86 BPM hip-hop groove into a 172 BPM drum-and-bass track as the
   canonical half-time `workable/seamless` case); feature values are stored in
-  the fixture itself, so ground truth is self-contained.
+  the fixture itself, so ground truth is self-contained. *Authoring
+  invariant:* after any edit to `transition_pairs.json`, `bpm_only_auc` must
+  remain ≤ 0.80, so the M2 ≥ 0.90 and M2b ≥ 0.10 gates stay simultaneously
+  satisfiable — enforced live by
+  `evals/test_gates.py::test_fixture_invariants`, so a label-mix drift fails
+  CI rather than silently making M2b impossible (or vacuous).
 - **`catalog.json` + `playlists/`** — produced by `generate.py` with
   `--seed 42` and committed (regeneration is a reviewed change). Generator
   design:
@@ -191,8 +255,31 @@ evals/fixtures/
     0.4–0.7, indie/pop 96–120 / 0.3–0.7; keys uniform over all 24 Camelot
     codes; loudness −14…−4 dB correlated with energy (louder masters are
     higher-energy, mirroring streaming-era mastering practice).
-  - **Exact suite:** n=8–12 samples from 1–2 clusters. Small enough for
-    Held-Karp ground truth at eval time.
+  - **Exact suite:** 10 instances, n=8–14, sampled from 1–2 clusters — the
+    upper end (n=13–14, within SCOPE.md's Held-Karp guard of n ≤ 14) matters
+    because multi-start uses k = min(n, 12) starts, so at n ≤ 12 greedy starts
+    from essentially every node and small instances alone cannot separate
+    construction from local search. Two instances are hand-designed
+    nearest-neighbor traps (a locally-best first hop that strands a
+    high-scoring cluster — the classic construction-greedy failure); one
+    instance carries anchors and is scored against fixed-endpoint exact
+    ground truth (§3-M4).
+  - **Discrimination invariant (generation-time, re-checked in CI):**
+    `generate.py` also runs a *reference construction-only greedy* — all-starts
+    best-next over the same matrix, implemented as a standalone ~20-line
+    function inside `generate.py` with no imports from `src/flowlist` — on
+    every exact-suite instance and records its optimality ratio per instance
+    in `expected.json`. Generation asserts that **at least 3 exact instances
+    have greedy-only ratio < 0.97** (regenerating with an incremented seed, or
+    adjusting the trap constructions, until true). This makes the M4 gate's
+    discriminative power a *verified property of the fixtures*, not an
+    assertion: construction-only greedy provably fails M4_mean, so passing it
+    requires the local search to work. The same reference greedy's recovery
+    ratio is recorded per planted instance (informational — printed as the
+    `greedy_only_recovery` report row). `evals/test_gates.py::
+    test_fixture_invariants` re-asserts the ≥ 3-instances-below-0.97 property
+    from the committed `expected.json` so a later regeneration cannot quietly
+    drop it.
   - **Planted suite:** chains constructed by walking the Camelot wheel with
     steps from {same, relative, ±1} and BPM steps ≤ 2%, energy drift ≤ 0.06
     per hop — by construction every planted transition scores ≥ 0.8 (mean
@@ -201,15 +288,27 @@ evals/fixtures/
     optimizer receives.
   - **Messy suite:** cross-cluster mixtures with 5% of feature fields nulled
     (seeded choice) to exercise missing-data handling under gating.
+  - **Arc fixture** (`arc_01.json`, n≈20): constructed with symmetric energy
+    alternatives — at several positions a higher-energy and a lower-energy
+    continuation score identically on key/BPM/loudness, so `build` and
+    `neutral` *must* produce different orders and a no-op profile cannot pass.
+    Used by US-5's acceptance and
+    `tests/test_scoring.py::test_fr10_profiles`.
 - **`expected.json`** — the generator also *measures* and records, per
   playlist: planted-chain mean, identity mean, 20-shuffle random mean,
-  bpm-sort mean. These are informational anchors for reviewing gate levels;
+  bpm-sort mean, and the reference greedy-only ratios (discrimination
+  invariant above). These are informational anchors for reviewing gate levels;
   gates themselves are asserted against live-computed values (§5), so
-  `expected.json` can never mask a regression.
+  `expected.json` can never mask a regression — the sole exception is the
+  discrimination invariant, which is a property of the *fixtures*, and is
+  therefore legitimately asserted from the committed file.
 
 **Ground truth summary:** M1/M2 truth = hand-encoded published practice;
-M4 truth = exact DP recomputed at eval time; M5 truth = construction;
-M6 truth = live-computed baselines. No metric's truth is produced by the
+M4 truth = exact DP recomputed at eval time — engine code, so *not*
+independent by location, but pinned by an independent brute-force cross-check
+and a hard `ratio ≤ 1` assert (§3-M4) so a fake or degraded solver cannot
+silently inflate ratios; M5 truth = construction; M6 truth = live-computed
+baselines. No gated metric's truth is produced by *unverified* code of the
 system under test.
 
 ## 5. Baselines and gates
@@ -235,13 +334,15 @@ a random scorer sits at 0.50 by construction of AUC.
 |---|---|---|
 | M1 key_relation_accuracy | = 1.00 | Finite lookup against the public chart; any miss is a bug, not noise. |
 | M2 pair_ranking_auc | ≥ 0.90 | Far above random (0.50) and the bpm-only scorer (≈0.70); below 1.0 because a handful of authored `workable` cases sit deliberately on rule boundaries. |
-| M2b anti-gaming margin | M2 − bpm_only_auc ≥ 0.10 | Proves the harmonic/energy/loudness components carry real ranking weight; a bpm-only regression cannot pass. |
+| M2b anti-gaming margin | M2 − bpm_only_auc ≥ 0.10 | Proves the harmonic/energy/loudness components carry real ranking weight; a bpm-only regression cannot pass. Feasibility is guaranteed by the fixture-authoring invariant bpm_only_auc ≤ 0.80 (§4), CI-enforced by `test_fixture_invariants`. |
 | M3 component_monotonicity | = 1.00 | Properties are exact consequences of the formulas in SCOPE.md D3–D5; any failure is an implementation error. |
-| M4_mean exact_optimality_ratio | ≥ 0.97 | TSP literature: greedy construction alone typically lands ~10–25% short of optimum; 2-opt closes to within ~5% on random instances. Multi-start + Or-opt on n ≤ 12 should do better still; 0.97 mean forces the local search to actually work. |
-| M4_min | ≥ 0.90 | No single instance may fall off a cliff (guards degenerate anchor/tie-break bugs). |
-| M5 planted_chain_recovery | ≥ 0.92 | The planted chain is recoverable in principle; allowing 8% slack acknowledges the heuristic may find a *different* near-optimal path. Random sits near 0.45/0.88 ≈ 0.51 on this ratio; bpm_sort near 0.75 (planted chains are key-coherent, which bpm_sort ignores). |
+| M4_mean exact_optimality_ratio | ≥ 0.97 | Not justified by TSP folklore alone (those ~5%-of-optimum figures are for large random instances): the fixtures are *generation-verified* to include ≥ 3 exact instances where construction-only greedy scores < 0.97 (§4 discrimination invariant), so this gate provably requires the local search to work. Any ratio > 1 + 1e-9 hard-fails the run (broken exact solver, §3-M4). |
+| M4_min | ≥ 0.90 | No single instance may fall off a cliff (guards degenerate anchor/tie-break bugs; includes the anchored instance, scored against fixed-endpoint exact truth). |
+| M5 planted_chain_recovery | ≥ 0.92 (clamped mean) | The planted chain is recoverable in principle; allowing 8% slack acknowledges the heuristic may find a *different* near-optimal path. Per-playlist ratios are clamped at 1.0 before averaging (§3), so overperformance cannot subsidize a failure. Random sits near 0.45/0.88 ≈ 0.51 on this ratio; bpm_sort near 0.75 (planted chains are key-coherent, which bpm_sort ignores). |
+| M5_min | ≥ 0.85 | Per-instance floor mirroring M4_min: one collapsed realistic-scale playlist (17% of the suite) must fail loudly, not vanish into a mean. |
 | M6 baseline_margin | ≥ +0.08 | The whole product claim: beat the best naive strategy by a clear margin (≈ one flag-level of quality per transition: 0.08 mean ≈ turning ~1 in 4 workable seams into seamless ones). Vacuous-pass check: bpm_sort itself scores margin 0. |
-| M7 determinism | = 1.00 | CONVENTIONS.md hermeticity; also what makes every other number trustworthy. |
+| M6_min per-playlist margin | > 0 | The heuristic must beat bpm_sort on *every* messy playlist, not just on average — with only 4 instances, one hidden regression is 25% of the suite. |
+| M7 determinism | = 1.00 | CONVENTIONS.md hermeticity; also what makes every other number trustworthy. Certifies within-platform determinism; the golden-orderings check surfaces cross-platform drift as a CI diff (§3-M7, FR-15). |
 
 Gates are asserted on live-computed values inside the eval run — never against
 `expected.json`.
@@ -261,28 +362,30 @@ Mirrors `orbit-backend/evals/`:
 - **`evals/test_gates.py`** — pytest gates: one test per gate in §5 (test
   names carry FR ids, e.g. `test_fr8_exact_optimality_gate`), each calling the
   same metric functions directly (not via subprocess), plus
-  `test_eval_runner_passes` which executes `run.py` end-to-end and asserts
-  exit code 0. `uv run pytest flowlist/` therefore fails on any quality
-  regression.
+  `test_fixture_invariants` (discrimination invariant from `expected.json`;
+  live `bpm_only_auc ≤ 0.80` — §4) and `test_eval_runner_passes` which
+  executes `run.py` end-to-end and asserts exit code 0.
+  `uv run pytest flowlist/` therefore fails on any quality regression.
 
-Runtime budget: full suite < 30 s on a laptop (largest cost: Held-Karp at
-n=12 and 2-opt passes at n=150), so it runs in every CI invocation.
+Runtime budget: full suite < 45 s on a laptop (largest costs: Held-Karp at
+n=14 and 2-opt passes at n=150), so it runs in every CI invocation. The FR-8
+n=500 perf smoke test is slow-marked and excluded from the default run.
 
 ## 7. FR → test/eval mapping
 
 | FR | Covered by |
 |---|---|
-| FR-1, FR-2 | `tests/test_import.py` (unit; malformed rows, dedupe, directory scan) |
+| FR-1, FR-2 | `tests/test_import.py` (unit; malformed rows, sentinel mapping `Key=-1`/`Tempo=0` → nulls with warnings, `--replace`/`--force` semantics, dedupe, tag-vs-filename fallback, directory scan) |
 | FR-3 | `tests/test_resolution.py` (precedence, idempotence, coverage report) |
 | FR-4 | `tests/test_resolution.py::test_fr4_manual_override_wins` |
 | FR-5 | **M1** + `tests/test_keys.py` (round-trip all 24 keys, wraparound) |
-| FR-6 | **M2, M3** + `tests/test_scoring.py` (formula unit tests) |
+| FR-6 | **M2, M3** + `tests/test_scoring.py` (formula unit tests; `test_fr6_weight_normalization`: renormalization, rejection of negative/all-zero weights) |
 | FR-7 | `tests/test_scoring.py::test_fr7_flow_report` + M7 consistency check |
-| FR-8 | **M4, M5, M6** + `tests/test_optimizer.py` (n≤3 edge cases, n-cap error) |
-| FR-9 | `tests/test_optimizer.py::test_fr9_anchors` + anchored fixture in M4 suite |
-| FR-10 | M3 build/cool checks + `tests/test_scoring.py::test_fr10_profiles` |
+| FR-8 | **M4, M5, M6** + `tests/test_optimizer.py` (n≤3 edge cases, n-cap error; `test_fr8_exact_matches_bruteforce`: Held-Karp vs brute-force at n ≤ 7 incl. anchored variants; slow-marked `test_fr8_perf_smoke` for the n=500 NFR, excluded from the default suite) |
+| FR-9 | `tests/test_optimizer.py::test_fr9_anchors` (start-only, end-only, both, n=2 degenerate) + anchored fixture in the M4 suite scored against fixed-endpoint exact ground truth |
+| FR-10 | M3 build/cool checks + `tests/test_scoring.py::test_fr10_profiles` on `arc_01.json` (build ≠ neutral, strictly greater mean signed energy delta — US-5 acceptance) |
 | FR-11 | `tests/test_store.py` (append-only, run snapshot self-containment) |
 | FR-12 | `tests/test_export.py` (M3U/CSV/JSON golden files, apply transaction) |
-| FR-13 | `tests/test_api.py` (FastAPI TestClient, error mapping) |
+| FR-13 | `tests/test_api.py` (FastAPI TestClient, full error-code catalog incl. `invalid_weights`, `name_conflict`, `playlist_has_runs` 409/force) |
 | FR-14 | `tests/test_cli.py` (Typer CliRunner, exit codes, `--json`) |
-| FR-15 | **M7** |
+| FR-15 | **M7** (incl. `golden_orderings.json` comparison) |

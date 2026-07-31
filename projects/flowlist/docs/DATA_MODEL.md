@@ -46,7 +46,7 @@ never lost and precedence stays a pure read-time policy.
 |---|---|---|
 | `track_id` | str, FK Track | composite PK with `source` |
 | `source` | enum `manual \| local_analysis \| streaming \| import \| fixture` | composite PK |
-| `bpm` | float \| None | > 0, sane range check 40–260 at write; values outside → rejected with error |
+| `bpm` | float \| None | > 0, sane range 40–260 enforced by the store CHECK. Importers map sentinels and out-of-range source values (Exportify `Tempo = 0`, `Key = -1`) to None with per-row warnings *before* write (SCOPE.md FR-1), so the CHECK only trips on programmer error, never on real exports |
 | `key_pc` | int \| None | pitch class 0–11 (C=0 … B=11), enharmonics collapsed |
 | `mode` | int \| None | 1 = major, 0 = minor (Spotify convention). `key_pc` and `mode` are set/null together |
 | `energy` | float \| None | [0,1] |
@@ -79,9 +79,14 @@ not stored; runs snapshot the resolved values they used (see 2.6).
 | `created_at` | datetime | |
 
 **Invariants:** `name` unique; deleting a playlist cascades to its entries and
-is refused if any ReorderRun references it (runs are the audit trail; delete is
-`--force`-only in the CLI and removes runs too — the one sanctioned deletion
-path).
+is refused if any ReorderRun references it (runs are the audit trail; forced
+deletion removes runs too and is available as CLI `--force` and API
+`DELETE /playlists/{id}?force=true` returning 409 `playlist_has_runs` without
+it — the one sanctioned deletion path, SCOPE.md FR-13). Importing to an
+existing name is refused with a hint unless `--replace` is passed (SCOPE.md
+FR-1); `--replace` replaces entries in one transaction, and if runs exist it
+additionally requires `--force`, which deletes those runs and clears
+`applied_run_id` in the same transaction.
 
 ### 2.4 PlaylistEntry
 
@@ -96,9 +101,16 @@ D8): duplicate tracks are distinct entries.
 | `track_id` | str, FK Track | duplicates allowed within a playlist |
 
 **Invariants:** (`playlist_id`, `position`) unique; positions contiguous from 0
-(enforced on every write: import and apply both replace the full position map
-in one transaction). Entry `id` is immutable; `position` is the only mutable
-field (via apply).
+(enforced on every write: import creates the full entry set, apply rewrites the
+full position map, each in one transaction). Entry `id` is immutable;
+`position` is the only mutable field (via apply) — apply never deletes or
+re-inserts entries, because `run_entries.entry_id` references them (RESTRICT)
+and RunEntry rows must survive apply. Because (`playlist_id`, `position`) is
+UNIQUE and SQLite checks the constraint immediately (not deferred), apply uses
+a two-phase transactional update: first shift all positions into a disjoint
+range (e.g. `position + n`), then write the final 0..n−1 positions — both
+phases inside the same transaction, so no transient UNIQUE violation and no
+observable intermediate state.
 
 ### 2.5 ReorderRun (append-only)
 
@@ -112,7 +124,7 @@ One invocation of the optimizer against a playlist snapshot.
 | `engine_version` | str | package version, for reproducibility audits |
 | `algorithm` | enum `greedy_2opt \| ortools` | |
 | `seed` | int | |
-| `params` | JSON | `TransitionWeights`, `profile`, `start_entry`, `end_entry`, `max_passes` — the full `ReorderParams` dump |
+| `params` | JSON | `TransitionWeights`, `profile`, `start_entry`, `end_entry`, `max_passes` — the full `ReorderParams` dump. Weights are stored *normalized* (post FR-6 validation), i.e. exactly what the engine used, so runs are self-contained |
 | `coverage` | JSON | per-field resolved/missing counts at run time (FR-3 snapshot) |
 | `score_mean_before` / `after` | float | mean transition score of original vs proposed order |
 | `score_min_before` / `after` | float | |
@@ -185,7 +197,11 @@ iff `position = 0`.
 
 `features` optional per track → stored as `source=import`. CSV import (FR-1)
 maps the Exportify columns onto the same shape (`Tempo`→bpm, `Key`→key_pc,
-`Mode`→mode, `Loudness`→loudness_db, etc.).
+`Mode`→mode, `Loudness`→loudness_db, etc.) with sentinel mapping (SCOPE.md
+FR-1): `Key = -1` ("no key detected") → key_pc null with mode nulled alongside
+it (set-together invariant, §2.2); `Tempo = 0` or outside 40–260 → bpm null.
+Each sentinel mapping emits a per-row warning; the row is still imported.
+Structurally unparsable rows — and only those — are skipped with line numbers.
 
 ### 3.2 Export formats (FR-12)
 

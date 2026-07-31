@@ -38,7 +38,9 @@ web UI. API and CLI only.
   from a CSV/JSON export or a local music folder and list its tracks.
   *Acceptance:* `flowlist import party.csv --name party` creates a playlist;
   `flowlist show party` lists tracks in stored order with any known features;
-  re-importing the same file does not duplicate tracks in the track catalog.
+  re-importing the same file does not duplicate tracks in the track catalog,
+  and importing to an existing playlist name is refused with a hint unless
+  `--replace` is passed (FR-1).
 - **US-2: Fill in the musical facts.** As the owner, I can resolve audio
   features for every track in a playlist and see what's missing.
   *Acceptance:* `flowlist analyze party` reports coverage (e.g. "41/44 tracks
@@ -60,8 +62,12 @@ web UI. API and CLI only.
   opening and/or closing track and bias the order toward rising energy for a
   party set.
   *Acceptance:* `flowlist reorder party --start-track <id> --profile build`
-  returns an order that starts with the pinned track, and mean signed energy
-  delta across transitions is ≥ the neutral profile's on the same input.
+  returns an order that starts with the pinned track, and on the committed arc
+  fixture (`arc_01`, constructed with symmetric energy alternatives so a no-op
+  profile cannot pass — EVALS.md §4) the build profile's mean signed energy
+  delta across transitions is *strictly greater* than the neutral profile's on
+  the same input. Formula-level behavior is separately gated by EVALS M3's
+  build/cool checks.
 - **US-6: Use it with files I own.** As the owner, I can point flowlist at a
   directory of audio files; with the optional audio extra installed it measures
   BPM/key/energy/loudness itself.
@@ -92,13 +98,26 @@ table in EVALS.md §7).
   Energy, Danceability, Loudness`) and (b) a documented JSON schema
   (DATA_MODEL.md §3.1). Import creates/updates Track rows keyed by a stable
   identity (DATA_MODEL.md §2.1), creates a Playlist with entries in file order,
-  and stores any features carried by the file as `source=import`. Malformed
-  rows are reported with line numbers and skipped, never silently dropped.
+  and stores any features carried by the file as `source=import`. Real-world
+  sentinel values are mapped, never rejected: `Key = -1` (Spotify/Exportify
+  "no key detected") → `key_pc = None` with `mode` nulled alongside it (the
+  set-together invariant, DATA_MODEL.md §2.2), and `Tempo = 0` or any BPM
+  outside 40–260 → `bpm = None`; each mapping emits a per-row warning, and the
+  track is imported with the remaining fields intact (D10). "Malformed row →
+  reported with line number and skipped" is reserved for structurally
+  unparsable rows only, never for merely-missing features. Importing to an
+  existing playlist name is refused with a hint unless `--replace` is passed;
+  `--replace` replaces the playlist's entries in one transaction. If the
+  playlist has ReorderRuns, `--replace` additionally requires `--force`, which
+  deletes those runs first and clears `applied_run_id` — the same sanctioned
+  deletion path as DATA_MODEL.md §2.3.
 - **FR-2 Directory import.** Given a directory path, the system scans
   recursively for audio extensions (`.mp3 .m4a .flac .ogg .wav`), creates
-  file-identified tracks (title/artist from filename pattern `Artist - Title`
-  when tags are unavailable), and builds a playlist in lexicographic path
-  order. No audio decoding happens at import time.
+  file-identified tracks — title/artist read from file tags via `mutagen` (a
+  pure-Python *core* dependency: it reads tags without decoding audio, so it
+  does not belong in the `audio` extra), falling back to the filename pattern
+  `Artist - Title` when tags are absent — and builds a playlist in
+  lexicographic path order. No audio decoding happens at import time.
 - **FR-3 Feature resolution.** `analyze` resolves an `AudioFeatures` record per
   track by querying providers in configurable precedence (default: `manual >
   local_analysis > streaming > import > fixture`), caching results in the
@@ -122,7 +141,14 @@ table in EVALS.md §7).
   continuity (with arc-profile asymmetry), loudness matching — using the exact
   formulas in §Design-D2–D5. Weights are configurable, default
   `key=0.35, bpm=0.35, energy=0.20, loudness=0.10` (a fifth component,
-  danceability continuity, exists with default weight 0). Any component with
+  danceability continuity, exists with default weight 0). Weight validation:
+  every weight must be ≥ 0 and at least one must be > 0; the engine
+  renormalizes accepted weights to sum to 1 before scoring, so
+  `score(a→b) ∈ [0,1]` holds for *any* accepted input and scaling all weights
+  by a positive constant is a no-op (checked by an M3 property, EVALS.md §3).
+  Invalid weights are rejected: `invalid_weights` 4xx in the API (FR-13),
+  non-zero exit in the CLI (FR-14). Runs persist the *normalized* weights
+  actually used (DATA_MODEL.md §2.5). Any component with
   missing inputs contributes a neutral 0.5 and adds a `missing_*` flag to the
   transition.
 - **FR-7 Order scoring.** Given any ordering of a playlist's entries, the
@@ -137,9 +163,21 @@ table in EVALS.md §7).
   (segment reversal with recomputation, since the score is directional), until
   a local optimum or `max_passes` (default 50). Fully deterministic given
   (inputs, seed): seeded `random.Random`, fixed scan order, index tie-breaks.
-- **FR-9 Anchors.** Reordering accepts optional fixed start and/or end entries;
-  the returned order honors them, and local-search moves that would displace an
-  anchor are rejected. Anchoring both endpoints with n=2 degenerates correctly.
+  *Performance NFR:* a reorder at the n = 500 cap completes in ≤ 60 s on a
+  typical laptop (first-improvement passes are O(n²) matrix lookups and
+  `max_passes` bounds the loop); verified by a slow-marked perf smoke test
+  (`tests/test_optimizer.py::test_fr8_perf_smoke`), excluded from the default
+  suite and not eval-gated (EVALS.md §7).
+- **FR-9 Anchors.** Reordering accepts optional fixed start and/or end
+  entries. Construction honors them explicitly (per §Design-D6: all greedy
+  starts rooted at a start anchor with seeded near-tie diversification; an end
+  anchor appended after greedy construction over the remaining entries, then
+  repaired by anchor-respecting local search); the returned order honors them,
+  and local-search moves that would displace an anchor are rejected.
+  `exact_optimal` accepts the same anchors (fixed-endpoint Held-Karp), so
+  anchored eval instances have exact ground truth computed under the same
+  constraints the heuristic receives (EVALS.md §3-M4). Anchoring both
+  endpoints with n=2 degenerates correctly.
 - **FR-10 Arc profiles.** Reordering accepts `profile ∈ {neutral, build,
   cool}`; `build` multiplies the energy-component penalty for negative energy
   deltas by 1.5 (and `cool` for positive deltas), per §Design-D4. Profile
@@ -153,14 +191,24 @@ table in EVALS.md §7).
   (b) exported as M3U8 (file-path entries where known, EXTINF with duration
   and `Artist - Title`), CSV (same columns as import), or JSON.
 - **FR-13 API.** A FastAPI app exposes the endpoints in §Architecture-API with
-  Pydantic request/response schemas; engine errors map to 4xx with structured
-  detail (e.g. `playlist_too_large`, `unknown_track`).
+  Pydantic request/response schemas; engine/store errors map to 4xx with
+  structured detail — error code catalog: `playlist_too_large`,
+  `unknown_track`, `unknown_playlist`, `unknown_run`, `invalid_weights`
+  (FR-6), `name_conflict` (import to existing name without replace, FR-1),
+  `playlist_has_runs` (409 on delete without force, DATA_MODEL.md §2.3).
 - **FR-14 CLI.** A Typer CLI exposes the commands in §Architecture-CLI; every
   command returns exit code 0 on success, non-zero on failure, and supports
   `--json` for machine-readable output.
 - **FR-15 Determinism.** For fixed inputs (playlist, features, params, seed),
-  `reorder` returns byte-identical orderings across runs and platforms. No
-  wall-clock reads inside the engine; timestamps are passed in by callers.
+  `reorder` returns byte-identical orderings across runs *on a given
+  platform* — this is what the M7 gate certifies. Cross-platform
+  reproducibility is a design goal, not a hard claim (transcendental math such
+  as D3's `log2` can differ in the last bit across libm implementations); it
+  is carried by index tie-breaks plus fixed-precision score rounding
+  (§Design-D6) and made *visible* by committed golden orderings (EVALS.md
+  §3-M7): any platform-dependent drift shows up as a golden-file diff in CI on
+  other machines. No wall-clock reads inside the engine; timestamps are passed
+  in by callers.
 
 ## Non-goals (this pass)
 
@@ -188,6 +236,12 @@ table in EVALS.md §7).
   bias of FR-10, which keeps the objective pairwise-decomposable (§Design-D7).
 - **No tempo-adjustment planning** beyond reporting the % pitch/tempo change a
   DJ would need. No sync instructions, no key-shift suggestions.
+- **No cross-source track merging.** Under D9, the same song imported once as
+  `meta:<hash>` (CSV without a URI) and later as `spotify:<id>` or
+  `file:<hash>` yields distinct catalog rows. The MVP accepts this known
+  limitation — features and overrides are per-id, so each row stays internally
+  consistent — and a `flowlist merge` command is a candidate future addition,
+  not built now.
 - **No multi-user, auth, or hosting concerns.**
 - **No audio files or copyrighted metadata dumps committed to the repo.** All
   fixtures are synthetic metadata (EVALS.md §4).
@@ -203,7 +257,8 @@ layer that touches both I/O and engine); API and CLI call services only.
 
 - `models.py` — Pydantic domain models: `Track`, `AudioFeatures`,
   `TransitionWeights`, `ReorderParams`, `Transition`, `FlowReport`,
-  `ReorderResult`.
+  `ReorderResult`, `CoverageReport` (FR-3's return type, stored as JSON on
+  runs), `ImportedPlaylist` (the `PlaylistReader` return type).
 - `keys.py` — pitch-class/mode ↔ Camelot conversion (FR-5), key-relation
   classification, `key_score(a, b) -> tuple[float, KeyRelation]`.
 - `scoring.py` — component formulas (BPM folding, energy w/ profile, loudness,
@@ -212,8 +267,10 @@ layer that touches both I/O and engine); API and CLI call services only.
   `score_order(order, matrix | features) -> FlowReport` (FR-6, FR-7, FR-10).
 - `optimizer.py` — `reorder(matrix, seed, anchors, max_passes) ->
   ReorderResult` implementing multi-start greedy + Or-opt + 2-opt (FR-8, FR-9);
-  also `exact_optimal(matrix)` (Held-Karp dynamic programming, guarded to
-  n ≤ 14) used by evals as ground truth.
+  also `exact_optimal(matrix, start=None, end=None)` (Held-Karp dynamic
+  programming with fixed-endpoint variants for anchors, guarded to n ≤ 14)
+  used by evals as ground truth — itself pinned by an independent brute-force
+  cross-check (EVALS.md §3-M4).
 - `explain.py` — render `Transition`/`FlowReport` into human-readable lines and
   the flag vocabulary (FR-11's stored breakdown, US-4).
 
@@ -254,8 +311,10 @@ tests and evals.
 
 `Repository` protocol with `SqliteRepository` (stdlib `sqlite3`, schema in
 DATA_MODEL.md §4) and `InMemoryRepository` for tests. Operations: track upsert,
-feature upsert per (track, source), playlist CRUD (entries replace-all on
-apply), run append + read. No engine logic.
+feature upsert per (track, source), playlist CRUD, apply (updates entry
+*positions in place*, preserving entry ids so RunEntry references survive —
+via the two-phase transactional position update in DATA_MODEL.md §2.4), run
+append + read. No engine logic.
 
 ### API (FastAPI, `api/`)
 
@@ -264,8 +323,9 @@ GET    /health                          -> {status, version}
 POST   /playlists/import                -> 201 Playlist        (FR-1/2; body: {name, format: csv|json|directory, content|path})
 GET    /playlists                       -> [PlaylistSummary]
 GET    /playlists/{id}                  -> Playlist with entries + features
-DELETE /playlists/{id}                  -> 204
+DELETE /playlists/{id}                  -> 204; 409 playlist_has_runs if runs exist; ?force=true deletes runs too (mirrors CLI --force)
 POST   /playlists/{id}/analyze          -> CoverageReport      (FR-3; body: {providers?: [...], local?: bool})
+GET    /tracks/{track_id}               -> Track with per-source feature rows (FR-4 resource is readable, not write-only)
 PUT    /tracks/{track_id}/features      -> AudioFeatures       (FR-4; manual override)
 POST   /playlists/{id}/score            -> FlowReport          (FR-7; scores current order)
 POST   /playlists/{id}/reorder          -> 201 ReorderRun      (FR-8/9/10/11; body: ReorderParams {seed, weights?, profile?, start_entry?, end_entry?, max_passes?})
@@ -300,9 +360,10 @@ All commands accept `--db PATH` (default `~/.flowlist/flowlist.db`) and
 ### Size budget (implementation phase)
 
 engine ≈ 900 lines (keys 150, scoring 250, optimizer 350, models/explain 150);
-adapters ≈ 500; store ≈ 350; api ≈ 300; cli ≈ 350; tests + evals ≈ 1,200.
-Total ≈ 3,600 — within the 2,000–4,000 band, with the optimizer and scoring
-(the hard part) getting the deepest treatment.
+adapters ≈ 500; store ≈ 350; api ≈ 300; cli ≈ 350; tests + evals ≈ 1,300
+(includes the brute-force optimizer cross-check and fixture-invariant tests,
+EVALS.md §3–§4). Total ≈ 3,700 — within the 2,000–4,000 band, with the
+optimizer and scoring (the hard part) getting the deepest treatment.
 
 ## Key design decisions and assumptions
 
@@ -371,9 +432,19 @@ Total ≈ 3,600 — within the 2,000–4,000 band, with the optimizer and scorin
   maximum-weight Hamiltonian path problem — equivalent to open-loop TSP, NP-
   hard. Playlist sizes (10–500) make exact solving infeasible but make O(n²)
   matrices and O(n²)-per-pass local search cheap. Construction: greedy
-  best-next from k = min(n, 12) starts — any anchors, plus the ⌈k/2⌉ entries
+  best-next from k = min(n, 12) starts — unanchored, the ⌈k/2⌉ entries
   with the lowest best-incoming score (natural path endpoints), plus seeded
-  random picks. Improvement: first-improvement scans alternating Or-opt
+  random picks. Under anchors (FR-9) the start set changes: with `start_entry`
+  set, *all* k constructions are rooted at the anchor, and per-start
+  diversification comes instead from seeded tie-breaking — construction 0 is
+  pure best-next; constructions 1..k−1 choose (seeded) uniformly among
+  candidates within 0.05 of the best next score at each step. With `end_entry`
+  set, construction runs greedily over the other n−1 entries and the end
+  anchor is appended, after which anchor-respecting Or-opt/2-opt repairs the
+  final seam. With both set, both rules compose. To keep near-ties stable
+  across platforms (FR-15), all component and total scores are rounded to 12
+  decimal places before any comparison or tie-break.
+  Improvement: first-improvement scans alternating Or-opt
   (relocate segments of length 1–3, direction preserved — valid under an
   asymmetric score) and 2-opt (Croes 1958; reversal requires recomputing the
   reversed segment's internal edges because the score is directional), to a
@@ -408,7 +479,9 @@ Total ≈ 3,600 — within the 2,000–4,000 band, with the optimizer and scorin
   only committed fixtures and the offline adapters; seeded randomness; time is
   an input. The librosa adapter is an optional extra exercised by
   skip-if-not-installed unit tests, not by eval gates.
-- **D12 — Thresholds: seamless ≥ 0.70, cliff < 0.40.** Calibrated against D2–D5:
+- **D12 — Thresholds: seamless ≥ 0.70, cliff < 0.40.** Calibrated against
+  D2–D5 under *normalized* weights (FR-6 renormalization is what keeps these
+  constants meaningful for any user-supplied weights):
   a relative-key mix at 3% tempo delta, Δenergy 0.10, Δloudness 3 dB scores
   ≈ 0.89 (clearly seamless); a key clash with everything else perfect scores
   ≈ 0.69 — a key clash alone should deny "seamless", and does, narrowly. These
