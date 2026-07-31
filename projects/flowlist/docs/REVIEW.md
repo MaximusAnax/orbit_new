@@ -83,6 +83,52 @@ pass with 1 sanctioned skip (the slow-marked FR-8 n=500 perf smoke), and the
 heuristic's M4/M5/M6 scores are unchanged or identical to the build-phase
 values — the regeneration made the suite *harder to game*, not easier to pass.
 
+## Hardening-review findings (independent verification pass)
+
+A reviewer independent of the build ran the full harden checklist: execute
+every documented CLI command end to end on real inputs, hunt for fake work,
+empirically falsify the gates by mutating engine logic, and verify baselines,
+determinism, and FR coverage. One real defect was found and fixed. **No gate
+threshold was changed.**
+
+| # | Sev | Finding | Resolution |
+|---|-----|---------|------------|
+| 27 | **M** | **`flowlist serve` was broken for every DB-touching endpoint.** `SqliteRepository` opened its connection with sqlite3's default `check_same_thread=True`; the CLI is single-threaded so every command worked, but FastAPI executes sync handlers on threadpool worker threads, so under uvicorn `GET /playlists`, `POST .../reorder`, etc. all 500'd with `sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread` (`/health` — no DB — was the one endpoint that responded, which is exactly why a smoke check could miss it). The API tests never caught it because every fixture injects `InMemoryRepository`; the served SQLite path had zero coverage. | Connection now opened with `check_same_thread=False` (safe: CPython ships SQLite in serialized mode, `sqlite3.threadsafety == 3`), and `api.app.get_repository` became a generator dependency holding an app-level `RLock` for the whole request so two requests' transactions can never interleave on the shared connection — whole-request serialization being the right granularity for a single-user local tool. Regression-tested by `tests/test_api.py::test_fr13_served_app_works_against_a_sqlite_file`, which builds the app the way `serve` does (`create_app(db_path=...)`, real SQLite file) and drives import → list → reorder → export through `TestClient`, whose thread hop reproduces the crash: the test was verified to FAIL with the fix reverted and pass with it in place. `flowlist serve` re-verified live under uvicorn (playlists/reorder/export/409-delete all correct). |
+
+### Gate falsification — measured numbers
+
+EVALS.md §5's falsification table restated with the actual before/after values,
+each mutation applied to the committed engine, measured, and reverted (restore
+value confirmed after each revert):
+
+| Mutation (engine logic) | Metric | Healthy | Mutated | Gate | Verdict |
+|---|---|---|---|---|---|
+| local search deleted (`reorder` returns `construct`) | M4_mean | 1.0000 | 0.9587 | ≥ 0.97 | FAIL as designed |
+| — same mutation | M4_min | 1.0000 | 0.8798 | ≥ 0.90 | FAIL as designed |
+| — same mutation | M7 | 1.0000 | 0.0000 | = 1.00 | FAIL (golden diff) |
+| key adjacency shifted one wheel step (`Δ∈(1,11)`→`(2,10)`) | M1 | 1.0000 | 0.7722 | = 1.00 | FAIL as designed |
+| — same mutation | M2 | 0.9894 | 0.8317 | ≥ 0.90 | FAIL as designed |
+| key component made constant 0.5 | M1 | 1.0000 | 0.3038 | = 1.00 | FAIL as designed |
+| — same mutation | M6 | 0.1224 | 0.0237 | ≥ 0.08 | FAIL as designed |
+| — same mutation | M7 | 1.0000 | 0.0000 | = 1.00 | FAIL as designed |
+| BPM octave folding disabled | M3 | 1.0000 | 0.9091 | = 1.00 | FAIL (3 fold checks) |
+| `reorder` ignores its seed (`Random(seed)`→`Random(0)`) | M7 | 1.0000 | 0.0000 | = 1.00 | FAIL (vacuity guard + golden diff) |
+
+Notes from the same pass: M5/M6 correctly do *not* fail under the
+local-search-deleted mutation (construction recovery on planted chains is
+1.027, above the M5 gate) — M4/M4b/M7 are the gates that carry that claim,
+exactly as EVALS.md §5's table states. M2 survives the constant-key mutation
+(0.9348) because energy/loudness still rank many authored pairs; M1/M6/M7 are
+the documented catchers there, and they fired. The determinism check was run
+as two full back-to-back `run.py` executions: byte-identical output except the
+sanctioned `reorder_wall_time_s` row. Both M4b degenerate baselines produce
+identical orders on all 10 committed exact instances (construction's start set
+covers all nodes at n ≤ 12, and at n = 13–14 / under anchors the diversified
+constructions found nothing better with seed 7) — legitimate, since
+`reference_greedy` shares no code with the optimizer, but it means the
+"independent by location" baseline currently adds redundancy rather than extra
+discrimination.
+
 ## Scope impact
 
 All fixes are documentation-precision changes plus small, bounded additions to

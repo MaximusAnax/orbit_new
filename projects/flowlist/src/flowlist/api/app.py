@@ -11,7 +11,8 @@ allowed to read a clock (CONVENTIONS 3).
 
 from __future__ import annotations
 
-from collections.abc import AsyncIterator
+import threading
+from collections.abc import AsyncIterator, Iterator
 from contextlib import asynccontextmanager
 from datetime import UTC, datetime
 from typing import Annotated
@@ -87,9 +88,17 @@ def _now() -> datetime:
     return datetime.now(UTC)
 
 
-def get_repository(request: Request) -> Repository:
-    """Repository dependency; tests override it with an in-memory backend."""
-    return request.app.state.repository
+def get_repository(request: Request) -> Iterator[Repository]:
+    """Repository dependency; tests override it with an in-memory backend.
+
+    Holds the app-level lock for the whole request: FastAPI runs sync handlers
+    on threadpool worker threads, and the shared SQLite connection must not
+    interleave two requests' transactions (the connection itself is opened
+    with ``check_same_thread=False`` — see ``store.sqlite``).  Whole-request
+    serialization is the right granularity for a single-user local tool.
+    """
+    with request.app.state.repository_lock:
+        yield request.app.state.repository
 
 
 RepositoryDep = Annotated[Repository, Depends(get_repository)]
@@ -142,6 +151,7 @@ def create_app(
         lifespan=lifespan,
     )
     app.state.repository = store
+    app.state.repository_lock = threading.RLock()
     app.state.catalog_path = catalog_path
 
     @app.exception_handler(FlowlistError)

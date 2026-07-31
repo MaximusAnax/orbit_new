@@ -134,7 +134,13 @@ class SqliteRepository(Repository):
         if self.path not in (":memory:", ""):
             Path(self.path).expanduser().parent.mkdir(parents=True, exist_ok=True)
             self.path = str(Path(self.path).expanduser())
-        self._conn = sqlite3.connect(self.path)
+        # check_same_thread=False: FastAPI runs sync endpoints on threadpool
+        # worker threads, so under `flowlist serve` the connection is used from
+        # a different thread than the one that opened it.  Safe because CPython
+        # ships SQLite in serialized mode (sqlite3.threadsafety == 3) and the
+        # API serializes whole requests with a lock (api.app.get_repository);
+        # the CLI is single-threaded.
+        self._conn = sqlite3.connect(self.path, check_same_thread=False)
         self._conn.row_factory = sqlite3.Row
         self._conn.execute("PRAGMA foreign_keys = ON")
         if self.path != ":memory:":

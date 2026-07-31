@@ -402,3 +402,36 @@ def test_fr13_openapi_lists_every_documented_route(client: TestClient) -> None:
         "/runs/{run_id}/export",
     ):
         assert route in paths, route
+
+
+# --------------------------------------------------------------------------- #
+# The served app against a real SQLite file (regression: serve was broken)
+# --------------------------------------------------------------------------- #
+
+
+def test_fr13_served_app_works_against_a_sqlite_file(tmp_path) -> None:
+    """The app `flowlist serve` builds must work from worker threads.
+
+    FastAPI executes sync endpoints on threadpool worker threads — a different
+    thread than the one that opened the SQLite connection at startup.  With
+    sqlite3's default ``check_same_thread=True`` every DB-touching endpoint
+    500s under uvicorn while the InMemory-backed tests stay green; that exact
+    bug shipped (harden-pass finding, REVIEW.md #27).  TestClient reproduces
+    the thread hop, so this test fails if the fix regresses.
+    """
+    app = create_app(db_path=str(tmp_path / "serve.db"))
+    with TestClient(app) as client:
+        body = _import(client)
+        playlist_id = body["playlist"]["id"]
+
+        listed = client.get("/playlists")
+        assert listed.status_code == 200, listed.text
+        assert [p["id"] for p in listed.json()] == [playlist_id]
+
+        run = client.post(f"/playlists/{playlist_id}/reorder", json={"seed": 7})
+        assert run.status_code == 201, run.text
+        run_id = run.json()["run"]["id"]
+
+        exported = client.get(f"/runs/{run_id}/export", params={"format": "m3u"})
+        assert exported.status_code == 200
+        assert exported.text.startswith("#EXTM3U")
