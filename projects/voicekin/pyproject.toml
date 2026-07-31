@@ -1,0 +1,21 @@
+[project]
+name = "voicekin"
+version = "0.1.0"
+description = "Consent-gated personal voice profiles for smart-home speech."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.9.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "typer>=0.15.0",
+]
+
+[project.scripts]
+voicekin = "voicekin.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/voicekin"]

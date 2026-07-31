@@ -98,8 +98,10 @@ Every project ships an eval suite modeled on `orbit-backend/evals/`:
 
 ```bash
 cd projects
-uv sync                        # install the workspace
+uv sync --all-packages         # install every workspace member (plain `uv sync` installs only the root)
 uv run pytest <slug>/          # one project's tests + eval gates
-uv run python -m <pkg>.cli --help
-uv run python <slug>/evals/run.py
+uv run pytest                  # everything
+uv run <slug> --help           # the project's CLI entry point
+uv run python <slug>/evals/run.py   # scorecard
+uv run ruff check .            # lint
 ```
