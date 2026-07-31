@@ -142,15 +142,39 @@ def test_fr16_determinism_gate(report: M.EvalReport) -> None:
 
 
 def test_fixture_class_shares_are_pinned() -> None:
-    """The M4 arithmetic depends on the op mix, so CI re-checks it (EVALS §4.2)."""
-    totals = M.expected()["totals"]
+    """The M4 arithmetic depends on the op mix, so CI re-checks it (EVALS §4.2).
+
+    Shares are recomputed live from the committed manifests — never read from
+    ``expected.json``, which is generator-recorded and could go stale against
+    the fixtures actually on disk.
+    """
     sys.path.insert(0, str(EVALS_DIR / "fixtures"))
     import generate
 
+    def share_key(op_name: str) -> str:
+        if op_name == "typo_label":
+            return "CAT_TYPO"
+        if op_name in {"case_label", "punct_label"}:
+            return "CAT_AUTO"
+        return M.OP_CLASS[op_name]
+
+    op_counts: dict[str, int] = dict.fromkeys(generate.CLASS_SHARES, 0)
+    for path in M.corrupted_fixtures():
+        for op in M.manifest_for(path)["ops"]:
+            op_counts[share_key(op["op"])] += 1
+    total = sum(op_counts.values())
+    assert total > 2000, f"only {total} ops across the committed manifests"
+
     for klass, target in generate.CLASS_SHARES.items():
-        realized = totals["class_shares"][klass]
+        realized = op_counts[klass] / total
         assert abs(realized - target) <= generate.SHARE_TOLERANCE, (
-            f"class {klass} share {realized} drifted from the pinned {target}"
+            f"class {klass} share {realized:.4f} (from the manifests) drifted "
+            f"from the pinned {target}"
+        )
+        recorded = M.expected()["totals"]["class_shares"][klass]
+        assert abs(recorded - realized) < 1e-6, (
+            f"expected.json records {recorded} for {klass} but the manifests "
+            f"say {realized:.6f} — the informational file is stale"
         )
 
 

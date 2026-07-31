@@ -30,11 +30,16 @@ SEEDS = (7, 8, 9)
 PRIMARY_SEED = 7
 #: EVALS.md M3: each gated scenario must supply at least this many windows.
 MIN_WINDOWS = 60
-#: EVALS.md M6, re-derived at the fixtures' realized stretch factor (REVIEW.md B1).
-#: Empirical sensitivity across seeds 7/8/9 on S1+S2: correct implementation
-#: 0.382-0.516, `flat_streak` demotion removed 0.668-0.718, whole grade table
-#: removed 0.797-0.883.  The gate sits between the correct worst case and the
-#: half-broken best case, so it still fails both degradations at every seed.
+#: EVALS.md M6, re-derived at the fixtures' realized stretch factor (REVIEW.md
+#: B1, corrected in H1).  Empirical sensitivity across seeds 7/8/9 on S1+S2:
+#: correct implementation 0.382-0.516, flat-streak *tracking* removed (which
+#: silences both the demotion and the archive-candidate signal) 0.668-0.718,
+#: whole grade table flattened 0.797-0.883.  The gate sits between the correct
+#: worst case and the half-broken best case, so it fails both of those
+#: degradations at every seed.  The narrower "demotion branch alone removed"
+#: variant measures 0.413-0.563 and does NOT fail this gate — the persona
+#: archives the duds the still-live archive-candidate signal flags — but it is
+#: caught deterministically by M7c's independent re-fold (REVIEW.md H1).
 M6_GATE = 0.60
 RULE = "=" * 96
 

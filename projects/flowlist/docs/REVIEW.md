@@ -56,7 +56,32 @@ mean transition score), all computed live in `evals/run.py`:
 | heuristic | ≥ bpm_sort + 0.08 | 0.815 (margin +0.122, worst playlist +0.073) |
 | `bpm_only_auc` (M2's naive scorer) | ≈ 0.65–0.75 | 0.711 |
 
-Every prediction held, so no gate needed revisiting.
+Every prediction held, so no gate needed revisiting. (The messy and planted
+suites were untouched by the harden-pass regeneration below — their generation
+seeds did not change — so these measurements still describe the committed
+fixtures.)
+
+## Harden-pass findings (finish stage)
+
+A final adversarial pass against the *eval suite itself* — attacking each gate
+with the degenerate implementation it claims to reject — surfaced three
+findings. **No gate threshold was lowered or weakened**; all three fixes
+strengthen fixtures or add live guards. The committed fixtures were
+regenerated once, under the strengthened generator (a reviewed change per
+EVALS.md §4); the searched exact-suite slots are the only fixtures whose
+features changed.
+
+| # | Sev | Finding | Resolution |
+|---|-----|---------|------------|
+| 24 | **M** | **The discrimination invariant gated the wrong baseline.** Finding #19's fix proved the *standalone reference greedy* fails both M4 gates — but the degenerate implementation that actually matters is the engine's own construction phase (`optimizer.construct`, literally what `reorder` returns with Or-opt/2-opt deleted), and it is *stronger* than the reference greedy under anchors, because D6 diversifies anchored constructions on seeded near-ties. On the previously committed exact suite it scored **M4_mean 0.9714 / M4_min 0.9302 and would have PASSED both M4 gates** — i.e. M4 still did not certify the local search, which is the exact failure mode findings #2 and #19 set out to exclude. | **Fixed by strengthening the fixtures and the gate, not by touching a threshold.** (a) M4b now measures *two* degenerate baselines, both computed live every run: `construction_only` (the shipped `optimizer.construct`) and `reference_greedy` (standalone in `generate.py`, no `src/flowlist` imports, kept so the claim is not purely self-referential) — and requires **both to fail both M4 gates**. (b) `generate.py`'s difficulty search now bounds the *stronger* of the two baselines (`_greedy_shortfall` takes the max of both totals), and `check_invariants` asserts the suite-level property per baseline with a 0.005 margin. (c) The exact suite was regenerated under a calibrated search: per-slot `depth_target`s set from a bounded deterministic sweep, the search budget raised 300 → 1200 seeds/slot, and slot 5's cluster mix changed from house+dnb (whose ~40% tempo gap cleanly separates the clusters, making greedy near-optimal on every draw) to indie+house, whose overlapping tempo ranges yield genuinely trappy draws. Committed result: **both baselines score M4_mean 0.9587 / M4_min 0.8798, failing both gates** (margins 0.011 and 0.020), while the heuristic scores **1.0000 / 1.0000**; seven of ten instances defeat both baselines (≥ 3 required). Supersedes the committed numbers recorded under #19. |
+| 25 | m | **Fixture invariants were asserted against committed measurements.** The pre-harden `test_fixture_invariants` read the discrimination numbers from `expected.json` — generator-measured values frozen at generation time — so a manual fixture edit that left the file stale could satisfy the invariant with numbers that were no longer true of the fixtures on disk. | Every gate and every invariant is now asserted from **live recomputation** (`evals/metrics.py::fixture_invariants`, `degenerate_m4` — the same functions the M4b gate and the scorecard use). `expected.json` is demoted to an informational anchor and cross-checked by `test_fixture_expected_json_is_not_stale`, which reconciles the committed per-instance ratios of *both* degenerate baselines against live values, so the file can neither mask a regression nor publish a stale number. EVALS.md §4 restated accordingly. |
+| 26 | m | **M7's repeatability half was vacuous.** "Same seed, same order" is satisfied for free by an implementation that ignores its seed entirely, so the check only bites on a fixture where the seed *changes* the answer. All three original golden fixtures (`exact_07`, `planted_00`, `messy_00`) were seed-insensitive — verified by direct probe: `reorder` with seeds 7 and 8 returns identical orders on each, so a `reorder` patched to draw a random seed per call still scored M7 = 1.00. | `planted_02` — probe-verified seed-sensitive — replaced `planted_00` in `GOLDEN_FIXTURES`, and `golden_orderings.json` was regenerated. Two live guards keep the fix from rotting: `m7_determinism` itself now fails unless at least one golden fixture is seed-sensitive (re-checked on every run, so a later regeneration cannot quietly restore the vacuous situation), and `evals/test_gates.py::test_fr15_m7_repeatability_check_is_not_vacuous` asserts the same property as a named test. EVALS.md §3-M7 documents the guard. |
+
+Post-regeneration verification: all 12 gates pass
+(`uv run python flowlist/evals/run.py` → `RESULT: PASS (12 gates)`), 421 tests
+pass with 1 sanctioned skip (the slow-marked FR-8 n=500 perf smoke), and the
+heuristic's M4/M5/M6 scores are unchanged or identical to the build-phase
+values — the regeneration made the suite *harder to game*, not easier to pass.
 
 ## Scope impact
 

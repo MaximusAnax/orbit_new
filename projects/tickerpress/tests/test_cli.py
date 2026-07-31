@@ -172,6 +172,17 @@ def test_fr15_term_add_appends_company_terms(run: Run) -> None:
     )
     assert isinstance(payload, dict)
     assert payload["context_terms"] == ["cupertino"] and payload["anti_terms"] == ["cider"]
+    # repeated flags all append — none are silently discarded
+    repeated = _json(
+        run(
+            "term", "add", "AAPL",
+            "--context", "iphone", "--context", "app store",
+            "--anti", "orchard", "--json",
+        )
+    )
+    assert isinstance(repeated, dict)
+    assert repeated["context_terms"] == ["cupertino", "iphone", "app store"]
+    assert repeated["anti_terms"] == ["cider", "orchard"]
     run("term", "add", "AAPL", expect=1)
     run("term", "add", "MSFT", "--context", "azure", expect=1)
 

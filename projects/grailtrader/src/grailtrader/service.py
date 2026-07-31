@@ -321,9 +321,43 @@ class GrailTraderService:
         else:
             raise ValueError(f"unknown event source {source!r}; use 'fixture' or 'rss'")
         incoming = feed.fetch(since, until)
-        merged, report = ingest_events(self.repo.list_events(), incoming)
+        resolved, unresolved = self._resolve_event_refs(incoming)
+        merged, report = ingest_events(self.repo.list_events(), resolved)
         self.repo.upsert_events(merged.values())
-        return report
+        return report.model_copy(
+            update={
+                "skipped_unresolved": len(unresolved),
+                "unresolved_refs": tuple(unresolved[:20]),
+            }
+        )
+
+    def _resolve_event_refs(
+        self, incoming: Sequence[FashionEvent]
+    ) -> tuple[list[FashionEvent], list[str]]:
+        """Split a feed into gazetteer-resolvable events and skipped ones (FR-2 spirit).
+
+        ``fashion_event.brand_id``/``era_id`` are gazetteer foreign keys
+        (DATA_MODEL): an event whose brand or era the gazetteer does not know is
+        skipped and counted — never stored to crash ``events show`` or silently
+        target strata that cannot exist.
+        """
+        resolved: list[FashionEvent] = []
+        unresolved: list[str] = []
+        for event in incoming:
+            try:
+                if event.era_id is not None:
+                    self.ctx.gazetteer.validate_membership(event.brand_id, event.era_id)
+                else:
+                    self.ctx.gazetteer.brand(event.brand_id)
+            except UnknownReferenceError:
+                unresolved.append(
+                    f"{event.event_type.value}@{event.brand_id}"
+                    + (f"/{event.era_id}" if event.era_id else "")
+                    + f" on {event.occurred_on}"
+                )
+                continue
+            resolved.append(event)
+        return resolved, unresolved
 
     def add_event(
         self,

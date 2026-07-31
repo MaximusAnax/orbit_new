@@ -258,7 +258,6 @@ retail
 retailer
 stores
 storefront
-warehouse
 capacity
 output
 recall

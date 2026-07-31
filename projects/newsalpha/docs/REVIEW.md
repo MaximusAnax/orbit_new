@@ -130,3 +130,50 @@ worth recording, because a baseline that is *too* weak flatters its gate:
   more consistently than the estimate assumed. The gate stays at 0.35.
 - **M4 = 0.80 against a scoped ≈ 0.82**, inside the range the planted z-scores
   imply; per-seed spread 0.75–0.83.
+
+## Hardening-stage record — gate falsifiability (2026-07-31)
+
+**No gate threshold was changed at this stage either.** The hardening pass
+verified that the gates guarding both hard parts are empirically falsifiable:
+each experiment mutates the relevant engine logic to the trivial/greedy/leaky
+variant the gate exists to rule out, re-runs the metric, then reverts the
+mutation and confirms the score returns to baseline (confirmed after every
+revert; `git diff` clean; final `verify_all` green).
+
+| Gate | Mutation (engine logic degraded) | Baseline | Mutated | Verdict |
+|---|---|---|---|---|
+| M2b ≥ 0.90 | `link.has_context` → always `True` (ambiguity context requirement removed) | 1.0000 | **0.8000** (10/50 traps wrong) | fails — gate discriminates |
+| M3 ≥ 0.85 | `_mna_roles` → greedy "first mention is acquirer", no passive handling, no abstention | 1.0000 | **0.7000** (12/40 wrong) | fails — gate discriminates |
+| M4 ≥ 0.72 | scorer emits constant `bullish` direction | 0.7983 | **0.4410** | fails — gate discriminates |
+| M5 ≥ 0.35 | scorer emits constant `score = 0.01` (no magnitude structure) | 0.7087 | **0.0000** | fails — gate discriminates |
+| Announcement-capture = 0 (leak canary) | entry at first bar `>= observed` (`bisect_left`) with the `LookAheadError` invariant disabled | 0.0000 (0/585) | **0.8803** (515/585); M4 inflates 0.7983 → 0.9026 | fails loudly — the canary catches same-day entry, and the spurious-skill signature EVALS.md predicts appears |
+| M7a ≤ 0.035 / M7b ≤ 0.06 | placebo announces displacement but never moves the window | 0.0020 / 0.0045 | **0.2983 / 0.7087** | fails — placebo honesty is enforced, not asserted |
+| M6-occupancy ≥ 20 | confidence = `base_conf · extraction · link` (stage/tier/corroboration modifiers dropped) | occupancy 40/46/31, M6 0.1645 | occupancy **13**/83/21 (M6 itself 0.1473, still ≥ 0.12) | occupancy sub-gate fails — see note |
+| M6 ≥ 0.12 | confidence constant 0.50 | 0.1645 | **0.0000**, occupancy 0/117/0 | both halves fail |
+
+**Note on M6.** Dropping the stage/tier/corroboration modifiers (but keeping
+`base_conf · extraction · link`) leaves the separation at 0.1473 — above the
+0.12 gate — because base confidence and link confidence still correlate with
+the planted hit structure; it is the **occupancy sub-gate** (lo bucket 13 < 20)
+that catches this degradation, exactly the role finding #17 gave it. The fully
+degenerate confidence fails both halves. The M6 gate is therefore falsifiable
+only as the documented *pair* (separation + occupancy); neither half is
+redundant.
+
+Other hardening-stage verifications, recorded for the audit trail:
+
+- `verify_all.py newsalpha`: 327 tests passed, 21 eval gates pass, ruff clean.
+- Every documented CLI command executed end-to-end on the committed fixtures
+  (init; ingest; ingest re-run → 0 new revisions, US-1; digest incl. empty
+  state; articles/events/signals list+show; signals revisions; brief; assets;
+  watch add/remove incl. nearest-alias rejection; prices load; backtest
+  run/placebo/show).
+- Determinism: `evals/run.py` executed twice → byte-identical scorecards.
+- Naive baselines are computed live by `evals/metrics.py` (`naive_*`
+  functions) and gated against the system by
+  `test_gates_sit_meaningfully_above_their_naive_baselines`; nothing in the
+  scorecard is hardcoded.
+- Ground-truth independence spot-checked: neither fixture generator imports
+  `newsalpha`, and `test_market_truth_is_independent_of_the_shipped_priors`
+  asserts the planted table is not a copy of `priors.json`.
+- FR coverage table written to `docs/FR_COVERAGE.md`; no FR unimplemented.

@@ -1674,13 +1674,11 @@
       "tier": "small",
       "world": "small_b",
       "cards": [
-        "card_p",
-        "card_q"
+        "card_p"
       ],
       "balances": {
-        "bank_p": 20000,
-        "bank_q": 20000,
-        "hub": 90000
+        "bank_p": 70000,
+        "hub": 96000
       },
       "goal": {
         "kind": "flight",
@@ -1695,12 +1693,138 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "No direct need-sized transfer fits (alpha needs 180,000 hub-side, only 96,000 held; beta needs 95,000 bank-side, only 70,000 held), so a greedy planner finds nothing; the optimum tops the hub up from bank_p and rides the 3:1 + 5k/60k tier into air_alpha.",
       "expected": {
-        "verdict": "insufficient_points",
-        "objective_cents": null,
-        "plans": [],
+        "verdict": "pay_cash_keep_points",
+        "objective_cents": -9000,
+        "plans": [
+          {
+            "canonical_form": [
+              [
+                "transfer",
+                "bank_p",
+                "air_beta",
+                "bank_p__air_beta",
+                "",
+                "",
+                70000,
+                70000,
+                0
+              ],
+              [
+                "transfer",
+                "hub",
+                "air_beta",
+                "hub__air_beta",
+                "",
+                "",
+                60000,
+                25000,
+                0
+              ],
+              [
+                "book_award",
+                "air_beta",
+                "",
+                "",
+                "beta_bus_nyc_lon",
+                "",
+                95000,
+                0,
+                15000
+              ]
+            ],
+            "is_comparator": false,
+            "net_value_cents": -9000,
+            "cash_received_cents": null,
+            "realized_cpp_milli": 1947,
+            "points_spent": {
+              "bank_p": 70000,
+              "hub": 60000
+            },
+            "feasible_in_days": 1,
+            "caveats": [
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "bank_p__air_beta",
+                  "points": 70000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "hub__air_beta",
+                  "points": 60000
+                }
+              }
+            ]
+          },
+          {
+            "canonical_form": [
+              [
+                "transfer",
+                "bank_p",
+                "hub",
+                "bank_p__hub",
+                "",
+                "",
+                54000,
+                54000,
+                0
+              ],
+              [
+                "transfer",
+                "hub",
+                "air_alpha",
+                "hub__air_alpha",
+                "",
+                "",
+                150000,
+                60000,
+                0
+              ],
+              [
+                "book_award",
+                "air_alpha",
+                "",
+                "",
+                "alpha_bus_nyc_lon",
+                "",
+                60000,
+                0,
+                20000
+              ]
+            ],
+            "is_comparator": false,
+            "net_value_cents": -14400,
+            "cash_received_cents": null,
+            "realized_cpp_milli": 3000,
+            "points_spent": {
+              "bank_p": 54000,
+              "hub": 96000
+            },
+            "feasible_in_days": 2,
+            "caveats": [
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "bank_p__hub",
+                  "points": 54000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "hub__air_alpha",
+                  "points": 150000
+                }
+              }
+            ]
+          }
+        ],
         "candidate_sets": 4,
-        "oracle_enumerations": 167459
+        "oracle_enumerations": 30756
       }
     },
     {
@@ -2272,20 +2396,21 @@
       },
       "goal": {
         "kind": "flight",
-        "origin_city": "NYC",
-        "dest_city": "MIA",
+        "origin_city": "MIA",
+        "dest_city": "NYC",
         "cabin": "business",
         "round_trip": false,
-        "passengers": 1,
+        "passengers": 2,
         "travel_window_start": "2026-10-01",
         "travel_window_end": "2026-10-31",
         "book_by": null
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "Two passengers need 80,000 DLX; no single source covers it (mrx 60,000 direct, typx only via the 3:1 mbx hub), so the optimum splits mrx direct plus a typx->mbx->dlx chain while a single-source planner finds nothing.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 62000,
+        "objective_cents": 66440,
         "plans": [
           {
             "canonical_form": [
@@ -2296,101 +2421,15 @@
                 "mrx__dlx",
                 "",
                 "",
-                40000,
-                40000,
-                2400
-              ],
-              [
-                "book_award",
-                "dlx",
-                "",
-                "",
-                "dlx_bus_nyc_mia",
-                "",
-                40000,
-                0,
-                5600
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 62000,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 3610,
-            "points_spent": {
-              "mrx": 40000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "mrx__dlx",
-                  "points": 40000
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "mrx",
-                "dlx",
-                "mrx__dlx",
-                "",
-                "",
-                20000,
-                20000,
-                1200
-              ],
-              [
-                "book_award",
-                "dlx",
-                "",
-                "",
-                "dlx_saver_nyc_mia",
-                "",
-                20000,
-                0,
-                50000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 58800,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 5000,
-            "points_spent": {
-              "mrx": 20000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "mrx__dlx",
-                  "points": 20000
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "mrx",
-                "uax",
-                "mrx__uax",
-                "",
-                "",
-                36000,
-                36000,
-                2160
+                56000,
+                56000,
+                3360
               ],
               [
                 "transfer",
                 "typx",
-                "uax",
-                "typx__uax",
+                "mbx",
+                "typx__mbx",
                 "",
                 "",
                 60000,
@@ -2398,54 +2437,72 @@
                 0
               ],
               [
+                "transfer",
+                "mbx",
+                "dlx",
+                "mbx__dlx",
+                "",
+                "",
+                60000,
+                25000,
+                0
+              ],
+              [
                 "book_award",
-                "uax",
+                "dlx",
                 "",
                 "",
-                "uax_bus_nyc_mia",
+                "dlx_bus_mia_nyc",
                 "",
-                95000,
+                80000,
                 0,
-                5600
+                11200
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -36410,
+            "net_value_cents": 66440,
             "cash_received_cents": null,
-            "realized_cpp_milli": 1520,
+            "realized_cpp_milli": 3610,
             "points_spent": {
-              "mrx": 36000,
+              "mrx": 56000,
               "typx": 60000
             },
-            "feasible_in_days": 1,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "mrx__uax",
-                  "points": 36000
+                  "edge_id": "mbx__dlx",
+                  "points": 60000
                 }
               },
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "typx__uax",
+                  "edge_id": "mrx__dlx",
+                  "points": 56000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "typx__mbx",
                   "points": 60000
                 }
               },
               {
                 "code": "stranded_points",
                 "params": {
-                  "program": "uax",
+                  "program": "dlx",
                   "points": 1000,
-                  "value_cents": 1350
+                  "value_cents": 1000
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 4,
-        "oracle_enumerations": 453593
+        "candidate_sets": 3,
+        "oracle_enumerations": 309222
       }
     },
     {
@@ -2952,18 +3009,94 @@
         "origin_city": "NYC",
         "dest_city": "PAR",
         "cabin": "economy",
-        "round_trip": false,
+        "round_trip": true,
         "passengers": 1,
         "travel_window_start": "2026-10-01",
         "travel_window_end": "2026-10-31",
         "book_by": null
       },
       "today": "2026-07-31",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "44,000 FB across two legs exceeds either balance; joint funding maxes the cheaper MR balance (40,000) and tops up 4,000 from UR, while sequential per-booking funding sends 22,000 from each and loses 50 mcpp on the UR-funded excess.",
       "expected": {
         "verdict": "pay_cash_keep_points",
-        "objective_cents": -6400,
+        "objective_cents": -13000,
         "plans": [
+          {
+            "canonical_form": [
+              [
+                "transfer",
+                "mr",
+                "fb",
+                "mr__fb",
+                "",
+                "",
+                40000,
+                40000,
+                0
+              ],
+              [
+                "transfer",
+                "ur",
+                "fb",
+                "ur__fb",
+                "",
+                "",
+                4000,
+                4000,
+                0
+              ],
+              [
+                "book_award",
+                "fb",
+                "",
+                "",
+                "fb_eco_nyc_par",
+                "",
+                22000,
+                0,
+                22400
+              ],
+              [
+                "book_award",
+                "fb",
+                "",
+                "",
+                "fb_eco_par_nyc",
+                "",
+                22000,
+                0,
+                22400
+              ]
+            ],
+            "is_comparator": false,
+            "net_value_cents": -13000,
+            "cash_received_cents": null,
+            "realized_cpp_milli": 1709,
+            "points_spent": {
+              "mr": 40000,
+              "ur": 4000
+            },
+            "feasible_in_days": 0,
+            "caveats": [
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "mr__fb",
+                  "points": 40000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "ur__fb",
+                  "points": 4000
+                }
+              }
+            ]
+          },
           {
             "canonical_form": [
               [
@@ -2987,28 +3120,7 @@
                 22000,
                 0,
                 22400
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": -6400,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 1709,
-            "points_spent": {
-              "mr": 22000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "mr__fb",
-                  "points": 22000
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
+              ],
               [
                 "book_portal",
                 "ur",
@@ -3022,10 +3134,11 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -22000,
+            "net_value_cents": -28400,
             "cash_received_cents": null,
-            "realized_cpp_milli": 1500,
+            "realized_cpp_milli": 1574,
             "points_spent": {
+              "mr": 22000,
               "ur": 40000
             },
             "feasible_in_days": 0,
@@ -3036,12 +3149,81 @@
                   "program": "ur",
                   "option_id": "ur_portal"
                 }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "mr__fb",
+                  "points": 22000
+                }
+              }
+            ]
+          },
+          {
+            "canonical_form": [
+              [
+                "transfer",
+                "mr",
+                "fb",
+                "mr__fb",
+                "",
+                "",
+                22000,
+                22000,
+                0
+              ],
+              [
+                "book_award",
+                "fb",
+                "",
+                "",
+                "fb_eco_par_nyc",
+                "",
+                22000,
+                0,
+                22400
+              ],
+              [
+                "book_portal",
+                "ur",
+                "",
+                "",
+                "",
+                "ur_portal",
+                40000,
+                0,
+                0
+              ]
+            ],
+            "is_comparator": false,
+            "net_value_cents": -28400,
+            "cash_received_cents": null,
+            "realized_cpp_milli": 1574,
+            "points_spent": {
+              "mr": 22000,
+              "ur": 40000
+            },
+            "feasible_in_days": 0,
+            "caveats": [
+              {
+                "code": "below_baseline",
+                "params": {
+                  "program": "ur",
+                  "option_id": "ur_portal"
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "mr__fb",
+                  "points": 22000
+                }
               }
             ]
           }
         ],
-        "candidate_sets": 3,
-        "oracle_enumerations": 428830
+        "candidate_sets": 10,
+        "oracle_enumerations": 1101
       }
     },
     {
@@ -3245,11 +3427,10 @@
       "tier": "small",
       "world": "small_c",
       "cards": [
-        "mrx_card",
-        "mrx_premium"
+        "mrx_card"
       ],
       "balances": {
-        "mrx": 100000
+        "mbx": 150000
       },
       "goal": {
         "kind": "flight",
@@ -3264,22 +3445,23 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "Marriott-style tier straddle: the optimal DLX funding sends 105,000 MBX (35 x 3,000, crossing one 60k tier for exactly 40,000 delivered); a need-sized 3:1 planner sends 120,000, crosses two tiers, and strands 10,000 DLX.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 62000,
+        "objective_cents": 60400,
         "plans": [
           {
             "canonical_form": [
               [
                 "transfer",
-                "mrx",
+                "mbx",
                 "dlx",
-                "mrx__dlx",
+                "mbx__dlx",
                 "",
                 "",
+                105000,
                 40000,
-                40000,
-                2400
+                0
               ],
               [
                 "book_award",
@@ -3294,19 +3476,19 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 62000,
+            "net_value_cents": 60400,
             "cash_received_cents": null,
             "realized_cpp_milli": 3610,
             "points_spent": {
-              "mrx": 40000
+              "mbx": 105000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "mrx__dlx",
-                  "points": 40000
+                  "edge_id": "mbx__dlx",
+                  "points": 105000
                 }
               }
             ]
@@ -3315,14 +3497,14 @@
             "canonical_form": [
               [
                 "transfer",
-                "mrx",
+                "mbx",
                 "dlx",
-                "mrx__dlx",
+                "mbx__dlx",
                 "",
                 "",
-                20000,
-                20000,
-                1200
+                60000,
+                25000,
+                0
               ],
               [
                 "book_award",
@@ -3337,51 +3519,27 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 58800,
+            "net_value_cents": 57000,
             "cash_received_cents": null,
             "realized_cpp_milli": 5000,
             "points_spent": {
-              "mrx": 20000
+              "mbx": 60000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "mrx__dlx",
-                  "points": 20000
+                  "edge_id": "mbx__dlx",
+                  "points": 60000
                 }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "book_portal",
-                "mrx",
-                "",
-                "",
-                "",
-                "mrx_portal",
-                97530,
-                0,
-                0
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": -45060,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 1537,
-            "points_spent": {
-              "mrx": 97530
-            },
-            "feasible_in_days": 0,
-            "caveats": [
+              },
               {
-                "code": "below_baseline",
+                "code": "stranded_points",
                 "params": {
-                  "program": "mrx",
-                  "option_id": "mrx_portal"
+                  "program": "dlx",
+                  "points": 5000,
+                  "value_cents": 5000
                 }
               }
             ]
@@ -3390,56 +3548,48 @@
             "canonical_form": [
               [
                 "transfer",
-                "mrx",
-                "uax",
-                "mrx__uax",
+                "mbx",
+                "alx",
+                "mbx__alx",
                 "",
                 "",
-                96000,
-                96000,
-                5760
+                135000,
+                55000,
+                0
               ],
               [
                 "book_award",
-                "uax",
+                "alx",
                 "",
                 "",
-                "uax_bus_nyc_mia",
+                "alx_bus_nyc_mia",
                 "",
-                95000,
+                55000,
                 0,
-                5600
+                8000
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -52010,
+            "net_value_cents": 34000,
             "cash_received_cents": null,
-            "realized_cpp_milli": 1520,
+            "realized_cpp_milli": 2581,
             "points_spent": {
-              "mrx": 96000
+              "mbx": 135000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "mrx__uax",
-                  "points": 96000
-                }
-              },
-              {
-                "code": "stranded_points",
-                "params": {
-                  "program": "uax",
-                  "points": 1000,
-                  "value_cents": 1350
+                  "edge_id": "mbx__alx",
+                  "points": 135000
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 5,
-        "oracle_enumerations": 18240
+        "candidate_sets": 4,
+        "oracle_enumerations": 168
       }
     },
     {
@@ -3451,14 +3601,14 @@
         "mrx_card"
       ],
       "balances": {
-        "mrx": 100000
+        "mbx": 105000
       },
       "goal": {
         "kind": "flight",
-        "origin_city": "NYC",
-        "dest_city": "MIA",
+        "origin_city": "MIA",
+        "dest_city": "NYC",
         "cabin": "business",
-        "round_trip": true,
+        "round_trip": false,
         "passengers": 1,
         "travel_window_start": "2026-10-01",
         "travel_window_end": "2026-10-31",
@@ -3466,22 +3616,23 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "Tier straddle where only bonus-aware sizing fits: 105,000 MBX delivers 35,000 + 5,000 = 40,000 exactly; the need-sized amount (120,000) exceeds the balance, so a tier-blind planner finds nothing.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 124000,
+        "objective_cents": 60400,
         "plans": [
           {
             "canonical_form": [
               [
                 "transfer",
-                "mrx",
+                "mbx",
                 "dlx",
-                "mrx__dlx",
+                "mbx__dlx",
                 "",
                 "",
-                80000,
-                80000,
-                4800
+                105000,
+                40000,
+                0
               ],
               [
                 "book_award",
@@ -3493,227 +3644,125 @@
                 40000,
                 0,
                 5600
-              ],
-              [
-                "book_award",
-                "dlx",
-                "",
-                "",
-                "dlx_bus_nyc_mia",
-                "",
-                40000,
-                0,
-                5600
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 124000,
+            "net_value_cents": 60400,
             "cash_received_cents": null,
             "realized_cpp_milli": 3610,
             "points_spent": {
-              "mrx": 80000
+              "mbx": 105000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "mrx__dlx",
-                  "points": 80000
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "mrx",
-                "dlx",
-                "mrx__dlx",
-                "",
-                "",
-                60000,
-                60000,
-                3600
-              ],
-              [
-                "book_award",
-                "dlx",
-                "",
-                "",
-                "dlx_bus_mia_nyc",
-                "",
-                40000,
-                0,
-                5600
-              ],
-              [
-                "book_award",
-                "dlx",
-                "",
-                "",
-                "dlx_saver_nyc_mia",
-                "",
-                20000,
-                0,
-                50000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 120800,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 4073,
-            "points_spent": {
-              "mrx": 60000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "mrx__dlx",
-                  "points": 60000
+                  "edge_id": "mbx__dlx",
+                  "points": 105000
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 12,
-        "oracle_enumerations": 924728
+        "candidate_sets": 3,
+        "oracle_enumerations": 114
       }
     },
     {
       "id": "ft_03",
       "family": "fee_tier",
       "tier": "small",
-      "world": "small_c",
+      "world": "stress_a",
       "cards": [
-        "mrx_card"
+        "c1",
+        "c2"
       ],
       "balances": {
-        "mrx": 120000
+        "b1": 70000,
+        "b2": 70000
       },
       "goal": {
         "kind": "flight",
-        "origin_city": "NYC",
-        "dest_city": "MIA",
+        "origin_city": "CHI",
+        "dest_city": "ROM",
         "cabin": "business",
         "round_trip": false,
-        "passengers": 3,
+        "passengers": 1,
         "travel_window_start": "2026-10-01",
         "travel_window_end": "2026-10-31",
         "book_by": null
       },
       "today": "2026-07-31",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "Fee-boundary source trap: b2 has the lower valuation (2000 vs 2050 mcpp) but its edge to a3 carries a 60 mcpp excise fee, so the free b1 edge is cheaper per delivered point; a cheapest-valuation planner pays the fee.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 188400,
+        "objective_cents": 62600,
         "plans": [
           {
             "canonical_form": [
               [
                 "transfer",
-                "mrx",
-                "dlx",
-                "mrx__dlx",
+                "b1",
+                "a3",
+                "b1__a3",
                 "",
                 "",
-                120000,
-                120000,
-                4800
+                54000,
+                54000,
+                0
               ],
               [
                 "book_award",
-                "dlx",
+                "a3",
                 "",
                 "",
-                "dlx_bus_nyc_mia",
+                "a3_bus_chi_rom",
                 "",
-                120000,
+                53000,
                 0,
-                16800
+                18000
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 188400,
+            "net_value_cents": 62600,
             "cash_received_cents": null,
-            "realized_cpp_milli": 3610,
+            "realized_cpp_milli": 3245,
             "points_spent": {
-              "mrx": 120000
+              "b1": 54000
             },
             "feasible_in_days": 0,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "mrx__dlx",
-                  "points": 120000
+                  "edge_id": "b1__a3",
+                  "points": 54000
                 }
               },
               {
                 "code": "seats_limited",
                 "params": {
-                  "offer_id": "dlx_bus_nyc_mia",
-                  "seats_available": 4
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "mrx",
-                "dlx",
-                "mrx__dlx",
-                "",
-                "",
-                60000,
-                60000,
-                3600
-              ],
-              [
-                "book_award",
-                "dlx",
-                "",
-                "",
-                "dlx_saver_nyc_mia",
-                "",
-                60000,
-                0,
-                150000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 176400,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 5000,
-            "points_spent": {
-              "mrx": 60000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "mrx__dlx",
-                  "points": 60000
+                  "offer_id": "a3_bus_chi_rom",
+                  "seats_available": 2
                 }
               },
               {
-                "code": "seats_limited",
+                "code": "stranded_points",
                 "params": {
-                  "offer_id": "dlx_saver_nyc_mia",
-                  "seats_available": 4
+                  "program": "a3",
+                  "points": 1000,
+                  "value_cents": 1300
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 4,
-        "oracle_enumerations": 53683
+        "candidate_sets": 3,
+        "oracle_enumerations": 1600
       }
     },
     {
@@ -4257,12 +4306,14 @@
       "id": "rt_01",
       "family": "round_trip",
       "tier": "small",
-      "world": "small_a",
+      "world": "small_d",
       "cards": [
-        "ur_premium"
+        "csr",
+        "gold"
       ],
       "balances": {
-        "ur": 120000
+        "urd": 64000,
+        "mrd": 64000
       },
       "goal": {
         "kind": "flight",
@@ -4276,30 +4327,44 @@
         "book_by": null
       },
       "today": "2026-07-31",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "Shared-source conflict: both 60,000-mile FBD legs draw on URD + MRD jointly; the optimum exhausts the cheaper MRD balance (64,000) and covers 56,000 from URD, while per-leg sequential funding sends 60,000 + 60,000 and pays 50 mcpp more on 4,000 points.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 123800,
+        "objective_cents": 127000,
         "plans": [
           {
             "canonical_form": [
               [
                 "transfer",
-                "ur",
-                "fb",
-                "ur__fb",
+                "mrd",
+                "fbd",
+                "mrd__fbd",
                 "",
                 "",
-                120000,
-                120000,
+                64000,
+                64000,
+                0
+              ],
+              [
+                "transfer",
+                "urd",
+                "fbd",
+                "urd__fbd",
+                "",
+                "",
+                56000,
+                56000,
                 0
               ],
               [
                 "book_award",
-                "fb",
+                "fbd",
                 "",
                 "",
-                "fb_bus_nyc_par",
+                "fbd_bus_nyc_par",
                 "",
                 60000,
                 0,
@@ -4307,10 +4372,10 @@
               ],
               [
                 "book_award",
-                "fb",
+                "fbd",
                 "",
                 "",
-                "fb_bus_par_nyc",
+                "fbd_bus_par_nyc",
                 "",
                 60000,
                 0,
@@ -4318,80 +4383,40 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 123800,
+            "net_value_cents": 127000,
             "cash_received_cents": null,
             "realized_cpp_milli": 3081,
             "points_spent": {
-              "ur": 120000
+              "mrd": 64000,
+              "urd": 56000
             },
             "feasible_in_days": 0,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "ur__fb",
-                  "points": 120000
+                  "edge_id": "mrd__fbd",
+                  "points": 64000
                 }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "ur",
-                "fb",
-                "ur__fb",
-                "",
-                "",
-                90000,
-                90000,
-                0
-              ],
-              [
-                "book_award",
-                "fb",
-                "",
-                "",
-                "fb_bus_par_nyc",
-                "",
-                60000,
-                0,
-                25100
-              ],
-              [
-                "book_award",
-                "fb",
-                "",
-                "",
-                "fb_saver_nyc_par",
-                "",
-                30000,
-                0,
-                90000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 120400,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 3387,
-            "points_spent": {
-              "ur": 90000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
+              },
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "ur__fb",
-                  "points": 90000
+                  "edge_id": "urd__fbd",
+                  "points": 56000
+                }
+              },
+              {
+                "code": "stale_world",
+                "params": {
+                  "days_old": 207
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 10,
-        "oracle_enumerations": 549492
+        "candidate_sets": 5,
+        "oracle_enumerations": 3111
       }
     },
     {
@@ -4642,10 +4667,12 @@
       "tier": "small",
       "world": "small_a",
       "cards": [
-        "ur_premium"
+        "ur_premium",
+        "mr_premium"
       ],
       "balances": {
-        "ur": 76000
+        "ur": 64000,
+        "mr": 32000
       },
       "goal": {
         "kind": "flight",
@@ -4659,22 +4686,36 @@
         "book_by": null
       },
       "today": "2026-07-31",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "Economy round trip, 44,000 FB total: joint funding maxes MR at 32,000 and adds 12,000 UR; greedy funds the first leg fully from MR (22,000), leaves 10,000 MR stranded below the second leg's need, and over-pays from UR.",
       "expected": {
         "verdict": "pay_cash_keep_points",
-        "objective_cents": -15000,
+        "objective_cents": -13400,
         "plans": [
           {
             "canonical_form": [
               [
                 "transfer",
+                "mr",
+                "fb",
+                "mr__fb",
+                "",
+                "",
+                32000,
+                32000,
+                0
+              ],
+              [
+                "transfer",
                 "ur",
                 "fb",
                 "ur__fb",
                 "",
                 "",
-                44000,
-                44000,
+                12000,
+                12000,
                 0
               ],
               [
@@ -4701,19 +4742,27 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -15000,
+            "net_value_cents": -13400,
             "cash_received_cents": null,
             "realized_cpp_milli": 1709,
             "points_spent": {
-              "ur": 44000
+              "mr": 32000,
+              "ur": 12000
             },
             "feasible_in_days": 0,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
+                  "edge_id": "mr__fb",
+                  "points": 32000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
                   "edge_id": "ur__fb",
-                  "points": 44000
+                  "points": 12000
                 }
               }
             ]
@@ -4722,9 +4771,9 @@
             "canonical_form": [
               [
                 "transfer",
-                "ur",
+                "mr",
                 "fb",
-                "ur__fb",
+                "mr__fb",
                 "",
                 "",
                 22000,
@@ -4755,11 +4804,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -29500,
+            "net_value_cents": -28400,
             "cash_received_cents": null,
             "realized_cpp_milli": 1574,
             "points_spent": {
-              "ur": 62000
+              "mr": 22000,
+              "ur": 40000
             },
             "feasible_in_days": 0,
             "caveats": [
@@ -4773,7 +4823,7 @@
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "ur__fb",
+                  "edge_id": "mr__fb",
                   "points": 22000
                 }
               }
@@ -4783,9 +4833,9 @@
             "canonical_form": [
               [
                 "transfer",
-                "ur",
+                "mr",
                 "fb",
-                "ur__fb",
+                "mr__fb",
                 "",
                 "",
                 22000,
@@ -4816,11 +4866,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -29500,
+            "net_value_cents": -28400,
             "cash_received_cents": null,
             "realized_cpp_milli": 1574,
             "points_spent": {
-              "ur": 62000
+              "mr": 22000,
+              "ur": 40000
             },
             "feasible_in_days": 0,
             "caveats": [
@@ -4834,127 +4885,126 @@
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "ur__fb",
+                  "edge_id": "mr__fb",
                   "points": 22000
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "book_portal",
-                "ur",
-                "",
-                "",
-                "",
-                "ur_portal",
-                73334,
-                0,
-                0
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": -40335,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 1499,
-            "points_spent": {
-              "ur": 73334
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "below_baseline",
-                "params": {
-                  "program": "ur",
-                  "option_id": "ur_portal"
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 5,
-        "oracle_enumerations": 15553
+        "candidate_sets": 10,
+        "oracle_enumerations": 1047
       }
     },
     {
       "id": "rt_04",
       "family": "round_trip",
       "tier": "small",
-      "world": "small_a",
+      "world": "small_b",
       "cards": [
-        "ur_premium"
+        "card_p"
       ],
       "balances": {
-        "ur": 90000
+        "bank_p": 120000,
+        "hub": 150000
       },
       "goal": {
         "kind": "flight",
         "origin_city": "NYC",
-        "dest_city": "PAR",
-        "cabin": "economy",
+        "dest_city": "LON",
+        "cabin": "business",
         "round_trip": true,
         "passengers": 1,
         "travel_window_start": "2026-10-01",
         "travel_window_end": "2026-10-31",
         "book_by": null
       },
-      "today": "2026-07-31",
-      "params": {},
+      "today": "2026-08-05",
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "The only fundable pairing books alpha out (hub sends exactly 150,000 = 3:1 across two 5k tiers for 60,000 miles) and beta back from bank_p (95,000).  A need-sized planner asks the hub for 180,000 it does not have, so it can fund no round trip at all.",
       "expected": {
-        "verdict": "pay_cash_keep_points",
-        "objective_cents": -15000,
+        "verdict": "book_with_points",
+        "objective_cents": 39200,
         "plans": [
           {
             "canonical_form": [
               [
                 "transfer",
-                "ur",
-                "fb",
-                "ur__fb",
+                "bank_p",
+                "air_beta",
+                "bank_p__air_beta",
                 "",
                 "",
-                44000,
-                44000,
+                96000,
+                96000,
+                0
+              ],
+              [
+                "transfer",
+                "hub",
+                "air_alpha",
+                "hub__air_alpha",
+                "",
+                "",
+                150000,
+                60000,
                 0
               ],
               [
                 "book_award",
-                "fb",
+                "air_alpha",
                 "",
                 "",
-                "fb_eco_nyc_par",
+                "alpha_bus_lon_nyc",
                 "",
-                22000,
+                60000,
                 0,
-                22400
+                20000
               ],
               [
                 "book_award",
-                "fb",
+                "air_beta",
                 "",
                 "",
-                "fb_eco_par_nyc",
+                "beta_bus_nyc_lon",
                 "",
-                22000,
+                95000,
                 0,
-                22400
+                15000
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -15000,
+            "net_value_cents": 39200,
             "cash_received_cents": null,
-            "realized_cpp_milli": 1709,
+            "realized_cpp_milli": 2354,
             "points_spent": {
-              "ur": 44000
+              "bank_p": 96000,
+              "hub": 150000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "ur__fb",
-                  "points": 44000
+                  "edge_id": "bank_p__air_beta",
+                  "points": 96000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "hub__air_alpha",
+                  "points": 150000
+                }
+              },
+              {
+                "code": "stranded_points",
+                "params": {
+                  "program": "air_beta",
+                  "points": 1000,
+                  "value_cents": 1200
                 }
               }
             ]
@@ -4963,209 +5013,86 @@
             "canonical_form": [
               [
                 "transfer",
-                "ur",
-                "fb",
-                "ur__fb",
+                "bank_p",
+                "air_beta",
+                "bank_p__air_beta",
                 "",
                 "",
-                22000,
-                22000,
+                96000,
+                96000,
                 0
               ],
-              [
-                "book_award",
-                "fb",
-                "",
-                "",
-                "fb_eco_nyc_par",
-                "",
-                22000,
-                0,
-                22400
-              ],
-              [
-                "book_portal",
-                "ur",
-                "",
-                "",
-                "",
-                "ur_portal",
-                40000,
-                0,
-                0
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": -29500,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 1574,
-            "points_spent": {
-              "ur": 62000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "below_baseline",
-                "params": {
-                  "program": "ur",
-                  "option_id": "ur_portal"
-                }
-              },
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "ur__fb",
-                  "points": 22000
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
               [
                 "transfer",
-                "ur",
-                "fb",
-                "ur__fb",
+                "hub",
+                "air_alpha",
+                "hub__air_alpha",
                 "",
                 "",
-                22000,
-                22000,
+                150000,
+                60000,
                 0
               ],
               [
                 "book_award",
-                "fb",
+                "air_alpha",
                 "",
                 "",
-                "fb_eco_par_nyc",
+                "alpha_bus_nyc_lon",
                 "",
-                22000,
+                60000,
                 0,
-                22400
+                20000
               ],
               [
-                "book_portal",
-                "ur",
+                "book_award",
+                "air_beta",
                 "",
                 "",
+                "beta_bus_lon_nyc",
                 "",
-                "ur_portal",
-                40000,
+                95000,
                 0,
-                0
+                15000
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -29500,
+            "net_value_cents": 39200,
             "cash_received_cents": null,
-            "realized_cpp_milli": 1574,
+            "realized_cpp_milli": 2354,
             "points_spent": {
-              "ur": 62000
+              "bank_p": 96000,
+              "hub": 150000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
-                "code": "below_baseline",
+                "code": "irreversible_transfer",
                 "params": {
-                  "program": "ur",
-                  "option_id": "ur_portal"
+                  "edge_id": "bank_p__air_beta",
+                  "points": 96000
                 }
               },
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "ur__fb",
-                  "points": 22000
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "book_portal",
-                "ur",
-                "",
-                "",
-                "",
-                "ur_portal",
-                73334,
-                0,
-                0
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": -40335,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 1499,
-            "points_spent": {
-              "ur": 73334
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "below_baseline",
-                "params": {
-                  "program": "ur",
-                  "option_id": "ur_portal"
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "book_portal",
-                "ur",
-                "",
-                "",
-                "",
-                "ur_portal",
-                40000,
-                0,
-                0
-              ],
-              [
-                "book_portal",
-                "ur",
-                "",
-                "",
-                "",
-                "ur_portal",
-                40000,
-                0,
-                0
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": -44000,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 1500,
-            "points_spent": {
-              "ur": 80000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "below_baseline",
-                "params": {
-                  "program": "ur",
-                  "option_id": "ur_portal"
+                  "edge_id": "hub__air_alpha",
+                  "points": 150000
                 }
               },
               {
-                "code": "below_baseline",
+                "code": "stranded_points",
                 "params": {
-                  "program": "ur",
-                  "option_id": "ur_portal"
+                  "program": "air_beta",
+                  "points": 1000,
+                  "value_cents": 1200
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 5,
-        "oracle_enumerations": 19440
+        "candidate_sets": 10,
+        "oracle_enumerations": 143475
       }
     },
     {
@@ -5177,8 +5104,8 @@
         "mrx_card"
       ],
       "balances": {
-        "mrx": 80000,
-        "mbx": 30000
+        "mrx": 60000,
+        "mbx": 105000
       },
       "goal": {
         "kind": "flight",
@@ -5193,12 +5120,24 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "Joint DLX funding must mix the fee-bearing 1:1 MRX edge with the 3:1 tier-bonus MBX edge; need-sized single-source transfers cannot fund the 80,000 total, and greedy's fallback set (saver out) nets less.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 124000,
+        "objective_cents": 127160,
         "plans": [
           {
             "canonical_form": [
+              [
+                "transfer",
+                "mbx",
+                "dlx",
+                "mbx__dlx",
+                "",
+                "",
+                63000,
+                26000,
+                0
+              ],
               [
                 "transfer",
                 "mrx",
@@ -5206,9 +5145,9 @@
                 "mrx__dlx",
                 "",
                 "",
-                80000,
-                80000,
-                4800
+                54000,
+                54000,
+                3240
               ],
               [
                 "book_award",
@@ -5234,19 +5173,27 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 124000,
+            "net_value_cents": 127160,
             "cash_received_cents": null,
             "realized_cpp_milli": 3610,
             "points_spent": {
-              "mrx": 80000
+              "mbx": 63000,
+              "mrx": 54000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
+                  "edge_id": "mbx__dlx",
+                  "points": 63000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
                   "edge_id": "mrx__dlx",
-                  "points": 80000
+                  "points": 54000
                 }
               }
             ]
@@ -5255,14 +5202,25 @@
             "canonical_form": [
               [
                 "transfer",
+                "mbx",
+                "dlx",
+                "mbx__dlx",
+                "",
+                "",
+                63000,
+                26000,
+                0
+              ],
+              [
+                "transfer",
                 "mrx",
                 "dlx",
                 "mrx__dlx",
                 "",
                 "",
-                60000,
-                60000,
-                3600
+                34000,
+                34000,
+                2040
               ],
               [
                 "book_award",
@@ -5288,26 +5246,125 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 120800,
+            "net_value_cents": 123960,
             "cash_received_cents": null,
             "realized_cpp_milli": 4073,
             "points_spent": {
-              "mrx": 60000
+              "mbx": 63000,
+              "mrx": 34000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
+                  "edge_id": "mbx__dlx",
+                  "points": 63000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
                   "edge_id": "mrx__dlx",
-                  "points": 60000
+                  "points": 34000
+                }
+              }
+            ]
+          },
+          {
+            "canonical_form": [
+              [
+                "transfer",
+                "mrx",
+                "dlx",
+                "mrx__dlx",
+                "",
+                "",
+                20000,
+                20000,
+                1200
+              ],
+              [
+                "transfer",
+                "mrx",
+                "mbx",
+                "mrx__mbx",
+                "",
+                "",
+                30000,
+                30000,
+                0
+              ],
+              [
+                "transfer",
+                "mbx",
+                "alx",
+                "mbx__alx",
+                "",
+                "",
+                135000,
+                55000,
+                0
+              ],
+              [
+                "book_award",
+                "alx",
+                "",
+                "",
+                "alx_bus_mia_nyc",
+                "",
+                55000,
+                0,
+                8000
+              ],
+              [
+                "book_award",
+                "dlx",
+                "",
+                "",
+                "dlx_saver_nyc_mia",
+                "",
+                20000,
+                0,
+                50000
+              ]
+            ],
+            "is_comparator": false,
+            "net_value_cents": 56800,
+            "cash_received_cents": null,
+            "realized_cpp_milli": 3226,
+            "points_spent": {
+              "mbx": 105000,
+              "mrx": 50000
+            },
+            "feasible_in_days": 2,
+            "caveats": [
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "mbx__alx",
+                  "points": 135000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "mrx__dlx",
+                  "points": 20000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "mrx__mbx",
+                  "points": 30000
                 }
               }
             ]
           }
         ],
         "candidate_sets": 12,
-        "oracle_enumerations": 1094391
+        "oracle_enumerations": 1687907
       }
     },
     {
@@ -5319,8 +5376,8 @@
         "mr_premium"
       ],
       "balances": {
-        "mr": 60000,
-        "mb": 180000
+        "mr": 64000,
+        "mb": 150000
       },
       "goal": {
         "kind": "flight",
@@ -5335,9 +5392,10 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "150,000 MB delivers exactly 60,000 FB (3:1 plus two 5k tier bonuses) and MR covers the other leg; a need-sized 3:1 planner asks MB for 180,000 and cannot fund the pair without stranding.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 135100,
+        "objective_cents": 131400,
         "plans": [
           {
             "canonical_form": [
@@ -5348,8 +5406,8 @@
                 "mb__fb",
                 "",
                 "",
-                180000,
-                75000,
+                138000,
+                56000,
                 0
               ],
               [
@@ -5359,8 +5417,8 @@
                 "mr__fb",
                 "",
                 "",
-                46000,
-                46000,
+                64000,
+                64000,
                 0
               ],
               [
@@ -5387,12 +5445,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 135100,
+            "net_value_cents": 131400,
             "cash_received_cents": null,
             "realized_cpp_milli": 3081,
             "points_spent": {
-              "mb": 180000,
-              "mr": 46000
+              "mb": 138000,
+              "mr": 64000
             },
             "feasible_in_days": 2,
             "caveats": [
@@ -5400,22 +5458,14 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "mb__fb",
-                  "points": 180000
+                  "points": 138000
                 }
               },
               {
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "mr__fb",
-                  "points": 46000
-                }
-              },
-              {
-                "code": "stranded_points",
-                "params": {
-                  "program": "fb",
-                  "points": 1000,
-                  "value_cents": 1300
+                  "points": 64000
                 }
               }
             ]
@@ -5429,8 +5479,8 @@
                 "mb__fb",
                 "",
                 "",
-                180000,
-                75000,
+                120000,
+                50000,
                 0
               ],
               [
@@ -5440,8 +5490,8 @@
                 "mr__fb",
                 "",
                 "",
-                16000,
-                16000,
+                40000,
+                40000,
                 0
               ],
               [
@@ -5468,12 +5518,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 130200,
+            "net_value_cents": 128900,
             "cash_received_cents": null,
             "realized_cpp_milli": 3387,
             "points_spent": {
-              "mb": 180000,
-              "mr": 16000
+              "mb": 120000,
+              "mr": 40000
             },
             "feasible_in_days": 2,
             "caveats": [
@@ -5481,91 +5531,21 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "mb__fb",
-                  "points": 180000
+                  "points": 120000
                 }
               },
               {
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "mr__fb",
-                  "points": 16000
-                }
-              },
-              {
-                "code": "stranded_points",
-                "params": {
-                  "program": "fb",
-                  "points": 1000,
-                  "value_cents": 1300
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "mb",
-                "fb",
-                "mb__fb",
-                "",
-                "",
-                180000,
-                75000,
-                0
-              ],
-              [
-                "transfer",
-                "mr",
-                "fb",
-                "mr__fb",
-                "",
-                "",
-                50000,
-                50000,
-                0
-              ],
-              [
-                "book_award",
-                "fb",
-                "",
-                "",
-                "fb_rt_nyc_par",
-                "",
-                125000,
-                0,
-                50200
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 105800,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 2798,
-            "points_spent": {
-              "mb": 180000,
-              "mr": 50000
-            },
-            "feasible_in_days": 2,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "mb__fb",
-                  "points": 180000
-                }
-              },
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "mr__fb",
-                  "points": 50000
+                  "points": 40000
                 }
               }
             ]
           }
         ],
         "candidate_sets": 10,
-        "oracle_enumerations": 198140
+        "oracle_enumerations": 205453
       }
     },
     {
@@ -6488,11 +6468,12 @@
       "tier": "small",
       "world": "small_b",
       "cards": [
+        "card_p",
         "card_q"
       ],
       "balances": {
-        "bank_q": 120000,
-        "hub": 120000
+        "bank_p": 100000,
+        "bank_q": 100000
       },
       "goal": {
         "kind": "flight",
@@ -6503,21 +6484,24 @@
         "passengers": 1,
         "travel_window_start": "2026-10-01",
         "travel_window_end": "2026-10-31",
-        "book_by": "2026-08-01"
+        "book_by": "2026-07-31"
       },
       "today": "2026-07-31",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "Same-day booking deadline: the cheaper bank_q edge to air_beta posts in 1 day and misses it, so the correct plan pays more from bank_p's instant edge; a deadline-blind planner emits the infeasible bank_q plan.",
       "expected": {
-        "verdict": "book_with_points",
-        "objective_cents": 3800,
+        "verdict": "pay_cash_keep_points",
+        "objective_cents": -5800,
         "plans": [
           {
             "canonical_form": [
               [
                 "transfer",
-                "bank_q",
+                "bank_p",
                 "air_beta",
-                "bank_q__air_beta",
+                "bank_p__air_beta",
                 "",
                 "",
                 96000,
@@ -6537,18 +6521,18 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 3800,
+            "net_value_cents": -5800,
             "cash_received_cents": null,
             "realized_cpp_milli": 1947,
             "points_spent": {
-              "bank_q": 96000
+              "bank_p": 96000
             },
-            "feasible_in_days": 1,
+            "feasible_in_days": 0,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "bank_q__air_beta",
+                  "edge_id": "bank_p__air_beta",
                   "points": 96000
                 }
               },
@@ -6564,15 +6548,15 @@
                 "code": "transfer_time_risk",
                 "params": {
                   "program": "air_beta",
-                  "arrival_days": 1,
-                  "deadline": "2026-08-01"
+                  "arrival_days": 0,
+                  "deadline": "2026-07-31"
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 3,
-        "oracle_enumerations": 106400
+        "candidate_sets": 4,
+        "oracle_enumerations": 4857
       }
     },
     {
@@ -7629,6 +7613,7 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "Control scenario: a plain direct transfer is optimal, so even the greedy baseline should tie here (its one expected stress hit).",
       "expected": {
         "verdict": "book_with_points",
         "objective_cents": 102600,
@@ -7906,7 +7891,7 @@
         "c1"
       ],
       "balances": {
-        "b1": 60000,
+        "b1": 40000,
         "h1": 120000
       },
       "goal": {
@@ -7922,133 +7907,11 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "Hub top-up with tier sizing: a3 needs h1 at 150,000 (120,000 held plus 30,000 from b1) to deliver 60,000 through the 3:1 + 5k/60k edge; no direct need-sized transfer fits any offer.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 102600,
+        "objective_cents": 68400,
         "plans": [
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b1",
-                "a4",
-                "b1__a4_promo",
-                "",
-                "",
-                48000,
-                60000,
-                0
-              ],
-              [
-                "book_award",
-                "a4",
-                "",
-                "",
-                "a4_bus_nyc_par",
-                "",
-                60000,
-                0,
-                9000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 102600,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 3350,
-            "points_spent": {
-              "b1": 48000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "b1__a4_promo",
-                  "points": 48000
-                }
-              },
-              {
-                "code": "promo_expiring",
-                "params": {
-                  "subject": "b1__a4_promo",
-                  "valid_to": "2026-08-20"
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b1",
-                "a4",
-                "b1__a4_promo",
-                "",
-                "",
-                60000,
-                75000,
-                0
-              ],
-              [
-                "book_award",
-                "a4",
-                "",
-                "",
-                "a4_bus_nyc_par_soon",
-                "",
-                72000,
-                0,
-                9000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 81450,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 2791,
-            "points_spent": {
-              "b1": 60000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "b1__a4_promo",
-                  "points": 60000
-                }
-              },
-              {
-                "code": "promo_expiring",
-                "params": {
-                  "subject": "b1__a4_promo",
-                  "valid_to": "2026-08-20"
-                }
-              },
-              {
-                "code": "seats_limited",
-                "params": {
-                  "offer_id": "a4_bus_nyc_par_soon",
-                  "seats_available": 2
-                }
-              },
-              {
-                "code": "stranded_points",
-                "params": {
-                  "program": "a4",
-                  "points": 3000,
-                  "value_cents": 3450
-                }
-              },
-              {
-                "code": "transfer_time_risk",
-                "params": {
-                  "program": "a4",
-                  "arrival_days": 0,
-                  "deadline": "2026-08-02"
-                }
-              }
-            ]
-          },
           {
             "canonical_form": [
               [
@@ -8244,7 +8107,7 @@
           }
         ],
         "candidate_sets": 6,
-        "oracle_enumerations": 71435
+        "oracle_enumerations": 32035
       }
     },
     {
@@ -8365,10 +8228,12 @@
       "tier": "stress",
       "world": "stress_a",
       "cards": [
-        "c1"
+        "c1",
+        "c2"
       ],
       "balances": {
-        "b1": 100000
+        "b1": 44000,
+        "b2": 60000
       },
       "goal": {
         "kind": "flight",
@@ -8382,10 +8247,13 @@
         "book_by": null
       },
       "today": "2026-08-05",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "Promo + fee + split: the 4:5 b1->a4 promo (active until 08-20) plus a 6,000-point b2 top-up beats funding a4 entirely from b2's fee-bearing edge, which is what a cheapest-valuation planner does.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 102600,
+        "objective_cents": 99590,
         "plans": [
           {
             "canonical_form": [
@@ -8396,9 +8264,20 @@
                 "b1__a4_promo",
                 "",
                 "",
-                48000,
-                60000,
+                44000,
+                55000,
                 0
+              ],
+              [
+                "transfer",
+                "b2",
+                "a4",
+                "b2__a4",
+                "",
+                "",
+                6000,
+                6000,
+                360
               ],
               [
                 "book_award",
@@ -8413,11 +8292,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 102600,
+            "net_value_cents": 99590,
             "cash_received_cents": null,
             "realized_cpp_milli": 3350,
             "points_spent": {
-              "b1": 48000
+              "b1": 44000,
+              "b2": 6000
             },
             "feasible_in_days": 0,
             "caveats": [
@@ -8425,7 +8305,14 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b1__a4_promo",
-                  "points": 48000
+                  "points": 44000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "b2__a4",
+                  "points": 6000
                 }
               },
               {
@@ -8433,6 +8320,14 @@
                 "params": {
                   "subject": "b1__a4_promo",
                   "valid_to": "2026-08-20"
+                }
+              },
+              {
+                "code": "stranded_points",
+                "params": {
+                  "program": "a4",
+                  "points": 1000,
+                  "value_cents": 1150
                 }
               }
             ]
@@ -8446,9 +8341,20 @@
                 "b1__a3",
                 "",
                 "",
-                60000,
-                60000,
+                44000,
+                44000,
                 0
+              ],
+              [
+                "transfer",
+                "b2",
+                "a3",
+                "b2__a3",
+                "",
+                "",
+                16000,
+                16000,
+                960
               ],
               [
                 "book_award",
@@ -8463,11 +8369,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 61900,
+            "net_value_cents": 61740,
             "cash_received_cents": null,
             "realized_cpp_milli": 3081,
             "points_spent": {
-              "b1": 60000
+              "b1": 44000,
+              "b2": 16000
             },
             "feasible_in_days": 0,
             "caveats": [
@@ -8475,7 +8382,14 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b1__a3",
-                  "points": 60000
+                  "points": 44000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "b2__a3",
+                  "points": 16000
                 }
               },
               {
@@ -8496,8 +8410,19 @@
                 "b1__a1",
                 "",
                 "",
-                70000,
-                70000,
+                10000,
+                10000,
+                0
+              ],
+              [
+                "transfer",
+                "b2",
+                "a1",
+                "b2__a1",
+                "",
+                "",
+                60000,
+                60000,
                 0
               ],
               [
@@ -8513,11 +8438,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 53700,
+            "net_value_cents": 56700,
             "cash_received_cents": null,
             "realized_cpp_milli": 2817,
             "points_spent": {
-              "b1": 70000
+              "b1": 10000,
+              "b2": 60000
             },
             "feasible_in_days": 0,
             "caveats": [
@@ -8525,57 +8451,21 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b1__a1",
-                  "points": 70000
+                  "points": 10000
                 }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b1",
-                "a2",
-                "b1__a2",
-                "",
-                "",
-                62000,
-                62000,
-                0
-              ],
-              [
-                "book_award",
-                "a2",
-                "",
-                "",
-                "a2_bus_nyc_par",
-                "",
-                62000,
-                0,
-                30400
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 52500,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 2896,
-            "points_spent": {
-              "b1": 62000
-            },
-            "feasible_in_days": 2,
-            "caveats": [
+              },
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "b1__a2",
-                  "points": 62000
+                  "edge_id": "b2__a1",
+                  "points": 60000
                 }
               }
             ]
           }
         ],
         "candidate_sets": 5,
-        "oracle_enumerations": 48125
+        "oracle_enumerations": 3333
       }
     },
     {
@@ -8685,10 +8575,12 @@
       "tier": "stress",
       "world": "stress_a",
       "cards": [
-        "c1"
+        "c1",
+        "c3"
       ],
       "balances": {
-        "b1": 90000
+        "b1": 42000,
+        "b3": 40000
       },
       "goal": {
         "kind": "flight",
@@ -8702,10 +8594,13 @@
         "book_by": null
       },
       "today": "2026-07-31",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "Economy round trip over shared b1 + b3 balances (mixed award/portal sets are enumerated: b1's 1.5cpp portal is fundable): joint funding maxes the cheaper b3 balance; sequential per-leg funding strands 15,000 b3 points below the second leg's need.",
       "expected": {
-        "verdict": "pay_cash_keep_points",
-        "objective_cents": -5500,
+        "verdict": "book_with_points",
+        "objective_cents": 4500,
         "plans": [
           {
             "canonical_form": [
@@ -8716,8 +8611,19 @@
                 "b1__a2",
                 "",
                 "",
-                50000,
-                50000,
+                10000,
+                10000,
+                0
+              ],
+              [
+                "transfer",
+                "b3",
+                "a2",
+                "b3__a2",
+                "",
+                "",
+                40000,
+                40000,
                 0
               ],
               [
@@ -8744,11 +8650,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -5500,
+            "net_value_cents": 4500,
             "cash_received_cents": null,
             "realized_cpp_milli": 1940,
             "points_spent": {
-              "b1": 50000
+              "b1": 10000,
+              "b3": 40000
             },
             "feasible_in_days": 2,
             "caveats": [
@@ -8756,7 +8663,14 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b1__a2",
-                  "points": 50000
+                  "points": 10000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "b3__a2",
+                  "points": 40000
                 }
               }
             ]
@@ -8765,9 +8679,9 @@
             "canonical_form": [
               [
                 "transfer",
-                "b1",
+                "b3",
                 "a2",
-                "b1__a2",
+                "b3__a2",
                 "",
                 "",
                 26000,
@@ -8798,13 +8712,14 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -26135,
+            "net_value_cents": -19635,
             "cash_received_cents": null,
             "realized_cpp_milli": 1665,
             "points_spent": {
-              "b1": 67334
+              "b1": 41334,
+              "b3": 26000
             },
-            "feasible_in_days": 2,
+            "feasible_in_days": 0,
             "caveats": [
               {
                 "code": "below_baseline",
@@ -8816,7 +8731,7 @@
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "b1__a2",
+                  "edge_id": "b3__a2",
                   "points": 26000
                 }
               },
@@ -8834,9 +8749,9 @@
             "canonical_form": [
               [
                 "transfer",
-                "b1",
+                "b3",
                 "a2",
-                "b1__a2",
+                "b3__a2",
                 "",
                 "",
                 26000,
@@ -8867,13 +8782,14 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -26135,
+            "net_value_cents": -19635,
             "cash_received_cents": null,
             "realized_cpp_milli": 1665,
             "points_spent": {
-              "b1": 67334
+              "b1": 41334,
+              "b3": 26000
             },
-            "feasible_in_days": 2,
+            "feasible_in_days": 0,
             "caveats": [
               {
                 "code": "below_baseline",
@@ -8885,7 +8801,7 @@
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "b1__a2",
+                  "edge_id": "b3__a2",
                   "points": 26000
                 }
               },
@@ -8895,95 +8811,13 @@
                   "program": "a2",
                   "points": 1000,
                   "value_cents": 1400
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "book_portal",
-                "b1",
-                "",
-                "",
-                "",
-                "b1_portal",
-                76667,
-                0,
-                0
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": -42168,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 1499,
-            "points_spent": {
-              "b1": 76667
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "below_baseline",
-                "params": {
-                  "program": "b1",
-                  "option_id": "b1_portal"
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "book_portal",
-                "b1",
-                "",
-                "",
-                "",
-                "b1_portal",
-                41334,
-                0,
-                0
-              ],
-              [
-                "book_portal",
-                "b1",
-                "",
-                "",
-                "",
-                "b1_portal",
-                41334,
-                0,
-                0
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": -45470,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 1499,
-            "points_spent": {
-              "b1": 82668
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "below_baseline",
-                "params": {
-                  "program": "b1",
-                  "option_id": "b1_portal"
-                }
-              },
-              {
-                "code": "below_baseline",
-                "params": {
-                  "program": "b1",
-                  "option_id": "b1_portal"
                 }
               }
             ]
           }
         ],
         "candidate_sets": 5,
-        "oracle_enumerations": 21627
+        "oracle_enumerations": 1763
       }
     },
     {
@@ -9101,10 +8935,12 @@
       "tier": "stress",
       "world": "stress_a",
       "cards": [
-        "c1"
+        "c1",
+        "c2"
       ],
       "balances": {
-        "b1": 60000
+        "b1": 50000,
+        "b2": 40000
       },
       "goal": {
         "kind": "stay",
@@ -9116,45 +8952,84 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "Three h2 nights need 75,000 points, more than either bank balance, so the only funding is a b1 + b2 split; a single-source planner reports nothing bookable.",
       "expected": {
         "verdict": "pay_cash_keep_points",
-        "objective_cents": -33000,
+        "objective_cents": -62100,
         "plans": [
           {
             "canonical_form": [
               [
-                "book_portal",
+                "transfer",
                 "b1",
+                "h2",
+                "b1__h2",
                 "",
                 "",
+                36000,
+                36000,
+                0
+              ],
+              [
+                "transfer",
+                "b2",
+                "h2",
+                "b2__h2",
                 "",
-                "b1_portal",
-                60000,
+                "",
+                40000,
+                40000,
+                0
+              ],
+              [
+                "book_award",
+                "h2",
+                "",
+                "",
+                "h2_stay_par",
+                "",
+                75000,
                 0,
                 0
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -33000,
+            "net_value_cents": -62100,
             "cash_received_cents": null,
-            "realized_cpp_milli": 1500,
+            "realized_cpp_milli": 1200,
             "points_spent": {
-              "b1": 60000
+              "b1": 36000,
+              "b2": 40000
             },
             "feasible_in_days": 0,
             "caveats": [
               {
-                "code": "below_baseline",
+                "code": "irreversible_transfer",
                 "params": {
-                  "program": "b1",
-                  "option_id": "b1_portal"
+                  "edge_id": "b1__h2",
+                  "points": 36000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "b2__h2",
+                  "points": 40000
+                }
+              },
+              {
+                "code": "stranded_points",
+                "params": {
+                  "program": "h2",
+                  "points": 1000,
+                  "value_cents": 1700
                 }
               }
             ]
           }
         ],
         "candidate_sets": 3,
-        "oracle_enumerations": 65
+        "oracle_enumerations": 1147
       }
     },
     {
@@ -9163,10 +9038,12 @@
       "tier": "stress",
       "world": "stress_a",
       "cards": [
-        "c1"
+        "c1",
+        "c4"
       ],
       "balances": {
-        "b1": 120000
+        "b1": 70000,
+        "b4": 60000
       },
       "goal": {
         "kind": "flight",
@@ -9180,141 +9057,14 @@
         "book_by": null
       },
       "today": "2026-07-31",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "Two passengers on the seats-capped a3 offer (seats_available = 2) need 120,000 delivered, which only a b1 + b4 split can fund; the seats_limited caveat must fire on the winning plan.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 205200,
+        "objective_cents": 135800,
         "plans": [
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b1",
-                "a4",
-                "b1__a4_promo",
-                "",
-                "",
-                96000,
-                120000,
-                0
-              ],
-              [
-                "book_award",
-                "a4",
-                "",
-                "",
-                "a4_bus_nyc_par",
-                "",
-                120000,
-                0,
-                18000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 205200,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 3350,
-            "points_spent": {
-              "b1": 96000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "b1__a4_promo",
-                  "points": 96000
-                }
-              },
-              {
-                "code": "promo_expiring",
-                "params": {
-                  "subject": "b1__a4_promo",
-                  "valid_to": "2026-08-20"
-                }
-              },
-              {
-                "code": "seats_limited",
-                "params": {
-                  "offer_id": "a4_bus_nyc_par",
-                  "seats_available": 3
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b1",
-                "a4",
-                "b1__a4_promo",
-                "",
-                "",
-                116000,
-                145000,
-                0
-              ],
-              [
-                "book_award",
-                "a4",
-                "",
-                "",
-                "a4_bus_nyc_par_soon",
-                "",
-                144000,
-                0,
-                18000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 165350,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 2791,
-            "points_spent": {
-              "b1": 116000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "b1__a4_promo",
-                  "points": 116000
-                }
-              },
-              {
-                "code": "promo_expiring",
-                "params": {
-                  "subject": "b1__a4_promo",
-                  "valid_to": "2026-08-20"
-                }
-              },
-              {
-                "code": "seats_limited",
-                "params": {
-                  "offer_id": "a4_bus_nyc_par_soon",
-                  "seats_available": 2
-                }
-              },
-              {
-                "code": "stranded_points",
-                "params": {
-                  "program": "a4",
-                  "points": 1000,
-                  "value_cents": 1150
-                }
-              },
-              {
-                "code": "transfer_time_risk",
-                "params": {
-                  "program": "a4",
-                  "arrival_days": 0,
-                  "deadline": "2026-08-02"
-                }
-              }
-            ]
-          },
           {
             "canonical_form": [
               [
@@ -9324,8 +9074,19 @@
                 "b1__a3",
                 "",
                 "",
-                120000,
-                120000,
+                60000,
+                60000,
+                0
+              ],
+              [
+                "transfer",
+                "b4",
+                "a3",
+                "b4__a3",
+                "",
+                "",
+                60000,
+                60000,
                 0
               ],
               [
@@ -9341,11 +9102,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 123800,
+            "net_value_cents": 135800,
             "cash_received_cents": null,
             "realized_cpp_milli": 3081,
             "points_spent": {
-              "b1": 120000
+              "b1": 60000,
+              "b4": 60000
             },
             "feasible_in_days": 0,
             "caveats": [
@@ -9353,7 +9115,14 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b1__a3",
-                  "points": 120000
+                  "points": 60000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "b4__a3",
+                  "points": 60000
                 }
               },
               {
@@ -9366,8 +9135,8 @@
             ]
           }
         ],
-        "candidate_sets": 6,
-        "oracle_enumerations": 85360
+        "candidate_sets": 7,
+        "oracle_enumerations": 2455
       }
     },
     {
@@ -9376,249 +9145,83 @@
       "tier": "stress",
       "world": "stress_a",
       "cards": [
-        "c2"
+        "c3"
       ],
       "balances": {
-        "b2": 90000
+        "b3": 90000
       },
       "goal": {
         "kind": "flight",
-        "origin_city": "NYC",
-        "dest_city": "PAR",
+        "origin_city": "SFO",
+        "dest_city": "TYO",
         "cabin": "business",
         "round_trip": false,
         "passengers": 1,
         "travel_window_start": "2026-10-01",
         "travel_window_end": "2026-10-31",
-        "book_by": "2026-08-02"
+        "book_by": "2026-07-31"
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "Same-day deadline: the cheaper a5 award needs b3's 1-day edge and lands late; the correct answer is the pricier instant a6 booking, which a deadline-blind planner never prefers.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 77400,
+        "objective_cents": 115400,
         "plans": [
           {
             "canonical_form": [
               [
                 "transfer",
-                "b2",
-                "a4",
-                "b2__a4",
+                "b3",
+                "a6",
+                "b3__a6",
                 "",
                 "",
-                60000,
-                60000,
-                3600
-              ],
-              [
-                "book_award",
-                "a4",
-                "",
-                "",
-                "a4_bus_nyc_par",
-                "",
-                60000,
-                0,
-                9000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 77400,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 3350,
-            "points_spent": {
-              "b2": 60000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "b2__a4",
-                  "points": 60000
-                }
-              },
-              {
-                "code": "transfer_time_risk",
-                "params": {
-                  "program": "a4",
-                  "arrival_days": 0,
-                  "deadline": "2026-08-02"
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b2",
-                "a3",
-                "b2__a3",
-                "",
-                "",
-                60000,
-                60000,
-                3600
-              ],
-              [
-                "book_award",
-                "a3",
-                "",
-                "",
-                "a3_bus_nyc_par",
-                "",
-                60000,
-                0,
-                25100
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 61300,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 3081,
-            "points_spent": {
-              "b2": 60000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "b2__a3",
-                  "points": 60000
-                }
-              },
-              {
-                "code": "seats_limited",
-                "params": {
-                  "offer_id": "a3_bus_nyc_par",
-                  "seats_available": 2
-                }
-              },
-              {
-                "code": "transfer_time_risk",
-                "params": {
-                  "program": "a3",
-                  "arrival_days": 0,
-                  "deadline": "2026-08-02"
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b2",
-                "a1",
-                "b2__a1",
-                "",
-                "",
-                70000,
-                70000,
+                88000,
+                88000,
                 0
               ],
               [
                 "book_award",
-                "a1",
+                "a6",
                 "",
                 "",
-                "a1_bus_nyc_par",
+                "a6_bus_sfo_tyo",
                 "",
-                70000,
+                88000,
                 0,
-                12800
+                6200
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 57200,
+            "net_value_cents": 115400,
             "cash_received_cents": null,
-            "realized_cpp_milli": 2817,
+            "realized_cpp_milli": 3111,
             "points_spent": {
-              "b2": 70000
+              "b3": 88000
             },
             "feasible_in_days": 0,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
-                  "edge_id": "b2__a1",
-                  "points": 70000
+                  "edge_id": "b3__a6",
+                  "points": 88000
                 }
               },
               {
                 "code": "transfer_time_risk",
                 "params": {
-                  "program": "a1",
+                  "program": "a6",
                   "arrival_days": 0,
-                  "deadline": "2026-08-02"
-                }
-              }
-            ]
-          },
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b2",
-                "a4",
-                "b2__a4",
-                "",
-                "",
-                72000,
-                72000,
-                4320
-              ],
-              [
-                "book_award",
-                "a4",
-                "",
-                "",
-                "a4_bus_nyc_par_soon",
-                "",
-                72000,
-                0,
-                9000
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 52680,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 2791,
-            "points_spent": {
-              "b2": 72000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "b2__a4",
-                  "points": 72000
-                }
-              },
-              {
-                "code": "seats_limited",
-                "params": {
-                  "offer_id": "a4_bus_nyc_par_soon",
-                  "seats_available": 2
-                }
-              },
-              {
-                "code": "transfer_time_risk",
-                "params": {
-                  "program": "a4",
-                  "arrival_days": 0,
-                  "deadline": "2026-08-02"
+                  "deadline": "2026-07-31"
                 }
               }
             ]
           }
         ],
-        "candidate_sets": 5,
-        "oracle_enumerations": 25388
+        "candidate_sets": 2,
+        "oracle_enumerations": 25241
       }
     },
     {
@@ -9630,8 +9233,8 @@
         "c3"
       ],
       "balances": {
-        "b3": 100000,
-        "h1": 60000
+        "b3": 60000,
+        "h1": 120000
       },
       "goal": {
         "kind": "flight",
@@ -9646,9 +9249,10 @@
       },
       "today": "2026-07-31",
       "params": {},
+      "rationale": "b3 alone cannot fund a6 (61,000 > 60,000); the only feasible plan tops h1 up to 129,000 for exactly 53,000 delivered into a3 through the tiered 3:1 edge \u2014 unreachable for a direct need-sized planner.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 70800,
+        "objective_cents": 70700,
         "plans": [
           {
             "canonical_form": [
@@ -9659,8 +9263,19 @@
                 "b3__a6",
                 "",
                 "",
-                62000,
-                62000,
+                60000,
+                60000,
+                0
+              ],
+              [
+                "transfer",
+                "h1",
+                "a6",
+                "h1__a6",
+                "",
+                "",
+                3000,
+                1000,
                 0
               ],
               [
@@ -9676,27 +9291,27 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 70800,
+            "net_value_cents": 70700,
             "cash_received_cents": null,
             "realized_cpp_milli": 2968,
             "points_spent": {
-              "b3": 62000
+              "b3": 60000,
+              "h1": 3000
             },
-            "feasible_in_days": 0,
+            "feasible_in_days": 2,
             "caveats": [
               {
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b3__a6",
-                  "points": 62000
+                  "points": 60000
                 }
               },
               {
-                "code": "stranded_points",
+                "code": "irreversible_transfer",
                 "params": {
-                  "program": "a6",
-                  "points": 1000,
-                  "value_cents": 1300
+                  "edge_id": "h1__a6",
+                  "points": 3000
                 }
               }
             ]
@@ -9710,8 +9325,8 @@
                 "b3__h1",
                 "",
                 "",
-                70000,
-                70000,
+                10000,
+                10000,
                 0
               ],
               [
@@ -9738,12 +9353,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": -1200,
+            "net_value_cents": 58800,
             "cash_received_cents": null,
             "realized_cpp_milli": 3245,
             "points_spent": {
-              "b3": 70000,
-              "h1": 59000
+              "b3": 10000,
+              "h1": 119000
             },
             "feasible_in_days": 2,
             "caveats": [
@@ -9751,7 +9366,7 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b3__h1",
-                  "points": 70000
+                  "points": 10000
                 }
               },
               {
@@ -9780,7 +9395,7 @@
           }
         ],
         "candidate_sets": 2,
-        "oracle_enumerations": 40511
+        "oracle_enumerations": 25090
       }
     },
     {
@@ -9789,10 +9404,12 @@
       "tier": "stress",
       "world": "stress_a",
       "cards": [
-        "c1"
+        "c1",
+        "c3"
       ],
       "balances": {
-        "b1": 100000
+        "b1": 40000,
+        "b3": 60000
       },
       "goal": {
         "kind": "flight",
@@ -9806,61 +9423,14 @@
         "book_by": null
       },
       "today": "2026-08-25",
-      "params": {},
+      "params": {
+        "max_hops": 1
+      },
+      "rationale": "The b1->a4 promo has expired but the b3->a1 promo just opened: the only feasible funding splits a1's 70,000 across the b3 promo edge (60,000) and b1 (10,000); single-source need-sized transfers all fail.",
       "expected": {
         "verdict": "book_with_points",
-        "objective_cents": 61900,
+        "objective_cents": 68700,
         "plans": [
-          {
-            "canonical_form": [
-              [
-                "transfer",
-                "b1",
-                "a3",
-                "b1__a3",
-                "",
-                "",
-                60000,
-                60000,
-                0
-              ],
-              [
-                "book_award",
-                "a3",
-                "",
-                "",
-                "a3_bus_nyc_par",
-                "",
-                60000,
-                0,
-                25100
-              ]
-            ],
-            "is_comparator": false,
-            "net_value_cents": 61900,
-            "cash_received_cents": null,
-            "realized_cpp_milli": 3081,
-            "points_spent": {
-              "b1": 60000
-            },
-            "feasible_in_days": 0,
-            "caveats": [
-              {
-                "code": "irreversible_transfer",
-                "params": {
-                  "edge_id": "b1__a3",
-                  "points": 60000
-                }
-              },
-              {
-                "code": "seats_limited",
-                "params": {
-                  "offer_id": "a3_bus_nyc_par",
-                  "seats_available": 2
-                }
-              }
-            ]
-          },
           {
             "canonical_form": [
               [
@@ -9870,8 +9440,19 @@
                 "b1__a1",
                 "",
                 "",
-                70000,
-                70000,
+                10000,
+                10000,
+                0
+              ],
+              [
+                "transfer",
+                "b3",
+                "a1",
+                "b3__a1_promo",
+                "",
+                "",
+                60000,
+                60000,
                 0
               ],
               [
@@ -9887,11 +9468,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 53700,
+            "net_value_cents": 68700,
             "cash_received_cents": null,
             "realized_cpp_milli": 2817,
             "points_spent": {
-              "b1": 70000
+              "b1": 10000,
+              "b3": 60000
             },
             "feasible_in_days": 0,
             "caveats": [
@@ -9899,7 +9481,14 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b1__a1",
-                  "points": 70000
+                  "points": 10000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "b3__a1_promo",
+                  "points": 60000
                 }
               }
             ]
@@ -9913,8 +9502,19 @@
                 "b1__a2",
                 "",
                 "",
-                62000,
-                62000,
+                2000,
+                2000,
+                0
+              ],
+              [
+                "transfer",
+                "b3",
+                "a2",
+                "b3__a2",
+                "",
+                "",
+                60000,
+                60000,
                 0
               ],
               [
@@ -9930,11 +9530,12 @@
               ]
             ],
             "is_comparator": false,
-            "net_value_cents": 52500,
+            "net_value_cents": 67500,
             "cash_received_cents": null,
             "realized_cpp_milli": 2896,
             "points_spent": {
-              "b1": 62000
+              "b1": 2000,
+              "b3": 60000
             },
             "feasible_in_days": 2,
             "caveats": [
@@ -9942,14 +9543,21 @@
                 "code": "irreversible_transfer",
                 "params": {
                   "edge_id": "b1__a2",
-                  "points": 62000
+                  "points": 2000
+                }
+              },
+              {
+                "code": "irreversible_transfer",
+                "params": {
+                  "edge_id": "b3__a2",
+                  "points": 60000
                 }
               }
             ]
           }
         ],
         "candidate_sets": 5,
-        "oracle_enumerations": 48112
+        "oracle_enumerations": 2693
       }
     }
   ]

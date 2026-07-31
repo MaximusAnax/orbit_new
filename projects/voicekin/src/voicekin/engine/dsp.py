@@ -35,10 +35,13 @@ FORMANT_MAX_HZ = 4200.0
 MAX_FORMANT_BANDWIDTH_HZ = 700.0
 """Poles broader than this are not formants — the standard resonance criterion."""
 
-#: Spectral-tilt regression band (Hz). Bounded above where speech energy ends:
-#: past ~3.5 kHz the slope describes where the recording noise floor sits, not the
-#: speaker, and the feature stops responding to the source at all.
-TILT_BAND_HZ = (150.0, 3500.0)
+#: Spectral-tilt regression band (Hz). Bounded above where the *voiced* spectrum
+#: still dominates a realistic recording: with a 20-30 dB SNR noise floor, a
+#: -8 dB/oct voice has fallen to the floor by ~2 kHz, so a regression that reads
+#: past it measures where the noise sits, not the speaker, and the slope
+#: differences between voices compress toward zero. 150-1600 Hz keeps ~3.4
+#: octaves of genuinely speech-dominated spectrum in the fit.
+TILT_BAND_HZ = (150.0, 1600.0)
 ROLLOFF_FRACTION = 0.85
 
 SPEECH_BAND_HZ = (300.0, 3400.0)
@@ -345,24 +348,54 @@ def pre_emphasize(frames: np.ndarray, coefficient: float = PRE_EMPHASIS) -> np.n
     return emphasized
 
 
+FORMANT_ANALYSIS_RATE = 8_000
+"""LPC analysis rate for formant estimation.
+
+Order 12 at 16 kHz must spend its six pole pairs across the full 0-8 kHz band —
+on four formants, the source tilt *and* whatever the noise floor does above
+4 kHz — and in practice F2 wanders by ~80 Hz between takes of the same voice.
+Halving the rate puts all six pairs on the 0-4 kHz band that actually contains
+F1-F4, which is the classical practice (formant analysis at 8-10 kHz) and cuts
+the within-speaker spread of the F1/F2 medians roughly fourfold. The order-12
+Levinson-Durbin recursion of FR-4 is unchanged."""
+
+_FORMANT_DECIMATION_TAPS = 31
+_FORMANT_ANTIALIAS_HZ = 3_600.0
+
+
 def estimate_formants(
     frames: np.ndarray, sample_rate: int, order: int = LPC_ORDER
 ) -> tuple[np.ndarray, np.ndarray]:
     """Per-frame ``(F1, F2)`` in Hz from the LPC spectral envelope's first peaks.
 
+    Frames are anti-alias filtered and decimated to
+    :data:`FORMANT_ANALYSIS_RATE` before the LPC fit (see its docstring).
     Frames whose envelope has no qualifying peak in a band report ``NaN`` there.
     """
     n_frames, frame_len = frames.shape
     if n_frames == 0:
         return np.zeros(0), np.zeros(0)
-    window = np.hamming(frame_len)
+    analysis_rate = sample_rate
+    if sample_rate >= 2 * FORMANT_ANALYSIS_RATE:
+        factor = sample_rate // FORMANT_ANALYSIS_RATE
+        from voicekin.engine.audio import sinc_lowpass  # local: avoids an import cycle
+
+        kernel = sinc_lowpass(_FORMANT_DECIMATION_TAPS, _FORMANT_ANTIALIAS_HZ, sample_rate)
+        n_fft = 1 << int(np.ceil(np.log2(frame_len + kernel.shape[0])))
+        spectra = np.fft.rfft(frames, n=n_fft, axis=1) * np.fft.rfft(kernel, n=n_fft)
+        filtered = np.fft.irfft(spectra, n=n_fft, axis=1)
+        # Compensate the kernel's group delay so the frame stays centred.
+        delay = (kernel.shape[0] - 1) // 2
+        frames = filtered[:, delay : delay + frame_len : factor]
+        analysis_rate = sample_rate // factor
+    window = np.hamming(frames.shape[1])
     centred = frames - frames.mean(axis=1, keepdims=True)
     windowed = pre_emphasize(centred) * window
-    n_fft = 1 << int(np.ceil(np.log2(2 * frame_len)))
+    n_fft = 1 << int(np.ceil(np.log2(2 * frames.shape[1])))
     spectrum = np.fft.rfft(windowed, n=n_fft, axis=1)
     acf = np.fft.irfft(spectrum * np.conjugate(spectrum), n=n_fft, axis=1)[:, : order + 1]
     coeffs = levinson_durbin(acf, order)
-    return formants_from_roots(lpc_roots(coeffs), sample_rate)
+    return formants_from_roots(lpc_roots(coeffs), analysis_rate)
 
 
 # --------------------------------------------------------------------------- #

@@ -185,6 +185,7 @@ literal timestamps. Current measured scores:
 | M3 component_monotonicity | 1.0000 | ≥ 1.00 | PASS |
 | M4 exact_optimality_mean | 1.0000 | ≥ 0.97 | PASS |
 | M4 exact_optimality_min | 1.0000 | ≥ 0.90 | PASS |
+| M4b degenerate_rejection | 1.0000 | = 1.00 | PASS |
 | M5 planted_chain_recovery | 1.0000 | ≥ 0.92 | PASS |
 | M5 planted_chain_recovery_min | 1.0312 | ≥ 0.85 | PASS |
 | M6 baseline_margin | 0.1224 | ≥ 0.08 | PASS |
@@ -210,13 +211,17 @@ What makes the numbers mean something:
   The DP is independently pinned by
   `tests/test_optimizer.py::test_fr8_exact_matches_bruteforce` (brute-force
   permutation enumeration at n ≤ 7, including anchored variants).
-- **The exact suite provably rejects construction-only greedy.** The generator
-  runs a standalone all-starts best-next greedy (no imports from
-  `src/flowlist`) over every instance and records its ratios; six of the ten
-  instances defeat it, and it would score **M4_mean 0.9646 / M4_min 0.8625** —
-  failing both gates. Passing M4 therefore requires the local search to work,
-  and `evals/test_gates.py::test_fixture_invariants` re-asserts that property
-  so a later regeneration cannot quietly drop it.
+- **The exact suite provably rejects a construction-only flowlist.** Two
+  degenerate baselines are recomputed live on every run: the engine's *own*
+  construction phase (`optimizer.construct` — literally what `reorder` returns
+  with its local search deleted) and a standalone all-starts best-next greedy
+  written inside `fixtures/generate.py` with no imports from `src/flowlist`.
+  Seven of the ten instances defeat both, and each baseline scores
+  **M4_mean 0.9587 / M4_min 0.8798** — failing both M4 gates — while the
+  shipped optimizer scores 1.0000 / 1.0000. Passing M4 therefore requires the
+  local search to work; the M4b gate and
+  `evals/test_gates.py::test_fixture_invariants` re-assert the property live,
+  so a later regeneration cannot quietly drop it (REVIEW.md #24).
 
 To regenerate fixtures (a reviewed change — the committed files *are* the
 ground truth):
@@ -228,7 +233,7 @@ uv run python flowlist/evals/fixtures/generate.py --goldens
 ## Tests
 
 ```bash
-uv run pytest flowlist/ -q              # 413 tests + the eval gates
+uv run pytest flowlist/ -q              # 421 tests, including the eval gates
 uv run pytest flowlist/ --runslow       # adds the FR-8 n=500 performance smoke
 uv run ruff check flowlist/
 ```

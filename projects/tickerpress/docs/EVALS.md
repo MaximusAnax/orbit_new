@@ -466,20 +466,22 @@ literal), dedup by identical canonical URL, relevance = accepted mention
 count. `run.py` prints its actual live-computed numbers alongside the
 gates.
 
-| Metric | Naive baseline (provisional estimate) | Why |
+| Metric | Naive baseline (measured, live) | Why |
 |---|---|---|
-| M1 | ≈ 0.72–0.80 | recall 1.0, but every trap article fires, plus incidental hits: lowercase "price target"/"shell company"/"meta-analysis" match TGT/SHEL/META name aliases; "ALL"/"CAT" fire in caps headlines — ≈40–60 FP pairs against ≈91 TPs |
-| M1_amb / M1_amb_base | ≈ 0.50–0.60 | all FPs live in the ambiguous subset by construction; subset precision ≈ 0.4 |
-| M1_amb_abl | ≈ 0.50–0.60 | the naive matcher never used per-company terms, so ablation does not change it |
-| M2_f1 | ≈ 0.24 | only the 10 identical-URL pairs of 72 recovered (P=1.0, R≈0.14) |
-| M3 | ≈ 0.65–0.75 | mention count misorders every designed count-vs-placement trap |
+| M1 | **0.696** | recall 1.0, but every trap article fires, plus incidental hits: lowercase "price target"/"shell company"/"meta-analysis" match TGT/SHEL/META name aliases; "ALL"/"CAT" fire in caps headlines |
+| M1_amb / M1_amb_base | **0.611** / **0.709** | all FPs live in the ambiguous subset by construction |
+| M1_amb_abl | **0.611** | the naive matcher never used per-company terms, so ablation does not change it |
+| M2_f1 | **0.244** | only the 10 identical-URL pairs of 72 recovered (P_pair=1.000, R_pair=0.139) |
+| M3 | **0.801** | mention count misorders every designed count-vs-placement trap (higher than the scoping-time ≈0.65–0.75 estimate; see the M3 gate row) |
 | M4 | 0.0 | no ledger ⇒ steps 2/3/4/6 fail |
 | M5, M6_lex | — | not meaningful for the baseline |
 
-**These estimates are provisional and must be replaced by measured values
-in this table when the fixtures land** (CONVENTIONS.md requires EVALS.md to
-state what the baseline scores). Prose margins are not self-enforcing, so
-`test_gates.py` additionally asserts the margin at run time:
+These are the measured values of the live baseline in `evals/metrics.py`
+over the committed fixtures, replacing the scoping-time provisional
+estimates (CONVENTIONS.md requires EVALS.md to state what the baseline
+scores); `run.py` recomputes them on every run. Prose margins are not
+self-enforcing, so `test_gates.py` additionally asserts the margin at run
+time:
 
 ```
 gate(M1)          − naive_live(M1)          ≥ 0.10
@@ -501,15 +503,15 @@ Gates (asserted on live-computed values):
 
 | Gate | Threshold | Rationale |
 |---|---|---|
-| M1 mention_f1 | ≥ 0.92 | Strong-surface positives are near-free; the evidence scorer must then hold precision on traps without dropping weak positives. Naive ≈ 0.76 — the ~16-point margin *is* the disambiguation engine. Not higher: a few fixtures are written to be genuinely borderline and may legitimately fall either side. |
-| M1_amb ambiguous F1 | ≥ 0.85 | The headline gate — scored only where disambiguation actually decides. Naive ≈ 0.55. Blocks the trivial precision play: rejecting all weak candidates loses every `weak_only` positive (≥26 of the ≥34 in-subset positives), dropping subset recall below 0.5 and failing loudly. |
+| M1 mention_f1 | ≥ 0.92 | Strong-surface positives are near-free; the evidence scorer must then hold precision on traps without dropping weak positives. Measured naive = 0.696 — the 22-point margin *is* the disambiguation engine. Not higher: a few fixtures are written to be genuinely borderline and may legitimately fall either side. |
+| M1_amb ambiguous F1 | ≥ 0.85 | The headline gate — scored only where disambiguation actually decides. Measured naive = 0.611. Blocks the trivial precision play: rejecting all weak candidates loses every `weak_only` positive (≥26 of the ≥34 in-subset positives), dropping subset recall below 0.5 and failing loudly. |
 | M1_amb_base | ≥ 0.82 | Same subset over the 68 bases only — one vote per independent authoring decision, so a single failure is not amplified 5× by syndication (nor hidden by it). Set 3 points below M1_amb because the sample is thinner (≥40 pairs) and each error costs ~2.5 points. |
-| M1_amb_abl | ≥ 0.70 | With all per-company terms emptied, the general mechanism must still clear a bar 15 points above naive. Set below M1_amb because ≤5 fixture positives are legitimately `cue_free` and will be missed; a run that memorized the corpus in per-company terms collapses far below 0.70. |
+| M1_amb_abl | ≥ 0.75 | With all per-company terms emptied, the general mechanism must still clear a bar ~14 points above the measured naive 0.611. Set below M1_amb because ≤5 fixture positives are legitimately `cue_free` and will be missed; a run that memorized the corpus in per-company terms collapses far below 0.75. (Raised from the scoping-time 0.70 when the measured naive landed at 0.611: 0.70 left only a 9-point margin, failing the ≥0.10 margin assertion — see docs/REVIEW.md B2.) |
 | M2 P_pair | ≥ 0.95 | Over-merging destroys trust (two different stories delivered as one) and silently suppresses deliveries via the ledger; τ=0.60 on 3-shingles leaves margin. Defined as 0.0 when nothing is clustered, so the never-cluster degenerate fails here too. |
-| M2 R_pair | ≥ 0.85 | Heavily edited copies (headline swap + boilerplate + 2 dropped sentences) must still cluster; a few extreme edits may fall below τ — that costs duplicates in a digest, annoying but honest. Naive R ≈ 0.14. |
+| M2 R_pair | ≥ 0.85 | Heavily edited copies (headline swap + boilerplate + 2 dropped sentences) must still cluster; a few extreme edits may fall below τ — that costs duplicates in a digest, annoying but honest. Measured naive R_pair = 0.139. |
 | M2_trap merged no-link pairs | = 0 | Hand-vetted distinct-story pairs may never merge. Zero, not small: any violation is a threshold/shingling design bug, not noise. |
 | M2_near | ≥ 4 of 5 | At least 4 of the 5 `near`-band no-link pairs must compute J ≥ 0.40 (while still < 0.60 by M2_trap). Keeps the trap gate binding just under τ instead of testing pairs that are trivially dissimilar; a normalization change that pushes everything to J ≈ 0 fails here. |
-| M3 relevance_ordering | ≥ 0.90 | Placement-weighted scoring should order essentially all tier pairs; ties among identically-shaped articles cost half-credit and justify the 10% slack. Naive ≈ 0.70. |
+| M3 relevance_ordering | ≥ 0.95 | Placement-weighted scoring should order essentially all tier pairs; ties among identically-shaped articles cost half-credit and justify the remaining slack. Measured naive = 0.801 — higher than the scoping-time ≈0.70 estimate because count-and-placement agree on most non-trap pairs — so the scoping-time 0.90 gate left only a 9.9-point margin, failing the ≥0.10 margin assertion; raised per this section's own rule ("harder fixtures or a higher gate") — see docs/REVIEW.md B2. |
 | M3_cov coverage | \|O\| ≥ 55 ∧ 12/12 traps in O | Stops M3 from being inflated by detection misses that quietly delete the hard ordering pairs from its denominator. Failing coverage fails M3. |
 | M4 delivery_exactly_once | = 1.0 | The product's promise ("send me a link" — once). Any failing step is a broken invariant, not a quality regression. |
 | M5 determinism | = 1.0 | CONVENTIONS.md hermeticity; what makes every other number trustworthy. Cross-process with differing `PYTHONHASHSEED`, plus committed golden hashes. |
@@ -526,7 +528,7 @@ clustering — `R_pair` blocks it, and `P_pair` is defined 0.0 on an empty
 prediction set; `R_pair` alone by clustering everything — `P_pair` and
 `M2_trap` block it; `M2_trap` alone is gamed by a corpus of trivially
 distant pairs — `M2_near` blocks it. M3 cannot be gamed by constant scores
-(ties earn 0.5 < 0.90) nor by suppressing hard pairs (M3_cov). M4 and M5 are
+(ties earn 0.5 < 0.95) nor by suppressing hard pairs (M3_cov). M4 and M5 are
 mechanical invariants. Margin assertions prevent an accidentally-easy corpus
 from turning any gate vacuous.
 

@@ -403,17 +403,23 @@ def alias_rm(
 def term_add(
     ctx: typer.Context,
     ticker: str = typer.Argument(...),
-    context: str | None = typer.Option(None, "--context", help="Positive evidence term."),
-    anti: str | None = typer.Option(None, "--anti", help="Negative evidence term."),
+    context: list[str] = typer.Option(
+        [], "--context", help="Positive evidence term (repeatable)."
+    ),
+    anti: list[str] = typer.Option([], "--anti", help="Negative evidence term (repeatable)."),
     as_json: bool = typer.Option(False, "--json"),
 ) -> None:
-    """Append a per-company context or anti term (FR-6 features 7 and 8)."""
+    """Append per-company context or anti terms (FR-6 features 7 and 8)."""
 
-    if context is None and anti is None:
+    if not context and not anti:
         return _fail("pass --context WORD and/or --anti WORD")
     service = _service(ctx)
     try:
-        company = service.add_term(ticker, context=context, anti=anti)
+        company = service.get_company(ticker)
+        for word in context:
+            company = service.add_term(ticker, context=word)
+        for word in anti:
+            company = service.add_term(ticker, anti=word)
     except KeyError:
         return _fail(f"unknown company {_ticker(ticker)}")
     if as_json:

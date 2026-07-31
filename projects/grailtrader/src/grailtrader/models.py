@@ -592,6 +592,8 @@ class EventIngestReport(BaseModel):
     created: int = 0
     corroborated: int = 0
     unchanged: int = 0
+    skipped_unresolved: int = 0
+    unresolved_refs: tuple[str, ...] = ()
     by_status: dict[EventStatus, int] = Field(default_factory=dict)
 
 

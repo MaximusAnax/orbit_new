@@ -180,3 +180,88 @@ artifact is parsed by a dedicated mechanical inverse of the serializer, not by
 the reader stack: the reader applies dialect sniffing and the FR-3 headerless
 heuristic, which are decisions about an *unknown* file, and using it here would
 test the sniffer instead of the audit.
+
+---
+
+## HARDEN stage — falsifiability audit
+
+**No gate threshold was changed at this stage either.** The purpose here was
+to demonstrate empirically that the gates *can* fail — a gate that cannot be
+made to fail is worthless — and to record the numbers. Three engine mutations
+were applied, measured, and reverted; the suite was confirmed fully green
+before and after each.
+
+### Mutation experiments (metric, mutation, before → after)
+
+**A — constant type inference (H1).** `infer_column_type` degraded to always
+return `text` (the trivial classifier a header-lookup or lazy engine would
+amount to):
+
+| metric | healthy | mutated | gate | result |
+|---|---|---|---|---|
+| M1 type_inference_accuracy | 1.0000 | **0.1209** | ≥ 0.95 | FAIL (falls to exactly the naive baseline) |
+| M2 detection macro-F1 | 1.0000 | **0.5000** | ≥ 0.85 | FAIL |
+| M2_min per-class F1 | 1.0000 | **0.0000** | ≥ 0.70 | FAIL |
+| M4 repair_auto | 0.9459 | **0.3421** | ≥ 0.85 | FAIL |
+| M4 repair_auto_min | 1.0000 | **0.0000** | ≥ 0.85 | FAIL |
+| M4 repair_total | 1.0000 | **0.5015** | ≥ 0.90 | FAIL |
+| M7 trap_disposition | 1.0000 | **0.4444** | = 1.00 | FAIL |
+
+Seven gates discriminate against a dead inference engine; the detectors'
+dependence on column types propagates the damage exactly as D5's "one joint
+decision" framing predicts.
+
+**B — greedy tier algebra (H2).** `resolve_tier` degraded to return `auto`
+for every enabled rule (ignore safety caps and confidence — the "background
+cleaner that guesses wrong" D1 exists to prevent):
+
+| metric | healthy | mutated | gate | result |
+|---|---|---|---|---|
+| M3_trap trap-cell auto changes | 0 | **11** | = 0 | FAIL (`fix.date_canon_ambiguous` and `fix.sentinel_null_soft` auto-applied on trap cells) |
+| M7 trap_disposition | 1.0000 | **0.5556** | = 1.00 | FAIL (expected review items never created) |
+
+Notably M3 itself stays 1.0000 under this mutation — on the *corrupted*
+fixtures the recommended candidates equal golden, so precision alone cannot
+see recklessness. That is precisely the one-sidedness EVALS.md §5's
+anti-gaming summary claims, now demonstrated rather than asserted: the trap
+gates, not M3, carry the safety load. Under this mutation the eval harness
+also fails loudly earlier (`revision_two_reversibility` finds an empty review
+queue) — the scorecard numbers above were probed with the revision-2
+precondition bypassed, which only *removes* a failure.
+
+**C — single-class timidity (H2, the M4 arithmetic).** `fix.sentinel_null_hard`
+confidence dropped 1.0 → 0.7, demoting the MISS class to review:
+
+| metric | healthy | mutated | gate | result |
+|---|---|---|---|---|
+| M4 repair_auto | 0.9459 | **0.8395** | ≥ 0.85 | FAIL — matches EVALS.md §5's predicted ≈ 0.84 for an ENC/MISS/CAT-sized demotion |
+| M4 repair_auto_min | 1.0000 | **0.0000** | ≥ 0.85 | FAIL (the MISS slice goes to zero) |
+| M4 repair_total | 1.0000 | 1.0000 | ≥ 0.90 | pass, correctly — the review proposal still restores golden |
+
+M2 also moved (1.0000 → 0.9958) because unfixed sentinels then pollute later
+pipeline stages — evidence that the pipeline re-profiling (D13) is real, not
+staged.
+
+After reverting each mutation the full scorecard returned to the healthy
+column exactly.
+
+### Other HARDEN findings
+
+- **Fixture-share test hardened.** `test_fixture_class_shares_are_pinned`
+  previously read the generator-recorded `expected.json`; it now recomputes
+  every class share live from the committed corruption manifests (2,835 ops)
+  and additionally asserts `expected.json` agrees with the manifests to 1e-6,
+  so a stale informational file can no longer mask fixture drift. This is the
+  only code change the audit required; no fake work, hardcoded results,
+  swallowed failures, or assertion-free tests were found elsewhere.
+- **Determinism re-verified end to end:** two consecutive full eval passes
+  produced byte-identical scorecard JSON, on top of M6's cross-process
+  `PYTHONHASHSEED` 0-vs-1 artifact comparison.
+- **CLI walked end to end on real inputs** (a hand-made mojibake/currency/
+  ambiguous-date/duplicate-row file plus the committed fixtures): `watch
+  add/ls`, `run --once` twice (idempotent skip), `clean`, `profile`, `runs`,
+  `show --changes/--columns/--paths`, `review`, `accept --all`, `reject`
+  (correct `item_already_decided` failure), `revert` on r1 and r2, policy
+  `off` override with loud unknown-key rejection, and `serve` (live HTTP:
+  health, filtered runs, report download, structured 404). Source hashes
+  unchanged throughout.

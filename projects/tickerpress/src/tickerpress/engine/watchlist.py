@@ -168,24 +168,36 @@ def generate_aliases(ticker: str, name: str, now: datetime, lexicons: Lexicons) 
     return aliases
 
 
+#: Kinds whose surfaces are matched as capitalized names (FR-5): a case-variant
+#: duplicate among these is the same matchable surface and is rejected.
+_NAME_KINDS = frozenset({AliasKind.LEGAL_NAME, AliasKind.SHORT_NAME, AliasKind.NICKNAME})
+
+
 def check_duplicate_surface(
     existing: Iterable[Alias], text: str, kind: AliasKind | None = None
 ) -> None:
-    """Reject a duplicate case-folded surface within one company (FR-1).
+    """Reject a duplicate alias surface within one company (FR-1).
 
-    Uniqueness is keyed on ``(company, casefold(text), kind)``: matching is
-    case-sensitive and per-kind (FR-5), so a ticker_symbol ``META`` and a
-    short_name ``Meta`` are two different matchable surfaces, and collapsing
-    them would make the SCOPE FR-6 marquee case ("Meta fined by EU regulator"
-    vs "meta-analysis") undetectable — see docs/REVIEW.md D20. Passing
-    ``kind=None`` keeps the strictest reading: any case-variant collides.
+    Collision rule (docs/REVIEW.md D20): two aliases collide when their exact
+    texts are equal (any kinds), when both kinds are name-like
+    (legal_name/short_name/nickname) and the case-folded texts are equal, or
+    when the kinds are equal and the case-folded texts are equal. Symbol kinds
+    (ticker_symbol/cashtag) are matched case-exactly by FR-5, so a
+    ticker_symbol ``META`` and a short_name ``Meta`` are two genuinely
+    different matchable surfaces and may coexist — collapsing them would make
+    the SCOPE FR-6 marquee case ("Meta fined by EU regulator") undetectable.
+    Passing ``kind=None`` keeps the strictest reading: any case-variant
+    collides.
     """
 
-    key = " ".join(text.split()).casefold()
+    cleaned = " ".join(text.split())
+    key = cleaned.casefold()
     for alias in existing:
         if alias.key != key:
             continue
-        if kind is None or alias.kind is kind:
+        exact = " ".join(alias.text.split()) == cleaned
+        name_like = kind in _NAME_KINDS and alias.kind in _NAME_KINDS
+        if kind is None or exact or name_like or alias.kind is kind:
             raise DuplicateAliasError(
                 f"company {alias.company_ticker} already has a {alias.kind.value} "
                 f"alias {alias.text!r}"

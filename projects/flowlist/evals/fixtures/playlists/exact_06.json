@@ -2,7 +2,7 @@
  "id": "exact_06",
  "suite": "exact",
  "n": 14,
- "seed": 1302299,
+ "seed": 1303288,
  "clusters": [
   "house",
   "indie",
@@ -31,8 +31,8 @@
  "planted_order": null,
  "detail": {
   "kind": "plain",
-  "search_seed": 1302299,
-  "greedy_bound": 0.958007,
-  "depth_target": 0.96
+  "search_seed": 1303288,
+  "greedy_bound": 0.950278,
+  "depth_target": 0.951
  }
 }

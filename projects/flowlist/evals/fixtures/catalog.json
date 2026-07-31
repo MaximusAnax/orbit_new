@@ -576,14 +576,14 @@
    "title": "Hollow Signal",
    "artist": "Marta Quiet",
    "album": "Neon Hours",
-   "duration_ms": 314000,
+   "duration_ms": 218000,
    "features": {
-    "bpm": 97.8,
+    "bpm": 115.1,
     "key_pc": 11,
     "mode": 1,
-    "energy": 0.331,
-    "danceability": 0.825,
-    "loudness_db": -11.46
+    "energy": 0.686,
+    "danceability": 0.495,
+    "loudness_db": -6.33
    }
   },
   {
@@ -591,14 +591,14 @@
    "title": "Silver Signal",
    "artist": "Rue Atlas",
    "album": "Blue Room",
-   "duration_ms": 235000,
+   "duration_ms": 317000,
    "features": {
-    "bpm": 171.5,
-    "key_pc": 7,
-    "mode": 1,
-    "energy": 0.898,
-    "danceability": 0.576,
-    "loudness_db": -5.1
+    "bpm": 176.6,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.828,
+    "danceability": 0.307,
+    "loudness_db": -6.14
    }
   },
   {
@@ -606,14 +606,14 @@
    "title": "Crimson Signal",
    "artist": "Delta Sparrow",
    "album": "Afterglow",
-   "duration_ms": 263000,
+   "duration_ms": 242000,
    "features": {
-    "bpm": 107.1,
+    "bpm": 100.1,
     "key_pc": 2,
-    "mode": 1,
-    "energy": 0.523,
-    "danceability": 0.355,
-    "loudness_db": -8.98
+    "mode": 0,
+    "energy": 0.427,
+    "danceability": 0.536,
+    "loudness_db": -10.22
    }
   },
   {
@@ -621,14 +621,14 @@
    "title": "Quiet Signal",
    "artist": "Petrichor Kids",
    "album": "Signal",
-   "duration_ms": 284000,
+   "duration_ms": 153000,
    "features": {
-    "bpm": 172.7,
-    "key_pc": 3,
+    "bpm": 171.1,
+    "key_pc": 9,
     "mode": 0,
-    "energy": 0.938,
-    "danceability": 0.907,
-    "loudness_db": -5.2
+    "energy": 0.773,
+    "danceability": 0.359,
+    "loudness_db": -6.02
    }
   },
   {
@@ -636,14 +636,14 @@
    "title": "Electric Signal",
    "artist": "The Paper Radios",
    "album": "Provisional",
-   "duration_ms": 229000,
+   "duration_ms": 205000,
    "features": {
-    "bpm": 114.1,
-    "key_pc": 2,
-    "mode": 1,
-    "energy": 0.476,
-    "danceability": 0.592,
-    "loudness_db": -8.6
+    "bpm": 114.8,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.518,
+    "danceability": 0.44,
+    "loudness_db": -9.24
    }
   },
   {
@@ -651,14 +651,14 @@
    "title": "Marble Signal",
    "artist": "Sable Fox",
    "album": "Common Weather",
-   "duration_ms": 214000,
+   "duration_ms": 193000,
    "features": {
-    "bpm": 172.3,
-    "key_pc": 10,
-    "mode": 1,
-    "energy": 0.812,
-    "danceability": 0.425,
-    "loudness_db": -6.61
+    "bpm": 176.3,
+    "key_pc": 6,
+    "mode": 0,
+    "energy": 0.711,
+    "danceability": 0.737,
+    "loudness_db": -7.54
    }
   },
   {
@@ -666,14 +666,14 @@
    "title": "Wilder Signal",
    "artist": "Orla Fields",
    "album": "Tide",
-   "duration_ms": 177000,
+   "duration_ms": 286000,
    "features": {
-    "bpm": 102.6,
-    "key_pc": 2,
-    "mode": 1,
-    "energy": 0.463,
-    "danceability": 0.686,
-    "loudness_db": -10.25
+    "bpm": 110.3,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.336,
+    "danceability": 0.402,
+    "loudness_db": -11.61
    }
   },
   {
@@ -681,14 +681,14 @@
    "title": "Distant Signal",
    "artist": "Cyan Drift",
    "album": "Long Way Round",
-   "duration_ms": 175000,
+   "duration_ms": 178000,
    "features": {
-    "bpm": 174.6,
-    "key_pc": 11,
+    "bpm": 172.1,
+    "key_pc": 3,
     "mode": 1,
-    "energy": 0.736,
-    "danceability": 0.329,
-    "loudness_db": -5.88
+    "energy": 0.792,
+    "danceability": 0.381,
+    "loudness_db": -6.34
    }
   },
   {
@@ -696,14 +696,14 @@
    "title": "Golden Signal",
    "artist": "Kestrel Park",
    "album": "Nightshift",
-   "duration_ms": 226000,
+   "duration_ms": 289000,
    "features": {
-    "bpm": 110.8,
-    "key_pc": 6,
-    "mode": 0,
-    "energy": 0.544,
-    "danceability": 0.671,
-    "loudness_db": -8.94
+    "bpm": 116.5,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.388,
+    "danceability": 0.475,
+    "loudness_db": -9.77
    }
   },
   {
@@ -711,14 +711,14 @@
    "title": "Salt Signal",
    "artist": "Fen & Marrow",
    "album": "Embers",
-   "duration_ms": 288000,
+   "duration_ms": 220000,
    "features": {
-    "bpm": 177.0,
-    "key_pc": 8,
+    "bpm": 174.9,
+    "key_pc": 5,
     "mode": 1,
-    "energy": 0.809,
-    "danceability": 0.437,
-    "loudness_db": -6.13
+    "energy": 0.743,
+    "danceability": 0.449,
+    "loudness_db": -6.95
    }
   },
   {
@@ -726,14 +726,14 @@
    "title": "Iron Signal",
    "artist": "Synthetic Sun",
    "album": "Neon Hours",
-   "duration_ms": 274000,
+   "duration_ms": 228000,
    "features": {
-    "bpm": 100.8,
-    "key_pc": 7,
-    "mode": 0,
-    "energy": 0.632,
-    "danceability": 0.757,
-    "loudness_db": -7.67
+    "bpm": 116.7,
+    "key_pc": 10,
+    "mode": 1,
+    "energy": 0.36,
+    "danceability": 0.869,
+    "loudness_db": -11.21
    }
   },
   {
@@ -741,14 +741,14 @@
    "title": "Feather Signal",
    "artist": "Novena",
    "album": "Blue Room",
-   "duration_ms": 174000,
+   "duration_ms": 288000,
    "features": {
-    "bpm": 177.5,
-    "key_pc": 5,
+    "bpm": 171.6,
+    "key_pc": 10,
     "mode": 1,
-    "energy": 0.811,
-    "danceability": 0.715,
-    "loudness_db": -6.65
+    "energy": 0.764,
+    "danceability": 0.726,
+    "loudness_db": -6.99
    }
   },
   {
@@ -756,14 +756,14 @@
    "title": "Cobalt Signal",
    "artist": "Northern Wire",
    "album": "Afterglow",
-   "duration_ms": 288000,
+   "duration_ms": 218000,
    "features": {
-    "bpm": 123.8,
-    "key_pc": 2,
+    "bpm": 115.1,
+    "key_pc": 11,
     "mode": 1,
-    "energy": 0.713,
-    "danceability": 0.731,
-    "loudness_db": -7.45
+    "energy": 0.686,
+    "danceability": 0.495,
+    "loudness_db": -6.33
    }
   },
   {
@@ -771,14 +771,14 @@
    "title": "Ash Signal",
    "artist": "The Slow Hands",
    "album": "Signal",
-   "duration_ms": 262000,
+   "duration_ms": 317000,
    "features": {
-    "bpm": 177.7,
-    "key_pc": 2,
-    "mode": 1,
-    "energy": 0.816,
-    "danceability": 0.379,
-    "loudness_db": -5.35
+    "bpm": 126.6,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.754,
+    "danceability": 0.307,
+    "loudness_db": -6.88
    }
   },
   {
@@ -786,14 +786,14 @@
    "title": "Lantern Signal",
    "artist": "Halcyon Bay",
    "album": "Provisional",
-   "duration_ms": 165000,
+   "duration_ms": 242000,
    "features": {
-    "bpm": 126.4,
-    "key_pc": 6,
-    "mode": 1,
-    "energy": 0.841,
-    "danceability": 0.596,
-    "loudness_db": -5.98
+    "bpm": 100.1,
+    "key_pc": 2,
+    "mode": 0,
+    "energy": 0.427,
+    "danceability": 0.536,
+    "loudness_db": -10.22
    }
   },
   {
@@ -801,14 +801,14 @@
    "title": "Riverine Signal",
    "artist": "Bright Meridian",
    "album": "Common Weather",
-   "duration_ms": 305000,
+   "duration_ms": 153000,
    "features": {
-    "bpm": 176.7,
-    "key_pc": 1,
+    "bpm": 121.1,
+    "key_pc": 9,
     "mode": 0,
-    "energy": 0.711,
-    "danceability": 0.539,
-    "loudness_db": -7.11
+    "energy": 0.687,
+    "danceability": 0.359,
+    "loudness_db": -6.88
    }
   },
   {
@@ -816,14 +816,14 @@
    "title": "Slate Signal",
    "artist": "Auburn Sky",
    "album": "Tide",
-   "duration_ms": 244000,
+   "duration_ms": 205000,
    "features": {
-    "bpm": 122.0,
-    "key_pc": 6,
+    "bpm": 114.8,
+    "key_pc": 4,
     "mode": 0,
-    "energy": 0.817,
-    "danceability": 0.725,
-    "loudness_db": -5.09
+    "energy": 0.518,
+    "danceability": 0.44,
+    "loudness_db": -9.24
    }
   },
   {
@@ -831,14 +831,14 @@
    "title": "Opal Signal",
    "artist": "Vera Lux",
    "album": "Long Way Round",
-   "duration_ms": 195000,
+   "duration_ms": 193000,
    "features": {
-    "bpm": 177.5,
-    "key_pc": 5,
+    "bpm": 126.3,
+    "key_pc": 6,
     "mode": 0,
-    "energy": 0.773,
-    "danceability": 0.319,
-    "loudness_db": -5.84
+    "energy": 0.614,
+    "danceability": 0.737,
+    "loudness_db": -8.51
    }
   },
   {
@@ -846,14 +846,14 @@
    "title": "Ember Signal",
    "artist": "Low Tide Club",
    "album": "Nightshift",
-   "duration_ms": 253000,
+   "duration_ms": 286000,
    "features": {
-    "bpm": 121.5,
-    "key_pc": 2,
+    "bpm": 110.3,
+    "key_pc": 0,
     "mode": 0,
-    "energy": 0.764,
-    "danceability": 0.564,
-    "loudness_db": -6.71
+    "energy": 0.336,
+    "danceability": 0.402,
+    "loudness_db": -11.61
    }
   },
   {
@@ -861,14 +861,14 @@
    "title": "Tidal Signal",
    "artist": "Ines Vermeer",
    "album": "Embers",
-   "duration_ms": 311000,
+   "duration_ms": 178000,
    "features": {
-    "bpm": 175.6,
-    "key_pc": 7,
-    "mode": 0,
-    "energy": 0.705,
-    "danceability": 0.501,
-    "loudness_db": -7.05
+    "bpm": 122.1,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.71,
+    "danceability": 0.381,
+    "loudness_db": -7.16
    }
   },
   {
@@ -876,14 +876,14 @@
    "title": "Chrome Signal",
    "artist": "Mirrorline",
    "album": "Neon Hours",
-   "duration_ms": 295000,
+   "duration_ms": 289000,
    "features": {
-    "bpm": 127.7,
-    "key_pc": 4,
+    "bpm": 116.5,
+    "key_pc": 1,
     "mode": 1,
-    "energy": 0.639,
-    "danceability": 0.691,
-    "loudness_db": -8.4
+    "energy": 0.388,
+    "danceability": 0.475,
+    "loudness_db": -9.77
    }
   },
   {
@@ -891,14 +891,14 @@
    "title": "Linen Signal",
    "artist": "Ghost Signal",
    "album": "Blue Room",
-   "duration_ms": 219000,
+   "duration_ms": 220000,
    "features": {
-    "bpm": 175.2,
-    "key_pc": 1,
-    "mode": 0,
-    "energy": 0.789,
-    "danceability": 0.776,
-    "loudness_db": -6.36
+    "bpm": 124.9,
+    "key_pc": 5,
+    "mode": 1,
+    "energy": 0.651,
+    "danceability": 0.449,
+    "loudness_db": -7.87
    }
   },
   {
@@ -906,14 +906,14 @@
    "title": "Neon Weather",
    "artist": "Ardent Machines",
    "album": "Afterglow",
-   "duration_ms": 317000,
+   "duration_ms": 228000,
    "features": {
-    "bpm": 125.4,
-    "key_pc": 7,
+    "bpm": 116.7,
+    "key_pc": 10,
     "mode": 1,
-    "energy": 0.698,
-    "danceability": 0.47,
-    "loudness_db": -6.52
+    "energy": 0.36,
+    "danceability": 0.869,
+    "loudness_db": -11.21
    }
   },
   {
@@ -921,14 +921,14 @@
    "title": "Paper Weather",
    "artist": "Cassette Bloom",
    "album": "Signal",
-   "duration_ms": 304000,
+   "duration_ms": 288000,
    "features": {
-    "bpm": 170.2,
-    "key_pc": 6,
+    "bpm": 121.6,
+    "key_pc": 10,
     "mode": 1,
-    "energy": 0.795,
-    "danceability": 0.788,
-    "loudness_db": -6.87
+    "energy": 0.677,
+    "danceability": 0.726,
+    "loudness_db": -7.86
    }
   },
   {
@@ -936,14 +936,14 @@
    "title": "Velvet Weather",
    "artist": "Marta Quiet",
    "album": "Provisional",
-   "duration_ms": 180000,
+   "duration_ms": 250000,
    "features": {
-    "bpm": 122.3,
-    "key_pc": 11,
+    "bpm": 116.3,
+    "key_pc": 4,
     "mode": 0,
-    "energy": 0.679,
-    "danceability": 0.903,
-    "loudness_db": -7.35
+    "energy": 0.635,
+    "danceability": 0.9,
+    "loudness_db": -7.73
    }
   },
   {
@@ -951,14 +951,14 @@
    "title": "Static Weather",
    "artist": "Rue Atlas",
    "album": "Common Weather",
-   "duration_ms": 280000,
+   "duration_ms": 245000,
    "features": {
-    "bpm": 127.0,
-    "key_pc": 5,
-    "mode": 1,
-    "energy": 0.623,
-    "danceability": 0.876,
-    "loudness_db": -6.99
+    "bpm": 121.5,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.857,
+    "danceability": 0.772,
+    "loudness_db": -4.51
    }
   },
   {
@@ -966,14 +966,14 @@
    "title": "Copper Weather",
    "artist": "Delta Sparrow",
    "album": "Tide",
-   "duration_ms": 275000,
+   "duration_ms": 227000,
    "features": {
-    "bpm": 100.2,
-    "key_pc": 9,
+    "bpm": 108.3,
+    "key_pc": 10,
     "mode": 0,
-    "energy": 0.401,
-    "danceability": 0.862,
-    "loudness_db": -10.95
+    "energy": 0.633,
+    "danceability": 0.914,
+    "loudness_db": -8.04
    }
   },
   {
@@ -981,14 +981,14 @@
    "title": "Midnight Weather",
    "artist": "Petrichor Kids",
    "album": "Long Way Round",
-   "duration_ms": 200000,
+   "duration_ms": 224000,
    "features": {
-    "bpm": 82.6,
-    "key_pc": 6,
+    "bpm": 85.0,
+    "key_pc": 3,
     "mode": 0,
-    "energy": 0.403,
-    "danceability": 0.834,
-    "loudness_db": -9.33
+    "energy": 0.553,
+    "danceability": 0.95,
+    "loudness_db": -8.35
    }
   },
   {
@@ -996,14 +996,14 @@
    "title": "Glass Weather",
    "artist": "The Paper Radios",
    "album": "Nightshift",
-   "duration_ms": 235000,
+   "duration_ms": 194000,
    "features": {
-    "bpm": 125.0,
-    "key_pc": 9,
-    "mode": 0,
-    "energy": 0.704,
-    "danceability": 0.475,
-    "loudness_db": -7.53
+    "bpm": 124.4,
+    "key_pc": 10,
+    "mode": 1,
+    "energy": 0.642,
+    "danceability": 0.428,
+    "loudness_db": -7.23
    }
   },
   {
@@ -1011,14 +1011,14 @@
    "title": "Amber Weather",
    "artist": "Sable Fox",
    "album": "Embers",
-   "duration_ms": 207000,
+   "duration_ms": 264000,
    "features": {
-    "bpm": 104.0,
-    "key_pc": 3,
+    "bpm": 110.3,
+    "key_pc": 5,
     "mode": 1,
-    "energy": 0.683,
-    "danceability": 0.736,
-    "loudness_db": -6.59
+    "energy": 0.365,
+    "danceability": 0.731,
+    "loudness_db": -10.78
    }
   },
   {
@@ -1026,14 +1026,14 @@
    "title": "Hollow Weather",
    "artist": "Orla Fields",
    "album": "Neon Hours",
-   "duration_ms": 247000,
+   "duration_ms": 290000,
    "features": {
-    "bpm": 92.7,
+    "bpm": 87.8,
     "key_pc": 2,
     "mode": 1,
-    "energy": 0.511,
-    "danceability": 0.71,
-    "loudness_db": -8.12
+    "energy": 0.533,
+    "danceability": 0.648,
+    "loudness_db": -7.96
    }
   },
   {
@@ -1041,14 +1041,14 @@
    "title": "Silver Weather",
    "artist": "Cyan Drift",
    "album": "Blue Room",
-   "duration_ms": 218000,
+   "duration_ms": 282000,
    "features": {
-    "bpm": 126.7,
-    "key_pc": 10,
+    "bpm": 120.8,
+    "key_pc": 7,
     "mode": 0,
-    "energy": 0.691,
-    "danceability": 0.776,
-    "loudness_db": -7.95
+    "energy": 0.705,
+    "danceability": 0.52,
+    "loudness_db": -6.29
    }
   },
   {
@@ -1056,14 +1056,14 @@
    "title": "Crimson Weather",
    "artist": "Kestrel Park",
    "album": "Afterglow",
-   "duration_ms": 191000,
+   "duration_ms": 280000,
    "features": {
-    "bpm": 100.4,
-    "key_pc": 8,
+    "bpm": 115.7,
+    "key_pc": 6,
     "mode": 1,
-    "energy": 0.508,
-    "danceability": 0.783,
-    "loudness_db": -8.42
+    "energy": 0.65,
+    "danceability": 0.668,
+    "loudness_db": -7.43
    }
   },
   {
@@ -1071,14 +1071,14 @@
    "title": "Quiet Weather",
    "artist": "Fen & Marrow",
    "album": "Signal",
-   "duration_ms": 272000,
+   "duration_ms": 262000,
    "features": {
-    "bpm": 84.6,
-    "key_pc": 0,
-    "mode": 1,
-    "energy": 0.639,
-    "danceability": 0.905,
-    "loudness_db": -8.45
+    "bpm": 88.0,
+    "key_pc": 5,
+    "mode": 0,
+    "energy": 0.684,
+    "danceability": 0.636,
+    "loudness_db": -6.33
    }
   },
   {
@@ -1086,14 +1086,14 @@
    "title": "Electric Weather",
    "artist": "Synthetic Sun",
    "album": "Provisional",
-   "duration_ms": 181000,
+   "duration_ms": 278000,
    "features": {
-    "bpm": 120.1,
-    "key_pc": 4,
-    "mode": 0,
-    "energy": 0.854,
-    "danceability": 0.609,
-    "loudness_db": -5.79
+    "bpm": 126.1,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.768,
+    "danceability": 0.915,
+    "loudness_db": -5.98
    }
   },
   {
@@ -1101,14 +1101,14 @@
    "title": "Marble Weather",
    "artist": "Novena",
    "album": "Common Weather",
-   "duration_ms": 198000,
+   "duration_ms": 150000,
    "features": {
-    "bpm": 116.6,
-    "key_pc": 10,
+    "bpm": 116.7,
+    "key_pc": 9,
     "mode": 1,
-    "energy": 0.341,
-    "danceability": 0.411,
-    "loudness_db": -10.92
+    "energy": 0.578,
+    "danceability": 0.355,
+    "loudness_db": -8.64
    }
   },
   {
@@ -1116,14 +1116,14 @@
    "title": "Wilder Weather",
    "artist": "Northern Wire",
    "album": "Tide",
-   "duration_ms": 176000,
+   "duration_ms": 314000,
    "features": {
-    "bpm": 87.8,
-    "key_pc": 0,
-    "mode": 0,
-    "energy": 0.49,
-    "danceability": 0.315,
-    "loudness_db": -9.4
+    "bpm": 92.6,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.678,
+    "danceability": 0.592,
+    "loudness_db": -6.54
    }
   },
   {
@@ -1131,14 +1131,14 @@
    "title": "Distant Weather",
    "artist": "The Slow Hands",
    "album": "Long Way Round",
-   "duration_ms": 151000,
+   "duration_ms": 176000,
    "features": {
-    "bpm": 123.3,
-    "key_pc": 1,
-    "mode": 0,
-    "energy": 0.797,
-    "danceability": 0.704,
-    "loudness_db": -5.69
+    "bpm": 127.1,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.793,
+    "danceability": 0.548,
+    "loudness_db": -6.09
    }
   },
   {
@@ -1146,14 +1146,14 @@
    "title": "Golden Weather",
    "artist": "Halcyon Bay",
    "album": "Nightshift",
-   "duration_ms": 232000,
+   "duration_ms": 229000,
    "features": {
-    "bpm": 97.1,
-    "key_pc": 9,
-    "mode": 1,
-    "energy": 0.302,
-    "danceability": 0.607,
-    "loudness_db": -11.11
+    "bpm": 102.8,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.3,
+    "danceability": 0.463,
+    "loudness_db": -11.33
    }
   },
   {
@@ -1161,14 +1161,14 @@
    "title": "Salt Weather",
    "artist": "Bright Meridian",
    "album": "Embers",
-   "duration_ms": 284000,
+   "duration_ms": 183000,
    "features": {
-    "bpm": 124.8,
-    "key_pc": 1,
-    "mode": 0,
-    "energy": 0.794,
-    "danceability": 0.332,
-    "loudness_db": -6.06
+    "bpm": 124.3,
+    "key_pc": 8,
+    "mode": 1,
+    "energy": 0.743,
+    "danceability": 0.364,
+    "loudness_db": -6.57
    }
   },
   {
@@ -1176,14 +1176,14 @@
    "title": "Iron Weather",
    "artist": "Auburn Sky",
    "album": "Neon Hours",
-   "duration_ms": 263000,
+   "duration_ms": 317000,
    "features": {
-    "bpm": 124.7,
-    "key_pc": 1,
-    "mode": 0,
-    "energy": 0.791,
-    "danceability": 0.842,
-    "loudness_db": -6.09
+    "bpm": 124.4,
+    "key_pc": 8,
+    "mode": 1,
+    "energy": 0.712,
+    "danceability": 0.844,
+    "loudness_db": -6.88
    }
   },
   {
@@ -1191,14 +1191,14 @@
    "title": "Feather Weather",
    "artist": "Vera Lux",
    "album": "Blue Room",
-   "duration_ms": 301000,
+   "duration_ms": 153000,
    "features": {
-    "bpm": 125.2,
-    "key_pc": 1,
-    "mode": 0,
-    "energy": 0.789,
-    "danceability": 0.583,
-    "loudness_db": -6.11
+    "bpm": 124.4,
+    "key_pc": 8,
+    "mode": 1,
+    "energy": 0.718,
+    "danceability": 0.561,
+    "loudness_db": -6.82
    }
   },
   {
@@ -1206,14 +1206,14 @@
    "title": "Cobalt Weather",
    "artist": "Low Tide Club",
    "album": "Afterglow",
-   "duration_ms": 317000,
+   "duration_ms": 239000,
    "features": {
-    "bpm": 170.1,
-    "key_pc": 8,
-    "mode": 1,
-    "energy": 0.816,
-    "danceability": 0.513,
-    "loudness_db": -6.03
+    "bpm": 121.5,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.365,
+    "danceability": 0.331,
+    "loudness_db": -10.34
    }
   },
   {
@@ -1221,14 +1221,14 @@
    "title": "Ash Weather",
    "artist": "Ines Vermeer",
    "album": "Signal",
-   "duration_ms": 305000,
+   "duration_ms": 199000,
    "features": {
-    "bpm": 173.3,
-    "key_pc": 8,
+    "bpm": 87.0,
+    "key_pc": 11,
     "mode": 0,
-    "energy": 0.41,
-    "danceability": 0.525,
-    "loudness_db": -7.47
+    "energy": 0.565,
+    "danceability": 0.564,
+    "loudness_db": -4.78
    }
   },
   {
@@ -1236,14 +1236,14 @@
    "title": "Lantern Weather",
    "artist": "Mirrorline",
    "album": "Provisional",
-   "duration_ms": 212000,
+   "duration_ms": 284000,
    "features": {
-    "bpm": 175.2,
-    "key_pc": 9,
-    "mode": 0,
-    "energy": 0.469,
-    "danceability": 0.758,
-    "loudness_db": -6.59
+    "bpm": 87.9,
+    "key_pc": 10,
+    "mode": 1,
+    "energy": 0.512,
+    "danceability": 0.632,
+    "loudness_db": -11.78
    }
   },
   {
@@ -1251,14 +1251,14 @@
    "title": "Riverine Weather",
    "artist": "Ghost Signal",
    "album": "Common Weather",
-   "duration_ms": 273000,
+   "duration_ms": 249000,
    "features": {
-    "bpm": 85.9,
-    "key_pc": 0,
-    "mode": 1,
-    "energy": 0.697,
-    "danceability": 0.348,
-    "loudness_db": -7.2
+    "bpm": 125.2,
+    "key_pc": 5,
+    "mode": 0,
+    "energy": 0.833,
+    "danceability": 0.448,
+    "loudness_db": -2.42
    }
   },
   {
@@ -1266,14 +1266,14 @@
    "title": "Slate Weather",
    "artist": "Ardent Machines",
    "album": "Tide",
-   "duration_ms": 201000,
+   "duration_ms": 290000,
    "features": {
-    "bpm": 174.0,
-    "key_pc": 9,
+    "bpm": 172.1,
+    "key_pc": 4,
     "mode": 1,
-    "energy": 0.867,
-    "danceability": 0.521,
-    "loudness_db": -7.36
+    "energy": 0.949,
+    "danceability": 0.573,
+    "loudness_db": -5.7
    }
   },
   {
@@ -1281,14 +1281,14 @@
    "title": "Opal Weather",
    "artist": "Cassette Bloom",
    "album": "Long Way Round",
-   "duration_ms": 202000,
+   "duration_ms": 170000,
    "features": {
-    "bpm": 127.2,
-    "key_pc": 9,
-    "mode": 0,
-    "energy": 0.543,
-    "danceability": 0.412,
-    "loudness_db": -12.44
+    "bpm": 176.1,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.589,
+    "danceability": 0.355,
+    "loudness_db": -6.65
    }
   },
   {
@@ -1296,14 +1296,14 @@
    "title": "Ember Weather",
    "artist": "Marta Quiet",
    "album": "Nightshift",
-   "duration_ms": 195000,
+   "duration_ms": 238000,
    "features": {
-    "bpm": 175.5,
-    "key_pc": 3,
+    "bpm": 169.1,
+    "key_pc": 9,
     "mode": 0,
-    "energy": 0.497,
-    "danceability": 0.301,
-    "loudness_db": -7.65
+    "energy": 0.542,
+    "danceability": 0.738,
+    "loudness_db": -8.29
    }
   },
   {
@@ -1311,14 +1311,14 @@
    "title": "Tidal Weather",
    "artist": "Rue Atlas",
    "album": "Embers",
-   "duration_ms": 251000,
+   "duration_ms": 239000,
    "features": {
-    "bpm": 172.7,
-    "key_pc": 7,
-    "mode": 1,
-    "energy": 0.31,
-    "danceability": 0.354,
-    "loudness_db": -12.84
+    "bpm": 178.4,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.257,
+    "danceability": 0.73,
+    "loudness_db": -10.29
    }
   },
   {
@@ -1326,14 +1326,14 @@
    "title": "Chrome Weather",
    "artist": "Delta Sparrow",
    "album": "Neon Hours",
-   "duration_ms": 216000,
+   "duration_ms": 305000,
    "features": {
-    "bpm": 124.6,
-    "key_pc": 3,
-    "mode": 0,
-    "energy": 0.758,
-    "danceability": 0.304,
-    "loudness_db": -6.42
+    "bpm": 123.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.619,
+    "danceability": 0.548,
+    "loudness_db": -7.81
    }
   },
   {
@@ -1341,14 +1341,14 @@
    "title": "Linen Weather",
    "artist": "Petrichor Kids",
    "album": "Blue Room",
-   "duration_ms": 307000,
+   "duration_ms": 168000,
    "features": {
-    "bpm": 124.8,
-    "key_pc": 3,
-    "mode": 0,
-    "energy": 0.78,
-    "danceability": 0.344,
-    "loudness_db": -6.2
+    "bpm": 123.2,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.632,
+    "danceability": 0.763,
+    "loudness_db": -7.68
    }
   },
   {
@@ -1356,14 +1356,14 @@
    "title": "Neon Machine",
    "artist": "The Paper Radios",
    "album": "Afterglow",
-   "duration_ms": 182000,
+   "duration_ms": 183000,
    "features": {
-    "bpm": 124.6,
-    "key_pc": 3,
-    "mode": 0,
-    "energy": 0.768,
-    "danceability": 0.734,
-    "loudness_db": -6.32
+    "bpm": 123.2,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.643,
+    "danceability": 0.576,
+    "loudness_db": -7.57
    }
   },
   {
@@ -1371,14 +1371,14 @@
    "title": "Paper Machine",
    "artist": "Sable Fox",
    "album": "Signal",
-   "duration_ms": 243000,
+   "duration_ms": 317000,
    "features": {
-    "bpm": 124.9,
-    "key_pc": 3,
-    "mode": 0,
-    "energy": 0.752,
-    "danceability": 0.807,
-    "loudness_db": -6.48
+    "bpm": 123.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.648,
+    "danceability": 0.912,
+    "loudness_db": -7.52
    }
   },
   {
@@ -1386,14 +1386,14 @@
    "title": "Velvet Machine",
    "artist": "Orla Fields",
    "album": "Provisional",
-   "duration_ms": 267000,
+   "duration_ms": 204000,
    "features": {
-    "bpm": 125.4,
-    "key_pc": 3,
-    "mode": 0,
-    "energy": 0.83,
-    "danceability": 0.645,
-    "loudness_db": -7.59
+    "bpm": 172.3,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.837,
+    "danceability": 0.54,
+    "loudness_db": -3.87
    }
   },
   {
@@ -1401,14 +1401,14 @@
    "title": "Static Machine",
    "artist": "Cyan Drift",
    "album": "Common Weather",
-   "duration_ms": 282000,
+   "duration_ms": 245000,
    "features": {
-    "bpm": 124.3,
-    "key_pc": 4,
-    "mode": 0,
-    "energy": 0.745,
-    "danceability": 0.784,
-    "loudness_db": -5.26
+    "bpm": 88.5,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.65,
+    "danceability": 0.378,
+    "loudness_db": -4.08
    }
   },
   {
@@ -1416,14 +1416,14 @@
    "title": "Copper Machine",
    "artist": "Kestrel Park",
    "album": "Tide",
-   "duration_ms": 288000,
+   "duration_ms": 218000,
    "features": {
-    "bpm": 89.5,
-    "key_pc": 8,
+    "bpm": 170.1,
+    "key_pc": 3,
     "mode": 1,
-    "energy": 0.629,
-    "danceability": 0.757,
-    "loudness_db": -8.19
+    "energy": 0.195,
+    "danceability": 0.616,
+    "loudness_db": -10.48
    }
   },
   {
@@ -1431,14 +1431,14 @@
    "title": "Midnight Machine",
    "artist": "Fen & Marrow",
    "album": "Long Way Round",
-   "duration_ms": 286000,
+   "duration_ms": 166000,
    "features": {
-    "bpm": 175.0,
+    "bpm": 89.9,
     "key_pc": 2,
-    "mode": 0,
-    "energy": 0.161,
-    "danceability": 0.618,
-    "loudness_db": -15.75
+    "mode": 1,
+    "energy": 0.713,
+    "danceability": 0.894,
+    "loudness_db": -10.41
    }
   },
   {
@@ -1446,14 +1446,14 @@
    "title": "Glass Machine",
    "artist": "Synthetic Sun",
    "album": "Nightshift",
-   "duration_ms": 239000,
+   "duration_ms": 201000,
    "features": {
-    "bpm": 124.9,
-    "key_pc": 9,
-    "mode": 1,
-    "energy": 0.618,
-    "danceability": 0.535,
-    "loudness_db": -6.4
+    "bpm": 177.6,
+    "key_pc": 2,
+    "mode": 0,
+    "energy": 0.415,
+    "danceability": 0.555,
+    "loudness_db": -13.26
    }
   },
   {
@@ -1461,14 +1461,14 @@
    "title": "Amber Machine",
    "artist": "Novena",
    "album": "Embers",
-   "duration_ms": 150000,
+   "duration_ms": 243000,
    "features": {
-    "bpm": 127.4,
+    "bpm": 171.9,
     "key_pc": 5,
     "mode": 1,
-    "energy": 0.253,
-    "danceability": 0.715,
-    "loudness_db": -8.51
+    "energy": 0.587,
+    "danceability": 0.817,
+    "loudness_db": -5.08
    }
   },
   {
@@ -1476,14 +1476,14 @@
    "title": "Hollow Machine",
    "artist": "Northern Wire",
    "album": "Neon Hours",
-   "duration_ms": 317000,
+   "duration_ms": 203000,
    "features": {
-    "bpm": 120.6,
-    "key_pc": 4,
-    "mode": 1,
-    "energy": 0.377,
-    "danceability": 0.653,
-    "loudness_db": -11.99
+    "bpm": 86.9,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.407,
+    "danceability": 0.611,
+    "loudness_db": -11.14
    }
   },
   {
@@ -1491,14 +1491,14 @@
    "title": "Silver Machine",
    "artist": "The Slow Hands",
    "album": "Blue Room",
-   "duration_ms": 239000,
+   "duration_ms": 203000,
    "features": {
-    "bpm": 123.1,
-    "key_pc": 9,
+    "bpm": 85.9,
+    "key_pc": 7,
     "mode": 0,
-    "energy": 0.386,
-    "danceability": 0.313,
-    "loudness_db": -13.5
+    "energy": 0.495,
+    "danceability": 0.938,
+    "loudness_db": -7.47
    }
   },
   {
@@ -1506,14 +1506,14 @@
    "title": "Crimson Machine",
    "artist": "Halcyon Bay",
    "album": "Afterglow",
-   "duration_ms": 269000,
+   "duration_ms": 244000,
    "features": {
-    "bpm": 121.7,
-    "key_pc": 11,
-    "mode": 0,
-    "energy": 0.785,
-    "danceability": 0.763,
-    "loudness_db": -6.81
+    "bpm": 125.3,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.634,
+    "danceability": 0.598,
+    "loudness_db": -7.44
    }
   },
   {
@@ -1521,14 +1521,14 @@
    "title": "Quiet Machine",
    "artist": "Bright Meridian",
    "album": "Signal",
-   "duration_ms": 315000,
+   "duration_ms": 195000,
    "features": {
-    "bpm": 96.7,
-    "key_pc": 8,
-    "mode": 0,
-    "energy": 0.515,
-    "danceability": 0.853,
-    "loudness_db": -8.88
+    "bpm": 99.9,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.383,
+    "danceability": 0.87,
+    "loudness_db": -10.28
    }
   },
   {
@@ -1536,14 +1536,14 @@
    "title": "Electric Machine",
    "artist": "Auburn Sky",
    "album": "Provisional",
-   "duration_ms": 241000,
+   "duration_ms": 220000,
    "features": {
-    "bpm": 120.6,
-    "key_pc": 4,
+    "bpm": 121.5,
+    "key_pc": 9,
     "mode": 0,
-    "energy": 0.701,
-    "danceability": 0.776,
-    "loudness_db": -7.59
+    "energy": 0.611,
+    "danceability": 0.55,
+    "loudness_db": -7.8
    }
   },
   {
@@ -1551,14 +1551,14 @@
    "title": "Marble Machine",
    "artist": "Vera Lux",
    "album": "Common Weather",
-   "duration_ms": 278000,
+   "duration_ms": 270000,
    "features": {
-    "bpm": 103.3,
+    "bpm": 96.1,
     "key_pc": 9,
-    "mode": 1,
-    "energy": 0.373,
-    "danceability": 0.536,
-    "loudness_db": -9.36
+    "mode": 0,
+    "energy": 0.335,
+    "danceability": 0.83,
+    "loudness_db": -10.49
    }
   },
   {
@@ -1566,14 +1566,14 @@
    "title": "Wilder Machine",
    "artist": "Low Tide Club",
    "album": "Tide",
-   "duration_ms": 218000,
+   "duration_ms": 303000,
    "features": {
-    "bpm": 122.0,
-    "key_pc": 11,
+    "bpm": 125.5,
+    "key_pc": 1,
     "mode": 1,
-    "energy": 0.793,
-    "danceability": 0.479,
-    "loudness_db": -5.29
+    "energy": 0.692,
+    "danceability": 0.867,
+    "loudness_db": -6.21
    }
   },
   {
@@ -1581,14 +1581,14 @@
    "title": "Distant Machine",
    "artist": "Ines Vermeer",
    "album": "Long Way Round",
-   "duration_ms": 244000,
+   "duration_ms": 243000,
    "features": {
-    "bpm": 115.5,
-    "key_pc": 9,
+    "bpm": 102.2,
+    "key_pc": 5,
     "mode": 0,
-    "energy": 0.481,
-    "danceability": 0.558,
-    "loudness_db": -9.33
+    "energy": 0.626,
+    "danceability": 0.416,
+    "loudness_db": -7.09
    }
   },
   {
@@ -1596,14 +1596,14 @@
    "title": "Golden Machine",
    "artist": "Mirrorline",
    "album": "Nightshift",
-   "duration_ms": 300000,
+   "duration_ms": 227000,
    "features": {
-    "bpm": 124.5,
-    "key_pc": 4,
-    "mode": 0,
-    "energy": 0.655,
-    "danceability": 0.725,
-    "loudness_db": -7.8
+    "bpm": 120.9,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.826,
+    "danceability": 0.449,
+    "loudness_db": -6.08
    }
   },
   {
@@ -1611,14 +1611,14 @@
    "title": "Salt Machine",
    "artist": "Ghost Signal",
    "album": "Embers",
-   "duration_ms": 286000,
+   "duration_ms": 283000,
    "features": {
-    "bpm": 102.7,
-    "key_pc": 0,
-    "mode": 1,
-    "energy": 0.406,
-    "danceability": 0.361,
-    "loudness_db": -9.13
+    "bpm": 102.2,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.455,
+    "danceability": 0.315,
+    "loudness_db": -9.92
    }
   },
   {
@@ -1626,14 +1626,14 @@
    "title": "Iron Machine",
    "artist": "Ardent Machines",
    "album": "Neon Hours",
-   "duration_ms": 237000,
+   "duration_ms": 182000,
    "features": {
-    "bpm": 123.3,
-    "key_pc": 7,
+    "bpm": 122.2,
+    "key_pc": 1,
     "mode": 1,
-    "energy": 0.652,
-    "danceability": 0.418,
-    "loudness_db": -6.67
+    "energy": 0.861,
+    "danceability": 0.564,
+    "loudness_db": -5.83
    }
   },
   {
@@ -1641,14 +1641,14 @@
    "title": "Feather Machine",
    "artist": "Cassette Bloom",
    "album": "Blue Room",
-   "duration_ms": 192000,
+   "duration_ms": 290000,
    "features": {
-    "bpm": 108.4,
-    "key_pc": 10,
+    "bpm": 117.4,
+    "key_pc": 7,
     "mode": 1,
-    "energy": 0.314,
-    "danceability": 0.648,
-    "loudness_db": -11.06
+    "energy": 0.447,
+    "danceability": 0.66,
+    "loudness_db": -9.54
    }
   },
   {
@@ -1656,14 +1656,14 @@
    "title": "Cobalt Machine",
    "artist": "Marta Quiet",
    "album": "Afterglow",
-   "duration_ms": 304000,
+   "duration_ms": 179000,
    "features": {
-    "bpm": 126.3,
-    "key_pc": 7,
+    "bpm": 120.7,
+    "key_pc": 8,
     "mode": 1,
-    "energy": 0.844,
-    "danceability": 0.638,
-    "loudness_db": -5.11
+    "energy": 0.87,
+    "danceability": 0.683,
+    "loudness_db": -4.78
    }
   },
   {
@@ -1671,14 +1671,14 @@
    "title": "Ash Machine",
    "artist": "Rue Atlas",
    "album": "Signal",
-   "duration_ms": 283000,
+   "duration_ms": 210000,
    "features": {
-    "bpm": 106.0,
-    "key_pc": 4,
-    "mode": 1,
-    "energy": 0.64,
-    "danceability": 0.377,
-    "loudness_db": -8.05
+    "bpm": 104.1,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.642,
+    "danceability": 0.785,
+    "loudness_db": -6.84
    }
   },
   {
@@ -1686,14 +1686,14 @@
    "title": "Lantern Machine",
    "artist": "Delta Sparrow",
    "album": "Provisional",
-   "duration_ms": 171000,
+   "duration_ms": 277000,
    "features": {
-    "bpm": 123.0,
-    "key_pc": 4,
-    "mode": 0,
-    "energy": 0.861,
-    "danceability": 0.943,
-    "loudness_db": -5.51
+    "bpm": 126.2,
+    "key_pc": 8,
+    "mode": 1,
+    "energy": 0.67,
+    "danceability": 0.48,
+    "loudness_db": -7.51
    }
   },
   {

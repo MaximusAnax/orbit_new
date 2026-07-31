@@ -28,6 +28,7 @@ Two implementation notes for reviewers and later stages:
 from __future__ import annotations
 
 import itertools
+import math
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 from fractions import Fraction
@@ -64,13 +65,9 @@ from .value import (
 )
 from .world import ActiveWorld
 
-
-#: Enumerate every valid sent amount up to ``s_cover`` while the range is at most
-#: this many increments (see :meth:`FundingSearch._lattice`).
-MAX_DENSE_LATTICE = 24
-
-#: How many increments below ``s_cover`` the sparse fallback still samples.
-SHAVE_WINDOW = 16
+#: Cap on the lcm-alignment window (in increments) explored below each cover or
+#: tier anchor (see :meth:`FundingSearch._lattice`).
+MAX_ALIGN_WINDOW = 12
 
 
 class SearchBudgetExceeded(RuntimeError):
@@ -282,6 +279,7 @@ class FundingSearch:
         self._slack = len(world.programs)
         self._inbound_cache: dict[tuple[str, frozenset[str]], tuple[TransferEdge, ...]] = {}
         self._rate_cache: dict[str, Fraction] = {}
+        self._window_cache: dict[str, dict[str, int]] = {}
         self._solution_cache: dict[tuple, FundingSolution | None] = {}
         # per-solve state
         self.balances: dict[str, int] = {}
@@ -341,33 +339,67 @@ class FundingSearch:
                 total += delivered_points(edge, top)
         return total
 
+    def _delivered_increment(self, edge: TransferEdge) -> int:
+        """Points delivered per increment sent — exact by FR-1 invariant 2."""
+        return edge.increment_from * edge.ratio_to // edge.ratio_from
+
+    def _align_windows(self, program_id: str) -> dict[str, int]:
+        """Per-edge alignment window (in increments) for edges into ``program_id``.
+
+        When every inbound edge delivers in multiples of the same quantum, the
+        FR-7c exchange argument is airtight and no window is needed.  When the
+        delivered increments differ (a 2,000-delivering bank edge next to a
+        1,000-delivering 3:1 hub edge), an optimal split can park one edge a few
+        increments away from an anchor — below its residual cover, or just
+        *above* a tier boundary (63,000 = 60,000 + one 3,000 increment) — so the
+        other edge lands on the residual exactly; the blocked-trade analysis
+        bounds that offset by ``lcm(delivered increments) /
+        delivered_increment(edge)`` increments, capped at ``MAX_ALIGN_WINDOW``.
+        """
+        cached = self._window_cache.get(program_id)
+        if cached is not None:
+            return cached
+        edges = self.active.edges_into(program_id)
+        quanta = sorted({self._delivered_increment(e) for e in edges})
+        windows: dict[str, int] = {}
+        if len(quanta) <= 1:
+            windows = {e.id: 0 for e in edges}
+        else:
+            lcm_all = quanta[0]
+            for quantum in quanta[1:]:
+                lcm_all = math.lcm(lcm_all, quantum)
+            for e in edges:
+                windows[e.id] = min(lcm_all // self._delivered_increment(e), MAX_ALIGN_WINDOW)
+        self._window_cache[program_id] = windows
+        return windows
+
     def _lattice(
-        self, edge: TransferEdge, residual: int, max_extra: int, already_sent: int
+        self,
+        edge: TransferEdge,
+        residual: int,
+        max_extra: int,
+        already_sent: int,
+        window: int,
+        *,
+        cover_only: bool = False,
     ) -> list[int]:
         """FR-7c candidate *total* sent amounts over ``edge`` (merged, FR-7b).
 
-        FR-7c publishes ``{s_cover} u {tier boundaries} u {s_max}``, justified by
-        an exchange argument that assumes one increment on one edge can be traded
-        for one increment on another.  That assumption fails when two edges into
-        the same program have *different* increments or ratios: with a
-        2,000-increment 1:1 bank edge and a 3,000-increment 3:1 hub edge, the
-        optimal split can be (94,000 bank + 3,000 hub) — no amount there is a
-        cover, a tier boundary or an ``s_max``, and sending 96,000 on the bank
-        edge alone over-delivers by 1,000 miles and is measurably worse.  The
-        eval oracle finds exactly those splits (M1/M7), so the lattice is:
+        The published lattice is ``{s_cover} u {tier boundaries} u {s_max}``.
+        Two documented refinements keep it exact without densifying it:
 
-        * every valid amount up to ``s_cover`` when that range is small enough
-          to enumerate (``MAX_DENSE_LATTICE``) — complete by construction, since
-          FR-1 invariant 4 rules out anything above ``s_cover``;
-        * otherwise the published lattice plus ``min_from`` (an edge making the
-          smallest possible alignment contribution) and the ``SHAVE_WINDOW``
-          amounts just below ``s_cover`` (an edge giving up its last increments
-          so another edge lands on the residual exactly) — the two shapes that
-          the exchange argument misses.
+        * ``min_from`` is always an anchor — the smallest contribution an edge
+          can make while another edge covers the rest;
+        * ``window`` extra amounts *around* every anchor (cover, each tier
+          boundary, the minimum — see :meth:`_align_windows`): the splits the
+          FR-7c exchange argument misses when inbound edges deliver in
+          different quanta sit within one lcm block of an anchor, on either
+          side of it.
 
-        The dense form covers every scenario the eval fixtures and the shipped
-        dataset produce; the sparse fallback keeps a pathological instance inside
-        the expansion budget instead of raising.
+        One tier boundary past the cover is kept as insurance: an exhaustive
+        oracle evaluates it, and it can only tie or lose the FR-9 tie-break.
+        Other amounts above the cover are excluded by FR-1 invariant 4 (extra
+        sending is weakly value-losing and weakly fee-increasing).
         """
         inc = edge.increment_from
         ceiling = floor_to_multiple(already_sent + max_extra, inc)
@@ -389,39 +421,31 @@ class FundingSearch:
                     lo = mid + 1
             cover = lo * inc
 
-        limit_amount = cover if cover is not None else hi_k * inc
-        span = (limit_amount - lowest) // inc + 1
-        if span <= MAX_DENSE_LATTICE:
-            candidates: set[int] = set(range(lowest, limit_amount + 1, inc))
-        else:
-            candidates = {limit_amount, hi_k * inc}
-            anchors = [lowest, limit_amount]
-            if edge.bonus_per_from:
-                tier = edge.bonus_per_from
-                k = max(1, lowest // tier)
-                while k * tier <= limit_amount:
-                    anchors.append(k * tier)
-                    k += 1
-            for anchor in anchors:
-                for step in range(-SHAVE_WINDOW, SHAVE_WINDOW + 1):
-                    amount = anchor + step * inc
-                    if lowest <= amount <= limit_amount:
-                        candidates.add(amount)
+        limit = cover if cover is not None else ceiling
+        anchors: list[int] = [limit] if cover_only else [limit, lowest]
+        insurance: int | None = None
         if edge.bonus_per_from:
             tier = edge.bonus_per_from
-            limit = cover if cover is not None else ceiling
             k = max(1, lowest // tier)
             while k * tier <= ceiling:
                 amount = k * tier
                 if amount >= lowest:
-                    candidates.add(amount)
                     if amount > limit:
-                        # One boundary past the residual is kept as insurance: an
-                        # exhaustive oracle would evaluate it, and it can only tie
-                        # or lose the FR-9 tie-break against s_cover.
+                        # One boundary past the residual, then stop (see above).
+                        insurance = amount
                         break
+                    if not cover_only:
+                        anchors.append(amount)
                 k += 1
-        return sorted(candidates)
+        candidates: set[int] = set(anchors)
+        if insurance is not None:
+            candidates.add(insurance)
+        for anchor in anchors:
+            for step in range(-window, window + 1):
+                amount = anchor + step * inc
+                if lowest <= amount <= limit:
+                    candidates.add(amount)
+        return sorted(c for c in candidates if lowest <= c <= ceiling)
 
     # -- solving -----------------------------------------------------------
 
@@ -497,9 +521,15 @@ class FundingSearch:
         if hops <= 0:
             return
         candidates = self._inbound(program_id, path)
-        if idx >= len(candidates):
+        # The edge list is walked twice: a fixed single pass makes some optima
+        # unreachable (an edge can only "cover the residual left by the others"
+        # if it is decided *after* them, and no static order is right for every
+        # fee/tier configuration).  On the second pass an edge already used is
+        # topped up via the merged-amount lattice (``already_sent``), so FR-7b's
+        # one-step-per-edge invariant still holds.
+        if idx >= 2 * len(candidates):
             return
-        edge = candidates[idx]
+        edge = candidates[idx % len(candidates)]
         advanced = (program_id, hops, path, idx + 1)
 
         # (a) use it, for every candidate merged amount.  Largest first, so the
@@ -519,8 +549,19 @@ class FundingSearch:
         old_fee = transfer_fee_cents(edge, already)
         source_mcpp = self.mcpp[source]
         target_mcpp = self.mcpp[program_id]
+        window = self._align_windows(program_id).get(edge.id, 0)
+        lattice = self._lattice(
+            edge,
+            residual,
+            max_extra,
+            already,
+            window,
+            # Second pass: this edge already had its full anchor set offered; it
+            # comes around again only to *cover* whatever the later edges left.
+            cover_only=idx >= len(candidates),
+        )
 
-        for total_sent in reversed(self._lattice(edge, residual, max_extra, already)):
+        for total_sent in reversed(lattice):
             extra = total_sent - already
             gained = delivered_points(edge, total_sent) - old_delivered
             fee_delta = transfer_fee_cents(edge, total_sent) - old_fee
@@ -553,7 +594,16 @@ class FundingSearch:
         self._rec((advanced, *rest), alloc_milli)
 
     def _lower_bound(self, reqs: tuple) -> int | None:
-        """Admissible lower bound in milli-cents, or None when reqs are unsatisfiable."""
+        """Admissible lower bound in milli-cents, or None when reqs are unsatisfiable.
+
+        Every point delivered into a program loses at least the minimum
+        edge-loss rate over its still-candidate inbound edges (fees and hop
+        chains only add loss), so pricing each residual at that rate never
+        over-estimates.  Capacity-aware refinements were considered and
+        rejected: a source balance can legitimately rise mid-plan (cover
+        overshoot routed onward), so capacity caps can over-estimate and prune
+        a true optimum.
+        """
         total = 0
         for program_id, hops, path, idx in reqs:
             residual = -self.balances.get(program_id, 0)
@@ -561,8 +611,8 @@ class FundingSearch:
                 continue
             if hops <= 0:
                 return None
-            candidates = self._inbound(program_id, path)[idx:]
-            if not candidates:
+            candidates = self._inbound(program_id, path)
+            if not candidates or idx >= 2 * len(candidates):
                 return None
             rate = min(self._edge_loss_rate(edge) for edge in candidates)
             total += int(rate * residual)

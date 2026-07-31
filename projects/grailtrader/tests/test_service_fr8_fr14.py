@@ -112,6 +112,31 @@ def test_fr5_pending_events_do_not_move_advice(
     assert confirmed.expected_return < baseline.expected_return
 
 
+def test_fr5_event_feed_rows_with_unknown_brand_or_era_are_skipped_and_counted(
+    mini_feed: tuple[Path, Path], tmp_path: Path
+) -> None:
+    """FR-2's rule applied to events: unresolvable rows are skipped and counted,
+    never stored (a stored unknown-brand event crashes ``events show``)."""
+    import json
+
+    api = _service()
+    good = json.loads((mini_feed[1]).read_text().splitlines()[0])
+    bad_brand = dict(
+        good, brand_id="not-a-brand", era_id="not-a-brand:ghost", occurred_on="2025-02-03"
+    )
+    bad_era = dict(good, era_id="helmut-lang:ghost", occurred_on="2025-03-03")  # unknown era
+    feed = tmp_path / "events_bad.jsonl"
+    feed.write_text("\n".join(json.dumps(row) for row in (good, bad_brand, bad_era)) + "\n")
+
+    report = api.ingest_event_feed(path=feed)
+    assert report.created == 1
+    assert report.skipped_unresolved == 2
+    assert len(report.unresolved_refs) == 2
+    stored = api.list_events()
+    assert len(stored) == 1
+    assert stored[0].brand_id == "helmut-lang"
+
+
 def test_pipeline_order_is_enforced(mini_feed: tuple[Path, Path]) -> None:
     api = _service()
     with pytest.raises(PreconditionError, match="listings load"):

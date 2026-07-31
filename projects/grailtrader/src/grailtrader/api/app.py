@@ -183,6 +183,8 @@ def create_app() -> FastAPI:
             created=report.created,
             corroborated=report.corroborated,
             unchanged=report.unchanged,
+            skipped_unresolved=report.skipped_unresolved,
+            unresolved_refs=list(report.unresolved_refs),
             by_status={key.value: value for key, value in report.by_status.items()},
         )
 

@@ -352,8 +352,12 @@ def events_ingest(
     by_status = ", ".join(f"{key.value}={value}" for key, value in sorted(report.by_status.items()))
     typer.echo(
         f"created {report.created} · corroborated {report.corroborated} · "
-        f"unchanged {report.unchanged} · totals: {by_status}"
+        f"unchanged {report.unchanged} · unresolved {report.skipped_unresolved} · "
+        f"totals: {by_status}"
     )
+    if report.unresolved_refs:
+        sample = ", ".join(report.unresolved_refs[:5])
+        typer.echo(f"  unresolved sample: {sample}")
 
 
 @events_app.command("add")

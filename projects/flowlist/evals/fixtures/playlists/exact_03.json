@@ -29,6 +29,6 @@
   "kind": "plain",
   "search_seed": 1302211,
   "greedy_bound": 0.952976,
-  "depth_target": 0.96
+  "depth_target": 0.954
  }
 }

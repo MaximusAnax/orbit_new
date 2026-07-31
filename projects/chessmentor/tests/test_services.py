@@ -44,7 +44,7 @@ def _play_out(service: ChessMentorService, game_id: int, moves: list[str]) -> No
             return
         try:
             service.submit_move(game_id, move, at=NOW)
-        except Exception:  # noqa: BLE001 - a scripted move may have become illegal
+        except Exception:
             return
 
 

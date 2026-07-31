@@ -2,7 +2,7 @@
  "id": "exact_07",
  "suite": "exact",
  "n": 11,
- "seed": 1302504,
+ "seed": 1303382,
  "clusters": [],
  "anchors": {
   "start": null,
@@ -24,8 +24,8 @@
  "planted_order": null,
  "detail": {
   "kind": "trap",
-  "search_seed": 1302504,
-  "greedy_bound": 0.966567,
-  "depth_target": 0.96
+  "search_seed": 1303382,
+  "greedy_bound": 0.962311,
+  "depth_target": 0.963
  }
 }

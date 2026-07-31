@@ -42,8 +42,18 @@ CREATE TABLE IF NOT EXISTS aliases (
   prior          REAL NOT NULL DEFAULT 0.0 CHECK (prior BETWEEN 0.0 AND 0.3),
   generated      INTEGER NOT NULL DEFAULT 0,
   created_at     TEXT NOT NULL,
-  UNIQUE (company_ticker, text COLLATE NOCASE, kind)
+  UNIQUE (company_ticker, text)
 );
+-- Alias-surface uniqueness (FR-1, docs/REVIEW.md D20): name-like kinds are
+-- case-insensitive matchers, so their surfaces collide case-insensitively;
+-- symbol kinds (ticker_symbol/cashtag) are matched case-exactly by FR-5 and
+-- collide per-kind, letting ticker `META` coexist with short_name `Meta`.
+CREATE UNIQUE INDEX IF NOT EXISTS idx_alias_name_surface
+  ON aliases(company_ticker, text COLLATE NOCASE)
+  WHERE kind IN ('legal_name','short_name','nickname');
+CREATE UNIQUE INDEX IF NOT EXISTS idx_alias_symbol_surface
+  ON aliases(company_ticker, kind, text COLLATE NOCASE)
+  WHERE kind IN ('ticker_symbol','cashtag');
 
 CREATE TABLE IF NOT EXISTS feeds (
   id             INTEGER PRIMARY KEY,

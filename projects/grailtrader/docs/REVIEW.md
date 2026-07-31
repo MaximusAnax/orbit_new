@@ -117,3 +117,72 @@ strata sit at λ = 1.45–1.6 (inside EVALS' documented 0.8–1.6 band) — at t
 end of that band a single stratum's per-window sample falls to ~4.8 clean sales
 and its median error to 0.134, over the `M1a-sparse ≤ 0.12` bound that the same
 document derives for n ≈ 5–7.
+
+---
+
+## Hardening-stage findings
+
+A hardening pass ran after the build: every documented CLI command executed end
+to end on real inputs, a fake-work audit over `src/` and `evals/`, a
+falsifiability experiment per hard-part gate family, a determinism re-run, and
+the FR coverage table (docs/FR_COVERAGE.md). **No gate threshold was changed.**
+Baseline state: 294 tests + 29/29 gates green before the pass; 295 + 29/29
+after.
+
+### Defect found and fixed
+
+| # | Defect | Fix |
+|---|---|---|
+| H1 | **Event feeds skipped gazetteer validation.** `events ingest` stored events whose `brand_id`/`era_id` the gazetteer does not know (DATA_MODEL declares both as FKs), so `events show` on a stored `designer_appointment` with an unknown brand crashed with `unknown brand`, and unknown-brand events sat in `events list` as if actionable. Listings already followed FR-2's "unresolvable rows are skipped and counted, never guessed"; events did not. Found by running the documented CLI against `evals/fixtures/scenario_a/events.jsonl` (fictional brands): 44 bogus rows were accepted. | `GrailTraderService.ingest_event_feed` now resolves each incoming event against the gazetteer and skips-and-counts failures; `EventIngestReport` (+ API response, CLI output) gains `skipped_unresolved` / `unresolved_refs`. Manual `events add` already validated with suggestions and is unchanged. Regression test: `test_service_fr8_fr14.py::test_fr5_event_feed_rows_with_unknown_brand_or_era_are_skipped_and_counted`. |
+
+### Falsifiability experiments (mutate → measure → revert)
+
+Each mutation was applied to the real engine, the full eval suite re-run, and
+the mutation reverted; the final suite was confirmed back at 29/29 with the
+committed values. "Healthy" numbers are the committed scorecard.
+
+| Exp | Mutation (engine logic degraded) | Metric | Healthy | Mutated | Gate | Verdict |
+|---|---|---|---|---|---|---|
+| E1 | FR-3 fence disabled (`apply_fence` keeps everything) | M1b-recall | 0.9942 | **0.0000** | ≥ 0.90 | FAILS — gate discriminates |
+| E2 | FR-4 condition adjustment removed (raw sold prices into the window median) | M1a-dense / M1a-sparse | 0.0431 / 0.0717 | **0.0691 / 0.1532** | ≤ 0.06 / ≤ 0.12 | FAILS (also drags M1b-recall to 0.857 and M4a over) — the density-split tail gates catch what the global median cannot: M1a itself only moved 0.0269 → 0.0412, still under its 0.05 gate, exactly the blindness finding E2 predicted |
+| E3 | FR-8 degraded to trivial momentum-chasing (`r̂` = observed-minus-baseline instead of modeled-path-minus-observed) | M2a / M2b | 0.8344 / 0.1078 | **0.3261 / −0.0324** | ≥ 0.70 / ≥ 0.08 | FAILS, plus M0d-sell 94→7, M3a/M3b/M3c, M6b/M6c — 9 gates down |
+| E4 | FR-8 confidence stamped constant 0.85 | M0c / M6c | 50 / 0.169 | **0 / −0.018** | ≥ 25 / ≥ 0 | FAILS via the denominator rule (empty lo/mid buckets) and the mismatch-scenario anti-overclaim |
+
+**Honest note on E4.** EVALS' baseline column for M3b says a 0.85-stamper scores
+≈ −0.25; on scenario A it actually scores **+0.05**, because the advisor's
+realized hit rates there (0.80–0.90) sit within 0.10 of 0.85. M3b alone is
+therefore *not* what kills a constant-confidence system on the matched scenario —
+the layered design is: M0c fails it structurally (a constant produces empty
+buckets, and EVALS' denominator rule makes an empty bucket a FAIL), and M6c
+fails it on the mismatch scenario where realized skill (0.74) cannot cover the
+claim. The −0.25 figure in the EVALS table is right for a system with baseline-
+level skill stamping 0.85, not for this advisor. Recorded here rather than
+patched into EVALS: the gate family demonstrably fails the degenerate case,
+which is what the baseline column exists to argue.
+
+### Other checks
+
+- **CLI end-to-end:** every command in the FR-13 sketch ran against the
+  committed `examples/` sample (real gazetteer) — init, listings load/list/show,
+  index build/show/--excluded/strata, events ingest/add/list/show/review,
+  brands list/show, portfolio add/edit/remove/list/show/value (incl. a
+  `watching` garment and a rejected near-miss brand with suggestion), advise,
+  advice list/show, backtest run/placebo/show/list. The placebo CLI run on the
+  demo world lands at hit 0.500 / n 24 vs the real run's 1.000 / n 5 — the
+  leak-honesty feature works outside the eval harness too.
+- **Determinism:** `evals/run.py` twice → byte-identical scorecards (modulo the
+  elapsed-seconds line); `--regen-check` confirms the committed fixtures match
+  `generate_scenario.py` byte for byte.
+- **Baselines:** θ-momentum (0.493) and event-naive (0.581) are computed live
+  inside every backtest run (`engine/backtest.py::_grade_baselines`); the naive
+  index mean (0.089) is computed live in `evals/metrics.py::naive_index_error`;
+  all are band-asserted by M0f, and the system beats them (M1a 0.027, M2a 0.834).
+- **Known cosmetic limit, not fixed:** the chosen-horizon mix on scenario A is
+  {H*=4: 589, H*=12: 2} — argmax-z essentially always picks the shortest
+  horizon, because z_H ∝ 1/√H while the modeled move shrinks with decay, so the
+  4-week horizon dominates whenever any transient is alive. Sell-into-decay
+  (M0d-sell = 94) is reached at H* = 4 during the decay phase, not at H* = 26 as
+  EVALS' prose sketched. The spread-by-horizon diagnostic prints the mix, M2a
+  grades each advice at its own horizon, and no gate depends on long-horizon
+  selection, so this is visible-by-design rather than hidden — but the
+  {12, 26} horizons are close to dead weight on these fixtures.

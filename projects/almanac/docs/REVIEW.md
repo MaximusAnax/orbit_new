@@ -252,3 +252,100 @@ scoping-phase estimate that its own arithmetic contradicts.
   `test_fr3_held_split_quotes_do_not_appear_in_the_starter_pack` now prevents a
   recurrence.
 - `data/scheduler.json`: unchanged. `params_version` stays `sched-1`.
+
+## Hardening-phase log
+
+A separate adversarial pass over the *finished* build: re-run everything,
+hunt for fake work, and empirically demonstrate that the gates can fail.
+Method for each experiment: mutate the engine, re-run the metric at seed 7
+(the gates take the worst of seeds 7/8/9, so one failing seed suffices),
+record the number, revert the mutation, confirm the baseline value returns.
+All mutations were reverted; `git diff` is clean apart from the entries in
+this log and `run.py`'s corrected comment.
+
+### Falsifiability experiments (metric, mutation, before → after)
+
+| # | metric (gate) | mutation | committed | mutated | verdict |
+|---|---|---|---|---|---|
+| A | M3 mix_balance (≤ 0.12) | contested branch made greedy-novelty (σ ignored) | 0.0286 | **0.6500** | FAIL — and qualifying windows collapse 170/141 → 24/27, so the ≥ 60-window non-vacuity gate fails too |
+| B1 | M6 feedback_responsiveness (≤ 0.60) | flat-streak **tracking** removed (no demotion, no archive-candidate signal) | 0.5156 | **0.7182** (0.705 / 0.668 at seeds 8/9) | FAIL at every seed — reproduces B1's middle row exactly |
+| B2 | M6 (≤ 0.60) | **demotion branch alone** removed (streak tracking intact) | 0.5156 | 0.5625 (0.413 / 0.507) | **passes M6** — see H1; caught by M7c instead (5 cache≠fold offenders → M7 = 0) |
+| B3 | M6 (≤ 0.60) | whole grade table flattened (constant multiplier, streak frozen) | 0.5156 | **0.8830** (0.797 / 0.835) | FAIL — reproduces B1's third row exactly |
+| C | M4b proportional_fidelity (≤ 3.0) | review priority made interval-blind (`O := elapsed`, LRU) | 1.6627 | **3.5714** | FAIL |
+| D | M5 pinned_recurrence (== 1.0) | pinned-rescue branch disabled | 1.0 | **0.0588** | FAIL — 16 of 17 pinned intervals broken; M1h simultaneously reports 635 rescue violations |
+| E | M8 top1/hit3/worst (0.55/0.80/0.50) | suggester score made constant (ranking degenerates to lexicographic) | 0.7396 / 0.8438 / 0.50 | **0.0625 / 0.1875 / 0.0** | FAIL all three — collapses to exactly the 1/16 uniform baseline |
+| F | M9 recall (== 1.0) | validator URL check (d) disabled | 1.0 | **0.925** | FAIL — 3 of 5 `url_injected` cases escape (the other 2 trip check (e)) |
+
+After each revert the committed value returned exactly. Every gated
+capability of both hard parts has a demonstrated failure mode.
+
+### H1 — B1's sensitivity table mislabeled its middle variant (docs corrected, no threshold change)
+
+The hardening pass could not reproduce B1's "flat_streak demotion removed
+0.668–0.718" with the literal mutation (removing only the
+`streak >= demote_flat_streak` branch): that measures **0.5625 / 0.4132 /
+0.5066** at seeds 7/8/9 — under the 0.60 gate at every seed. B1's numbers
+reproduce exactly under a *broader* mutation: flat-streak **tracking**
+removed, which disables the demotion *and* the `flat_streak ≥ 3`
+archive-candidate signal.
+
+Why the narrow variant escapes M6: with the streak still counted, duds keep
+resurfacing on ≤ 60-day intervals, reach streak 3, appear in the
+archive-candidate list, and the persona archives about half of them — dud
+exposure still falls, through the product's other declared fading channel
+(US-5's "get suggested for archiving"). That is genuine end-to-end
+behaviour, not a metric artifact. And the narrow variant is not an escape
+from the *suite*: M7c's independent re-fold reports cache ≠ fold on every
+demoted entry (5 offenders on S1 seed 7 alone → M7 = 0), because
+`metrics.py` folds from DATA_MODEL.md's spec, not from the engine.
+
+A strengthened M6 that excludes persona-archived entries from the cohort was
+measured and rejected: it discriminates only marginally (correct worst-seed
+0.5500 vs narrow-mutation worst-seed 0.6161 around the 0.60 gate — margins
+of 0.05 and 0.016), which would make the gate a coin-flip on future data
+changes. The honest division of labour stands: M6 gates mechanism-level
+feedback failures (streak tracking, grade table — both fail it at every
+seed), M7c gates fold-implementation drift, and the
+`archive_flat_streak >= demote_flat_streak` load-time constraint blocks the
+parameter-level route (demoting via `demote_flat_streak = ∞` forces
+`archive_flat_streak = ∞` with it, which silences the archive channel and
+puts the system back in the regime M6 fails). EVALS.md §5's M6 row and
+`run.py`'s comment now describe the experiments accurately.
+
+### H2 — Measured baseline levels correct three cells of EVALS §5's a-priori table
+
+`random_eligible` measures M2b = 0.971 (predicted ≈ 0.1) — it still fails
+M2b's `== 1.0` gate and the 180-day hard bound (3 starved entries) — and
+M4b measures 2.77 / 2.09 for random/fifo (predicted ≈ 4.0), so **both
+baselines pass the M4b gate**. M4b's discriminating power is therefore
+carried by the mutation experiment (H3 row C: interval-blind LRU inside the
+real scheduler → 3.57), not by the baseline comparison. The suite-level
+claim survives measurement: `random_eligible` fails 7 gates, `fifo_rotation`
+fails 5, and no single-trick policy passes the set. Recorded as a
+correction note under the §5 table; no threshold moved.
+
+### H3 — Everything else re-verified
+
+- `uv run python verify_all.py almanac` green: 365 tests, 19/19 eval gates,
+  ruff clean, CLI ok.
+- The documented CLI surface was exercised end to end against a fresh
+  SQLite file (init, add with misattribution + theme suggestion, starter
+  import with drain horizon, today + `--json`, idempotent re-invocation,
+  backdated/future `today` rejected non-zero, reflect `--last`, double
+  reflection rejected, search, list filters, show, semantic text edit
+  rejected / hash-preserving edit accepted, pin/unpin/archive/restore,
+  collections create/add/show/draw, theme draw, CSV import with row-error
+  report, JSON export → re-import (88/88 deduped), check-attribution both
+  forms, config get/set, stats with capacity block). No crashes; error
+  paths exit 1 with actionable messages.
+- Determinism: two full `run.py` invocations produced byte-identical
+  stdout; the engine imports no clock, filesystem, network or `random`
+  (mechanically checked, plus M7a–d).
+- No TODO/FIXME/stub/`pass`-body code in the shipped path; no test without
+  an assertion (AST-checked); the only broad exception handlers are the
+  three the docs require (personalizer fallback sets
+  `personalize_fell_back`, chained live attribution skip, import row-error
+  reporting) plus the documented FTS5 fallback.
+- FR coverage table written to `docs/FR_COVERAGE.md` (all 17 FRs
+  implemented and covered; EVALS.md §7's illustrative test-file names are
+  mapped to the real `test_frN_*` modules there).

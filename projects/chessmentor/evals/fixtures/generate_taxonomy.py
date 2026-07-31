@@ -424,18 +424,16 @@ def opening_violation(
 
 
 def is_inert(board_before: chess.Board, move: chess.Move, depth: int = SEARCH_DEPTH) -> bool:
-    """No tactical rule can fire, whatever line the analyst chooses."""
+    """No tactical rule can fire, whatever line the analyst chooses.
+
+    The cheap universally-quantified reply scan runs *first*: most candidates
+    fail it, and the exhaustive searches are two orders of magnitude slower.
+    """
     if board_before.is_capture(move) or board_before.gives_check(move):
         return False
     board_after = board_before.copy(stack=False)
     board_after.push(move)
     if board_after.is_game_over(claim_draw=True):
-        return False
-    cp_best, best_pv = search_pv(board_before, depth)
-    if abs(cp_best) > 5_000:
-        return False
-    reply_value, _ = search_pv(board_after, depth - 1)
-    if abs(reply_value) > 5_000:
         return False
     # No opponent reply may win material or create geometry.
     for reply in board_after.legal_moves:
@@ -447,6 +445,12 @@ def is_inert(board_before: chess.Board, move: chess.Move, depth: int = SEARCH_DE
             return False
         if detect_pin_or_skewer(board_after, probe, reply, board_after.turn) is not None:
             return False
+    cp_best, best_pv = search_pv(board_before, depth)
+    if abs(cp_best) > 5_000:
+        return False
+    reply_value, _ = search_pv(board_after, depth - 1)
+    if abs(reply_value) > 5_000:
+        return False
     # And the mover may not have a material tactic available either, which is
     # what would otherwise trip rule 5.
     if pv_material_delta(board_before, best_pv, board_before.turn, 4) >= MISSED_TACTIC_MATERIAL_CP:
@@ -514,8 +518,20 @@ INERT_POOLS: list[tuple[chess.PieceType, ...]] = [
     (chess.QUEEN, chess.PAWN),
 ]
 
+#: Pools with four non-pawn pieces per side (> 6 on the board), so the FR-10
+#: piece-count rule calls the position *middlegame* and an inert move there is a
+#: ``positional_drift`` truth case.  The original pools topped out at 4 non-pawn
+#: pieces total, which made ``positional_drift`` unreachable by construction.
+INERT_POOLS_MIDDLEGAME: list[tuple[chess.PieceType, ...]] = [
+    (chess.ROOK, chess.ROOK, chess.BISHOP, chess.KNIGHT),
+    (chess.ROOK, chess.BISHOP, chess.BISHOP, chess.KNIGHT),
+    (chess.ROOK, chess.ROOK, chess.KNIGHT, chess.KNIGHT, chess.PAWN),
+    (chess.QUEEN, chess.ROOK, chess.BISHOP, chess.KNIGHT),
+    (chess.ROOK, chess.ROOK, chess.BISHOP, chess.KNIGHT, chess.PAWN),
+]
 
-def compose_inert(rng: random.Random) -> chess.Board | None:
+
+def compose_inert(rng: random.Random, *, middlegame: bool = False) -> chess.Board | None:
     board = chess.Board(None)
     squares = [sq for sq in chess.SQUARES]
     rng.shuffle(squares)
@@ -529,7 +545,7 @@ def compose_inert(rng: random.Random) -> chess.Board | None:
 
     board.set_piece_at(take(), chess.Piece(chess.KING, chess.WHITE))
     board.set_piece_at(take(), chess.Piece(chess.KING, chess.BLACK))
-    pool = rng.choice(INERT_POOLS)
+    pool = rng.choice(INERT_POOLS_MIDDLEGAME if middlegame else INERT_POOLS)
     for colour in (chess.WHITE, chess.BLACK):
         for piece_type in pool:
             square = take()
@@ -544,29 +560,41 @@ def compose_inert(rng: random.Random) -> chess.Board | None:
 
 
 #: Scripted opening games that violate (a), (b) or (c) of FR-11 rule 8.
+#:
+#: Every script keeps the *opponent's* bishops and queen boxed behind their own
+#: pawns (b7/d7/e7/g7 stay home) and leaves no reply capture with SEE >= +100
+#: and no one-move fork/pin/skewer reply, so ``is_inert``'s universal reply scan
+#: holds and rules 1-6 cannot fire whatever line the analyst picks.  The first
+#: draft's scripts all failed that scan (e.g. after 1.Nc3 Nc6 2.Nb5 Nb4 3.Na3
+#: the reply ...Nc2+ forks king and rook).
 OPENING_SCRIPTS: list[tuple[str, list[str]]] = [
-    ("repeated_piece_move", ["b1c3", "b8c6", "c3b5", "c6b4", "b5a3"]),
-    ("repeated_piece_move", ["g1f3", "g8f6", "f3g5", "f6g4", "g5h3"]),
-    ("repeated_piece_move", ["b1a3", "b8a6", "a3b5", "a6b4", "b5c3"]),
-    ("repeated_piece_move", ["g1h3", "g8h6", "h3g5", "h6g4", "g5f3"]),
-    ("early_queen", ["e2e4", "e7e5", "d1h5", "d8h4", "h5f3"]),
-    ("early_queen", ["d2d4", "d7d5", "d1d3", "d8d6", "d3f5"]),
-    ("early_queen", ["e2e3", "e7e6", "d1g4", "d8g5", "g4h5"]),
-    ("early_queen", ["d2d3", "d7d6", "d1d2", "d8d7", "d2g5"]),
+    # (a) third move of the same knight, shuffling inside its own camp.
+    ("repeated_piece_move", ["b1a3", "a7a6", "a3b1", "h7h6", "b1a3"]),
+    ("repeated_piece_move", ["g1h3", "h7h6", "h3g1", "a7a6", "g1h3"]),
+    ("repeated_piece_move", ["b1c3", "a7a6", "c3b1", "h7h6", "b1c3"]),
+    ("repeated_piece_move", ["g1f3", "h7h6", "f3g1", "a7a6", "g1f3"]),
+    # (b) queen beyond its third rank while >= 3 own minors sit at home.
+    ("early_queen", ["c2c4", "a7a6", "d1a4"]),
+    ("early_queen", ["e2e4", "h7h6", "d1h5"]),
+    ("early_queen", ["c2c4", "h7h6", "d1a4"]),
+    ("early_queen", ["e2e4", "a7a6", "d1h5"]),
+    # (c) king still on e1 with castling rights after fullmove 10; both sides
+    # only shuffled pawns/knights/rooks on the wings, every advanced pawn stays
+    # defended so no reply capture reaches SEE >= +100.
     (
         "uncastled_king",
         [
-            "a2a3", "a7a6", "b2b3", "b7b6", "c2c3", "c7c6", "d2d3", "d7d6",
-            "h2h3", "h7h6", "g2g3", "g7g6", "a3a4", "a6a5", "b3b4", "b6b5",
-            "c3c4", "c6c5", "d3d4", "d6d5", "h3h4",
+            "a2a3", "h7h6", "b2b3", "g7g6", "c2c3", "f7f6", "d2d3", "a7a6",
+            "g2g3", "h6h5", "h2h3", "g6g5", "a3a4", "a6a5", "d3d4", "b8c6",
+            "g3g4", "h8h6", "b3b4", "c6b8", "d1c2",
         ],
     ),
     (
         "uncastled_king",
         [
-            "h2h3", "h7h6", "a2a3", "a7a6", "g2g3", "g7g6", "b2b3", "b7b6",
-            "c2c3", "c7c6", "f2f3", "f7f6", "h3h4", "h6h5", "a3a4", "a6a5",
-            "g3g4", "g6g5", "b3b4", "b6b5", "c3c4",
+            "a2a3", "h7h6", "b2b3", "g7g6", "d2d3", "f7f6", "g2g3", "a7a6",
+            "h2h3", "h6h5", "c2c4", "g6g5", "a3a4", "a6a5", "d3d4", "b8c6",
+            "g3g4", "h8h6", "e2e3", "c6b8", "b1c3",
         ],
     ),
 ]
@@ -618,7 +646,10 @@ def build(seed: int) -> dict[str, object]:
         or len(buckets["positional_drift"]) < PER_CATEGORY
     ):
         attempts += 1
-        board = compose_inert(rng)
+        # positional_drift needs > 6 non-pawn pieces (FR-10 middlegame), which
+        # only the heavier pools can produce.
+        want_middlegame = len(buckets["positional_drift"]) < PER_CATEGORY
+        board = compose_inert(rng, middlegame=want_middlegame)
         if board is None:
             continue
         moves = sorted(board.legal_moves, key=lambda m: m.uci())

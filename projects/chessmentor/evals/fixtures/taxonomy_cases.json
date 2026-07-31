@@ -1,0 +1,729 @@
+{
+  "seed": 20260731,
+  "per_category": 7,
+  "search_depth_plies": 4,
+  "cases": [
+    {
+      "fen": "4q1K1/8/8/2B4R/2k2nP1/4pp2/6P1/8 w - - 0 1",
+      "played_uci": "g8h7",
+      "played_san": "Kh7",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate against the mover after g8h7",
+      "id": "tx-001"
+    },
+    {
+      "fen": "7N/R3P3/8/8/2n1k3/3n4/Qr2p3/5K2 w - - 0 1",
+      "played_uci": "f1g1",
+      "played_san": "Kg1",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate against the mover after f1g1",
+      "id": "tx-002"
+    },
+    {
+      "fen": "2q5/1b5N/3r2P1/4k3/3R3K/8/3Q4/8 b - - 0 1",
+      "played_uci": "d6d8",
+      "played_san": "Rd8",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate against the mover after d6d8",
+      "id": "tx-003"
+    },
+    {
+      "fen": "8/8/2P2q1k/8/5p2/6R1/K2nQ3/5r2 b - - 0 1",
+      "played_uci": "f6g7",
+      "played_san": "Qg7",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate against the mover after f6g7",
+      "id": "tx-004"
+    },
+    {
+      "fen": "1N2Q3/7P/8/3K4/1k5p/8/8/qRn4r b - - 0 1",
+      "played_uci": "b4a5",
+      "played_san": "Ka5",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate against the mover after b4a5",
+      "id": "tx-005"
+    },
+    {
+      "fen": "5k1K/2p5/n7/p7/5q2/7B/7R/2Q5 w - - 0 1",
+      "played_uci": "h2d2",
+      "played_san": "Rd2",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate against the mover after h2d2",
+      "id": "tx-006"
+    },
+    {
+      "fen": "1b6/1Q1P4/7q/1r3K2/2NP4/8/8/5k2 w - - 0 1",
+      "played_uci": "f5g4",
+      "played_san": "Kg4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate against the mover after f5g4",
+      "id": "tx-007"
+    },
+    {
+      "fen": "6k1/1r6/7K/8/3b4/8/5Bq1/4Q1R1 b - - 0 1",
+      "played_uci": "b7e7",
+      "played_san": "Re7",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate available with b7h7",
+      "id": "tx-008"
+    },
+    {
+      "fen": "q5Q1/3r4/8/7p/1k6/3B4/8/2K1N3 w - - 0 1",
+      "played_uci": "g8f8",
+      "played_san": "Qf8+",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate available with g8c4",
+      "id": "tx-009"
+    },
+    {
+      "fen": "Q6R/3k4/8/2Kb4/8/1qP5/8/1n6 w - - 0 1",
+      "played_uci": "h8f8",
+      "played_san": "Rf8",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate available with a8e8",
+      "id": "tx-010"
+    },
+    {
+      "fen": "8/7q/r7/1P2K3/4b3/3P1k2/8/2QN4 b - - 0 1",
+      "played_uci": "a6h6",
+      "played_san": "Rh6",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate available with h7g7",
+      "id": "tx-011"
+    },
+    {
+      "fen": "4KBq1/1R2p3/8/4r3/k7/8/7n/1Q6 w - - 0 1",
+      "played_uci": "b1h1",
+      "played_san": "Qh1",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate available with b1b4",
+      "id": "tx-012"
+    },
+    {
+      "fen": "8/4qnK1/8/3R4/8/5k2/1Qp5/4B2r b - - 0 1",
+      "played_uci": "c2c1q",
+      "played_san": "c1=Q",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate available with f7e5",
+      "id": "tx-013"
+    },
+    {
+      "fen": "4B3/3P1R2/4n3/2k4P/5q2/2p3r1/8/7K b - - 0 1",
+      "played_uci": "f4f2",
+      "played_san": "Qf2",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_mate",
+      "truth_motif": "none",
+      "rationale": "forced mate available with f4h4",
+      "id": "tx-014"
+    },
+    {
+      "fen": "8/2nk4/8/8/2P1Q1KP/8/7N/1bq5 b - - 0 1",
+      "played_uci": "c1c4",
+      "played_san": "Qxc4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "bad_trade",
+      "truth_motif": "none",
+      "rationale": "capture c1c4 has SEE -800 cp",
+      "id": "tx-015"
+    },
+    {
+      "fen": "1k6/5N2/7b/2n4P/5P2/3q1Q2/7K/8 b - - 0 1",
+      "played_uci": "h6f4",
+      "played_san": "Bxf4+",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "bad_trade",
+      "truth_motif": "none",
+      "rationale": "capture h6f4 has SEE -230 cp",
+      "id": "tx-016"
+    },
+    {
+      "fen": "k1q5/N7/8/3n2r1/1pR4P/3K4/8/1N6 w - - 0 1",
+      "played_uci": "c4b4",
+      "played_san": "Rxb4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "bad_trade",
+      "truth_motif": "none",
+      "rationale": "capture c4b4 has SEE -400 cp",
+      "id": "tx-017"
+    },
+    {
+      "fen": "3R2b1/8/N5P1/1r2p2k/3p4/2K5/8/3N4 w - - 0 1",
+      "played_uci": "d8d4",
+      "played_san": "Rxd4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "bad_trade",
+      "truth_motif": "none",
+      "rationale": "capture d8d4 has SEE -300 cp",
+      "id": "tx-018"
+    },
+    {
+      "fen": "7r/K7/8/1N6/5p2/n7/5nk1/1B2Q3 w - - 0 1",
+      "played_uci": "e1f2",
+      "played_san": "Qxf2+",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "bad_trade",
+      "truth_motif": "none",
+      "rationale": "capture e1f2 has SEE -580 cp",
+      "id": "tx-019"
+    },
+    {
+      "fen": "2k5/8/8/8/1Bn2K2/3R3q/1b6/1Q6 w - - 0 1",
+      "played_uci": "b1b2",
+      "played_san": "Qxb2",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "bad_trade",
+      "truth_motif": "none",
+      "rationale": "capture b1b2 has SEE -570 cp",
+      "id": "tx-020"
+    },
+    {
+      "fen": "8/1k2Pq2/3Qn3/6K1/b4R2/8/8/8 w - - 0 1",
+      "played_uci": "d6e6",
+      "played_san": "Qxe6",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "bad_trade",
+      "truth_motif": "none",
+      "rationale": "capture d6e6 has SEE -580 cp",
+      "id": "tx-021"
+    },
+    {
+      "fen": "8/1q3k2/p7/4r3/P4P2/K6Q/3n4/2N5 w - - 0 1",
+      "played_uci": "h3f5",
+      "played_san": "Qf5+",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "hung_piece",
+      "truth_motif": "none",
+      "rationale": "reply e5f5 wins material (SEE 900 cp, before 0)",
+      "id": "tx-022"
+    },
+    {
+      "fen": "8/4PQN1/4K3/P7/8/3rn3/2n2p2/k7 b - - 0 1",
+      "played_uci": "d3d6",
+      "played_san": "Rd6+",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "hung_piece",
+      "truth_motif": "none",
+      "rationale": "reply e6d6 wins material (SEE 500 cp, before None)",
+      "id": "tx-023"
+    },
+    {
+      "fen": "8/8/1NK5/1pp5/2P3k1/3r2b1/P4Q2/8 w - - 0 1",
+      "played_uci": "f2e1",
+      "played_san": "Qe1",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "hung_piece",
+      "truth_motif": "none",
+      "rationale": "reply g3e1 wins material (SEE 900 cp, before None)",
+      "id": "tx-024"
+    },
+    {
+      "fen": "8/3k2p1/8/4R2K/6r1/pb6/1N1QP3/8 b - - 0 1",
+      "played_uci": "g4d4",
+      "played_san": "Rd4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "hung_piece",
+      "truth_motif": "none",
+      "rationale": "reply d2d4 wins material (SEE 500 cp, before 0)",
+      "id": "tx-025"
+    },
+    {
+      "fen": "B2r4/5bR1/6pR/1k1rP3/8/8/7K/8 b - - 0 1",
+      "played_uci": "d5d6",
+      "played_san": "R5d6",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "hung_piece",
+      "truth_motif": "none",
+      "rationale": "reply e5d6 wins material (SEE 400 cp, before None)",
+      "id": "tx-026"
+    },
+    {
+      "fen": "8/1P3R2/2n1k3/1n6/8/pK5r/3Q4/8 w - - 0 1",
+      "played_uci": "f7f3",
+      "played_san": "Rf3",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "hung_piece",
+      "truth_motif": "none",
+      "rationale": "reply h3f3 wins material (SEE 500 cp, before 0)",
+      "id": "tx-027"
+    },
+    {
+      "fen": "1B6/4n3/1K2Q3/3q4/8/6b1/3k2N1/8 b - - 0 1",
+      "played_uci": "d5c5",
+      "played_san": "Qc5+",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "hung_piece",
+      "truth_motif": "none",
+      "rationale": "reply b6c5 wins material (SEE 900 cp, before None)",
+      "id": "tx-028"
+    },
+    {
+      "fen": "8/8/4Q3/2p5/1P3N2/5rr1/4Pkb1/2K5 b - - 0 1",
+      "played_uci": "f2g1",
+      "played_san": "Kg1",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_tactic",
+      "truth_motif": "hanging_capture",
+      "rationale": "best f3f4 wins 220 cp of material in 4 plies",
+      "id": "tx-029"
+    },
+    {
+      "fen": "3r4/8/8/8/3B3k/1q2N3/1p5K/Q7 b - - 0 1",
+      "played_uci": "b3d3",
+      "played_san": "Qd3",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_tactic",
+      "truth_motif": "hanging_capture",
+      "rationale": "best b2a1b wins 800 cp of material in 4 plies",
+      "id": "tx-030"
+    },
+    {
+      "fen": "8/q7/6r1/1R6/k6B/2p4K/5Q2/8 b - - 0 1",
+      "played_uci": "a7c7",
+      "played_san": "Qc7",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_tactic",
+      "truth_motif": "other",
+      "rationale": "best a7f2 wins 500 cp of material in 4 plies",
+      "id": "tx-031"
+    },
+    {
+      "fen": "6k1/3K2p1/1Q3P2/4b3/N7/8/7P/2r3r1 w - - 0 1",
+      "played_uci": "f6g7",
+      "played_san": "fxg7",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_tactic",
+      "truth_motif": "fork",
+      "rationale": "best b6e6 wins 230 cp of material in 4 plies",
+      "id": "tx-032"
+    },
+    {
+      "fen": "8/3P3n/6N1/6b1/N3k3/4R3/K7/2q5 b - - 0 1",
+      "played_uci": "e4d4",
+      "played_san": "Kd4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_tactic",
+      "truth_motif": "hanging_capture",
+      "rationale": "best e4e3 wins 500 cp of material in 4 plies",
+      "id": "tx-033"
+    },
+    {
+      "fen": "8/8/5K2/NQ6/p6B/2n5/5p2/q2k4 b - - 0 1",
+      "played_uci": "a1b2",
+      "played_san": "Qb2",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_tactic",
+      "truth_motif": "hanging_capture",
+      "rationale": "best c3b5 wins 1700 cp of material in 4 plies",
+      "id": "tx-034"
+    },
+    {
+      "fen": "8/8/1R1r2p1/8/2Q1b2k/8/3B1r2/7K w - - 0 1",
+      "played_uci": "h1g1",
+      "played_san": "Kg1",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "missed_tactic",
+      "truth_motif": "fork",
+      "rationale": "best c4e4 wins 330 cp of material in 4 plies",
+      "id": "tx-035"
+    },
+    {
+      "fen": "3q4/8/8/1nbk4/8/4K3/1Q5B/2R5 w - - 0 1",
+      "played_uci": "e3d2",
+      "played_san": "Kd2",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_tactic",
+      "truth_motif": "skewer",
+      "rationale": "reply d8g5 creates a skewer",
+      "id": "tx-036"
+    },
+    {
+      "fen": "5K2/2q3N1/k7/8/2r5/1P1n1R2/1N1p4/8 w - - 0 1",
+      "played_uci": "b3c4",
+      "played_san": "bxc4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_tactic",
+      "truth_motif": "fork",
+      "rationale": "reply c7b8 creates a fork",
+      "id": "tx-037"
+    },
+    {
+      "fen": "8/7k/K7/8/3Q2N1/1p4p1/3P2rR/7b b - - 0 1",
+      "played_uci": "g3h2",
+      "played_san": "gxh2",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_tactic",
+      "truth_motif": "fork",
+      "rationale": "reply d4e4 creates a fork",
+      "id": "tx-038"
+    },
+    {
+      "fen": "2K5/4N2p/8/8/3qBk2/5Q2/6r1/8 b - - 0 1",
+      "played_uci": "f4e5",
+      "played_san": "Ke5",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_tactic",
+      "truth_motif": "fork",
+      "rationale": "reply e7c6 creates a fork",
+      "id": "tx-039"
+    },
+    {
+      "fen": "7N/6P1/8/1k3r2/n6K/5p1Q/2R3n1/8 w - - 0 1",
+      "played_uci": "h4g3",
+      "played_san": "Kg3",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_tactic",
+      "truth_motif": "fork",
+      "rationale": "reply f5g5 creates a fork",
+      "id": "tx-040"
+    },
+    {
+      "fen": "5q2/1N3P2/8/1r1k4/5pQ1/8/2K5/5R2 b - - 0 1",
+      "played_uci": "f8f7",
+      "played_san": "Qxf7",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_tactic",
+      "truth_motif": "fork",
+      "rationale": "reply g4g5 creates a fork",
+      "id": "tx-041"
+    },
+    {
+      "fen": "3Q1B1k/6R1/8/8/8/3p4/4b1K1/1r3r2 b - - 0 1",
+      "played_uci": "b1b4",
+      "played_san": "Rb4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "allowed_tactic",
+      "truth_motif": "fork",
+      "rationale": "reply d8e7 creates a fork",
+      "id": "tx-042"
+    },
+    {
+      "fen": "6k1/7b/P7/p7/5p2/8/4K2P/B7 w - - 0 1",
+      "played_uci": "e2e1",
+      "played_san": "Ke1",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "endgame_technique",
+      "truth_motif": "none",
+      "rationale": "endgame phase, no tactical rule matched; inert position (2 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-043"
+    },
+    {
+      "fen": "8/1PP5/K2P4/8/8/1k4p1/1p1p4/8 b - - 0 1",
+      "played_uci": "g3g2",
+      "played_san": "g2",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "endgame_technique",
+      "truth_motif": "none",
+      "rationale": "endgame phase, no tactical rule matched; inert position (0 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-044"
+    },
+    {
+      "fen": "8/1pP4K/2p5/3P2P1/8/k7/6p1/8 b - - 0 1",
+      "played_uci": "a3a4",
+      "played_san": "Ka4",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "endgame_technique",
+      "truth_motif": "none",
+      "rationale": "endgame phase, no tactical rule matched; inert position (0 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-045"
+    },
+    {
+      "fen": "8/K7/2Q5/8/p2q4/3k1P2/8/8 w - - 0 1",
+      "played_uci": "c6b6",
+      "played_san": "Qb6",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "endgame_technique",
+      "truth_motif": "none",
+      "rationale": "endgame phase, no tactical rule matched; inert position (2 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-046"
+    },
+    {
+      "fen": "1n6/2r1N1R1/3Pp3/K7/8/8/k7/8 b - - 0 1",
+      "played_uci": "c7c3",
+      "played_san": "Rc3",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "endgame_technique",
+      "truth_motif": "none",
+      "rationale": "endgame phase, no tactical rule matched; inert position (4 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-047"
+    },
+    {
+      "fen": "4K3/8/8/5k1P/7p/5r2/4R3/2Nn4 b - - 0 1",
+      "played_uci": "f5g5",
+      "played_san": "Kg5",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "endgame_technique",
+      "truth_motif": "none",
+      "rationale": "endgame phase, no tactical rule matched; inert position (4 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-048"
+    },
+    {
+      "fen": "7k/3p4/b5B1/2K5/2P5/1P3p2/8/8 b - - 0 1",
+      "played_uci": "a6b7",
+      "played_san": "Bb7",
+      "phase": "endgame",
+      "prior_moves": [],
+      "truth_category": "endgame_technique",
+      "truth_motif": "none",
+      "rationale": "endgame phase, no tactical rule matched; inert position (2 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-049"
+    },
+    {
+      "fen": "rnbqkbnr/1pppppp1/p6p/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 3",
+      "played_uci": "b1a3",
+      "played_san": "Na3",
+      "phase": "opening",
+      "prior_moves": [
+        "b1a3",
+        "a7a6",
+        "a3b1",
+        "h7h6"
+      ],
+      "truth_category": "opening_principle",
+      "truth_motif": "none",
+      "rationale": "repeated_piece_move: repeated_piece_move: 2 prior moves, 4 minors at home; position is inert",
+      "id": "tx-050"
+    },
+    {
+      "fen": "rnbqkbnr/1pppppp1/p6p/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 3",
+      "played_uci": "g1h3",
+      "played_san": "Nh3",
+      "phase": "opening",
+      "prior_moves": [
+        "g1h3",
+        "h7h6",
+        "h3g1",
+        "a7a6"
+      ],
+      "truth_category": "opening_principle",
+      "truth_motif": "none",
+      "rationale": "repeated_piece_move: repeated_piece_move: 2 prior moves, 4 minors at home; position is inert",
+      "id": "tx-051"
+    },
+    {
+      "fen": "rnbqkbnr/1pppppp1/p6p/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 3",
+      "played_uci": "b1c3",
+      "played_san": "Nc3",
+      "phase": "opening",
+      "prior_moves": [
+        "b1c3",
+        "a7a6",
+        "c3b1",
+        "h7h6"
+      ],
+      "truth_category": "opening_principle",
+      "truth_motif": "none",
+      "rationale": "repeated_piece_move: repeated_piece_move: 2 prior moves, 4 minors at home; position is inert",
+      "id": "tx-052"
+    },
+    {
+      "fen": "rnbqkbnr/1pppppp1/p6p/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 3",
+      "played_uci": "g1f3",
+      "played_san": "Nf3",
+      "phase": "opening",
+      "prior_moves": [
+        "g1f3",
+        "h7h6",
+        "f3g1",
+        "a7a6"
+      ],
+      "truth_category": "opening_principle",
+      "truth_motif": "none",
+      "rationale": "repeated_piece_move: repeated_piece_move: 2 prior moves, 4 minors at home; position is inert",
+      "id": "tx-053"
+    },
+    {
+      "fen": "rnbqkbnr/1ppppppp/p7/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "played_uci": "d1a4",
+      "played_san": "Qa4",
+      "phase": "opening",
+      "prior_moves": [
+        "c2c4",
+        "a7a6"
+      ],
+      "truth_category": "opening_principle",
+      "truth_motif": "none",
+      "rationale": "early_queen: early_queen on a4, 4 minors at home; position is inert",
+      "id": "tx-054"
+    },
+    {
+      "fen": "rnbqkbnr/ppppppp1/7p/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "played_uci": "d1h5",
+      "played_san": "Qh5",
+      "phase": "opening",
+      "prior_moves": [
+        "e2e4",
+        "h7h6"
+      ],
+      "truth_category": "opening_principle",
+      "truth_motif": "none",
+      "rationale": "early_queen: early_queen on h5, 4 minors at home; position is inert",
+      "id": "tx-055"
+    },
+    {
+      "fen": "rnbqkbnr/ppppppp1/7p/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "played_uci": "d1a4",
+      "played_san": "Qa4",
+      "phase": "opening",
+      "prior_moves": [
+        "c2c4",
+        "h7h6"
+      ],
+      "truth_category": "opening_principle",
+      "truth_motif": "none",
+      "rationale": "early_queen: early_queen on a4, 4 minors at home; position is inert",
+      "id": "tx-056"
+    },
+    {
+      "fen": "7B/8/8/R1B2k2/8/4Knbb/6N1/5r2 b - - 0 1",
+      "played_uci": "f3g5",
+      "played_san": "Ng5",
+      "phase": "middlegame",
+      "prior_moves": [],
+      "truth_category": "positional_drift",
+      "truth_motif": "none",
+      "rationale": "evaluation loss with no tactical pattern; inert position (8 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-057"
+    },
+    {
+      "fen": "3n4/1b6/6N1/4Bb2/r7/4B3/2R4k/2K5 b - - 0 1",
+      "played_uci": "h2h3",
+      "played_san": "Kh3",
+      "phase": "middlegame",
+      "prior_moves": [],
+      "truth_category": "positional_drift",
+      "truth_motif": "none",
+      "rationale": "evaluation loss with no tactical pattern; inert position (8 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-058"
+    },
+    {
+      "fen": "r3nN1R/8/7B/K7/6B1/2k3b1/8/b7 w - - 0 1",
+      "played_uci": "a5b5",
+      "played_san": "Kb5",
+      "phase": "middlegame",
+      "prior_moves": [],
+      "truth_category": "positional_drift",
+      "truth_motif": "none",
+      "rationale": "evaluation loss with no tactical pattern; inert position (8 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-059"
+    },
+    {
+      "fen": "5KB1/8/5n2/bR6/8/2k2B2/2b4r/2N5 w - - 0 1",
+      "played_uci": "g8e6",
+      "played_san": "Be6",
+      "phase": "middlegame",
+      "prior_moves": [],
+      "truth_category": "positional_drift",
+      "truth_motif": "none",
+      "rationale": "evaluation loss with no tactical pattern; inert position (8 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-060"
+    },
+    {
+      "fen": "2b2R2/4n1K1/r7/B7/b6k/8/7N/2B5 w - - 0 1",
+      "played_uci": "c1d2",
+      "played_san": "Bcd2",
+      "phase": "middlegame",
+      "prior_moves": [],
+      "truth_category": "positional_drift",
+      "truth_motif": "none",
+      "rationale": "evaluation loss with no tactical pattern; inert position (8 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-061"
+    },
+    {
+      "fen": "8/1RB4n/6r1/4k3/1K6/5b2/rN6/4R3 b - - 0 1",
+      "played_uci": "e5d5",
+      "played_san": "Kd5",
+      "phase": "middlegame",
+      "prior_moves": [],
+      "truth_category": "positional_drift",
+      "truth_motif": "none",
+      "rationale": "evaluation loss with no tactical pattern; inert position (8 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-062"
+    },
+    {
+      "fen": "2K4N/8/7b/1r4k1/7b/1n5B/8/3R3B w - - 0 1",
+      "played_uci": "c8c7",
+      "played_san": "Kc7",
+      "phase": "middlegame",
+      "prior_moves": [],
+      "truth_category": "positional_drift",
+      "truth_motif": "none",
+      "rationale": "evaluation loss with no tactical pattern; inert position (8 non-pawn pieces): no capture, mate, material tactic or geometry is available to either side",
+      "id": "tx-063"
+    }
+  ]
+}

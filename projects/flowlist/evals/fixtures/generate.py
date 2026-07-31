@@ -269,17 +269,26 @@ def cluster_track(namer: Namer, rng: random.Random, cluster: str) -> dict[str, A
 #: if anything harder for the heuristic too.  The targets are set below the
 #: level the suite-level invariant needs, because three slots sit at 1.0 by
 #: design and drag the mean up.
+#: Per-slot targets were calibrated by scanning the search space once (a
+#: bounded, deterministic sweep of :data:`TRAP_ATTEMPTS` seeds per slot) and
+#: setting each target just above the deepest shortfall that sweep found, so
+#: the committed search terminates on the instance the calibration proved
+#: reachable.  Their sum is what satisfies the suite-level invariant: three
+#: typical slots sit at ~1.0, so the searched seven must average below ~0.95
+#: for both degenerate baselines to miss the M4_mean gate by
+#: :data:`DISCRIMINATION_MARGIN`; the anchored slot's 0.880 is what puts the
+#: per-baseline minimum safely under the M4_min gate.
 EXACT_RECIPES: tuple[tuple[int, tuple[str, ...], str, float | None], ...] = (
     (8, ("house",), "plain", None),
     (9, ("house", "indie"), "plain", None),
     (10, ("hiphop", "dnb"), "plain", None),
-    (11, ("house", "hiphop"), "plain", 0.93),
-    (12, ("indie", "dnb"), "plain", 0.93),
-    (13, ("house", "dnb"), "plain", 0.93),
-    (14, ("house", "indie", "hiphop"), "plain", 0.93),
-    (11, (), "trap", 0.93),
-    (12, (), "trap", 0.93),
-    (13, ("house", "indie"), "anchored", 0.85),
+    (11, ("house", "hiphop"), "plain", 0.954),
+    (12, ("indie", "dnb"), "plain", 0.951),
+    (13, ("indie", "house"), "plain", 0.940),
+    (14, ("house", "indie", "hiphop"), "plain", 0.951),
+    (11, (), "trap", 0.963),
+    (12, (), "trap", 0.954),
+    (13, ("house", "indie"), "anchored", 0.880),
 )
 
 #: Tempo anchors of the trap blueprint: three genre centres that do not
@@ -508,8 +517,9 @@ def _shuffled(order: Sequence[int], seed: int) -> list[int]:
 
 #: How many jitter seeds the trap search may try before giving up (bounded so
 #: generation always terminates; the suite-level invariant is what actually
-#: fails the run if the search came up short).
-TRAP_ATTEMPTS = 300
+#: fails the run if the search came up short).  1200 covers the deepest
+#: calibrated offset (slot 7's winning seed sits at offset 1165).
+TRAP_ATTEMPTS = 1200
 def construction_only(
     matrix: Sequence[Sequence[float]], start: int | None, end: int | None
 ) -> float:

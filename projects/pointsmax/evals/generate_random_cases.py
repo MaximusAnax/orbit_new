@@ -91,11 +91,21 @@ def build_random_world(rng: random.Random) -> dict[str, Any]:
         edges.append(edge("b0__x0", "b0", "x0", min_from=2000, increment_from=2000))
 
     cashouts = [
-        cashout("b0_credit", "b0", "statement_credit", rng.randrange(500, 1000, 50)),
-        cashout("b1_credit", "b1", "statement_credit", rng.randrange(500, 1000, 50)),
+        cashout("b0_credit", "b0", "statement_credit", rng.randrange(400, 1000, 50)),
+        cashout("b1_credit", "b1", "statement_credit", rng.randrange(400, 1000, 50)),
         cashout("b0_portal", "b0", "portal_travel", rng.randrange(1000, 1500, 50),
                 requires_card="cb0"),
     ]
+    if rng.random() < 0.6:
+        # A liquid hotel option makes bank -> hotel chains cash-improving whenever
+        # its cpp beats the bank's own credit, which a direct-only cash planner
+        # never notices (FR-12's "cash-improving transfer chains").
+        cashouts.append(
+            cashout(
+                "ho_credit", "ho", "statement_credit", rng.randrange(500, 900, 50),
+                min_points=5000, increment=1000,
+            )
+        )
 
     offers = []
     for index, air in enumerate(("x0", "x1")):
@@ -129,19 +139,47 @@ def build_random_world(rng: random.Random) -> dict[str, Any]:
 
 
 def build_case(rng: random.Random, case_id: str) -> dict[str, Any] | None:
-    """One random scenario, or None when it violates the tractability budget."""
+    """One random scenario, or None when it violates the tractability budget.
+
+    The distribution is deliberately adversarial to naive planners (EVALS: the
+    greedy baseline must stay well below the engine): balances usually sit just
+    *under* the need-sized amount of the relevant award, so optimal funding
+    needs multi-source splits, hub top-ups with tier-boundary sizing, or
+    fee-aware source choice; round trips share sources across legs; some goals
+    carry a tight ``book_by`` that timed edges violate; cash worlds often
+    contain a cash-improving bank->hotel chain.
+    """
     files = build_random_world(rng)
-    cards = [c for c in ("cb0", "cb1") if rng.random() < 0.75] or ["cb0"]
-    # Always fund at least one bank, so scenarios are mostly plannable rather
-    # than trivially "insufficient_points".
-    programs = ["ho", "x0", "x1", "b0" if rng.random() < 0.5 else "b1"]
-    rng.shuffle(programs)
-    anchor = "b0" if "b0" not in programs else "b1"
+    cards = [c for c in ("cb0", "cb1") if rng.random() < 0.8] or ["cb0"]
+    kind = rng.choices(["flight_ow", "flight_rt", "cash"], weights=[4, 4, 2])[0]
+    pax = 1 if kind == "cash" else rng.choices([1, 2], weights=[3, 2])[0]
+
+    # The typical points need this scenario must fund: the cheapest matching
+    # award times passengers (times two legs for a round trip).
+    prices = sorted(
+        o["points_price"] for o in files["awards.json"] if o["kind"] == "flight"
+    )
+    need = prices[0] * pax * (2 if kind == "flight_rt" else 1)
+
+    # Fund 2-3 programs whose balances individually undershoot the need but
+    # jointly overshoot it, so single-source need-sized funding usually fails
+    # while splits, hub chains and tier boundaries succeed.
+    pool = ["b0", "b1", "ho"]
+    rng.shuffle(pool)
+    count = rng.choices([1, 2, 3], weights=[1, 5, 4])[0]
     balances: dict[str, int] = {}
-    for name in [anchor, *programs][: rng.randint(1, 3)]:
+    for name in pool[:count]:
         step = 3000 if name == "ho" else 2000
-        balances[name] = rng.randrange(step * 10, step * 41, step)
-    kind = rng.choices(["flight_ow", "flight_rt", "cash"], weights=[5, 3, 2])[0]
+        if name == "ho":
+            # Hotel balances hover around the 60k tier boundary of the 3:1 edge.
+            points = rng.randrange(step * 10, step * 51, step)
+        else:
+            low = max(step * 4, (need // 4) // step * step)
+            high = max(low + step * 2, min(step * 55, need * 11 // 10) // step * step)
+            points = rng.randrange(low, high + step, step)
+        balances[name] = points
+    if rng.random() < 0.25:  # a partial opening balance in a paying program
+        balances["x0" if rng.random() < 0.5 else "x1"] = rng.randrange(2000, need + 2000, 2000)
     if kind == "cash":
         goal: dict[str, Any] = {"kind": "cash", "cash_programs": None, "cash_max_points": None}
     else:
@@ -151,10 +189,10 @@ def build_case(rng: random.Random, case_id: str) -> dict[str, Any] | None:
             "dest_city": "PAR",
             "cabin": "business",
             "round_trip": kind == "flight_rt",
-            "passengers": 1,
+            "passengers": pax,
             "travel_window_start": f"{MONTH}-01",
             "travel_window_end": f"{MONTH}-31",
-            "book_by": None,
+            "book_by": "2026-08-01" if rng.random() < 0.2 else None,
         }
 
     for name, points in balances.items():

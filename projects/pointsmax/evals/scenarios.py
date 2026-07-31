@@ -132,8 +132,14 @@ MULTI_HOP = [
       flight("NYC", "MIA", "2026-10"), D),
     S("mh_05", "multi_hop", "small_c", ["mrx_card"], {"mrx": 60000, "mbx": 100000},
       flight("NYC", "MIA", "2026-10"), D),
-    S("mh_06", "multi_hop", "small_b", ["card_p", "card_q"],
-      {"bank_p": 20000, "bank_q": 20000, "hub": 90000}, flight("NYC", "LON", "2026-10"), D),
+    S("mh_06", "multi_hop", "small_b", ["card_p"], {"bank_p": 70000, "hub": 96000},
+      flight("NYC", "LON", "2026-10"), D,
+      rationale=(
+          "No direct need-sized transfer fits (alpha needs 180,000 hub-side, only "
+          "96,000 held; beta needs 95,000 bank-side, only 70,000 held), so a greedy "
+          "planner finds nothing; the optimum tops the hub up from bank_p and rides "
+          "the 3:1 + 5k/60k tier into air_alpha."
+      )),
     S("mh_07", "multi_hop", "small_c", ["typx_card"], {"typx": 60000, "mbx": 120000},
       flight("NYC", "MIA", "2026-10"), D),
     S("mh_08", "multi_hop", "small_b", ["card_p"], {"hub": 180000},
@@ -150,7 +156,12 @@ MULTI_SOURCE = [
     S("ms_02", "multi_source", "small_a", ["ur_premium", "mr_premium"],
       {"ur": 30000, "mr": 50000}, flight("NYC", "PAR", "2026-10"), D),
     S("ms_03", "multi_source", "small_c", ["mrx_card", "typx_card"],
-      {"mrx": 60000, "typx": 60000}, flight("NYC", "MIA", "2026-10"), D),
+      {"mrx": 60000, "typx": 60000}, flight("MIA", "NYC", "2026-10", pax=2), D,
+      rationale=(
+          "Two passengers need 80,000 DLX; no single source covers it (mrx 60,000 "
+          "direct, typx only via the 3:1 mbx hub), so the optimum splits mrx direct "
+          "plus a typx->mbx->dlx chain while a single-source planner finds nothing."
+      )),
     S("ms_04", "multi_source", "small_b", ["card_p", "card_q"],
       {"bank_p": 50000, "bank_q": 50000}, flight("NYC", "LON", "2026-10"), D),
     S("ms_05", "multi_source", "small_a", ["ur_premium", "mr_premium"],
@@ -158,7 +169,14 @@ MULTI_SOURCE = [
     S("ms_06", "multi_source", "small_c", ["mrx_card", "typx_card"],
       {"mrx": 40000, "typx": 40000, "mbx": 60000}, flight("NYC", "MIA", "2026-10"), D),
     S("ms_07", "multi_source", "small_a", ["ur_premium", "mr_premium"],
-      {"ur": 40000, "mr": 40000}, flight("NYC", "PAR", "2026-10", cabin="economy"), D),
+      {"ur": 40000, "mr": 40000}, flight("NYC", "PAR", "2026-10", cabin="economy", rt=True),
+      D, params={"max_hops": 1},
+      rationale=(
+          "44,000 FB across two legs exceeds either balance; joint funding maxes the "
+          "cheaper MR balance (40,000) and tops up 4,000 from UR, while sequential "
+          "per-booking funding sends 22,000 from each and loses 50 mcpp on the "
+          "UR-funded excess."
+      )),
     S("ms_08", "multi_source", "small_a", ["ur_premium", "mr_premium"],
       {"ur": 30000, "mr": 30000, "mb": 60000}, flight("NYC", "PAR", "2026-10"), D),
 ]
@@ -168,12 +186,28 @@ MULTI_SOURCE = [
 # --------------------------------------------------------------------------
 
 FEE_TIER = [
-    S("ft_01", "fee_tier", "small_c", ["mrx_card", "mrx_premium"], {"mrx": 100000},
-      flight("NYC", "MIA", "2026-10"), D),
-    S("ft_02", "fee_tier", "small_c", ["mrx_card"], {"mrx": 100000},
-      flight("NYC", "MIA", "2026-10", rt=True), D),
-    S("ft_03", "fee_tier", "small_c", ["mrx_card"], {"mrx": 120000},
-      flight("NYC", "MIA", "2026-10", pax=3), D),
+    S("ft_01", "fee_tier", "small_c", ["mrx_card"], {"mbx": 150000},
+      flight("NYC", "MIA", "2026-10"), D,
+      rationale=(
+          "Marriott-style tier straddle: the optimal DLX funding sends 105,000 MBX "
+          "(35 x 3,000, crossing one 60k tier for exactly 40,000 delivered); a "
+          "need-sized 3:1 planner sends 120,000, crosses two tiers, and strands "
+          "10,000 DLX."
+      )),
+    S("ft_02", "fee_tier", "small_c", ["mrx_card"], {"mbx": 105000},
+      flight("MIA", "NYC", "2026-10"), D,
+      rationale=(
+          "Tier straddle where only bonus-aware sizing fits: 105,000 MBX delivers "
+          "35,000 + 5,000 = 40,000 exactly; the need-sized amount (120,000) exceeds "
+          "the balance, so a tier-blind planner finds nothing."
+      )),
+    S("ft_03", "fee_tier", "stress_a", ["c1", "c2"], {"b1": 70000, "b2": 70000},
+      flight("CHI", "ROM", "2026-10"), D, params={"max_hops": 1},
+      rationale=(
+          "Fee-boundary source trap: b2 has the lower valuation (2000 vs 2050 mcpp) "
+          "but its edge to a3 carries a 60 mcpp excise fee, so the free b1 edge is "
+          "cheaper per delivered point; a cheapest-valuation planner pays the fee."
+      )),
     S("ft_04", "fee_tier", "small_c", ["mrx_card"], {"mbx": 120000, "mrx": 20000},
       flight("NYC", "MIA", "2026-10"), D),
     S("ft_05", "fee_tier", "small_c", ["mrx_card"], {"mbx": 168000},
@@ -187,18 +221,49 @@ FEE_TIER = [
 # --------------------------------------------------------------------------
 
 ROUND_TRIP = [
-    S("rt_01", "round_trip", "small_a", ["ur_premium"], {"ur": 120000},
-      flight("NYC", "PAR", "2026-10", rt=True), D),
+    S("rt_01", "round_trip", "small_d", ["csr", "gold"],
+      {"urd": 64000, "mrd": 64000},
+      flight("NYC", "PAR", "2026-10", rt=True), D, params={"max_hops": 1},
+      rationale=(
+          "Shared-source conflict: both 60,000-mile FBD legs draw on URD + MRD "
+          "jointly; the optimum exhausts the cheaper MRD balance (64,000) and covers "
+          "56,000 from URD, while per-leg sequential funding sends 60,000 + 60,000 "
+          "and pays 50 mcpp more on 4,000 points."
+      )),
     S("rt_02", "round_trip", "small_a", ["mr_premium"], {"mr": 100000, "mb": 80000},
       flight("NYC", "PAR", "2026-10", rt=True), D),
-    S("rt_03", "round_trip", "small_a", ["ur_premium"], {"ur": 76000},
-      flight("NYC", "PAR", "2026-10", cabin="economy", rt=True), D),
-    S("rt_04", "round_trip", "small_a", ["ur_premium"], {"ur": 90000},
-      flight("NYC", "PAR", "2026-10", cabin="economy", rt=True), D),
-    S("rt_05", "round_trip", "small_c", ["mrx_card"], {"mrx": 80000, "mbx": 30000},
-      flight("NYC", "MIA", "2026-10", rt=True), D),
-    S("rt_06", "round_trip", "small_a", ["mr_premium"], {"mr": 60000, "mb": 180000},
-      flight("NYC", "PAR", "2026-10", rt=True), D),
+    S("rt_03", "round_trip", "small_a", ["ur_premium", "mr_premium"],
+      {"ur": 64000, "mr": 32000},
+      flight("NYC", "PAR", "2026-10", cabin="economy", rt=True), D,
+      params={"max_hops": 1},
+      rationale=(
+          "Economy round trip, 44,000 FB total: joint funding maxes MR at 32,000 and "
+          "adds 12,000 UR; greedy funds the first leg fully from MR (22,000), leaves "
+          "10,000 MR stranded below the second leg's need, and over-pays from UR."
+      )),
+    S("rt_04", "round_trip", "small_b", ["card_p"],
+      {"bank_p": 120000, "hub": 150000},
+      flight("NYC", "LON", "2026-10", rt=True), "2026-08-05", params={"max_hops": 1},
+      rationale=(
+          "The only fundable pairing books alpha out (hub sends exactly 150,000 "
+          "= 3:1 across two 5k tiers for 60,000 miles) and beta back from bank_p "
+          "(95,000).  A need-sized planner asks the hub for 180,000 it does not "
+          "have, so it can fund no round trip at all."
+      )),
+    S("rt_05", "round_trip", "small_c", ["mrx_card"], {"mrx": 60000, "mbx": 105000},
+      flight("NYC", "MIA", "2026-10", rt=True), D,
+      rationale=(
+          "Joint DLX funding must mix the fee-bearing 1:1 MRX edge with the 3:1 "
+          "tier-bonus MBX edge; need-sized single-source transfers cannot fund the "
+          "80,000 total, and greedy's fallback set (saver out) nets less."
+      )),
+    S("rt_06", "round_trip", "small_a", ["mr_premium"], {"mr": 64000, "mb": 150000},
+      flight("NYC", "PAR", "2026-10", rt=True), D,
+      rationale=(
+          "150,000 MB delivers exactly 60,000 FB (3:1 plus two 5k tier bonuses) and "
+          "MR covers the other leg; a need-sized 3:1 planner asks MB for 180,000 and "
+          "cannot fund the pair without stranding."
+      )),
 ]
 
 # --------------------------------------------------------------------------
@@ -225,8 +290,15 @@ CASH = [
 DEADLINE = [
     S("dl_01", "deadline", "small_b", ["card_p"], {"bank_p": 60000, "hub": 180000},
       flight("NYC", "LON", "2026-10"), D),
-    S("dl_02", "deadline", "small_b", ["card_q"], {"bank_q": 120000, "hub": 120000},
-      flight("NYC", "LON", "2026-10", book_by="2026-08-01"), D),
+    S("dl_02", "deadline", "small_b", ["card_p", "card_q"],
+      {"bank_p": 100000, "bank_q": 100000},
+      flight("NYC", "LON", "2026-10", book_by="2026-07-31"), D,
+      params={"max_hops": 1},
+      rationale=(
+          "Same-day booking deadline: the cheaper bank_q edge to air_beta posts in "
+          "1 day and misses it, so the correct plan pays more from bank_p's instant "
+          "edge; a deadline-blind planner emits the infeasible bank_q plan."
+      )),
 ]
 
 # --------------------------------------------------------------------------
@@ -367,29 +439,76 @@ HAND_DERIVED = [
 
 STRESS = [
     S("st_01", "stress_direct", "stress_a", ["c1"], {"b1": 120000},
-      flight("NYC", "PAR", "2026-10"), D, tier="stress"),
-    S("st_02", "stress_hub", "stress_a", ["c1"], {"b1": 60000, "h1": 120000},
-      flight("NYC", "PAR", "2026-10"), D, tier="stress"),
+      flight("NYC", "PAR", "2026-10"), D, tier="stress",
+      rationale="Control scenario: a plain direct transfer is optimal, so even the "
+      "greedy baseline should tie here (its one expected stress hit)."),
+    S("st_02", "stress_hub", "stress_a", ["c1"], {"b1": 40000, "h1": 120000},
+      flight("NYC", "PAR", "2026-10"), D, tier="stress",
+      rationale=(
+          "Hub top-up with tier sizing: a3 needs h1 at 150,000 (120,000 held plus "
+          "30,000 from b1) to deliver 60,000 through the 3:1 + 5k/60k edge; no "
+          "direct need-sized transfer fits any offer."
+      )),
     S("st_03", "stress_split", "stress_a", ["c1", "c2"], {"b1": 30000, "b2": 30000},
       flight("CHI", "ROM", "2026-10"), D, tier="stress"),
-    S("st_04", "stress_promo", "stress_a", ["c1"], {"b1": 100000},
-      flight("NYC", "PAR", "2026-10"), "2026-08-05", tier="stress"),
+    S("st_04", "stress_promo", "stress_a", ["c1", "c2"], {"b1": 44000, "b2": 60000},
+      flight("NYC", "PAR", "2026-10"), "2026-08-05", tier="stress",
+      params={"max_hops": 1},
+      rationale=(
+          "Promo + fee + split: the 4:5 b1->a4 promo (active until 08-20) plus a "
+          "6,000-point b2 top-up beats funding a4 entirely from b2's fee-bearing "
+          "edge, which is what a cheapest-valuation planner does."
+      )),
     S("st_05", "stress_fee_merge", "stress_a", ["c2"], {"b2": 120000},
       flight("CHI", "ROM", "2026-10", rt=True), D, tier="stress"),
-    S("st_06", "stress_mixed_rt", "stress_a", ["c1"], {"b1": 90000},
-      flight("NYC", "PAR", "2026-10", cabin="economy", rt=True), D, tier="stress"),
+    S("st_06", "stress_mixed_rt", "stress_a", ["c1", "c3"], {"b1": 42000, "b3": 40000},
+      flight("NYC", "PAR", "2026-10", cabin="economy", rt=True), D, tier="stress",
+      params={"max_hops": 1},
+      rationale=(
+          "Economy round trip over shared b1 + b3 balances (mixed award/portal sets "
+          "are enumerated: b1's 1.5cpp portal is fundable): joint funding maxes the "
+          "cheaper b3 balance; sequential per-leg funding strands 15,000 b3 points "
+          "below the second leg's need."
+      )),
     S("st_07", "stress_cash_chain", "stress_a", ["c4"], {"b4": 100000},
       cash(), D, tier="stress"),
-    S("st_08", "stress_stay", "stress_a", ["c1"], {"b1": 60000},
-      stay("PAR", 3, "2026-10"), D, tier="stress"),
-    S("st_09", "stress_seats", "stress_a", ["c1"], {"b1": 120000},
-      flight("NYC", "PAR", "2026-10", pax=2), D, tier="stress"),
-    S("st_10", "stress_deadline", "stress_a", ["c2"], {"b2": 90000},
-      flight("NYC", "PAR", "2026-10", book_by="2026-08-02"), D, tier="stress"),
-    S("st_11", "stress_far_route", "stress_a", ["c3"], {"b3": 100000, "h1": 60000},
-      flight("CHI", "ROM", "2026-10"), D, tier="stress"),
-    S("st_12", "stress_expired_promo", "stress_a", ["c1"], {"b1": 100000},
-      flight("NYC", "PAR", "2026-10"), "2026-08-25", tier="stress"),
+    S("st_08", "stress_stay", "stress_a", ["c1", "c2"], {"b1": 50000, "b2": 40000},
+      stay("PAR", 3, "2026-10"), D, tier="stress",
+      rationale=(
+          "Three h2 nights need 75,000 points, more than either bank balance, so "
+          "the only funding is a b1 + b2 split; a single-source planner reports "
+          "nothing bookable."
+      )),
+    S("st_09", "stress_seats", "stress_a", ["c1", "c4"], {"b1": 70000, "b4": 60000},
+      flight("NYC", "PAR", "2026-10", pax=2), D, tier="stress",
+      params={"max_hops": 1},
+      rationale=(
+          "Two passengers on the seats-capped a3 offer (seats_available = 2) need "
+          "120,000 delivered, which only a b1 + b4 split can fund; the seats_limited "
+          "caveat must fire on the winning plan."
+      )),
+    S("st_10", "stress_deadline", "stress_a", ["c3"], {"b3": 90000},
+      flight("SFO", "TYO", "2026-10", book_by="2026-07-31"), D, tier="stress",
+      rationale=(
+          "Same-day deadline: the cheaper a5 award needs b3's 1-day edge and lands "
+          "late; the correct answer is the pricier instant a6 booking, which a "
+          "deadline-blind planner never prefers."
+      )),
+    S("st_11", "stress_far_route", "stress_a", ["c3"], {"b3": 60000, "h1": 120000},
+      flight("CHI", "ROM", "2026-10"), D, tier="stress",
+      rationale=(
+          "b3 alone cannot fund a6 (61,000 > 60,000); the only feasible plan tops "
+          "h1 up to 129,000 for exactly 53,000 delivered into a3 through the tiered "
+          "3:1 edge — unreachable for a direct need-sized planner."
+      )),
+    S("st_12", "stress_expired_promo", "stress_a", ["c1", "c3"], {"b1": 40000, "b3": 60000},
+      flight("NYC", "PAR", "2026-10"), "2026-08-25", tier="stress",
+      params={"max_hops": 1},
+      rationale=(
+          "The b1->a4 promo has expired but the b3->a1 promo just opened: the only "
+          "feasible funding splits a1's 70,000 across the b3 promo edge (60,000) "
+          "and b1 (10,000); single-source need-sized transfers all fail."
+      )),
 ]
 
 SEARCH_SCENARIOS: list[dict[str, Any]] = (

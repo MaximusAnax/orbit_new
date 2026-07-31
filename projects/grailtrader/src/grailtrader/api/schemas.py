@@ -120,6 +120,8 @@ class EventIngestResponse(BaseModel):
     created: int
     corroborated: int
     unchanged: int
+    skipped_unresolved: int = 0
+    unresolved_refs: list[str] = Field(default_factory=list)
     by_status: dict[str, int] = Field(default_factory=dict)
 
 

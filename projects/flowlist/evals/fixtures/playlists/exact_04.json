@@ -2,7 +2,7 @@
  "id": "exact_04",
  "suite": "exact",
  "n": 12,
- "seed": 1302284,
+ "seed": 1302773,
  "clusters": [
   "indie",
   "dnb"
@@ -28,8 +28,8 @@
  "planted_order": null,
  "detail": {
   "kind": "plain",
-  "search_seed": 1302284,
-  "greedy_bound": 0.962427,
-  "depth_target": 0.96
+  "search_seed": 1302773,
+  "greedy_bound": 0.950967,
+  "depth_target": 0.951
  }
 }

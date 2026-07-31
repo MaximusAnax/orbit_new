@@ -21,8 +21,6 @@ from pointsmax.engine.money import ceil_div, ceil_to_multiple
 from pointsmax.engine.plan import PlanDraft, build_plan, choose_verdict
 from pointsmax.engine.search import (
     _arrival_and_hops,
-    aggregate_needs,
-    cash_drafts,
     cash_goal_has_options,
     enumerate_booking_sets,
 )
@@ -68,6 +66,44 @@ def _greedy_transfers(
     return None
 
 
+def _greedy_cash_draft(
+    world: World, active: Any, opening: dict[str, int], goal: GoalSpec
+) -> PlanDraft | None:
+    """Naive liquidation: per program, the single best-cpp active liquid option
+    over the redeemable amount — no transfer chains, no option alternatives."""
+    from pointsmax.engine.money import redeemable_points
+    from pointsmax.engine.value import cash_booking
+
+    allowed = set(goal.cash_programs) if goal.cash_programs else None
+    caps = goal.cash_max_points or {}
+    bookings = []
+    for program_id in sorted(opening):
+        points = opening[program_id]
+        if points <= 0 or (allowed is not None and program_id not in allowed):
+            continue
+        cap = caps.get(program_id)
+        usable = min(points, cap) if cap is not None else points
+        options = active.cash_options_for(program_id)
+        if not options:
+            continue
+        best = max(options, key=lambda o: (o.cpp_milli, o.id))
+        amount = redeemable_points(usable, best)
+        if amount > 0:
+            bookings.append(cash_booking(program_id, best, amount))
+    if not bookings:
+        return None
+    ordered = tuple(sorted(bookings, key=lambda b: b.sort_key()))
+    value = value_plan(opening, [], ordered, world.mcpp_map())
+    return PlanDraft(
+        bookings=ordered,
+        transfers=(),
+        value=value,
+        arrival_days={},
+        hop_index={},
+        feasible_in_days=0,
+    )
+
+
 def greedy_plan_set(
     case: dict[str, Any],
     *,
@@ -75,7 +111,11 @@ def greedy_plan_set(
     gating: bool = True,
     world: World | None = None,
 ) -> PlanSet:
-    """Sequential per-booking funding, direct edges only, no splits, no hops."""
+    """The EVALS greedy planner, implemented exactly as the gates table names it:
+    single cheapest-mcpp source, direct edges only, need-sized amounts,
+    **sequential per booking** (no need aggregation, no edge merging, no splits,
+    no hops, no tier-boundary sizing).  Cash goals liquidate each program through
+    its single best liquid option — no cash-improving transfer chains."""
     world = world or eval_world(case["world"])
     goal = GoalSpec.model_validate(case["goal"])
     today = date.fromisoformat(case["today"])
@@ -86,9 +126,8 @@ def greedy_plan_set(
 
     drafts: list[PlanDraft] = []
     if goal.kind is GoalKind.CASH:
-        from pointsmax.engine.search import SearchStats
-
-        drafts = cash_drafts(world, active, opening, goal, params, SearchStats())
+        draft = _greedy_cash_draft(world, active, opening, goal)
+        drafts = [draft] if draft is not None else []
         candidate_sets = 1 if cash_goal_has_options(active, opening, goal) else 0
     else:
         booking_sets = enumerate_booking_sets(goal, world, active, today)
@@ -97,19 +136,27 @@ def greedy_plan_set(
             balances = dict(opening)
             uses: list[TransferUse] = []
             feasible = True
-            for program, need in sorted(aggregate_needs(bookings).items()):
-                deficit = need - balances.get(program, 0)
-                balances[program] = balances.get(program, 0) - need
+            for booking in bookings:  # sequential per booking, not aggregated
+                deficit = booking.points - balances.get(booking.program_id, 0)
+                balances[booking.program_id] = (
+                    balances.get(booking.program_id, 0) - booking.points
+                )
                 if deficit <= 0:
                     continue
                 use = _greedy_transfers(
-                    world, list(active.edges_into(program)), balances, deficit, quantize=quantize
+                    world,
+                    list(active.edges_into(booking.program_id)),
+                    balances,
+                    deficit,
+                    quantize=quantize,
                 )
                 if use is None:
                     feasible = False
                     break
                 balances[use.from_program] = balances.get(use.from_program, 0) - use.sent
-                balances[program] = balances.get(program, 0) + use.delivered
+                balances[booking.program_id] = (
+                    balances.get(booking.program_id, 0) + use.delivered
+                )
                 uses.append(use)
             if not feasible:
                 continue

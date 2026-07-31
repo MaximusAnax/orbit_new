@@ -139,7 +139,13 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print(render(report))
         print()
-        print(json.dumps(report.to_json()["naive_deltas"], indent=2, sort_keys=True))
+        # The machine-readable summary (EVALS.md §6).  ``report_only`` is
+        # omitted because its tables are already rendered above; the metric
+        # values, gates, live naive baseline, and naive deltas all carry
+        # explicit keys so nothing can be misread as something else.
+        summary = report.to_json()
+        summary.pop("report_only", None)
+        print(json.dumps(summary, indent=2, sort_keys=True))
     return 0 if report.passed else 1
 
 

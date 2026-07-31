@@ -25,24 +25,24 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from tickerpress.adapters.clock import FixedClock  # noqa: E402
-from tickerpress.adapters.feeds_fixture import FixtureFeedSource  # noqa: E402
-from tickerpress.adapters.notify import ComposedMessage, DeliveryError  # noqa: E402
-from tickerpress.engine import dedup  # noqa: E402
-from tickerpress.engine.models import (  # noqa: E402
+from tickerpress.adapters.clock import FixedClock
+from tickerpress.adapters.feeds_fixture import FixtureFeedSource
+from tickerpress.adapters.notify import ComposedMessage, DeliveryError
+from tickerpress.engine import dedup
+from tickerpress.engine.models import (
     Channel,
     DeliveryKind,
     DeliveryStatus,
     parse_iso_utc,
 )
-from tickerpress.resources import LEXICON_FILES, data_root, load_lexicons  # noqa: E402
-from tickerpress.services import (  # noqa: E402
+from tickerpress.resources import LEXICON_FILES, data_root, load_lexicons
+from tickerpress.services import (
     DigestResult,
     NotifierRegistry,
     TickerPressService,
     load_watchlist,
 )
-from tickerpress.store import InMemoryRepository  # noqa: E402
+from tickerpress.store import InMemoryRepository
 
 EVALS_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(EVALS_DIR))
@@ -78,7 +78,7 @@ GATES = {
     "M2_recall": 0.85,
     "M2_trap_merges": 0,
     "M2_near_band": 4,
-    "M3_relevance_ordering": 0.90,
+    "M3_relevance_ordering": 0.95,
     "M3_cov_pairs": 55,
     "M3_cov_traps": 12,
     "M4_exactly_once": 1.0,
@@ -86,7 +86,7 @@ GATES = {
     "M6_lex": 1.0,
 }
 
-#: EVALS §5 margin assertions: gate − live naive baseline.
+#: EVALS §5 margin assertions: gate minus live naive baseline.
 NAIVE_MARGINS = {
     "M1_mention_f1": 0.10,
     "M1_amb": 0.10,
@@ -569,9 +569,15 @@ def determinism_check(write_golden: bool = False) -> tuple[float, list[str]]:
     golden_ok = True
     for name, digest in sorted(hashes.items()):
         path = GOLDEN / f"{name}.sha256"
-        if write_golden or not path.exists():
+        if write_golden:
             path.write_text(digest + "\n", encoding="utf-8")
             notes.append(f"golden {name}: written ({digest[:16]}…)")
+            continue
+        if not path.exists():
+            # A missing golden is a FAIL, not an invitation to self-write:
+            # otherwise deleting the file would let the gate pass vacuously.
+            golden_ok = False
+            notes.append(f"golden {name}: MISSING (refresh deliberately with --write-golden)")
             continue
         stored = path.read_text(encoding="utf-8").strip()
         if stored != digest:
@@ -795,7 +801,7 @@ def evaluate(*, write_golden: bool = False) -> EvalReport:
                 f"margin {name}",
                 gate - naive[name],
                 required,
-                f"gate {gate:.2f} − naive {naive[name]:.3f}",
+                f"gate {gate:.2f} - naive {naive[name]:.3f}",
             )
         )
 
@@ -931,7 +937,7 @@ def print_report(report: EvalReport) -> None:
     print("  no-link pair resemblance (τ = 0.60):")
     for row in report.extras["no_link_similarity"]:
         print(
-            f"    {row['band']:<5} base {row['a']:>3}–{row['b']:<3} J={row['J']:.3f} "
+            f"    {row['band']:<5} base {row['a']:>3}-{row['b']:<3} J={row['J']:.3f} "
             f"merged={row['merged']}"
         )
     print("-" * 96)
