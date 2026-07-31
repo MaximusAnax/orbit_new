@@ -35,13 +35,16 @@ FORMANT_MAX_HZ = 4200.0
 MAX_FORMANT_BANDWIDTH_HZ = 700.0
 """Poles broader than this are not formants — the standard resonance criterion."""
 
-#: Spectral-tilt regression band (Hz). Bounded above where the *voiced* spectrum
-#: still dominates a realistic recording: with a 20-30 dB SNR noise floor, a
-#: -8 dB/oct voice has fallen to the floor by ~2 kHz, so a regression that reads
-#: past it measures where the noise sits, not the speaker, and the slope
-#: differences between voices compress toward zero. 150-1600 Hz keeps ~3.4
-#: octaves of genuinely speech-dominated spectrum in the fit.
-TILT_BAND_HZ = (150.0, 1600.0)
+#: Spectral-tilt regression band (Hz). Both edges are chosen against known
+#: contaminants, measured on the dev fixtures. Above ~1.6 kHz a realistic
+#: recording's 20-30 dB SNR noise floor dominates a -8 dB/oct voice, so a wider
+#: regression measures where the noise sits and slope differences between voices
+#: compress toward zero. Below ~450 Hz two other things intrude: the speaker's
+#: own harmonics move through the lowest octave with prosody (large take-to-take
+#: swings), and a telephone band-pass (300-3400 Hz, the product's own consent
+#: intake path) removes the region entirely, biasing every phone take. 450-1600
+#: keeps ~1.8 octaves that survive both.
+TILT_BAND_HZ = (450.0, 1600.0)
 ROLLOFF_FRACTION = 0.85
 
 SPEECH_BAND_HZ = (300.0, 3400.0)
@@ -447,6 +450,21 @@ def band_ratios(power: np.ndarray, sample_rate: int, n_bands: int = N_MEL_BANDS)
 TILT_SMOOTHING_BINS = 9
 TILT_DYNAMIC_RANGE_DB = 60.0
 
+SHAPE_NAC_THRESHOLD = 0.7
+"""Spectral-shape features are measured on frames at least this periodic.
+
+Voiced frames that straddle a consonant onset carry the burst's high-frequency
+energy; how many of them a take has depends on its consonant draw, not on the
+speaker. Requiring a strong autocorrelation peak keeps the shape statistics on
+the vowel nuclei."""
+
+FORMANT_TRIM_FRACTION = 0.1
+"""F1/F2 location statistic: mean of the per-frame estimates after trimming this
+fraction at each end. The per-frame distribution is multi-modal (one mode per
+vowel), so the raw median sits on a flat valley between modes and jumps between
+takes; the trimmed mean averages across the balanced vowel content while still
+discarding outright estimation errors."""
+
 
 def smooth_spectrum(power: np.ndarray, width: int = TILT_SMOOTHING_BINS) -> np.ndarray:
     """Moving-average the power spectrum across frequency.
@@ -492,6 +510,32 @@ def spectral_tilt(power: np.ndarray, sample_rate: int) -> np.ndarray:
     return (residual * weights) @ x / max(denom, _EPS)
 
 
+def noise_psd(all_frame_power: np.ndarray, energy: np.ndarray) -> np.ndarray:
+    """Noise power spectrum estimated from the quietest decile of frames.
+
+    Every unit the synthesis or a recording produces ends in silence, so the
+    quiet frames of any usable clip sample the additive noise floor. The median
+    across them is robust to the odd quiet-but-voiced frame.
+    """
+    if all_frame_power.shape[0] == 0:
+        return np.zeros(all_frame_power.shape[1])
+    order = np.argsort(energy)
+    quietest = max(1, int(np.ceil(0.1 * all_frame_power.shape[0])))
+    return np.median(all_frame_power[order[:quietest]], axis=0)
+
+
+def speech_spectrum(shape_power: np.ndarray, noise: np.ndarray) -> np.ndarray:
+    """Noise-subtracted mean spectrum of the shape-feature frames.
+
+    Without the subtraction, every spectral-shape feature above ~1.5 kHz (where
+    speech energy has fallen to the recording's noise floor) measures the take's
+    SNR draw instead of the voice.
+    """
+    if shape_power.shape[0] == 0:
+        return np.zeros(shape_power.shape[1])
+    return np.maximum(shape_power.mean(axis=0) - noise, 0.0)
+
+
 def _speech_band_mask(power: np.ndarray, sample_rate: int) -> tuple[np.ndarray, np.ndarray]:
     """``(freqs, mask)`` restricting a spectrum to :data:`SPEECH_BAND_HZ`."""
     n_fft = 2 * (power.shape[1] - 1)
@@ -534,6 +578,14 @@ class VoiceFeatures:
     ``to_vector`` lays them out in the FR-4 order:
     ``[log F0 median, log F0 IQR, voiced ratio, F1 median, F2 median, tilt,
     centroid, rolloff] ⊕ 8 band ratios``.
+
+    Location statistics (build-stage deviation, recorded in REVIEW.md): the
+    F1/F2 fields hold a 10 %-trimmed mean of the per-frame estimates rather than
+    the raw median (the per-frame distribution is one mode per vowel, and a
+    median sitting on the flat valley between modes swings with content); the
+    band "ratios" are the square roots of the mel-band energy shares (the
+    variance-stabilizing transform for proportions, without which the tiny
+    high-band shares measure the recording's SNR draw, not the voice).
     """
 
     log_f0_median: float

@@ -47,6 +47,7 @@ from evals.fixtures.truth import (
     perturbation_margin,
     quiet_by_see,
     severity_of,
+    shallow_value,
     survives_perturbation,
 )
 
@@ -64,6 +65,17 @@ SKELETONS: list[tuple[str, str]] = [
     ("queenless", "r1b2rk1/pp2ppbp/2np1np1/8/8/2NP1NP1/PP2PPBP/R1B2RK1 w - - 0 1"),
     ("heavy-back-rank", "r2qkb1r/pppb1ppp/2n1pn2/8/8/2N1PN2/PPPB1PPP/R2QKB1R w KQkq - 0 1"),
     ("open-c-file", "r1bqk2r/pp2bppp/2nppn2/8/8/2NPPN2/PP2BPPP/R1BQK2R w KQkq - 0 1"),
+    # Lighter skeletons: at JUDGE_BUDGET the analyst completes far deeper
+    # iterations here, so the shallow-resolvability filter keeps a rich pool
+    # (the heavy skeletons alone cannot fill every tier once unresolvable
+    # quiet-refutation cases are excluded — build-stage finding B4).
+    ("rook-minor-mid", "2r1r1k1/pp3ppp/2n5/8/8/2N5/PP3PPP/2R1R1K1 w - - 0 1"),
+    ("queenless-light", "r4rk1/pp2ppbp/2n3p1/8/8/2N3P1/PP2PPBP/R4RK1 w - - 0 1"),
+    ("two-rook-bishop", "2r3k1/pp2bppp/8/8/8/8/PP2BPPP/2R3K1 w - - 0 1"),
+    ("knight-ending", "6k1/pp3ppp/2n5/8/8/2N5/PP3PPP/6K1 w - - 0 1"),
+    ("bishop-ending", "6k1/pp3ppp/4b3/8/8/4B3/PP3PPP/6K1 w - - 0 1"),
+    ("rook-ending", "3r2k1/pp3ppp/8/8/8/8/PP3PPP/2R3K1 w - - 0 1"),
+    ("queen-ending", "3q2k1/pp3ppp/8/8/8/8/PP3PPP/2Q3K1 w - - 0 1"),
 ]
 
 #: Removal recipes: symbolic piece removals that create a material offset.
@@ -193,6 +205,14 @@ def scan_position(
     if abs(cp_best) > 5_000:  # a mate is in view: not a quiet material fixture
         return []
 
+    # Resolvability by construction (EVALS.md D14: cases must be solvable
+    # inside the analyst's horizon).  The 4-ply full-width truth is only fair
+    # if a *depth-2 + capture-quiescence* material search — the weakest view
+    # the analyst can take of a heavy position at JUDGE_BUDGET — reaches the
+    # same tier.  Cases whose refutations need quiet moves at ply 3-4 of a
+    # 28-piece position are refused here rather than blamed on the analyst.
+    shallow_best = shallow_value(board)
+
     candidates: list[Candidate] = []
     for move, value in values.items():
         loss = cp_best - value
@@ -201,6 +221,13 @@ def scan_position(
         drop = delta_w(cp_best, value)
         tier = severity_of(drop)
         if not survives_perturbation(cp_best, value):
+            continue
+        board.push(move)
+        shallow_played = -shallow_value(board)
+        board.pop()
+        if severity_of(delta_w(shallow_best, shallow_played)) != tier:
+            continue
+        if not survives_perturbation(shallow_best, shallow_played):
             continue
         capped_loss = min(1_000, loss)
         candidates.append(

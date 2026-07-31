@@ -40,6 +40,7 @@ __all__ = [
     "quiet_by_see",
     "material_balance",
     "see",
+    "shallow_value",
     "severity_of",
     "survives_perturbation",
     "win_probability",
@@ -115,6 +116,58 @@ def forced_value(board: chess.Board, depth: int = 4) -> ForcedResult:
     counter = [0]
     value = _negamax(board.copy(stack=False), depth, -MATE_VALUE, MATE_VALUE, 0, counter)
     return ForcedResult(value=value, nodes=counter[0])
+
+
+def _shallow_negamax(
+    board: chess.Board, full: int, cap: int, alpha: int, beta: int, ply: int
+) -> int:
+    """Full-width for ``full`` plies, then captures/promotions with stand-pat.
+
+    This models the *weakest* analyst the eval contract promises — a search
+    that completes only two full-width plies plus a quiescence over captures —
+    using python-chess move generation and a material-only leaf, independent of
+    the engine under evaluation.
+    """
+    if board.is_checkmate():
+        return -(MATE_VALUE - ply)
+    if board.is_stalemate() or board.is_insufficient_material():
+        return 0
+    quiescing = full <= 0
+    if quiescing:
+        stand_pat = material_balance(board)
+        if cap <= 0:
+            return stand_pat
+        if stand_pat >= beta:
+            return stand_pat
+        alpha = max(alpha, stand_pat)
+        best = stand_pat
+        moves = [m for m in board.legal_moves if board.is_capture(m) or m.promotion]
+    else:
+        best = -MATE_VALUE
+        moves = list(board.legal_moves)
+    moves.sort(
+        key=lambda m: -(PIECE_VALUE.get(t, 0) if (t := board.piece_type_at(m.to_square)) else 0),
+    )
+    for move in moves:
+        board.push(move)
+        score = -_shallow_negamax(
+            board, full - 1, cap if not quiescing else cap - 1, -beta, -alpha, ply + 1
+        )
+        board.pop()
+        if score > best:
+            best = score
+        if best > alpha:
+            alpha = best
+        if alpha >= beta:
+            break
+    return best
+
+
+def shallow_value(board: chess.Board, *, full_plies: int = 2, capture_plies: int = 8) -> int:
+    """Material value visible to a depth-2 + capture-quiescence search."""
+    return _shallow_negamax(
+        board.copy(stack=False), full_plies, capture_plies, -MATE_VALUE, MATE_VALUE, 0
+    )
 
 
 def _least_valuable_attacker(

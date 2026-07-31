@@ -211,6 +211,77 @@ def gap_stderr(covariance: np.ndarray, free: list[int], low: int, high: int) -> 
     return math.sqrt(max(variance, 0.0))
 
 
+def fit_gap_model(
+    observations: list[tuple[int, int, float, int]], level_ids: list[int]
+) -> tuple[dict[int, float], list[dict[str, float]], list[dict[str, float]], list[dict[str, float]]]:
+    """Parametric ladder fit: ``gap_k = a + b*k + c*k^2`` by the same WLS.
+
+    The free per-level fit (``fit_elo``) estimates nine independent gaps from
+    seventeen match observations, which leaves each gap with a sampling error
+    of ~50-80 Elo at practical sample sizes — far wider than M1b's [100, 170]
+    committed-gap window (see docs/REVIEW.md, build-stage finding B2).  The
+    ladder's strength is *designed* to move smoothly with the one knob that
+    drives it (log2 node budget), so the committed curve is this 3-parameter
+    model: the same weighted-least-squares objective, the same smoothed and
+    clamped per-pair deltas, with the gap sequence constrained to a quadratic
+    in the rung index.  The free fit and per-pair residuals are kept in the
+    record as the collapse diagnostic.
+
+    Returns ``(ratings, gap_model, level_model, residuals)``.
+    """
+    basis = {k: np.array([1.0, float(k), float(k) ** 2]) for k in range(1, len(level_ids))}
+    rows: list[np.ndarray] = []
+    rhs: list[float] = []
+    weights: list[float] = []
+    metadata: list[tuple[int, int, float]] = []
+    for low, high, score, games in observations:
+        clipped = min(max(score, 1e-6), 1 - 1e-6)
+        delta = ELO_SCALE * math.log(clipped / (1.0 - clipped))
+        delta = max(-DELTA_CLAMP, min(DELTA_CLAMP, delta))
+        variance = (ELO_SCALE**2) / (games * clipped * (1.0 - clipped))
+        rows.append(np.sum([basis[k] for k in range(low, high)], axis=0))
+        rhs.append(delta)
+        weights.append(1.0 / variance)
+        metadata.append((low, high, math.sqrt(variance)))
+
+    design = np.array(rows, dtype=float)
+    target = np.array(rhs, dtype=float)
+    weight_matrix = np.diag(np.array(weights, dtype=float))
+    covariance = np.linalg.inv(design.T @ weight_matrix @ design)
+    params = covariance @ design.T @ weight_matrix @ target
+
+    ratings: dict[int, float] = {ANCHOR_LEVEL_ID: ANCHOR_ELO}
+    gap_model: list[dict[str, float]] = []
+    level_model: list[dict[str, float]] = []
+    accumulated = np.zeros(3)
+    for k in range(1, len(level_ids)):
+        vector = basis[k]
+        gap_value = float(vector @ params)
+        gap_err = math.sqrt(max(float(vector @ covariance @ vector), 0.0))
+        gap_model.append({"low": level_ids[k - 1], "high": level_ids[k], "gap": gap_value,
+                          "stderr": gap_err})
+        accumulated = accumulated + vector
+        ratings[level_ids[k]] = ANCHOR_ELO + float(accumulated @ params)
+        level_err = math.sqrt(max(float(accumulated @ covariance @ accumulated), 0.0))
+        level_model.append({"level_id": level_ids[k], "elo_internal": ratings[level_ids[k]],
+                            "stderr": level_err})
+
+    residuals: list[dict[str, float]] = []
+    fitted = design @ params
+    for (low, high, sigma), observed, modeled in zip(metadata, rhs, fitted, strict=True):
+        residuals.append(
+            {
+                "low": low,
+                "high": high,
+                "observed_delta": observed,
+                "model_delta": float(modeled),
+                "sigma": sigma,
+                "z": (observed - float(modeled)) / sigma if sigma > 0 else 0.0,
+            }
+        )
+    return ratings, gap_model, level_model, residuals
+
+
 def sha256_of(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 

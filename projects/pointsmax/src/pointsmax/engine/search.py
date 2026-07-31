@@ -50,6 +50,7 @@ from .money import (
     max_valid_sent,
     portfolio_value,
     redeemable_points,
+    smallest_sent_covering,
     transfer_fee_cents,
 )
 from .plan import PlanDraft, build_steps
@@ -382,6 +383,7 @@ class FundingSearch:
         window: int,
         *,
         cover_only: bool = False,
+        extra_anchors: tuple[int, ...] = (),
     ) -> list[int]:
         """FR-7c candidate *total* sent amounts over ``edge`` (merged, FR-7b).
 
@@ -423,6 +425,10 @@ class FundingSearch:
 
         limit = cover if cover is not None else ceiling
         anchors: list[int] = [limit] if cover_only else [limit, lowest]
+        for anchor in extra_anchors:
+            aligned = floor_to_multiple(anchor, inc)
+            if lowest <= aligned <= limit:
+                anchors.append(aligned)
         insurance: int | None = None
         if edge.bonus_per_from:
             tier = edge.bonus_per_from
@@ -550,6 +556,22 @@ class FundingSearch:
         source_mcpp = self.mcpp[source]
         target_mcpp = self.mcpp[program_id]
         window = self._align_windows(program_id).get(edge.id, 0)
+        # Shared-source reservations: when another outstanding requirement can
+        # draw on this same source directly, this edge must be able to take
+        # "everything except what covers them" — an anchor no per-requirement
+        # lattice shape produces on its own.
+        reserves: list[int] = []
+        held = already + max(self.balances.get(source, 0), 0)
+        for other_id, _hops, _path, _idx in rest:
+            other_residual = -self.balances.get(other_id, 0)
+            if other_residual <= 0 or other_id == source:
+                continue
+            for other_edge in self._inbound(other_id, frozenset({other_id})):
+                if other_edge.from_program != source or other_edge.id == edge.id:
+                    continue
+                cover_q = smallest_sent_covering(other_edge, other_residual, held)
+                if cover_q is not None and held - cover_q > already:
+                    reserves.append(held - cover_q)
         lattice = self._lattice(
             edge,
             residual,
@@ -559,6 +581,7 @@ class FundingSearch:
             # Second pass: this edge already had its full anchor set offered; it
             # comes around again only to *cover* whatever the later edges left.
             cover_only=idx >= len(candidates),
+            extra_anchors=tuple(reserves),
         )
 
         for total_sent in reversed(lattice):

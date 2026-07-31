@@ -604,11 +604,23 @@ def _valid_amounts(edge: dict[str, Any], balance: int, ceiling: int | None = Non
 
 
 def _cover_amount(edge: dict[str, Any], need: int) -> int:
-    """Smallest valid sent amount on ``edge`` whose delivery alone reaches ``need``."""
+    """Smallest valid sent amount on ``edge`` whose delivery alone reaches ``need``.
+
+    For a tier-bonus edge the ceiling extends to the first tier boundary at or
+    past that cover: FR-1 invariant 4 bounds the edge's *average* value ratio,
+    but the marginal segment from the cover up to the next boundary (where the
+    bonus lands) can be value-increasing, so amounts in that segment are not
+    "pure waste" and an exhaustive solver must include them.  Beyond that
+    boundary every further tier block and every partial segment is weakly
+    value-losing (both halves of invariant 4), so the ceiling is exact.
+    """
     inc = edge["increment_from"]
     sent = max(edge["min_from"], inc)
     while delivered(edge, sent) < need:
         sent += inc
+    tier = edge["bonus_per_from"]
+    if tier:
+        sent = max(sent, -((-sent) // tier) * tier)
     return sent
 
 
