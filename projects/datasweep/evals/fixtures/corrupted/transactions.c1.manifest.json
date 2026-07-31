@@ -1,0 +1,2961 @@
+{
+ "class_shares": {
+  "CAT_AUTO": 0.1,
+  "CAT_TYPO": 0.05,
+  "DATE": 0.15,
+  "DUP": 0.05,
+  "ENC": 0.1,
+  "MISS": 0.1,
+  "OUT": 0.047222,
+  "TYPE": 0.180556,
+  "WS": 0.222222
+ },
+ "column_truth": {
+  "date": {
+   "date_order": "provable",
+   "format": "%d-%m-%Y",
+   "proof_row": 25
+  }
+ },
+ "columns": [
+  "txn_id",
+  "date",
+  "amount",
+  "currency",
+  "merchant",
+  "category",
+  "status",
+  "code"
+ ],
+ "file": "transactions.c1.csv",
+ "golden": "transactions.csv",
+ "kinds": [
+  "integer",
+  "date",
+  "float",
+  "categorical",
+  "categorical",
+  "categorical",
+  "categorical",
+  "integer"
+ ],
+ "n_ops": 360,
+ "nullable_columns": [
+  "code",
+  "category"
+ ],
+ "op_rate": 0.0375,
+ "ops": [
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 659,
+   "source_row": 525
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 974,
+   "source_row": 22
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 649,
+   "source_row": 339
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 990,
+   "source_row": 81
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 643,
+   "source_row": 355
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 749,
+   "source_row": 150
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 822,
+   "source_row": 245
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 715,
+   "source_row": 194
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 766,
+   "source_row": 72
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 821,
+   "source_row": 70
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1116,
+   "source_row": 515
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1141,
+   "source_row": 338
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1089,
+   "source_row": 64
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 707,
+   "source_row": 566
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1073,
+   "source_row": 423
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 804,
+   "source_row": 30
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1149,
+   "source_row": 375
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 871,
+   "source_row": 151
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 28
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 46
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 118
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 135
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 182
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 189
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 209
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 252
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 287
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 324
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 341
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 357
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 378
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 462
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 499
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 561
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 584
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 605
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 672
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 738
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 763
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 807
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 826
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 878
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 975
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 979
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 987
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1012
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1015
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1027
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1038
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1092
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1104
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1122
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1166
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1172
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 8
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 24
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 35
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 105
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 113
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 121
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 172
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 175
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 293
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 347
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 383
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 386
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 445
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 460
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 472
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 494
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 503
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 517
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 555
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 568
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 592
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 628
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 636
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 662
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 775
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 800
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 818
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 825
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 875
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 885
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 888
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 909
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1037
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1079
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1091
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1182
+  },
+  {
+   "after": "  paid ",
+   "before": "paid",
+   "class": "WS",
+   "col": 6,
+   "op": "pad_whitespace",
+   "row": 92
+  },
+  {
+   "after": "  2024-04-16 ",
+   "before": "2024-04-16",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 94
+  },
+  {
+   "after": "  2024-03-27 ",
+   "before": "2024-03-27",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 231
+  },
+  {
+   "after": "  EUR ",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 285
+  },
+  {
+   "after": "  2023-08-25 ",
+   "before": "2023-08-25",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 442
+  },
+  {
+   "after": "  389756 ",
+   "before": "389756",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 465
+  },
+  {
+   "after": "  577.68 ",
+   "before": "577.68",
+   "class": "WS",
+   "col": 2,
+   "op": "pad_whitespace",
+   "row": 497
+  },
+  {
+   "after": "  refunded ",
+   "before": "refunded",
+   "class": "WS",
+   "col": 6,
+   "op": "pad_whitespace",
+   "row": 591
+  },
+  {
+   "after": "  2024-10-26 ",
+   "before": "2024-10-26",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 648
+  },
+  {
+   "after": "  GBP ",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 742
+  },
+  {
+   "after": "  52 ",
+   "before": "52",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 762
+  },
+  {
+   "after": "  utilities ",
+   "before": "utilities",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 763
+  },
+  {
+   "after": "  pending ",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "pad_whitespace",
+   "row": 869
+  },
+  {
+   "after": "  GBP ",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 904
+  },
+  {
+   "after": "  5 ",
+   "before": "5",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 910
+  },
+  {
+   "after": "  2024-01-30 ",
+   "before": "2024-01-30",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 989
+  },
+  {
+   "after": "  25 ",
+   "before": "25",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 1003
+  },
+  {
+   "after": "  2023-06-12 ",
+   "before": "2023-06-12",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 1143
+  },
+  {
+   "after": "  GBP ",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 1156
+  },
+  {
+   "after": "  GBP ",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 1188
+  },
+  {
+   "after": " 2023-09-20 ",
+   "before": "2023-09-20",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 0
+  },
+  {
+   "after": " 2023-11-23 ",
+   "before": "2023-11-23",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 36
+  },
+  {
+   "after": " dining ",
+   "before": "dining",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 165
+  },
+  {
+   "after": " refunded ",
+   "before": "refunded",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 235
+  },
+  {
+   "after": " pending ",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 257
+  },
+  {
+   "after": " USD ",
+   "before": "USD",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 273
+  },
+  {
+   "after": " paid ",
+   "before": "paid",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 310
+  },
+  {
+   "after": " Vela Cycles ",
+   "before": "Vela Cycles",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 382
+  },
+  {
+   "after": " grocery ",
+   "before": "grocery",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 425
+  },
+  {
+   "after": " Northwind Supply ",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 462
+  },
+  {
+   "after": " 433920 ",
+   "before": "433920",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 524
+  },
+  {
+   "after": " 2024-08-12 ",
+   "before": "2024-08-12",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 531
+  },
+  {
+   "after": " 2023-03-18 ",
+   "before": "2023-03-18",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 716
+  },
+  {
+   "after": " 3594.01 ",
+   "before": "3594.01",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 729
+  },
+  {
+   "after": " 2023-01-27 ",
+   "before": "2023-01-27",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 737
+  },
+  {
+   "after": " 653341 ",
+   "before": "653341",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 782
+  },
+  {
+   "after": " 1120.49 ",
+   "before": "1120.49",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 894
+  },
+  {
+   "after": " pending ",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 929
+  },
+  {
+   "after": " 2024-03-04 ",
+   "before": "2024-03-04",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 1007
+  },
+  {
+   "after": " 908159 ",
+   "before": "908159",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 1083
+  },
+  {
+   "after": "Kestrel Outfitters​",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 78
+  },
+  {
+   "after": "3444.96​",
+   "before": "3444.96",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 92
+  },
+  {
+   "after": "1503.80​",
+   "before": "1503.80",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 157
+  },
+  {
+   "after": "GBP​",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 270
+  },
+  {
+   "after": "257808​",
+   "before": "257808",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 311
+  },
+  {
+   "after": "89​",
+   "before": "89",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_zero_width",
+   "row": 328
+  },
+  {
+   "after": "2023-07-13​",
+   "before": "2023-07-13",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 481
+  },
+  {
+   "after": "Northwind Supply​",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 481
+  },
+  {
+   "after": "2023-12-14​",
+   "before": "2023-12-14",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 502
+  },
+  {
+   "after": "dining​",
+   "before": "dining",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_zero_width",
+   "row": 512
+  },
+  {
+   "after": "EUR​",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 608
+  },
+  {
+   "after": "545357​",
+   "before": "545357",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 648
+  },
+  {
+   "after": "92​",
+   "before": "92",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_zero_width",
+   "row": 718
+  },
+  {
+   "after": "Nordic Fjäll​",
+   "before": "Nordic Fjäll",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 735
+  },
+  {
+   "after": "EUR​",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 973
+  },
+  {
+   "after": "99​",
+   "before": "99",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_zero_width",
+   "row": 977
+  },
+  {
+   "after": "paid​",
+   "before": "paid",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_zero_width",
+   "row": 1013
+  },
+  {
+   "after": "860610​",
+   "before": "860610",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 1017
+  },
+  {
+   "after": "2024-06-05​",
+   "before": "2024-06-05",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 1098
+  },
+  {
+   "after": "EUR​",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 1161
+  },
+  {
+   "after": "Blue  Harbor Goods",
+   "before": "Blue Harbor Goods",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 129
+  },
+  {
+   "after": "Northwind  Supply",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 189
+  },
+  {
+   "after": "Nordic  Fjäll",
+   "before": "Nordic Fjäll",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 411
+  },
+  {
+   "after": "Delta  Pharmacy",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 446
+  },
+  {
+   "after": "Statler  Hardware",
+   "before": "Statler Hardware",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 468
+  },
+  {
+   "after": "Statler  Hardware",
+   "before": "Statler Hardware",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 478
+  },
+  {
+   "after": "Delta  Pharmacy",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 546
+  },
+  {
+   "after": "Kestrel  Outfitters",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 577
+  },
+  {
+   "after": "Vela  Cycles",
+   "before": "Vela Cycles",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 613
+  },
+  {
+   "after": "Northwind  Supply",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 623
+  },
+  {
+   "after": "Fjord  Interiors",
+   "before": "Fjord Interiors",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 626
+  },
+  {
+   "after": "Fjord  Interiors",
+   "before": "Fjord Interiors",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 630
+  },
+  {
+   "after": "Vela  Cycles",
+   "before": "Vela Cycles",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 633
+  },
+  {
+   "after": "Statler  Hardware",
+   "before": "Statler Hardware",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 751
+  },
+  {
+   "after": "Café  Norte",
+   "before": "Café Norte",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 763
+  },
+  {
+   "after": "Café  Norte",
+   "before": "Café Norte",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1015
+  },
+  {
+   "after": "Statler  Hardware",
+   "before": "Statler Hardware",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1023
+  },
+  {
+   "after": "Trailhead  Sports",
+   "before": "Trailhead Sports",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1040
+  },
+  {
+   "after": "Delta  Pharmacy",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1062
+  },
+  {
+   "after": "Fjord  Interiors",
+   "before": "Fjord Interiors",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1118
+  },
+  {
+   "after": "2,486.56",
+   "before": "2486.56",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 223
+  },
+  {
+   "after": "3,551.47",
+   "before": "3551.47",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 300
+  },
+  {
+   "after": "3,350.32",
+   "before": "3350.32",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 431
+  },
+  {
+   "after": "3,559.42",
+   "before": "3559.42",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 536
+  },
+  {
+   "after": "2,083.32",
+   "before": "2083.32",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 555
+  },
+  {
+   "after": "1,093.92",
+   "before": "1093.92",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 609
+  },
+  {
+   "after": "3,672.95",
+   "before": "3672.95",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 628
+  },
+  {
+   "after": "1,819.35",
+   "before": "1819.35",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 634
+  },
+  {
+   "after": "4,643.21",
+   "before": "4643.21",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 706
+  },
+  {
+   "after": "4,053.93",
+   "before": "4053.93",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 743
+  },
+  {
+   "after": "4,256.88",
+   "before": "4256.88",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 771
+  },
+  {
+   "after": "4,596.32",
+   "before": "4596.32",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 823
+  },
+  {
+   "after": "4,556.58",
+   "before": "4556.58",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 938
+  },
+  {
+   "after": "1,871.09",
+   "before": "1871.09",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 966
+  },
+  {
+   "after": "2,330.78",
+   "before": "2330.78",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1069
+  },
+  {
+   "after": "4,091.19",
+   "before": "4091.19",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1097
+  },
+  {
+   "after": "3,464.85",
+   "before": "3464.85",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1118
+  },
+  {
+   "after": "1803,68",
+   "before": "1803.68",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 0
+  },
+  {
+   "after": "3069,47",
+   "before": "3069.47",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 15
+  },
+  {
+   "after": "3496,92",
+   "before": "3496.92",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 239
+  },
+  {
+   "after": "1026,63",
+   "before": "1026.63",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 314
+  },
+  {
+   "after": "729,26",
+   "before": "729.26",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 363
+  },
+  {
+   "after": "1044,69",
+   "before": "1044.69",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 374
+  },
+  {
+   "after": "1889,13",
+   "before": "1889.13",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 481
+  },
+  {
+   "after": "3008,52",
+   "before": "3008.52",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 562
+  },
+  {
+   "after": "506,88",
+   "before": "506.88",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 604
+  },
+  {
+   "after": "1969,57",
+   "before": "1969.57",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 617
+  },
+  {
+   "after": "1001,32",
+   "before": "1001.32",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 621
+  },
+  {
+   "after": "1250,48",
+   "before": "1250.48",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 667
+  },
+  {
+   "after": "3296,18",
+   "before": "3296.18",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 693
+  },
+  {
+   "after": "3574,73",
+   "before": "3574.73",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 756
+  },
+  {
+   "after": "847,00",
+   "before": "847.00",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 762
+  },
+  {
+   "after": "1629,45",
+   "before": "1629.45",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 908
+  },
+  {
+   "after": "€4540.30",
+   "before": "4540.30",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 75
+  },
+  {
+   "after": "€3349.88",
+   "before": "3349.88",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 345
+  },
+  {
+   "after": "€1142.70",
+   "before": "1142.70",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 356
+  },
+  {
+   "after": "€1257.96",
+   "before": "1257.96",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 383
+  },
+  {
+   "after": "€2527.26",
+   "before": "2527.26",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 422
+  },
+  {
+   "after": "€4029.80",
+   "before": "4029.80",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 514
+  },
+  {
+   "after": "€86.55",
+   "before": "86.55",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 518
+  },
+  {
+   "after": "€1278.87",
+   "before": "1278.87",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 580
+  },
+  {
+   "after": "€3469.20",
+   "before": "3469.20",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 646
+  },
+  {
+   "after": "€2487.55",
+   "before": "2487.55",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 668
+  },
+  {
+   "after": "€711.13",
+   "before": "711.13",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 751
+  },
+  {
+   "after": "€4520.49",
+   "before": "4520.49",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 842
+  },
+  {
+   "after": "€304.71",
+   "before": "304.71",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 888
+  },
+  {
+   "after": "€174.66",
+   "before": "174.66",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1086
+  },
+  {
+   "after": "€1979.09",
+   "before": "1979.09",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1165
+  },
+  {
+   "after": "€546.73",
+   "before": "546.73",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1171
+  },
+  {
+   "after": "'664.36",
+   "before": "664.36",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 21
+  },
+  {
+   "after": "'4054.18",
+   "before": "4054.18",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 66
+  },
+  {
+   "after": "'626.04",
+   "before": "626.04",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 128
+  },
+  {
+   "after": "'15",
+   "before": "15",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 293
+  },
+  {
+   "after": "'257709",
+   "before": "257709",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 310
+  },
+  {
+   "after": "'325352",
+   "before": "325352",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 385
+  },
+  {
+   "after": "'336971",
+   "before": "336971",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 395
+  },
+  {
+   "after": "'2897.66",
+   "before": "2897.66",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 559
+  },
+  {
+   "after": "'553117",
+   "before": "553117",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 657
+  },
+  {
+   "after": "'587771",
+   "before": "587771",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 704
+  },
+  {
+   "after": "'3",
+   "before": "3",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 712
+  },
+  {
+   "after": "'2021.00",
+   "before": "2021.00",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 755
+  },
+  {
+   "after": "'1899.11",
+   "before": "1899.11",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 770
+  },
+  {
+   "after": "'721645",
+   "before": "721645",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 869
+  },
+  {
+   "after": "'81",
+   "before": "81",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 1049
+  },
+  {
+   "after": "'770.13",
+   "before": "770.13",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 1103
+  },
+  {
+   "after": "11-01-2023",
+   "before": "2023-01-11",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 5
+  },
+  {
+   "after": "11-07-2023",
+   "before": "2023-07-11",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 19
+  },
+  {
+   "after": "27-05-2024",
+   "before": "2024-05-27",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 25
+  },
+  {
+   "after": "13-02-2024",
+   "before": "2024-02-13",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 28
+  },
+  {
+   "after": "30-05-2024",
+   "before": "2024-05-30",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 108
+  },
+  {
+   "after": "02-12-2023",
+   "before": "2023-12-02",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 197
+  },
+  {
+   "after": "01-07-2024",
+   "before": "2024-07-01",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 205
+  },
+  {
+   "after": "20-04-2024",
+   "before": "2024-04-20",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 214
+  },
+  {
+   "after": "29-04-2024",
+   "before": "2024-04-29",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 242
+  },
+  {
+   "after": "06-12-2023",
+   "before": "2023-12-06",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 244
+  },
+  {
+   "after": "09-04-2023",
+   "before": "2023-04-09",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 252
+  },
+  {
+   "after": "07-07-2024",
+   "before": "2024-07-07",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 253
+  },
+  {
+   "after": "26-04-2023",
+   "before": "2023-04-26",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 317
+  },
+  {
+   "after": "18-04-2024",
+   "before": "2024-04-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 323
+  },
+  {
+   "after": "15-11-2024",
+   "before": "2024-11-15",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 331
+  },
+  {
+   "after": "05-11-2023",
+   "before": "2023-11-05",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 342
+  },
+  {
+   "after": "22-11-2024",
+   "before": "2024-11-22",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 364
+  },
+  {
+   "after": "13-08-2023",
+   "before": "2023-08-13",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 374
+  },
+  {
+   "after": "09-08-2023",
+   "before": "2023-08-09",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 384
+  },
+  {
+   "after": "18-06-2024",
+   "before": "2024-06-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 415
+  },
+  {
+   "after": "29-09-2023",
+   "before": "2023-09-29",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 417
+  },
+  {
+   "after": "16-08-2023",
+   "before": "2023-08-16",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 428
+  },
+  {
+   "after": "05-05-2024",
+   "before": "2024-05-05",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 443
+  },
+  {
+   "after": "18-07-2023",
+   "before": "2023-07-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 454
+  },
+  {
+   "after": "04-12-2023",
+   "before": "2023-12-04",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 461
+  },
+  {
+   "after": "03-11-2024",
+   "before": "2024-11-03",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 510
+  },
+  {
+   "after": "17-09-2024",
+   "before": "2024-09-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 530
+  },
+  {
+   "after": "17-07-2023",
+   "before": "2023-07-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 543
+  },
+  {
+   "after": "09-07-2023",
+   "before": "2023-07-09",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 550
+  },
+  {
+   "after": "22-03-2023",
+   "before": "2023-03-22",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 557
+  },
+  {
+   "after": "28-05-2023",
+   "before": "2023-05-28",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 573
+  },
+  {
+   "after": "10-09-2024",
+   "before": "2024-09-10",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 587
+  },
+  {
+   "after": "20-09-2024",
+   "before": "2024-09-20",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 631
+  },
+  {
+   "after": "20-12-2023",
+   "before": "2023-12-20",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 653
+  },
+  {
+   "after": "30-09-2023",
+   "before": "2023-09-30",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 684
+  },
+  {
+   "after": "29-08-2023",
+   "before": "2023-08-29",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 743
+  },
+  {
+   "after": "08-07-2024",
+   "before": "2024-07-08",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 756
+  },
+  {
+   "after": "21-04-2023",
+   "before": "2023-04-21",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 770
+  },
+  {
+   "after": "29-12-2023",
+   "before": "2023-12-29",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 800
+  },
+  {
+   "after": "26-07-2023",
+   "before": "2023-07-26",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 803
+  },
+  {
+   "after": "11-04-2023",
+   "before": "2023-04-11",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 842
+  },
+  {
+   "after": "04-06-2023",
+   "before": "2023-06-04",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 861
+  },
+  {
+   "after": "15-01-2023",
+   "before": "2023-01-15",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 882
+  },
+  {
+   "after": "29-05-2024",
+   "before": "2024-05-29",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 997
+  },
+  {
+   "after": "17-01-2024",
+   "before": "2024-01-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 999
+  },
+  {
+   "after": "21-03-2023",
+   "before": "2023-03-21",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1021
+  },
+  {
+   "after": "27-11-2023",
+   "before": "2023-11-27",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1022
+  },
+  {
+   "after": "04-09-2024",
+   "before": "2024-09-04",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1025
+  },
+  {
+   "after": "18-05-2024",
+   "before": "2024-05-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1037
+  },
+  {
+   "after": "20-04-2023",
+   "before": "2023-04-20",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1058
+  },
+  {
+   "after": "28-01-2023",
+   "before": "2023-01-28",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1120
+  },
+  {
+   "after": "18-06-2024",
+   "before": "2024-06-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1124
+  },
+  {
+   "after": "24-03-2023",
+   "before": "2023-03-24",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1184
+  },
+  {
+   "after": "10-08-2023",
+   "before": "2023-08-10",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1199
+  },
+  {
+   "after": "usd",
+   "before": "USD",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 166
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 632
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 271
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 337
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 10
+  },
+  {
+   "after": "usd",
+   "before": "USD",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 550
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 886
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 760
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 1051
+  },
+  {
+   "after": "DELTA PHARMACY",
+   "before": "Delta Pharmacy",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 1018
+  },
+  {
+   "after": "DELTA PHARMACY",
+   "before": "Delta Pharmacy",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 520
+  },
+  {
+   "after": "(Vela Cycles)",
+   "before": "Vela Cycles",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 948
+  },
+  {
+   "after": "(Statler Hardware)",
+   "before": "Statler Hardware",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 893
+  },
+  {
+   "after": "(Orchard and Vine)",
+   "before": "Orchard and Vine",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 261
+  },
+  {
+   "after": "(Café Norte)",
+   "before": "Café Norte",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 653
+  },
+  {
+   "after": "TRAILHEAD SPORTS",
+   "before": "Trailhead Sports",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 575
+  },
+  {
+   "after": "(Orchard and Vine)",
+   "before": "Orchard and Vine",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 140
+  },
+  {
+   "after": "TRAILHEAD SPORTS",
+   "before": "Trailhead Sports",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 324
+  },
+  {
+   "after": "UTILITIES",
+   "before": "utilities",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 246
+  },
+  {
+   "after": "APPAREL",
+   "before": "apparel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 49
+  },
+  {
+   "after": "FUEL",
+   "before": "fuel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 3
+  },
+  {
+   "after": "(travel)",
+   "before": "travel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 994
+  },
+  {
+   "after": "UTILITIES",
+   "before": "utilities",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 856
+  },
+  {
+   "after": "UTILITIES",
+   "before": "utilities",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 1113
+  },
+  {
+   "after": "(grocery)",
+   "before": "grocery",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 217
+  },
+  {
+   "after": "(travel)",
+   "before": "travel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 305
+  },
+  {
+   "after": "FUEL",
+   "before": "fuel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 170
+  },
+  {
+   "after": "PENDING",
+   "before": "pending",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 988
+  },
+  {
+   "after": "(refunded)",
+   "before": "refunded",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 697
+  },
+  {
+   "after": "(paid)",
+   "before": "paid",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 935
+  },
+  {
+   "after": "CHARGEBACK",
+   "before": "chargeback",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 635
+  },
+  {
+   "after": "(refunded)",
+   "before": "refunded",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 424
+  },
+  {
+   "after": "PENDING",
+   "before": "pending",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 394
+  },
+  {
+   "after": "CHARGEBACK",
+   "before": "chargeback",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 856
+  },
+  {
+   "after": "PENDING",
+   "before": "pending",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 289
+  },
+  {
+   "after": "CHARGEBACK",
+   "before": "chargeback",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 302
+  },
+  {
+   "after": "EaR",
+   "before": "EUR",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 912
+  },
+  {
+   "after": "EUa",
+   "before": "EUR",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 581
+  },
+  {
+   "after": "EbR",
+   "before": "EUR",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 251
+  },
+  {
+   "after": "EcR",
+   "before": "EUR",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 500
+  },
+  {
+   "after": "USa",
+   "before": "USD",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 796
+  },
+  {
+   "after": "Petit Marcaé",
+   "before": "Petit Marché",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 617
+  },
+  {
+   "after": "Delta Pharmbcy",
+   "before": "Delta Pharmacy",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 126
+  },
+  {
+   "after": "Peait Marché",
+   "before": "Petit Marché",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 1027
+  },
+  {
+   "after": "Kestrel Ouafitters",
+   "before": "Kestrel Outfitters",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 631
+  },
+  {
+   "after": "Dalta Pharmacy",
+   "before": "Delta Pharmacy",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 842
+  },
+  {
+   "after": "utiaities",
+   "before": "utilities",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 136
+  },
+  {
+   "after": "uailities",
+   "before": "utilities",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 1045
+  },
+  {
+   "after": "traael",
+   "before": "travel",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 105
+  },
+  {
+   "after": "groaery",
+   "before": "grocery",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 554
+  },
+  {
+   "after": "rafunded",
+   "before": "refunded",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 249
+  },
+  {
+   "after": "pbid",
+   "before": "paid",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 818
+  },
+  {
+   "after": "chargaback",
+   "before": "chargeback",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 554
+  },
+  {
+   "after": "paia",
+   "before": "paid",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 582
+  },
+  {
+   "after": "34095.31",
+   "before": "4357.88",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 41
+  },
+  {
+   "after": "748",
+   "before": "94",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 69
+  },
+  {
+   "after": "-33352.04",
+   "before": "3832.28",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 71
+  },
+  {
+   "after": "-27714.01",
+   "before": "3880.17",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 90
+  },
+  {
+   "after": "448",
+   "before": "81",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 165
+  },
+  {
+   "after": "-488",
+   "before": "55",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 192
+  },
+  {
+   "after": "609",
+   "before": "71",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 247
+  },
+  {
+   "after": "38014.95",
+   "before": "2286.10",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 287
+  },
+  {
+   "after": "-21215.66",
+   "before": "1349.48",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 353
+  },
+  {
+   "after": "625",
+   "before": "11",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 398
+  },
+  {
+   "after": "694",
+   "before": "56",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 678
+  },
+  {
+   "after": "37761.43",
+   "before": "2528.88",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 772
+  },
+  {
+   "after": "-33210.69",
+   "before": "2190.28",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 880
+  },
+  {
+   "after": "534",
+   "before": "71",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 944
+  },
+  {
+   "after": "-19762.22",
+   "before": "3489.06",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 1017
+  },
+  {
+   "after": "529",
+   "before": "74",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 1058
+  },
+  {
+   "after": "-31908.64",
+   "before": "1863.28",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 1162
+  }
+ ],
+ "seed": 1337,
+ "targets": {
+  "CAT_AUTO": 36,
+  "CAT_TYPO": 18,
+  "DATE": 54,
+  "DUP": 18,
+  "ENC": 36,
+  "MISS": 36,
+  "OUT": 17,
+  "TYPE": 65,
+  "WS": 80
+ },
+ "variant": 1
+}

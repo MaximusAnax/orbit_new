@@ -302,9 +302,7 @@ class AwardOffer(_Frozen):
             raise ValueError(f"award offer {self.id}: travel window start is after end")
         if self.kind is OfferKind.FLIGHT:
             missing = [
-                f
-                for f in ("origin", "destination", "round_trip")
-                if getattr(self, f) is None
+                f for f in ("origin", "destination", "round_trip") if getattr(self, f) is None
             ]
             if missing:
                 raise ValueError(
@@ -488,7 +486,14 @@ class World(BaseModel):
     ) -> int | None:
         """Reference fare in cents, or None when the world has no such row (FR-8)."""
         if kind is OfferKind.FLIGHT:
-            key = ("flight", origin_city, dest_city, str(cabin) if cabin else None, bool(round_trip), month)
+            key = (
+                "flight",
+                origin_city,
+                dest_city,
+                str(cabin) if cabin else None,
+                bool(round_trip),
+                month,
+            )
         else:
             key = ("stay", city, month)
         fare = self._fare_by_key.get(key)
@@ -743,9 +748,7 @@ class PlanStep(_Mutable):
                 raise ValueError(f"{self.kind} step requires cashout_id and no offer_id")
         expected_irreversible = self.kind in (StepKind.TRANSFER, StepKind.BOOK_AWARD)
         if self.irreversible != expected_irreversible:
-            raise ValueError(
-                f"{self.kind} step irreversible flag must be {expected_irreversible}"
-            )
+            raise ValueError(f"{self.kind} step irreversible flag must be {expected_irreversible}")
         return self
 
     def canonical_tuple(self) -> list:

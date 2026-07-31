@@ -15,6 +15,7 @@ Coordinate/unit conventions (DATA_MODEL "Units and coordinate conventions"):
 
 from __future__ import annotations
 
+import math
 from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict, Field, computed_field, field_validator, model_validator
@@ -32,6 +33,16 @@ def lb_to_kg(value: float) -> float:
 def kg_to_lb(value: float) -> float:
     """Convert kilograms to pounds (display only)."""
     return value * LB_PER_KG
+
+
+def round_half_up(value: float) -> int:
+    """``round()`` as SCOPE § Conventions defines it: half rounds *up*.
+
+    Python's built-in :func:`round` uses banker's rounding, which would make
+    ``round(2.5)`` equal ``2`` and quietly change set counts and smoothing
+    windows, so every rounding in the engine goes through this helper.
+    """
+    return math.floor(value + 0.5)
 
 
 # ---------------------------------------------------------------------- enumerations

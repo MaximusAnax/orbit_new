@@ -1,0 +1,28 @@
+{
+ "id": "exact_00",
+ "suite": "exact",
+ "n": 8,
+ "seed": 42000,
+ "clusters": [
+  "house"
+ ],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:2ea89c6460873aabdc5646241356eb7d536eacee",
+  "meta:03ffcdea093bcc473fc785a3c0976caf6a5f0f2b",
+  "meta:58456fea687b8f9f7b7fc2c5c4c4c2a59351f382",
+  "meta:e798a226f3a77e7d96c977406f3e4be51e05fc49",
+  "meta:b0d5691b7091888a0db1c343eceffdba314c900b",
+  "meta:ad8cccc1b953b2864f0148f6942ebd8614296530",
+  "meta:5f56d5e895e01dadd4f8c2e16b0c092a67a8ab69",
+  "meta:3954eabc00a863fbf07a3994997ed08c064419fe"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "plain",
+  "search_seed": 42000
+ }
+}

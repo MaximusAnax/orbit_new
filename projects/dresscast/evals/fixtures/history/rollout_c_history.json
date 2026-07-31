@@ -1,0 +1,8 @@
+{
+  "description": "Rollout C's starting history: a winter start, so the cold-weather half of the closet is already in rotation.",
+  "medium": [
+    {"days_ago": 1, "items": ["m014", "m040", "m058", "m026", "m034"]},
+    {"days_ago": 2, "items": ["m017", "m044", "m059", "m023"]},
+    {"days_ago": 5, "items": ["m010", "m048", "m053", "m028"]}
+  ]
+}

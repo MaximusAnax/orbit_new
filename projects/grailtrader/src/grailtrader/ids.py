@@ -40,7 +40,7 @@ def canonical_json(obj: Any) -> str:
 
 def cents(usd: float) -> int:
     """Serialise a USD amount as integer cents (no float repr enters a hash)."""
-    return int(round(usd * 100))
+    return round(usd * 100)
 
 
 def listing_id(source: str, external_id: str) -> str:

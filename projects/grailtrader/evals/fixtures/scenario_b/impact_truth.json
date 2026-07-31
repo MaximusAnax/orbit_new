@@ -1,0 +1,331 @@
+{
+ "anchors": {
+  "designer_departure.death": [
+   0.21,
+   0.27,
+   6.5,
+   3
+  ],
+  "designer_departure.house_closure": [
+   0.19,
+   0.13,
+   10.0,
+   8
+  ],
+  "designer_departure.resignation": [
+   0.13,
+   0.11,
+   7.5,
+   10
+  ],
+  "designer_departure.ousted": [
+   0.13,
+   0.15,
+   7.0,
+   10
+  ],
+  "designer_appointment.acclaimed": [
+   0.065,
+   0.085,
+   8.0,
+   12
+  ],
+  "designer_appointment.neutral": [
+   0.022,
+   0.043,
+   8.0,
+   12
+  ],
+  "designer_appointment.unproven": [
+   0.004,
+   0.032,
+   8.0,
+   12
+  ],
+  "designer_appointment.predecessor": [
+   0.065,
+   0.043,
+   8.0,
+   12
+  ],
+  "collab_announcement": [
+   0.021,
+   0.105,
+   4.0,
+   4
+  ],
+  "celebrity_cosign": [
+   0.0,
+   0.105,
+   3.0,
+   3
+  ],
+  "runway_reception.acclaimed": [
+   0.021,
+   0.052,
+   6.0,
+   6
+  ],
+  "runway_reception.panned": [
+   0.0,
+   -0.042,
+   6.0,
+   6
+  ],
+  "brand_scandal.minor": [
+   -0.052,
+   -0.052,
+   6.0,
+   8
+  ],
+  "brand_scandal.moderate": [
+   -0.105,
+   -0.105,
+   8.0,
+   8
+  ],
+  "brand_scandal.severe": [
+   -0.155,
+   -0.155,
+   10.0,
+   8
+  ]
+ },
+ "anchor_sigma": 0.25,
+ "legs": [
+  {
+   "event_id": "1ac5733e01837d27",
+   "event_key": "brack-holt|designer_departure|8",
+   "event_type": "designer_departure",
+   "event_week": "2023-02-27",
+   "target_stratum": "brack-holt/brack",
+   "permanent": 0.155351,
+   "transient": 0.101704,
+   "half_life_weeks": 7.3882,
+   "diffusion_weeks": 10,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "8a1d182834eeb0e2",
+   "event_key": "quarry-lane|collab_announcement|14",
+   "event_type": "collab_announcement",
+   "event_week": "2023-04-10",
+   "target_stratum": "quarry-lane",
+   "permanent": -0.01673,
+   "transient": -0.118818,
+   "half_life_weeks": 4.3218,
+   "diffusion_weeks": 4,
+   "fizzled": false,
+   "contradicts_prior": true
+  },
+  {
+   "event_id": "147ca835f28ddc93",
+   "event_key": "delacroix-cie|brand_scandal|18",
+   "event_type": "brand_scandal",
+   "event_week": "2023-05-08",
+   "target_stratum": "delacroix-cie",
+   "permanent": -0.114691,
+   "transient": -0.090344,
+   "half_life_weeks": 9.1794,
+   "diffusion_weeks": 8,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "0d1d22747a5e852b",
+   "event_key": "meridian-forge|celebrity_cosign|20",
+   "event_type": "celebrity_cosign",
+   "event_week": "2023-05-22",
+   "target_stratum": "meridian-forge/meridian",
+   "permanent": 0.0,
+   "transient": 0.122888,
+   "half_life_weeks": 2.9835,
+   "diffusion_weeks": 3,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "af483a0b494e7b65",
+   "event_key": "brack-holt|runway_reception|24",
+   "event_type": "runway_reception",
+   "event_week": "2023-06-19",
+   "target_stratum": "brack-holt",
+   "permanent": -0.0,
+   "transient": 0.045727,
+   "half_life_weeks": 6.0066,
+   "diffusion_weeks": 6,
+   "fizzled": false,
+   "contradicts_prior": true
+  },
+  {
+   "event_id": "4e5830dd9dfa04fe",
+   "event_key": "quarry-lane|designer_departure|28",
+   "event_type": "designer_departure",
+   "event_week": "2023-07-17",
+   "target_stratum": "quarry-lane/quarry",
+   "permanent": 0.122176,
+   "transient": 0.09851,
+   "half_life_weeks": 8.4545,
+   "diffusion_weeks": 10,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "fac93255058c11b0",
+   "event_key": "delacroix-cie|designer_appointment|32",
+   "event_type": "designer_appointment",
+   "event_week": "2023-08-14",
+   "target_stratum": "delacroix-cie",
+   "permanent": -0.073013,
+   "transient": -0.102786,
+   "half_life_weeks": 7.886,
+   "diffusion_weeks": 12,
+   "fizzled": false,
+   "contradicts_prior": true
+  },
+  {
+   "event_id": "fac93255058c11b0",
+   "event_key": "delacroix-cie|designer_appointment|32",
+   "event_type": "designer_appointment",
+   "event_week": "2023-08-14",
+   "target_stratum": "delacroix-cie/delacroix",
+   "permanent": -0.064604,
+   "transient": -0.035215,
+   "half_life_weeks": 10.4366,
+   "diffusion_weeks": 12,
+   "fizzled": false,
+   "contradicts_prior": true
+  },
+  {
+   "event_id": "34aaa019b60231bd",
+   "event_key": "meridian-forge|designer_departure|36",
+   "event_type": "designer_departure",
+   "event_week": "2023-09-11",
+   "target_stratum": "meridian-forge/meridian",
+   "permanent": 0.207364,
+   "transient": 0.204633,
+   "half_life_weeks": 4.8839,
+   "diffusion_weeks": 3,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "0ae94ae5b3f50252",
+   "event_key": "meridian-forge|collab_announcement|38",
+   "event_type": "collab_announcement",
+   "event_week": "2023-09-25",
+   "target_stratum": "meridian-forge",
+   "permanent": 0.020195,
+   "transient": 0.093672,
+   "half_life_weeks": 4.0502,
+   "diffusion_weeks": 4,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "b94f22b77d00d478",
+   "event_key": "brack-holt|brand_scandal|40",
+   "event_type": "brand_scandal",
+   "event_week": "2023-10-09",
+   "target_stratum": "brack-holt",
+   "permanent": -0.110715,
+   "transient": -0.082002,
+   "half_life_weeks": 12.3789,
+   "diffusion_weeks": 8,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "6c1f6b63ee74d566",
+   "event_key": "solveig-mark|designer_departure|44",
+   "event_type": "designer_departure",
+   "event_week": "2023-11-06",
+   "target_stratum": "solveig-mark/solveig",
+   "permanent": 0.129916,
+   "transient": 0.068512,
+   "half_life_weeks": 7.217,
+   "diffusion_weeks": 10,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "ba5144f2e75aea5f",
+   "event_key": "quarry-lane|celebrity_cosign|48",
+   "event_type": "celebrity_cosign",
+   "event_week": "2023-12-04",
+   "target_stratum": "quarry-lane/quarry",
+   "permanent": 0.0,
+   "transient": 0.044945,
+   "half_life_weeks": 2.7108,
+   "diffusion_weeks": 3,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "1c0f9f60e6ce54db",
+   "event_key": "delacroix-cie|designer_departure|52",
+   "event_type": "designer_departure",
+   "event_week": "2024-01-01",
+   "target_stratum": "delacroix-cie/delacroix",
+   "permanent": 0.114427,
+   "transient": 0.11598,
+   "half_life_weeks": 7.9339,
+   "diffusion_weeks": 8,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "9cb4f2d49fde3d18",
+   "event_key": "meridian-forge|brand_scandal|56",
+   "event_type": "brand_scandal",
+   "event_week": "2024-01-29",
+   "target_stratum": "meridian-forge",
+   "permanent": -0.041262,
+   "transient": -0.050135,
+   "half_life_weeks": 7.0851,
+   "diffusion_weeks": 8,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "c12201177508a79d",
+   "event_key": "quarry-lane|designer_appointment|60",
+   "event_type": "designer_appointment",
+   "event_week": "2024-02-26",
+   "target_stratum": "quarry-lane",
+   "permanent": 0.019771,
+   "transient": 0.048586,
+   "half_life_weeks": 7.6886,
+   "diffusion_weeks": 12,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "c12201177508a79d",
+   "event_key": "quarry-lane|designer_appointment|60",
+   "event_type": "designer_appointment",
+   "event_week": "2024-02-26",
+   "target_stratum": "quarry-lane/quarry",
+   "permanent": 0.049871,
+   "transient": 0.05543,
+   "half_life_weeks": 9.2422,
+   "diffusion_weeks": 12,
+   "fizzled": false,
+   "contradicts_prior": false
+  },
+  {
+   "event_id": "d109e5ddfe428632",
+   "event_key": "brack-holt|celebrity_cosign|64",
+   "event_type": "celebrity_cosign",
+   "event_week": "2024-03-25",
+   "target_stratum": "brack-holt",
+   "permanent": 0.0,
+   "transient": 0.029511,
+   "half_life_weeks": 2.5981,
+   "diffusion_weeks": 3,
+   "fizzled": false,
+   "contradicts_prior": false
+  }
+ ]
+}

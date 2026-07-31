@@ -1,0 +1,36 @@
+{
+ "id": "exact_09",
+ "suite": "exact",
+ "n": 13,
+ "seed": 1302328,
+ "clusters": [
+  "house",
+  "indie"
+ ],
+ "anchors": {
+  "start": 0,
+  "end": 12
+ },
+ "tracks": [
+  "meta:f20340edb67bb79da585fe2682b244eeb4638ffb",
+  "meta:a7096a6e90cbf4e1ecfa7e6b9d8a9129be26b979",
+  "meta:133cd55125d4b038a1fcce6df8c83cbb254d079d",
+  "meta:0b63e8f7d5b65420fa58afca92eca3f1926d53d0",
+  "meta:1551a71227c92b62d4eeba0ef2aee8fbf9853281",
+  "meta:6053d55b0d6225cdacbf3a5151bc483f8fc0a7ae",
+  "meta:0cb35de07f32cc5a408ef68dd807174798580c97",
+  "meta:517ea4504b329b251cf90dc9347847a0e352fa47",
+  "meta:133f23aaf31d3e886e839117ebbd9c65294f3635",
+  "meta:bd6bcd8dfe2a1fadadef9770471b2e38ffb236a1",
+  "meta:1186839f3f1ee1f566cc3c90cd08f857e9db23fd",
+  "meta:eda877d025a4e35bbc7991888e06c43b6c4002bb",
+  "meta:383e97c9364b5eb5262461ff27ac1f1d2e5e380f"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "anchored",
+  "search_seed": 1302328,
+  "greedy_bound": 0.862505,
+  "depth_target": 0.88
+ }
+}

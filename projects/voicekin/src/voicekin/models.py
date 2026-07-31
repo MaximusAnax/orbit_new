@@ -26,9 +26,7 @@ Slug = Annotated[str, StringConstraints(pattern=r"^[a-z0-9][a-z0-9._-]{0,63}$")]
 
 IsoTs = Annotated[
     str,
-    StringConstraints(
-        pattern=r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})?$"
-    ),
+    StringConstraints(pattern=r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})?$"),
 ]
 """ISO-8601 timestamp supplied by the caller. The engine never reads the clock."""
 
@@ -472,10 +470,7 @@ class DeviceTarget(BaseModel):
 
     @model_validator(mode="after")
     def _check(self) -> DeviceTarget:
-        if self.kind is TargetKind.FILE_SINK:
-            required = ("dir",)
-        else:
-            required = ("entity_id", "media_dir")
+        required = ("dir",) if self.kind is TargetKind.FILE_SINK else ("entity_id", "media_dir")
         missing = [k for k in required if not self.config.get(k)]
         if missing:
             raise ValueError(f"{self.kind} target requires config keys: {', '.join(missing)}")

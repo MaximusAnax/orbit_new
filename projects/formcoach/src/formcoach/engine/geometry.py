@@ -367,9 +367,7 @@ def hip_shoulder_rise_ratio(
     return slope, len(frames) - 1
 
 
-def bar_drift_frac(
-    frames: Sequence[PoseFrame], ctx: FeatureContext
-) -> tuple[float, int] | None:
+def bar_drift_frac(frames: Sequence[PoseFrame], ctx: FeatureContext) -> tuple[float, int] | None:
     """Signed wrist-x deviation from mid-ankle-x over shank length.
 
     Evaluated on every frame of the rep; the returned value is the one with the

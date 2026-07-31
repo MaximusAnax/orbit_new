@@ -7,23 +7,18 @@ Offline implementations are what tests and evals exercise.  Live implementations
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
 from .analyst import Analyst, AnalystUnavailableError
 from .analyst_internal import InternalAnalyst
 from .book import OpeningBook
 from .book_committed import BookValidationError, CommittedBook
 
-if TYPE_CHECKING:  # pragma: no cover - typing only
-    pass
-
 __all__ = [
     "Analyst",
     "AnalystUnavailableError",
+    "BookValidationError",
+    "CommittedBook",
     "InternalAnalyst",
     "OpeningBook",
-    "CommittedBook",
-    "BookValidationError",
     "live_analyst",
     "live_book",
 ]

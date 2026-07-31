@@ -1,0 +1,643 @@
+[
+  {
+    "id": "e-b1",
+    "name": "edge-white-tee",
+    "category": "tshirt",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.08,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "white",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "minimal"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-b2",
+    "name": "edge-gray-tee",
+    "category": "long_sleeve_tee",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.12,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "gray",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "minimal"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-b3",
+    "name": "edge-blue-oxford",
+    "category": "shirt_long_sleeve",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.25,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "blue",
+        "hue": 220.0,
+        "neutral": false,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "preppy"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-b4",
+    "name": "edge-red-flannel",
+    "category": "flannel_shirt",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.34,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "red",
+        "hue": 0.0,
+        "neutral": false,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-m1",
+    "name": "edge-thin-sweater",
+    "category": "sweater_thin",
+    "layer_role": "mid",
+    "accessory_class": null,
+    "clo": 0.25,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "beige",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-m2",
+    "name": "edge-thick-sweater",
+    "category": "sweater_thick",
+    "layer_role": "mid",
+    "accessory_class": null,
+    "clo": 0.36,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "navy",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-m3",
+    "name": "edge-fleece",
+    "category": "fleece",
+    "layer_role": "mid",
+    "accessory_class": null,
+    "clo": 0.3,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "olive",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-o1",
+    "name": "edge-wool-coat",
+    "category": "wool_coat",
+    "layer_role": "outer",
+    "accessory_class": null,
+    "clo": 0.6,
+    "waterproofness": 1,
+    "windproofness": 1,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "navy",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 30,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-o2",
+    "name": "edge-light-jacket",
+    "category": "light_jacket",
+    "layer_role": "outer",
+    "accessory_class": null,
+    "clo": 0.4,
+    "waterproofness": 1,
+    "windproofness": 1,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "denim",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 30,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-p1",
+    "name": "edge-jeans",
+    "category": "jeans",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.24,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "denim",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-p2",
+    "name": "edge-chinos",
+    "category": "trousers_thin",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.15,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "olive",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "preppy"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-p3",
+    "name": "edge-thick-trousers",
+    "category": "trousers_thick",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.24,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "gray",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-p4",
+    "name": "edge-shorts",
+    "category": "shorts",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.08,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "beige",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "minimal"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 3,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-f1",
+    "name": "edge-boots",
+    "category": "boots",
+    "layer_role": "footwear",
+    "accessory_class": null,
+    "clo": 0.1,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "brown",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic",
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-a1",
+    "name": "edge-hat",
+    "category": "hat",
+    "layer_role": "accessory",
+    "accessory_class": "hat",
+    "clo": 0.0,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "gray",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-a2",
+    "name": "edge-gloves",
+    "category": "gloves",
+    "layer_role": "accessory",
+    "accessory_class": "gloves",
+    "clo": 0.0,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "black",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-a3",
+    "name": "edge-scarf",
+    "category": "scarf",
+    "layer_role": "accessory",
+    "accessory_class": "scarf",
+    "clo": 0.0,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "burgundy",
+        "hue": 350.0,
+        "neutral": false,
+        "role": "main"
+      }
+    ],
+    "style_tags": [],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "e-a4",
+    "name": "edge-sunglasses",
+    "category": "sunglasses",
+    "layer_role": "accessory",
+    "accessory_class": "sunglasses",
+    "clo": 0.0,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "black",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  }
+]

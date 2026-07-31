@@ -1,0 +1,8 @@
+{
+  "description": "Rollout B's starting history: a different three days, so the two rollouts do not start from the same state.",
+  "medium": [
+    {"days_ago": 1, "items": ["m016", "m037", "m054", "m027", "m033"]},
+    {"days_ago": 3, "items": ["m006", "m046", "m056"]},
+    {"days_ago": 6, "items": ["m022", "m042", "m058", "m030"]}
+  ]
+}

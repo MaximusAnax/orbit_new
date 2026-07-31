@@ -34,12 +34,12 @@ from ..constants import MATE_SCORE, MATE_THRESHOLD, MAX_PLY, TT_SIZE
 from .evaluate import PIECE_VALUE, evaluate
 
 __all__ = [
+    "INFINITY",
     "SearchConfig",
     "SearchResult",
-    "INFINITY",
-    "search",
     "is_mate_score",
     "mate_distance_plies",
+    "search",
 ]
 
 INFINITY = 1 << 20
@@ -105,7 +105,7 @@ class _BudgetExceeded(Exception):
 
 
 class _TTEntry:
-    __slots__ = ("key", "depth", "score", "flag", "move")
+    __slots__ = ("depth", "flag", "key", "move", "score")
 
     def __init__(self, key: int, depth: int, score: int, flag: int, move: chess.Move | None):
         self.key = key
@@ -369,9 +369,7 @@ class _Searcher:
                     completed_scores[move.uci()] = -evaluate(board)
                 finally:
                     board.pop()
-            best_uci = min(
-                completed_scores, key=lambda u: (-completed_scores[u], u)
-            )
+            best_uci = min(completed_scores, key=lambda u: (-completed_scores[u], u))
             completed_best = chess.Move.from_uci(best_uci)
             completed_pv = [completed_best]
             completed_depth = 0

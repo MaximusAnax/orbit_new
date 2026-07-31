@@ -381,6 +381,22 @@ class MisattributionRecord(BaseModel):
         return v
 
 
+class StarterQuote(BaseModel):
+    """One entry of the committed starter pack (data/starter_quotes.json).
+
+    Public-domain only: pre-1929 authors and translations (SCOPE.md D19).
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    text: str = Field(min_length=1, max_length=2000)
+    author: str | None = None
+    source: str | None = None
+    kind: EntryKind = EntryKind.QUOTE
+    themes: list[str] = Field(default_factory=list, max_length=3)
+    tags: list[str] = Field(default_factory=list)
+
+
 class Clamp(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -552,6 +568,69 @@ class Card(BaseModel):
     attribution_flags: list[AttributionFlag] = Field(default_factory=list)
 
 
+class ExposureBucket(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    exposures: int = Field(ge=0)
+    entries: int = Field(ge=0)
+
+
+class PinnedStatus(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    entry_id: str
+    excerpt: str
+    days_since_seen: int | None
+    guarantee_days: int
+
+
+class ArchiveCandidate(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    entry_id: str
+    excerpt: str
+    flat_streak: int
+
+
+class CapacityBlock(BaseModel):
+    """FR-14's capacity block — the capacity identity, reported to the user."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    k: int
+    pinned_rescue_load: float
+    capture_rate: float
+    review_capacity: float
+    review_demand: float
+    stretch_lambda: float | None = None
+    sustainable_library: float | None = None
+    recommended_k: int | None = None
+    advisory: str | None = None
+
+
+class StatsReport(BaseModel):
+    """FR-14 stats."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    on_date: dt.date
+    total_entries: int
+    active_entries: int
+    archived_entries: int
+    by_kind: dict[str, int]
+    pinned_count: int
+    coverage: float
+    exposure_histogram: list[ExposureBucket]
+    open_streak: int
+    reflect_streak: int
+    novelty_share: float
+    rho: float
+    contested_slots: int
+    pinned_status: list[PinnedStatus]
+    archive_candidates: list[ArchiveCandidate]
+    capacity: CapacityBlock
+
+
 class CaptureResult(BaseModel):
     """FR-1/FR-2/FR-3 capture response."""
 
@@ -563,4 +642,81 @@ class CaptureResult(BaseModel):
     duplicate_of: str | None = None
     tags: list[str] = Field(default_factory=list)
     themes: list[str] = Field(default_factory=list)
-</content>
+
+
+class EntryDetail(BaseModel):
+    """One entry with its scheduler state and full history (FR-4/FR-11)."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    entry: Entry
+    tags: list[str] = Field(default_factory=list)
+    themes: list[str] = Field(default_factory=list)
+    state: SchedulerState
+    surfacings: list[Surfacing] = Field(default_factory=list)
+    reflections: list[Reflection] = Field(default_factory=list)
+    attribution_flags: list[AttributionFlag] = Field(default_factory=list)
+
+
+class ImportCandidate(BaseModel):
+    """One inbound row of an FR-5 import, before normalization."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    text: str = Field(min_length=1, max_length=2000)
+    kind: EntryKind = EntryKind.QUOTE
+    author: str | None = None
+    source: str | None = None
+    url: str | None = None
+    note: str | None = Field(default=None, max_length=2000)
+    tags: list[str] = Field(default_factory=list)
+    themes: list[str] = Field(default_factory=list, max_length=3)
+    captured_on: dt.date | None = None
+
+
+class ImportIssue(BaseModel):
+    """A row that could not be imported, named by its 1-based row number."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    row: int
+    message: str
+
+
+class ImportReport(BaseModel):
+    """FR-5: what an import did, plus the honest drain horizon for the batch."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    created: int = Field(ge=0)
+    duplicates: int = Field(ge=0)
+    errors: list[ImportIssue] = Field(default_factory=list)
+    entry_ids: list[str] = Field(default_factory=list)
+    drain_horizon_days: int | None = None
+    drain_note: str | None = None
+
+
+class ExportedEntry(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    entry: Entry
+    tags: list[str] = Field(default_factory=list)
+    themes: list[EntryTheme] = Field(default_factory=list)
+
+
+class LibraryExport(BaseModel):
+    """FR-5 export: the whole library as one JSON document."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    format: str = "almanac-export"
+    version: str = "1"
+    exported_at: dt.datetime
+    entries: list[ExportedEntry] = Field(default_factory=list)
+    tags: list[Tag] = Field(default_factory=list)
+    collections: list[Collection] = Field(default_factory=list)
+    collection_entries: dict[str, list[str]] = Field(default_factory=dict)
+    surfacings: list[Surfacing] = Field(default_factory=list)
+    reflections: list[Reflection] = Field(default_factory=list)
+    attribution_flags: list[AttributionFlag] = Field(default_factory=list)
+    config: dict[str, str] = Field(default_factory=dict)

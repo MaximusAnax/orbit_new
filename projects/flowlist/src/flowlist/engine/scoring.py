@@ -125,9 +125,7 @@ def energy_component(
         return None
     delta = energy_to - energy_from
     penalty = abs(delta)
-    if profile is ArcProfile.BUILD and delta < 0:
-        penalty *= PROFILE_PENALTY
-    elif profile is ArcProfile.COOL and delta > 0:
+    if (profile is ArcProfile.BUILD and delta < 0) or (profile is ArcProfile.COOL and delta > 0):
         penalty *= PROFILE_PENALTY
     return max(0.0, 1.0 - penalty / ENERGY_SPAN)
 
@@ -163,7 +161,7 @@ def danceability_component(dance_from: float | None, dance_to: float | None) -> 
 
 def _raw_components(
     a: Features, b: Features, profile: ArcProfile
-) -> tuple[dict[str, float | None], BpmOutcome, KeyRelation, float | None]:
+) -> tuple[dict[str, float | None], BpmOutcome, KeyRelation]:
     """Every component's raw score (``None`` == inputs missing)."""
     key_result = key_score(a.key_pc, a.mode, b.key_pc, b.mode)
     bpm_result = bpm_component(a.bpm, b.bpm)
@@ -174,7 +172,7 @@ def _raw_components(
         "loudness": loudness_component(a.loudness_db, b.loudness_db),
         "danceability": danceability_component(a.danceability, b.danceability),
     }
-    return raw, bpm_result, key_result.relation, key_result.score
+    return raw, bpm_result, key_result.relation
 
 
 def _combine(
@@ -215,7 +213,7 @@ def pair_score(a: Features, b: Features, weights: TransitionWeights, profile: Ar
     :func:`transition_score`, so the matrix can never disagree with the stored
     breakdown.  ``weights`` must already be normalized.
     """
-    raw, _, _, _ = _raw_components(a, b, profile)
+    raw, _, _ = _raw_components(a, b, profile)
     total, _, _ = _combine(raw, weights)
     return total
 
@@ -232,7 +230,7 @@ def transition_score(
 ) -> Transition:
     """Full breakdown for one directed seam (FR-6)."""
     normalized = (weights or TransitionWeights()).normalized()
-    raw, bpm_result, relation, _ = _raw_components(a, b, profile)
+    raw, bpm_result, relation = _raw_components(a, b, profile)
     total, components, flags = _combine(raw, normalized)
 
     if bpm_result.folded:
@@ -241,8 +239,6 @@ def transition_score(
         flags.append("cliff")
     if anchored:
         flags.append("anchored")
-
-    from flowlist.engine.keys import camelot  # local import: keeps keys import cycle-free
 
     camelot_from = camelot(a.key_pc, a.mode) if a.has_key else None
     camelot_to = camelot(b.key_pc, b.mode) if b.has_key else None
@@ -278,7 +274,8 @@ def transition_score(
 
 
 def _as_snapshot(features: Features) -> FeatureSnapshot:
-    if isinstance(features, FeatureSnapshot) and type(features) is FeatureSnapshot:
+    """Narrow any feature carrier to the six fields a run snapshots (2.6)."""
+    if type(features) is FeatureSnapshot:
         return features
     return FeatureSnapshot(
         bpm=features.bpm,

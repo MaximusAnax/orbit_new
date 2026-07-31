@@ -1,0 +1,1 @@
+I, {owner_name}, consent to the VoiceKin system operated by {operator} reproducing my voice for: {contexts}. This consent {expiry_clause} and I may revoke it at any time, effective immediately. Verification code: {nonce}. Date: {date}.

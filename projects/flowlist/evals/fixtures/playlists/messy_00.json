@@ -1,0 +1,53 @@
+{
+ "id": "messy_00",
+ "suite": "messy",
+ "n": 30,
+ "seed": 126000,
+ "clusters": [
+  "dnb",
+  "hiphop",
+  "house",
+  "indie"
+ ],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:c865661ce7be200f04edc1df93692c0fb50f282d",
+  "meta:6dc5edfc98c0178b062e458b8563c270494629b2",
+  "meta:43fe56f63e57c5437c4958b1d5ebdc1a8a818357",
+  "meta:9ca17c4a24b4d2fbc311e196e9706fc6f5676bfc",
+  "meta:755088b6020cac7bd684570de8760779ac3134fa",
+  "meta:c94ba1172c89a8bb424418d33b78b28d003d3d24",
+  "meta:1a7d17abed6b7ca5e7ccebf996605289afd179dd",
+  "meta:2a58a5f8b1ed923077169827edc2a72112db330f",
+  "meta:47b7374565240541641d8a64a93701b468b217c9",
+  "meta:4d4dd71047ed915bbe6d518461ad557d99884f82",
+  "meta:a5f9a715b794aa1ce68e7de249bf227182ddd487",
+  "meta:b7f65ea3e80ae630f39b0ff871b1a77eee64e97a",
+  "meta:ee729c71c0cea231622dc8cf1c1b01340984b805",
+  "meta:3508c1dc3be2a213391c6fa4c38a9b2ec4a53800",
+  "meta:952ace91aab1610493e58707773b5004b0299823",
+  "meta:ec5ad5b3b4f6e5ab659d23183bf9e306902fae11",
+  "meta:1d653cb893965337b05804b79a8d667e9e6a7e28",
+  "meta:dfe2385bf80fd43be80f26a8e4c4dd097031e3f8",
+  "meta:140ba16766b8c24e17207a9bdc72299b990bbe9e",
+  "meta:c0ec97040ad870dec952a677b0d137fc378e06ea",
+  "meta:cb9df77e881c84e62bb0e540f24e83b26c2ab762",
+  "meta:cab49e25d5e2dbf89f942571dc9091c5a2c9d31a",
+  "meta:6e93b750b59a4ff7811fb72cc7384f30039d4cc8",
+  "meta:d53ed8d1e537214ac61cb4c0739473821208ca0a",
+  "meta:1617e6959474293858186346698a063085bc7ce7",
+  "meta:a0f3e7b17bee8d29c9993a049066ab4a83bc4d8b",
+  "meta:1822a54a9d9d677e9bf9d809c339a246cbfa75b4",
+  "meta:022b5e10e417facf775a79915ca2673e0adc7cc6",
+  "meta:f90a0ef872a642821c71417523fd1ad04f884476",
+  "meta:41b1eeae6320153117da35923d5997ec1610e0b5"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "messy",
+  "null_fraction": 0.05
+ }
+}

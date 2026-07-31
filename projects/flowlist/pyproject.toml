@@ -11,6 +11,12 @@ dependencies = [
     "numpy>=2.1.0",
 ]
 
+[project.optional-dependencies]
+# Live adapters only; never required by the core test or eval suites
+# (CONVENTIONS.md "Libraries"). Not installed by `uv sync --all-packages`.
+audio = ["librosa>=0.10.0"]          # LibrosaLocalAnalyzer (US-6)
+tags = ["mutagen>=1.47.0"]           # tag reading for directory import (FR-2)
+
 [project.scripts]
 flowlist = "flowlist.cli:main"
 

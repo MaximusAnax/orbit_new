@@ -8,7 +8,7 @@ supplied ``datetime``.
 from __future__ import annotations
 
 from datetime import datetime
-from enum import Enum
+from enum import StrEnum
 from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
@@ -51,7 +51,7 @@ def round_score(value: float) -> float:
 # --------------------------------------------------------------------------- #
 
 
-class FeatureSource(str, Enum):
+class FeatureSource(StrEnum):
     """Provenance of an :class:`AudioFeatures` row (DATA_MODEL 2.2)."""
 
     MANUAL = "manual"
@@ -71,19 +71,19 @@ DEFAULT_PRECEDENCE: tuple[FeatureSource, ...] = (
 )
 
 
-class PlaylistSource(str, Enum):
+class PlaylistSource(StrEnum):
     CSV = "csv"
     JSON = "json"
     DIRECTORY = "directory"
     MANUAL = "manual"
 
 
-class Algorithm(str, Enum):
+class Algorithm(StrEnum):
     GREEDY_2OPT = "greedy_2opt"
     ORTOOLS = "ortools"
 
 
-class ArcProfile(str, Enum):
+class ArcProfile(StrEnum):
     """Directional energy bias applied to the energy component (FR-10, D4)."""
 
     NEUTRAL = "neutral"
@@ -91,7 +91,7 @@ class ArcProfile(str, Enum):
     COOL = "cool"
 
 
-class KeyRelation(str, Enum):
+class KeyRelation(StrEnum):
     """The named DJ relations of the Camelot wheel (D2)."""
 
     SAME_KEY = "same_key"
@@ -107,7 +107,7 @@ class KeyRelation(str, Enum):
     UNKNOWN = "unknown"
 
 
-class ExportFormat(str, Enum):
+class ExportFormat(StrEnum):
     M3U = "m3u"
     CSV = "csv"
     JSON = "json"
@@ -217,9 +217,7 @@ class Track(BaseModel):
     @model_validator(mode="after")
     def _identifiable(self) -> Track:
         if not (self.spotify_id or self.file_path or self.title.strip() or self.artist.strip()):
-            raise ValueError(
-                "a Track needs at least one of spotify_id, file_path or title/artist"
-            )
+            raise ValueError("a Track needs at least one of spotify_id, file_path or title/artist")
         return self
 
     @property
@@ -299,7 +297,7 @@ class TransitionWeights(BaseModel):
         )
 
     @classmethod
-    def parse(cls, value: "TransitionWeights | dict[str, float] | None") -> "TransitionWeights":
+    def parse(cls, value: TransitionWeights | dict[str, float] | None) -> TransitionWeights:
         """Build weights from user input, raising :class:`InvalidWeightsError`.
 
         Pydantic wraps validator failures in ``ValidationError``; the API and
@@ -318,7 +316,7 @@ class TransitionWeights(BaseModel):
             )
         try:
             return cls(**value)
-        except Exception as exc:  # pydantic ValidationError
+        except (ValueError, TypeError) as exc:  # pydantic ValidationError subclasses ValueError
             raise InvalidWeightsError(
                 "weights must be numeric, >= 0, and at least one > 0", weights=dict(value)
             ) from exc

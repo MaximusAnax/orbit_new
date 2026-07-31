@@ -24,7 +24,7 @@ from ..constants import MAX_BOOK_DEPTH
 from ..models import BookMove, Opening
 from .book import OpeningBook
 
-__all__ = ["LichessExplorerBook", "LICHESS_LIVE_ENV", "BookUnavailableError"]
+__all__ = ["LICHESS_LIVE_ENV", "BookUnavailableError", "LichessExplorerBook"]
 
 LICHESS_LIVE_ENV = "CHESSMENTOR_LICHESS_LIVE"
 _EXPLORER_URL = "https://explorer.lichess.ovh/masters"
@@ -72,8 +72,8 @@ class LichessExplorerBook:
         moves: list[BookMove] = []
         for entry in payload.get("moves", [])[: self._top_moves]:
             uci = entry.get("uci")
-            games = int(entry.get("white", 0)) + int(entry.get("draws", 0)) + int(
-                entry.get("black", 0)
+            games = (
+                int(entry.get("white", 0)) + int(entry.get("draws", 0)) + int(entry.get("black", 0))
             )
             if uci and games > 0:
                 moves.append(BookMove(uci=uci, weight=games))
@@ -85,9 +85,9 @@ class LichessExplorerBook:
 
     def _fetch(self, ucis: Sequence[str]) -> dict:
         query = urllib.parse.urlencode({"play": ",".join(ucis), "topGames": 0, "recentGames": 0})
-        request = urllib.request.Request(  # noqa: S310 - fixed https host
+        request = urllib.request.Request(
             f"{_EXPLORER_URL}?{query}",
             headers={"Accept": "application/json", "User-Agent": "chessmentor/0.1"},
         )
-        with urllib.request.urlopen(request, timeout=self._timeout) as response:  # noqa: S310
+        with urllib.request.urlopen(request, timeout=self._timeout) as response:
             return json.loads(response.read().decode("utf-8"))

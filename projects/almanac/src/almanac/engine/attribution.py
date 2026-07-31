@@ -40,4 +40,3 @@ def find_misattributions(
         )
         for record in hits
     ]
-</content>

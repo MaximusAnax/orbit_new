@@ -1,0 +1,2167 @@
+{
+  "note": "EVALS.md M5 grid: 3 goals x days 2-6 x {beginner, advanced} x {full gym, dumbbell+bodyweight} x {no emphasis, quads+chest}.",
+  "seed": 20260731,
+  "as_of": "2026-07-06",
+  "profiles": [
+    {
+      "id": "hypertrophy-2d-beginner-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-2d-beginner-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-2d-beginner-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-2d-beginner-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-2d-advanced-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-2d-advanced-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-2d-advanced-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-2d-advanced-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-3d-beginner-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-3d-beginner-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-3d-beginner-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-3d-beginner-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-3d-advanced-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-3d-advanced-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-3d-advanced-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-3d-advanced-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-4d-beginner-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-4d-beginner-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-4d-beginner-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-4d-beginner-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-4d-advanced-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-4d-advanced-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-4d-advanced-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-4d-advanced-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-5d-beginner-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-5d-beginner-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-5d-beginner-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-5d-beginner-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-5d-advanced-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-5d-advanced-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-5d-advanced-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-5d-advanced-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-6d-beginner-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-6d-beginner-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-6d-beginner-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-6d-beginner-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-6d-advanced-full-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-6d-advanced-full-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-6d-advanced-home-0emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "hypertrophy-6d-advanced-home-2emph",
+      "goal": "hypertrophy",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-2d-beginner-full-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-2d-beginner-full-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-2d-beginner-home-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-2d-beginner-home-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-2d-advanced-full-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-2d-advanced-full-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-2d-advanced-home-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-2d-advanced-home-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-3d-beginner-full-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-3d-beginner-full-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-3d-beginner-home-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-3d-beginner-home-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-3d-advanced-full-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-3d-advanced-full-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-3d-advanced-home-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-3d-advanced-home-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-4d-beginner-full-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-4d-beginner-full-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-4d-beginner-home-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-4d-beginner-home-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-4d-advanced-full-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-4d-advanced-full-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-4d-advanced-home-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-4d-advanced-home-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-5d-beginner-full-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-5d-beginner-full-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-5d-beginner-home-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-5d-beginner-home-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-5d-advanced-full-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-5d-advanced-full-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-5d-advanced-home-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-5d-advanced-home-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-6d-beginner-full-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-6d-beginner-full-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-6d-beginner-home-0emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-6d-beginner-home-2emph",
+      "goal": "strength",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-6d-advanced-full-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-6d-advanced-full-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-6d-advanced-home-0emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "strength-6d-advanced-home-2emph",
+      "goal": "strength",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-2d-beginner-full-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-2d-beginner-full-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-2d-beginner-home-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-2d-beginner-home-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-2d-advanced-full-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-2d-advanced-full-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-2d-advanced-home-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-2d-advanced-home-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 2,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-3d-beginner-full-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-3d-beginner-full-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-3d-beginner-home-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-3d-beginner-home-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-3d-advanced-full-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-3d-advanced-full-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-3d-advanced-home-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-3d-advanced-home-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 3,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-4d-beginner-full-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-4d-beginner-full-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-4d-beginner-home-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-4d-beginner-home-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-4d-advanced-full-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-4d-advanced-full-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-4d-advanced-home-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-4d-advanced-home-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 4,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-5d-beginner-full-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-5d-beginner-full-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-5d-beginner-home-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-5d-beginner-home-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-5d-advanced-full-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-5d-advanced-full-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-5d-advanced-home-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-5d-advanced-home-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 5,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-6d-beginner-full-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-6d-beginner-full-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-6d-beginner-home-0emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-6d-beginner-home-2emph",
+      "goal": "general",
+      "experience": "beginner",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-6d-advanced-full-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-6d-advanced-full-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "barbell",
+        "dumbbell",
+        "machine",
+        "cable",
+        "bodyweight",
+        "band",
+        "kettlebell"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-6d-advanced-home-0emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    },
+    {
+      "id": "general-6d-advanced-home-2emph",
+      "goal": "general",
+      "experience": "advanced",
+      "days_per_week": 6,
+      "equipment": [
+        "dumbbell",
+        "bodyweight"
+      ],
+      "emphasized_muscles": [
+        "quads",
+        "chest"
+      ],
+      "unit": "kg",
+      "disclaimer_acknowledged_at": "2026-07-01T08:00:00+00:00",
+      "updated_at": "2026-07-01T08:00:00+00:00"
+    }
+  ]
+}

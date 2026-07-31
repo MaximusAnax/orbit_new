@@ -82,4 +82,3 @@ def validate_prompt(
         if body.count("?") > allowed:
             return _fail("e", "reframe prompts may only end with a question mark")
     return _OK
-</content>

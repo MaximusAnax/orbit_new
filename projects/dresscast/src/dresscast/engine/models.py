@@ -21,6 +21,7 @@ import json
 from dataclasses import dataclass
 from datetime import date as date_cls
 from datetime import datetime
+from itertools import pairwise
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -44,10 +45,11 @@ THRESHOLDS_VERSION = "2026.07-a"
 SCORE_DP = 6
 #: Decimals for physical floats written into ``hour_plan`` and the day brief.
 PLAN_DP = 3
-#: Decimals used for internal argmin/argmax comparison keys.  Coarser than a
-#: float ULP so a libm last-bit difference cannot reorder a selection, finer
-#: than any distinction the model makes (FR-19's cross-platform claim).
+#: Resolution of internal argmin/argmax comparisons.  Coarser than a float ULP
+#: so a libm last-bit difference cannot reorder a selection, finer than any
+#: distinction the model makes (FR-19's cross-platform claim).
 SELECT_DP = 9
+SELECT_EPS = 10.0**-SELECT_DP
 
 # --------------------------------------------------------------------------
 # Physics (D2, D3, D4, D5)
@@ -57,7 +59,7 @@ SELECT_DP = 9
 ICL_SLOPE = 0.835
 ICL_INTERCEPT = 0.161
 
-#: ``required_clo = (34 − T)/(7.66·met) − 0.7`` clamped to [0, 4.5] (D3).
+#: ``required_clo = (34 - T)/(7.66·met) - 0.7`` clamped to [0, 4.5] (D3).
 SKIN_TEMP_C = 34.0
 CLO_MET_SLOPE = 7.66
 BOUNDARY_LAYER_CLO = 0.7
@@ -175,7 +177,7 @@ MAX_HUE_FAMILIES = 3
 HUE_FAMILY_PENALTY = 0.15
 STYLE_FORMALITY_WEIGHT = 0.6
 STYLE_TAG_WEIGHT = 0.4
-#: Formality tightness: spread 0 → 1.0, spread 1 → 0.7 (FR-10), −0.3 per step.
+#: Formality tightness: spread 0 → 1.0, spread 1 → 0.7 (FR-10), -0.3 per step.
 STYLE_SPREAD_STEP = 0.3
 
 # --------------------------------------------------------------------------
@@ -323,7 +325,7 @@ CLO_PRESET_TOLERANCE = 0.15
 CLO_ABS_MIN = 0.0
 CLO_ABS_MAX = 1.5
 
-#: Warmth level 0–5 maps linearly onto the category preset ±0.15 (FR-1).  The
+#: Warmth level 0-5 maps linearly onto the category preset ±0.15 (FR-1).  The
 #: level is a coarse alternative to typing a clo; omitting it yields the preset
 #: exactly, and supplying it counts as an explicit override.
 WARMTH_LEVEL_OFFSETS: tuple[float, ...] = (-0.15, -0.09, -0.03, 0.03, 0.09, 0.15)
@@ -340,11 +342,11 @@ def clo_bounds(category: str) -> tuple[float, float]:
 
 
 def warmth_to_clo(category: str, level: int) -> float:
-    """Map a warmth level 0–5 to a clo inside the category's allowed range."""
+    """Map a warmth level 0-5 to a clo inside the category's allowed range."""
     if category not in CATEGORY_PRESETS:
         raise InvalidParams(f"unknown category {category!r}", field="category")
     if not 0 <= level <= 5:
-        raise InvalidParams("warmth level must be 0–5", field="warmth", value=level)
+        raise InvalidParams("warmth level must be 0-5", field="warmth", value=level)
     preset = CATEGORY_PRESETS[category]
     lo, hi = clo_bounds(category)
     return round(min(hi, max(lo, preset.clo + WARMTH_LEVEL_OFFSETS[level])), 6)
@@ -374,9 +376,7 @@ def check_transition(old: str, new: str) -> None:
     if old == new:
         return
     if (old, new) not in ALLOWED_TRANSITIONS:
-        raise InvalidTransition(
-            f"cannot move a garment from {old!r} to {new!r}", old=old, new=new
-        )
+        raise InvalidTransition(f"cannot move a garment from {old!r} to {new!r}", old=old, new=new)
 
 
 # --------------------------------------------------------------------------
@@ -474,7 +474,7 @@ class Garment(BaseModel):
         lo, hi = clo_bounds(self.category)
         if not (lo - 1e-9 <= self.clo <= hi + 1e-9):
             raise ValueError(
-                f"clo {self.clo} outside {lo:.2f}–{hi:.2f} for category {self.category}"
+                f"clo {self.clo} outside {lo:.2f}-{hi:.2f} for category {self.category}"
             )
         return self
 
@@ -563,9 +563,7 @@ def undo_wear(garment: Garment, now: datetime) -> Garment:
 def wash(garment: Garment, now: datetime) -> Garment:
     """FR-3 laundry event: reset counters and return the garment to clean."""
     check_transition(garment.status, "clean")
-    return garment.model_copy(
-        update={"wears_since_wash": 0, "status": "clean", "updated_at": now}
-    )
+    return garment.model_copy(update={"wears_since_wash": 0, "status": "clean", "updated_at": now})
 
 
 class AttributeSuggestionPayload(BaseModel):
@@ -678,7 +676,7 @@ class ForecastSnapshot(BaseModel):
 
 
 class DayForecast(ForecastSnapshot):
-    """A snapshot together with its 23–25 hourly rows (FR-4)."""
+    """A snapshot together with its 23-25 hourly rows (FR-4)."""
 
     hours: list[HourlyWeather]
 
@@ -686,7 +684,7 @@ class DayForecast(ForecastSnapshot):
     def _hours_valid(self) -> DayForecast:
         n = len(self.hours)
         if not 23 <= n <= 25:
-            raise ValueError(f"a local day must have 23–25 hourly rows, got {n}")
+            raise ValueError(f"a local day must have 23-25 hourly rows, got {n}")
         for i, h in enumerate(self.hours):
             if h.seq != i:
                 raise ValueError(f"seq must be contiguous from 0; row {i} has seq {h.seq}")
@@ -744,7 +742,7 @@ class RequestParams(BaseModel):
     def _commute(cls, v: tuple[int, ...]) -> tuple[int, ...]:
         for h in v:
             if not 0 <= h <= 23:
-                raise ValueError("commute hours must lie in 0–23")
+                raise ValueError("commute hours must lie in 0-23")
         return tuple(sorted(set(v)))
 
     def exposure_weight(self, hour: int) -> float:
@@ -768,10 +766,6 @@ class LayerConfig:
     windproofness: int
     cover: int
     layer_count: int
-
-    @property
-    def worn_set(self) -> frozenset[str]:
-        return frozenset(self.worn_slots)
 
 
 @dataclass(frozen=True, slots=True)
@@ -801,7 +795,15 @@ class CoreOutfit:
         return tuple(out)
 
     def garments(self) -> tuple[Garment, ...]:
-        return tuple(g for _, g in self.slot_items())
+        out: list[Garment] = [self.base, *self.mids]
+        if self.outer is not None:
+            out.append(self.outer)
+        if self.bottom is not None:
+            out.append(self.bottom)
+        if self.leg_base is not None:
+            out.append(self.leg_base)
+        out.append(self.footwear)
+        return tuple(out)
 
     def core_ids(self) -> frozenset[str]:
         return frozenset(g.id for g in self.garments())
@@ -1024,9 +1026,61 @@ class Recommendation(BaseModel):
             if o.rank != i:
                 raise ValueError("ranks must be contiguous from 1")
         scores = [o.score_total for o in self.outfits]
-        if any(a < b - 1e-12 for a, b in zip(scores, scores[1:], strict=False)):
+        if any(a < b - 1e-12 for a, b in pairwise(scores)):
             raise ValueError("score_total must be non-increasing in rank")
         return self
+
+
+class WearLogItem(BaseModel):
+    """One garment of a wear log, with its ``layer_role`` at log time (§2.7)."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    garment_id: str
+    layer_role: LayerRole
+
+
+class WearLog(BaseModel):
+    """What was actually worn on a date (DATA_MODEL.md §2.7)."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str = ""
+    date: str
+    source: Literal["recommendation", "manual"]
+    outfit_id: str | None = None
+    created_at: datetime
+    items: list[WearLogItem] = Field(default_factory=list)
+
+    @field_validator("date")
+    @classmethod
+    def _iso_date(cls, v: str) -> str:
+        date_cls.fromisoformat(v)
+        return v
+
+    @model_validator(mode="after")
+    def _invariants(self) -> WearLog:
+        if (self.source == "recommendation") != (self.outfit_id is not None):
+            raise ValueError("outfit_id is set iff the source is 'recommendation'")
+        ids = [i.garment_id for i in self.items]
+        if len(ids) != len(set(ids)):
+            raise ValueError("a wear log may not list a garment twice")
+        return self
+
+    def core_ids(self) -> frozenset[str]:
+        """Core items as recorded at log time — never re-derived (FR-11)."""
+        return frozenset(i.garment_id for i in self.items if i.layer_role in CORE_ROLES)
+
+
+class LaundryEvent(BaseModel):
+    """A wash (DATA_MODEL.md §2.8), append-only."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str = ""
+    created_at: datetime
+    note: str | None = None
+    garment_ids: list[str] = Field(default_factory=list)
 
 
 class Advisory(BaseModel):
@@ -1082,8 +1136,3 @@ def q_score(value: float) -> float:
 def q_plan(value: float) -> float:
     """Round a physical plan/brief quantity to ``PLAN_DP`` (FR-19)."""
     return round(value, PLAN_DP)
-
-
-def q_select(value: float) -> float:
-    """Round an internal comparison key so a 1-ULP difference cannot flip it."""
-    return round(value, SELECT_DP)

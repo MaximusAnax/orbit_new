@@ -17,7 +17,7 @@ from __future__ import annotations
 import math
 import re
 from datetime import UTC, datetime
-from enum import Enum
+from enum import StrEnum
 from typing import Annotated
 
 from pydantic import (
@@ -37,19 +37,19 @@ __all__ = [
     "Article",
     "Channel",
     "Company",
+    "Delivery",
     "DeliveryItem",
     "DeliveryKind",
     "DeliveryMode",
     "DeliveryStatus",
-    "Delivery",
-    "FeedResult",
     "Feed",
+    "FeedResult",
     "FetchStatus",
     "IngestRun",
     "IngestStatus",
-    "MentionFeatures",
-    "Mention",
     "MatchedVia",
+    "Mention",
+    "MentionFeatures",
     "PublishedSource",
     "Story",
     "Strength",
@@ -139,14 +139,14 @@ Relevance = Annotated[int, Field(ge=0, le=100)]
 # --------------------------------------------------------------------------
 
 
-class DeliveryMode(str, Enum):
+class DeliveryMode(StrEnum):
     DIGEST = "digest"
     ALERT = "alert"
     BOTH = "both"
     MUTE = "mute"
 
 
-class AliasKind(str, Enum):
+class AliasKind(StrEnum):
     LEGAL_NAME = "legal_name"
     SHORT_NAME = "short_name"
     TICKER_SYMBOL = "ticker_symbol"
@@ -154,53 +154,53 @@ class AliasKind(str, Enum):
     NICKNAME = "nickname"
 
 
-class Strength(str, Enum):
+class Strength(StrEnum):
     STRONG = "strong"
     WEAK = "weak"
 
 
-class TextField(str, Enum):
+class TextField(StrEnum):
     TITLE = "title"
     SUMMARY = "summary"
     CONTENT = "content"
 
 
-class MatchedVia(str, Enum):
+class MatchedVia(StrEnum):
     ALIAS = "alias"
     CASHTAG = "cashtag"
     EXCHANGE_QUALIFIED = "exchange_qualified"
 
 
-class FetchStatus(str, Enum):
+class FetchStatus(StrEnum):
     OK = "ok"
     NOT_MODIFIED = "not_modified"
     ERROR = "error"
 
 
-class IngestStatus(str, Enum):
+class IngestStatus(StrEnum):
     SUCCEEDED = "succeeded"
     PARTIAL = "partial"
     FAILED = "failed"
 
 
-class PublishedSource(str, Enum):
+class PublishedSource(StrEnum):
     FEED = "feed"
     FALLBACK = "fallback"
 
 
-class Channel(str, Enum):
+class Channel(StrEnum):
     CONSOLE = "console"
     FILE = "file"
     EMAIL = "email"
     WEBHOOK = "webhook"
 
 
-class DeliveryKind(str, Enum):
+class DeliveryKind(StrEnum):
     DIGEST = "digest"
     ALERT = "alert"
 
 
-class DeliveryStatus(str, Enum):
+class DeliveryStatus(StrEnum):
     COMPOSED = "composed"
     SENT = "sent"
     FAILED = "failed"
@@ -407,8 +407,12 @@ class MentionFeatures(BaseModel):
     hyphen_compound: int = 0
     allcaps_run: int = 0
 
-    def as_dict(self) -> dict[str, float]:
-        """JSON-ready mapping in the DATA_MODEL §2.7 key order."""
+    def as_dict(self) -> dict[str, int | float]:
+        """JSON-ready mapping in the DATA_MODEL §2.7 key order.
+
+        Counts stay ``int`` and ``prior`` stays ``float`` so the persisted JSON
+        reads exactly like the DATA_MODEL §2.7 example.
+        """
 
         return {name: getattr(self, name) for name in MentionFeatures.model_fields}
 
@@ -428,7 +432,7 @@ class Mention(BaseModel):
     surface: str = Field(min_length=1)
     matched_via: MatchedVia
     strength: Strength
-    features: dict[str, float] = Field(default_factory=dict)
+    features: dict[str, int | float] = Field(default_factory=dict)
     score: float = Field(ge=0.0, le=1.0)
     threshold: float
     accepted: bool

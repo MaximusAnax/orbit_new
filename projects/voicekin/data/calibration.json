@@ -1,0 +1,86 @@
+{
+  "embedder_id": "spectral-v1",
+  "theta_verify": 0.987792,
+  "theta_enroll": 0.986146,
+  "feature_norms": [
+    {
+      "mean": 4.825457,
+      "scale": 0.022592
+    },
+    {
+      "mean": -0.031621,
+      "scale": 0.017181
+    },
+    {
+      "mean": -1.391994,
+      "scale": 0.270121
+    },
+    {
+      "mean": 501.132286,
+      "scale": 19.551183
+    },
+    {
+      "mean": 1485.498989,
+      "scale": 97.133978
+    },
+    {
+      "mean": -14.229408,
+      "scale": 0.685756
+    },
+    {
+      "mean": 365.929424,
+      "scale": 23.138847
+    },
+    {
+      "mean": 394.926146,
+      "scale": 43.027895
+    },
+    {
+      "mean": -0.085718,
+      "scale": 0.039059
+    },
+    {
+      "mean": 0.139188,
+      "scale": 0.023031
+    },
+    {
+      "mean": -0.048478,
+      "scale": 0.016902
+    },
+    {
+      "mean": -0.001143,
+      "scale": 0.000963
+    },
+    {
+      "mean": -0.002198,
+      "scale": 0.000563
+    },
+    {
+      "mean": -0.006618,
+      "scale": 0.00108
+    },
+    {
+      "mean": -0.00699,
+      "scale": 0.001037
+    },
+    {
+      "mean": -0.016375,
+      "scale": 0.00222
+    }
+  ],
+  "screening": {
+    "enroll_min_duration_s": 3.0,
+    "enroll_max_duration_s": 30.0,
+    "consent_min_duration_s": 5.0,
+    "consent_max_duration_s": 60.0,
+    "clipping_level": 0.999,
+    "max_clipping_fraction": 0.005,
+    "min_snr_db": 15.0,
+    "min_voiced_ratio": 0.4,
+    "voiced_nac_threshold": 0.5,
+    "voiced_energy_margin_db": 6.0
+  },
+  "unit_duration_ms": 180,
+  "consent_grace_days": 30,
+  "provenance": "Bootstrap calibration (CORE stage): scratchpad/finalize_calibration.py, numpy PCG64 seed 20260731, dev split = 12 stratified synthetic speakers rendered by engine/voicebox.py (4-formant regime, jitter/shimmer/breathiness, +-6 dB gain, 20-30 dB white noise, per-utterance F0 sd 2.5%), disjoint from any eval speaker. feature_norms: scale = pooled within-speaker sd / sqrt(clip(F-1, 0.05, 1.0)) (within-class variance normalization damped for dimensions whose between-speaker variance does not exceed their within-speaker variance); mean = population mean - 8.0 * scale, the offset that makes cosine similarity rank by within-class Mahalanobis distance rather than by direction alone. theta_verify = midpoint(p98 dev impostor, p5 dev clean genuine) over 312 impostor and 24 genuine comparisons; theta_enroll = midpoint(max dev mixed-set LOO, min dev pure-set LOO). SUPERSEDED BY evals/fixtures/calibrate.py once the eval corpus exists."
+}

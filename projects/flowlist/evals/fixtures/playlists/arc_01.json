@@ -1,0 +1,38 @@
+{
+ "id": "arc_01",
+ "suite": "arc",
+ "n": 20,
+ "seed": 168000,
+ "clusters": [],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:d7bc4a34073aa89b98f2bce565c8a639097424cd",
+  "meta:defe8a07e74aa969ab979839b14328e2e8009a1a",
+  "meta:da8ddcfe9d72a05b98aa1a4ceafe1aae392d93e4",
+  "meta:cf087c3c6baa631eb0ac280deefc467cc74eae4d",
+  "meta:3229f2ac104b514c74aa390dd5a91dd183139b4c",
+  "meta:27303465383e54f8196c65a7a65a3b7f52b620c1",
+  "meta:bdd13135edfe25d0995fafa808b940fe03140624",
+  "meta:666bc5a94ae12b5ec375cbcb7874d793360be6c9",
+  "meta:e02305c268947411ed54c446248a0d4bd790e0f1",
+  "meta:5103278cd33cfd7cf021be36904266635a2cbb62",
+  "meta:d66ce587e54b95dd61a88b6b123853ae88124c8a",
+  "meta:2bf695908438e3762b9666013cad1c85279ff08c",
+  "meta:0189654d07d5e3ba31e0718e32d5c70fe083fc5a",
+  "meta:0ee3a3fc5714f6f30248a2e4ffe0c88b492d1899",
+  "meta:211933ce5a295267bd351c37b618cd4d0a981021",
+  "meta:f680a392556b95eafaf3eeebbb4099c7ae3b4b77",
+  "meta:448fdc91aaf418efc56e1f21a97ea78435e56c11",
+  "meta:e197c5030c66e8156c35fd12315b9b1fe093cd16",
+  "meta:af77c750a4ce67437b27a7e83c99d2961d1a51b3",
+  "meta:da5fd889d88477a17e0da2485dc26f4badf1bfd7"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "arc",
+  "energy_step": 0.04
+ }
+}

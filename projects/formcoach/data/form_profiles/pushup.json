@@ -1,0 +1,60 @@
+{
+  "id": "pushup_v1",
+  "exercise_id": "push-up",
+  "primary_signal": "mid_shoulder.y",
+  "direction": "down_up",
+  "min_rep_duration_s": 0.8,
+  "prominence_frac": 0.15,
+  "smoothing_window_frac": 0.25,
+  "required_keypoints": {
+    "side_left": ["left_shoulder", "right_shoulder", "left_elbow", "right_elbow",
+                  "left_wrist", "right_wrist", "left_hip", "right_hip",
+                  "left_ankle", "right_ankle"],
+    "side_right": ["left_shoulder", "right_shoulder", "left_elbow", "right_elbow",
+                   "left_wrist", "right_wrist", "left_hip", "right_hip",
+                   "left_ankle", "right_ankle"],
+    "front": ["left_shoulder", "right_shoulder", "left_elbow", "right_elbow",
+              "left_wrist", "right_wrist", "left_hip", "right_hip"]
+  },
+  "rules": [
+    {
+      "fault_id": "insufficient_depth",
+      "views": ["side_left", "side_right"],
+      "feature": "elbow_angle_deg",
+      "feature_keypoints": ["left_shoulder", "right_shoulder", "left_elbow", "right_elbow",
+                            "left_wrist", "right_wrist"],
+      "phase": "bottom",
+      "comparator": "gt",
+      "threshold": 100.0,
+      "severity": "moderate",
+      "cue": "Lower until your chest is a fist's height off the floor and your elbows pass 90 degrees.",
+      "citation": null
+    },
+    {
+      "fault_id": "hip_sag_or_pike",
+      "views": ["side_left", "side_right"],
+      "feature": "hip_dev_frac",
+      "feature_keypoints": ["left_shoulder", "right_shoulder", "left_hip", "right_hip",
+                            "left_ankle", "right_ankle"],
+      "phase": "bottom",
+      "comparator": "abs_gt",
+      "threshold": 0.08,
+      "severity": "moderate",
+      "cue": "Squeeze your glutes and brace your midsection so hips, ribs and shoulders travel as one line.",
+      "citation": null
+    },
+    {
+      "fault_id": "incomplete_lockout",
+      "views": ["side_left", "side_right"],
+      "feature": "elbow_angle_deg",
+      "feature_keypoints": ["left_shoulder", "right_shoulder", "left_elbow", "right_elbow",
+                            "left_wrist", "right_wrist"],
+      "phase": "top",
+      "comparator": "lt",
+      "threshold": 160.0,
+      "severity": "minor",
+      "cue": "Push all the way through at the top so your elbows are straight before the next rep.",
+      "citation": null
+    }
+  ]
+}

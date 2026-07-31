@@ -29,4 +29,3 @@ def hash_u64(*parts: object) -> int:
 def jitter(amplitude: float, *parts: object) -> float:
     """Deterministic value in ``[0, amplitude)`` keyed by ``parts``."""
     return amplitude * (hash_u64(*parts) / _TWO_64)
-</content>

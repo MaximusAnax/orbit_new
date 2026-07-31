@@ -23,7 +23,7 @@ from ..constants import DEEP_BUDGET, MATE_SCORE
 from ..models import AnalystKind, MoveEval
 from .analyst import AnalystUnavailableError
 
-__all__ = ["StockfishAnalyst", "STOCKFISH_PATH_ENV"]
+__all__ = ["STOCKFISH_PATH_ENV", "StockfishAnalyst"]
 
 STOCKFISH_PATH_ENV = "CHESSMENTOR_STOCKFISH_PATH"
 

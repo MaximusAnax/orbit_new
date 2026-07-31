@@ -29,6 +29,35 @@ Severity legend: **B** = blocker, **M** = major, **m** = minor.
 | 17 | DESIGN | m | The enforced n ≤ 500 cap had no performance requirement or coverage: evals stop at n = 150, while 2-opt with segment recomputation at n = 500 in pure Python could take minutes; the cap's feasibility was asserted by omission. | **Fixed.** FR-8 gains an explicit NFR: a reorder at the n = 500 cap completes in ≤ 60 s on a typical laptop (`max_passes` bounds the loop), verified by slow-marked `test_fr8_perf_smoke` — excluded from the default suite and not eval-gated, keeping the hermetic eval budget (< 45 s, EVALS §6) intact. An informational `reorder_wall_time` row at n = 150 was added to the eval scorecard. |
 | 18 | DESIGN | m | Small surface gaps: (a) `CoverageReport` and `ImportedPlaylist` missing from the engine models inventory; (b) `PUT /tracks/{id}/features` existed with no way to read a track directly; (c) D9 had no story for the same song entering as both `meta:<hash>` and `spotify:<id>`/`file:<hash>` — cross-source duplicates accumulate with no merge path. | **Fixed.** (a) Both models added to `engine/models.py` inventory. (b) `GET /tracks/{track_id}` (track with per-source feature rows) added to the API table. (c) New explicit non-goal: cross-source track merging — duplicates are accepted as a known MVP limitation (features/overrides are per-id, so each row stays internally consistent), with a `merge` command named as a candidate future addition, not built now. |
 
+## Build-phase findings (surface + evals stage)
+
+Implementing the eval suite surfaced one place where the scoping documents
+promised more than they delivered, plus four fixture-scale reconciliations that
+EVALS.md §5 explicitly asks the build phase to record. **No gate threshold was
+lowered or weakened**; the one substantive change strengthens a fixture
+invariant.
+
+| # | Sev | Finding | Resolution |
+|---|-----|---------|------------|
+| 19 | **M** | **The §4 discrimination invariant does not establish what §4 claims.** EVALS.md §4 asserts "≥ 3 exact instances have greedy-only ratio < 0.97 … construction-only greedy provably fails M4_mean, so passing it requires the local search to work." That inference is invalid: three instances at ~0.96 alongside seven at ~1.00 average 0.985, so the reference greedy would have *passed* both M4 gates. The first generated suite did exactly that (greedy M4_mean 0.9849, M4_min 0.9413) while satisfying the literal ≥ 3 rule — i.e. finding #2's fix was measurable but not load-bearing. | **Fixed by strengthening the fixtures, not by touching a gate.** `generate.py` now asserts the property EVALS.md actually claims: the reference greedy's *suite-level* `M4_mean` must be below the M4_mean gate **and** its `M4_min` below the M4_min gate, checked against the same constants the evals use (`M4_MEAN_GATE`, `M4_MIN_GATE`). To reach it, seven of the ten exact slots are now seed-searched for difficulty (`EXACT_RECIPES` carries a per-slot `depth_target`; three "typical" slots are left as the master seed draws them). Selection is on the *baseline's* difficulty, so it cannot flatter the system under test — an instance that is hard for greedy is if anything harder for the heuristic. Committed result: reference greedy scores **M4_mean 0.9646 / M4_min 0.8625, failing both gates**, while the heuristic scores 1.0000/1.0000. `evals/test_gates.py::test_fixture_invariants` re-asserts the literal ≥ 3 rule *and* the two suite-level properties, so a regeneration cannot quietly restore the weaker situation. |
+| 20 | m | **Nearest-neighbour traps are hard to hand-design in this score space.** A closed-form analysis of the "stranded cluster" construction (hub-to-hub outranks every hub-to-leaf, so greedy consumes both hubs and pays a clash) caps the damage at `min(hub_leaf) − leaf_leaf`; with the non-key components contributing a 0.65 floor whenever tempo/energy/loudness match, that is ≈ 3% of the total — right at the threshold, and it measured 0.988 in practice. | The two `trap` slots keep the documented blueprint (`_trap_features`: a cross-genre spread of non-beatmatching tempo centres with one tightly-matched high-scoring cluster inside it) but its jitter seed is **searched**, bounded and deterministically, until the instance actually defeats the reference greedy — EVALS.md §4's sanctioned "adjusting the trap constructions until true". The winning seed is recorded in the fixture and in `expected.json`, so reproducing the file never re-runs the search. Both trap slots land at ratio ≈ 0.966–0.969. |
+| 21 | m | **`catalog.json` is ~893 tracks, not the "~200" EVALS.md §4 estimates.** Six planted chains at n = 50–150 need 545 individually engineered tracks on their own, before the exact, messy and arc suites; the estimate predates the suite sizes being fixed. | Accepted as a fixture-scale detail with no bearing on any gate. The catalog holds exactly one row per fixture track (ids are D9-shaped `meta:<sha1>`, uniqueness asserted at generation time), which is what keeps `FixtureMetadataProvider` — the offline adapter the evals resolve features through — a faithful stand-in for a real catalog. |
+| 22 | m | **Planted-chain means land at 0.890–0.906, versus the "≈ 0.88" EVALS.md §4 predicts.** Fixed per-hop magnitudes plus boundary clipping keep the chains slightly better than the freehand estimate. | Reconciled and recorded rather than left implicit: the per-hop quality tiers in `_PLANTED_TIERS` are documented with their intended scores, generation asserts every planted transition clears 0.80 and the chain mean stays in [0.84, 0.92], and `test_fixture_planted_chains_are_engineered_as_documented` re-asserts it from the committed `expected.json`. A *higher* planted mean makes M5 harder, not easier, so the drift is conservative. |
+| 23 | m | **`mutagen` is named a core dependency by FR-2 but is not installed.** The build stage shares one virtualenv with eleven concurrently-built projects, so adding a runtime dependency was avoided. | The reader already imports `mutagen` lazily and falls back to the `Artist - Title` filename pattern, which is FR-2's documented degradation path and is pinned by `test_fr2_tag_reading_degrades_without_mutagen`. It is now declared as the optional extra `flowlist[tags]` alongside `flowlist[audio]` (librosa), and the README states the actual behaviour. No test or eval depends on either extra. |
+
+Baseline reconciliation against EVALS.md §5's predicted levels (messy suite,
+mean transition score), all computed live in `evals/run.py`:
+
+| Strategy | Predicted | Measured |
+|---|---|---|
+| random order | ≈ 0.40–0.50 | 0.442 |
+| identity (stored order) | ≈ random | 0.422 |
+| bpm_sort | ≈ 0.60–0.70 | 0.693 |
+| heuristic | ≥ bpm_sort + 0.08 | 0.815 (margin +0.122, worst playlist +0.073) |
+| `bpm_only_auc` (M2's naive scorer) | ≈ 0.65–0.75 | 0.711 |
+
+Every prediction held, so no gate needed revisiting.
+
 ## Scope impact
 
 All fixes are documentation-precision changes plus small, bounded additions to

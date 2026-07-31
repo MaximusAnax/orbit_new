@@ -403,7 +403,9 @@ class Game(BaseModel):
                 raise ValueError(f"result_score must be null for status {self.status}")
         else:
             if self.result_score != _STATUS_SCORE[self.status]:
-                raise ValueError(f"result_score {self.result_score} inconsistent with {self.status}")
+                raise ValueError(
+                    f"result_score {self.result_score} inconsistent with {self.status}"
+                )
 
         if self.status is GameStatus.IN_PROGRESS and self.termination is not None:
             raise ValueError("an in-progress game has no termination")

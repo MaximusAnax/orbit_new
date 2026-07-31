@@ -15,7 +15,7 @@ from ..constants import JUDGE_BUDGET
 from ..engine.search import SearchConfig, search
 from ..models import AnalystKind, MoveEval
 
-__all__ = ["InternalAnalyst", "ANALYST_MAX_DEPTH"]
+__all__ = ["ANALYST_MAX_DEPTH", "InternalAnalyst"]
 
 #: FR-4's throttle is *not* applied here; only the depth ceiling is.
 ANALYST_MAX_DEPTH = 6

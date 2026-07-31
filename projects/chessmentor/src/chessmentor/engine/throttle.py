@@ -38,7 +38,7 @@ from .search import SearchConfig, search
 if TYPE_CHECKING:  # pragma: no cover - typing only, keeps the engine import-pure
     from ..adapters.book import OpeningBook
 
-__all__ = ["CpuChoice", "ply_seed", "choose_cpu_move"]
+__all__ = ["CpuChoice", "choose_cpu_move", "ply_seed"]
 
 
 @dataclass(frozen=True)

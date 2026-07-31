@@ -73,9 +73,7 @@ def shoulder_width_ratio(frames: Sequence[PoseFrame]) -> float | None:
     return (sum(widths) / len(widths)) / (sum(torsos) / len(torsos))
 
 
-def resolve_view(
-    sequence: PoseSequence, declared: DeclaredView | None = None
-) -> ViewResolution:
+def resolve_view(sequence: PoseSequence, declared: DeclaredView | None = None) -> ViewResolution:
     """FR-7 three-step view resolution.
 
     1. an explicit ``front`` / ``side_left`` / ``side_right`` wins outright;
@@ -118,9 +116,7 @@ def _frame_flags(frame: PoseFrame, required: Sequence[str]) -> tuple[bool, bool]
     return low, out
 
 
-def screen(
-    sequence: PoseSequence, profile: FormProfile, view: View
-) -> ScreeningResult:
+def screen(sequence: PoseSequence, profile: FormProfile, view: View) -> ScreeningResult:
     """FR-7 screening — reject clips we cannot honestly read.
 
     A clip is rejected with ``insufficient_visibility`` when more than 30 % of

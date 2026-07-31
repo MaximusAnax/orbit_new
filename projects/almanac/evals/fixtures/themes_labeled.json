@@ -1,0 +1,1346 @@
+[
+ {
+  "id": "courage_01",
+  "theme": "courage",
+  "split": "dev",
+  "text": "Courage is resistance to fear, mastery of fear, not absence of fear.",
+  "author": "Mark Twain"
+ },
+ {
+  "id": "courage_02",
+  "theme": "courage",
+  "split": "dev",
+  "text": "It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.",
+  "author": "Seneca"
+ },
+ {
+  "id": "courage_03",
+  "theme": "courage",
+  "split": "dev",
+  "text": "To see what is right and not to do it is want of courage.",
+  "author": "Confucius"
+ },
+ {
+  "id": "courage_04",
+  "theme": "courage",
+  "split": "dev",
+  "text": "Nothing is terrible except fear itself.",
+  "author": "Francis Bacon"
+ },
+ {
+  "id": "courage_05",
+  "theme": "courage",
+  "split": "dev",
+  "text": "Fortune favours the brave.",
+  "author": "Virgil"
+ },
+ {
+  "id": "courage_06",
+  "theme": "courage",
+  "split": "dev",
+  "text": "The coward calls himself cautious.",
+  "author": "Publilius Syrus"
+ },
+ {
+  "id": "courage_07",
+  "theme": "courage",
+  "split": "held",
+  "text": "He who is not every day conquering some fear has not learned the secret of life.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "courage_08",
+  "theme": "courage",
+  "split": "held",
+  "text": "Cowards die many times before their deaths; the valiant never taste of death but once.",
+  "author": "William Shakespeare"
+ },
+ {
+  "id": "courage_09",
+  "theme": "courage",
+  "split": "held",
+  "text": "Do the thing you fear, and the death of fear is certain.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "courage_10",
+  "theme": "courage",
+  "split": "held",
+  "text": "Boldness has genius, power and magic in it.",
+  "author": "Johann Wolfgang von Goethe"
+ },
+ {
+  "id": "courage_11",
+  "theme": "courage",
+  "split": "held",
+  "text": "A timid person is frightened before a danger, a coward during the time, and a courageous person afterward.",
+  "author": "Jean Paul Richter"
+ },
+ {
+  "id": "courage_12",
+  "theme": "courage",
+  "split": "held",
+  "text": "No one can be brave who considers pain the greatest evil.",
+  "author": "Cicero"
+ },
+ {
+  "id": "discipline_and_habit_01",
+  "theme": "discipline_and_habit",
+  "split": "dev",
+  "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+  "author": "Will Durant"
+ },
+ {
+  "id": "discipline_and_habit_02",
+  "theme": "discipline_and_habit",
+  "split": "dev",
+  "text": "Habit is a cable; we weave a thread of it every day, and at last we cannot break it.",
+  "author": "Horace Mann"
+ },
+ {
+  "id": "discipline_and_habit_03",
+  "theme": "discipline_and_habit",
+  "split": "dev",
+  "text": "The chains of habit are too weak to be felt until they are too strong to be broken.",
+  "author": "Samuel Johnson"
+ },
+ {
+  "id": "discipline_and_habit_04",
+  "theme": "discipline_and_habit",
+  "split": "dev",
+  "text": "Practice is the best of all instructors.",
+  "author": "Publilius Syrus"
+ },
+ {
+  "id": "discipline_and_habit_05",
+  "theme": "discipline_and_habit",
+  "split": "dev",
+  "text": "Little strokes fell great oaks.",
+  "author": "Benjamin Franklin"
+ },
+ {
+  "id": "discipline_and_habit_06",
+  "theme": "discipline_and_habit",
+  "split": "dev",
+  "text": "Nothing is so much strengthened by practice, or weakened by neglect, as memory.",
+  "author": "Quintilian"
+ },
+ {
+  "id": "discipline_and_habit_07",
+  "theme": "discipline_and_habit",
+  "split": "held",
+  "text": "Sow an act, and you reap a habit; sow a habit, and you reap a character.",
+  "author": "Charles Reade"
+ },
+ {
+  "id": "discipline_and_habit_08",
+  "theme": "discipline_and_habit",
+  "split": "held",
+  "text": "Discipline is the soul of an army.",
+  "author": "George Washington"
+ },
+ {
+  "id": "discipline_and_habit_09",
+  "theme": "discipline_and_habit",
+  "split": "held",
+  "text": "First we make our habits, then our habits make us.",
+  "author": "John Dryden"
+ },
+ {
+  "id": "discipline_and_habit_10",
+  "theme": "discipline_and_habit",
+  "split": "held",
+  "text": "Diligence is the mother of good fortune.",
+  "author": "Miguel de Cervantes"
+ },
+ {
+  "id": "discipline_and_habit_11",
+  "theme": "discipline_and_habit",
+  "split": "held",
+  "text": "He who every morning plans the transactions of the day and follows out that plan carries a thread that will guide him through the labyrinth of the most busy life.",
+  "author": "Victor Hugo"
+ },
+ {
+  "id": "discipline_and_habit_12",
+  "theme": "discipline_and_habit",
+  "split": "held",
+  "text": "Constant dropping wears away the stone.",
+  "author": "Lucretius"
+ },
+ {
+  "id": "mortality_and_time_01",
+  "theme": "mortality_and_time",
+  "split": "dev",
+  "text": "It is not that we have a short time to live, but that we waste a lot of it.",
+  "author": "Seneca"
+ },
+ {
+  "id": "mortality_and_time_02",
+  "theme": "mortality_and_time",
+  "split": "dev",
+  "text": "Lost time is never found again.",
+  "author": "Benjamin Franklin"
+ },
+ {
+  "id": "mortality_and_time_03",
+  "theme": "mortality_and_time",
+  "split": "dev",
+  "text": "Remember that you are mortal.",
+  "author": "Traditional (memento mori)"
+ },
+ {
+  "id": "mortality_and_time_04",
+  "theme": "mortality_and_time",
+  "split": "dev",
+  "text": "Let us prepare our minds as if we had come to the very end of life.",
+  "author": "Seneca"
+ },
+ {
+  "id": "mortality_and_time_05",
+  "theme": "mortality_and_time",
+  "split": "dev",
+  "text": "Dost thou love life? Then do not squander time, for that is the stuff life is made of.",
+  "author": "Benjamin Franklin"
+ },
+ {
+  "id": "mortality_and_time_06",
+  "theme": "mortality_and_time",
+  "split": "dev",
+  "text": "Time is the most valuable thing a man can spend.",
+  "author": "Theophrastus"
+ },
+ {
+  "id": "mortality_and_time_07",
+  "theme": "mortality_and_time",
+  "split": "held",
+  "text": "Think of yourself as dead. You have lived your life. Now take what is left and live it properly.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "mortality_and_time_08",
+  "theme": "mortality_and_time",
+  "split": "held",
+  "text": "Every man's life lies within the present, for the past is spent and done with, and the future is uncertain.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "mortality_and_time_09",
+  "theme": "mortality_and_time",
+  "split": "held",
+  "text": "One dies only once, and for such a long time.",
+  "author": "Moliere"
+ },
+ {
+  "id": "mortality_and_time_10",
+  "theme": "mortality_and_time",
+  "split": "held",
+  "text": "The day which we fear as our last is but the birthday of eternity.",
+  "author": "Seneca"
+ },
+ {
+  "id": "mortality_and_time_11",
+  "theme": "mortality_and_time",
+  "split": "held",
+  "text": "As a well-spent day brings happy sleep, so a life well used brings happy death.",
+  "author": "Leonardo da Vinci"
+ },
+ {
+  "id": "mortality_and_time_12",
+  "theme": "mortality_and_time",
+  "split": "held",
+  "text": "Time flies, never to be recalled.",
+  "author": "Virgil"
+ },
+ {
+  "id": "gratitude_01",
+  "theme": "gratitude",
+  "split": "dev",
+  "text": "Gratitude is not only the greatest of virtues, but the parent of all others.",
+  "author": "Cicero"
+ },
+ {
+  "id": "gratitude_02",
+  "theme": "gratitude",
+  "split": "dev",
+  "text": "He is a wise man who does not grieve for the things which he has not, but rejoices for those which he has.",
+  "author": "Epictetus"
+ },
+ {
+  "id": "gratitude_03",
+  "theme": "gratitude",
+  "split": "dev",
+  "text": "Let us be grateful to people who make us happy; they are the charming gardeners who make our souls blossom.",
+  "author": "Marcel Proust"
+ },
+ {
+  "id": "gratitude_04",
+  "theme": "gratitude",
+  "split": "dev",
+  "text": "Enough is as good as a feast.",
+  "author": "John Heywood"
+ },
+ {
+  "id": "gratitude_05",
+  "theme": "gratitude",
+  "split": "dev",
+  "text": "Thou hast given so much to me; give me one thing more, a grateful heart.",
+  "author": "George Herbert"
+ },
+ {
+  "id": "gratitude_06",
+  "theme": "gratitude",
+  "split": "dev",
+  "text": "He who is not contented with what he has, would not be contented with what he would like to have.",
+  "author": "Socrates"
+ },
+ {
+  "id": "gratitude_07",
+  "theme": "gratitude",
+  "split": "held",
+  "text": "Do not spoil what you have by desiring what you have not.",
+  "author": "Epicurus"
+ },
+ {
+  "id": "gratitude_08",
+  "theme": "gratitude",
+  "split": "held",
+  "text": "Blessed is he who expects nothing, for he shall never be disappointed.",
+  "author": "Alexander Pope"
+ },
+ {
+  "id": "gratitude_09",
+  "theme": "gratitude",
+  "split": "held",
+  "text": "Gratitude is the sign of noble souls.",
+  "author": "Aesop"
+ },
+ {
+  "id": "gratitude_10",
+  "theme": "gratitude",
+  "split": "held",
+  "text": "For each new morning with its light, for rest and shelter of the night, we thank thee.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "gratitude_11",
+  "theme": "gratitude",
+  "split": "held",
+  "text": "Thankfulness is the beginning of gratitude; gratitude is the completion of thankfulness.",
+  "author": "Henri Frederic Amiel"
+ },
+ {
+  "id": "gratitude_12",
+  "theme": "gratitude",
+  "split": "held",
+  "text": "Who does not thank for little will not thank for much.",
+  "author": "Proverb"
+ },
+ {
+  "id": "honesty_and_integrity_01",
+  "theme": "honesty_and_integrity",
+  "split": "dev",
+  "text": "Honesty is the first chapter in the book of wisdom.",
+  "author": "Thomas Jefferson"
+ },
+ {
+  "id": "honesty_and_integrity_02",
+  "theme": "honesty_and_integrity",
+  "split": "dev",
+  "text": "No legacy is so rich as honesty.",
+  "author": "William Shakespeare"
+ },
+ {
+  "id": "honesty_and_integrity_03",
+  "theme": "honesty_and_integrity",
+  "split": "dev",
+  "text": "This above all: to thine own self be true.",
+  "author": "William Shakespeare"
+ },
+ {
+  "id": "honesty_and_integrity_04",
+  "theme": "honesty_and_integrity",
+  "split": "dev",
+  "text": "A lie has no legs, but a scandal has wings.",
+  "author": "Thomas Fuller"
+ },
+ {
+  "id": "honesty_and_integrity_05",
+  "theme": "honesty_and_integrity",
+  "split": "dev",
+  "text": "The truth is rarely pure and never simple.",
+  "author": "Oscar Wilde"
+ },
+ {
+  "id": "honesty_and_integrity_06",
+  "theme": "honesty_and_integrity",
+  "split": "dev",
+  "text": "Sincerity is the way of Heaven.",
+  "author": "Mencius"
+ },
+ {
+  "id": "honesty_and_integrity_07",
+  "theme": "honesty_and_integrity",
+  "split": "held",
+  "text": "He who permits himself to tell a lie once, finds it much easier to do it a second and third time.",
+  "author": "Thomas Jefferson"
+ },
+ {
+  "id": "honesty_and_integrity_08",
+  "theme": "honesty_and_integrity",
+  "split": "held",
+  "text": "An honest man's the noblest work of God.",
+  "author": "Alexander Pope"
+ },
+ {
+  "id": "honesty_and_integrity_09",
+  "theme": "honesty_and_integrity",
+  "split": "held",
+  "text": "Truth is the daughter of time.",
+  "author": "Aulus Gellius"
+ },
+ {
+  "id": "honesty_and_integrity_10",
+  "theme": "honesty_and_integrity",
+  "split": "held",
+  "text": "If you tell the truth you do not need a good memory.",
+  "author": "Mark Twain"
+ },
+ {
+  "id": "honesty_and_integrity_11",
+  "theme": "honesty_and_integrity",
+  "split": "held",
+  "text": "Integrity without knowledge is weak and useless.",
+  "author": "Samuel Johnson"
+ },
+ {
+  "id": "honesty_and_integrity_12",
+  "theme": "honesty_and_integrity",
+  "split": "held",
+  "text": "The least initial deviation from the truth is multiplied later a thousandfold.",
+  "author": "Aristotle"
+ },
+ {
+  "id": "attention_and_presence_01",
+  "theme": "attention_and_presence",
+  "split": "dev",
+  "text": "Confine yourself to the present.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "attention_and_presence_02",
+  "theme": "attention_and_presence",
+  "split": "dev",
+  "text": "It is not enough to be busy; so are the ants. The question is, what are we busy about?",
+  "author": "Henry David Thoreau"
+ },
+ {
+  "id": "attention_and_presence_03",
+  "theme": "attention_and_presence",
+  "split": "dev",
+  "text": "To be everywhere is to be nowhere.",
+  "author": "Seneca"
+ },
+ {
+  "id": "attention_and_presence_04",
+  "theme": "attention_and_presence",
+  "split": "dev",
+  "text": "The soul becomes dyed with the colour of its thoughts.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "attention_and_presence_05",
+  "theme": "attention_and_presence",
+  "split": "dev",
+  "text": "Nothing is worth more than this day.",
+  "author": "Johann Wolfgang von Goethe"
+ },
+ {
+  "id": "attention_and_presence_06",
+  "theme": "attention_and_presence",
+  "split": "dev",
+  "text": "Look well into thyself; there is a source of strength which will always spring up if thou wilt always look.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "attention_and_presence_07",
+  "theme": "attention_and_presence",
+  "split": "held",
+  "text": "Do not let the future disturb you; you will meet it with the same reason which today arms you against the present.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "attention_and_presence_08",
+  "theme": "attention_and_presence",
+  "split": "held",
+  "text": "The eye sees only what the mind is prepared to comprehend.",
+  "author": "Henri Bergson"
+ },
+ {
+  "id": "attention_and_presence_09",
+  "theme": "attention_and_presence",
+  "split": "held",
+  "text": "We are always getting ready to live but never living.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "attention_and_presence_10",
+  "theme": "attention_and_presence",
+  "split": "held",
+  "text": "To the mind that is still, the whole universe surrenders.",
+  "author": "Lao Tzu"
+ },
+ {
+  "id": "attention_and_presence_11",
+  "theme": "attention_and_presence",
+  "split": "held",
+  "text": "Silence is a source of great strength.",
+  "author": "Lao Tzu"
+ },
+ {
+  "id": "attention_and_presence_12",
+  "theme": "attention_and_presence",
+  "split": "held",
+  "text": "Guard well your spare moments; they are like uncut diamonds.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "relationships_01",
+  "theme": "relationships",
+  "split": "dev",
+  "text": "A friend is, as it were, a second self.",
+  "author": "Cicero"
+ },
+ {
+  "id": "relationships_02",
+  "theme": "relationships",
+  "split": "dev",
+  "text": "Friendship multiplies the good of life and divides the evil.",
+  "author": "Baltasar Gracian"
+ },
+ {
+  "id": "relationships_03",
+  "theme": "relationships",
+  "split": "dev",
+  "text": "Love is composed of a single soul inhabiting two bodies.",
+  "author": "Aristotle"
+ },
+ {
+  "id": "relationships_04",
+  "theme": "relationships",
+  "split": "dev",
+  "text": "The only way to have a friend is to be one.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "relationships_05",
+  "theme": "relationships",
+  "split": "dev",
+  "text": "Better is a neighbour that is near than a brother far off.",
+  "author": "Proverbs"
+ },
+ {
+  "id": "relationships_06",
+  "theme": "relationships",
+  "split": "dev",
+  "text": "Do not protect yourself by a fence, but rather by your friends.",
+  "author": "Proverb"
+ },
+ {
+  "id": "relationships_07",
+  "theme": "relationships",
+  "split": "held",
+  "text": "Wishing to be friends is quick work, but friendship is a slow-ripening fruit.",
+  "author": "Aristotle"
+ },
+ {
+  "id": "relationships_08",
+  "theme": "relationships",
+  "split": "held",
+  "text": "A faithful friend is the medicine of life.",
+  "author": "Ecclesiasticus"
+ },
+ {
+  "id": "relationships_09",
+  "theme": "relationships",
+  "split": "held",
+  "text": "Nothing but heaven itself is better than a friend who is really a friend.",
+  "author": "Plautus"
+ },
+ {
+  "id": "relationships_10",
+  "theme": "relationships",
+  "split": "held",
+  "text": "Grief can take care of itself, but to get the full value of a joy you must have somebody to divide it with.",
+  "author": "Mark Twain"
+ },
+ {
+  "id": "relationships_11",
+  "theme": "relationships",
+  "split": "held",
+  "text": "Let there be spaces in your togetherness.",
+  "author": "Kahlil Gibran"
+ },
+ {
+  "id": "relationships_12",
+  "theme": "relationships",
+  "split": "held",
+  "text": "It is not a lack of love, but a lack of friendship that makes unhappy marriages.",
+  "author": "Friedrich Nietzsche"
+ },
+ {
+  "id": "adversity_and_resilience_01",
+  "theme": "adversity_and_resilience",
+  "split": "dev",
+  "text": "The impediment to action advances action. What stands in the way becomes the way.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "adversity_and_resilience_02",
+  "theme": "adversity_and_resilience",
+  "split": "dev",
+  "text": "That which does not kill us makes us stronger.",
+  "author": "Friedrich Nietzsche"
+ },
+ {
+  "id": "adversity_and_resilience_03",
+  "theme": "adversity_and_resilience",
+  "split": "dev",
+  "text": "Adversity introduces a man to himself.",
+  "author": "Proverb"
+ },
+ {
+  "id": "adversity_and_resilience_04",
+  "theme": "adversity_and_resilience",
+  "split": "dev",
+  "text": "Sweet are the uses of adversity.",
+  "author": "William Shakespeare"
+ },
+ {
+  "id": "adversity_and_resilience_05",
+  "theme": "adversity_and_resilience",
+  "split": "dev",
+  "text": "A smooth sea never made a skilled sailor.",
+  "author": "Proverb"
+ },
+ {
+  "id": "adversity_and_resilience_06",
+  "theme": "adversity_and_resilience",
+  "split": "dev",
+  "text": "Fire is the test of gold; adversity, of strong men.",
+  "author": "Seneca"
+ },
+ {
+  "id": "adversity_and_resilience_07",
+  "theme": "adversity_and_resilience",
+  "split": "held",
+  "text": "The gem cannot be polished without friction, nor man perfected without trials.",
+  "author": "Proverb"
+ },
+ {
+  "id": "adversity_and_resilience_08",
+  "theme": "adversity_and_resilience",
+  "split": "held",
+  "text": "Difficulties strengthen the mind, as labour does the body.",
+  "author": "Seneca"
+ },
+ {
+  "id": "adversity_and_resilience_09",
+  "theme": "adversity_and_resilience",
+  "split": "held",
+  "text": "Bear and forbear.",
+  "author": "Epictetus"
+ },
+ {
+  "id": "adversity_and_resilience_10",
+  "theme": "adversity_and_resilience",
+  "split": "held",
+  "text": "A wounded deer leaps highest.",
+  "author": "Emily Dickinson"
+ },
+ {
+  "id": "adversity_and_resilience_11",
+  "theme": "adversity_and_resilience",
+  "split": "held",
+  "text": "Out of suffering have emerged the strongest souls.",
+  "author": "Kahlil Gibran"
+ },
+ {
+  "id": "adversity_and_resilience_12",
+  "theme": "adversity_and_resilience",
+  "split": "held",
+  "text": "Prosperity is not without many fears and distastes; and adversity is not without comforts and hopes.",
+  "author": "Francis Bacon"
+ },
+ {
+  "id": "creativity_and_craft_01",
+  "theme": "creativity_and_craft",
+  "split": "dev",
+  "text": "Every artist was first an amateur.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "creativity_and_craft_02",
+  "theme": "creativity_and_craft",
+  "split": "dev",
+  "text": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+  "author": "Thomas Edison"
+ },
+ {
+  "id": "creativity_and_craft_03",
+  "theme": "creativity_and_craft",
+  "split": "dev",
+  "text": "Art is long, life is short.",
+  "author": "Hippocrates"
+ },
+ {
+  "id": "creativity_and_craft_04",
+  "theme": "creativity_and_craft",
+  "split": "dev",
+  "text": "Whatever is worth doing at all is worth doing well.",
+  "author": "Lord Chesterfield"
+ },
+ {
+  "id": "creativity_and_craft_05",
+  "theme": "creativity_and_craft",
+  "split": "dev",
+  "text": "The work praises the workman.",
+  "author": "Proverb"
+ },
+ {
+  "id": "creativity_and_craft_06",
+  "theme": "creativity_and_craft",
+  "split": "dev",
+  "text": "Writing, when properly managed, is but a different name for conversation.",
+  "author": "Laurence Sterne"
+ },
+ {
+  "id": "creativity_and_craft_07",
+  "theme": "creativity_and_craft",
+  "split": "held",
+  "text": "There is no great genius without a mixture of madness.",
+  "author": "Aristotle"
+ },
+ {
+  "id": "creativity_and_craft_08",
+  "theme": "creativity_and_craft",
+  "split": "held",
+  "text": "Originality is nothing but judicious imitation.",
+  "author": "Voltaire"
+ },
+ {
+  "id": "creativity_and_craft_09",
+  "theme": "creativity_and_craft",
+  "split": "held",
+  "text": "He who works with his hands and his head and his heart is an artist.",
+  "author": "Francis of Assisi"
+ },
+ {
+  "id": "creativity_and_craft_10",
+  "theme": "creativity_and_craft",
+  "split": "held",
+  "text": "Easy reading is damned hard writing.",
+  "author": "Nathaniel Hawthorne"
+ },
+ {
+  "id": "creativity_and_craft_11",
+  "theme": "creativity_and_craft",
+  "split": "held",
+  "text": "The artist is nothing without the gift, but the gift is nothing without work.",
+  "author": "Emile Zola"
+ },
+ {
+  "id": "creativity_and_craft_12",
+  "theme": "creativity_and_craft",
+  "split": "held",
+  "text": "The true work of art is but a shadow of the divine perfection.",
+  "author": "Michelangelo"
+ },
+ {
+  "id": "humility_01",
+  "theme": "humility",
+  "split": "dev",
+  "text": "Pride goeth before destruction, and a haughty spirit before a fall.",
+  "author": "Proverbs"
+ },
+ {
+  "id": "humility_02",
+  "theme": "humility",
+  "split": "dev",
+  "text": "The greatest friend of truth is time, her greatest enemy is prejudice, and her constant companion is humility.",
+  "author": "Charles Caleb Colton"
+ },
+ {
+  "id": "humility_03",
+  "theme": "humility",
+  "split": "dev",
+  "text": "I know that I know nothing.",
+  "author": "Socrates"
+ },
+ {
+  "id": "humility_04",
+  "theme": "humility",
+  "split": "dev",
+  "text": "Do not boast about tomorrow, for you do not know what a day may bring.",
+  "author": "Proverbs"
+ },
+ {
+  "id": "humility_05",
+  "theme": "humility",
+  "split": "dev",
+  "text": "He who knows others is wise; he who knows himself is enlightened.",
+  "author": "Lao Tzu"
+ },
+ {
+  "id": "humility_06",
+  "theme": "humility",
+  "split": "dev",
+  "text": "Vanity is the quicksand of reason.",
+  "author": "George Sand"
+ },
+ {
+  "id": "humility_07",
+  "theme": "humility",
+  "split": "held",
+  "text": "A great man is always willing to be little.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "humility_08",
+  "theme": "humility",
+  "split": "held",
+  "text": "The proud hate pride in others.",
+  "author": "Benjamin Franklin"
+ },
+ {
+  "id": "humility_09",
+  "theme": "humility",
+  "split": "held",
+  "text": "Modesty is the only sure bait when you angle for praise.",
+  "author": "Lord Chesterfield"
+ },
+ {
+  "id": "humility_10",
+  "theme": "humility",
+  "split": "held",
+  "text": "Humility is the solid foundation of all virtues.",
+  "author": "Confucius"
+ },
+ {
+  "id": "humility_11",
+  "theme": "humility",
+  "split": "held",
+  "text": "He that is down needs fear no fall.",
+  "author": "John Bunyan"
+ },
+ {
+  "id": "humility_12",
+  "theme": "humility",
+  "split": "held",
+  "text": "The smaller the mind the greater the conceit.",
+  "author": "Aesop"
+ },
+ {
+  "id": "purpose_and_ambition_01",
+  "theme": "purpose_and_ambition",
+  "split": "dev",
+  "text": "He who has a why to live can bear almost any how.",
+  "author": "Friedrich Nietzsche"
+ },
+ {
+  "id": "purpose_and_ambition_02",
+  "theme": "purpose_and_ambition",
+  "split": "dev",
+  "text": "The two most important days in your life are the day you are born and the day you find out why.",
+  "author": "Mark Twain"
+ },
+ {
+  "id": "purpose_and_ambition_03",
+  "theme": "purpose_and_ambition",
+  "split": "dev",
+  "text": "When a man does not know what harbour he is making for, no wind is the right wind.",
+  "author": "Seneca"
+ },
+ {
+  "id": "purpose_and_ambition_04",
+  "theme": "purpose_and_ambition",
+  "split": "dev",
+  "text": "Nothing great was ever achieved without enthusiasm.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "purpose_and_ambition_05",
+  "theme": "purpose_and_ambition",
+  "split": "dev",
+  "text": "Let him that would move the world, first move himself.",
+  "author": "Socrates"
+ },
+ {
+  "id": "purpose_and_ambition_06",
+  "theme": "purpose_and_ambition",
+  "split": "dev",
+  "text": "A man without a purpose is like a ship without a rudder.",
+  "author": "Thomas Carlyle"
+ },
+ {
+  "id": "purpose_and_ambition_07",
+  "theme": "purpose_and_ambition",
+  "split": "held",
+  "text": "It is not enough to take steps which may some day lead to a goal; each step must be itself a goal and a step likewise.",
+  "author": "Johann Wolfgang von Goethe"
+ },
+ {
+  "id": "purpose_and_ambition_08",
+  "theme": "purpose_and_ambition",
+  "split": "held",
+  "text": "Great things are not done by impulse, but by a series of small things brought together.",
+  "author": "Vincent van Gogh"
+ },
+ {
+  "id": "purpose_and_ambition_09",
+  "theme": "purpose_and_ambition",
+  "split": "held",
+  "text": "Hitch your wagon to a star.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "purpose_and_ambition_10",
+  "theme": "purpose_and_ambition",
+  "split": "held",
+  "text": "To be ambitious of true honour and of the real glory and perfection of our nature is the very principle and incentive of virtue.",
+  "author": "Walter Scott"
+ },
+ {
+  "id": "purpose_and_ambition_11",
+  "theme": "purpose_and_ambition",
+  "split": "held",
+  "text": "Every calling is great when greatly pursued.",
+  "author": "Oliver Wendell Holmes"
+ },
+ {
+  "id": "purpose_and_ambition_12",
+  "theme": "purpose_and_ambition",
+  "split": "held",
+  "text": "The world makes way for the man who knows where he is going.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "simplicity_and_frugality_01",
+  "theme": "simplicity_and_frugality",
+  "split": "dev",
+  "text": "Simplicity is the ultimate sophistication.",
+  "author": "Leonardo da Vinci"
+ },
+ {
+  "id": "simplicity_and_frugality_02",
+  "theme": "simplicity_and_frugality",
+  "split": "dev",
+  "text": "Our life is frittered away by detail. Simplify, simplify.",
+  "author": "Henry David Thoreau"
+ },
+ {
+  "id": "simplicity_and_frugality_03",
+  "theme": "simplicity_and_frugality",
+  "split": "dev",
+  "text": "Beware of little expenses; a small leak will sink a great ship.",
+  "author": "Benjamin Franklin"
+ },
+ {
+  "id": "simplicity_and_frugality_04",
+  "theme": "simplicity_and_frugality",
+  "split": "dev",
+  "text": "It is not the man who has too little, but the man who craves more, that is poor.",
+  "author": "Seneca"
+ },
+ {
+  "id": "simplicity_and_frugality_05",
+  "theme": "simplicity_and_frugality",
+  "split": "dev",
+  "text": "The greatest wealth is to live content with little.",
+  "author": "Plato"
+ },
+ {
+  "id": "simplicity_and_frugality_06",
+  "theme": "simplicity_and_frugality",
+  "split": "dev",
+  "text": "That man is richest whose pleasures are cheapest.",
+  "author": "Henry David Thoreau"
+ },
+ {
+  "id": "simplicity_and_frugality_07",
+  "theme": "simplicity_and_frugality",
+  "split": "held",
+  "text": "A man is rich in proportion to the number of things which he can afford to let alone.",
+  "author": "Henry David Thoreau"
+ },
+ {
+  "id": "simplicity_and_frugality_08",
+  "theme": "simplicity_and_frugality",
+  "split": "held",
+  "text": "Frugality includes all the other virtues.",
+  "author": "Cicero"
+ },
+ {
+  "id": "simplicity_and_frugality_09",
+  "theme": "simplicity_and_frugality",
+  "split": "held",
+  "text": "He who buys what he does not need steals from himself.",
+  "author": "Proverb"
+ },
+ {
+  "id": "simplicity_and_frugality_10",
+  "theme": "simplicity_and_frugality",
+  "split": "held",
+  "text": "Nothing is enough for the man to whom enough is too little.",
+  "author": "Epicurus"
+ },
+ {
+  "id": "simplicity_and_frugality_11",
+  "theme": "simplicity_and_frugality",
+  "split": "held",
+  "text": "Manifest plainness, embrace simplicity, reduce selfishness, have few desires.",
+  "author": "Lao Tzu"
+ },
+ {
+  "id": "simplicity_and_frugality_12",
+  "theme": "simplicity_and_frugality",
+  "split": "held",
+  "text": "Economy is the parent of integrity, of liberty, and of ease.",
+  "author": "Samuel Johnson"
+ },
+ {
+  "id": "equanimity_and_anger_01",
+  "theme": "equanimity_and_anger",
+  "split": "dev",
+  "text": "Anger is a short madness.",
+  "author": "Horace"
+ },
+ {
+  "id": "equanimity_and_anger_02",
+  "theme": "equanimity_and_anger",
+  "split": "dev",
+  "text": "Nothing can bring you peace but yourself.",
+  "author": "Ralph Waldo Emerson"
+ },
+ {
+  "id": "equanimity_and_anger_03",
+  "theme": "equanimity_and_anger",
+  "split": "dev",
+  "text": "How much more grievous are the consequences of anger than the causes of it.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "equanimity_and_anger_04",
+  "theme": "equanimity_and_anger",
+  "split": "dev",
+  "text": "The best answer to anger is silence.",
+  "author": "Proverb"
+ },
+ {
+  "id": "equanimity_and_anger_05",
+  "theme": "equanimity_and_anger",
+  "split": "dev",
+  "text": "Whatever is begun in anger ends in shame.",
+  "author": "Benjamin Franklin"
+ },
+ {
+  "id": "equanimity_and_anger_06",
+  "theme": "equanimity_and_anger",
+  "split": "dev",
+  "text": "A soft answer turneth away wrath.",
+  "author": "Proverbs"
+ },
+ {
+  "id": "equanimity_and_anger_07",
+  "theme": "equanimity_and_anger",
+  "split": "held",
+  "text": "The greatest remedy for anger is delay.",
+  "author": "Seneca"
+ },
+ {
+  "id": "equanimity_and_anger_08",
+  "theme": "equanimity_and_anger",
+  "split": "held",
+  "text": "Keep cool; anger is not an argument.",
+  "author": "Daniel Webster"
+ },
+ {
+  "id": "equanimity_and_anger_09",
+  "theme": "equanimity_and_anger",
+  "split": "held",
+  "text": "You have power over your mind, not outside events. Realize this, and you will find strength.",
+  "author": "Marcus Aurelius"
+ },
+ {
+  "id": "equanimity_and_anger_10",
+  "theme": "equanimity_and_anger",
+  "split": "held",
+  "text": "Patience is the companion of wisdom.",
+  "author": "Augustine"
+ },
+ {
+  "id": "equanimity_and_anger_11",
+  "theme": "equanimity_and_anger",
+  "split": "held",
+  "text": "Man is disturbed not by things, but by the views he takes of them.",
+  "author": "Epictetus"
+ },
+ {
+  "id": "equanimity_and_anger_12",
+  "theme": "equanimity_and_anger",
+  "split": "held",
+  "text": "Better a patient person than a warrior, one with self-control than one who takes a city.",
+  "author": "Proverbs"
+ },
+ {
+  "id": "generosity_and_service_01",
+  "theme": "generosity_and_service",
+  "split": "dev",
+  "text": "It is more blessed to give than to receive.",
+  "author": "Acts"
+ },
+ {
+  "id": "generosity_and_service_02",
+  "theme": "generosity_and_service",
+  "split": "dev",
+  "text": "He who wishes to secure the good of others has already secured his own.",
+  "author": "Confucius"
+ },
+ {
+  "id": "generosity_and_service_03",
+  "theme": "generosity_and_service",
+  "split": "dev",
+  "text": "Charity sees the need, not the cause.",
+  "author": "Proverb"
+ },
+ {
+  "id": "generosity_and_service_04",
+  "theme": "generosity_and_service",
+  "split": "dev",
+  "text": "Give, and it shall be given unto you.",
+  "author": "Luke"
+ },
+ {
+  "id": "generosity_and_service_05",
+  "theme": "generosity_and_service",
+  "split": "dev",
+  "text": "Do all the good you can, by all the means you can, in all the ways you can.",
+  "author": "John Wesley"
+ },
+ {
+  "id": "generosity_and_service_06",
+  "theme": "generosity_and_service",
+  "split": "dev",
+  "text": "A bit of fragrance always clings to the hand that gives you roses.",
+  "author": "Proverb"
+ },
+ {
+  "id": "generosity_and_service_07",
+  "theme": "generosity_and_service",
+  "split": "held",
+  "text": "The generous man enriches himself by giving; the miser hoards himself poor.",
+  "author": "Proverb"
+ },
+ {
+  "id": "generosity_and_service_08",
+  "theme": "generosity_and_service",
+  "split": "held",
+  "text": "He that hath pity upon the poor lendeth unto the Lord.",
+  "author": "Proverbs"
+ },
+ {
+  "id": "generosity_and_service_09",
+  "theme": "generosity_and_service",
+  "split": "held",
+  "text": "Kindness is the golden chain by which society is bound together.",
+  "author": "Johann Wolfgang von Goethe"
+ },
+ {
+  "id": "generosity_and_service_10",
+  "theme": "generosity_and_service",
+  "split": "held",
+  "text": "What we have done for ourselves alone dies with us; what we have done for others and the world remains and is immortal.",
+  "author": "Albert Pike"
+ },
+ {
+  "id": "generosity_and_service_11",
+  "theme": "generosity_and_service",
+  "split": "held",
+  "text": "The hand that gives, gathers.",
+  "author": "Proverb"
+ },
+ {
+  "id": "generosity_and_service_12",
+  "theme": "generosity_and_service",
+  "split": "held",
+  "text": "Give what you have; to someone, it may be better than you dare to think.",
+  "author": "Henry Wadsworth Longfellow"
+ },
+ {
+  "id": "learning_and_growth_01",
+  "theme": "learning_and_growth",
+  "split": "dev",
+  "text": "The more I read, the more I acquire, the more certain I am that I know nothing.",
+  "author": "Voltaire"
+ },
+ {
+  "id": "learning_and_growth_02",
+  "theme": "learning_and_growth",
+  "split": "dev",
+  "text": "Education is the kindling of a flame, not the filling of a vessel.",
+  "author": "Socrates"
+ },
+ {
+  "id": "learning_and_growth_03",
+  "theme": "learning_and_growth",
+  "split": "dev",
+  "text": "Reading maketh a full man, conference a ready man, and writing an exact man.",
+  "author": "Francis Bacon"
+ },
+ {
+  "id": "learning_and_growth_04",
+  "theme": "learning_and_growth",
+  "split": "dev",
+  "text": "By three methods we may learn wisdom: by reflection, which is noblest; by imitation, which is easiest; and by experience, which is the bitterest.",
+  "author": "Confucius"
+ },
+ {
+  "id": "learning_and_growth_05",
+  "theme": "learning_and_growth",
+  "split": "dev",
+  "text": "A room without books is like a body without a soul.",
+  "author": "Cicero"
+ },
+ {
+  "id": "learning_and_growth_06",
+  "theme": "learning_and_growth",
+  "split": "dev",
+  "text": "Experience is the teacher of all things.",
+  "author": "Julius Caesar"
+ },
+ {
+  "id": "learning_and_growth_07",
+  "theme": "learning_and_growth",
+  "split": "held",
+  "text": "Study the past if you would define the future.",
+  "author": "Confucius"
+ },
+ {
+  "id": "learning_and_growth_08",
+  "theme": "learning_and_growth",
+  "split": "held",
+  "text": "Learning without thought is labour lost; thought without learning is perilous.",
+  "author": "Confucius"
+ },
+ {
+  "id": "learning_and_growth_09",
+  "theme": "learning_and_growth",
+  "split": "held",
+  "text": "Tell me and I forget, teach me and I may remember, involve me and I learn.",
+  "author": "Benjamin Franklin"
+ },
+ {
+  "id": "learning_and_growth_10",
+  "theme": "learning_and_growth",
+  "split": "held",
+  "text": "There is no royal road to geometry.",
+  "author": "Euclid"
+ },
+ {
+  "id": "learning_and_growth_11",
+  "theme": "learning_and_growth",
+  "split": "held",
+  "text": "He who opens a school door, closes a prison.",
+  "author": "Victor Hugo"
+ },
+ {
+  "id": "learning_and_growth_12",
+  "theme": "learning_and_growth",
+  "split": "held",
+  "text": "Wear your learning, like your watch, in a private pocket.",
+  "author": "Lord Chesterfield"
+ },
+ {
+  "id": "decision_and_action_01",
+  "theme": "decision_and_action",
+  "split": "dev",
+  "text": "In any moment of decision, the best thing you can do is the right thing.",
+  "author": "Theodore Roosevelt"
+ },
+ {
+  "id": "decision_and_action_02",
+  "theme": "decision_and_action",
+  "split": "dev",
+  "text": "Well done is better than well said.",
+  "author": "Benjamin Franklin"
+ },
+ {
+  "id": "decision_and_action_03",
+  "theme": "decision_and_action",
+  "split": "dev",
+  "text": "Knowing is not enough; we must apply. Willing is not enough; we must do.",
+  "author": "Johann Wolfgang von Goethe"
+ },
+ {
+  "id": "decision_and_action_04",
+  "theme": "decision_and_action",
+  "split": "dev",
+  "text": "The beginning is the most important part of the work.",
+  "author": "Plato"
+ },
+ {
+  "id": "decision_and_action_05",
+  "theme": "decision_and_action",
+  "split": "dev",
+  "text": "Whatever you can do, or dream you can, begin it.",
+  "author": "Johann Wolfgang von Goethe"
+ },
+ {
+  "id": "decision_and_action_06",
+  "theme": "decision_and_action",
+  "split": "dev",
+  "text": "Deliberate long, decide once.",
+  "author": "Proverb"
+ },
+ {
+  "id": "decision_and_action_07",
+  "theme": "decision_and_action",
+  "split": "held",
+  "text": "The shortest answer is doing.",
+  "author": "George Herbert"
+ },
+ {
+  "id": "decision_and_action_08",
+  "theme": "decision_and_action",
+  "split": "held",
+  "text": "Even if you are on the right track, you will get run over if you just sit there.",
+  "author": "Will Rogers"
+ },
+ {
+  "id": "decision_and_action_09",
+  "theme": "decision_and_action",
+  "split": "held",
+  "text": "Nothing will ever be attempted if all possible objections must be first overcome.",
+  "author": "Samuel Johnson"
+ },
+ {
+  "id": "decision_and_action_10",
+  "theme": "decision_and_action",
+  "split": "held",
+  "text": "He who hesitates is lost.",
+  "author": "Joseph Addison"
+ },
+ {
+  "id": "decision_and_action_11",
+  "theme": "decision_and_action",
+  "split": "held",
+  "text": "Decide promptly, but never give any reasons.",
+  "author": "Lord Mansfield"
+ },
+ {
+  "id": "decision_and_action_12",
+  "theme": "decision_and_action",
+  "split": "held",
+  "text": "Take time to deliberate, but when the time for action has arrived, stop thinking and go in.",
+  "author": "Napoleon Bonaparte"
+ }
+]

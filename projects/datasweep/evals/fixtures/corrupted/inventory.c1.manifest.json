@@ -1,0 +1,929 @@
+{
+ "class_shares": {
+  "CAT_AUTO": 0.0,
+  "CAT_TYPO": 0.0,
+  "DATE": 0.185185,
+  "DUP": 0.055556,
+  "ENC": 0.12037,
+  "MISS": 0.111111,
+  "OUT": 0.055556,
+  "TYPE": 0.212963,
+  "WS": 0.259259
+ },
+ "column_truth": {
+  "restock_date": {
+   "date_order": "provable",
+   "format": "%d %b %Y",
+   "proof_row": null
+  }
+ },
+ "columns": [
+  "sku",
+  "product",
+  "qty",
+  "unit_price",
+  "restock_date",
+  "code"
+ ],
+ "file": "inventory.c1.xlsx",
+ "golden": "inventory.xlsx",
+ "kinds": [
+  "digits",
+  "text",
+  "integer",
+  "float",
+  "date",
+  "digits"
+ ],
+ "n_ops": 108,
+ "nullable_columns": [
+  "restock_date",
+  "code"
+ ],
+ "op_rate": 0.06,
+ "ops": [
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 157,
+   "source_row": 141
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 199,
+   "source_row": 130
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 282,
+   "source_row": 57
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 298,
+   "source_row": 87
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 275,
+   "source_row": 34
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 186,
+   "source_row": 71
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 4,
+   "op": "sentinel_missing",
+   "row": 28
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 39
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 78
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 105
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 4,
+   "op": "sentinel_missing",
+   "row": 125
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 4,
+   "op": "sentinel_missing",
+   "row": 133
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 144
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 160
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 180
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 198
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 239
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 276
+  },
+  {
+   "after": "CafÃ© Kettle 994",
+   "before": "Café Kettle 994",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 41
+  },
+  {
+   "after": "FjÃ¤ll Rain Shell 401",
+   "before": "Fjäll Rain Shell 401",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 60
+  },
+  {
+   "after": "CafÃ© Panel 914",
+   "before": "Café Panel 914",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 75
+  },
+  {
+   "after": "FjÃ¤ll Chain Set 201",
+   "before": "Fjäll Chain Set 201",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 104
+  },
+  {
+   "after": "FjÃ¤ll Rain Shell 500",
+   "before": "Fjäll Rain Shell 500",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 115
+  },
+  {
+   "after": "FjÃ¤ll Kettle 965",
+   "before": "Fjäll Kettle 965",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 126
+  },
+  {
+   "after": "CafÃ© Panel 578",
+   "before": "Café Panel 578",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 133
+  },
+  {
+   "after": "FjÃ¤ll Panel 534",
+   "before": "Fjäll Panel 534",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 159
+  },
+  {
+   "after": "FjÃ¤ll Rain Shell 186",
+   "before": "Fjäll Rain Shell 186",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 203
+  },
+  {
+   "after": "CafÃ© Trowel 163",
+   "before": "Café Trowel 163",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 207
+  },
+  {
+   "after": "FjÃ¤ll Bracket 800",
+   "before": "Fjäll Bracket 800",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 226
+  },
+  {
+   "after": "FjÃ¤ll Bracket 394",
+   "before": "Fjäll Bracket 394",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 245
+  },
+  {
+   "after": "CafÃ© Grinder 601",
+   "before": "Café Grinder 601",
+   "class": "ENC",
+   "col": 1,
+   "op": "mojibake_encode",
+   "row": 287
+  },
+  {
+   "after": "  459.83 ",
+   "before": "459.83",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 22
+  },
+  {
+   "after": "  040196 ",
+   "before": "040196",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 29
+  },
+  {
+   "after": "  050612 ",
+   "before": "050612",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 36
+  },
+  {
+   "after": "  2025-04-27 ",
+   "before": "2025-04-27",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 77
+  },
+  {
+   "after": "  2024-04-14 ",
+   "before": "2024-04-14",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 100
+  },
+  {
+   "after": "  253861 ",
+   "before": "253861",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 176
+  },
+  {
+   "after": "  2024-09-14 ",
+   "before": "2024-09-14",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 218
+  },
+  {
+   "after": "  6475 ",
+   "before": "6475",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 251
+  },
+  {
+   "after": "  67.34 ",
+   "before": "67.34",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 280
+  },
+  {
+   "after": "  399704 ",
+   "before": "399704",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 299
+  },
+  {
+   "after": " 249 ",
+   "before": "249",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 14
+  },
+  {
+   "after": " 755.48 ",
+   "before": "755.48",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 21
+  },
+  {
+   "after": " 2024-02-04 ",
+   "before": "2024-02-04",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 33
+  },
+  {
+   "after": " 2024-04-07 ",
+   "before": "2024-04-07",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 46
+  },
+  {
+   "after": " 9222 ",
+   "before": "9222",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 93
+  },
+  {
+   "after": " 221359 ",
+   "before": "221359",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 150
+  },
+  {
+   "after": " 222125 ",
+   "before": "222125",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 152
+  },
+  {
+   "after": " Fjäll Trowel 375 ",
+   "before": "Fjäll Trowel 375",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 201
+  },
+  {
+   "after": " 548.91 ",
+   "before": "548.91",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 295
+  },
+  {
+   "after": "2024-09-21​",
+   "before": "2024-09-21",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 42
+  },
+  {
+   "after": "Fjäll Panel 88​",
+   "before": "Fjäll Panel 88",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 108
+  },
+  {
+   "after": "456​",
+   "before": "456",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 110
+  },
+  {
+   "after": "3942​",
+   "before": "3942",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_zero_width",
+   "row": 170
+  },
+  {
+   "after": "2024-08-18​",
+   "before": "2024-08-18",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 206
+  },
+  {
+   "after": "400​",
+   "before": "400",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 229
+  },
+  {
+   "after": "25.45​",
+   "before": "25.45",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 236
+  },
+  {
+   "after": "Rivera Bracket 959​",
+   "before": "Rivera Bracket 959",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 256
+  },
+  {
+   "after": "Café Trowel 869​",
+   "before": "Café Trowel 869",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 261
+  },
+  {
+   "after": "931,81",
+   "before": "931.81",
+   "class": "TYPE",
+   "col": 3,
+   "op": "decimal_comma",
+   "row": 68
+  },
+  {
+   "after": "566,01",
+   "before": "566.01",
+   "class": "TYPE",
+   "col": 3,
+   "op": "decimal_comma",
+   "row": 69
+  },
+  {
+   "after": "244,84",
+   "before": "244.84",
+   "class": "TYPE",
+   "col": 3,
+   "op": "decimal_comma",
+   "row": 72
+  },
+  {
+   "after": "582,38",
+   "before": "582.38",
+   "class": "TYPE",
+   "col": 3,
+   "op": "decimal_comma",
+   "row": 73
+  },
+  {
+   "after": "789,55",
+   "before": "789.55",
+   "class": "TYPE",
+   "col": 3,
+   "op": "decimal_comma",
+   "row": 106
+  },
+  {
+   "after": "172,80",
+   "before": "172.80",
+   "class": "TYPE",
+   "col": 3,
+   "op": "decimal_comma",
+   "row": 169
+  },
+  {
+   "after": "698,80",
+   "before": "698.80",
+   "class": "TYPE",
+   "col": 3,
+   "op": "decimal_comma",
+   "row": 201
+  },
+  {
+   "after": "91,10",
+   "before": "91.10",
+   "class": "TYPE",
+   "col": 3,
+   "op": "decimal_comma",
+   "row": 227
+  },
+  {
+   "after": "€264.62",
+   "before": "264.62",
+   "class": "TYPE",
+   "col": 3,
+   "op": "currency_prefix",
+   "row": 6
+  },
+  {
+   "after": "€726.86",
+   "before": "726.86",
+   "class": "TYPE",
+   "col": 3,
+   "op": "currency_prefix",
+   "row": 27
+  },
+  {
+   "after": "€615.53",
+   "before": "615.53",
+   "class": "TYPE",
+   "col": 3,
+   "op": "currency_prefix",
+   "row": 179
+  },
+  {
+   "after": "€536.04",
+   "before": "536.04",
+   "class": "TYPE",
+   "col": 3,
+   "op": "currency_prefix",
+   "row": 188
+  },
+  {
+   "after": "€550.95",
+   "before": "550.95",
+   "class": "TYPE",
+   "col": 3,
+   "op": "currency_prefix",
+   "row": 195
+  },
+  {
+   "after": "€144.70",
+   "before": "144.70",
+   "class": "TYPE",
+   "col": 3,
+   "op": "currency_prefix",
+   "row": 198
+  },
+  {
+   "after": "€380.48",
+   "before": "380.48",
+   "class": "TYPE",
+   "col": 3,
+   "op": "currency_prefix",
+   "row": 215
+  },
+  {
+   "after": "€88.87",
+   "before": "88.87",
+   "class": "TYPE",
+   "col": 3,
+   "op": "currency_prefix",
+   "row": 240
+  },
+  {
+   "after": "'090309",
+   "before": "090309",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 58
+  },
+  {
+   "after": "'199375",
+   "before": "199375",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 127
+  },
+  {
+   "after": "'30.02",
+   "before": "30.02",
+   "class": "TYPE",
+   "col": 3,
+   "op": "leading_apostrophe",
+   "row": 134
+  },
+  {
+   "after": "'1587",
+   "before": "1587",
+   "class": "TYPE",
+   "col": 5,
+   "op": "leading_apostrophe",
+   "row": 154
+  },
+  {
+   "after": "'5225",
+   "before": "5225",
+   "class": "TYPE",
+   "col": 5,
+   "op": "leading_apostrophe",
+   "row": 172
+  },
+  {
+   "after": "'313188",
+   "before": "313188",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 222
+  },
+  {
+   "after": "'2388",
+   "before": "2388",
+   "class": "TYPE",
+   "col": 5,
+   "op": "leading_apostrophe",
+   "row": 242
+  },
+  {
+   "after": "01 May 2025",
+   "before": "2025-05-01",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 31
+  },
+  {
+   "after": "20 Jul 2024",
+   "before": "2024-07-20",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 63
+  },
+  {
+   "after": "14 Mar 2025",
+   "before": "2025-03-14",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 90
+  },
+  {
+   "after": "26 Mar 2025",
+   "before": "2025-03-26",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 109
+  },
+  {
+   "after": "01 Dec 2024",
+   "before": "2024-12-01",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 111
+  },
+  {
+   "after": "30 Dec 2024",
+   "before": "2024-12-30",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 122
+  },
+  {
+   "after": "30 May 2024",
+   "before": "2024-05-30",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 160
+  },
+  {
+   "after": "19 Jul 2024",
+   "before": "2024-07-19",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 189
+  },
+  {
+   "after": "20 Nov 2024",
+   "before": "2024-11-20",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 219
+  },
+  {
+   "after": "01 Sep 2024",
+   "before": "2024-09-01",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 266
+  },
+  {
+   "after": "02 Feb 2025",
+   "before": "2025-02-02",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 279
+  },
+  {
+   "after": "45508",
+   "before": "2024-08-04",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 13
+  },
+  {
+   "after": "45574",
+   "before": "2024-10-09",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 21
+  },
+  {
+   "after": "45334",
+   "before": "2024-02-12",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 91
+  },
+  {
+   "after": "45735",
+   "before": "2025-03-19",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 101
+  },
+  {
+   "after": "45434",
+   "before": "2024-05-22",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 214
+  },
+  {
+   "after": "45457",
+   "before": "2024-06-14",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 245
+  },
+  {
+   "after": "45646",
+   "before": "2024-12-20",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 249
+  },
+  {
+   "after": "45777",
+   "before": "2025-04-30",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 287
+  },
+  {
+   "after": "45302",
+   "before": "2024-01-11",
+   "class": "DATE",
+   "col": 4,
+   "op": "excel_serial",
+   "row": 295
+  },
+  {
+   "after": "-3956.33",
+   "before": "607.37",
+   "class": "OUT",
+   "col": 3,
+   "op": "inject_outlier",
+   "row": 4
+  },
+  {
+   "after": "3909",
+   "before": "403",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 56
+  },
+  {
+   "after": "-3376",
+   "before": "348",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 164
+  },
+  {
+   "after": "3685",
+   "before": "175",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 170
+  },
+  {
+   "after": "-3166",
+   "before": "301",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 234
+  },
+  {
+   "after": "5516.54",
+   "before": "851.93",
+   "class": "OUT",
+   "col": 3,
+   "op": "inject_outlier",
+   "row": 239
+  }
+ ],
+ "seed": 1337,
+ "targets": {
+  "CAT_AUTO": 0,
+  "CAT_TYPO": 0,
+  "DATE": 20,
+  "DUP": 6,
+  "ENC": 13,
+  "MISS": 12,
+  "OUT": 6,
+  "TYPE": 23,
+  "WS": 28
+ },
+ "variant": 1
+}

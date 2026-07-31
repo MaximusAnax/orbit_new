@@ -1,0 +1,161 @@
+[
+  {
+    "city_code": "NYC",
+    "name": "New York",
+    "airports": [
+      "JFK",
+      "EWR",
+      "LGA"
+    ],
+    "aliases": [
+      "nyc",
+      "new york",
+      "new york city"
+    ]
+  },
+  {
+    "city_code": "LAX",
+    "name": "Los Angeles",
+    "airports": [
+      "LAX"
+    ],
+    "aliases": [
+      "la",
+      "los angeles",
+      "lax"
+    ]
+  },
+  {
+    "city_code": "SFO",
+    "name": "San Francisco",
+    "airports": [
+      "SFO"
+    ],
+    "aliases": [
+      "sf",
+      "san francisco",
+      "bay area"
+    ]
+  },
+  {
+    "city_code": "CHI",
+    "name": "Chicago",
+    "airports": [
+      "ORD",
+      "MDW"
+    ],
+    "aliases": [
+      "chicago",
+      "chi"
+    ]
+  },
+  {
+    "city_code": "MIA",
+    "name": "Miami",
+    "airports": [
+      "MIA"
+    ],
+    "aliases": [
+      "miami"
+    ]
+  },
+  {
+    "city_code": "PAR",
+    "name": "Paris",
+    "airports": [
+      "CDG",
+      "ORY"
+    ],
+    "aliases": [
+      "paris",
+      "par"
+    ]
+  },
+  {
+    "city_code": "LON",
+    "name": "London",
+    "airports": [
+      "LHR",
+      "LGW"
+    ],
+    "aliases": [
+      "london",
+      "lon"
+    ]
+  },
+  {
+    "city_code": "ROM",
+    "name": "Rome",
+    "airports": [
+      "FCO"
+    ],
+    "aliases": [
+      "rome",
+      "roma"
+    ]
+  },
+  {
+    "city_code": "MAD",
+    "name": "Madrid",
+    "airports": [
+      "MAD"
+    ],
+    "aliases": [
+      "madrid"
+    ]
+  },
+  {
+    "city_code": "TYO",
+    "name": "Tokyo",
+    "airports": [
+      "HND",
+      "NRT"
+    ],
+    "aliases": [
+      "tokyo",
+      "tyo"
+    ]
+  },
+  {
+    "city_code": "HKG",
+    "name": "Hong Kong",
+    "airports": [
+      "HKG"
+    ],
+    "aliases": [
+      "hong kong",
+      "hongkong"
+    ]
+  },
+  {
+    "city_code": "SIN",
+    "name": "Singapore",
+    "airports": [
+      "SIN"
+    ],
+    "aliases": [
+      "singapore"
+    ]
+  },
+  {
+    "city_code": "SYD",
+    "name": "Sydney",
+    "airports": [
+      "SYD"
+    ],
+    "aliases": [
+      "sydney"
+    ]
+  },
+  {
+    "city_code": "LIS",
+    "name": "Lisbon",
+    "airports": [
+      "LIS"
+    ],
+    "aliases": [
+      "lisbon",
+      "lisboa"
+    ]
+  }
+]

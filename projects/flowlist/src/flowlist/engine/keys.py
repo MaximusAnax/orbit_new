@@ -142,9 +142,7 @@ def parse_key(text: str) -> tuple[int, int]:
     raise ValueError(f"unrecognised key quality in {text!r}")
 
 
-def key_relation(
-    from_pc: int, from_mode: int, to_pc: int, to_mode: int
-) -> KeyRelation:
+def key_relation(from_pc: int, from_mode: int, to_pc: int, to_mode: int) -> KeyRelation:
     """Classify an ordered key pair into exactly one named relation (D2).
 
     Everything is decided by ``delta = (n_b - n_a) mod 12`` plus whether the

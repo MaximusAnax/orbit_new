@@ -1,0 +1,36 @@
+[
+  {
+    "id": "exec_01",
+    "scenario": "hd_01",
+    "note": "one transfer then the award booking; balances must replay exactly",
+    "steps": [
+      {
+        "seq": 1,
+        "at": "2026-05-02T09:00:00Z",
+        "confirm_irreversible": true
+      },
+      {
+        "seq": 2,
+        "at": "2026-05-02T09:05:00Z",
+        "confirm_irreversible": true
+      }
+    ]
+  },
+  {
+    "id": "exec_02",
+    "scenario": "hd_06",
+    "note": "a cash plan whose steps write cash_redeem entries",
+    "steps": [
+      {
+        "seq": 1,
+        "at": "2026-05-03T10:00:00Z",
+        "confirm_irreversible": true
+      },
+      {
+        "seq": 2,
+        "at": "2026-05-03T10:01:00Z",
+        "confirm_irreversible": false
+      }
+    ]
+  }
+]

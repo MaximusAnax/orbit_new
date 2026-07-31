@@ -10,6 +10,10 @@ dependencies = [
     "typer>=0.15.0",
 ]
 
+[project.optional-dependencies]
+# Live LLMGoalParser only (SCOPE adapter table). Never required by tests or evals.
+llm = ["anthropic>=0.40.0"]
+
 [project.scripts]
 pointsmax = "pointsmax.cli:main"
 

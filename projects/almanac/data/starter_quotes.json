@@ -1,0 +1,967 @@
+[
+ {
+  "text": "You have power over your mind - not outside events. Realize this, and you will find strength.",
+  "author": "Marcus Aurelius",
+  "source": "Meditations (Long trans., 1862)",
+  "themes": [
+   "equanimity_and_anger",
+   "attention_and_presence"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Waste no more time arguing about what a good man should be. Be one.",
+  "author": "Marcus Aurelius",
+  "source": "Meditations (Long trans., 1862)",
+  "themes": [
+   "decision_and_action",
+   "honesty_and_integrity"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "The best revenge is to be unlike him who performed the injury.",
+  "author": "Marcus Aurelius",
+  "source": "Meditations (Long trans., 1862)",
+  "themes": [
+   "equanimity_and_anger",
+   "honesty_and_integrity"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Confine yourself to the present.",
+  "author": "Marcus Aurelius",
+  "source": "Meditations (Long trans., 1862)",
+  "themes": [
+   "attention_and_presence"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Never let the future disturb you. You will meet it, if you have to, with the same weapons of reason which today arm you against the present.",
+  "author": "Marcus Aurelius",
+  "source": "Meditations (Long trans., 1862)",
+  "themes": [
+   "equanimity_and_anger",
+   "adversity_and_resilience"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "It is not that we have a short time to live, but that we waste a lot of it.",
+  "author": "Seneca",
+  "source": "On the Shortness of Life (Basore trans., 1932)",
+  "themes": [
+   "mortality_and_time",
+   "attention_and_presence"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "We suffer more often in imagination than in reality.",
+  "author": "Seneca",
+  "source": "Letters from a Stoic (Gummere trans., 1917)",
+  "themes": [
+   "adversity_and_resilience",
+   "equanimity_and_anger"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "While we are postponing, life speeds by.",
+  "author": "Seneca",
+  "source": "Letters from a Stoic (Gummere trans., 1917)",
+  "themes": [
+   "mortality_and_time",
+   "decision_and_action"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "It is not the man who has too little, but the man who craves more, that is poor.",
+  "author": "Seneca",
+  "source": "Letters from a Stoic (Gummere trans., 1917)",
+  "themes": [
+   "simplicity_and_frugality",
+   "gratitude"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Every night before going to sleep, we must ask ourselves: what weakness did I overcome today? What virtue did I acquire?",
+  "author": "Seneca",
+  "source": "On Anger (Basore trans., 1928)",
+  "themes": [
+   "discipline_and_habit",
+   "learning_and_growth"
+  ],
+  "tags": [
+   "stoicism",
+   "evening-review"
+  ]
+ },
+ {
+  "text": "Men are disturbed not by the things which happen, but by the opinions about the things.",
+  "author": "Epictetus",
+  "source": "Enchiridion (Long trans., 1877)",
+  "themes": [
+   "equanimity_and_anger",
+   "adversity_and_resilience"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Seek not that the things which happen should happen as you wish; but wish the things which happen to be as they are, and you will have a tranquil flow of life.",
+  "author": "Epictetus",
+  "source": "Enchiridion (Long trans., 1877)",
+  "themes": [
+   "equanimity_and_anger"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "If you would be a reader, read; if a writer, write.",
+  "author": "Epictetus",
+  "source": "Discourses (Long trans., 1877)",
+  "themes": [
+   "discipline_and_habit",
+   "decision_and_action"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "No man is free who is not master of himself.",
+  "author": "Epictetus",
+  "source": "Discourses (Long trans., 1877)",
+  "themes": [
+   "discipline_and_habit"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Lost time is never found again.",
+  "author": "Benjamin Franklin",
+  "source": "Poor Richard's Almanack (1748)",
+  "themes": [
+   "mortality_and_time",
+   "discipline_and_habit"
+  ],
+  "tags": [
+   "almanack"
+  ]
+ },
+ {
+  "text": "Beware of little expenses; a small leak will sink a great ship.",
+  "author": "Benjamin Franklin",
+  "source": "Poor Richard's Almanack (1745)",
+  "themes": [
+   "simplicity_and_frugality"
+  ],
+  "tags": [
+   "almanack"
+  ]
+ },
+ {
+  "text": "Well done is better than well said.",
+  "author": "Benjamin Franklin",
+  "source": "Poor Richard's Almanack (1737)",
+  "themes": [
+   "decision_and_action",
+   "honesty_and_integrity"
+  ],
+  "tags": [
+   "almanack"
+  ]
+ },
+ {
+  "text": "He that can have patience can have what he will.",
+  "author": "Benjamin Franklin",
+  "source": "Poor Richard's Almanack (1736)",
+  "themes": [
+   "equanimity_and_anger",
+   "purpose_and_ambition"
+  ],
+  "tags": [
+   "almanack"
+  ]
+ },
+ {
+  "text": "An investment in knowledge pays the best interest.",
+  "author": "Benjamin Franklin",
+  "source": "attributed, Poor Richard tradition",
+  "themes": [
+   "learning_and_growth"
+  ],
+  "tags": [
+   "almanack"
+  ]
+ },
+ {
+  "text": "To be great is to be misunderstood.",
+  "author": "Ralph Waldo Emerson",
+  "source": "Self-Reliance (1841)",
+  "themes": [
+   "courage",
+   "purpose_and_ambition"
+  ],
+  "tags": [
+   "transcendentalism"
+  ]
+ },
+ {
+  "text": "A foolish consistency is the hobgoblin of little minds.",
+  "author": "Ralph Waldo Emerson",
+  "source": "Self-Reliance (1841)",
+  "themes": [
+   "learning_and_growth",
+   "humility"
+  ],
+  "tags": [
+   "transcendentalism"
+  ]
+ },
+ {
+  "text": "The only person you are destined to become is the person you decide to be.",
+  "author": "Ralph Waldo Emerson",
+  "source": "attributed",
+  "themes": [
+   "decision_and_action",
+   "purpose_and_ambition"
+  ],
+  "tags": [
+   "transcendentalism"
+  ]
+ },
+ {
+  "text": "The mass of men lead lives of quiet desperation.",
+  "author": "Henry David Thoreau",
+  "source": "Walden (1854)",
+  "themes": [
+   "purpose_and_ambition",
+   "mortality_and_time"
+  ],
+  "tags": [
+   "walden"
+  ]
+ },
+ {
+  "text": "Our life is frittered away by detail. Simplify, simplify.",
+  "author": "Henry David Thoreau",
+  "source": "Walden (1854)",
+  "themes": [
+   "simplicity_and_frugality",
+   "attention_and_presence"
+  ],
+  "tags": [
+   "walden"
+  ]
+ },
+ {
+  "text": "If one advances confidently in the direction of his dreams, he will meet with a success unexpected in common hours.",
+  "author": "Henry David Thoreau",
+  "source": "Walden (1854)",
+  "themes": [
+   "purpose_and_ambition",
+   "courage"
+  ],
+  "tags": [
+   "walden"
+  ]
+ },
+ {
+  "text": "It is not enough to be busy; so are the ants. The question is: what are we busy about?",
+  "author": "Henry David Thoreau",
+  "source": "Letter to H. G. O. Blake (1857)",
+  "themes": [
+   "purpose_and_ambition",
+   "attention_and_presence"
+  ],
+  "tags": [
+   "walden"
+  ]
+ },
+ {
+  "text": "We are so accustomed to disguise ourselves to others that in the end we become disguised to ourselves.",
+  "author": "Francois de La Rochefoucauld",
+  "source": "Maxims (1665)",
+  "themes": [
+   "honesty_and_integrity",
+   "humility"
+  ],
+  "tags": [
+   "maxims"
+  ]
+ },
+ {
+  "text": "We all have strength enough to endure the misfortunes of others.",
+  "author": "Francois de La Rochefoucauld",
+  "source": "Maxims (1665)",
+  "themes": [
+   "humility",
+   "relationships"
+  ],
+  "tags": [
+   "maxims"
+  ]
+ },
+ {
+  "text": "Nothing is given so profusely as advice.",
+  "author": "Francois de La Rochefoucauld",
+  "source": "Maxims (1665)",
+  "themes": [
+   "humility",
+   "generosity_and_service"
+  ],
+  "tags": [
+   "maxims"
+  ]
+ },
+ {
+  "text": "Knowing others is wisdom, knowing yourself is enlightenment.",
+  "author": "Lao Tzu",
+  "source": "Tao Te Ching (Legge trans., 1891)",
+  "themes": [
+   "learning_and_growth",
+   "humility"
+  ],
+  "tags": [
+   "taoism"
+  ]
+ },
+ {
+  "text": "A journey of a thousand miles begins with a single step.",
+  "author": "Lao Tzu",
+  "source": "Tao Te Ching (Legge trans., 1891)",
+  "themes": [
+   "decision_and_action",
+   "discipline_and_habit"
+  ],
+  "tags": [
+   "taoism"
+  ]
+ },
+ {
+  "text": "He who knows that enough is enough will always have enough.",
+  "author": "Lao Tzu",
+  "source": "Tao Te Ching (Legge trans., 1891)",
+  "themes": [
+   "simplicity_and_frugality",
+   "gratitude"
+  ],
+  "tags": [
+   "taoism"
+  ]
+ },
+ {
+  "text": "When you know a thing, to hold that you know it; and when you do not know a thing, to allow that you do not know it - this is knowledge.",
+  "author": "Confucius",
+  "source": "The Analects (Legge trans., 1861)",
+  "themes": [
+   "humility",
+   "learning_and_growth",
+   "honesty_and_integrity"
+  ],
+  "tags": [
+   "analects"
+  ]
+ },
+ {
+  "text": "The man who moves a mountain begins by carrying away small stones.",
+  "author": "Confucius",
+  "source": "attributed, Analects tradition",
+  "themes": [
+   "discipline_and_habit",
+   "decision_and_action"
+  ],
+  "tags": [
+   "analects"
+  ]
+ },
+ {
+  "text": "It does not matter how slowly you go as long as you do not stop.",
+  "author": "Confucius",
+  "source": "attributed, Analects tradition",
+  "themes": [
+   "discipline_and_habit",
+   "adversity_and_resilience"
+  ],
+  "tags": [
+   "analects"
+  ]
+ },
+ {
+  "text": "A soft answer turneth away wrath: but grievous words stir up anger.",
+  "author": "Proverbs 15:1",
+  "source": "King James Bible (1611)",
+  "themes": [
+   "equanimity_and_anger",
+   "relationships"
+  ],
+  "tags": [
+   "proverbs"
+  ]
+ },
+ {
+  "text": "Better is a dinner of herbs where love is, than a stalled ox and hatred therewith.",
+  "author": "Proverbs 15:17",
+  "source": "King James Bible (1611)",
+  "themes": [
+   "relationships",
+   "simplicity_and_frugality"
+  ],
+  "tags": [
+   "proverbs"
+  ]
+ },
+ {
+  "text": "Pride goeth before destruction, and an haughty spirit before a fall.",
+  "author": "Proverbs 16:18",
+  "source": "King James Bible (1611)",
+  "themes": [
+   "humility"
+  ],
+  "tags": [
+   "proverbs"
+  ]
+ },
+ {
+  "text": "Whatsoever thy hand findeth to do, do it with thy might.",
+  "author": "Ecclesiastes 9:10",
+  "source": "King James Bible (1611)",
+  "themes": [
+   "decision_and_action",
+   "mortality_and_time"
+  ],
+  "tags": [
+   "proverbs"
+  ]
+ },
+ {
+  "text": "Whatever you can do or dream you can, begin it.",
+  "author": "Johann Wolfgang von Goethe",
+  "source": "attributed; see the Murray misattribution",
+  "themes": [
+   "decision_and_action",
+   "courage"
+  ],
+  "tags": [
+   "goethe"
+  ]
+ },
+ {
+  "text": "Everything has been thought of before, but the difficulty is to think of it again.",
+  "author": "Johann Wolfgang von Goethe",
+  "source": "Maxims and Reflections (Saunders trans., 1893)",
+  "themes": [
+   "creativity_and_craft",
+   "learning_and_growth"
+  ],
+  "tags": [
+   "goethe"
+  ]
+ },
+ {
+  "text": "The greatest part of our happiness depends on our dispositions, not our circumstances.",
+  "author": "Martha Washington",
+  "source": "Letter (1789)",
+  "themes": [
+   "gratitude",
+   "equanimity_and_anger"
+  ],
+  "tags": [
+   "letters"
+  ]
+ },
+ {
+  "text": "The habit of common and continuous speech is a symptom of mental deficiency.",
+  "author": "Walter Bagehot",
+  "source": "Literary Studies (1879)",
+  "themes": [
+   "attention_and_presence",
+   "humility"
+  ],
+  "tags": [
+   "essays"
+  ]
+ },
+ {
+  "text": "How much time he saves who does not look to see what his neighbour says or does.",
+  "author": "Marcus Aurelius",
+  "source": "Meditations (Long trans., 1862)",
+  "themes": [
+   "attention_and_presence",
+   "mortality_and_time"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Nothing is so much strengthened by practice, or weakened by neglect, as courage.",
+  "author": "Quintilian",
+  "source": "Institutio Oratoria (Watson trans., 1856)",
+  "themes": [
+   "courage",
+   "discipline_and_habit"
+  ],
+  "tags": [
+   "rhetoric"
+  ]
+ },
+ {
+  "text": "There is nothing so useless as doing efficiently that which should not be done at all.",
+  "author": "Anonymous",
+  "source": "traditional management maxim",
+  "kind": "idea",
+  "themes": [
+   "purpose_and_ambition",
+   "decision_and_action"
+  ],
+  "tags": [
+   "work"
+  ]
+ },
+ {
+  "text": "He who has a why to live can bear almost any how.",
+  "author": "Friedrich Nietzsche",
+  "source": "Twilight of the Idols (Common trans., 1911)",
+  "themes": [
+   "purpose_and_ambition",
+   "adversity_and_resilience"
+  ],
+  "tags": [
+   "nietzsche"
+  ]
+ },
+ {
+  "text": "That which does not kill us makes us stronger.",
+  "author": "Friedrich Nietzsche",
+  "source": "Twilight of the Idols (Common trans., 1911)",
+  "themes": [
+   "adversity_and_resilience",
+   "courage"
+  ],
+  "tags": [
+   "nietzsche"
+  ]
+ },
+ {
+  "text": "The secret of getting ahead is getting started.",
+  "author": "Anonymous",
+  "source": "traditional",
+  "kind": "idea",
+  "themes": [
+   "decision_and_action",
+   "discipline_and_habit"
+  ],
+  "tags": [
+   "work"
+  ]
+ },
+ {
+  "text": "Do not spoil what you have by desiring what you have not; remember that what you now have was once among the things you only hoped for.",
+  "author": "Epicurus",
+  "source": "Fragments (Bailey trans., 1926)",
+  "themes": [
+   "gratitude",
+   "simplicity_and_frugality"
+  ],
+  "tags": [
+   "epicurus"
+  ]
+ },
+ {
+  "text": "Not what we have but what we enjoy constitutes our abundance.",
+  "author": "Epicurus",
+  "source": "Fragments (Bailey trans., 1926)",
+  "themes": [
+   "gratitude",
+   "simplicity_and_frugality"
+  ],
+  "tags": [
+   "epicurus"
+  ]
+ },
+ {
+  "text": "Give me six hours to chop down a tree and I will spend the first four sharpening the axe.",
+  "author": "Anonymous",
+  "source": "traditional woodcutter's maxim",
+  "kind": "idea",
+  "themes": [
+   "discipline_and_habit",
+   "creativity_and_craft"
+  ],
+  "tags": [
+   "work"
+  ]
+ },
+ {
+  "text": "The wise man does not lay up his own treasures. The more he gives to others, the more he has for his own.",
+  "author": "Lao Tzu",
+  "source": "Tao Te Ching (Legge trans., 1891)",
+  "themes": [
+   "generosity_and_service",
+   "simplicity_and_frugality"
+  ],
+  "tags": [
+   "taoism"
+  ]
+ },
+ {
+  "text": "A friend may well be reckoned the masterpiece of nature.",
+  "author": "Ralph Waldo Emerson",
+  "source": "Essays: First Series (1841)",
+  "themes": [
+   "relationships",
+   "creativity_and_craft"
+  ],
+  "tags": [
+   "friendship"
+  ]
+ },
+ {
+  "text": "It is not good that the man should be alone.",
+  "author": "Genesis 2:18",
+  "source": "King James Bible (1611)",
+  "themes": [
+   "relationships"
+  ],
+  "tags": [
+   "scripture"
+  ]
+ },
+ {
+  "text": "In marriage do thou be wise: prefer the person before money, virtue before beauty, the mind before the body.",
+  "author": "William Penn",
+  "source": "Some Fruits of Solitude (1693)",
+  "themes": [
+   "relationships"
+  ],
+  "tags": []
+ },
+ {
+  "text": "A mother's arms are made of tenderness, and children sleep soundly in them.",
+  "author": "Victor Hugo",
+  "source": "Les Miserables (1862)",
+  "themes": [
+   "relationships"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Two are better than one, because they have a good reward for their labour.",
+  "author": "Ecclesiastes 4:9",
+  "source": "King James Bible (1611)",
+  "themes": [
+   "relationships",
+   "discipline_and_habit"
+  ],
+  "tags": [
+   "scripture"
+  ]
+ },
+ {
+  "text": "The gift without the giver is bare.",
+  "author": "James Russell Lowell",
+  "source": "The Vision of Sir Launfal (1848)",
+  "themes": [
+   "generosity_and_service",
+   "gratitude"
+  ],
+  "tags": []
+ },
+ {
+  "text": "No one is useless in this world who lightens the burden of another.",
+  "author": "Charles Dickens",
+  "source": "Our Mutual Friend (1865)",
+  "themes": [
+   "generosity_and_service"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Charity begins at home, but should not end there.",
+  "author": "Thomas Fuller",
+  "source": "Gnomologia (1732)",
+  "themes": [
+   "generosity_and_service"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Originality is simply a pair of fresh eyes.",
+  "author": "Thomas Wentworth Higginson",
+  "source": "Atlantic Essays (1871)",
+  "themes": [
+   "creativity_and_craft"
+  ],
+  "tags": []
+ },
+ {
+  "text": "A work of art is the unique result of a unique temperament.",
+  "author": "Oscar Wilde",
+  "source": "The Critic as Artist (1891)",
+  "themes": [
+   "creativity_and_craft"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Art is the desire of a man to express himself, to record the reactions of his personality to the world he lives in.",
+  "author": "Amy Lowell",
+  "source": "Tendencies in Modern American Poetry (1917)",
+  "themes": [
+   "creativity_and_craft"
+  ],
+  "tags": []
+ },
+ {
+  "text": "It is not death that a man should fear, but he should fear never beginning to live.",
+  "author": "Marcus Aurelius",
+  "source": "Meditations (Long trans., 1862)",
+  "themes": [
+   "mortality_and_time",
+   "courage"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Death is the golden key that opens the palace of eternity.",
+  "author": "John Milton",
+  "source": "Comus (1634)",
+  "themes": [
+   "mortality_and_time"
+  ],
+  "tags": []
+ },
+ {
+  "text": "The dead are never dead to us until we have forgotten them.",
+  "author": "George Eliot",
+  "source": "Adam Bede (1859)",
+  "themes": [
+   "mortality_and_time"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Whom the gods love die young.",
+  "author": "Menander",
+  "source": "Fragments (4th c. BC)",
+  "themes": [
+   "mortality_and_time"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Seest thou a man diligent in his business? he shall stand before kings.",
+  "author": "Proverbs 22:29",
+  "source": "King James Bible (1611)",
+  "themes": [
+   "discipline_and_habit"
+  ],
+  "tags": [
+   "scripture"
+  ]
+ },
+ {
+  "text": "The discipline of desire is the background of character.",
+  "author": "John Locke",
+  "source": "Some Thoughts Concerning Education (1693)",
+  "themes": [
+   "discipline_and_habit"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Integrity is the first step to true greatness.",
+  "author": "Charles Simmons",
+  "source": "Laconic Manual (1852)",
+  "themes": [
+   "honesty_and_integrity",
+   "purpose_and_ambition"
+  ],
+  "tags": []
+ },
+ {
+  "text": "A man who lies to himself, and believes his own lies, becomes unable to recognise truth.",
+  "author": "Fyodor Dostoevsky",
+  "source": "The Brothers Karamazov (1880)",
+  "themes": [
+   "honesty_and_integrity"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Nothing is more noble, nothing more venerable, than fidelity.",
+  "author": "Cicero",
+  "source": "De Officiis (44 BC)",
+  "themes": [
+   "honesty_and_integrity"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Modesty is the citadel of beauty and virtue.",
+  "author": "Demades",
+  "source": "Fragments (4th c. BC)",
+  "themes": [
+   "humility"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Be not proud of race, face, place, or grace.",
+  "author": "Proverb",
+  "source": "English proverb",
+  "themes": [
+   "humility"
+  ],
+  "tags": []
+ },
+ {
+  "text": "The goal of life is living in agreement with nature.",
+  "author": "Zeno of Citium",
+  "source": "Fragments (3rd c. BC)",
+  "themes": [
+   "purpose_and_ambition"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Two men look out through the same bars: one sees the mud, and one the stars.",
+  "author": "Frederick Langbridge",
+  "source": "A Cluster of Quiet Thoughts (1896)",
+  "themes": [
+   "purpose_and_ambition",
+   "gratitude"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Honour lies in honest toil.",
+  "author": "Grover Cleveland",
+  "source": "Letter of acceptance (1884)",
+  "themes": [
+   "purpose_and_ambition",
+   "honesty_and_integrity"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Let us then be up and doing, with a heart for any fate; still achieving, still pursuing, learn to labour and to wait.",
+  "author": "Henry Wadsworth Longfellow",
+  "source": "A Psalm of Life (1838)",
+  "themes": [
+   "purpose_and_ambition",
+   "discipline_and_habit"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Frugality is founded on the principle that all riches have limits.",
+  "author": "Edmund Burke",
+  "source": "Letters on a Regicide Peace (1796)",
+  "themes": [
+   "simplicity_and_frugality"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Economy is of itself a great revenue.",
+  "author": "Cicero",
+  "source": "Paradoxa Stoicorum (46 BC)",
+  "themes": [
+   "simplicity_and_frugality"
+  ],
+  "tags": [
+   "stoicism"
+  ]
+ },
+ {
+  "text": "Self-control is the chief element in self-respect.",
+  "author": "Thucydides",
+  "source": "History of the Peloponnesian War (5th c. BC)",
+  "themes": [
+   "equanimity_and_anger"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Study is like the heaven's glorious sun.",
+  "author": "William Shakespeare",
+  "source": "Love's Labour's Lost (1598)",
+  "themes": [
+   "learning_and_growth"
+  ],
+  "tags": []
+ },
+ {
+  "text": "The joy of the heart maketh the face cheerful.",
+  "author": "Proverbs 15:13",
+  "source": "King James Bible (1611)",
+  "themes": [
+   "gratitude"
+  ],
+  "tags": [
+   "scripture"
+  ]
+ },
+ {
+  "text": "No pain, no palm; no thorns, no throne; no gall, no glory; no cross, no crown.",
+  "author": "William Penn",
+  "source": "No Cross, No Crown (1682)",
+  "themes": [
+   "adversity_and_resilience"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Be bold, and mighty forces will come to your aid.",
+  "author": "Basil King",
+  "source": "The Conquest of Fear (1921)",
+  "themes": [
+   "courage"
+  ],
+  "tags": []
+ },
+ {
+  "text": "Danger gleams like sunshine to a brave man's eyes.",
+  "author": "Euripides",
+  "source": "Fragments (5th c. BC)",
+  "themes": [
+   "courage"
+  ],
+  "tags": []
+ }
+]

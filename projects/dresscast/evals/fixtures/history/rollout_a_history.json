@@ -1,0 +1,8 @@
+{
+  "description": "Rollout A's starting history: offsets are days before day 1.",
+  "medium": [
+    {"days_ago": 1, "items": ["m012", "m036", "m053", "m020"]},
+    {"days_ago": 2, "items": ["m001", "m043", "m055"]},
+    {"days_ago": 4, "items": ["m018", "m041", "m059", "m024"]}
+  ]
+}

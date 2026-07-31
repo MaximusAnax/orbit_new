@@ -20,9 +20,7 @@ _PRECISION = 6
 MAX_THEMES_PER_ENTRY = 3
 
 
-def suggestion_document(
-    text: str, tags: Iterable[str] = (), note: str | None = None
-) -> list[str]:
+def suggestion_document(text: str, tags: Iterable[str] = (), note: str | None = None) -> list[str]:
     """The stemmed token stream the suggester scores over."""
     parts = [text, " ".join(tags)]
     if note:
@@ -79,4 +77,3 @@ def suggest_themes(
             continue
         out.append(ThemeSuggestion(theme_id=theme_id, name=by_id[theme_id].name, score=score))
     return out
-</content>

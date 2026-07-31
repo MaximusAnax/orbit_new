@@ -1,0 +1,18 @@
+{
+  "params_version": "sched-1",
+  "W": 10,
+  "I0": 10,
+  "clamp": { "lo": 10, "hi": 60, "hi_flat": 240 },
+  "multipliers": { "resonated": 1.25, "applied": 1.5, "none": 1.9, "flat": 3.0 },
+  "demote_flat_streak": 2,
+  "archive_flat_streak": 3,
+  "pinned_cap": 21,
+  "P_rescue": 32,
+  "rho": 0.35,
+  "H": 28,
+  "S": 90,
+  "tau": 7,
+  "k": 1,
+  "jitter": 0.05,
+  "prompt_reuse_window": 6
+}

@@ -1,0 +1,937 @@
+[
+  {
+    "id": "b1-tee",
+    "name": "white-tee",
+    "category": "tshirt",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.08,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "white",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "minimal"
+    ],
+    "occasions": [
+      "casual",
+      "sport",
+      "outdoor"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "b2-lstee",
+    "name": "gray-long-sleeve-tee",
+    "category": "long_sleeve_tee",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.12,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "gray",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "minimal"
+    ],
+    "occasions": [
+      "casual",
+      "outdoor"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "b3-polo",
+    "name": "navy-polo",
+    "category": "polo",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.17,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "navy",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "preppy"
+    ],
+    "occasions": [
+      "casual",
+      "work"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "b4-ssshirt",
+    "name": "blue-short-sleeve-shirt",
+    "category": "shirt_short_sleeve",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.19,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "blue",
+        "hue": 220.0,
+        "neutral": false,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "preppy"
+    ],
+    "occasions": [
+      "casual",
+      "work"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "b5-oxford",
+    "name": "white-oxford-shirt",
+    "category": "shirt_long_sleeve",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.25,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "white",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "preppy",
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "formal"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "b6-flannel",
+    "name": "red-flannel-shirt",
+    "category": "flannel_shirt",
+    "layer_role": "base",
+    "accessory_class": null,
+    "clo": 0.34,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "red",
+        "hue": 0.0,
+        "neutral": false,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "outdoor"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "m1-thin",
+    "name": "beige-thin-sweater",
+    "category": "sweater_thin",
+    "layer_role": "mid",
+    "accessory_class": null,
+    "clo": 0.25,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "beige",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "formal"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "m2-fleece",
+    "name": "olive-fleece",
+    "category": "fleece",
+    "layer_role": "mid",
+    "accessory_class": null,
+    "clo": 0.3,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "olive",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "outdoor",
+      "work"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "m3-thick",
+    "name": "gray-lambswool-sweater",
+    "category": "sweater_thick",
+    "layer_role": "mid",
+    "accessory_class": null,
+    "clo": 0.36,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "gray",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "formal"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "m4-hoodie",
+    "name": "navy-hoodie",
+    "category": "hoodie",
+    "layer_role": "mid",
+    "accessory_class": null,
+    "clo": 0.36,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "navy",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "outdoorsy",
+      "sporty"
+    ],
+    "occasions": [
+      "casual",
+      "outdoor",
+      "work",
+      "sport"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "o1-shell",
+    "name": "yellow-rain-shell",
+    "category": "rain_shell",
+    "layer_role": "outer",
+    "accessory_class": null,
+    "clo": 0.25,
+    "waterproofness": 2,
+    "windproofness": 2,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "yellow",
+        "hue": 60.0,
+        "neutral": false,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "outdoor",
+      "work",
+      "sport"
+    ],
+    "wears_before_laundry": 30,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "o2-jacket",
+    "name": "denim-light-jacket",
+    "category": "light_jacket",
+    "layer_role": "outer",
+    "accessory_class": null,
+    "clo": 0.4,
+    "waterproofness": 1,
+    "windproofness": 1,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "denim",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work"
+    ],
+    "wears_before_laundry": 30,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "o3-coat",
+    "name": "navy-wool-coat",
+    "category": "wool_coat",
+    "layer_role": "outer",
+    "accessory_class": null,
+    "clo": 0.6,
+    "waterproofness": 1,
+    "windproofness": 1,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "navy",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "formal"
+    ],
+    "wears_before_laundry": 30,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "o4-parka",
+    "name": "black-parka",
+    "category": "parka",
+    "layer_role": "outer",
+    "accessory_class": null,
+    "clo": 0.7,
+    "waterproofness": 2,
+    "windproofness": 2,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "black",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "outdoor",
+      "work"
+    ],
+    "wears_before_laundry": 30,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "p1-shorts",
+    "name": "beige-shorts",
+    "category": "shorts",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.08,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "beige",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "minimal"
+    ],
+    "occasions": [
+      "casual",
+      "sport",
+      "outdoor"
+    ],
+    "wears_before_laundry": 3,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "p2-skirt",
+    "name": "black-thin-skirt",
+    "category": "skirt_thin",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.14,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "black",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "formal"
+    ],
+    "wears_before_laundry": 3,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "p3-chinos",
+    "name": "olive-chinos",
+    "category": "trousers_thin",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.15,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "olive",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "preppy",
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "p4-jeans",
+    "name": "dark-jeans",
+    "category": "jeans",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.24,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "denim",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "outdoor",
+      "work"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "p5-thick",
+    "name": "gray-thick-trousers",
+    "category": "trousers_thick",
+    "layer_role": "bottom",
+    "accessory_class": null,
+    "clo": 0.24,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "gray",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "formal"
+    ],
+    "wears_before_laundry": 5,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "l1-thermal",
+    "name": "black-thermal-bottoms",
+    "category": "thermal_bottoms",
+    "layer_role": "leg_base",
+    "accessory_class": null,
+    "clo": 0.15,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "black",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "outdoor",
+      "work"
+    ],
+    "wears_before_laundry": 2,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "f1-sandals",
+    "name": "beige-sandals",
+    "category": "sandals",
+    "layer_role": "footwear",
+    "accessory_class": null,
+    "clo": 0.02,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "beige",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "minimal"
+    ],
+    "occasions": [
+      "casual",
+      "sport",
+      "outdoor"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "f2-sneakers",
+    "name": "white-sneakers",
+    "category": "sneakers",
+    "layer_role": "footwear",
+    "accessory_class": null,
+    "clo": 0.02,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "white",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "sporty",
+      "minimal"
+    ],
+    "occasions": [
+      "casual",
+      "sport",
+      "outdoor",
+      "work"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "f3-boots",
+    "name": "brown-leather-boots",
+    "category": "boots",
+    "layer_role": "footwear",
+    "accessory_class": null,
+    "clo": 0.1,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "beige",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [
+      "classic",
+      "outdoorsy"
+    ],
+    "occasions": [
+      "casual",
+      "work",
+      "formal"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "a1-umbrella",
+    "name": "black-umbrella",
+    "category": "umbrella",
+    "layer_role": "accessory",
+    "accessory_class": "umbrella",
+    "clo": 0.0,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "black",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor",
+      "formal",
+      "sport"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "a2-hat",
+    "name": "gray-wool-hat",
+    "category": "hat",
+    "layer_role": "accessory",
+    "accessory_class": "hat",
+    "clo": 0.0,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 2,
+    "colors": [
+      {
+        "name": "gray",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor",
+      "sport"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  },
+  {
+    "id": "a3-gloves",
+    "name": "black-leather-gloves",
+    "category": "gloves",
+    "layer_role": "accessory",
+    "accessory_class": "gloves",
+    "clo": 0.0,
+    "waterproofness": 0,
+    "windproofness": 0,
+    "formality": 3,
+    "colors": [
+      {
+        "name": "black",
+        "hue": null,
+        "neutral": true,
+        "role": "main"
+      }
+    ],
+    "style_tags": [],
+    "occasions": [
+      "casual",
+      "work",
+      "outdoor"
+    ],
+    "wears_before_laundry": 999,
+    "wears_since_wash": 0,
+    "status": "clean",
+    "overridden_fields": [],
+    "photo_path": null,
+    "photo_sha256": null,
+    "notes": null,
+    "created_at": "2026-01-01T00:00:00+00:00",
+    "updated_at": "2026-01-01T00:00:00+00:00"
+  }
+]

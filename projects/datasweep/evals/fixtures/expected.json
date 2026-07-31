@@ -1,0 +1,306 @@
+{
+ "corrupted": {
+  "contacts.c1.csv": {
+   "class_shares": {
+    "CAT_AUTO": 0.097561,
+    "CAT_TYPO": 0.04878,
+    "DATE": 0.146341,
+    "DUP": 0.04878,
+    "ENC": 0.097561,
+    "MISS": 0.097561,
+    "OUT": 0.04878,
+    "TYPE": 0.186992,
+    "WS": 0.227642
+   },
+   "golden": "contacts.csv",
+   "n_ops": 123,
+   "op_rate": 0.0383
+  },
+  "contacts.c2.csv": {
+   "class_shares": {
+    "CAT_AUTO": 0.097561,
+    "CAT_TYPO": 0.04878,
+    "DATE": 0.146341,
+    "DUP": 0.04878,
+    "ENC": 0.097561,
+    "MISS": 0.097561,
+    "OUT": 0.04878,
+    "TYPE": 0.186992,
+    "WS": 0.227642
+   },
+   "golden": "contacts.csv",
+   "n_ops": 123,
+   "op_rate": 0.0385
+  },
+  "contacts.c3.csv": {
+   "class_shares": {
+    "CAT_AUTO": 0.1,
+    "CAT_TYPO": 0.053333,
+    "DATE": 0.153333,
+    "DUP": 0.046667,
+    "ENC": 0.1,
+    "MISS": 0.1,
+    "OUT": 0.046667,
+    "TYPE": 0.18,
+    "WS": 0.22
+   },
+   "golden": "contacts.csv",
+   "n_ops": 150,
+   "op_rate": 0.047
+  },
+  "inventory.c1.xlsx": {
+   "class_shares": {
+    "CAT_AUTO": 0.0,
+    "CAT_TYPO": 0.0,
+    "DATE": 0.185185,
+    "DUP": 0.055556,
+    "ENC": 0.12037,
+    "MISS": 0.111111,
+    "OUT": 0.055556,
+    "TYPE": 0.212963,
+    "WS": 0.259259
+   },
+   "golden": "inventory.xlsx",
+   "n_ops": 108,
+   "op_rate": 0.06
+  },
+  "inventory.c2.xlsx": {
+   "class_shares": {
+    "CAT_AUTO": 0.0,
+    "CAT_TYPO": 0.0,
+    "DATE": 0.185185,
+    "DUP": 0.055556,
+    "ENC": 0.12037,
+    "MISS": 0.111111,
+    "OUT": 0.055556,
+    "TYPE": 0.212963,
+    "WS": 0.259259
+   },
+   "golden": "inventory.xlsx",
+   "n_ops": 108,
+   "op_rate": 0.06
+  },
+  "sensors.c1.jsonl": {
+   "class_shares": {
+    "CAT_AUTO": 0.100946,
+    "CAT_TYPO": 0.047319,
+    "DATE": 0.15142,
+    "DUP": 0.047319,
+    "ENC": 0.100946,
+    "MISS": 0.100946,
+    "OUT": 0.047319,
+    "TYPE": 0.182965,
+    "WS": 0.22082
+   },
+   "golden": "sensors.jsonl",
+   "n_ops": 317,
+   "op_rate": 0.0529
+  },
+  "sensors.c2.jsonl": {
+   "class_shares": {
+    "CAT_AUTO": 0.099265,
+    "CAT_TYPO": 0.047794,
+    "DATE": 0.150735,
+    "DUP": 0.047794,
+    "ENC": 0.102941,
+    "MISS": 0.102941,
+    "OUT": 0.047794,
+    "TYPE": 0.180147,
+    "WS": 0.220588
+   },
+   "golden": "sensors.jsonl",
+   "n_ops": 272,
+   "op_rate": 0.0454
+  },
+  "survey.c1.tsv": {
+   "class_shares": {
+    "CAT_AUTO": 0.097561,
+    "CAT_TYPO": 0.04878,
+    "DATE": 0.150407,
+    "DUP": 0.04878,
+    "ENC": 0.101626,
+    "MISS": 0.097561,
+    "OUT": 0.04878,
+    "TYPE": 0.182927,
+    "WS": 0.223577
+   },
+   "golden": "survey.tsv",
+   "n_ops": 246,
+   "op_rate": 0.0586
+  },
+  "survey.c2.tsv": {
+   "class_shares": {
+    "CAT_AUTO": 0.10101,
+    "CAT_TYPO": 0.050505,
+    "DATE": 0.151515,
+    "DUP": 0.045455,
+    "ENC": 0.10101,
+    "MISS": 0.10101,
+    "OUT": 0.045455,
+    "TYPE": 0.181818,
+    "WS": 0.222222
+   },
+   "golden": "survey.tsv",
+   "n_ops": 198,
+   "op_rate": 0.0472
+  },
+  "survey.c3.tsv": {
+   "class_shares": {
+    "CAT_AUTO": 0.098361,
+    "CAT_TYPO": 0.04918,
+    "DATE": 0.153005,
+    "DUP": 0.04918,
+    "ENC": 0.098361,
+    "MISS": 0.098361,
+    "OUT": 0.04918,
+    "TYPE": 0.180328,
+    "WS": 0.224044
+   },
+   "golden": "survey.tsv",
+   "n_ops": 183,
+   "op_rate": 0.0435
+  },
+  "transactions.c1.csv": {
+   "class_shares": {
+    "CAT_AUTO": 0.1,
+    "CAT_TYPO": 0.05,
+    "DATE": 0.15,
+    "DUP": 0.05,
+    "ENC": 0.1,
+    "MISS": 0.1,
+    "OUT": 0.047222,
+    "TYPE": 0.180556,
+    "WS": 0.222222
+   },
+   "golden": "transactions.csv",
+   "n_ops": 360,
+   "op_rate": 0.0375
+  },
+  "transactions.c2.csv": {
+   "class_shares": {
+    "CAT_AUTO": 0.098976,
+    "CAT_TYPO": 0.047782,
+    "DATE": 0.150171,
+    "DUP": 0.047782,
+    "ENC": 0.102389,
+    "MISS": 0.102389,
+    "OUT": 0.047782,
+    "TYPE": 0.180887,
+    "WS": 0.221843
+   },
+   "golden": "transactions.csv",
+   "n_ops": 293,
+   "op_rate": 0.0305
+  },
+  "transactions.c3.csv": {
+   "class_shares": {
+    "CAT_AUTO": 0.09887,
+    "CAT_TYPO": 0.048023,
+    "DATE": 0.152542,
+    "DUP": 0.048023,
+    "ENC": 0.101695,
+    "MISS": 0.101695,
+    "OUT": 0.048023,
+    "TYPE": 0.180791,
+    "WS": 0.220339
+   },
+   "golden": "transactions.csv",
+   "n_ops": 354,
+   "op_rate": 0.0369
+  }
+ },
+ "goldens": {
+  "contacts.csv": {
+   "cols": 8,
+   "legit_extremes": [],
+   "nullable_columns": [
+    "age",
+    "value"
+   ],
+   "rows": 400
+  },
+  "inventory.xlsx": {
+   "cols": 6,
+   "legit_extremes": [],
+   "nullable_columns": [
+    "restock_date",
+    "code"
+   ],
+   "rows": 300
+  },
+  "sensors.jsonl": {
+   "cols": 5,
+   "legit_extremes": [
+    {
+     "col": 2,
+     "row": 200,
+     "value": "40.8"
+    },
+    {
+     "col": 2,
+     "row": 337,
+     "value": "41.1"
+    },
+    {
+     "col": 2,
+     "row": 474,
+     "value": "41.4"
+    },
+    {
+     "col": 2,
+     "row": 611,
+     "value": "41.6"
+    }
+   ],
+   "nullable_columns": [
+    "humidity_pct",
+    "status"
+   ],
+   "rows": 1200
+  },
+  "survey.tsv": {
+   "cols": 7,
+   "legit_extremes": [],
+   "nullable_columns": [
+    "income",
+    "satisfaction"
+   ],
+   "rows": 600
+  },
+  "transactions.csv": {
+   "cols": 8,
+   "legit_extremes": [],
+   "nullable_columns": [
+    "code",
+    "category"
+   ],
+   "rows": 1200
+  }
+ },
+ "seed": 1337,
+ "totals": {
+  "class_counts": {
+   "CAT_AUTO": 260,
+   "CAT_TYPO": 128,
+   "DATE": 435,
+   "DUP": 138,
+   "ENC": 290,
+   "MISS": 287,
+   "OUT": 137,
+   "TYPE": 522,
+   "WS": 638
+  },
+  "class_shares": {
+   "CAT_AUTO": 0.091711,
+   "CAT_TYPO": 0.04515,
+   "DATE": 0.153439,
+   "DUP": 0.048677,
+   "ENC": 0.102293,
+   "MISS": 0.101235,
+   "OUT": 0.048325,
+   "TYPE": 0.184127,
+   "WS": 0.225044
+  },
+  "n_ops": 2835
+ }
+}

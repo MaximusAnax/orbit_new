@@ -1,0 +1,116 @@
+[
+  {
+    "id": "chase_ur",
+    "name": "Chase Ultimate Rewards",
+    "kind": "bank",
+    "source_note": "transferable bank currency"
+  },
+  {
+    "id": "amex_mr",
+    "name": "Amex Membership Rewards",
+    "kind": "bank",
+    "source_note": "transferable bank currency"
+  },
+  {
+    "id": "citi_typ",
+    "name": "Citi ThankYou Points",
+    "kind": "bank",
+    "source_note": "transferable bank currency"
+  },
+  {
+    "id": "capital_one",
+    "name": "Capital One Miles",
+    "kind": "bank",
+    "source_note": "transferable bank currency"
+  },
+  {
+    "id": "bilt_rewards",
+    "name": "Bilt Rewards",
+    "kind": "bank",
+    "source_note": "transferable bank currency"
+  },
+  {
+    "id": "flying_blue",
+    "name": "Air France-KLM Flying Blue",
+    "kind": "airline",
+    "source_note": "SkyTeam FFP"
+  },
+  {
+    "id": "aeroplan",
+    "name": "Air Canada Aeroplan",
+    "kind": "airline",
+    "source_note": "Star Alliance FFP"
+  },
+  {
+    "id": "united_mileageplus",
+    "name": "United MileagePlus",
+    "kind": "airline",
+    "source_note": "Star Alliance FFP"
+  },
+  {
+    "id": "delta_skymiles",
+    "name": "Delta SkyMiles",
+    "kind": "airline",
+    "source_note": "SkyTeam FFP"
+  },
+  {
+    "id": "alaska_mp",
+    "name": "Alaska Mileage Plan",
+    "kind": "airline",
+    "source_note": "oneworld FFP"
+  },
+  {
+    "id": "ana_mileage_club",
+    "name": "ANA Mileage Club",
+    "kind": "airline",
+    "source_note": "Star Alliance FFP"
+  },
+  {
+    "id": "virgin_atlantic",
+    "name": "Virgin Atlantic Flying Club",
+    "kind": "airline",
+    "source_note": "SkyTeam FFP"
+  },
+  {
+    "id": "avianca_lifemiles",
+    "name": "Avianca LifeMiles",
+    "kind": "airline",
+    "source_note": "Star Alliance FFP"
+  },
+  {
+    "id": "british_avios",
+    "name": "British Airways Executive Club",
+    "kind": "airline",
+    "source_note": "oneworld FFP"
+  },
+  {
+    "id": "turkish_miles",
+    "name": "Turkish Miles&Smiles",
+    "kind": "airline",
+    "source_note": "Star Alliance FFP"
+  },
+  {
+    "id": "marriott_bonvoy",
+    "name": "Marriott Bonvoy",
+    "kind": "hotel",
+    "source_note": "hotel currency; airline hub"
+  },
+  {
+    "id": "hyatt",
+    "name": "World of Hyatt",
+    "kind": "hotel",
+    "source_note": "hotel currency"
+  },
+  {
+    "id": "hilton_honors",
+    "name": "Hilton Honors",
+    "kind": "hotel",
+    "source_note": "hotel currency"
+  },
+  {
+    "id": "ihg_rewards",
+    "name": "IHG One Rewards",
+    "kind": "hotel",
+    "source_note": "hotel currency"
+  }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "id": "clean_01",
+  "prompt_kind": "reflect",
+  "excerpt": null,
+  "text": "Tonight, before bed, name the one moment today when fear made the choice for you. What did it cost?"
+ },
+ {
+  "id": "clean_02",
+  "prompt_kind": "reflect",
+  "excerpt": null,
+  "text": "Looking back on today, which decision did you carry around unmade, and what did carrying it cost you?"
+ },
+ {
+  "id": "clean_03",
+  "prompt_kind": "reflect",
+  "excerpt": null,
+  "text": "Which hour of today did you spend as though your time were unlimited?"
+ },
+ {
+  "id": "clean_04",
+  "prompt_kind": "reflect",
+  "excerpt": null,
+  "text": "What did you avoid saying plainly today, and who deserved to hear it?"
+ },
+ {
+  "id": "clean_05",
+  "prompt_kind": "reflect",
+  "excerpt": null,
+  "text": "Before sleep tonight, which small promise to yourself did you quietly drop?"
+ },
+ {
+  "id": "clean_06",
+  "prompt_kind": "reflect",
+  "excerpt": "Answer the hardest message before the easy ones",
+  "text": "Reading \"Answer the hardest message before the easy ones\" again, which hour of today would you take back?"
+ },
+ {
+  "id": "clean_07",
+  "prompt_kind": "act",
+  "excerpt": null,
+  "text": "When I open my laptop tomorrow morning, I will spend the first twenty minutes on the thing I keep deferring."
+ },
+ {
+  "id": "clean_08",
+  "prompt_kind": "act",
+  "excerpt": null,
+  "text": "When the first irritating message lands in my inbox today, I will name the feeling before I reply to it."
+ },
+ {
+  "id": "clean_09",
+  "prompt_kind": "act",
+  "excerpt": null,
+  "text": "When I catch myself opening a tab out of boredom, I will shut the laptop and walk to the window."
+ },
+ {
+  "id": "clean_10",
+  "prompt_kind": "act",
+  "excerpt": null,
+  "text": "When someone thanks me today, I will name the specific thing I am grateful to them for."
+ },
+ {
+  "id": "clean_11",
+  "prompt_kind": "act",
+  "excerpt": null,
+  "text": "When I feel the pull to over-explain in the meeting, I will say the shorter true sentence instead."
+ },
+ {
+  "id": "clean_12",
+  "prompt_kind": "reframe",
+  "excerpt": null,
+  "text": "Picture the outcome you dread arriving exactly as you imagine it, then say plainly what you would do the following morning."
+ },
+ {
+  "id": "clean_13",
+  "prompt_kind": "reframe",
+  "excerpt": null,
+  "text": "Assume the delay lasts forever. Say in one sentence what you would build in the meantime."
+ },
+ {
+  "id": "clean_14",
+  "prompt_kind": "reframe",
+  "excerpt": null,
+  "text": "Take the criticism as half accurate and write down the half worth keeping."
+ },
+ {
+  "id": "clean_15",
+  "prompt_kind": "reframe",
+  "excerpt": null,
+  "text": "Treat today as a rehearsal rather than the performance, and name what you would practise differently."
+ },
+ {
+  "id": "clean_16",
+  "prompt_kind": "reframe",
+  "excerpt": null,
+  "text": "Suppose the loudest worry is right about the facts and wrong about the consequences. What changes?"
+ },
+ {
+  "id": "clean_17",
+  "prompt_kind": "connect",
+  "excerpt": null,
+  "text": "Who in your life most needs to hear this today, and why would it land for them?"
+ },
+ {
+  "id": "clean_18",
+  "prompt_kind": "connect",
+  "excerpt": null,
+  "text": "Which idea you saved earlier this year says the same thing in other words?"
+ },
+ {
+  "id": "clean_19",
+  "prompt_kind": "connect",
+  "excerpt": null,
+  "text": "Where else in your week does this same pattern show up, and what is it costing you there?"
+ },
+ {
+  "id": "clean_20",
+  "prompt_kind": "connect",
+  "excerpt": "Close the standing meeting and then stop",
+  "text": "Reading \"Close the standing meeting and then stop\", which of your own habits does it indict?"
+ }
+]

@@ -18,19 +18,21 @@ import unicodedata
 
 from almanac.engine.stemmer import stem
 
+# Codepoints are written as escapes: this table exists precisely because these
+# characters are visually ambiguous with their ASCII counterparts.
 _QUOTE_FOLD = str.maketrans(
     {
-        "‘": "'",
-        "’": "'",
-        "‚": "'",
-        "‛": "'",
-        "ʼ": "'",
-        "´": "'",
+        "\u2018": "'",  # left single quotation mark
+        "\u2019": "'",  # right single quotation mark
+        "\u201a": "'",  # single low-9 quotation mark
+        "\u201b": "'",  # single high-reversed-9 quotation mark
+        "\u02bc": "'",  # modifier letter apostrophe
+        "\u00b4": "'",  # acute accent
         "`": "'",
-        "“": '"',
-        "”": '"',
-        "–": "-",
-        "—": "-",
+        "\u201c": '"',  # left double quotation mark
+        "\u201d": '"',  # right double quotation mark
+        "\u2013": "-",  # en dash
+        "\u2014": "-",  # em dash
     }
 )
 
@@ -87,4 +89,3 @@ def phrase_occurrences(tokens: list[str], phrase: list[str]) -> int:
 def contains_phrase(tokens: list[str], phrase: list[str]) -> bool:
     """True when ``phrase`` appears contiguously in ``tokens`` (FR-2 match rule)."""
     return phrase_occurrences(tokens, phrase) > 0
-</content>

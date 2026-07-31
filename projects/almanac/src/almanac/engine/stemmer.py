@@ -231,4 +231,3 @@ def stem(word: str) -> str:
 
 def stem_all(tokens: list[str]) -> list[str]:
     return [stem(t) for t in tokens]
-</content>

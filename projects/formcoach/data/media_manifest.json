@@ -1,0 +1,641 @@
+[
+  {
+    "id": "barbell-back-squat#1",
+    "exercise_id": "barbell-back-squat",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-back-squat/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-back-squat#2",
+    "exercise_id": "barbell-back-squat",
+    "kind": "image",
+    "source": "url",
+    "ref": "https://wger.de/media/exercise-images/192/Barbell-squat-1.png",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "wger.de exercise database"
+  },
+  {
+    "id": "barbell-front-squat#1",
+    "exercise_id": "barbell-front-squat",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-front-squat/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "goblet-squat#1",
+    "exercise_id": "goblet-squat",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/goblet-squat/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "hack-squat-machine#1",
+    "exercise_id": "hack-squat-machine",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/hack-squat-machine/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "leg-press#1",
+    "exercise_id": "leg-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/leg-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-squat#1",
+    "exercise_id": "dumbbell-squat",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-squat/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "bodyweight-squat#1",
+    "exercise_id": "bodyweight-squat",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/bodyweight-squat/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-deadlift#1",
+    "exercise_id": "barbell-deadlift",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-deadlift/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-deadlift#2",
+    "exercise_id": "barbell-deadlift",
+    "kind": "image",
+    "source": "url",
+    "ref": "https://wger.de/media/exercise-images/105/Deadlifts-1.png",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "wger.de exercise database"
+  },
+  {
+    "id": "barbell-romanian-deadlift#1",
+    "exercise_id": "barbell-romanian-deadlift",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-romanian-deadlift/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-romanian-deadlift#1",
+    "exercise_id": "dumbbell-romanian-deadlift",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-romanian-deadlift/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "kettlebell-swing#1",
+    "exercise_id": "kettlebell-swing",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/kettlebell-swing/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-hip-thrust#1",
+    "exercise_id": "barbell-hip-thrust",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-hip-thrust/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "glute-bridge#1",
+    "exercise_id": "glute-bridge",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/glute-bridge/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "seated-leg-curl#1",
+    "exercise_id": "seated-leg-curl",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/seated-leg-curl/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "nordic-curl#1",
+    "exercise_id": "nordic-curl",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/nordic-curl/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "back-extension#1",
+    "exercise_id": "back-extension",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/back-extension/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-bench-press#1",
+    "exercise_id": "barbell-bench-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-bench-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-bench-press#1",
+    "exercise_id": "dumbbell-bench-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-bench-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "incline-dumbbell-press#1",
+    "exercise_id": "incline-dumbbell-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/incline-dumbbell-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "machine-chest-press#1",
+    "exercise_id": "machine-chest-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/machine-chest-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "push-up#1",
+    "exercise_id": "push-up",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/push-up/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "push-up#2",
+    "exercise_id": "push-up",
+    "kind": "image",
+    "source": "url",
+    "ref": "https://wger.de/media/exercise-images/182/Push-ups-1.png",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "wger.de exercise database"
+  },
+  {
+    "id": "knee-push-up#1",
+    "exercise_id": "knee-push-up",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/knee-push-up/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "decline-push-up#1",
+    "exercise_id": "decline-push-up",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/decline-push-up/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "close-grip-bench-press#1",
+    "exercise_id": "close-grip-bench-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/close-grip-bench-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "cable-chest-fly#1",
+    "exercise_id": "cable-chest-fly",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/cable-chest-fly/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-chest-fly#1",
+    "exercise_id": "dumbbell-chest-fly",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-chest-fly/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-row#1",
+    "exercise_id": "barbell-row",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-row/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-row#1",
+    "exercise_id": "dumbbell-row",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-row/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "seated-cable-row#1",
+    "exercise_id": "seated-cable-row",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/seated-cable-row/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "inverted-row#1",
+    "exercise_id": "inverted-row",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/inverted-row/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "chest-supported-dumbbell-row#1",
+    "exercise_id": "chest-supported-dumbbell-row",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/chest-supported-dumbbell-row/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "band-row#1",
+    "exercise_id": "band-row",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/band-row/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "pull-up#1",
+    "exercise_id": "pull-up",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/pull-up/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "chin-up#1",
+    "exercise_id": "chin-up",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/chin-up/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "lat-pulldown#1",
+    "exercise_id": "lat-pulldown",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/lat-pulldown/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "band-lat-pulldown#1",
+    "exercise_id": "band-lat-pulldown",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/band-lat-pulldown/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-overhead-press#1",
+    "exercise_id": "barbell-overhead-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-overhead-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-shoulder-press#1",
+    "exercise_id": "dumbbell-shoulder-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-shoulder-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "machine-shoulder-press#1",
+    "exercise_id": "machine-shoulder-press",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/machine-shoulder-press/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "pike-push-up#1",
+    "exercise_id": "pike-push-up",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/pike-push-up/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dip#1",
+    "exercise_id": "dip",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dip/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-walking-lunge#1",
+    "exercise_id": "dumbbell-walking-lunge",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-walking-lunge/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "bulgarian-split-squat#1",
+    "exercise_id": "bulgarian-split-squat",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/bulgarian-split-squat/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-lunge#1",
+    "exercise_id": "barbell-lunge",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-lunge/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "step-up#1",
+    "exercise_id": "step-up",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/step-up/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-lateral-raise#1",
+    "exercise_id": "dumbbell-lateral-raise",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-lateral-raise/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "cable-lateral-raise#1",
+    "exercise_id": "cable-lateral-raise",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/cable-lateral-raise/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "band-lateral-raise#1",
+    "exercise_id": "band-lateral-raise",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/band-lateral-raise/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-rear-delt-fly#1",
+    "exercise_id": "dumbbell-rear-delt-fly",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-rear-delt-fly/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "cable-face-pull#1",
+    "exercise_id": "cable-face-pull",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/cable-face-pull/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-front-raise#1",
+    "exercise_id": "dumbbell-front-raise",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-front-raise/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-biceps-curl#1",
+    "exercise_id": "dumbbell-biceps-curl",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-biceps-curl/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-curl#1",
+    "exercise_id": "barbell-curl",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-curl/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "cable-curl#1",
+    "exercise_id": "cable-curl",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/cable-curl/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "band-curl#1",
+    "exercise_id": "band-curl",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/band-curl/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-triceps-extension#1",
+    "exercise_id": "dumbbell-triceps-extension",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-triceps-extension/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "cable-triceps-pushdown#1",
+    "exercise_id": "cable-triceps-pushdown",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/cable-triceps-pushdown/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "bench-dip#1",
+    "exercise_id": "bench-dip",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/bench-dip/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "standing-calf-raise#1",
+    "exercise_id": "standing-calf-raise",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/standing-calf-raise/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-calf-raise#1",
+    "exercise_id": "dumbbell-calf-raise",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-calf-raise/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "seated-calf-raise#1",
+    "exercise_id": "seated-calf-raise",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/seated-calf-raise/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "crunch#1",
+    "exercise_id": "crunch",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/crunch/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "hanging-knee-raise#1",
+    "exercise_id": "hanging-knee-raise",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/hanging-knee-raise/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "cable-crunch#1",
+    "exercise_id": "cable-crunch",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/cable-crunch/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "barbell-shrug#1",
+    "exercise_id": "barbell-shrug",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/barbell-shrug/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-shrug#1",
+    "exercise_id": "dumbbell-shrug",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-shrug/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "dumbbell-wrist-curl#1",
+    "exercise_id": "dumbbell-wrist-curl",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/dumbbell-wrist-curl/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  },
+  {
+    "id": "farmer-carry#1",
+    "exercise_id": "farmer-carry",
+    "kind": "image",
+    "source": "local",
+    "ref": "media/farmer-carry/0.svg",
+    "license": "CC0-1.0",
+    "attribution": "FormCoach placeholder diagram"
+  }
+]

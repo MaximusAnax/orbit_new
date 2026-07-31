@@ -86,8 +86,7 @@ def data_root() -> Path:
         if candidate.is_dir():
             return candidate
     raise FileNotFoundError(
-        "tickerpress data/ directory not found; looked in: "
-        + ", ".join(str(c) for c in candidates)
+        "tickerpress data/ directory not found; looked in: " + ", ".join(str(c) for c in candidates)
     )
 
 

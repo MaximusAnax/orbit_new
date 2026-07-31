@@ -1,0 +1,2041 @@
+{
+ "class_shares": {
+  "CAT_AUTO": 0.097561,
+  "CAT_TYPO": 0.04878,
+  "DATE": 0.150407,
+  "DUP": 0.04878,
+  "ENC": 0.101626,
+  "MISS": 0.097561,
+  "OUT": 0.04878,
+  "TYPE": 0.182927,
+  "WS": 0.223577
+ },
+ "column_truth": {
+  "submitted": {
+   "date_order": "provable",
+   "format": "%d %b %Y",
+   "proof_row": null
+  }
+ },
+ "columns": [
+  "respondent_id",
+  "gender",
+  "satisfaction",
+  "comment",
+  "submitted",
+  "income",
+  "field3"
+ ],
+ "file": "survey.c1.tsv",
+ "golden": "survey.tsv",
+ "kinds": [
+  "integer",
+  "categorical",
+  "integer",
+  "text",
+  "date",
+  "float",
+  "categorical"
+ ],
+ "n_ops": 246,
+ "nullable_columns": [
+  "income",
+  "satisfaction"
+ ],
+ "op_rate": 0.0586,
+ "ops": [
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 424,
+   "source_row": 250
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 447,
+   "source_row": 224
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 312,
+   "source_row": 174
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 583,
+   "source_row": 232
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 425,
+   "source_row": 48
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 527,
+   "source_row": 284
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 462,
+   "source_row": 143
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 501,
+   "source_row": 67
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 316,
+   "source_row": 164
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 410,
+   "source_row": 118
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 596,
+   "source_row": 240
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 314,
+   "source_row": 61
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 93
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 93
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 102
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 126
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 145
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 148
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 155
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 163
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 171
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 247
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 282
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 315
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 360
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 383
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 389
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 404
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 461
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 468
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 495
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 507
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 549
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 581
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 584
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 2,
+   "op": "sentinel_missing",
+   "row": 594
+  },
+  {
+   "after": "The rÃ©servation well ahead of schedule so I upgraded the plan.",
+   "before": "The réservation well ahead of schedule so I upgraded the plan.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 10
+  },
+  {
+   "after": "The rÃ©servation surprisingly straightforward so no complaints here.",
+   "before": "The réservation surprisingly straightforward so no complaints here.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 28
+  },
+  {
+   "after": "The cafÃ© order better than last time but the invoice was wrong.",
+   "before": "The café order better than last time but the invoice was wrong.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 53
+  },
+  {
+   "after": "The rÃ©servation about what I expected and I would order again.",
+   "before": "The réservation about what I expected and I would order again.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 83
+  },
+  {
+   "after": "The rÃ©servation genuinely excellent but the invoice was wrong.",
+   "before": "The réservation genuinely excellent but the invoice was wrong.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 90
+  },
+  {
+   "after": "The cafÃ© order well ahead of schedule though the packaging tore.",
+   "before": "The café order well ahead of schedule though the packaging tore.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 147
+  },
+  {
+   "after": "The cafÃ© order better than last time so no complaints here.",
+   "before": "The café order better than last time so no complaints here.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 171
+  },
+  {
+   "after": "The cafÃ© order roughly average and support fixed it fast.",
+   "before": "The café order roughly average and support fixed it fast.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 181
+  },
+  {
+   "after": "The rÃ©servation hard to follow although shipping was slow.",
+   "before": "The réservation hard to follow although shipping was slow.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 199
+  },
+  {
+   "after": "The cafÃ© order surprisingly straightforward and support fixed it fast.",
+   "before": "The café order surprisingly straightforward and support fixed it fast.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 200
+  },
+  {
+   "after": "The rÃ©servation clear and unhurried although shipping was slow.",
+   "before": "The réservation clear and unhurried although shipping was slow.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 204
+  },
+  {
+   "after": "The cafÃ© order roughly average which cost me an afternoon.",
+   "before": "The café order roughly average which cost me an afternoon.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 216
+  },
+  {
+   "after": "The rÃ©servation genuinely excellent though the packaging tore.",
+   "before": "The réservation genuinely excellent though the packaging tore.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 225
+  },
+  {
+   "after": "The rÃ©servation roughly average and the price felt fair.",
+   "before": "The réservation roughly average and the price felt fair.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 345
+  },
+  {
+   "after": "The rÃ©servation roughly average but I still had questions.",
+   "before": "The réservation roughly average but I still had questions.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 354
+  },
+  {
+   "after": "The rÃ©servation hard to follow though the packaging tore.",
+   "before": "The réservation hard to follow though the packaging tore.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 404
+  },
+  {
+   "after": "The cafÃ© order confusing in places but I still had questions.",
+   "before": "The café order confusing in places but I still had questions.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 407
+  },
+  {
+   "after": "The cafÃ© order well ahead of schedule but the invoice was wrong.",
+   "before": "The café order well ahead of schedule but the invoice was wrong.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 419
+  },
+  {
+   "after": "The rÃ©servation confusing in places but the invoice was wrong.",
+   "before": "The réservation confusing in places but the invoice was wrong.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 427
+  },
+  {
+   "after": "The cafÃ© order later than promised but the invoice was wrong.",
+   "before": "The café order later than promised but the invoice was wrong.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 434
+  },
+  {
+   "after": "The rÃ©servation well ahead of schedule and I would order again.",
+   "before": "The réservation well ahead of schedule and I would order again.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 443
+  },
+  {
+   "after": "The rÃ©servation confusing in places which cost me an afternoon.",
+   "before": "The réservation confusing in places which cost me an afternoon.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 489
+  },
+  {
+   "after": "The cafÃ© order genuinely excellent but the invoice was wrong.",
+   "before": "The café order genuinely excellent but the invoice was wrong.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 505
+  },
+  {
+   "after": "The rÃ©servation confusing in places and support fixed it fast.",
+   "before": "The réservation confusing in places and support fixed it fast.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 549
+  },
+  {
+   "after": "The rÃ©servation about what I expected but the invoice was wrong.",
+   "before": "The réservation about what I expected but the invoice was wrong.",
+   "class": "ENC",
+   "col": 3,
+   "op": "mojibake_encode",
+   "row": 574
+  },
+  {
+   "after": "  2024-02-18 ",
+   "before": "2024-02-18",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 120
+  },
+  {
+   "after": "  264567 ",
+   "before": "264567",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 129
+  },
+  {
+   "after": "  3 ",
+   "before": "3",
+   "class": "WS",
+   "col": 2,
+   "op": "pad_whitespace",
+   "row": 191
+  },
+  {
+   "after": "  512619 ",
+   "before": "512619",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 290
+  },
+  {
+   "after": "  alpha ",
+   "before": "alpha",
+   "class": "WS",
+   "col": 6,
+   "op": "pad_whitespace",
+   "row": 351
+  },
+  {
+   "after": "  Onboarding was confusing in places so I upgraded the plan. ",
+   "before": "Onboarding was confusing in places so I upgraded the plan.",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 373
+  },
+  {
+   "after": "  bravo ",
+   "before": "bravo",
+   "class": "WS",
+   "col": 6,
+   "op": "pad_whitespace",
+   "row": 380
+  },
+  {
+   "after": "  2023-04-04 ",
+   "before": "2023-04-04",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 426
+  },
+  {
+   "after": "  31653.46 ",
+   "before": "31653.46",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 426
+  },
+  {
+   "after": "  3 ",
+   "before": "3",
+   "class": "WS",
+   "col": 2,
+   "op": "pad_whitespace",
+   "row": 464
+  },
+  {
+   "after": "  83770.65 ",
+   "before": "83770.65",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 470
+  },
+  {
+   "after": "  prefer not to say ",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 545
+  },
+  {
+   "after": "  2022-09-15 ",
+   "before": "2022-09-15",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 571
+  },
+  {
+   "after": "  108138.64 ",
+   "before": "108138.64",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 574
+  },
+  {
+   "after": " 40408.83 ",
+   "before": "40408.83",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 29
+  },
+  {
+   "after": " male ",
+   "before": "male",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 72
+  },
+  {
+   "after": " 139098.55 ",
+   "before": "139098.55",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 84
+  },
+  {
+   "after": " charlie ",
+   "before": "charlie",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 85
+  },
+  {
+   "after": " 2024-07-23 ",
+   "before": "2024-07-23",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 237
+  },
+  {
+   "after": " charlie ",
+   "before": "charlie",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 268
+  },
+  {
+   "after": " Checkout felt genuinely excellent and the price felt fair. ",
+   "before": "Checkout felt genuinely excellent and the price felt fair.",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 272
+  },
+  {
+   "after": " 2022-08-23 ",
+   "before": "2022-08-23",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 331
+  },
+  {
+   "after": " 1 ",
+   "before": "1",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 386
+  },
+  {
+   "after": " 676993 ",
+   "before": "676993",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 396
+  },
+  {
+   "after": " 2023-04-02 ",
+   "before": "2023-04-02",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 465
+  },
+  {
+   "after": " 2023-03-21 ",
+   "before": "2023-03-21",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 509
+  },
+  {
+   "after": " male ",
+   "before": "male",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 518
+  },
+  {
+   "after": " 960696 ",
+   "before": "960696",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 576
+  },
+  {
+   "after": "delta​",
+   "before": "delta",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_zero_width",
+   "row": 76
+  },
+  {
+   "after": "nonbinary​",
+   "before": "nonbinary",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 112
+  },
+  {
+   "after": "58484.76​",
+   "before": "58484.76",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_zero_width",
+   "row": 166
+  },
+  {
+   "after": "Delivery arrived clear and unhurried but I still had questions.​",
+   "before": "Delivery arrived clear and unhurried but I still had questions.",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 173
+  },
+  {
+   "after": "403661​",
+   "before": "403661",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 213
+  },
+  {
+   "after": "2023-04-19​",
+   "before": "2023-04-19",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 281
+  },
+  {
+   "after": "3​",
+   "before": "3",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 292
+  },
+  {
+   "after": "nonbinary​",
+   "before": "nonbinary",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 386
+  },
+  {
+   "after": "2022-10-19​",
+   "before": "2022-10-19",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 386
+  },
+  {
+   "after": "1​",
+   "before": "1",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 411
+  },
+  {
+   "after": "delta​",
+   "before": "delta",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_zero_width",
+   "row": 535
+  },
+  {
+   "after": "2​",
+   "before": "2",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 548
+  },
+  {
+   "after": "956780​",
+   "before": "956780",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 572
+  },
+  {
+   "after": "male​",
+   "before": "male",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 587
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 4
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 145
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 189
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 191
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 220
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 237
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 315
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 359
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 369
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 395
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 415
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 497
+  },
+  {
+   "after": "prefer  not to say",
+   "before": "prefer not to say",
+   "class": "WS",
+   "col": 1,
+   "op": "double_internal_space",
+   "row": 578
+  },
+  {
+   "after": "80,344.19",
+   "before": "80344.19",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 40
+  },
+  {
+   "after": "72,099.11",
+   "before": "72099.11",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 112
+  },
+  {
+   "after": "115,507.88",
+   "before": "115507.88",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 154
+  },
+  {
+   "after": "45,694.22",
+   "before": "45694.22",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 194
+  },
+  {
+   "after": "30,378.72",
+   "before": "30378.72",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 211
+  },
+  {
+   "after": "79,223.58",
+   "before": "79223.58",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 245
+  },
+  {
+   "after": "31,234.69",
+   "before": "31234.69",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 300
+  },
+  {
+   "after": "120,478.74",
+   "before": "120478.74",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 328
+  },
+  {
+   "after": "39,564.28",
+   "before": "39564.28",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 400
+  },
+  {
+   "after": "31,198.73",
+   "before": "31198.73",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 457
+  },
+  {
+   "after": "29,983.47",
+   "before": "29983.47",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 563
+  },
+  {
+   "after": "65,957.83",
+   "before": "65957.83",
+   "class": "TYPE",
+   "col": 5,
+   "op": "thousands_sep",
+   "row": 586
+  },
+  {
+   "after": "62366,05",
+   "before": "62366.05",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 44
+  },
+  {
+   "after": "90294,05",
+   "before": "90294.05",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 114
+  },
+  {
+   "after": "58750,42",
+   "before": "58750.42",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 219
+  },
+  {
+   "after": "85304,65",
+   "before": "85304.65",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 248
+  },
+  {
+   "after": "135626,29",
+   "before": "135626.29",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 253
+  },
+  {
+   "after": "140845,00",
+   "before": "140845.00",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 290
+  },
+  {
+   "after": "56033,43",
+   "before": "56033.43",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 308
+  },
+  {
+   "after": "79099,40",
+   "before": "79099.40",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 330
+  },
+  {
+   "after": "94765,44",
+   "before": "94765.44",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 336
+  },
+  {
+   "after": "127686,47",
+   "before": "127686.47",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 545
+  },
+  {
+   "after": "110851,44",
+   "before": "110851.44",
+   "class": "TYPE",
+   "col": 5,
+   "op": "decimal_comma",
+   "row": 591
+  },
+  {
+   "after": "€80747.26",
+   "before": "80747.26",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 85
+  },
+  {
+   "after": "€105825.08",
+   "before": "105825.08",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 87
+  },
+  {
+   "after": "€113617.15",
+   "before": "113617.15",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 115
+  },
+  {
+   "after": "€74579.23",
+   "before": "74579.23",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 285
+  },
+  {
+   "after": "€52088.92",
+   "before": "52088.92",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 464
+  },
+  {
+   "after": "€73135.93",
+   "before": "73135.93",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 469
+  },
+  {
+   "after": "€41279.63",
+   "before": "41279.63",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 473
+  },
+  {
+   "after": "€89336.72",
+   "before": "89336.72",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 477
+  },
+  {
+   "after": "€53875.42",
+   "before": "53875.42",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 499
+  },
+  {
+   "after": "€37847.24",
+   "before": "37847.24",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 515
+  },
+  {
+   "after": "€39369.12",
+   "before": "39369.12",
+   "class": "TYPE",
+   "col": 5,
+   "op": "currency_prefix",
+   "row": 543
+  },
+  {
+   "after": "'3",
+   "before": "3",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 34
+  },
+  {
+   "after": "'102327.35",
+   "before": "102327.35",
+   "class": "TYPE",
+   "col": 5,
+   "op": "leading_apostrophe",
+   "row": 190
+  },
+  {
+   "after": "'400525",
+   "before": "400525",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 211
+  },
+  {
+   "after": "'439816",
+   "before": "439816",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 227
+  },
+  {
+   "after": "'3",
+   "before": "3",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 287
+  },
+  {
+   "after": "'3",
+   "before": "3",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 340
+  },
+  {
+   "after": "'4",
+   "before": "4",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 403
+  },
+  {
+   "after": "'4",
+   "before": "4",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 470
+  },
+  {
+   "after": "'886700",
+   "before": "886700",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 532
+  },
+  {
+   "after": "'932788",
+   "before": "932788",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 561
+  },
+  {
+   "after": "'4",
+   "before": "4",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 573
+  },
+  {
+   "after": "26 Aug 2023",
+   "before": "2023-08-26",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 24
+  },
+  {
+   "after": "20 Dec 2023",
+   "before": "2023-12-20",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 49
+  },
+  {
+   "after": "09 Jul 2024",
+   "before": "2024-07-09",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 110
+  },
+  {
+   "after": "03 Jun 2023",
+   "before": "2023-06-03",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 132
+  },
+  {
+   "after": "16 Aug 2023",
+   "before": "2023-08-16",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 145
+  },
+  {
+   "after": "23 Apr 2023",
+   "before": "2023-04-23",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 146
+  },
+  {
+   "after": "09 Jul 2024",
+   "before": "2024-07-09",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 148
+  },
+  {
+   "after": "22 Oct 2022",
+   "before": "2022-10-22",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 150
+  },
+  {
+   "after": "30 Aug 2023",
+   "before": "2023-08-30",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 179
+  },
+  {
+   "after": "20 Nov 2023",
+   "before": "2023-11-20",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 184
+  },
+  {
+   "after": "11 Sep 2022",
+   "before": "2022-09-11",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 217
+  },
+  {
+   "after": "07 Feb 2023",
+   "before": "2023-02-07",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 230
+  },
+  {
+   "after": "26 Oct 2023",
+   "before": "2023-10-26",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 233
+  },
+  {
+   "after": "28 Oct 2024",
+   "before": "2024-10-28",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 236
+  },
+  {
+   "after": "16 Apr 2023",
+   "before": "2023-04-16",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 260
+  },
+  {
+   "after": "03 Jun 2024",
+   "before": "2024-06-03",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 349
+  },
+  {
+   "after": "24 Dec 2022",
+   "before": "2022-12-24",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 361
+  },
+  {
+   "after": "01 May 2024",
+   "before": "2024-05-01",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 382
+  },
+  {
+   "after": "26 Jul 2024",
+   "before": "2024-07-26",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 404
+  },
+  {
+   "after": "30 Aug 2023",
+   "before": "2023-08-30",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 416
+  },
+  {
+   "after": "21 Jul 2024",
+   "before": "2024-07-21",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 436
+  },
+  {
+   "after": "09 Jun 2023",
+   "before": "2023-06-09",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 437
+  },
+  {
+   "after": "07 Jan 2023",
+   "before": "2023-01-07",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 439
+  },
+  {
+   "after": "14 Sep 2024",
+   "before": "2024-09-14",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 442
+  },
+  {
+   "after": "29 Oct 2024",
+   "before": "2024-10-29",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 468
+  },
+  {
+   "after": "20 Oct 2022",
+   "before": "2022-10-20",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 477
+  },
+  {
+   "after": "23 Jul 2024",
+   "before": "2024-07-23",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 482
+  },
+  {
+   "after": "21 Jul 2024",
+   "before": "2024-07-21",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 486
+  },
+  {
+   "after": "22 Sep 2024",
+   "before": "2024-09-22",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 506
+  },
+  {
+   "after": "12 Oct 2024",
+   "before": "2024-10-12",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 531
+  },
+  {
+   "after": "24 May 2023",
+   "before": "2023-05-24",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 543
+  },
+  {
+   "after": "03 Aug 2023",
+   "before": "2023-08-03",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 544
+  },
+  {
+   "after": "12 Oct 2022",
+   "before": "2022-10-12",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 557
+  },
+  {
+   "after": "31 Oct 2022",
+   "before": "2022-10-31",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 572
+  },
+  {
+   "after": "22 Feb 2023",
+   "before": "2023-02-22",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 574
+  },
+  {
+   "after": "30 Aug 2024",
+   "before": "2024-08-30",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 576
+  },
+  {
+   "after": "22 Mar 2024",
+   "before": "2024-03-22",
+   "class": "DATE",
+   "col": 4,
+   "op": "date_reformat",
+   "row": 599
+  },
+  {
+   "after": "NONBINARY",
+   "before": "nonbinary",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "case_label",
+   "row": 28
+  },
+  {
+   "after": "FEMALE",
+   "before": "female",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "case_label",
+   "row": 339
+  },
+  {
+   "after": "(prefer not to say)",
+   "before": "prefer not to say",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "punct_label",
+   "row": 473
+  },
+  {
+   "after": "(male)",
+   "before": "male",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "punct_label",
+   "row": 498
+  },
+  {
+   "after": "(prefer not to say)",
+   "before": "prefer not to say",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "punct_label",
+   "row": 209
+  },
+  {
+   "after": "FEMALE",
+   "before": "female",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "case_label",
+   "row": 140
+  },
+  {
+   "after": "(male)",
+   "before": "male",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "punct_label",
+   "row": 338
+  },
+  {
+   "after": "(prefer not to say)",
+   "before": "prefer not to say",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "punct_label",
+   "row": 89
+  },
+  {
+   "after": "(prefer not to say)",
+   "before": "prefer not to say",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "punct_label",
+   "row": 29
+  },
+  {
+   "after": "(prefer not to say)",
+   "before": "prefer not to say",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "punct_label",
+   "row": 288
+  },
+  {
+   "after": "(male)",
+   "before": "male",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "punct_label",
+   "row": 503
+  },
+  {
+   "after": "FEMALE",
+   "before": "female",
+   "class": "CAT_AUTO",
+   "col": 1,
+   "op": "case_label",
+   "row": 419
+  },
+  {
+   "after": "(bravo)",
+   "before": "bravo",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 276
+  },
+  {
+   "after": "ALPHA",
+   "before": "alpha",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 571
+  },
+  {
+   "after": "ALPHA",
+   "before": "alpha",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 587
+  },
+  {
+   "after": "(delta)",
+   "before": "delta",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 451
+  },
+  {
+   "after": "CHARLIE",
+   "before": "charlie",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 456
+  },
+  {
+   "after": "ALPHA",
+   "before": "alpha",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 430
+  },
+  {
+   "after": "(bravo)",
+   "before": "bravo",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 359
+  },
+  {
+   "after": "(bravo)",
+   "before": "bravo",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 329
+  },
+  {
+   "after": "(delta)",
+   "before": "delta",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 169
+  },
+  {
+   "after": "(delta)",
+   "before": "delta",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 489
+  },
+  {
+   "after": "(bravo)",
+   "before": "bravo",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 193
+  },
+  {
+   "after": "(delta)",
+   "before": "delta",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 23
+  },
+  {
+   "after": "prefer not ao say",
+   "before": "prefer not to say",
+   "class": "CAT_TYPO",
+   "col": 1,
+   "op": "typo_label",
+   "row": 389
+  },
+  {
+   "after": "nonbanary",
+   "before": "nonbinary",
+   "class": "CAT_TYPO",
+   "col": 1,
+   "op": "typo_label",
+   "row": 313
+  },
+  {
+   "after": "mala",
+   "before": "male",
+   "class": "CAT_TYPO",
+   "col": 1,
+   "op": "typo_label",
+   "row": 355
+  },
+  {
+   "after": "nanbinary",
+   "before": "nonbinary",
+   "class": "CAT_TYPO",
+   "col": 1,
+   "op": "typo_label",
+   "row": 201
+  },
+  {
+   "after": "femaae",
+   "before": "female",
+   "class": "CAT_TYPO",
+   "col": 1,
+   "op": "typo_label",
+   "row": 420
+  },
+  {
+   "after": "mble",
+   "before": "male",
+   "class": "CAT_TYPO",
+   "col": 1,
+   "op": "typo_label",
+   "row": 142
+  },
+  {
+   "after": "alphb",
+   "before": "alpha",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 575
+  },
+  {
+   "after": "dalta",
+   "before": "delta",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 493
+  },
+  {
+   "after": "charaie",
+   "before": "charlie",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 215
+  },
+  {
+   "after": "chbrlie",
+   "before": "charlie",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 503
+  },
+  {
+   "after": "braao",
+   "before": "bravo",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 454
+  },
+  {
+   "after": "delaa",
+   "before": "delta",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 133
+  },
+  {
+   "after": "-734152.71",
+   "before": "72060.59",
+   "class": "OUT",
+   "col": 5,
+   "op": "inject_outlier",
+   "row": 54
+  },
+  {
+   "after": "883927.33",
+   "before": "90966.03",
+   "class": "OUT",
+   "col": 5,
+   "op": "inject_outlier",
+   "row": 77
+  },
+  {
+   "after": "22",
+   "before": "2",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 153
+  },
+  {
+   "after": "969958.85",
+   "before": "31053.10",
+   "class": "OUT",
+   "col": 5,
+   "op": "inject_outlier",
+   "row": 159
+  },
+  {
+   "after": "-24",
+   "before": "3",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 196
+  },
+  {
+   "after": "-18",
+   "before": "5",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 242
+  },
+  {
+   "after": "618248.32",
+   "before": "145153.10",
+   "class": "OUT",
+   "col": 5,
+   "op": "inject_outlier",
+   "row": 257
+  },
+  {
+   "after": "-677316.63",
+   "before": "92047.19",
+   "class": "OUT",
+   "col": 5,
+   "op": "inject_outlier",
+   "row": 381
+  },
+  {
+   "after": "-830819.13",
+   "before": "58141.74",
+   "class": "OUT",
+   "col": 5,
+   "op": "inject_outlier",
+   "row": 388
+  },
+  {
+   "after": "28",
+   "before": "1",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 452
+  },
+  {
+   "after": "24",
+   "before": "1",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 543
+  },
+  {
+   "after": "-794084.13",
+   "before": "72880.42",
+   "class": "OUT",
+   "col": 5,
+   "op": "inject_outlier",
+   "row": 571
+  }
+ ],
+ "seed": 1337,
+ "targets": {
+  "CAT_AUTO": 24,
+  "CAT_TYPO": 12,
+  "DATE": 37,
+  "DUP": 12,
+  "ENC": 25,
+  "MISS": 24,
+  "OUT": 12,
+  "TYPE": 45,
+  "WS": 55
+ },
+ "variant": 1
+}

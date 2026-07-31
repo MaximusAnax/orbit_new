@@ -1,0 +1,231 @@
+{
+ "brands": [
+  {
+   "id": "maison-vantorre",
+   "name": "Maison Vantorre",
+   "aliases": [
+    "Vantorre",
+    "MV"
+   ],
+   "notes": "Founder-era archive house; the founder era is the collectible one.",
+   "eras": [
+    {
+     "id": "maison-vantorre:vantorre",
+     "designer": "Elise Vantorre",
+     "label": "Elise Vantorre era",
+     "start": "1994-01",
+     "end": "2019-06",
+     "notes": "the archive era"
+    },
+    {
+     "id": "maison-vantorre:corbin",
+     "designer": "Marc Corbin",
+     "label": "Marc Corbin era",
+     "start": "2019-07",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "atelier-kessler",
+   "name": "Atelier Kessler",
+   "aliases": [
+    "Kessler"
+   ],
+   "notes": "Deconstructionist house; two well-documented designer tenures.",
+   "eras": [
+    {
+     "id": "atelier-kessler:kessler",
+     "designer": "Ada Kessler",
+     "label": "Ada Kessler era",
+     "start": "1996-01",
+     "end": "2023-04",
+     "notes": ""
+    },
+    {
+     "id": "atelier-kessler:renard",
+     "designer": "Yves Renard",
+     "label": "Yves Renard era",
+     "start": "2023-05",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "nordkant",
+   "name": "Nordkant",
+   "aliases": [
+    "Nord Kant"
+   ],
+   "notes": "Quiet heritage brand; steady demand, little news flow.",
+   "eras": [
+    {
+     "id": "nordkant:holm",
+     "designer": "Ingrid Holm",
+     "label": "Ingrid Holm era",
+     "start": "1988-01",
+     "end": "2021-02",
+     "notes": ""
+    },
+    {
+     "id": "nordkant:dahl",
+     "designer": "Petter Dahl",
+     "label": "Petter Dahl era",
+     "start": "2021-03",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "voltaire-nine",
+   "name": "Voltaire Nine",
+   "aliases": [
+    "V9",
+    "Voltaire 9"
+   ],
+   "notes": "Hype-collab streetwear label; frequent drops and celebrity moments.",
+   "eras": [
+    {
+     "id": "voltaire-nine:okafor",
+     "designer": "Deji Okafor",
+     "label": "Deji Okafor era",
+     "start": "2011-01",
+     "end": "2023-09",
+     "notes": ""
+    },
+    {
+     "id": "voltaire-nine:mireille",
+     "designer": "Sana Mireille",
+     "label": "Sana Mireille era",
+     "start": "2023-10",
+     "end": "2024-11",
+     "notes": ""
+    },
+    {
+     "id": "voltaire-nine:sable",
+     "designer": "Tomas Sable",
+     "label": "Tomas Sable era",
+     "start": "2024-12",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "serrano-bloc",
+   "name": "Serrano Bloc",
+   "aliases": [
+    "Serrano"
+   ],
+   "notes": "Scandal-hit megabrand; three tenures, heavy and mixed news flow.",
+   "eras": [
+    {
+     "id": "serrano-bloc:serrano",
+     "designer": "Luis Serrano",
+     "label": "Luis Serrano era",
+     "start": "1999-01",
+     "end": "2020-08",
+     "notes": ""
+    },
+    {
+     "id": "serrano-bloc:bloc",
+     "designer": "Nina Bloc",
+     "label": "Nina Bloc era",
+     "start": "2020-09",
+     "end": "2023-12",
+     "notes": ""
+    },
+    {
+     "id": "serrano-bloc:iversen",
+     "designer": "Kai Iversen",
+     "label": "Kai Iversen era",
+     "start": "2024-01",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "hausmann-studio",
+   "name": "Hausmann Studio",
+   "aliases": [
+    "Hausmann"
+   ],
+   "notes": "Cult tailoring studio; founder era closed by the founder's death.",
+   "eras": [
+    {
+     "id": "hausmann-studio:hausmann",
+     "designer": "Otto Hausmann",
+     "label": "Otto Hausmann era",
+     "start": "1991-01",
+     "end": "2024-06",
+     "notes": ""
+    },
+    {
+     "id": "hausmann-studio:petrov",
+     "designer": "Lena Petrov",
+     "label": "Lena Petrov era",
+     "start": "2024-07",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "kite-and-anvil",
+   "name": "Kite & Anvil",
+   "aliases": [
+    "Kite and Anvil",
+    "K&A"
+   ],
+   "notes": "Workwear label that receives no events in this scenario (hold correctness).",
+   "eras": [
+    {
+     "id": "kite-and-anvil:kite",
+     "designer": "Rosa Kite",
+     "label": "Rosa Kite era",
+     "start": "2004-01",
+     "end": "2022-05",
+     "notes": ""
+    },
+    {
+     "id": "kite-and-anvil:anvil",
+     "designer": "Bo Anvil",
+     "label": "Bo Anvil era",
+     "start": "2022-06",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "okonkwo-atelier",
+   "name": "Okonkwo Atelier",
+   "aliases": [
+    "Okonkwo"
+   ],
+   "notes": "Small atelier that receives no events in this scenario (hold correctness).",
+   "eras": [
+    {
+     "id": "okonkwo-atelier:okonkwo",
+     "designer": "Ify Okonkwo",
+     "label": "Ify Okonkwo era",
+     "start": "2009-01",
+     "end": "2023-01",
+     "notes": ""
+    },
+    {
+     "id": "okonkwo-atelier:ferro",
+     "designer": "Gian Ferro",
+     "label": "Gian Ferro era",
+     "start": "2023-02",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  }
+ ]
+}

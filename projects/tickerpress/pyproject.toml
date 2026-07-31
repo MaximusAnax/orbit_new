@@ -10,6 +10,12 @@ dependencies = [
     "typer>=0.15.0",
 ]
 
+# Live adapters only (SCOPE FR-2/FR-12). The core test and eval suites never
+# import these: LiveRssFeedSource and WebhookNotifier import httpx lazily and
+# raise a clear error when the extra is absent.
+[project.optional-dependencies]
+live = ["httpx>=0.27.0"]
+
 [project.scripts]
 tickerpress = "tickerpress.cli:main"
 
@@ -19,3 +25,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/tickerpress"]
+
+# The committed lexicons live at the project root (SCOPE architecture tree) and
+# are read only by resources.py; a built wheel carries them inside the package
+# so importlib.resources finds them there.
+[tool.hatch.build.targets.wheel.force-include]
+"data" = "tickerpress/data"

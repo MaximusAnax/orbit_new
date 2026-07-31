@@ -195,8 +195,7 @@ def validate_world(world: World, *, computed_hash: str | None = None) -> list[Wo
             add(
                 WorldIssue(
                     "unknown_card",
-                    f"cashout option {option.id!r} requires unknown card "
-                    f"{option.requires_card!r}",
+                    f"cashout option {option.id!r} requires unknown card {option.requires_card!r}",
                 )
             )
 
@@ -271,8 +270,7 @@ def validate_world(world: World, *, computed_hash: str | None = None) -> list[Wo
             add(
                 WorldIssue(
                     "unknown_program",
-                    f"award offer {offer.id!r} references unknown program "
-                    f"{offer.program_id!r}",
+                    f"award offer {offer.id!r} references unknown program {offer.program_id!r}",
                 )
             )
         places = [offer.origin, offer.destination, offer.city]

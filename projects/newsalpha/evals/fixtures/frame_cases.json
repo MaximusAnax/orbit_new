@@ -1,0 +1,151 @@
+{
+ "_comment": "16 hand-authored brief-render scenarios with expected verdicts (EVALS.md M8). 9 expected-VIOLATION, 7 expected-PASS. `footer` is taken from templates.json unless `footer_override` is set, so the cases stay valid if the wording of the shipped footer ever changes.",
+ "cases": [
+  {
+   "id": "fc-01-bare-buy",
+   "expected": "violation",
+   "reason": "bare imperative in the what_happened slot",
+   "what_happened": "Northwind Corp reported quarterly results above expectations (confirmed). Buy the dip while it lasts.",
+   "why_it_matters": "Companies that beat expectations have historically drifted in the same direction for several weeks.",
+   "what_to_watch": ["a restatement", "a guidance revision in the opposite direction"],
+   "uncertainty_note": "Confidence 0.72. This weakens if a one-off item explains the surprise."
+  },
+  {
+   "id": "fc-02-bare-sell",
+   "expected": "violation",
+   "reason": "bare imperative in a what_to_watch item",
+   "what_happened": "Northwind Corp cut its forward guidance (confirmed).",
+   "why_it_matters": "Downward revisions to management forecasts have historically been followed by further weakness.",
+   "what_to_watch": ["management walking the revision back", "sell before the next update"],
+   "uncertainty_note": "Confidence 0.55. This weakens if a segment disclosure contradicts the revision."
+  },
+  {
+   "id": "fc-03-you-should",
+   "expected": "violation",
+   "reason": "second-person instruction in the uncertainty note",
+   "what_happened": "Northwind Corp was named as the target of an acquisition approach (rumored).",
+   "why_it_matters": "Announced takeover targets historically jump on the day of the announcement.",
+   "what_to_watch": ["a definitive agreement or a denial", "a filed 8-K"],
+   "uncertainty_note": "Confidence 0.41. You should act before the confirmation lands."
+  },
+  {
+   "id": "fc-04-act-now",
+   "expected": "violation",
+   "reason": "urgency imperative in why_it_matters",
+   "what_happened": "Northwind Token was announced for listing on a new venue (confirmed).",
+   "why_it_matters": "Newly listed tokens have historically shown a large announcement pop. Act now before access widens.",
+   "what_to_watch": ["the venue postponing the listing", "very thin depth at the open"],
+   "uncertainty_note": "Confidence 0.63. This weakens if the venue reverses the decision."
+  },
+  {
+   "id": "fc-05-guaranteed",
+   "expected": "violation",
+   "reason": "certainty claim in what_happened",
+   "what_happened": "Northwind Token was reported to have suffered an exploit (confirmed). A guaranteed reimbursement is coming.",
+   "why_it_matters": "Tokens of exploited protocols have historically sold off sharply on the day of disclosure.",
+   "what_to_watch": ["an official post-mortem", "a reimbursement plan"],
+   "uncertainty_note": "Confidence 0.68. This weakens if the funds are recovered."
+  },
+  {
+   "id": "fc-06-footer-missing",
+   "expected": "violation",
+   "reason": "the not-advice footer was dropped from the rendered brief",
+   "footer_override": "",
+   "what_happened": "Northwind Corp reported quarterly results below expectations (confirmed).",
+   "why_it_matters": "Companies that miss expectations have historically drifted in the same direction for several weeks.",
+   "what_to_watch": ["a restatement", "a one-off item that explains the shortfall"],
+   "uncertainty_note": "Confidence 0.58. This weakens if guidance is revised upward."
+  },
+  {
+   "id": "fc-07-footer-reworded",
+   "expected": "violation",
+   "reason": "the footer was reworded rather than rendered verbatim",
+   "footer_override": "This is general information and may be treated as advice where permitted.",
+   "what_happened": "Northwind Corp received a favorable regulatory outcome (confirmed).",
+   "why_it_matters": "Enforcement outcomes have historically carried reputational effects beyond the fine itself.",
+   "what_to_watch": ["an appeal", "a stay of the order"],
+   "uncertainty_note": "Confidence 0.61. This weakens if the terms are renegotiated."
+  },
+  {
+   "id": "fc-08-empty-section",
+   "expected": "violation",
+   "reason": "an emptied required section",
+   "what_happened": "",
+   "why_it_matters": "Delistings have historically been followed by further weakness as access narrows.",
+   "what_to_watch": ["the venue reinstating the pair", "a migration path that preserves access"],
+   "uncertainty_note": "Confidence 0.49. This weakens if a comparable venue picks the pair up."
+  },
+  {
+   "id": "fc-09-unattributed-quote",
+   "expected": "violation",
+   "reason": "forbidden wording inside a quotation with no attribution",
+   "what_happened": "Northwind Corp was named as the target of an acquisition approach (confirmed). \"Time to buy ahead of the vote.\"",
+   "why_it_matters": "Announced takeover targets historically jump on the day of the announcement.",
+   "what_to_watch": ["a definitive agreement or a denial", "a competing approach"],
+   "uncertainty_note": "Confidence 0.74. This weakens if a regulator blocks the deal."
+  },
+  {
+   "id": "fc-10-buyout-slot",
+   "expected": "pass",
+   "reason": "\"buyout\" is a noun, not an imperative",
+   "what_happened": "Northwind Corp was named as the target of a buyout approach (confirmed).",
+   "why_it_matters": "Announced takeover targets historically jump on the day of the announcement.",
+   "what_to_watch": ["a definitive agreement or a denial", "a filed 8-K"],
+   "uncertainty_note": "Confidence 0.77. This weakens if the buyout offer is withdrawn."
+  },
+  {
+   "id": "fc-11-selloff-slot",
+   "expected": "pass",
+   "reason": "\"sell-off\" is a noun, not an imperative",
+   "what_happened": "Northwind Token was reported to have suffered an exploit (confirmed).",
+   "why_it_matters": "Exploited protocols have historically seen a sharp sell-off on the day of disclosure.",
+   "what_to_watch": ["an official post-mortem", "TVL outflows"],
+   "uncertainty_note": "Confidence 0.66. This weakens if the funds are recovered."
+  },
+  {
+   "id": "fc-12-buyer-slot",
+   "expected": "pass",
+   "reason": "\"buyer\" is a noun, not an imperative",
+   "what_happened": "Northwind Corp was named as the acquirer in an acquisition approach (confirmed). No rival buyer has emerged.",
+   "why_it_matters": "Acquirer announcement returns have historically been close to zero or slightly negative.",
+   "what_to_watch": ["a competing approach", "a regulatory block"],
+   "uncertainty_note": "Confidence 0.38. This weakens if the buyer raises its offer."
+  },
+  {
+   "id": "fc-13-sellside-slot",
+   "expected": "pass",
+   "reason": "\"sell-side\" is a compound noun, not an imperative",
+   "what_happened": "Northwind Corp reported quarterly results above expectations (confirmed).",
+   "why_it_matters": "Companies that beat expectations have historically drifted in the same direction for several weeks.",
+   "what_to_watch": ["a restatement", "a guidance revision in the opposite direction"],
+   "uncertainty_note": "Confidence 0.70. Sell-side estimates may not have caught up yet, which is part of the drift."
+  },
+  {
+   "id": "fc-14-attributed-quote-buy",
+   "expected": "pass",
+   "reason": "forbidden wording inside quoted evidence with attribution",
+   "what_happened": "Northwind Corp raised its forward guidance (confirmed). \"We are going to buy back stock through the year\" -- reuters.example.",
+   "why_it_matters": "Upward revisions to management forecasts have historically been followed by continued strength.",
+   "what_to_watch": ["management walking the revision back", "a segment disclosure that contradicts it"],
+   "uncertainty_note": "Confidence 0.69. This weakens if the revision is reversed."
+  },
+  {
+   "id": "fc-15-attributed-quote-sell",
+   "expected": "pass",
+   "reason": "forbidden wording inside quoted evidence with attribution",
+   "what_happened": "Northwind Corp cut its forward guidance (confirmed). \"Investors will sell into any strength from here\" -- bloomberg.example.",
+   "why_it_matters": "Downward revisions to management forecasts have historically been followed by further weakness.",
+   "what_to_watch": ["management walking the revision back", "a segment disclosure that contradicts it"],
+   "uncertainty_note": "Confidence 0.52. This weakens if the revision is reversed."
+  },
+  {
+   "id": "fc-16-buyside-slot",
+   "expected": "pass",
+   "reason": "\"buy-side\" is a compound noun, not an imperative",
+   "what_happened": "Northwind Token was announced for removal from a venue (confirmed).",
+   "why_it_matters": "Delistings have historically been followed by further weakness as access narrows.",
+   "what_to_watch": ["buy-side interest migrating to another venue", "the venue reinstating the pair"],
+   "uncertainty_note": "Confidence 0.57. This weakens if a comparable venue picks the pair up."
+  }
+ ]
+}

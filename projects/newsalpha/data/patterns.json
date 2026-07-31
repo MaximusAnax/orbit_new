@@ -249,7 +249,7 @@
     "mna": ["merger of ideas", "merger of styles", "merging traffic"],
     "listing": ["listing agent", "property listing", "job listing", "listing price of the home"],
     "delisting": ["listing agent", "property listing"],
-    "regulatory_action": ["approved the minutes", "approved the budget"],
+    "regulatory_action": ["approved the minutes", "approved the budget", "board approved", "approved by the board", "approved by both boards", "shareholders approved"],
     "earnings_surprise": ["beat the heat", "beat the traffic"],
     "guidance_change": ["guidance counselor", "parental guidance"]
   },

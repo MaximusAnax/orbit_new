@@ -13,7 +13,7 @@ import chess
 from ..constants import MAX_BOOK_DEPTH
 from ..models import BookMove, Opening, OpeningLine
 
-__all__ = ["CommittedBook", "BookValidationError"]
+__all__ = ["BookValidationError", "CommittedBook"]
 
 
 class BookValidationError(ValueError):
@@ -21,7 +21,7 @@ class BookValidationError(ValueError):
 
 
 class _Node:
-    __slots__ = ("children", "weight", "eco", "name", "depth")
+    __slots__ = ("children", "depth", "eco", "name", "weight")
 
     def __init__(self, depth: int) -> None:
         self.children: dict[str, _Node] = {}
@@ -115,8 +115,7 @@ class CommittedBook:
             return []
         node = path[-1] if path else self._root
         return [
-            BookMove(uci=uci, weight=child.weight)
-            for uci, child in sorted(node.children.items())
+            BookMove(uci=uci, weight=child.weight) for uci, child in sorted(node.children.items())
         ]
 
     def identify(self, moves: Sequence[str]) -> Opening | None:

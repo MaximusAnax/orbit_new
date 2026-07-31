@@ -1,0 +1,35 @@
+{
+ "id": "exact_04",
+ "suite": "exact",
+ "n": 12,
+ "seed": 1302284,
+ "clusters": [
+  "indie",
+  "dnb"
+ ],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:79d0981e25f0ac28ece449f593557cbec0359146",
+  "meta:8031703a4662380ce0637f53e484a812dd2fd621",
+  "meta:f9ecec5dad22212102925c053e721090e83af1da",
+  "meta:c7dde7d9ce2f670320251ae180f458559b0511e8",
+  "meta:e808de1977649c1e5bf33ef34a7d57892f7d9ca6",
+  "meta:c8342d1381ea94e9bf8948f087be05ea2ea98ad1",
+  "meta:0a725dc83bf21b507aa3a7aea714c72a52cfcfd5",
+  "meta:28794f70547335285114b8390439ead08a7d247d",
+  "meta:5b10b298f0f7c88671f5b11322fa05418597fa67",
+  "meta:5f19239e6333c778c0075b0ba79412131381ac19",
+  "meta:7766f9287d4a1ef1ae6019cf4649d73f38ea1a51",
+  "meta:3cdd266e1c9f37aeec7907c992bb19bc2d349a30"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "plain",
+  "search_seed": 1302284,
+  "greedy_bound": 0.962427,
+  "depth_target": 0.96
+ }
+}

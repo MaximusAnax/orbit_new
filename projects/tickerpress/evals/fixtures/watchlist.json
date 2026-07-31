@@ -1,0 +1,133 @@
+{
+  "_comment": [
+    "Eval watchlist (EVALS §4): 12 companies chosen so every ambiguity class is",
+    "exercised. Tickers and company names are real - that is the point of the",
+    "product - but every fixture article about them is invented.",
+    "Delivery config: min_relevance 20 everywhere except GOOGL (50, the",
+    "non-default path); TSLA is mode=both with alert_min_relevance 60; ORCL is",
+    "mode=mute to exercise suppression. context_terms / anti_terms are capped at",
+    "8 entries per company (EVALS §2, anti-memorization control 2)."
+  ],
+  "companies": [
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["cupertino", "iphone", "app store", "tim cook"],
+      "anti_terms": ["orchard", "cider", "pie", "harvest"],
+      "aliases": []
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["seattle", "prime", "aws", "fulfillment"],
+      "anti_terms": ["rainforest", "deforestation", "basin", "canopy"],
+      "aliases": [{"text": "Amazon", "kind": "short_name", "strength": "weak", "prior": 0.25}]
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["instagram", "whatsapp", "menlo park", "advertisers"],
+      "anti_terms": ["statin", "placebo", "cohort", "systematic review"],
+      "aliases": [{"text": "Meta", "kind": "short_name", "strength": "weak", "prior": 0.25}]
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "mode": "both",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["gigafactory", "austin", "electric vehicles", "charging"],
+      "anti_terms": ["inventor", "museum", "coil", "physicist"],
+      "aliases": []
+    },
+    {
+      "ticker": "F",
+      "name": "Ford Motor Company",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["dearborn", "pickup", "assembly line", "dealers"],
+      "anti_terms": ["starring", "screenplay", "box office", "actor"],
+      "aliases": [{"text": "Ford", "kind": "short_name", "strength": "weak", "prior": 0.25}]
+    },
+    {
+      "ticker": "V",
+      "name": "Visa Inc.",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["cardholders", "payments network", "interchange", "merchants"],
+      "anti_terms": ["passport", "embassy", "consulate", "tourist"],
+      "aliases": []
+    },
+    {
+      "ticker": "TGT",
+      "name": "Target Corporation",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["minneapolis", "shoppers", "grocery aisles", "same store"],
+      "anti_terms": ["audiences", "demographic", "price target", "campaign"],
+      "aliases": []
+    },
+    {
+      "ticker": "ORCL",
+      "name": "Oracle Corporation",
+      "mode": "mute",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["database", "austin", "enterprise software", "licenses"],
+      "anti_terms": ["delphi", "priestess", "prophecy", "temple"],
+      "aliases": []
+    },
+    {
+      "ticker": "SHEL",
+      "name": "Shell plc",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["north sea", "refinery", "liquefied natural gas", "barrels"],
+      "anti_terms": ["seashell", "shoreline", "scripting", "terminal window", "shell companies", "laundering"],
+      "aliases": []
+    },
+    {
+      "ticker": "CAT",
+      "name": "Caterpillar Inc.",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["excavators", "peoria", "construction equipment", "dealers"],
+      "anti_terms": ["larvae", "moth", "butterflies", "imaging"],
+      "aliases": []
+    },
+    {
+      "ticker": "ALL",
+      "name": "Allstate Corporation",
+      "mode": "digest",
+      "min_relevance": 20,
+      "alert_min_relevance": 60,
+      "context_terms": ["policyholders", "premiums", "northbrook", "claims"],
+      "anti_terms": ["options remain", "bets are", "eyes are", "hands on deck"],
+      "aliases": []
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "mode": "digest",
+      "min_relevance": 50,
+      "alert_min_relevance": 60,
+      "context_terms": ["mountain view", "search ads", "youtube", "cloud region"],
+      "anti_terms": ["phonics", "spelling", "kindergarten", "literacy"],
+      "aliases": []
+    }
+  ]
+}

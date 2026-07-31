@@ -1,0 +1,9 @@
+{
+  "barbell":    { "kg": 2.5, "lb": 5.0 },
+  "dumbbell":   { "kg": 2.0, "lb": 5.0 },
+  "machine":    { "kg": 5.0, "lb": 10.0 },
+  "cable":      { "kg": 2.5, "lb": 5.0 },
+  "kettlebell": { "kg": 4.0, "lb": 10.0 },
+  "band":       { "kg": null, "lb": null },
+  "bodyweight": { "kg": null, "lb": null }
+}

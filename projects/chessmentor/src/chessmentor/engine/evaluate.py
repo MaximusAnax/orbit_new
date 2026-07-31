@@ -14,9 +14,9 @@ from __future__ import annotations
 import chess
 
 __all__ = [
+    "EG_PIECE_VALUE",
     "GAME_PHASE_MAX",
     "MG_PIECE_VALUE",
-    "EG_PIECE_VALUE",
     "PIECE_VALUE",
     "TEMPO_CP",
     "evaluate",

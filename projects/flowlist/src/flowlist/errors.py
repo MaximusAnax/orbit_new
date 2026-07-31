@@ -64,6 +64,16 @@ class PlaylistHasRunsError(FlowlistError):
     code = "playlist_has_runs"
 
 
+class InvalidProviderError(FlowlistError):
+    """A requested feature source / provider name is not one flowlist knows.
+
+    Not in FR-13's minimum catalog; added because ``--providers`` is user input
+    and the API needs a 4xx for a typo rather than a 500.
+    """
+
+    code = "invalid_providers"
+
+
 class InvalidAnchorError(FlowlistError):
     """A start/end anchor does not name a distinct node of the instance (FR-9).
 

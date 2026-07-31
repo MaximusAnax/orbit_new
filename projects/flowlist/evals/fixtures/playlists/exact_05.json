@@ -1,0 +1,36 @@
+{
+ "id": "exact_05",
+ "suite": "exact",
+ "n": 13,
+ "seed": 1302243,
+ "clusters": [
+  "house",
+  "dnb"
+ ],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:267ea6427909bd92f8ab044c6ff349a0211d6be3",
+  "meta:7c5ad07c4b5cf02f1a1dbe625abd9b3163108d01",
+  "meta:7985fddb1c103f64d748fd6f1f9859d94fd754e3",
+  "meta:5bd9db3342e99666ff34bc424e5152cdfad84e34",
+  "meta:870c359357aa7790c6afb26aac0dd67260b693d8",
+  "meta:0e44b530c2fd20ab236c88eb4a252f72cd974f66",
+  "meta:fc7975637fc51a22c1a5098d0365f387cae98bd9",
+  "meta:f228afccefbd981d3554ca9d2fe40d6b9415d562",
+  "meta:2939e5cb572e8b4ef3a92d947efd499c9d2c9739",
+  "meta:cfa8f3f1a8aae789b21fda631950621e2c521372",
+  "meta:7aed5934dbcf6a366419fe4d9331b1e5688428e8",
+  "meta:6b8bf731fb0cf3f81018b7ca80c4b18f9c3adc73",
+  "meta:7d41c48e11de824b0a2b648feb24a656080b8b22"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "plain",
+  "search_seed": 1302243,
+  "greedy_bound": 0.974199,
+  "depth_target": 0.96
+ }
+}

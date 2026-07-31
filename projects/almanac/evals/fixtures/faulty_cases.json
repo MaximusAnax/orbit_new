@@ -1,0 +1,422 @@
+[
+ {
+  "id": "empty_01",
+  "mutation": "empty",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "empty_02",
+  "mutation": "empty",
+  "prompt_kind": "act",
+  "base_prompt": "When the first frustrating message arrives today, I will name the feeling before replying.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "empty_03",
+  "mutation": "empty",
+  "prompt_kind": "reframe",
+  "base_prompt": "Suppose the delay is permanent. Describe what you would build instead, in one sentence.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "empty_04",
+  "mutation": "empty",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "empty_05",
+  "mutation": "empty",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_long_chars_01",
+  "mutation": "too_long_chars",
+  "prompt_kind": "act",
+  "base_prompt": "When I sit down at my desk today, I will spend the first twenty minutes on the task I keep deferring.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_long_chars_02",
+  "mutation": "too_long_chars",
+  "prompt_kind": "reframe",
+  "base_prompt": "Picture the day going wrong in the exact way this warns about, and name the first thing you would still control.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_long_chars_03",
+  "mutation": "too_long_chars",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_long_chars_04",
+  "mutation": "too_long_chars",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_long_chars_05",
+  "mutation": "too_long_chars",
+  "prompt_kind": "act",
+  "base_prompt": "When I next feel the urge to explain myself, I will say the shorter true sentence instead.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_many_words_01",
+  "mutation": "too_many_words",
+  "prompt_kind": "reframe",
+  "base_prompt": "Imagine the feared outcome arriving exactly as you picture it, then describe plainly what you would do the next morning.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_many_words_02",
+  "mutation": "too_many_words",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_many_words_03",
+  "mutation": "too_many_words",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_many_words_04",
+  "mutation": "too_many_words",
+  "prompt_kind": "act",
+  "base_prompt": "When someone thanks me today, I will say the specific thing I am grateful for in return.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "too_many_words_05",
+  "mutation": "too_many_words",
+  "prompt_kind": "reframe",
+  "base_prompt": "Treat today as the rehearsal, not the performance. Name what you would practise differently.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "embedded_newline_01",
+  "mutation": "embedded_newline",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "embedded_newline_02",
+  "mutation": "embedded_newline",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "embedded_newline_03",
+  "mutation": "embedded_newline",
+  "prompt_kind": "act",
+  "base_prompt": "When I notice myself opening a new tab out of boredom, I will close the laptop and stand up.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "embedded_newline_04",
+  "mutation": "embedded_newline",
+  "prompt_kind": "reframe",
+  "base_prompt": "Assume the criticism is half true. Write the half you would keep.",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "embedded_newline_05",
+  "mutation": "embedded_newline",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "a"
+ },
+ {
+  "id": "unfilled_slot_01",
+  "mutation": "unfilled_slot",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "b"
+ },
+ {
+  "id": "unfilled_slot_02",
+  "mutation": "unfilled_slot",
+  "prompt_kind": "act",
+  "base_prompt": "When the first frustrating message arrives today, I will name the feeling before replying.",
+  "excerpt": null,
+  "expected_check": "b"
+ },
+ {
+  "id": "unfilled_slot_03",
+  "mutation": "unfilled_slot",
+  "prompt_kind": "reframe",
+  "base_prompt": "Suppose the delay is permanent. Describe what you would build instead, in one sentence.",
+  "excerpt": null,
+  "expected_check": "b"
+ },
+ {
+  "id": "unfilled_slot_04",
+  "mutation": "unfilled_slot",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "b"
+ },
+ {
+  "id": "unfilled_slot_05",
+  "mutation": "unfilled_slot",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "b"
+ },
+ {
+  "id": "excerpt_altered_01",
+  "mutation": "excerpt_altered",
+  "prompt_kind": "reflect",
+  "base_prompt": "Reading \"Answer the hardest message before the easy ones\", which hour of today would you take back?",
+  "excerpt": "Answer the hardest message before the easy ones",
+  "expected_check": "c"
+ },
+ {
+  "id": "excerpt_altered_02",
+  "mutation": "excerpt_altered",
+  "prompt_kind": "reflect",
+  "base_prompt": "Reading \"Answer the hardest message before the easy ones\", which hour of today would you take back?",
+  "excerpt": "Answer the hardest message before the easy ones",
+  "expected_check": "c"
+ },
+ {
+  "id": "excerpt_altered_03",
+  "mutation": "excerpt_altered",
+  "prompt_kind": "connect",
+  "base_prompt": "Reading \"Close the standing meeting and then stop\", which habit of yours does it indict?",
+  "excerpt": "Close the standing meeting and then stop",
+  "expected_check": "c"
+ },
+ {
+  "id": "excerpt_altered_04",
+  "mutation": "excerpt_altered",
+  "prompt_kind": "reflect",
+  "base_prompt": "Reading \"Answer the hardest message before the easy ones\", which hour of today would you take back?",
+  "excerpt": "Answer the hardest message before the easy ones",
+  "expected_check": "c"
+ },
+ {
+  "id": "excerpt_altered_05",
+  "mutation": "excerpt_altered",
+  "prompt_kind": "reflect",
+  "base_prompt": "Reading \"Answer the hardest message before the easy ones\", which hour of today would you take back?",
+  "excerpt": "Answer the hardest message before the easy ones",
+  "expected_check": "c"
+ },
+ {
+  "id": "url_injected_01",
+  "mutation": "url_injected",
+  "prompt_kind": "reframe",
+  "base_prompt": "Imagine the feared outcome arriving exactly as you picture it, then describe plainly what you would do the next morning.",
+  "excerpt": null,
+  "expected_check": "d"
+ },
+ {
+  "id": "url_injected_02",
+  "mutation": "url_injected",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "d"
+ },
+ {
+  "id": "url_injected_03",
+  "mutation": "url_injected",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "d"
+ },
+ {
+  "id": "url_injected_04",
+  "mutation": "url_injected",
+  "prompt_kind": "act",
+  "base_prompt": "When someone thanks me today, I will say the specific thing I am grateful for in return.",
+  "excerpt": null,
+  "expected_check": "d"
+ },
+ {
+  "id": "url_injected_05",
+  "mutation": "url_injected",
+  "prompt_kind": "reframe",
+  "base_prompt": "Treat today as the rehearsal, not the performance. Name what you would practise differently.",
+  "excerpt": null,
+  "expected_check": "d"
+ },
+ {
+  "id": "kind_signature_broken_01",
+  "mutation": "kind_signature_broken",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "e"
+ },
+ {
+  "id": "kind_signature_broken_02",
+  "mutation": "kind_signature_broken",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "expected_check": "e"
+ },
+ {
+  "id": "kind_signature_broken_03",
+  "mutation": "kind_signature_broken",
+  "prompt_kind": "act",
+  "base_prompt": "When I notice myself opening a new tab out of boredom, I will close the laptop and stand up.",
+  "excerpt": null,
+  "expected_check": "e"
+ },
+ {
+  "id": "kind_signature_broken_04",
+  "mutation": "kind_signature_broken",
+  "prompt_kind": "reflect",
+  "base_prompt": "Reading \"Answer the hardest message before the easy ones\", which hour of today would you take back?",
+  "excerpt": "Answer the hardest message before the easy ones",
+  "expected_check": "e"
+ },
+ {
+  "id": "kind_signature_broken_05",
+  "mutation": "kind_signature_broken",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "expected_check": "e"
+ },
+ {
+  "id": "offspec_01",
+  "mutation": "off_spec",
+  "off_spec_class": "unrelated_replacement",
+  "prompt_kind": "reflect",
+  "base_prompt": "Tonight, name one moment today when fear chose for you. What did it cost?",
+  "excerpt": null,
+  "replacement": "Which of your houseplants would you say is thriving, and which is merely surviving?",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_02",
+  "mutation": "off_spec",
+  "off_spec_class": "unrelated_replacement",
+  "prompt_kind": "act",
+  "base_prompt": "When I sit down at my desk today, I will spend the first twenty minutes on the task I keep deferring.",
+  "excerpt": null,
+  "replacement": "When the bus is late tomorrow, I will count the pigeons on the shelter roof.",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_03",
+  "mutation": "off_spec",
+  "off_spec_class": "foreign_excerpt",
+  "prompt_kind": "connect",
+  "base_prompt": "Who in your life most needs to hear this idea, and why is it true for them?",
+  "excerpt": null,
+  "replacement": "Who needs to hear \"Sit with the plain meal and say why\" today, and why is it true for them?",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_04",
+  "mutation": "off_spec",
+  "off_spec_class": "negated_imperative",
+  "prompt_kind": "act",
+  "base_prompt": "When the first frustrating message arrives today, I will name the feeling before replying.",
+  "excerpt": null,
+  "replacement": "When the first frustrating message arrives today, I will not name the feeling and will reply at once.",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_05",
+  "mutation": "off_spec",
+  "off_spec_class": "negated_imperative",
+  "prompt_kind": "act",
+  "base_prompt": "When I notice myself opening a new tab out of boredom, I will close the laptop and stand up.",
+  "excerpt": null,
+  "replacement": "When I notice myself opening a new tab out of boredom, I will open three more and stay seated.",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_06",
+  "mutation": "off_spec",
+  "off_spec_class": "self_answering",
+  "prompt_kind": "reflect",
+  "base_prompt": "Where did you spend an hour today as if time were infinite?",
+  "excerpt": null,
+  "replacement": "Where did you spend an hour today as if time were infinite: it was the afternoon, obviously, so why ask?",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_07",
+  "mutation": "off_spec",
+  "off_spec_class": "self_answering",
+  "prompt_kind": "connect",
+  "base_prompt": "Which earlier idea in your library says the same thing in different words?",
+  "excerpt": null,
+  "replacement": "Which earlier idea says the same thing? None of them, so skip this and move on, agreed?",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_08",
+  "mutation": "off_spec",
+  "off_spec_class": "wrong_theme",
+  "prompt_kind": "reframe",
+  "base_prompt": "Imagine the feared outcome arriving exactly as you picture it, then describe plainly what you would do the next morning.",
+  "excerpt": null,
+  "replacement": "Imagine your grocery budget doubling next month and describe the shopping list you would write.",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_09",
+  "mutation": "off_spec",
+  "off_spec_class": "flattened_meaning",
+  "prompt_kind": "reframe",
+  "base_prompt": "Suppose the delay is permanent. Describe what you would build instead, in one sentence.",
+  "excerpt": null,
+  "replacement": "Suppose things are fine. Describe nothing in particular, at whatever length suits you.",
+  "expected_check": null
+ },
+ {
+  "id": "offspec_10",
+  "mutation": "off_spec",
+  "off_spec_class": "praise_instead_of_prompt",
+  "prompt_kind": "connect",
+  "base_prompt": "Whose advice does this contradict, and which of the two has served you better?",
+  "excerpt": null,
+  "replacement": "What a wonderful, deeply moving idea this is, and are you not proud of having saved it?",
+  "expected_check": null
+ }
+]

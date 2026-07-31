@@ -24,14 +24,21 @@ F0_MAX_HZ = 400.0
 LPC_ORDER = 12
 N_MEL_BANDS = 8
 LPC_FFT_SIZE = 1024
+PRE_EMPHASIS = 0.97
 
 #: Formant search bands (Hz). F1 and F2 for adult speech across the vowel space.
 F1_BAND_HZ = (180.0, 1200.0)
-F2_BAND_HZ = (700.0, 3400.0)
-MIN_FORMANT_SEPARATION_HZ = 180.0
+F2_BAND_HZ = (600.0, 3400.0)
+MIN_FORMANT_SEPARATION_HZ = 120.0
+FORMANT_MIN_HZ = 120.0
+FORMANT_MAX_HZ = 4200.0
+MAX_FORMANT_BANDWIDTH_HZ = 700.0
+"""Poles broader than this are not formants — the standard resonance criterion."""
 
-#: Spectral-tilt regression band (Hz).
-TILT_BAND_HZ = (150.0, 7000.0)
+#: Spectral-tilt regression band (Hz). Bounded above where speech energy ends:
+#: past ~3.5 kHz the slope describes where the recording noise floor sits, not the
+#: speaker, and the feature stops responding to the source at all.
+TILT_BAND_HZ = (150.0, 3500.0)
 ROLLOFF_FRACTION = 0.85
 
 _EPS = 1e-12
@@ -44,7 +51,7 @@ _EPS = 1e-12
 
 def frame_lengths(sample_rate: int) -> tuple[int, int]:
     """``(frame_len, hop_len)`` in samples for the committed 32 ms / 16 ms grid."""
-    return int(round(FRAME_MS * sample_rate / 1000.0)), int(round(HOP_MS * sample_rate / 1000.0))
+    return round(FRAME_MS * sample_rate / 1000.0), round(HOP_MS * sample_rate / 1000.0)
 
 
 def frame_signal(x: np.ndarray, frame_len: int, hop: int) -> np.ndarray:
@@ -90,17 +97,31 @@ class FrameAnalysis:
 
 
 def normalized_autocorrelation(frames: np.ndarray) -> np.ndarray:
-    """Per-frame normalized autocorrelation ``r[τ]/r[0]`` of Hamming-windowed frames."""
+    """Per-frame normalized autocorrelation, energy-corrected per lag.
+
+    ``nac[τ] = Σₙ x[n]x[n+τ] / sqrt(Σ x[n]² · Σ x[n+τ]²)`` over the overlapping
+    span only. Dividing by ``r[0]`` instead would taper the score toward zero as
+    the lag grows and make low-pitched voices read as unvoiced — the correlation
+    coefficient of the two overlapping halves is the quantity that actually
+    means "this frame repeats itself at this lag".
+    """
     n_frames, frame_len = frames.shape
     if n_frames == 0:
         return np.zeros((0, frame_len), dtype=np.float64)
-    window = np.hamming(frame_len)
-    centred = (frames - frames.mean(axis=1, keepdims=True)) * window
+    centred = frames - frames.mean(axis=1, keepdims=True)
     n_fft = 1 << int(np.ceil(np.log2(2 * frame_len)))
     spectrum = np.fft.rfft(centred, n=n_fft, axis=1)
     acf = np.fft.irfft(spectrum * np.conjugate(spectrum), n=n_fft, axis=1)[:, :frame_len]
-    zero_lag = np.maximum(acf[:, :1], _EPS)
-    return acf / zero_lag
+
+    squared = centred**2
+    prefix = np.concatenate(
+        [np.zeros((n_frames, 1)), np.cumsum(squared, axis=1)], axis=1
+    )  # prefix[:, k] = sum of x[n]^2 for n < k
+    total = prefix[:, -1:]
+    lags = np.arange(frame_len)
+    head = prefix[:, frame_len - lags]  # Σ_{n < N-τ} x[n]²
+    tail = total - prefix[:, lags]  # Σ_{n ≥ τ} x[n]²
+    return acf / np.sqrt(np.maximum(head * tail, _EPS))
 
 
 def _parabolic_peak(y_left: np.ndarray, y_mid: np.ndarray, y_right: np.ndarray) -> np.ndarray:
@@ -111,8 +132,19 @@ def _parabolic_peak(y_left: np.ndarray, y_mid: np.ndarray, y_right: np.ndarray) 
     return np.clip(offset, -0.5, 0.5)
 
 
+#: A candidate lag this close to the best one wins if it is shorter. Octave-down
+#: errors (locking onto twice the period) are the dominant failure of peak picking.
+OCTAVE_PREFERENCE = 0.85
+
+
 def estimate_f0(frames: np.ndarray, sample_rate: int) -> tuple[np.ndarray, np.ndarray]:
-    """Per-frame ``(f0_hz, nac_peak)`` by normalized-autocorrelation peak picking."""
+    """Per-frame ``(f0_hz, nac_peak)`` by normalized-autocorrelation peak picking.
+
+    Among local maxima of the normalized autocorrelation, the *shortest* lag
+    scoring within :data:`OCTAVE_PREFERENCE` of the best one is chosen, then
+    parabolically refined. Taking the global maximum instead halves the reported
+    pitch whenever the two-period peak edges out the one-period peak.
+    """
     n_frames, frame_len = frames.shape
     if n_frames == 0:
         return np.zeros(0), np.zeros(0)
@@ -121,11 +153,19 @@ def estimate_f0(frames: np.ndarray, sample_rate: int) -> tuple[np.ndarray, np.nd
     max_lag = min(frame_len - 2, int(np.ceil(sample_rate / F0_MIN_HZ)))
     if max_lag <= min_lag:
         return np.zeros(n_frames), np.zeros(n_frames)
+
     band = nac[:, min_lag : max_lag + 1]
-    rel = np.argmax(band, axis=1)
-    lag = rel + min_lag
-    peak = band[np.arange(n_frames), rel]
+    best = np.max(band, axis=1)
+    is_local_max = np.ones_like(band, dtype=bool)
+    is_local_max[:, 1:] &= band[:, 1:] > band[:, :-1]
+    is_local_max[:, :-1] &= band[:, :-1] >= band[:, 1:]
+    acceptable = is_local_max & (band >= OCTAVE_PREFERENCE * best[:, None])
+    has_candidate = acceptable.any(axis=1)
+    rel = np.where(has_candidate, np.argmax(acceptable, axis=1), np.argmax(band, axis=1))
+
     rows = np.arange(n_frames)
+    lag = rel + min_lag
+    peak = band[rows, rel]
     offset = _parabolic_peak(nac[rows, lag - 1], nac[rows, lag], nac[rows, lag + 1])
     refined = np.maximum(lag + offset, 1.0)
     return sample_rate / refined, peak
@@ -217,56 +257,100 @@ def lpc_envelope(coeffs: np.ndarray, n_fft: int = LPC_FFT_SIZE) -> np.ndarray:
     return 1.0 / np.maximum(np.abs(response), _EPS)
 
 
-def _first_peaks(envelope: np.ndarray, freqs: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    """First two spectral-envelope peaks per frame, parabolically refined."""
-    n_frames, n_bins = envelope.shape
-    log_env = np.log(np.maximum(envelope, _EPS))
-    interior = log_env[:, 1:-1]
-    is_peak = (interior > log_env[:, :-2]) & (interior >= log_env[:, 2:])
-    bins = np.arange(1, n_bins - 1)
-    bin_hz = freqs[bins]
+def lpc_roots(coeffs: np.ndarray) -> np.ndarray:
+    """Roots of every frame's prediction-error polynomial, in one batched solve.
 
-    def pick(mask: np.ndarray, lo: float, hi: float) -> np.ndarray:
-        allowed = mask & (bin_hz >= lo)[None, :] & (bin_hz <= hi)[None, :]
-        found = allowed.any(axis=1)
-        index = np.where(found, bins[np.argmax(allowed, axis=1)], -1)
-        return index
+    ``A(z) = 1 + a₁z⁻¹ + … + a_pz⁻ᵖ`` has the same roots as the monic polynomial
+    ``zᵖ + a₁zᵖ⁻¹ + … + a_p``, whose companion matrix eigenvalues LAPACK computes
+    for all frames at once.
+    """
+    n_frames, width = coeffs.shape
+    order = width - 1
+    companion = np.zeros((n_frames, order, order), dtype=np.float64)
+    companion[:, 0, :] = -coeffs[:, 1:]
+    diagonal = np.arange(order - 1)
+    companion[:, diagonal + 1, diagonal] = 1.0
+    return np.linalg.eigvals(companion)
 
-    f1_bin = pick(is_peak, *F1_BAND_HZ)
-    sep_bins = MIN_FORMANT_SEPARATION_HZ / (freqs[1] - freqs[0])
-    after_f1 = is_peak & (bins[None, :] > (f1_bin[:, None] + sep_bins))
-    f2_bin = pick(after_f1, *F2_BAND_HZ)
 
-    def refine(index: np.ndarray, lo: float, hi: float) -> np.ndarray:
-        rows = np.arange(n_frames)
-        safe = np.clip(index, 1, n_bins - 2)
-        offset = _parabolic_peak(
-            log_env[rows, safe - 1], log_env[rows, safe], log_env[rows, safe + 1]
-        )
-        hz = (safe + offset) * (freqs[1] - freqs[0])
-        # Frames with no qualifying peak fall back to the band midpoint, which is
-        # the least informative choice available rather than an invented one.
-        return np.where(index >= 0, hz, 0.5 * (lo + hi))
+def formants_from_roots(roots: np.ndarray, sample_rate: int) -> tuple[np.ndarray, np.ndarray]:
+    """The two lowest resonances per frame, from LPC pole angles.
 
-    return refine(f1_bin, *F1_BAND_HZ), refine(f2_bin, *F2_BAND_HZ)
+    Each conjugate pole pair *is* a spectral peak of the all-pole envelope: its
+    angle gives the centre frequency and its radius the bandwidth. Reading the
+    poles rather than sampling the envelope keeps F1 and F2 apart for back vowels
+    (``/o/``, ``/u/``), where they sit close enough to merge into one visible
+    peak and a peak-picker reports F3 as F2 — a bimodal estimator whose median
+    swings with the vowel content of the recording.
+
+    Selection is **per band**, not by pole rank. Ranking is what breaks in
+    practice: order 12 routinely spends a pole just above the fundamental of a
+    low-pitched voice or on a noise resonance, and then "the lowest two usable
+    poles" are F0's shadow and F1 — both fall outside their bands, the frame
+    reports two NaNs, and it drops out of the median. Which frames drop out
+    depends on the vowel, so the surviving distribution is vowel-biased and the
+    F1/F2 medians swing with content instead of with the speaker's vocal tract.
+    Taking the lowest pole *within* each formant's band, with F2 required to sit
+    at least :data:`MIN_FORMANT_SEPARATION_HZ` above F1, keeps the estimate on
+    the tract.
+    """
+    n_frames = roots.shape[0]
+    if n_frames == 0:
+        return np.zeros(0), np.zeros(0)
+    freq = np.angle(roots) * sample_rate / (2.0 * np.pi)
+    bandwidth = -np.log(np.maximum(np.abs(roots), _EPS)) * sample_rate / np.pi
+    usable = (
+        (freq >= FORMANT_MIN_HZ)
+        & (freq <= FORMANT_MAX_HZ)
+        & (bandwidth <= MAX_FORMANT_BANDWIDTH_HZ)
+    )
+    in_f1 = usable & (freq >= F1_BAND_HZ[0]) & (freq <= F1_BAND_HZ[1])
+    first = np.min(np.where(in_f1, freq, np.inf), axis=1)
+    floor = np.where(np.isfinite(first), first, -np.inf) + MIN_FORMANT_SEPARATION_HZ
+    in_f2 = (
+        usable
+        & (freq >= F2_BAND_HZ[0])
+        & (freq <= F2_BAND_HZ[1])
+        & (freq >= floor[:, None])
+    )
+    second = np.min(np.where(in_f2, freq, np.inf), axis=1)
+    f1 = np.where(np.isfinite(first), first, np.nan)
+    f2 = np.where(np.isfinite(second), second, np.nan)
+    return f1, f2
+
+
+def pre_emphasize(frames: np.ndarray, coefficient: float = PRE_EMPHASIS) -> np.ndarray:
+    """First-order high-pass ``x[n] - a·x[n-1]`` applied per frame.
+
+    Standard practice before LPC analysis (Makhoul 1975): it flattens the glottal
+    source tilt so the all-pole fit spends its poles on formants. Without it, a
+    steeply tilted voice's F1 is a shoulder on a falling slope rather than a
+    local maximum, and peak picking simply loses it.
+    """
+    emphasized = np.empty_like(frames)
+    emphasized[:, 0] = frames[:, 0]
+    emphasized[:, 1:] = frames[:, 1:] - coefficient * frames[:, :-1]
+    return emphasized
 
 
 def estimate_formants(
     frames: np.ndarray, sample_rate: int, order: int = LPC_ORDER
 ) -> tuple[np.ndarray, np.ndarray]:
-    """Per-frame ``(F1, F2)`` in Hz from the LPC spectral envelope's first peaks."""
+    """Per-frame ``(F1, F2)`` in Hz from the LPC spectral envelope's first peaks.
+
+    Frames whose envelope has no qualifying peak in a band report ``NaN`` there.
+    """
     n_frames, frame_len = frames.shape
     if n_frames == 0:
         return np.zeros(0), np.zeros(0)
     window = np.hamming(frame_len)
-    windowed = (frames - frames.mean(axis=1, keepdims=True)) * window
+    centred = frames - frames.mean(axis=1, keepdims=True)
+    windowed = pre_emphasize(centred) * window
     n_fft = 1 << int(np.ceil(np.log2(2 * frame_len)))
     spectrum = np.fft.rfft(windowed, n=n_fft, axis=1)
     acf = np.fft.irfft(spectrum * np.conjugate(spectrum), n=n_fft, axis=1)[:, : order + 1]
     coeffs = levinson_durbin(acf, order)
-    envelope = lpc_envelope(coeffs)
-    freqs = np.fft.rfftfreq(LPC_FFT_SIZE, d=1.0 / sample_rate)
-    return _first_peaks(envelope, freqs)
+    return formants_from_roots(lpc_roots(coeffs), sample_rate)
 
 
 # --------------------------------------------------------------------------- #
@@ -312,15 +396,41 @@ def band_ratios(power: np.ndarray, sample_rate: int, n_bands: int = N_MEL_BANDS)
     return energies / total
 
 
+TILT_SMOOTHING_BINS = 9
+TILT_DYNAMIC_RANGE_DB = 60.0
+
+
+def smooth_spectrum(power: np.ndarray, width: int = TILT_SMOOTHING_BINS) -> np.ndarray:
+    """Moving-average the power spectrum across frequency.
+
+    A voiced periodogram is a comb: harmonics separated by deep nulls. Regressing
+    dB against frequency without smoothing measures the *nulls* — their depth is
+    set by window leakage and the recording's noise floor, not by the speaker —
+    and the resulting "tilt" stops responding to the source slope entirely.
+    """
+    if width <= 1 or power.shape[1] <= width:
+        return power
+    kernel = np.ones(width) / width
+    padded = np.pad(power, ((0, 0), (width // 2, width // 2)), mode="edge")
+    return np.apply_along_axis(lambda row: np.convolve(row, kernel, mode="valid"), 1, padded)
+
+
 def spectral_tilt(power: np.ndarray, sample_rate: int) -> np.ndarray:
-    """Per-frame spectral tilt in dB/octave by least squares over log2 frequency."""
+    """Per-frame spectral tilt in dB/octave by least squares over log2 frequency.
+
+    Measured on the smoothed envelope with a floor ``TILT_DYNAMIC_RANGE_DB``
+    below each frame's peak, so neither harmonic nulls nor an arbitrarily quiet
+    noise floor can dominate the fit.
+    """
     n_fft = 2 * (power.shape[1] - 1)
     freqs = np.fft.rfftfreq(n_fft, d=1.0 / sample_rate)
     mask = (freqs >= TILT_BAND_HZ[0]) & (freqs <= TILT_BAND_HZ[1])
-    if not mask.any():  # pragma: no cover - impossible at 16 kHz
+    if not mask.any() or power.shape[0] == 0:  # pragma: no cover - impossible at 16 kHz
         return np.zeros(power.shape[0])
+    envelope = smooth_spectrum(power)[:, mask]
+    floor = np.max(envelope, axis=1, keepdims=True) * 10.0 ** (-TILT_DYNAMIC_RANGE_DB / 10.0)
+    db = 10.0 * np.log10(np.maximum(envelope, np.maximum(floor, _EPS)))
     octaves = np.log2(freqs[mask])
-    db = 10.0 * np.log10(np.maximum(power[:, mask], _EPS))
     x = octaves - octaves.mean()
     denom = float(np.sum(x**2))
     return (db - db.mean(axis=1, keepdims=True)) @ x / max(denom, _EPS)
@@ -386,7 +496,9 @@ class VoiceFeatures:
 
 
 def _median(values: np.ndarray, fallback: float) -> float:
-    return float(np.median(values)) if values.size else fallback
+    """Median over the finite entries; ``fallback`` when there are none."""
+    finite = values[np.isfinite(values)] if values.size else values
+    return float(np.median(finite)) if finite.size else fallback
 
 
 def analyze_voice(clip: AudioClip, frames: FrameAnalysis | None = None) -> VoiceFeatures:
@@ -421,7 +533,9 @@ def analyze_voice(clip: AudioClip, frames: FrameAnalysis | None = None) -> Voice
 
     f1, f2 = estimate_formants(voiced_frames, analysis.sample_rate)
     power, _ = power_spectrum(voiced_frames)
-    ratios = band_ratios(power, analysis.sample_rate).mean(axis=0)
+    # Median, not mean: a handful of loud frames should not decide the spectral
+    # balance of a whole recording.
+    ratios = np.median(band_ratios(power, analysis.sample_rate), axis=0)
 
     return VoiceFeatures(
         log_f0_median=float(np.median(log_f0)),
@@ -441,7 +555,9 @@ def analyze_voice(clip: AudioClip, frames: FrameAnalysis | None = None) -> Voice
 # --------------------------------------------------------------------------- #
 
 
-def resonator_coefficients(freq_hz: float, bandwidth_hz: float, sample_rate: int) -> tuple[float, float, float]:
+def resonator_coefficients(
+    freq_hz: float, bandwidth_hz: float, sample_rate: int
+) -> tuple[float, float, float]:
     """Klatt second-order resonator ``y[n] = A·x[n] + B·y[n-1] + C·y[n-2]``.
 
     ``A`` is chosen for unit gain at DC (Klatt 1980).

@@ -1,0 +1,30 @@
+{
+ "id": "exact_01",
+ "suite": "exact",
+ "n": 9,
+ "seed": 42001,
+ "clusters": [
+  "house",
+  "indie"
+ ],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:0e8e7ed8aed26a2ec1c609c1370e6ed4ff571153",
+  "meta:dd8d23a7d20a9510bd775e6d0d1f98f6dc5dbaea",
+  "meta:9043b1c918d1f45815491d6e9b25b2e49a33e749",
+  "meta:4c89be68290a2371a5cc31608c4a2077e22b7519",
+  "meta:6a6db3a4234f38dc7ee5e06cc52d21bb49b7d47c",
+  "meta:5af6f5783010b339adb2a8b05161f480eb358473",
+  "meta:42d3205100575030794201e0d601433179131bb5",
+  "meta:834814e5660cc2a8c9d6f824c4c52d81058b3a2e",
+  "meta:f1b5021a28503b439efbbbfdcbde58356b2ce77b"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "plain",
+  "search_seed": 42001
+ }
+}

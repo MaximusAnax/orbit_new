@@ -1,0 +1,327 @@
+{
+  "note": "M6: 28 hand-authored FR-6 scenarios. Each carries the expected action, the expected ladder clause and the expected suggested_load_kg after round_to_increment(x, i) = i * floor(x/i + 0.5). Loads are canonical kilograms (DATA_MODEL: the unit setting is display-only), so the 'machine' rounding case exercises the machine kg step of 5.0 and records its lb column for reference. Sessions are listed oldest first; sets are [weight_kg, reps, rir] with rir null when unrated.",
+  "scenarios": [
+    {
+      "id": "L1_reactive_deload",
+      "concept": "Two consecutive >=5% e1RM regressions over RIR-rated loaded sets trigger a reactive deload.",
+      "exercise_id": "barbell-bench-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-15T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]},
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[90.0, 7, 2.0], [90.0, 7, 2.0]]}
+      ],
+      "expected": {"action": "deload_recommend", "clause": "L1", "suggested_load_kg": 81.0}
+    },
+    {
+      "id": "L2_missed_volume",
+      "concept": "A set finishing two or more reps under rep_low holds the load, whatever the rest of the session did.",
+      "exercise_id": "barbell-bench-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[100.0, 8, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[100.0, 5, 1.0], [100.0, 3, 0.0]]}
+      ],
+      "expected": {"action": "hold", "clause": "L2", "suggested_load_kg": 100.0}
+    },
+    {
+      "id": "L3_double_progression",
+      "concept": "Every set at rep_high with RIR at or above target earns +2.5% on an upper-body lift.",
+      "exercise_id": "barbell-bench-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[80.0, 10, 2.0], [80.0, 10, 2.0], [80.0, 10, 3.0]]}
+      ],
+      "expected": {"action": "increase_load", "clause": "L3", "suggested_load_kg": 82.5}
+    },
+    {
+      "id": "L4_autoregulation_undershoot",
+      "concept": "Mean reported RIR more than one below target means the load was too heavy: -5%.",
+      "exercise_id": "barbell-bench-press",
+      "week": 1,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 3.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[100.0, 7, 1.0], [100.0, 7, 1.0]]}
+      ],
+      "expected": {"action": "decrease_load", "clause": "L4", "suggested_load_kg": 95.0}
+    },
+    {
+      "id": "L5_autoregulation_overshoot",
+      "concept": "Mean reported RIR more than one above target means the load was too light: +2.5%.",
+      "exercise_id": "barbell-bench-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[70.0, 8, 4.0], [70.0, 8, 4.0]]}
+      ],
+      "expected": {"action": "increase_load", "clause": "L5", "suggested_load_kg": 72.5}
+    },
+    {
+      "id": "L6_hold",
+      "concept": "Reps and effort on target and no clause above fires: repeat the load.",
+      "exercise_id": "barbell-bench-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]}
+      ],
+      "expected": {"action": "hold", "clause": "L6", "suggested_load_kg": 100.0}
+    },
+    {
+      "id": "conflict_L1_over_L2",
+      "concept": "A regressing session that also missed the rep range must deload, not merely hold.",
+      "exercise_id": "barbell-bench-press",
+      "week": 3,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-15T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]},
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[85.0, 3, 2.0], [85.0, 3, 2.0]]}
+      ],
+      "expected": {"action": "deload_recommend", "clause": "L1", "suggested_load_kg": 77.5}
+    },
+    {
+      "id": "conflict_L2_over_L3",
+      "concept": "Most sets topping the rep range does not license an increase while one set fell two reps short.",
+      "exercise_id": "barbell-bench-press",
+      "week": 3,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[100.0, 10, 2.0], [100.0, 10, 2.0], [100.0, 3, 0.0]]}
+      ],
+      "expected": {"action": "hold", "clause": "L2", "suggested_load_kg": 100.0}
+    },
+    {
+      "id": "conflict_L3_over_L5",
+      "concept": "Double progression outranks the overshoot rule, so a lower-body lift gets +5% rather than +2.5%.",
+      "exercise_id": "barbell-back-squat",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 210},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[100.0, 10, 4.0], [100.0, 10, 4.0]]}
+      ],
+      "expected": {"action": "increase_load", "clause": "L3", "suggested_load_kg": 105.0}
+    },
+    {
+      "id": "conflict_L1_over_L4",
+      "concept": "A regressing session taken to RIR 0 deloads rather than trimming 5%.",
+      "exercise_id": "barbell-bench-press",
+      "week": 1,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 3.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-15T18:00:00+00:00", "sets": [[120.0, 6, 3.0], [120.0, 6, 3.0]]},
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[120.0, 6, 3.0], [120.0, 6, 3.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[100.0, 6, 0.0], [100.0, 6, 0.0]]}
+      ],
+      "expected": {"action": "deload_recommend", "clause": "L1", "suggested_load_kg": 90.0}
+    },
+    {
+      "id": "B1_reactive_deload",
+      "concept": "Bodyweight work regresses in total reps, not in load: two >=10% drops trigger the easier week.",
+      "exercise_id": "push-up",
+      "week": 3,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 8, "rep_high": 15, "target_rir": 2.0, "rest_s": 90},
+      "history": [
+        {"performed_at": "2026-06-15T18:00:00+00:00", "sets": [[0.0, 15, 2.0], [0.0, 15, 2.0], [0.0, 15, 2.0]]},
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[0.0, 15, 2.0], [0.0, 15, 2.0], [0.0, 15, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 12, 1.0], [0.0, 12, 1.0], [0.0, 12, 1.0]]}
+      ],
+      "expected": {"action": "deload_recommend", "clause": "B1", "suggested_load_kg": null}
+    },
+    {
+      "id": "B2_missed_volume",
+      "concept": "A set two or more reps under rep_low holds the bodyweight session as it is.",
+      "exercise_id": "push-up",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 8, "rep_high": 15, "target_rir": 2.0, "rest_s": 90},
+      "history": [
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[0.0, 12, 2.0], [0.0, 12, 2.0], [0.0, 12, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 12, 1.0], [0.0, 10, 1.0], [0.0, 5, 0.0]]}
+      ],
+      "expected": {"action": "hold", "clause": "B2", "suggested_load_kg": null}
+    },
+    {
+      "id": "B3_progress_variation",
+      "concept": "Topping the range on three or more sets with a harder variation available steps up the movement.",
+      "exercise_id": "push-up",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 8, "rep_high": 15, "target_rir": 2.0, "rest_s": 90},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 15, 2.0], [0.0, 15, 2.0], [0.0, 15, 3.0]]}
+      ],
+      "expected": {"action": "progress_variation", "clause": "B3", "suggested_load_kg": null, "exercise_id": "decline-push-up", "target_reps": 8}
+    },
+    {
+      "id": "B4_add_set",
+      "concept": "Topping the range with no harder variation and fewer than five sets adds a set.",
+      "exercise_id": "pull-up",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 6, "rep_high": 12, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 12, 2.0], [0.0, 12, 2.0], [0.0, 12, 2.0]]}
+      ],
+      "expected": {"action": "add_set", "clause": "B4", "suggested_load_kg": null, "sets": 4}
+    },
+    {
+      "id": "B5_five_sets_hold",
+      "concept": "Five sets at the top of the range is the ceiling for a bodyweight movement with no variation.",
+      "exercise_id": "pull-up",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 5, "rep_low": 6, "rep_high": 12, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 12, 2.0], [0.0, 12, 2.0], [0.0, 12, 2.0], [0.0, 12, 2.0], [0.0, 12, 2.0]]}
+      ],
+      "expected": {"action": "hold", "clause": "B5", "suggested_load_kg": null}
+    },
+    {
+      "id": "B6_add_reps",
+      "concept": "Short of the top of the range, bodyweight work progresses by one rep.",
+      "exercise_id": "push-up",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 8, "rep_high": 15, "target_rir": 2.0, "rest_s": 90},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 11, 2.0], [0.0, 11, 2.0], [0.0, 11, 2.0]]}
+      ],
+      "expected": {"action": "add_reps", "clause": "B6", "suggested_load_kg": null, "target_reps": 12}
+    },
+    {
+      "id": "conflict_B1_over_B2",
+      "concept": "A bodyweight session that both regressed and missed the range deloads rather than holds.",
+      "exercise_id": "push-up",
+      "week": 3,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 8, "rep_high": 15, "target_rir": 2.0, "rest_s": 90},
+      "history": [
+        {"performed_at": "2026-06-15T18:00:00+00:00", "sets": [[0.0, 15, 2.0], [0.0, 15, 2.0], [0.0, 15, 2.0]]},
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[0.0, 15, 2.0], [0.0, 15, 2.0], [0.0, 15, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 12, 1.0], [0.0, 12, 1.0], [0.0, 5, 0.0]]}
+      ],
+      "expected": {"action": "deload_recommend", "clause": "B1", "suggested_load_kg": null}
+    },
+    {
+      "id": "conflict_B3_over_B4",
+      "concept": "With a harder variation available the ladder steps up the movement instead of piling on a fourth set.",
+      "exercise_id": "push-up",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 4, "rep_low": 8, "rep_high": 15, "target_rir": 2.0, "rest_s": 90},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 15, 2.0], [0.0, 15, 2.0], [0.0, 15, 2.0], [0.0, 16, 2.0]]}
+      ],
+      "expected": {"action": "progress_variation", "clause": "B3", "suggested_load_kg": null, "exercise_id": "decline-push-up"}
+    },
+    {
+      "id": "rounding_barbell_kg",
+      "concept": "Barbell step 2.5 kg: 82.5 x 1.025 = 84.5625 rounds half-up onto 85.0.",
+      "exercise_id": "barbell-bench-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[82.5, 10, 2.0], [82.5, 10, 2.0]]}
+      ],
+      "expected": {"action": "increase_load", "clause": "L3", "suggested_load_kg": 85.0}
+    },
+    {
+      "id": "rounding_dumbbell_kg",
+      "concept": "Dumbbell step 2.0 kg: 30 x 1.025 = 30.75 rounds back down onto 30.0, so the ladder repeats rather than inventing a 0.75 kg jump.",
+      "exercise_id": "dumbbell-bench-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[30.0, 10, 2.0], [30.0, 10, 2.0]]}
+      ],
+      "expected": {"action": "increase_load", "clause": "L3", "suggested_load_kg": 30.0}
+    },
+    {
+      "id": "rounding_machine",
+      "concept": "Machine step 5.0 kg (10 lb on the lb column): 70 x 1.025 = 71.75 rounds onto 70.0.",
+      "exercise_id": "machine-chest-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[70.0, 10, 2.0], [70.0, 10, 2.0]]}
+      ],
+      "expected": {"action": "increase_load", "clause": "L3", "suggested_load_kg": 70.0}
+    },
+    {
+      "id": "rounding_kettlebell_kg",
+      "concept": "Kettlebell step 4.0 kg on a lower-body hinge: 26 x 1.05 = 27.3 rounds half-up onto 28.0.",
+      "exercise_id": "kettlebell-swing",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 150},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[26.0, 10, 2.0], [26.0, 10, 2.0]]}
+      ],
+      "expected": {"action": "increase_load", "clause": "L3", "suggested_load_kg": 28.0}
+    },
+    {
+      "id": "history_two_sessions_blocks_L1",
+      "concept": "L1 needs three sessions; with two, a 10% e1RM drop falls through to the hold at the bottom of the ladder.",
+      "exercise_id": "barbell-bench-press",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[90.0, 8, 2.0], [90.0, 8, 2.0]]}
+      ],
+      "expected": {"action": "hold", "clause": "L6", "suggested_load_kg": 90.0}
+    },
+    {
+      "id": "history_two_sessions_blocks_B1",
+      "concept": "B1 needs three sessions too; with two, a one-third rep drop still only adds a rep.",
+      "exercise_id": "push-up",
+      "week": 2,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 8, "rep_high": 15, "target_rir": 2.0, "rest_s": 90},
+      "history": [
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[0.0, 15, 2.0], [0.0, 15, 2.0], [0.0, 15, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[0.0, 10, 2.0], [0.0, 10, 2.0], [0.0, 10, 2.0]]}
+      ],
+      "expected": {"action": "add_reps", "clause": "B6", "suggested_load_kg": null, "target_reps": 11}
+    },
+    {
+      "id": "history_empty_defaults_to_hold",
+      "concept": "With no logged history there is nothing to progress from: hold, and suggest no number.",
+      "exercise_id": "barbell-bench-press",
+      "week": 1,
+      "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 3.0, "rest_s": 180},
+      "history": [],
+      "expected": {"action": "hold", "clause": "L6", "suggested_load_kg": null}
+    },
+    {
+      "id": "deload_week_L6",
+      "concept": "Week 5 works from a 15% lighter basis: a held 100 kg becomes 85 kg.",
+      "exercise_id": "barbell-bench-press",
+      "week": 5,
+      "prescription": {"position": 0, "sets": 2, "rep_low": 5, "rep_high": 10, "target_rir": 4.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[100.0, 8, 4.0], [100.0, 8, 4.0]]}
+      ],
+      "expected": {"action": "hold", "clause": "L6", "suggested_load_kg": 85.0}
+    },
+    {
+      "id": "deload_week_L3",
+      "concept": "The deload basis composes with the ladder: 80 x 1.025 x 0.85 = 69.7 rounds onto 70.0.",
+      "exercise_id": "barbell-bench-press",
+      "week": 5,
+      "prescription": {"position": 0, "sets": 2, "rep_low": 5, "rep_high": 10, "target_rir": 4.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[80.0, 10, 4.0], [80.0, 10, 4.0]]}
+      ],
+      "expected": {"action": "increase_load", "clause": "L3", "suggested_load_kg": 70.0}
+    },
+    {
+      "id": "deload_week_L1",
+      "concept": "A reactive deload inside the deload week compounds both bases: 90 x 0.90 x 0.85 = 68.85 rounds onto 70.0.",
+      "exercise_id": "barbell-bench-press",
+      "week": 5,
+      "prescription": {"position": 0, "sets": 2, "rep_low": 5, "rep_high": 10, "target_rir": 4.0, "rest_s": 180},
+      "history": [
+        {"performed_at": "2026-06-15T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]},
+        {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]},
+        {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[90.0, 7, 2.0], [90.0, 7, 2.0]]}
+      ],
+      "expected": {"action": "deload_recommend", "clause": "L1", "suggested_load_kg": 70.0}
+    }
+  ]
+}

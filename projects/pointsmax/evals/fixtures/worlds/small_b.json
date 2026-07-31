@@ -1,0 +1,577 @@
+{
+  "awards.json": [
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "LON",
+      "fees_cents": 20000,
+      "id": "alpha_bus_nyc_lon",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 60000,
+      "program_id": "air_alpha",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-11-30",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "NYC",
+      "fees_cents": 20000,
+      "id": "alpha_bus_lon_nyc",
+      "kind": "flight",
+      "origin": "LON",
+      "points_price": 60000,
+      "program_id": "air_alpha",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-11-30",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "LON",
+      "fees_cents": 15000,
+      "id": "beta_bus_nyc_lon",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 95000,
+      "program_id": "air_beta",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-11-30",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "NYC",
+      "fees_cents": 15000,
+      "id": "beta_bus_lon_nyc",
+      "kind": "flight",
+      "origin": "LON",
+      "points_price": 95000,
+      "program_id": "air_beta",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-11-30",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": "2026-08-01",
+      "cabin": "business",
+      "city": null,
+      "destination": "LON",
+      "fees_cents": 20000,
+      "id": "alpha_bus_nyc_lon_soon",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 52000,
+      "program_id": "air_alpha",
+      "round_trip": false,
+      "seats_available": 2,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-11-30",
+      "travel_window_start": "2026-10-01"
+    }
+  ],
+  "cards.json": [
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": true,
+      "id": "card_p",
+      "issuer": "Fixture Bank",
+      "name": "Card P",
+      "program_id": "bank_p",
+      "source_note": "eval fixture"
+    },
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": true,
+      "id": "card_q",
+      "issuer": "Fixture Bank",
+      "name": "Card Q",
+      "program_id": "bank_q",
+      "source_note": "eval fixture"
+    },
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": false,
+      "id": "card_p_basic",
+      "issuer": "Fixture Bank",
+      "name": "Card P Basic",
+      "program_id": "bank_p",
+      "source_note": "eval fixture"
+    }
+  ],
+  "cashouts.json": [
+    {
+      "cpp_milli": 1000,
+      "id": "p_credit",
+      "increment": 1,
+      "method": "statement_credit",
+      "min_points": 1,
+      "program_id": "bank_p",
+      "requires_card": null,
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "cpp_milli": 900,
+      "id": "q_credit",
+      "increment": 1,
+      "method": "statement_credit",
+      "min_points": 1,
+      "program_id": "bank_q",
+      "requires_card": null,
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "cpp_milli": 1400,
+      "id": "p_portal",
+      "increment": 1,
+      "method": "portal_travel",
+      "min_points": 1,
+      "program_id": "bank_p",
+      "requires_card": "card_p",
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "gazetteer.json": [
+    {
+      "airports": [
+        "JFK",
+        "EWR",
+        "LGA"
+      ],
+      "aliases": [
+        "nyc",
+        "new york",
+        "new york city"
+      ],
+      "city_code": "NYC",
+      "name": "New York"
+    },
+    {
+      "airports": [
+        "CDG",
+        "ORY"
+      ],
+      "aliases": [
+        "paris"
+      ],
+      "city_code": "PAR",
+      "name": "Paris"
+    },
+    {
+      "airports": [
+        "LHR",
+        "LGW"
+      ],
+      "aliases": [
+        "london"
+      ],
+      "city_code": "LON",
+      "name": "London"
+    },
+    {
+      "airports": [
+        "HND",
+        "NRT"
+      ],
+      "aliases": [
+        "tokyo"
+      ],
+      "city_code": "TYO",
+      "name": "Tokyo"
+    },
+    {
+      "airports": [
+        "ORD",
+        "MDW"
+      ],
+      "aliases": [
+        "chicago"
+      ],
+      "city_code": "CHI",
+      "name": "Chicago"
+    },
+    {
+      "airports": [
+        "FCO"
+      ],
+      "aliases": [
+        "rome"
+      ],
+      "city_code": "ROM",
+      "name": "Rome"
+    },
+    {
+      "airports": [
+        "MAD"
+      ],
+      "aliases": [
+        "madrid"
+      ],
+      "city_code": "MAD",
+      "name": "Madrid"
+    },
+    {
+      "airports": [
+        "LAX"
+      ],
+      "aliases": [
+        "los angeles"
+      ],
+      "city_code": "LAX",
+      "name": "Los Angeles"
+    },
+    {
+      "airports": [
+        "SFO"
+      ],
+      "aliases": [
+        "san francisco"
+      ],
+      "city_code": "SFO",
+      "name": "San Francisco"
+    },
+    {
+      "airports": [
+        "SIN"
+      ],
+      "aliases": [
+        "singapore"
+      ],
+      "city_code": "SIN",
+      "name": "Singapore"
+    },
+    {
+      "airports": [
+        "SYD"
+      ],
+      "aliases": [
+        "sydney"
+      ],
+      "city_code": "SYD",
+      "name": "Sydney"
+    },
+    {
+      "airports": [
+        "MIA"
+      ],
+      "aliases": [
+        "miami"
+      ],
+      "city_code": "MIA",
+      "name": "Miami"
+    },
+    {
+      "airports": [
+        "LIS"
+      ],
+      "aliases": [
+        "lisbon"
+      ],
+      "city_code": "LIS",
+      "name": "Lisbon"
+    },
+    {
+      "airports": [
+        "HKG"
+      ],
+      "aliases": [
+        "hong kong"
+      ],
+      "city_code": "HKG",
+      "name": "Hong Kong"
+    }
+  ],
+  "programs.json": [
+    {
+      "id": "bank_p",
+      "kind": "bank",
+      "name": "Bank P Points",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "bank_q",
+      "kind": "bank",
+      "name": "Bank Q Points",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "hub",
+      "kind": "hotel",
+      "name": "Hub Hotel Points",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "air_alpha",
+      "kind": "airline",
+      "name": "Alpha Miles",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "air_beta",
+      "kind": "airline",
+      "name": "Beta Miles",
+      "source_note": "eval fixture"
+    }
+  ],
+  "reference_fares.json": [
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 200000,
+      "id": "rf_lon_nyc_bus_ow_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "LON",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 200000,
+      "id": "rf_lon_nyc_bus_ow_2026_11",
+      "kind": "flight",
+      "month": "2026-11",
+      "origin_city": "LON",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 380000,
+      "id": "rf_lon_nyc_bus_rt_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "LON",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 380000,
+      "id": "rf_lon_nyc_bus_rt_2026_11",
+      "kind": "flight",
+      "month": "2026-11",
+      "origin_city": "LON",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "LON",
+      "fare_cents": 200000,
+      "id": "rf_nyc_lon_bus_ow_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "NYC",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "LON",
+      "fare_cents": 200000,
+      "id": "rf_nyc_lon_bus_ow_2026_11",
+      "kind": "flight",
+      "month": "2026-11",
+      "origin_city": "NYC",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "LON",
+      "fare_cents": 380000,
+      "id": "rf_nyc_lon_bus_rt_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "NYC",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "LON",
+      "fare_cents": 380000,
+      "id": "rf_nyc_lon_bus_rt_2026_11",
+      "kind": "flight",
+      "month": "2026-11",
+      "origin_city": "NYC",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    }
+  ],
+  "transfers.json": [
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "bank_p",
+      "id": "bank_p__hub",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "hub",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "bank_q",
+      "id": "bank_q__hub",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "hub",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "bank_p",
+      "id": "bank_p__air_beta",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "air_beta",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "bank_q",
+      "id": "bank_q__air_beta",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 1,
+      "to_program": "air_beta",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": 60000,
+      "bonus_to": 5000,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "hub",
+      "id": "hub__air_alpha",
+      "increment_from": 3000,
+      "min_from": 3000,
+      "ratio_from": 3,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 2,
+      "to_program": "air_alpha",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": 60000,
+      "bonus_to": 5000,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "hub",
+      "id": "hub__air_beta",
+      "increment_from": 3000,
+      "min_from": 3000,
+      "ratio_from": 3,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 1,
+      "to_program": "air_beta",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "valuations.json": [
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 2000,
+      "program_id": "bank_p",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1900,
+      "program_id": "bank_q",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 900,
+      "program_id": "hub",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1400,
+      "program_id": "air_alpha",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1200,
+      "program_id": "air_beta",
+      "source_note": "eval fixture"
+    }
+  ],
+  "version.json": {
+    "as_of": "2026-07-01",
+    "content_hash": "e9c41184ed90115a67c013da5c1ce16843bdcf139173e97f29340b913d737998",
+    "version": "1.0.0"
+  }
+}

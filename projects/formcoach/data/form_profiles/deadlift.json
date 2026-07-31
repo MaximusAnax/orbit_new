@@ -1,0 +1,59 @@
+{
+  "id": "deadlift_v1",
+  "exercise_id": "barbell-deadlift",
+  "primary_signal": "mid_hip.y",
+  "direction": "up_down",
+  "min_rep_duration_s": 0.8,
+  "prominence_frac": 0.15,
+  "smoothing_window_frac": 0.25,
+  "required_keypoints": {
+    "side_left": ["left_shoulder", "right_shoulder", "left_hip", "right_hip",
+                  "left_knee", "right_knee", "left_ankle", "right_ankle",
+                  "left_wrist", "right_wrist"],
+    "side_right": ["left_shoulder", "right_shoulder", "left_hip", "right_hip",
+                   "left_knee", "right_knee", "left_ankle", "right_ankle",
+                   "left_wrist", "right_wrist"],
+    "front": ["left_shoulder", "right_shoulder", "left_hip", "right_hip",
+              "left_knee", "right_knee", "left_ankle", "right_ankle"]
+  },
+  "rules": [
+    {
+      "fault_id": "hips_rise_early",
+      "views": ["side_left", "side_right"],
+      "feature": "hip_shoulder_rise_ratio",
+      "feature_keypoints": ["left_hip", "right_hip", "left_shoulder", "right_shoulder"],
+      "phase": "ascent_early",
+      "comparator": "gt",
+      "threshold": 1.5,
+      "severity": "major",
+      "cue": "Push the floor away with your legs so your hips and chest rise together off the floor.",
+      "citation": null
+    },
+    {
+      "fault_id": "bar_drift",
+      "views": ["side_left", "side_right"],
+      "feature": "bar_drift_frac",
+      "feature_keypoints": ["left_wrist", "right_wrist", "left_knee", "right_knee",
+                            "left_ankle", "right_ankle"],
+      "phase": "whole_rep",
+      "comparator": "abs_gt",
+      "threshold": 0.20,
+      "severity": "moderate",
+      "cue": "Keep the bar shaving your legs so it tracks straight up over your mid-foot.",
+      "citation": "Hales 2010 (deadlift bar path over mid-foot)."
+    },
+    {
+      "fault_id": "incomplete_lockout",
+      "views": ["side_left", "side_right"],
+      "feature": "hip_ext_angle_deg",
+      "feature_keypoints": ["left_shoulder", "right_shoulder", "left_hip", "right_hip",
+                            "left_knee", "right_knee"],
+      "phase": "top",
+      "comparator": "lt",
+      "threshold": 170.0,
+      "severity": "moderate",
+      "cue": "Finish the lift by squeezing your glutes and standing tall with your hips all the way through.",
+      "citation": null
+    }
+  ]
+}

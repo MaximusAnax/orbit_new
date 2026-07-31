@@ -1,0 +1,17 @@
+[
+  { "muscle": "chest",       "mv": 4, "mev": 8, "mav": 16, "mrv": 22 },
+  { "muscle": "front_delts", "mv": 0, "mev": 0, "mav": 6,  "mrv": 12 },
+  { "muscle": "side_delts",  "mv": 4, "mev": 8, "mav": 16, "mrv": 26 },
+  { "muscle": "rear_delts",  "mv": 0, "mev": 6, "mav": 12, "mrv": 20 },
+  { "muscle": "lats",        "mv": 4, "mev": 8, "mav": 16, "mrv": 22 },
+  { "muscle": "upper_back",  "mv": 4, "mev": 6, "mav": 16, "mrv": 25 },
+  { "muscle": "lower_back",  "mv": 0, "mev": 4, "mav": 8,  "mrv": 14 },
+  { "muscle": "biceps",      "mv": 4, "mev": 6, "mav": 14, "mrv": 20 },
+  { "muscle": "triceps",     "mv": 4, "mev": 6, "mav": 14, "mrv": 18 },
+  { "muscle": "forearms",    "mv": 0, "mev": 2, "mav": 8,  "mrv": 15 },
+  { "muscle": "quads",       "mv": 6, "mev": 8, "mav": 16, "mrv": 20 },
+  { "muscle": "hamstrings",  "mv": 3, "mev": 6, "mav": 12, "mrv": 20 },
+  { "muscle": "glutes",      "mv": 0, "mev": 4, "mav": 12, "mrv": 16 },
+  { "muscle": "calves",      "mv": 6, "mev": 8, "mav": 16, "mrv": 20 },
+  { "muscle": "abs",         "mv": 0, "mev": 4, "mav": 12, "mrv": 25 }
+]

@@ -199,7 +199,9 @@ def normalize_intake(wav_bytes: bytes) -> AudioClip:
 
 def clip_from_pcm16(pcm: np.ndarray, sample_rate: int = TARGET_SAMPLE_RATE) -> AudioClip:
     """Build a clip from int16 samples."""
-    return AudioClip(samples=np.asarray(pcm, dtype=np.float64) / _FULL_SCALE, sample_rate=sample_rate)
+    return AudioClip(
+        samples=np.asarray(pcm, dtype=np.float64) / _FULL_SCALE, sample_rate=sample_rate
+    )
 
 
 __all__ = [
