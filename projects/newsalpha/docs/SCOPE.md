@@ -131,8 +131,8 @@ shows the harness finds nothing when dates are scrambled.
 *Accept:* entry is strictly after the signal's `observed_at` (first available
 bar with date > that date — invariant, asserted in code); abnormal return is
 computed against the asset-kind benchmark **at matching calendar dates**;
-M4 (hit ≥ 0.72), M5 (IC ≥ 0.35), M6 (calibration separation ≥ 0.15, with
-bucket occupancy), M7 (placebo |mean hit − 0.5| ≤ 0.035, |mean IC| ≤ 0.06)
+M4 (hit ≥ 0.72), M5 (IC ≥ 0.35), M6 (calibration separation ≥ 0.12, with a
+bucket-occupancy sub-gate), M7 (placebo |mean hit − 0.5| ≤ 0.035, |mean IC| ≤ 0.06)
 and the denominator gates G1/G2 all gate; signals with missing bars are
 excluded with a named reason and counted in the run report, never silently
 dropped.
@@ -789,11 +789,11 @@ newsalpha backtest run [--start --end --min-confidence] | placebo [--seed S] | s
     committed JSON/CSV data are excluded from the count per convention, but
     the **data and fixture build is the largest single work item** (~900
     lines of curated JSON across the gazetteer, patterns, priors and
-    templates, plus two paraphrase template families and three seeded market
+    templates, plus two paraphrase template families and five seeded market
     series) and is therefore given its own scope valves. Valves, in order:
     - **V1** shrink the gazetteer to ~80 equities + ~30 crypto;
     - **V2** drop `delisting` (folds into `listing` with a polarity attribute);
-    - **V3** cut the market fixture from 3 seeds to 1, re-deriving and
+    - **V3** cut the market fixture from 5 seeds to 2, re-deriving and
       recording the widened M4/M6/M7 thresholds in the same commit;
     - **V4** shrink per-type truth event counts proportionally (floor: 8 per
       type in the gated VAL family), re-deriving every baseline in the same

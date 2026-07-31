@@ -37,12 +37,22 @@ unit of time (SCOPE.md D14). All Pydantic v2 models live in
 | captured_on | date | drives novelty age (FR-7); defaults to created_at's date at the edge |
 | created_at / updated_at | datetime | |
 
-Invariants: `text` immutable after any surfacing exists (edits before first
-surfacing allowed; after that, corrections go through archive + re-add, so
-surfacing snapshots never dangle semantically). `normalized_hash` is
-soft-unique among non-archived entries: collisions are allowed but always
-reported (FR-1). Archived entries are excluded from scheduling, search
-defaults, and duplicate warnings, and keep all history.
+Invariants:
+
+- **Text edits (FR-4).** Free while the entry has no surfacings. Once any
+  surfacing exists, a `text` update is accepted **iff the recomputed
+  `normalized_hash` is unchanged** — punctuation, casing, whitespace and
+  diacritic fixes only. A semantic change is rejected (422) with the
+  archive + re-add alternative named in the error; that path deliberately
+  starts a fresh scheduling and reflection history and the CLI says so
+  before doing it. This keeps surfacing snapshots semantically anchored to
+  their entry without charging a year of history for a typo.
+- `normalized_hash` is soft-unique among non-archived entries: collisions
+  are allowed but always reported (FR-1).
+- Archived entries are excluded from scheduling, search defaults, and
+  duplicate warnings, and keep all history.
+- `captured_on` is immutable after creation (it is the input to the
+  novelty-age priority and to the M2 latency metric).
 
 ### Tag / EntryTag (user data)
 
@@ -64,7 +74,8 @@ entries.
 Invariants: exactly 16 themes; ids stable forever (surfacing history and
 templates reference them); every theme's lexicon has ≥ 8 terms. `general`
 is **not** a Theme row — it is a reserved template-pool id (see
-PromptTemplate).
+PromptTemplate). Lexicon terms are additionally constrained by the
+held-split hygiene rule in EVALS.md §4 (`test_lexicon_hygiene`).
 
 ### EntryTheme (user data)
 
@@ -96,24 +107,46 @@ an unfillable slot name.
 | on_date | date | the calendar date surfaced |
 | slot | int | 0…k−1 for `daily`; 0 for `extra` |
 | kind | enum `daily \| extra` | extra = on-demand draw (FR-8) |
+| select_pool | enum (below) | **which FR-7 branch produced this pick** |
 | prompt_template_id | str | FK → PromptTemplate |
 | prompt_kind | enum | copied from the template at render time |
 | prompt_text | str | the text actually shown (post-personalizer-or-fallback) |
 | personalized | bool | live personalizer produced the text |
 | personalize_fell_back | bool | validator rejected the personalizer output (FR-10) |
-| relaxed_cooldown | bool | tiny-library fallback fired (FR-7) |
+| relaxed_cooldown | bool | tiny-library fallback fired (FR-7 branch 6) |
+| prompt_recency_relaxed | bool | FR-9 step 2 exhaustion retry fired (recency exclusion dropped) |
 | filter_theme_id / filter_collection_id | str \| None | for `extra` draws only |
 | scheduler_version | str | `params_version` from scheduler.json |
 | seed | int | seed in effect when selected |
 | created_at | datetime | |
 
-Invariants: **append-only, never mutated or deleted.** Unique
-(`on_date`, `slot`) among `kind = daily` rows; unique (`on_date`,
-`entry_id`) across *all* kinds (one exposure per entry per day). Daily
-materialization dates are strictly increasing: inserting a `daily` row with
-`on_date` earlier than the max existing `daily` `on_date` is rejected
-(FR-8). `prompt_text` is a snapshot — later template edits don't rewrite
-history.
+`select_pool` ∈ `pinned_rescue | forced_novelty | novelty | review |
+novelty_only | review_only | not_due | relaxed | extra`, one value per
+FR-7 branch. It is the scheduler's decision provenance and is **load
+bearing**, not diagnostic:
+
+- the FR-7 controller computes the realized novelty share σ by reading it
+  back (contested slots = `novelty` ∪ `review`), which is what keeps the
+  engine a pure function of the event log with no hidden counters;
+- EVALS M1g/M1h/M1i, M3 and M4 are predicates over it.
+
+Invariants:
+
+- **Append-only, never mutated or deleted.**
+- Unique (`on_date`, `slot`) among `kind = daily` rows; unique
+  (`on_date`, `entry_id`) across *all* kinds (one exposure per entry per
+  day).
+- **Arrow of time, all kinds (FR-8):** a new surfacing's `on_date` must be
+  ≥ `max(on_date)` over all existing surfacings, daily *and* extra; a new
+  `daily` surfacing additionally requires `on_date >` `max(on_date)` over
+  existing `daily` rows. Edges reject `on_date > Clock.today()`. Without
+  the all-kinds rule a backdated extra draw would reorder the FR-6 fold
+  and retroactively change past scheduler states, and Reflection's
+  "most recent exposure" window would become ambiguous.
+- `kind = daily` ⇒ `select_pool ≠ extra`; `kind = extra` ⇒
+  `select_pool = extra`, `slot = 0`.
+- `relaxed_cooldown = true` iff `select_pool = relaxed`.
+- `prompt_text` is a snapshot — later template edits don't rewrite history.
 
 ### Reflection (user data — append-only journal)
 
@@ -130,7 +163,8 @@ Invariants: append-only, immutable. Insertion allowed only while
 `surfacing_id` is the entry's most recent surfacing (service-enforced,
 409 otherwise) — this keeps the FR-6 fold unambiguous: by the time an entry
 is surfaced again, its previous surfacing's grade is final (`none` if
-absent).
+absent). "Most recent" is well defined because all surfacings are monotone
+in `on_date` (above) and unique per (`on_date`, `entry_id`).
 
 ### SchedulerState (derived — materialized cache of the FR-6 fold)
 
@@ -140,26 +174,43 @@ absent).
 | exposure_count | int | # surfacings (daily + extra) |
 | last_surfaced_on | date \| None | |
 | interval_days | int | current interval; meaningless until exposure_count ≥ 1 |
-| flat_streak | int | consecutive `flat` grades |
+| flat_streak | int | consecutive `flat` grades (`none` leaves it unchanged) |
 
 **Derived, never authoritative.** Definition — for entry e, order its
 surfacings s₁…sₙ by (`on_date`, `created_at`); let gᵢ = grade of the
-reflection on sᵢ, or `none` if absent. Then:
+reflection on sᵢ, or `none` if absent. With parameters from
+`data/scheduler.json` (`I0 = 10`, `lo = 10`, `hi = 60`, `hi_flat = 240`,
+multipliers `m` = {resonated 1.25, applied 1.5, none 1.9, flat 3.0}):
 
 ```
-state after s₁:  exposure_count = 1, last = s₁.on_date, I = I0 = 3, flat_streak = 0
-state after sᵢ (i ≥ 2):
-    I ← clamp(round_half_up(I × m(g_{i−1})), lo, hi)   # multipliers/caps: FR-6 table
-    flat_streak ← per FR-6 table on g_{i−1}
-    exposure_count = i, last = sᵢ.on_date
+state after s1:  exposure_count = 1, last = s1.on_date, I = I0 = 10, flat_streak = 0
+
+state after si (i >= 2), with g = g_{i-1}:
+    flat_streak <- 0                  if g in {applied, resonated}
+                   flat_streak + 1    if g == flat
+                   flat_streak        if g == none
+    I           <- hi_flat                                  if flat_streak >= 2
+                   clamp(round_half_up(I * m(g)), lo, hi)    otherwise
+    exposure_count = i, last = si.on_date
 ```
 
-Due-ness at date D uses `I_eff = min(I, 21)` when the entry is pinned,
-else `I`. Invariant (eval-gated, M7): for every entry, the cached row
-equals the fold recomputed from the event log; `almanac init --rebuild`
-(and the memory repo on load) recompute it wholesale. Note the fold reads
-g_{i−1} *at the moment sᵢ exists* — legal because Reflection's
-insertion-window invariant freezes g_{i−1} before sᵢ can be created.
+Because `lo == I0 == W == 10`, every interval the table can produce is
+also *reachable*: the cooldown never silently overrides the schedule
+(SCOPE.md D2). Due-ness and every priority computation use
+
+```
+I_eff(e) = max(W, min(I, pinned_cap = 21) if e.pinned else I)
+```
+
+The `max(W, ...)` is a safety floor that never binds at the committed
+defaults; it is written down so that a future retune of `lo` or
+`pinned_cap` below `W` cannot reintroduce unreachable due dates.
+
+Invariant (eval-gated, M7c): for every entry, the cached row equals the
+fold recomputed from the event log; `almanac init --rebuild` (and the
+memory repo on load) recompute it wholesale. Note the fold reads g_{i−1}
+*at the moment sᵢ exists* — legal because Reflection's insertion-window
+invariant freezes g_{i−1} before sᵢ can be created.
 
 ### Collection / CollectionEntry (user data)
 
@@ -205,12 +256,32 @@ claimed_authors).
 
 ### SchedulerParams (committed — `data/scheduler.json`)
 
-Single object: `params_version` (str, bumped on any change), `W` = 10,
-`rho` = 0.35, `H` = 28, `S` = 90, `tau` = 7, `I0` = 3, `k` = 1,
-`multipliers` = {applied: 2.3, resonated: 1.6, none: 1.4, flat: 3.0},
-`clamp` = {lo: 2, hi: 120, hi_flat: 180}, `pinned_cap` = 21,
-`jitter` = 0.05, `prompt_reuse_window` = 6. Loaded read-only; user
-overrides for `k` and `seed` live in Config, not here.
+Single object:
+
+| key | default | meaning |
+|---|---|---|
+| `params_version` | `"sched-1"` | bumped on any change; stamped on every surfacing |
+| `W` | 10 | cooldown floor in days (FR-7 eligibility) |
+| `I0` | 10 | debut interval; **must equal `W`** (validated at load) |
+| `clamp` | `{lo: 10, hi: 60, hi_flat: 240}` | `lo` **must be ≥ `W`** (validated at load) |
+| `multipliers` | `{resonated: 1.25, applied: 1.5, none: 1.9, flat: 3.0}` | FR-6 table |
+| `demote_flat_streak` | 2 | `flat_streak ≥ this` ⇒ `I := hi_flat` |
+| `archive_flat_streak` | 3 | `flat_streak ≥ this` ⇒ archive candidate (FR-14) |
+| `pinned_cap` | 21 | cap on `I_eff` for pinned entries |
+| `P_rescue` | 32 | pinned-rescue threshold in days (FR-7 branch 1) |
+| `rho` | 0.35 | target novelty share over contested slots |
+| `H` | 28 | σ window length, measured in **contested slots**, not days |
+| `S` | 90 | never-seen forcing horizon in days |
+| `tau` | 7 | freshness constant in `n(e)` |
+| `k` | 1 | daily batch size (1–5) |
+| `jitter` | 0.05 | jitter amplitude |
+| `prompt_reuse_window` | 6 | `R_p`, FR-9 recency exclusion |
+
+Loaded read-only; the two "must" constraints above (`I0 == W`,
+`clamp.lo >= W`) are asserted at load and by the data-floor tests in
+`evals/test_gates.py` (EVALS.md §6). They are what keeps every interval
+the FR-6 table can produce reachable rather than silently clipped by the
+cooldown. User overrides for `k` and `seed` live in Config, not here.
 
 ### Config (user data — key/value)
 
@@ -256,18 +327,30 @@ CREATE TABLE surfacings (
   id TEXT PRIMARY KEY, entry_id TEXT NOT NULL REFERENCES entries(id),
   on_date TEXT NOT NULL, slot INTEGER NOT NULL,
   kind TEXT NOT NULL CHECK (kind IN ('daily','extra')),
+  select_pool TEXT NOT NULL CHECK (select_pool IN
+    ('pinned_rescue','forced_novelty','novelty','review',
+     'novelty_only','review_only','not_due','relaxed','extra')),
   prompt_template_id TEXT NOT NULL, prompt_kind TEXT NOT NULL,
   prompt_text TEXT NOT NULL,
   personalized INTEGER NOT NULL DEFAULT 0,
   personalize_fell_back INTEGER NOT NULL DEFAULT 0,
   relaxed_cooldown INTEGER NOT NULL DEFAULT 0,
+  prompt_recency_relaxed INTEGER NOT NULL DEFAULT 0,
   filter_theme_id TEXT, filter_collection_id TEXT,
   scheduler_version TEXT NOT NULL, seed INTEGER NOT NULL,
   created_at TEXT NOT NULL,
-  UNIQUE (on_date, entry_id));
+  UNIQUE (on_date, entry_id),
+  CHECK ((kind = 'extra') = (select_pool = 'extra')),
+  CHECK ((relaxed_cooldown = 1) = (select_pool = 'relaxed')));
 CREATE UNIQUE INDEX idx_surf_daily_slot ON surfacings(on_date, slot)
   WHERE kind = 'daily';
 CREATE INDEX idx_surf_entry ON surfacings(entry_id, on_date);
+-- sigma (FR-7) reads the tail of this index:
+CREATE INDEX idx_surf_contested ON surfacings(on_date, slot)
+  WHERE kind = 'daily' AND select_pool IN ('novelty','review');
+-- monotonicity (FR-8) is enforced in repository code against
+-- MAX(on_date) over all rows / over daily rows; SQLite CHECK cannot
+-- express a cross-row constraint.
 
 CREATE TABLE reflections (
   id TEXT PRIMARY KEY,
@@ -311,7 +394,8 @@ CREATE VIRTUAL TABLE entries_fts USING fts5(
   text, author, source, note, content='entries', content_rowid='rowid',
   tokenize='porter unicode61');
 -- kept in sync by repository code on entry insert/update/archive;
--- LIKE-scan fallback if FTS5 is unavailable (FR-12).
+-- LIKE-scan fallback if FTS5 is unavailable: same result set, ordering by
+-- descending distinct-matched-token count then ascending id (FR-12).
 ```
 
 ## Example records
@@ -368,10 +452,11 @@ CREATE VIRTUAL TABLE entries_fts USING fts5(
 
 ```json
 {"id": "01J30XYZ0PQR1STU2VWX3YZ4AB", "entry_id": "01J1ZK7Q9GVX4N8B2M5C3T7R6A",
- "on_date": "2026-07-30", "slot": 0, "kind": "daily",
+ "on_date": "2026-07-30", "slot": 0, "kind": "daily", "select_pool": "pinned_rescue",
  "prompt_template_id": "equanimity_act_01", "prompt_kind": "act",
  "prompt_text": "When the first frustrating message arrives today, I will name the feeling before replying.",
  "personalized": false, "personalize_fell_back": false, "relaxed_cooldown": false,
+ "prompt_recency_relaxed": false,
  "filter_theme_id": null, "filter_collection_id": null,
  "scheduler_version": "sched-1", "seed": 7, "created_at": "2026-07-30T07:01:22Z"}
 
@@ -394,15 +479,27 @@ CREATE VIRTUAL TABLE entries_fts USING fts5(
  "reference_url": "https://quoteinvestigator.com/2017/03/23/same/"}
 ```
 
-**SchedulerState** (derived, for the Marcus Aurelius entry above after 3
-exposures graded resonated, none, applied):
+**SchedulerState** — worked example for the pinned Marcus Aurelius entry
+above after 3 exposures whose reflections graded `resonated`, `none`
+(no reflection logged), and `applied`:
 
 ```json
 {"entry_id": "01J1ZK7Q9GVX4N8B2M5C3T7R6A", "exposure_count": 3,
- "last_surfaced_on": "2026-07-30", "interval_days": 7, "flat_streak": 0}
+ "last_surfaced_on": "2026-07-30", "interval_days": 25, "flat_streak": 0}
 ```
 
-(I0 = 3 after debut; × 1.6 for `resonated` → 5; × 1.4 for `none` → 7;
-the `applied` grade on the 2026-07-30 surfacing multiplies at the *next*
-surfacing per the fold. Entry is pinned, so due-ness uses
-I_eff = min(7, 21) = 7.)
+Trace of the fold:
+
+| step | grade applied | computation | I | flat_streak |
+|---|---|---|---|---|
+| after s₁ (debut) | — | `I := I0` | 10 | 0 |
+| after s₂ | g(s₁) = `resonated` | `clamp(round(10 × 1.25) = 13, 10, 60)` | 13 | 0 |
+| after s₃ | g(s₂) = `none` | `clamp(round(13 × 1.9) = 25, 10, 60)` | 25 | 0 |
+
+The `applied` grade on the 2026-07-30 surfacing multiplies at the *next*
+surfacing per the fold. The entry is pinned, so due-ness uses
+`I_eff = max(10, min(25, 21)) = 21` — it becomes due 2026-08-20, and the
+pinned-rescue rule (FR-7) guarantees it is served no later than
+2026-08-31 (`P_rescue = 32` days) plus at most one day per other pinned
+entry ahead of it in the rescue queue. Every interval in the trace is
+≥ `W = 10`, so none of them is unreachable.

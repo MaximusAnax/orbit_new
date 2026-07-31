@@ -61,7 +61,15 @@ the key-continuity alias (FR-15); their latest scored tuples must not.
 | `SourceTierName` | `t1_official`, `t2_wire`, `t3_other` |
 | `FeedKind` | `fixture`, `rss` |
 | `BarSource` | `fixture`, `live` |
-| `ExclusionReason` | `insufficient_bars`, `unknown_asset_bars`, `benchmark_gap`, `zero_abnormal_return`, `estimated_publish_time`, `unclear_direction`, `placebo_no_clean_window` |
+| `ExclusionReason` | `insufficient_bars`, `unknown_asset_bars`, `benchmark_gap`, `zero_abnormal_return`, `estimated_publish_time`, `placebo_no_clean_window` |
+
+There is deliberately no `unclear_direction` exclusion: an `unclear`
+resolution emits no signal at all (FR-6), so there is nothing to exclude. The
+"resolve hard cases as unclear to shrink the denominator" dodge is closed by
+EVALS.md's **G1** floor on `N_directional`, not by an exclusion code. Every
+abstention is instead recorded on the derived event's `notes`
+(`score:unclear_abstain`, `link:mna_role_unresolved`, `link:ambiguous_subject`)
+so it is visible and countable.
 
 `partnership` is deliberately absent from `EventType` (SCOPE non-goal 11).
 

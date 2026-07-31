@@ -72,7 +72,7 @@ There is no `auto_analyze` flag: the judge pass always runs at game end
 | `rated_games` | int | `n`; drives the FR-8 placement phase only (λ no longer depends on it) |
 | `surprise_window` | JSON list[float] | the last ≤ `SURPRISE_WINDOW` values of `s_i − E_i` (FR-7a) |
 | `games_since_rd_inflation` | int | ≥ `SURPRISE_WINDOW` before inflation may re-fire |
-| `divergence_streak` | int | consecutive rated games with `\|perf_ewma − glicko_rating\| > DIVERGENCE_CP` |
+| `divergence_streak` | int | consecutive rated games with `\|perf_ewma − glicko_rating\| > DIVERGENCE_ELO` |
 | `calibration_warning` | bool | set when `divergence_streak ≥ DIVERGENCE_STREAK` (FR-7d); diagnostic only |
 | `current_level_id` | int FK → level | controller's standing recommendation |
 | `last_game_id` | int FK \| null | last rated game applied (ordering check) |

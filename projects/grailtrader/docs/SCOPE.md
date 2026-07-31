@@ -194,8 +194,9 @@ hard part A; FR-6/8/10 are hard part B.
   *price-implausibility* defense, not an authenticity check: it removes
   listings priced far outside the stratum's own distribution (counterfeits
   dumped at 0.15–0.3×, mislabeled grails at 3×+). Fakes priced near market
-  (≈0.4–0.6×) survive it by construction — see non-goal 3 and the ungated
-  ambiguous-band diagnostic in EVALS.
+  (≈0.5–0.6×, i.e. inside the log floor of 0.7885) survive it by
+  construction — see non-goal 3 and the ungated ambiguous-band diagnostic in
+  EVALS.
 - **FR-4 Index construction (hard part A).**
   - *Leaf strata* s = (brand, era, category), ISO week t:
     `level_usd(s, t) = median of condition-adjusted sold prices`
@@ -350,7 +351,10 @@ hard part A; FR-6/8/10 are hard part B.
     26}` of `z_H` (ties → smallest H).
   - **Confidence:**
     `conf = clamp(z_term · q_index · c_event, conf_floor, conf_cap)` with
-    `z_term = 1 − 0.5^(z_H*/z_half)`, `z_half = 0.8`;
+    `z_term = 1 − 0.5^(z_H*/z_half)`, `z_half = 0.5` (chosen so the curve is
+    calibrated to the index noise the fixtures actually exhibit — derivation
+    in EVALS.md; it is config data and must be re-derived if index density
+    or item noise changes);
     `q_index` = 1.0 / 0.8 / 0.5 for staleness of 0 / 1–2 / 3–8 weeks; and
     ```
     c_event = Σ_e w_e · base_conf_e · f_e / Σ_e w_e
@@ -361,19 +365,27 @@ hard part A; FR-6/8/10 are hard part B.
     where `s_e` is the source factor (manual 1.0 / news 0.95 / social 0.8).
     The source factor appears **once**: corroboration can lift a news or
     social event's factor back toward 1.0 but never above it.
-    Note the ceiling `conf ≤ c_event ≤ max_e base_conf_e`: an event family
-    whose `base_conf ≤ conf_min` can never produce actionable advice on its
-    own. That is deliberate — celebrity co-signs (0.50) and runway reception
-    (0.50–0.52) are context, not trades. They still shape `r̂`, they dilute
-    `c_event` when they overlap a stronger driver, and they populate the
-    lower calibration buckets (EVALS M3).
+    Note the ceiling `conf ≤ c_event ≤ max_e base_conf_e` (since
+    `z_term < 1` and `q_index ≤ 1`): an event family whose
+    `base_conf ≤ conf_min` can never produce actionable advice on its own.
+    That is deliberate — celebrity co-signs (0.50), runway reception
+    (0.50–0.52) and unproven/neutral appointments (0.46/0.52) are context,
+    not trades. They still shape `r̂`, they dilute `c_event` when they
+    overlap a stronger driver, and they populate the lower calibration
+    buckets (EVALS M3).
   - **Action:** **buy** if `r̂_H* ≥ +theta_buy` and `conf ≥ conf_min`;
     **sell** if `r̂_H* ≤ −theta_sell` and `conf ≥ conf_min`; else **hold**
     with a reason code (`hold:below_threshold` or `hold:low_confidence`).
     `theta_buy = theta_sell = 0.12 = fee_assumption_pct` (D-12): the modeled
     move must at least cover the one-way friction of acting on it, so no
     rendered advice ever quotes an expected move smaller than its own stated
-    fee assumption. Thresholds live in `advisor_config.json`.
+    fee assumption. `conf_min = 0.52`, set just below the weakest *tradable*
+    prior family so that the sell-into-decay leg is structurally reachable
+    (the decay of a large transient at H* = 26 yields z ≈ 0.8, hence
+    conf ≈ 0.53; a higher `conf_min` would make "sell into the spike" — a
+    promise in the product's one-liner — unreachable in principle, which
+    EVALS M0d would then expose as a zero count). Thresholds live in
+    `advisor_config.json`.
   - **Candidate flag.** An advice is a *directional candidate* iff
     `|r̂_H*| ≥ theta` (i.e. it cleared the magnitude test), whether or not it
     cleared `conf_min`. Candidates carry `r̂` and `conf` and are the
@@ -430,8 +442,10 @@ hard part A; FR-6/8/10 are hard part B.
   - *Aggregates.* N candidates, N actionable, N excluded by reason, hit rate,
     mean realized return per action, buy-minus-sell spread (raw and split by
     H* ∈ {4, 12, 26}), per-confidence-bucket hit rate and mean confidence
-    (edges `< 0.45 / 0.45–0.70 / ≥ 0.70`, over candidates), per-driving-event-
-    type breakdown, and regime counters (sells whose drivers are all bullish
+    (edges `< 0.45 / 0.45–0.62 / ≥ 0.62`, over **candidates**, not over
+    actionable advice — with `conf_min = 0.52` a bucket below it would
+    otherwise be empty by construction), per-driving-event-type breakdown,
+    and regime counters (sells whose drivers are all bullish
     events = sell-into-decay; buys issued within 3 weeks of a driving event =
     phase-in buys).
   - *Baselines*, computed in the same run over the same weeks and garments:
@@ -653,13 +667,14 @@ grailtrader backtest run [--start --end] | placebo --seed S | show <run-id>
 4. **Robust fence, floored — and honest about its ceiling.**
    `max(3.5σ̂, ln 2.2)` on log deviations: the MAD term (Hampel-style robust
    outlier rule) adapts to stratum volatility; the floor stops tiny windows
-   from rejecting everything or nothing. With clean log-noise σ ≈ 0.28 the
-   effective cutoff is ≈ 0.98 in log, so counterfeits dumped at 0.15–0.30×
-   (|ln| = 1.20–1.90) and mislabels at ≥ 3× (|ln| ≥ 1.10) are excluded while
-   ordinary composition noise (3.5σ ⇒ ≈ 0.05 % of clean sales) is not. A
-   fake priced at 0.5× (|ln| = 0.69) is *inside* the fence and stays there;
-   no price-only rule can do better (non-goal 3). Gated by M1b as a
-   mechanism gate, with the ambiguous band reported ungated.
+   from rejecting everything or nothing. At the fixtures' clean log-noise
+   σ = 0.20 the floor binds (3.5 × 0.20 = 0.70 < 0.7885), so the effective
+   cutoff is 0.7885: counterfeits dumped at 0.15–0.30× (|ln| = 1.20–1.90)
+   and mislabels at ≥ 3× (|ln| ≥ 1.10) are excluded, while clean sales are
+   excluded at a rate of ≈ 1 in 10,000 (3.94σ). A fake priced at 0.5×
+   (|ln| = 0.69) is *inside* the fence and stays there; no price-only rule
+   can do better (non-goal 3). Gated by M1b as a mechanism gate, with the
+   ambiguous 0.40–0.60× band reported ungated.
 5. **Designer era is a first-class dimension.** Archive collecting prices
    the era, not just the brand — founder-era Helmut Lang, Slimane-era Dior
    Homme, Philo-era Céline ("Old Céline"), Miyashita-era Number (N)ine.

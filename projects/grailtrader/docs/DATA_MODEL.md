@@ -159,9 +159,10 @@ FR-5 typology) resolves to exactly one prior per target; `|P| ≤ 0.35`,
 `|T| ≤ 0.40`, `1 ≤ h ≤ 26` (sanity bounds, checked at init).
 
 Committed `base_conf` values (the full ladder; SCOPE typology table repeats
-the summary). Because `conf ≤ c_event ≤ max_e base_conf_e` and `conf_min =
-0.55`, only the rows at 0.58 and above can produce actionable advice on
-their own — intended (FR-8):
+the summary). Because `conf ≤ c_event ≤ max_e base_conf_e` (as `z_term < 1`)
+and `conf_min = 0.52`, only the rows **strictly above 0.52** can produce
+actionable advice on their own — intended (FR-8): co-signs, runway reception
+and neutral/unproven appointments are context, not trades.
 
 | key | P | T | h | base_conf |
 |---|---|---|---|---|
@@ -194,7 +195,7 @@ their own — intended (FR-8):
  "permanent_pct": 0.0, "transient_pct": 0.10, "half_life_weeks": 3.0,
  "base_conf": 0.50,
  "rationale": "A high-profile celebrity moment lifts search and resale demand for the worn brand/era quickly, and the effect fades within weeks unless reinforced.",
- "source_note": "Lyst Index methodology (brand heat from search/social moments); Lyst/Depop-reported search spikes for vintage Jean Paul Gaultier during the Bella Hadid-driven revival. Tier scaling a_list 1.0 / b_list 0.5 / niche 0.25 applied to T. base_conf sits below conf_min by design: a co-sign is context, not a trade."}
+ "source_note": "Lyst Index methodology (brand heat from search/social moments); Lyst/Depop-reported search spikes for vintage Jean Paul Gaultier during the Bella Hadid-driven revival. Tier scaling a_list 1.0 / b_list 0.5 / niche 0.25 applied to T. base_conf sits below conf_min (0.52) by design: a co-sign is context, not a trade — and its total modeled move (<= 0.10) also sits below theta."}
 ```
 
 ### ConditionGrade — `data/conditions.json` (validated at init; read from file; no table)
@@ -252,15 +253,15 @@ code:
  "advisor": {"horizons_weeks": [4, 12, 26],
              "theta_buy": 0.12, "theta_sell": 0.12,
              "fee_assumption_pct": 0.12,
-             "conf_min": 0.55, "conf_floor": 0.05, "conf_cap": 0.95,
-             "z_half": 0.8, "sigma_min_changes": 12,
+             "conf_min": 0.52, "conf_floor": 0.05, "conf_cap": 0.95,
+             "z_half": 0.5, "sigma_min_changes": 12,
              "active_max_weeks": 26, "active_transient_min": 0.005,
              "q_index": [{"max_stale_weeks": 0, "factor": 1.0},
                          {"max_stale_weeks": 2, "factor": 0.8},
                          {"max_stale_weeks": 8, "factor": 0.5}],
              "source_factor": {"manual": 1.0, "news": 0.95, "social": 0.8},
              "corroboration_step": 0.05, "corroboration_max_steps": 2},
- "calibration": {"bucket_edges": [0.45, 0.70]}}
+ "calibration": {"bucket_edges": [0.45, 0.62]}}
 ```
 
 Init-time range checks: `fence_floor_log = ln 2.2 = 0.7885`;
@@ -462,12 +463,12 @@ would let two contradictory rows coexist as "current".
  "config_version": "1.0.0",
  "stratum_id": "maison-vantorre/vantorre/outerwear",
  "action": "buy", "is_candidate": true, "horizon_weeks": 4,
- "expected_return": 0.1232, "confidence": 0.66,
+ "expected_return": 0.1232, "confidence": 0.65,
  "fair_value": 1309.32, "fair_value_method": "repeat_sales",
  "rationale_codes": ["driver:event:b7c31d90aa25e4f8",
                      "prior:designer_departure.resignation",
                      "mod:lambda=1.00@b7c31d90aa25e4f8",
-                     "mod:z=2.90@h4", "mod:conf_event=0.72",
+                     "mod:z=1.66@h4", "mod:conf_event=0.72",
                      "mod:q_index=1.0", "mod:src=manual"],
  "rendered_text": "Consider buying: “Vantorre curved-zip coat” — modeled +12.3% over 4 weeks…\n\nGrailTrader models a collectibles market — unregulated, illiquid (sales take weeks to months), with authenticity risk. This is information about that model, not investment advice.",
  "frame_checked": true, "created_as_of": "2026-07-31T08:05:00Z"}
@@ -486,13 +487,13 @@ O_t     = 125.0  (observed point at 2026-07-27) ; ln(O/B) = 0.040822
 m(8)    = ln(1 + 0.12 + 0.10·0.5^(8/8))  = ln 1.170000 = 0.157004   → r̂₄  = e^0.116182 − 1 = 0.12320
 m(16)   = ln(1 + 0.12 + 0.10·0.5^(16/8)) = ln 1.145000 = 0.135405   → r̂₁₂ = e^0.094583 − 1 = 0.09920
 m(30)   = ln(1 + 0.12 + 0.10·0.5^(30/8)) = ln 1.127433 = 0.119942   → r̂₂₆ = e^0.079120 − 1 = 0.08234
-σ_w     = 0.02
-z₄      = 0.116182/(0.02·√4)  = 2.9045      ← argmax ⇒ H* = 4
-z₁₂     = 0.094583/(0.02·√12) = 1.3652
-z₂₆     = 0.079120/(0.02·√26) = 0.7758
-z_term  = 1 − 0.5^(2.9045/0.8) = 0.9193
-conf    = 0.9193 · q_index(1.0) · c_event(0.72) = 0.6619 → 0.66
-action  : r̂ = 0.1232 ≥ theta_buy 0.12  and  conf 0.66 ≥ conf_min 0.55  ⇒ buy
+σ_w     = 0.035   (dense stratum; see the EVALS derivation of σ_w ≈ 0.033–0.039)
+z₄      = 0.116182/(0.035·√4)  = 1.6597     ← argmax ⇒ H* = 4
+z₁₂     = 0.094583/(0.035·√12) = 0.7801
+z₂₆     = 0.079120/(0.035·√26) = 0.4433
+z_term  = 1 − 0.5^(1.6597/0.5) = 0.8998
+conf    = 0.8998 · q_index(1.0) · c_event(0.72) = 0.6479 → 0.65   (hi bucket, ≥ 0.62)
+action  : r̂ = 0.1232 ≥ theta_buy 0.12  and  conf 0.65 ≥ conf_min 0.52  ⇒ buy
 fair_value: anchor 1,236.00 at carried anchor week (index 118.0) → 1236 · 125.0/118.0 = 1,309.32
 ```
 
@@ -527,9 +528,9 @@ fair_value: anchor 1,236.00 at carried anchor week (index 118.0) → 1236 · 125
 ```
 
 Bucket edges come from `advisor_config.calibration.bucket_edges`
-(`lo < 0.45 ≤ mid < 0.70 ≤ hi`) and are computed over **candidates**
+(`lo < 0.45 ≤ mid < 0.62 ≤ hi`) and are computed over **candidates**
 (`is_candidate = true`), not over actionable advice only — otherwise the
-`lo` bucket is empty by construction, since `conf_min = 0.55` (this was the
+`lo` bucket is empty by construction, since `conf_min = 0.52` (this was the
 blocker in the first scoping round). `regimes.sell_into_decay` counts sell
 advice whose driving events are all bullish; `regimes.phase_in_buy` counts
 buys issued within 3 weeks of a driving event's week.

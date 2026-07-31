@@ -43,7 +43,7 @@ baseline-re-deriving change (see EVALS.md).
 
 | Constant | Value | Meaning |
 |---|---|---|
-| `JUDGE_BUDGET` | 6 000 nodes/move | the one analyst budget used by the automatic post-game judge pass, by FR-5's ACPL calibration, by M1 adjudication, and by M4/M5/M7/M10. "Referee" and "judge" are the same configuration; the word *referee* only names its adjudication role. |
+| `JUDGE_BUDGET` | 6 000 nodes/move | the one analyst budget used by the automatic post-game judge pass, by FR-5's ACPL calibration, by M1 adjudication, and by M4/M4r/M5/M5r/M7/M10. "Referee" and "judge" are the same configuration; the word *referee* only names its adjudication role. |
 | `DEEP_BUDGET` | 20 000 nodes/move | default for on-demand re-analysis (`analyze --nodes`); never used by evals |
 | `WIN_K` | 0.00368208 | win-probability model slope, `w(cp) = 1/(1+e^(−WIN_K·cp))`, range [0, 1] |
 | `SEV_INACCURACY` / `SEV_MISTAKE` / `SEV_BLUNDER` | 0.05 / 0.10 / 0.15 | severity thresholds on `Δw` (see D8 for why these are the Lichess thresholds) |
@@ -53,7 +53,7 @@ baseline-re-deriving change (see EVALS.md).
 | `EWMA_ALPHA` | 0.35 | performance-rating EWMA weight (FR-7b) |
 | `PERF_SIGMA_1` / `PERF_SIGMA` | 130 / 90 Elo | assumed s.d. of the move-quality channel after 1 judged game / after ≥ 2 (FR-7c) |
 | `PERF_CLAMP` | [200, 2100] | clamp on a game's performance rating |
-| `DIVERGENCE_CP` / `DIVERGENCE_STREAK` | 250 Elo / 5 games | channel-disagreement warning (FR-7d) |
+| `DIVERGENCE_ELO` / `DIVERGENCE_STREAK` | 250 Elo / 5 games | channel-disagreement warning (FR-7d) |
 
 ## Target user
 
@@ -92,7 +92,7 @@ not because it played the worst legal move.
 best (per-level margins, committed data); every CPU move records whether the
 blunder die was rolled, whether injection fired, and whether noise altered the
 choice; M9 gates that the throttle machinery is actually operative at every
-level; M1 shows each level beats the one below it.
+level; M1b gates that each level really is stronger than the one below it.
 
 **US-4 — It keeps up as I improve.** As an improving player, when I start
 winning too often the CPU steps up, and my rating history shows the climb.
@@ -295,7 +295,7 @@ hard part A; FR-7/8 are hard part B1–B2; FR-9/10/11/12 are hard part B3.
   inflates RD, which automatically hands weight back to the fast channel.
   Before any rated game, `R_hat = glicko_rating = R_INIT`.
 
-  **(d) Divergence warning.** If `|perf_ewma − glicko_rating| > DIVERGENCE_CP`
+  **(d) Divergence warning.** If `|perf_ewma − glicko_rating| > DIVERGENCE_ELO`
   for `DIVERGENCE_STREAK` consecutive rated games, set
   `rating_state.calibration_warning`; the CLI (`rating`) and
   `GET /rating` surface it as "move-quality and result estimates disagree —
@@ -357,7 +357,7 @@ hard part A; FR-7/8 are hard part B1–B2; FR-9/10/11/12 are hard part B3.
   (each side has ≥ 2 minor pieces off their home squares OR fullmove ≥ 10);
   `endgame_start` = first ply ≥ `middlegame_start` where the total count of
   non-pawn, non-king pieces (both sides) ≤ 6; absent if never reached. Every
-  analysed move carries its phase.
+  analysed move carries its phase (gated by M6).
 
 - **FR-11 Mistake taxonomy (hard part B).** Moves with severity ≥ mistake get
   exactly one category, decided by the first matching rule in fixed precedence

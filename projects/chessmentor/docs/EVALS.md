@@ -188,7 +188,7 @@ M5r = the same macro-F1 over the real-game cases (classes absent from the
       slice are excluded from the mean; the slice guarantees ≥ 2 per class)
 ```
 
-### M6 — Phase-boundary accuracy (capability 2)
+### M6 — Phase-boundary accuracy (capability 2, FR-10)
 
 Over the 20 phase fixture games, 38 labelled boundaries (all have a middlegame
 start; 18 reach an endgame):
@@ -266,7 +266,10 @@ rating.
 
 Replay 5 fixture game scripts (seed + player move list) twice end-to-end: CPU
 moves, analyses, rating events, and report JSON must be byte-identical. Any
-diff fails the suite (FR-16).
+diff fails the suite (FR-16). A companion case asserts FR-2's per-position
+contract directly: `search(fen, config, budget)` called before and after an
+unrelated search returns the same move, score vector and node count — the
+check that the per-call table lifetime is actually implemented.
 
 ## Fixture strategy
 
@@ -331,9 +334,9 @@ fixture integrity.
 |---|---|---|---|---|
 | M1b ladder ordering | all levels share one config (knobs disconnected) → gaps ≈ 0, fail (ii)/(iii) | fails | **must pass** | Strict monotonicity with statistically excluded inversions is the entire point of the ladder; at 60 games/pair a real 150-Elo gap is ≈ 3× its stderr while a collapsed pair cannot clear 2.5×. |
 | M1a adjacent separation | same | ≈ 0.50 | **≥ 0.56** | 150-Elo spacing predicts E ≈ 0.703; the 9-pair mean over 8 games/pair has s.d. ≈ 0.054, so 0.56 is 2.65 s.d. below truth (≈ 0.4 % spurious failures) and 1.1 s.d. above a fully collapsed ladder. It intentionally does *not* claim to detect a single collapsed pair (that mean is ≈ 0.68) — M1b does. |
-| M2a cold-start MAE | results-only Glicko (no move-quality channel) | ≈ 280; constant-`R_INIT` (800) guess ≈ 457 for `R*` uniform on a ~1190-Elo range | **≤ 150** | The move-quality channel is the "after a few games" promise. With RD ≈ 143 after 5 games, λ ≈ 0.29, so the estimate is move-quality-dominated and lands ≈ 90–120 MAE. 150 fails any implementation that ignores or mis-scales move quality. |
-| M2b jump re-lock MAE | results-only Glicko | ≈ 260 | **≤ 150** | Needs the FR-7a surprise detector: at the RD floor a Glicko update moves ≈ 7 Elo/game, so 6 post-jump games recover ≈ 40 of 300 — infeasible without RD re-inflation. After inflation to 150 the update is ≈ 38 Elo/game and λ hands weight back to the fast channel, giving ≈ 100 MAE. This gate is precisely what makes a count-based λ (which freezes near its cap) fail. |
-| M2c biased-channel MAE | perf-only estimator (λ ≡ 0) | ≈ 250 (converges to the bias) | **≤ 120** | At the RD floor λ ≈ 0.69, so a 250-Elo channel bias leaves ≈ 77 Elo of offset plus noise. Passing requires a real results channel *and* a λ that grows as RD shrinks; it is the gate that makes deleting Glicko impossible. |
+| M2a cold-start MAE | results-only Glicko (no move-quality channel) | ≈ 280 *(provisional)*; constant-`R_INIT` (800) guess ≈ **361** — exactly `[(800−lo)² + (hi−800)²] / (2·(hi−lo))` for `R*` uniform on `[lo, hi] = [elo_L1+80, elo_L10−80]` = [480, 1670] nominal | **≤ 150** | The move-quality channel is the "after a few games" promise. With RD ≈ 143 after 5 games, λ ≈ 0.28, so the estimate is move-quality-dominated and lands ≈ 90–120 MAE. 150 fails any implementation that ignores or mis-scales move quality. |
+| M2b jump re-lock MAE | results-only Glicko | ≈ 260 *(provisional)* | **≤ 150** | Needs the FR-7a surprise detector: at the RD floor a Glicko update moves ≈ 20·(s−E) Elo, i.e. ≈ 7 Elo/game at the typical post-jump surprise of s−E ≈ 0.35, so 6 post-jump games recover ≈ 40 of 300 — infeasible without RD re-inflation. After inflation to 150 the update is ≈ 38 Elo/game and λ hands weight back to the fast channel, giving ≈ 100 MAE. This gate is precisely what makes a count-based λ (which freezes near its cap) fail. |
+| M2c biased-channel MAE | perf-only estimator (λ ≡ 0) | ≈ 250 (converges to the bias) | **≤ 120** | At the RD floor λ = 90²/(90²+60²) ≈ 0.69, so a 250-Elo channel bias leaves ≈ 77 Elo of offset plus noise. Passing requires a real results channel *and* a λ that grows as RD shrinks; it is the gate that makes deleting Glicko impossible. |
 | M3 band adherence (min over 3 modes) | fixed L5 for everyone | ≈ 0.14 (`170 / (elo_L10 − elo_L1 − 160)`, nominal ladder) — *re-derived from calibrated values by `baselines.py`* | **≥ 0.85** | A perfect controller scores 1.0 by construction (gaps ≤ 170 Elo, `R*` drawn 80 Elo inside the ends), so the ceiling is real and not calibration-dependent. 0.85 tolerates estimator noise in early post-warmup games while failing sticky, oscillating, or single-mode controllers. |
 | M4 severity accuracy | raw-cp thresholds (50/100/300 cp), no win-prob model | ≈ 0.45 *(provisional — `baselines.py` recomputes)*; all-"ok" scores 0.33 | **≥ 0.90** | Per-case robustness is verified by construction (±40 common-mode / ±20 differential), so a correct pipeline mis-tiers only when the analyst mis-solves a ≤ 4-ply forced sequence (M7 gates that) or lands in the residual near-boundary band. 0.90 leaves 12 cases of headroom. |
 | M4r severity accuracy, real slice | same raw-cp baseline | ≈ 0.40 *(provisional)* | **≥ 0.75** | Harvested positions have simultaneous threats and unstable PVs; a lower gate is honest about that while still proving transfer. Constructed-only fixtures cannot show transfer at all. |

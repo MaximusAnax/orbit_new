@@ -264,15 +264,22 @@ its own `REFERENCE_FORBIDDEN_LEXICON` as a literal in code and **never loads
 Prose assertions are not gates; these are.
 
 ```
-G1 = N_directional (real run, all seeds identical by construction)
+G1 = N_directional (real run; identical across market seeds by construction)
 G2 = (# excluded backtest results) / (# considered signals), real run,
-     counting every ExclusionReason including unclear-resolution abstentions
-G2p = the same ratio for placebo runs (reported; placebo_no_clean_window is
-      expected and does not fail G2)
+     counting every ExclusionReason, reported per reason
+G2p = the same ratio for placebo runs (reported only; placebo_no_clean_window
+      is expected there and does not fail G2)
 ```
 
-Without these, an implementation could raise M4/M5/M6 by marking hard signals
-`unclear` or by dropping hard events inside M1a's 0.80 tolerance.
+The two close different dodges. **G2** stops an implementation from quietly
+dropping signals it cannot price. **G1** stops the abstention dodge: an
+`unclear` resolution emits no signal and therefore has no exclusion row to
+count (DATA_MODEL.md), so the only way to catch "mark the hard ones unclear"
+is a floor on how many directional signals the corpus must yield. Abstentions
+are additionally recorded on the derived event's `notes` and counted in the
+scorecard, split into *expected* abstentions (the 4 symmetric-construction
+M&A events and the 3 denied-acquirer resolutions — 7 by construction) and
+everything else.
 
 ### D0 / D1 — Determinism and replay equivalence (plain pytest, no score)
 
@@ -420,8 +427,8 @@ placebo hit rate by ≤ 0.005 — an order of magnitude below the M7a gate.
 | M7b placebo \|mean IC\| (15 realizations) | same | ≥ 0.15 | **≤ 0.06** | Spearman null SE ≈ 1/√112 ≈ 0.095 → 15-realization SE ≈ 0.024; gate ≈ 2.5 SE. Absolute value **of the mean**, so clean noise cancels and bias does not. |
 | M8 framing verdict accuracy | templates without a frame check, naive substring matching | ≈ 0.84 (fails all 9 expected-violation cases and the "buyout"/"sell-off" briefs) | **= 1.0** | This is the finance safeguard (workspace rule): partial credit is meaningless — one imperative emitted, or one violation not caught, is a product failure. Deterministic templates make exactness fair. |
 | M8-lexicon superset | a weakened shipped lexicon | fails | **must hold** | Keeps the grader's independence data-level, not just code-path-level. |
-| G1 N_directional | shrink the denominator by resolving hard cases `unclear` | ≈ 70 | **≥ 100** | 115 are scored by construction; the floor allows the ≤ 5 % exclusion budget plus a handful of extraction misses, and nothing more. |
-| G2 exclusion rate (real run) | same | ≈ 0.35 | **≤ 0.05** | Every ExclusionReason counted, including unclear-resolution abstentions, reported per reason in the scorecard. |
+| G1 N_directional | shrink the denominator by resolving hard cases `unclear` | ≈ 70 | **≥ 100** | 115 are scored by construction (7 expected abstentions already removed); the floor allows a handful of extraction misses and nothing more. |
+| G2 exclusion rate (real run) | drop signals that cannot be priced | ≈ 0.35 | **≤ 0.05** | Every ExclusionReason counted and reported per reason in the scorecard. |
 
 If fixture composition changes, every baseline number in this table must be
 re-derived in the same commit (checked in review). This applies in particular
