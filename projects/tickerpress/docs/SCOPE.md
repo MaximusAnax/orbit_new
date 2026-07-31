@@ -81,27 +81,30 @@ Visa, Ford, Shell, Meta, Target, Oracle, and Caterpillar, articles about
 fruit, rainforests, travel documents, Harrison Ford, seashells,
 meta-analyses, target audiences, Greek oracles, and insects do not appear in
 my results.
-*Accept:* mention F1 and ambiguous-subset F1 meet the M1/M1_amb gates in
-EVALS.md; every accepted **and** rejected candidate stores its full feature
-breakdown and score; `explain <article>` shows exactly why each candidate
-was accepted or rejected, with no hidden state.
+*Accept:* mention F1 and the three ambiguous-subset F1 gates (M1, M1_amb,
+M1_amb_base, M1_amb_abl) in EVALS.md pass; every accepted **and** rejected
+candidate stores its full feature breakdown and score; `explain <article>`
+shows exactly why each candidate was accepted or rejected, with no hidden
+state.
 
 **US-4 — One story, once.** As the user, when five outlets run the same wire
 story about Tesla, I see it once, with a note that it appeared in five
 outlets — but two *different* Tesla stories from the same day stay separate.
 *Accept:* dedup pairwise precision/recall meet the M2 gates; zero
-must-not-merge trap pairs merge (M2_trap = 0); the story representative is
-the earliest-published copy; the digest line for a multi-copy story cites
-one link and the copy count.
+must-not-merge trap pairs merge (M2_trap = 0) and the near-threshold subset
+still binds (M2_near); the story representative is the earliest-published
+copy; the digest line for a multi-copy story cites one link and the copy
+count.
 
 **US-5 — A ranked digest.** As the user, I run `digest run` (or cron does)
 and get one message grouped by company, most relevant story first, each item
 carrying title, link, outlet, published time, and relevance — and companies
 with nothing new are simply absent.
-*Accept:* relevance ordering accuracy meets the M3 gate; digest items are
-ordered (relevance desc, published_at desc, story id asc) within a company
-and companies by ticker asc; an empty digest sends nothing and records
-nothing; stories below the company's `min_relevance` are excluded.
+*Accept:* relevance ordering accuracy meets the M3 gate and the M3_cov
+coverage gate; digest items are ordered (relevance desc, published_at desc,
+story id asc) within a company and companies by ticker asc; an empty digest
+sends nothing and records nothing; stories below the company's
+`min_relevance` are excluded.
 
 **US-6 — Never the same story twice.** As the user, no (company, story) ever
 reaches the same channel twice — not across consecutive digests, not when I
@@ -151,8 +154,8 @@ hard part A; FR-7/11 are hard part B.
   `enabled` flag, and per-feed HTTP state (`etag`, `last_modified`,
   `last_polled_at`, `last_status`). All fetching goes through the
   `FeedSource` adapter; `FetchResult.status ∈ {ok, not_modified, error}`.
-  Ingest iterates enabled feeds, continues past per-feed errors, and
-  records per-feed outcomes in the IngestRun.
+  Ingest iterates enabled feeds **in ascending feed id order**, continues
+  past per-feed errors, and records per-feed outcomes in the IngestRun.
 - **FR-3 Feed parsing & normalization (pure).** `engine/feedparse.py`
   parses raw bytes for an RSS 2.0 and Atom (RFC 4287) subset: item identity
   from `guid`/`atom:id`, else `sha256(link + "\n" + title)` (real feeds
@@ -160,12 +163,15 @@ hard part A; FR-7/11 are hard part B.
   `atom:content`, `pubDate` (RFC 822 dates via
   `email.utils.parsedate_to_datetime`) / `atom:updated`/`published`
   (RFC 3339). Items missing both link and title are skipped with a recorded
-  reason. Normalization: HTML tag strip (stdlib `html.parser`), entity
-  decode, Unicode NFC (UAX #15), curly-quote/dash folding, whitespace
-  collapse; deterministic sentence split (`[.!?]` + space + uppercase, with
-  a committed abbreviation list); tokenization preserving character
-  offsets. Missing `pubDate` falls back to the ingest `now` with
-  `published_source="fallback"`.
+  reason. Items are processed **in document order** within a feed.
+  Normalization: HTML tag strip (stdlib `html.parser`), entity decode,
+  Unicode NFC (UAX #15), curly-quote/dash folding, whitespace collapse;
+  deterministic sentence split (`[.!?]` + space + uppercase, with a
+  committed abbreviation list); tokenization on Unicode word boundaries
+  where `-`, `/`, and `.` (outside a committed abbreviation) are token
+  separators, preserving character offsets. So `Meta-analysis` tokenizes as
+  `Meta`, `analysis` and `Meta` is matchable. Missing `pubDate` falls back
+  to the ingest `now` with `published_source="fallback"`.
 - **FR-4 Article archive & identity.** Articles are unique per
   `(feed_id, item_guid)` and append-only: rows are immutable after insert
   except the one-time `story_id` assignment; re-seeing the same
@@ -194,7 +200,9 @@ hard part A; FR-7/11 are hard part B.
     `(NASDAQ: AAPL)`, `(NYSE:F)`, and Reuters-RIC-style `(AAPL.O)` —
     always strong (committed regex set).
   Every hit yields a candidate with company, alias, field
-  (`title|summary|content`), char offsets, and surface text.
+  (`title|summary|content`), char offsets, and surface text. Candidates are
+  emitted in a deterministic order: field (`title`, `summary`, `content`),
+  then ascending `char_start`, then ascending `alias_id`.
 - **FR-6 Disambiguation scoring (hard part A).** Strong candidates are
   accepted with score 1.0. Each weak candidate scores
 
@@ -210,6 +218,7 @@ hard part A; FR-7/11 are hard part B.
       + 0.10 · min(3, window_cues)   # distinct corporate-cue lemmas within
                                      # ±12 tokens (data/cues_corporate.txt)
       − 0.15 · min(3, window_antis)  # distinct anti-cues within ±12 tokens
+                                     #   (data/cues_anti.txt)
       + 0.05 · min(3, doc_cues)      # distinct cues elsewhere in article
       − 0.10 · min(2, doc_antis)     # distinct anti-cues elsewhere
       + 0.15 · min(2, ctx_terms)     # company context_terms in article
@@ -222,42 +231,96 @@ hard part A; FR-7/11 are hard part B.
                                      # all-caps run ("ALL OPTIONS OPEN")
   ```
 
-  clamped to [0, 1]; accept iff `S ≥ θ` (default θ = 0.35, a committed
-  engine default, overridable per alias). `prior` encodes how often the
-  surface means the company in news — the "commonness" prior of
-  entity-linking practice (Milne & Witten 2008). Every candidate — accepted
-  or rejected — is persisted with its full feature vector, score, θ, and
-  engine version. Worked behavior the fixtures pin down: "Apple opens
-  flagship store in Mumbai" (no finance cues; body mentions iPhone) →
-  accept (prior .25 + case .10 + ctx_terms .15 = .50); "Apple growers
-  brace for frost" → reject (.25 + .10 − window anti .15 − doc anti .10 −
-  company anti .20 < 0); "Meta-analysis finds…" → reject
-  (sentence-initial, hyphen-compound, anti-terms).
+  clamped to [0, 1]; accept iff `S ≥ θ`. **θ is a single committed engine
+  default (0.35). There is no per-alias or per-company threshold override**
+  — `Mention.threshold` records the θ in force at scoring time purely as
+  provenance, so rows scored under different `engine_version`s remain
+  interpretable. `prior` encodes how often the surface means the company in
+  news — the "commonness" prior of entity-linking practice (Milne & Witten
+  2008).
+
+  Scoring rules that fix every ambiguity an implementer would otherwise
+  guess at:
+
+  1. **Fields are sentence containers.** `title` is treated as a single
+     sentence; `summary` and `content` are split by FR-3. A token at
+     position 0 of any sentence — including the title — is
+     *sentence-initial*, so `case_signal = 0` for it.
+  2. **Windows never cross fields.** The ±12-token cue/anti window is
+     clipped to the mention's own field. `doc_cues`/`doc_antis` count
+     distinct lemmas anywhere in `title + summary + content` that are *not*
+     already counted in the window (window and doc counts are disjoint by
+     position).
+  3. **Lexicons are scored independently.** The global cue/anti lexicons and
+     the per-company `context_terms`/`anti_terms` are separate features; a
+     token present in both contributes to both. Matching for all four is
+     case-folded whole-token (multi-word terms match as token sequences).
+  4. **`coref_strong` is computed after all strong candidates in the article
+     are resolved**, so scoring order within an article never matters.
+  5. Every candidate — accepted or rejected — is persisted with its full
+     feature vector, score, θ, and engine version.
+
+  Worked examples the fixtures pin down (each is a named case in
+  `tests/test_disambig.py`; feature vectors are exact):
+
+  | Case | Features | S | Outcome |
+  |---|---|---|---|
+  | "Apple opens flagship store in Mumbai" (title mention; summary says Cupertino; no finance cues anywhere) | prior .25, case_signal 0 (title-initial), window_cues 0, doc_cues 0, ctx_terms 1 | .25 + .15 = **.40** | accept (≥ .35) |
+  | "Apple growers brace for frost" (title mention; body has *harvest*, *orchard*) | prior .25, case_signal 0, window_antis 2 (*growers*, *frost*), doc_antis 2, anti_terms 2 | .25 − .30 − .20 − .40 = −.65 → **0** | reject |
+  | "Meta-analysis finds statin benefit overstated" | prior .25, case_signal 0, hyphen_compound 1, window_antis 1 (*statin*), anti_terms 2 | .25 − .20 − .15 − .40 = −.50 → **0** | reject |
+  | "Apple beats March-quarter estimates" (title) with "Apple Inc. (NASDAQ: AAPL)" in the summary | prior .25, coref_strong 1, case_signal 0, window_cues 2, doc_cues 3, ctx_terms 1 | 1.25 → **1.0** (clamped) | accept |
+
+  The Mumbai case accepts *only* because of a per-company context term; it
+  is one of the ≤5 fixture positives permitted to depend on that (EVALS §4),
+  which is why the ablation gate M1_amb_abl is set below 1.0.
 - **FR-7 Syndication dedup (hard part B).** Per article: normalized dedup
   text = case-folded, punctuation-stripped `title + summary + content`;
   shingle set = contiguous 3-token w-shingles; similarity = exact Jaccard
   resemblance `J(a,b) = |S_a ∩ S_b| / |S_a ∪ S_b|` (Broder 1997). At
   ingest, each new article is compared against all articles whose
-  `published_at` lies within ±7 days (the dedup window); fast paths: equal
-  `canonical_url` or equal `content_sha256` ⇒ same story regardless of J.
-  Assignment: join the story of the argmax-J article if `J ≥ 0.60`, else
-  open a new story. Stories never merge retroactively (decision D6);
-  representative = earliest `published_at`, tie-broken by smallest article
-  id (re-pointed if an earlier-published copy arrives later — the only
-  permitted story mutation). MinHash/SimHash (Broder et al. 1998; Charikar
-  2002; Manku, Jain & Das Sarma, WWW 2007) are the named scale path;
-  at personal volume exact Jaccard is affordable and exactly
-  deterministic.
+  `published_at` lies within ±7 days (the dedup window). Fast paths: equal
+  `canonical_url` or equal `content_sha256` ⇒ same story, **and these
+  lookups are window-limited too** (same ±7-day bound), so a year-old
+  identical URL does not resurrect a story. Assignment: join the story of
+  the argmax-J article if `J ≥ 0.60`, else open a new story.
+
+  Determinism rules (load-bearing for M5):
+  - Candidate articles are compared in ascending article id; ties on J
+    resolve to the candidate with the **smallest article id**, and the new
+    article joins that candidate's story.
+  - When both fast paths fire against different articles, `canonical_url`
+    wins over `content_sha256`; within a fast path, smallest article id
+    wins. Fast-path joins record `dedup_similarity = 1.0`.
+  - Ingest processes feeds by ascending feed id (FR-2) and items in
+    document order (FR-3), so article ids — and therefore every tie-break —
+    are a pure function of the fixture bytes.
+
+  Stories never merge retroactively (decision D6); representative =
+  earliest `published_at`, tie-broken by smallest article id (re-pointed if
+  an earlier-published copy arrives later — the only permitted story
+  mutation). MinHash/SimHash (Broder et al. 1998; Charikar 2002; Manku,
+  Jain & Das Sarma, WWW 2007) are the named scale path; at personal volume
+  exact Jaccard is affordable and exactly deterministic.
 - **FR-8 Relevance scoring (hard part A, ranking facet).** For article `a`
   and company `c` with accepted mentions `M` (|M| = n ≥ 1):
 
   ```
   title_hit = 1 if any m ∈ M is in the title else 0
-  lede_hit  = 1 if any m ∈ M is in the first sentence of the summary
-              or the first 25% of content tokens else 0
-  relevance = round(100 · (0.50·title_hit + 0.25·lede_hit + 0.25·min(1, n/4)))
+  lede_hit  = 1 if any m ∈ M is in the first sentence of the summary,
+              or in the first ceil(0.25 · content_token_count) tokens
+              of the content field, else 0
+  relevance = round_half_up(100 · (0.50·title_hit + 0.25·lede_hit
+                                   + 0.25·min(1, n/4)))
   ```
 
+  `round_half_up(x) = floor(x + 0.5)` — **not** Python's built-in `round`,
+  which is banker's rounding and would map 62.5 → 62 and 12.5 → 12. The
+  attainable relevance values are therefore exactly
+  `{6,13,19,25,31,38,44,50,56,63,69,75,81,88,94,100}`; EVALS §4 relies on
+  that set. `content_token_count` is the stored per-article token count
+  **of the content field only** (0 when `content` is NULL, in which case only the
+  summary-sentence path can set `lede_hit`). `Article.token_count` remains
+  the cross-field total and is reporting metadata only.
   Story-level relevance for `c` = max over the story's member articles (a
   syndicated copy that drops the headline must not depress the story). The
   0–100 scale and headline-dominance shape follow the construction of the
@@ -277,6 +340,10 @@ hard part A; FR-7/11 are hard part B.
   Markdown from a committed template — factual fields only — ending with
   the informational-only footer (D14). An empty selection composes
   nothing: no Delivery row, no notifier call.
+  **`dry_run` semantics:** a dry run composes the body and returns/prints
+  it, and persists **nothing** — no Delivery row, no DeliveryItem rows —
+  and calls no notifier. It therefore never consumes a story and never
+  appears in the ledger or audit history.
 - **FR-10 Alerts.** During ingest, after scoring, every (company, story)
   where mode ∈ `{alert, both}` and story relevance ≥ `alert_min_relevance`
   and the pair is undelivered on the alert channel composes a single-story
@@ -323,8 +390,11 @@ hard part A; FR-7/11 are hard part B.
   port; engine functions take `now`); no randomness anywhere in the
   pipeline; given the same DB state, fixture bytes, watchlist, and `now`,
   ingest and digest produce byte-identical mention rows, story
-  assignments, and digest bodies. Tests and evals run entirely on offline
-  adapters — no network, no wall clock.
+  assignments, and digest bodies — **including across processes with
+  different `PYTHONHASHSEED` values** (no iteration over unordered sets or
+  dicts may reach an output; every such iteration is sorted by an explicit
+  key). Tests and evals run entirely on offline adapters — no network, no
+  wall clock.
 
 ## Non-goals (this pass)
 
@@ -354,7 +424,12 @@ hard part A; FR-7/11 are hard part B.
    the first post-MVP candidate.
 9. **No push-notification service, no SMS.** Live channels are email and
    webhook only.
-10. **Deferred live adapters:** live RSS polling (FR-2/US-8) ships but is
+10. **No per-alias or per-company scoring thresholds.** θ is one committed
+    engine constant (FR-6). Per-surface tuning is expressible today through
+    `prior`, `context_terms`, and `anti_terms`; a second tuning axis would
+    add storage, CLI, API, and eval surface for a knob a single user does
+    not need.
+11. **Deferred live adapters:** live RSS polling (FR-2/US-8) ships but is
     env-gated and untested against real networks in CI; email/webhook
     notifiers likewise. Everything gated runs identically through offline
     twins.
@@ -384,14 +459,32 @@ projects/tickerpress/
       notify_file.py     #   offline: FileNotifier (outbox dir)
       notify_email.py    #   live: EmailNotifier (smtplib)
       notify_webhook.py  #   live: WebhookNotifier (httpx POST)
-    store/           # Repository protocol; SQLiteRepository (stdlib sqlite3) + InMemoryRepository
+    store/           # Repository protocol; SQLiteRepository (stdlib sqlite3).
+                     #   InMemoryRepository = SQLiteRepository(":memory:") — a
+                     #   factory, not a second backend, so constraint semantics
+                     #   (incl. the partial unique index) are identical everywhere.
+    resources.py     # loads data/ lexicons via importlib.resources into a frozen
+                     #   Lexicons dataclass; the ONLY module that reads data/
+    services.py      # composition layer: builds Lexicons + adapters + repository,
+                     #   passes them into engine functions; used by both api/ and cli/
     api/             # FastAPI app
     cli/             # Typer app
-  data/              # committed lexicons: cues_corporate.txt, common_words.txt,
-                     #   legal_suffixes.txt, abbreviations.txt, tracking_params.txt,
-                     #   digest_template.md
+  data/              # committed lexicons: cues_corporate.txt, cues_anti.txt,
+                     #   common_words.txt, legal_suffixes.txt, abbreviations.txt,
+                     #   tracking_params.txt, digest_template.md
   evals/             # fixtures/, metrics.py, run.py, test_gates.py
 ```
+
+**Engine purity and lexicon loading (CONVENTIONS.md):** no module under
+`engine/` opens a file, reads a clock, or touches the network. `resources.py`
+loads every `data/*.txt` file once via `importlib.resources` into an immutable
+`Lexicons` dataclass (`corporate_cues: frozenset[str]`, `anti_cues:
+frozenset[str]`, `common_words: frozenset[str]`, `legal_suffixes: tuple[str,
+...]`, `abbreviations: frozenset[str]`, `tracking_params: tuple[str, ...]`,
+`digest_template: str`). `services.py` constructs it and passes it as an
+explicit argument into `detect`, `disambig`, `normalize`, `watchlist`, and
+`digest`. Engine functions therefore remain pure functions of their inputs,
+and tests can pass synthetic `Lexicons` without touching the filesystem.
 
 ### Adapter interfaces
 
@@ -423,10 +516,21 @@ GET  /digests?channel=&limit=         GET /digests/{id}            # incl. body_
 GET  /deliveries?company=&story_id=&channel=
 ```
 
+`POST /companies/{ticker}/aliases` body: `{"text": str, "kind":
+"legal_name|short_name|ticker_symbol|cashtag|nickname", "strength":
+"strong|weak" | null, "prior": float | null}` — null strength/prior take the
+kind defaults of DATA_MODEL §2.2. There is no threshold field (FR-6).
+`POST /digests` with `dry_run=true` returns `200` with the rendered body and
+writes nothing (FR-9); with an empty selection it returns `204` in both
+modes.
+
 ### CLI sketch (Typer)
 
 ```
-tickerpress init                                          # create DB, load lexicons, integrity check
+tickerpress init                                          # create DB schema; validate that every
+                                                          #   data/ lexicon loads and print entry
+                                                          #   counts + sha256 (lexicons are files,
+                                                          #   never DB rows); idempotent
 tickerpress company add TICKER --name NAME [--alias TEXT ...] [--mode digest|alert|both|mute]
                        [--min-relevance N] [--alert-min-relevance N] [--no-auto-alias]
 tickerpress company list | show TICKER | set TICKER [--mode ...] | remove TICKER
@@ -470,11 +574,16 @@ tickerpress digest list | show ID
    immediate accept at any prior). This single feature converts most
    hard cases into easy ones and is why the feature exists before any cue
    counting.
-4. **Score weights and θ are committed engine data, tuned on the eval
-   fixtures.** The weights in FR-6 are initial values; EVALS.md gates the
-   *outcome* (F1 on a corpus with hard traps), not the constants. Traps
-   are constructed so bag-of-cues shortcuts fail (finance vocabulary in
-   fruit-commodity articles; corporate news with zero finance cues).
+4. **Score weights and θ are committed engine data; the global lexicons are
+   frozen before fixtures are authored.** The weights in FR-6 are initial
+   values and EVALS.md gates the *outcome*, not the constants — but that
+   only works if the lexicons cannot be turned into a memorization table for
+   the corpus. Hence D19: `data/cues_corporate.txt` and `data/cues_anti.txt`
+   are authored first from general finance/news vocabulary, their sha256
+   hashes are committed to `evals/fixtures/lexicon_manifest.json`, and two
+   gates (M6_lex specificity, M1_amb_abl ablation) keep them general.
+   Weight/θ tuning against fixture *outcomes* remains allowed; growing the
+   lexicons to fit individual fixture articles does not.
 5. **Dedup = w-shingling + exact Jaccard resemblance (Broder 1997), sized
    honestly.** MinHash/SimHash exist to approximate Jaccard at web scale
    (Manku, Jain & Das Sarma, WWW 2007, ran SimHash over 8B pages); a
@@ -503,7 +612,8 @@ tickerpress digest list | show ID
    Failure semantics are chosen for a personal tool: a failed send
    releases stories (better twice than never — but only after an explicit
    retry), while the sent-marking transaction makes silent duplication
-   impossible.
+   impossible. Because `InMemoryRepository` is `SQLiteRepository(":memory:")`,
+   the constraint is present in every test configuration.
 9. **Feed text is the corpus; RSS/Atom identity rules follow the specs.**
    Item identity prefers `guid` (RSS 2.0 spec) / `atom:id` (RFC 4287),
    falling back to a link+title hash because real-world feeds omit guids.
@@ -536,8 +646,8 @@ tickerpress digest list | show ID
     factual fields only; no sentiment or advice code path exists; the
     informational-only footer is part of the committed template
     (`data/digest_template.md`), and template rendering is gated by eval
-    M4/M5 (byte-identical bodies), so the footer cannot silently
-    disappear.
+    M4/M5 (byte-identical bodies plus a committed golden hash), so the
+    footer cannot silently disappear.
 15. **Assumption: English feeds.** All lexicons are English; the sentence
     splitter and case rules assume Latin script. Non-English support is a
     lexicon/data project, not a code rewrite, and is out of scope.
@@ -551,7 +661,32 @@ tickerpress digest list | show ID
     window, and unindexed feature JSON are all sized to that; the scale
     paths (Aho–Corasick, MinHash) are named where they'd slot in.
 18. **Assumption: implementation lands in ~2,500–3,500 lines** across
-    engine/adapters/store/api/cli, within the 2–4k mandate. Scope valves
-    if pressure appears, in order: webhook notifier, alert mode (digest
-    covers the need), Atom support (RSS-only fixtures) — each degrades
-    cleanly without touching the hard parts.
+    engine/adapters/store/api/cli, within the 2–4k mandate.
+    **Scope valves, in order — none of these touch a locked decision**
+    (alerts, Atom parsing, and the email/webhook notifiers are locked and
+    are *not* valves):
+    1. Drop the report-only eval outputs except `naive_deltas` (every gate
+       is retained).
+    2. Trim the API to the read/ingest/digest core: drop `PATCH`/`DELETE`
+       endpoints, `GET /ingest/runs/{id}`, and `GET /digests/{id}`. The CLI
+       keeps full coverage, and the locked decisions name no API surface.
+    3. `explain` renders one human-readable format (drop `--json` on
+       `explain` only).
+    4. Shrink the fixture corpus toward its asserted floors (EVALS §4) —
+       fewer syndication groups, never fewer trap classes.
+
+    If pressure remains after all four, the correct action is to
+    re-negotiate a locked decision with the owner and record it as a new
+    numbered decision — never to silently drop alerts, Atom, or a live
+    notifier.
+19. **Lexicon freeze protocol.** The two global lexicons are product data
+    that the eval corpus is scored against, so they are a memorization
+    channel if left free. Protocol: (a) author `cues_corporate.txt` and
+    `cues_anti.txt` from general vocabulary *before* writing fixture
+    articles; (b) commit their sha256 to
+    `evals/fixtures/lexicon_manifest.json`; (c) any later edit is a
+    reviewed change that must update the manifest and re-pass M6_lex
+    (no lexicon entry may occur in exactly one fixture base article) and
+    M1_amb_abl (the engine must still clear a floor with all per-company
+    terms emptied). This is the scoping-time answer to "the gates could be
+    passed by memorizing the corpus".

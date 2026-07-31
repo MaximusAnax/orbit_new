@@ -24,6 +24,9 @@ All models are Pydantic v2 in `src/pointsmax/models.py`. Enumerations are
 - Dates are ISO `YYYY-MM-DD` strings; timestamps ISO-8601 UTC strings;
   both always supplied by callers (the engine never reads the clock).
 - Ids are lowercase snake-case slugs (`chase_ur`, `flying_blue`).
+- **Canonical JSON** (used for the content hash, plan signatures, and caveat
+  ordering): `json.dumps(obj, sort_keys=True, separators=(",", ":"),
+  ensure_ascii=False)` encoded UTF-8.
 
 ## Enumerations
 
@@ -39,6 +42,24 @@ All models are Pydantic v2 in `src/pointsmax/models.py`. Enumerations are
 | `LedgerReason` | `set`, `adjust`, `transfer_out`, `transfer_in`, `transfer_bonus`, `award_redeem`, `cash_redeem`, `portal_redeem` |
 | `Verdict` | `book_with_points`, `pay_cash_keep_points`, `insufficient_points`, `no_matching_award`, `cash_plan` |
 | `CaveatCode` | `irreversible_transfer`, `transfer_time_risk`, `stranded_points`, `promo_expiring`, `below_baseline`, `stale_world`, `seats_limited` |
+
+### Cashout liquidity (normative)
+
+`is_cash` is a **derived constant of `CashoutMethod`**, implemented as a
+module-level mapping in `models.py` — not a field in the JSON data, so the
+dataset cannot contradict it:
+
+| Method | `is_cash` | Meaning |
+|---|---|---|
+| `statement_credit` | **true** | points → money against the card balance |
+| `bank_deposit` | **true** | points → money in an account |
+| `portal_travel` | false | points buy travel at a fixed rate; no cash is produced |
+| `gift_card` | false | scrip, not cash; not liquid at face value |
+
+Consumers: FR-12 (cash goals consider only `is_cash = true` options),
+FR-13 (`cash_floor_cents` uses only `is_cash = true`; `travel_floor_cents`
+uses all active options). `portal_travel` options additionally serve as
+*portal bookings* for flight/stay goals (`book_portal` steps, FR-7a).
 
 ## Committed world entities (`data/world/`)
 
@@ -63,11 +84,12 @@ exists; every program has exactly one Valuation.
 | `name` | str | display name |
 | `program_id` | str FK → Program | the currency this card holds/earns |
 | `enables_transfer` | bool | holding it unlocks partner transfers from `program_id` (FR-3) |
-| `annual_fee_cents` | int | informational only (no card advice — FR-16d) |
+| `annual_fee_cents` | int | display metadata only; never enters an objective (Non-goal 10) |
 | `source_note` | str | |
 
 Invariant: `program_id.kind == bank`. Portal rates are *not* stored here —
-they are CashoutOptions with `requires_card`.
+they are CashoutOptions with `requires_card`. Card *benefits* other than
+transfer access and redemption rates are out of scope (Non-goal 10).
 
 ### TransferEdge — `transfers.json`
 
@@ -75,9 +97,9 @@ they are CashoutOptions with `requires_card`.
 |---|---|---|
 | `id` | str PK | e.g. `amex_mr__flying_blue` |
 | `from_program`, `to_program` | str FK | no self-loops |
-| `ratio_from`, `ratio_to` | int ≥ 1 | e.g. 1:1, 1:2 (Amex→Hilton), 3:1 (Marriott→airlines); delivered = `sent × ratio_to / ratio_from` |
+| `ratio_from`, `ratio_to` | int ≥ 1 | e.g. 1:1, 1:2 (Amex→Hilton), 3:1 (Marriott→airlines); delivered = `sent × ratio_to // ratio_from` |
 | `min_from` | int | minimum points per transfer (e.g. 1000) |
-| `increment_from` | int | sent must be a multiple (e.g. 1000; Marriott 3) |
+| `increment_from` | int | sent must be a multiple (e.g. 1000; Marriott 3000) |
 | `fee_mcpp` | int | milli-cents per *from*-point; 0 for most; 60 for Amex→US airlines (0.06¢/pt) |
 | `fee_cap_cents` | int \| null | e.g. 9900 ($99 Amex cap); null = uncapped |
 | `time_days` | int | 0 = instant; e.g. Amex→ANA 2, Marriott→airlines 2 |
@@ -86,10 +108,24 @@ they are CashoutOptions with `requires_card`.
 | `valid_from`, `valid_to` | date \| null | promo window; null = evergreen (FR-3) |
 | `source_note` | str | |
 
-Invariants: `(from_program, to_program, valid_from)` unique;
-`increment_from % ratio_from == 0` and `min_from % increment_from == 0`
-(delivered amounts exact — FR-1); `from_program.kind == bank` edges are
-gated by `enables_transfer` cards; bonus fields paired.
+Invariants (all FR-1 checked): `(from_program, to_program, valid_from)`
+unique; `increment_from % ratio_from == 0` and
+`min_from % increment_from == 0` (delivered amounts exact); when a bonus is
+set, `bonus_per_from % increment_from == 0`; `from_program.kind == bank`
+edges are gated by `enables_transfer` cards; bonus fields paired;
+**no value-increasing edge** (FR-1 invariant 4) — without a bonus
+`ratio_to × mcpp_to ≤ ratio_from × mcpp_from`, with one
+`(ratio_to × bonus_per_from + ratio_from × bonus_to) × mcpp_to ≤
+ratio_from × bonus_per_from × mcpp_from`.
+
+Delivered points for a sent amount `s`:
+`delivered(s) = s × ratio_to // ratio_from + bonus_to × (s // bonus_per_from)`.
+
+**Dataset design rule (not a schema constraint):** every edge in the shipped
+`data/world/` has `increment_from ≥ 1000`, matching real programs (banks
+transfer in 1,000-point increments, Marriott in 3,000). This bounds a
+brute-force enumerator to ≤ balance/1000 amounts per edge (SCOPE decision 18)
+and is asserted by a dataset test.
 
 ### CashoutOption — `cashouts.json`
 
@@ -97,7 +133,7 @@ gated by `enables_transfer` cards; bonus fields paired.
 |---|---|---|
 | `id` | str PK | e.g. `ur_portal_csr` |
 | `program_id` | str FK | |
-| `method` | CashoutMethod | `portal_travel` options can also fulfill trip goals (`book_portal` steps) |
+| `method` | CashoutMethod | liquidity is derived from the method (see above), not stored |
 | `cpp_milli` | int | e.g. UR statement credit 1000; CSR portal 1500; MR statement credit 600; Amex BizPlat pay-with-points effective 1538 |
 | `min_points`, `increment` | int | quantization (e.g. 1) |
 | `requires_card` | str FK → CardProduct \| null | null = any holder of the currency |
@@ -110,7 +146,7 @@ gated by `enables_transfer` cards; bonus fields paired.
 |---|---|---|
 | `program_id` | str PK/FK | one per program (invariant) |
 | `cpp_milli` | int | baseline value, e.g. `chase_ur` 2050, `hilton_honors` 500 |
-| `as_of` | date | drives `stale_world` caveat (FR-10) |
+| `as_of` | date | the minimum `as_of` across valuations drives `stale_world` (FR-10) |
 | `source_note` | str | e.g. `modeled on Frequent Miler RRV / TPG valuations, 2026-07` |
 
 ### AwardOffer — `awards.json`
@@ -126,13 +162,16 @@ gated by `enables_transfer` cards; bonus fields paired.
 | `points_price` | int | flights: per passenger; stays: per night |
 | `fees_cents` | int | flights: per passenger (taxes/surcharges); stays: per night |
 | `city` | str \| null | stays only; gazetteer city code |
-| `travel_window_start`, `travel_window_end` | date | availability window (FR-6) |
+| `travel_window_start`, `travel_window_end` | date | availability window (FR-6); `travel_window_end` also bounds the booking deadline (FR-7d) |
 | `seats_available` | int \| null | max passengers; null = uncapped |
-| `bookable_until` | date \| null | booking deadline for the offer itself |
+| `bookable_until` | date \| null | booking deadline for the offer itself (FR-6 and FR-7d) |
 | `source_note` | str | e.g. award-chart / typical-pricing provenance |
 
-Invariant: every offer is covered by ReferenceFares for each month its
-travel window touches (FR-1).
+Invariant: reference-fare coverage per FR-1 invariant 5 — for every
+`(origin_city, dest_city, cabin)` a flight offer touches, both one-way
+directions **and** the round-trip row must exist for every month the offer's
+travel window touches (so portal bookings and mixed award/portal round trips
+are always priceable).
 
 ### ReferenceFare — `reference_fares.json`
 
@@ -148,10 +187,14 @@ travel window touches (FR-1).
 | `fare_cents` | int | flight: per passenger; stay: per night ("reasonable cash price", not rack rate — SCOPE decision 2) |
 | `source_note` | str | |
 
-Lookup key (FR-8): flights `(origin_city, dest_city, cabin, round_trip,
-month of travel_window_start)`; a one-way booking uses the one-way fare row
-(committed per direction). Stays: `(city, month)`. Missing fare at plan time
-is impossible by the FR-1 coverage invariant.
+**Lookup key (FR-8): the month of the *goal's* travel window**, not the
+offer's — flights `(origin_city, dest_city, cabin, round_trip, goal month)`;
+stays `(city, goal month)`. A round-trip award or portal booking uses the
+`round_trip = true` row; each leg of a one-way pair uses that direction's
+`round_trip = false` row. This is why FR-1 invariant 5 requires coverage for
+every month an offer's travel window touches: an offer whose window spans
+October–November must price correctly for a November goal. Missing fares at
+plan time are impossible by that invariant.
 
 ### GazetteerEntry — `gazetteer.json`
 
@@ -166,9 +209,16 @@ is impossible by the FR-1 coverage invariant.
 
 | Field | Type | Notes |
 |---|---|---|
-| `version` | str | semver of the dataset, e.g. `1.0.0` |
+| `version` | str | semver of the dataset, e.g. `1.0.0`; **display metadata** — not the execution guard |
 | `as_of` | date | data snapshot date |
-| `content_hash` | str | sha256 over the canonical serialization of all world files; recomputed and checked at load (FR-1) |
+| `content_hash` | str | sha256 hex; recomputed and checked at load (FR-1), and the authoritative pin for plan execution (FR-11) |
+
+**Hash definition (non-circular):** `content_hash` = sha256 over the
+concatenation of, for each world file **except `version.json`** in ascending
+filename order, the bytes `filename + "\n" + canonical_json(parsed_contents)
++ "\n"`. Canonical JSON is defined at the top of this document; lists keep
+their file order, so the hash is stable across formatting-only edits but
+changes on any data edit.
 
 ## SQLite entities
 
@@ -181,6 +231,9 @@ is impossible by the FR-1 coverage invariant.
 | `home_city` | str \| null | gazetteer city code; parser default origin (FR-5) |
 | `default_passengers` | int | default 1 |
 | `created_at`, `updated_at` | str | ISO ts, caller-supplied |
+
+Exposed by `GET/PUT /profile` and `pointsmax profile show|set` (SCOPE
+FR-14/FR-15), so the FR-5 default-origin behavior is configurable end-to-end.
 
 ### WalletCard — table `wallet_card`
 
@@ -223,8 +276,8 @@ stored: current balance per program = last `post_balance`.
 | `passengers` | int \| null | flight; 1–8 |
 | `city` | str \| null | stay |
 | `nights` | int \| null | stay; 1–30 |
-| `travel_window_start`, `travel_window_end` | date \| null | resolved month → first/last day (FR-5) |
-| `book_by` | date \| null | transfer-time budget anchor (FR-7) |
+| `travel_window_start`, `travel_window_end` | date \| null | resolved month → first/last day (FR-5); the window's month is the FR-8 fare lookup key |
+| `book_by` | date \| null | booking deadline the user imposes (FR-7d) |
 | `cash_programs` | JSON list[str] \| null | cash: optional program filter |
 | `cash_max_points` | JSON {program: int} \| null | cash: optional per-program cap |
 | `status` | GoalStatus | `active` on create; `planned` when a PlanSet exists; terminal states frozen |
@@ -239,14 +292,18 @@ enforced by the Pydantic model.
 |---|---|---|
 | `id` | int PK | |
 | `goal_id` | int FK | |
-| `world_version` | str | pinned `WorldVersion.version` |
-| `world_hash` | str | pinned `content_hash`; execution requires match (FR-11) |
+| `world_version` | str | pinned `WorldVersion.version`; display only |
+| `world_hash` | str | pinned `content_hash`; **execution requires this to match** (FR-11) |
 | `today` | date | the input date used (FR-16) |
-| `params` | JSON | `{top_k, max_hops, max_expansions}` |
+| `params` | JSON | `{top_k, max_hops, max_expansions, slack_days, promo_days, stale_days}` |
+| `expansions` | int | search expansions consumed (M6 records it; informational elsewhere) |
 | `verdict` | Verdict | FR-9 |
 | `recommended_plan_id` | int FK \| null | rank-1 plan when verdict is book_with_points / cash_plan |
 | `disclaimer` | str | fixed FR-16 string, asserted in tests |
 | `created_at` | str | ISO ts |
+
+A PlanSet with verdict `insufficient_points` or `no_matching_award` contains
+**zero** plans and only the verdict.
 
 ### Plan — table `plan` (immutable)
 
@@ -257,15 +314,15 @@ enforced by the Pydantic model.
 | `rank` | int | 1-based; unique `(plan_set_id, rank)` |
 | `is_comparator` | bool | appended portal/cash comparator beyond top-K (FR-9) |
 | `gross_value_cents` | int | FR-8 |
-| `cash_outlay_cents` | int | award/booking fees + transfer fees |
+| `cash_outlay_cents` | int | award/booking fees + transfer fees (merged-amount fee math) |
 | `points_cost_cents` | int | `V(H0) − V(H1)` |
 | `net_value_cents` | int | `gross − outlay − points_cost` (ranking key for flight/stay) |
 | `cash_received_cents` | int \| null | cash goals (ranking key) |
-| `realized_cpp_milli` | int \| null | points-weighted over bookings (FR-8); null when no points spent |
+| `realized_cpp_milli` | int \| null | **pooled** form (FR-8): `(Σ booking value − Σ booking fees) × 1000 // Σ points spent on bookings`; null when no points are spent |
 | `points_spent` | JSON {program: int} | consumed per program |
-| `feasible_in_days` | int | max cumulative chain time (0 = all instant) |
-| `signature` | str | stable hash of ordered step tuples; unique per plan_set; final tie-break |
-| `caveats` | JSON list[{code: CaveatCode, params: {…}, text: str}] | FR-10; text rendered from committed templates |
+| `feasible_in_days` | int | max `arrival_days` over the plan's bookings (FR-7d); 0 = all instant |
+| `signature` | str | sha256 of the canonical JSON of the plan's canonical step-tuple list (FR-9); unique per plan_set; identity/dedup only, never a tie-break input |
+| `caveats` | JSON list[{code: CaveatCode, params: {…}, text: str}] | FR-10; ordered by `CaveatCode` declaration order then params' canonical JSON; text rendered from committed templates |
 
 ### PlanStep — table `plan_step`
 
@@ -273,25 +330,32 @@ enforced by the Pydantic model.
 |---|---|---|
 | `id` | int PK | |
 | `plan_id` | int FK | |
-| `seq` | int | 1-based; unique `(plan_id, seq)`; execution strictly in order (FR-11) |
+| `seq` | int | 1-based index in the FR-9 **canonical step order**; unique `(plan_id, seq)`; execution strictly in this order (FR-11) |
 | `kind` | StepKind | |
+| `hop_index` | int | transfers: depth in the funding DAG (0 = out of an opening balance); bookings: 0. Part of the canonical sort key so any implementation reproduces the order |
 | `from_program`, `to_program` | str \| null | transfer: both; book_award/redeem_cash/book_portal: `from_program` only |
 | `edge_id` | str \| null | transfer: the TransferEdge used |
 | `offer_id` | str \| null | book_award: the AwardOffer |
 | `cashout_id` | str \| null | redeem_cash / book_portal: the CashoutOption |
-| `points_sent` | int | transfer: sent; bookings: points spent |
+| `points_sent` | int | transfer: merged sent amount (FR-7b); bookings: points spent |
 | `points_delivered` | int \| null | transfer only: base delivery + tier bonus |
-| `fees_cents` | int | edge fee or award fees for this step |
+| `fees_cents` | int | edge fee (on the merged amount) or award fees for this step |
 | `eta_days` | int | this step's posting time |
 | `irreversible` | bool | true for `transfer` and `book_award`; gates confirmation (FR-11) |
 | `explanation` | str | deterministic template render; every number equals a stored field (FR-10) |
 | `executed_at` | str \| null | set once on execution; ledger entries reference this step |
 
-Invariants: kind-specific nullability; executing writes the matching ledger
+Canonical step tuple (FR-9, used by M3 and by `signature`):
+`(kind, from_program, to_program, edge_id, offer_id, cashout_id,
+points_sent, points_delivered, fees_cents)` with nulls rendered as `""` for
+strings and `0` for integers.
+
+Invariants: kind-specific nullability; at most one transfer step per
+`(plan_id, edge_id)` (FR-7b merging); executing writes the matching ledger
 entries atomically (transfer → `transfer_out` + `transfer_in` + optional
 `transfer_bonus`; book_award/book_portal/redeem_cash → one redemption
 entry); a step executes at most once; execution re-validates balances and
-world hash at apply time.
+the world `content_hash` at apply time.
 
 ## Relationships (summary)
 
@@ -301,12 +365,13 @@ World (committed, read-only):
   Program ◀─from/to── TransferEdge (~60)      Program ◀── CashoutOption (~25)
   Program ◀── Valuation (1:1)                 Program ◀── AwardOffer (~80)
   AwardOffer ▶ covered-by ▶ ReferenceFare     Gazetteer ◀ resolves offers & goals
-  WorldVersion pins it all (content_hash)
+  WorldVersion pins it all (content_hash over all files except version.json)
 
 SQLite (user state):
   Profile (1)     WalletCard (N, unique product)
   LedgerEntry (N, append-only) ──▶ PlanStep (0..1)
-  Goal (N) ──▶ PlanSet (0..N, immutable) ──▶ Plan (1..K+1) ──▶ PlanStep (1..N)
+  Goal (N) ──▶ PlanSet (0..N, immutable) ──▶ Plan (0..K+1) ──▶ PlanStep (1..N)
+      Plan count is 0 for insufficient_points / no_matching_award verdicts
   Plan.signature: canonical identity; balances, floors, V(H): derived, never stored
 ```
 
@@ -327,11 +392,11 @@ SQLite (user state):
 ```json
 { "id": "marriott_bonvoy__alaska_mp",
   "from_program": "marriott_bonvoy", "to_program": "alaska_mp",
-  "ratio_from": 3, "ratio_to": 1, "min_from": 3000, "increment_from": 3,
+  "ratio_from": 3, "ratio_to": 1, "min_from": 3000, "increment_from": 3000,
   "fee_mcpp": 0, "fee_cap_cents": null, "time_days": 2,
   "bonus_per_from": 60000, "bonus_to": 5000,
   "valid_from": null, "valid_to": null,
-  "source_note": "Bonvoy 3:1 airline transfers, +5k miles per 60k" }
+  "source_note": "Bonvoy 3:1 airline transfers in 3,000-pt increments, +5k miles per 60k" }
 
 { "id": "amex_mr__delta_skymiles",
   "from_program": "amex_mr", "to_program": "delta_skymiles",
@@ -341,6 +406,11 @@ SQLite (user state):
   "valid_from": null, "valid_to": null,
   "source_note": "Amex excise-tax offset fee: 0.06 cents/pt, $99 cap, US airlines" }
 ```
+
+Invariant 4 check for the Marriott edge (Marriott 800 mcpp, Alaska 1400
+mcpp): `(1×60000 + 3×5000) × 1400 = 105,000,000 ≤ 3×60000×800 =
+144,000,000` ✓ — the edge cannot manufacture paper value, so FR-7's lattice
+may stop at `s_cover`.
 
 `card_product` and a gated `cashout_option`:
 
@@ -354,9 +424,19 @@ SQLite (user state):
   "requires_card": "chase_sapphire_reserve",
   "valid_from": null, "valid_to": null,
   "source_note": "Chase travel portal at 1.5 cpp with CSR" }
+
+{ "id": "ur_statement_credit", "program_id": "chase_ur", "method": "statement_credit",
+  "cpp_milli": 1000, "min_points": 1, "increment": 1,
+  "requires_card": null, "valid_from": null, "valid_to": null,
+  "source_note": "UR cash-out at 1.0 cpp" }
 ```
 
-`award_offer` and its `reference_fare`:
+For a CSR holder with 210,000 UR (FR-13): `baseline_value_cents = 430,500`
+(2050 mcpp), `travel_floor_cents = 315,000` (portal, 1500 mcpp),
+`cash_floor_cents = 210,000` (statement credit, 1000 mcpp). A `cash` goal
+(FR-12) may only use the statement credit.
+
+`award_offer` and its `reference_fare`s:
 
 ```json
 { "id": "fb_biz_nyc_par_oct26", "program_id": "flying_blue", "kind": "flight",
@@ -374,6 +454,9 @@ SQLite (user state):
   "source_note": "reasonable one-way business fare, not rack rate" }
 ```
 
+(FR-1 invariant 5 additionally requires `rf_par_nyc_biz_ow_2026_10` and
+`rf_nyc_par_biz_rt_2026_10` for the same month.)
+
 `goal` (parsed from "round-trip business NYC to Paris in October",
 today = 2026-07-31):
 
@@ -386,9 +469,9 @@ today = 2026-07-31):
   "book_by": null, "status": "planned", "created_at": "2026-07-31T14:02:00Z" }
 ```
 
-`plan` with three steps (fund Flying Blue from MR, book outbound + return
-one-way awards; holdings before: MR 130,000 @ 2000 mcpp, UR 210,000 @ 2050
-mcpp, FB 0 @ 1300 mcpp):
+`plan` with three steps (one merged transfer funding both one-way awards;
+holdings before: MR 130,000 @ 2000 mcpp, UR 210,000 @ 2050 mcpp, FB 0 @
+1300 mcpp):
 
 ```json
 { "plan_set_id": 5, "rank": 1, "is_comparator": false,
@@ -403,7 +486,7 @@ mcpp, FB 0 @ 1300 mcpp):
 ```
 
 ```json
-{ "plan_id": 9, "seq": 1, "kind": "transfer",
+{ "plan_id": 9, "seq": 1, "kind": "transfer", "hop_index": 0,
   "from_program": "amex_mr", "to_program": "flying_blue",
   "edge_id": "amex_mr__flying_blue", "points_sent": 120000,
   "points_delivered": 120000, "fees_cents": 0, "eta_days": 0,
@@ -411,7 +494,7 @@ mcpp, FB 0 @ 1300 mcpp):
   "explanation": "Transfer 120,000 Membership Rewards to Flying Blue (1:1, instant, no fee).",
   "executed_at": null }
 
-{ "plan_id": 9, "seq": 2, "kind": "book_award",
+{ "plan_id": 9, "seq": 2, "kind": "book_award", "hop_index": 0,
   "from_program": "flying_blue", "to_program": null,
   "offer_id": "fb_biz_nyc_par_oct26", "points_sent": 60000,
   "points_delivered": null, "fees_cents": 25100, "eta_days": 0,
@@ -419,7 +502,7 @@ mcpp, FB 0 @ 1300 mcpp):
   "explanation": "Book Flying Blue business NYC->PAR (Oct 2026): 60,000 miles + $251.00 in taxes/fees. Realized ~3.08 cpp against a $2,100.00 reference fare.",
   "executed_at": null }
 
-{ "plan_id": 9, "seq": 3, "kind": "book_award",
+{ "plan_id": 9, "seq": 3, "kind": "book_award", "hop_index": 0,
   "from_program": "flying_blue", "to_program": null,
   "offer_id": "fb_biz_par_nyc_oct26", "points_sent": 60000,
   "points_delivered": null, "fees_cents": 25100, "eta_days": 0,
@@ -428,11 +511,22 @@ mcpp, FB 0 @ 1300 mcpp):
   "executed_at": null }
 ```
 
-(Math check for the example, per FR-8: gross = 2 × 210,000 = 420,000;
-outlay = 2 × 25,100 = 50,300; points_cost = V(H0) − V(H1) =
-(130,000×2000)//1000 − (10,000×2000)//1000 = 260,000 − 20,000 = 240,000;
-net = 420,000 − 50,300 − 240,000 = 129,700 = **+$1,297 vs paying cash**;
-realized cpp = (420,000 − 50,300) × 1000 // 120,000 = 3,080 → 3.08¢/pt.)
+Math check, per FR-7b/FR-8. Aggregate need at `flying_blue` is
+60,000 + 60,000 = 120,000 with an opening balance of 0, so **one** merged
+transfer step funds both bookings (`fb_biz_nyc_par_oct26` matches the
+outbound leg, `fb_biz_par_nyc_oct26` the return; both one-way fares for the
+goal's month 2026-10 are $2,100).
+
+- `gross = 2 × 210,000 = 420,000`
+- `cash_outlay = 2 × 25,100 = 50,300` (edge fee 0)
+- `points_cost = V(H0) − V(H1)`; the UR term (210,000 @ 2050) is unchanged
+  and cancels, FB ends at 0, so it reduces to
+  `(130,000×2000)//1000 − (10,000×2000)//1000 = 260,000 − 20,000 = 240,000`
+- `net = 420,000 − 50,300 − 240,000 = 129,700` = **+$1,297 vs paying cash**
+- pooled `realized_cpp_milli = (420,000 − 50,300) × 1000 // 120,000 = 3,080`
+  → 3.08¢/pt
+- `feasible_in_days = 0`; no `stranded_points` caveat because the FB balance
+  ends at 0.
 
 `ledger_entry` sequence after executing step 1:
 

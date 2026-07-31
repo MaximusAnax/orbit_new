@@ -3,10 +3,21 @@
 All domain models are Pydantic v2 classes in `engine/models.py`; the store maps
 persistent entities to SQLite (stdlib `sqlite3`). Times are ISO-8601 UTC
 strings supplied by callers via the Clock port (the engine never reads the
-clock). Ids are UUID4 strings unless noted. Cell coordinates are always
-**original parsed-table coordinates**: `row` is the 0-based data-row index
-(header excluded), `col` is the 0-based column index; audit entries and issues
-never use post-transform coordinates (SCOPE.md D4).
+clock). Cell coordinates are always **original parsed-table coordinates**:
+`row` is the 0-based data-row index (header excluded), `col` is the 0-based
+column index; audit entries and issues never use post-transform coordinates
+(SCOPE.md D4).
+
+**Identifiers.** Two kinds, deliberately split (SCOPE.md FR-16):
+
+- *Database surrogate keys* — `Run.id`, `IssueSummary.id`, `Revision.id` — are
+  UUID4 strings. They are random, and that is allowed **because they never
+  appear in any artifact**: not in `audit.jsonl`, not in `findings.jsonl`, not
+  in `report.md`. Artifacts are a pure function of (file bytes, effective
+  policy, engine version).
+- *Content-derived ids* — `ReviewItem.id` — are deterministic hashes of
+  content, because they are printed in `report.md` and typed by the user
+  (§2.6).
 
 ## 1. Entity overview
 
@@ -16,17 +27,19 @@ Run 1 ──< ColumnProfile
 Run 1 ──< IssueSummary
 Run 1 ──< ReviewItem
 Run 1 ──< Revision            (revision 1 = the auto-clean itself)
-Run ──> artifact directory    (cleaned.*, audit.jsonl, report.md — files, not rows)
+Run ──> artifact directory    (cleaned.*, audit.jsonl, findings.jsonl, report.md — files, not rows)
 ```
 
 Two kinds of persistence, deliberately split:
 
 - **SQLite** holds *state and summaries*: config, run history, profiles,
   aggregated issues, the review queue, revisions. Everything queryable.
-- **Artifact files** hold *cell-level detail*: the cleaned table, the audit
-  log (one JSONL line per change), the Markdown report. Immutable once
-  written; the DB stores their paths. Rationale: audit logs are O(cells) and
-  belong next to the data they describe; the DB stays small and fast.
+- **Artifact files** hold *complete cell-level detail*: the cleaned table, the
+  audit log (one JSONL line per applied change), the findings log (one JSONL
+  line per detected issue instance, every tier), the Markdown report.
+  Immutable once written; the DB stores their paths. Rationale: per-cell
+  records are O(cells) and belong next to the data they describe; the DB stays
+  small and fast.
 
 ## 2. Entities
 
@@ -44,8 +57,11 @@ Two kinds of persistence, deliberately split:
 | `created_at` | datetime | |
 
 **Invariants:** `path` unique and stored absolute/normalized. `output_dir` is
-always excluded from scanning regardless of globs. Deleting a folder does not
-delete SourceFiles or Runs (history is the audit trail).
+always excluded from scanning regardless of globs. Deleting a folder
+(`DELETE /folders/{id}`, `datasweep watch rm ID`) removes only the
+`watched_folders` row; SourceFiles and Runs survive as history, with
+`source_files.folder_id` set to NULL by `ON DELETE SET NULL` (§4). A
+`SourceFile` with `folder_id IS NULL` is simply no longer scanned.
 
 ### 2.2 SourceFile
 
@@ -55,7 +71,7 @@ One row per distinct path ever observed (watched or ad-hoc).
 |---|---|---|
 | `id` | str UUID, PK | |
 | `path` | str, required | absolute; unique |
-| `folder_id` | str \| None, FK WatchedFolder | None for ad-hoc `clean FILE` |
+| `folder_id` | str \| None, FK WatchedFolder | None for ad-hoc `clean FILE`, or after its folder was deleted |
 | `first_seen_at` | datetime | |
 | `last_seen_at` | datetime | updated each scan that observes it |
 
@@ -69,7 +85,7 @@ One processing attempt of one content version of one file under one policy.
 
 | Field | Type | Notes |
 |---|---|---|
-| `id` | str UUID, PK | |
+| `id` | str UUID, PK | DB surrogate key; never written into artifacts |
 | `file_id` | str, FK SourceFile | |
 | `content_sha256` | str (64 hex) | hash of source bytes, computed before parse |
 | `policy_hash` | str (16 hex) | sha256[:16] of the canonical-JSON effective policy |
@@ -82,7 +98,7 @@ One processing attempt of one content version of one file under one policy.
 | `encoding` | str \| None | e.g. `utf-8`, `cp1252`; recorded from EncodingDetector |
 | `dialect` | JSON \| None | `{delimiter, quotechar, has_header, sheet}` |
 | `n_rows` / `n_cols` | int \| None | parsed original dimensions (data rows) |
-| `issue_counts` | JSON | per class: `{"ENC":0,"WS":41,...}` (8 classes + `STR`) |
+| `issue_counts` | JSON | per class: `{"ENC":0,"WS":41,...}` — the eight detector classes of FR-6 plus `STR` (reader-emitted structural repairs) |
 | `change_counts` | JSON | per tier: `{"auto": 57, "review": 9, "report": 12}` — review/report counts are *proposals/findings*, not applied changes |
 | `artifact_dir` | str \| None | `<output_dir>/<stem>.<sha256[:8]>/` |
 | `error` | str \| None | set iff status = failed |
@@ -93,8 +109,8 @@ deleted. Idempotence (FR-2): before processing, if any Run with the same
 `succeeded | review_pending`, the new pass records a `skipped` Run (no
 artifacts) unless forced. `artifact_dir` is non-null iff status ∈
 {succeeded, review_pending}. Reproducibility: (`content_sha256`,
-`policy_snapshot`, `engine_version`) determine the artifacts byte-for-byte
-(FR-16).
+`policy_snapshot`, `engine_version`) determine the artifact bytes exactly
+(FR-16) — `Run.id`, `started_at`, and `finished_at` do not appear in them.
 
 ### 2.4 ColumnProfile
 
@@ -106,20 +122,22 @@ artifacts) unless forced. `artifact_dir` is non-null iff status ∈
 | `original_name` | str \| None | pre-repair header when it differs |
 | `inferred_type` | enum `bool \| digits \| integer \| float \| datetime \| date \| categorical \| text` | SCOPE.md FR-5 |
 | `type_coverage` | float [0,1] | share of non-null cells matching `inferred_type` |
-| `non_null` | int | after sentinel normalization |
-| `distinct_count` | int | |
-| `stats` | JSON | type-dependent: numeric `{min,q1,median,q3,max,mad}`; date `{min,max,formats:{"%d/%m/%Y":412}}`; categorical `{top:[["USA",950],...]}`; number convention `{grouping:",",decimal:".",currency:"EUR"}` where inferred |
+| `non_null` | int | cells that are not canonical-null after sentinel normalization |
+| `null_count` | int | cells that are canonical-null after sentinel normalization; `non_null + null_count = n_rows`. Empty cells are data, not defects (SCOPE.md FR-6) — this field, not an issue instance, is how the report tells the user about them |
+| `distinct_count` | int | over non-null cells |
+| `stats` | JSON | type-dependent: numeric `{min,q1,median,q3,max,mad}`; date `{min,max,formats:{"%d/%m/%Y":412},"ambiguous":false}`; categorical `{top:[["USA",950],...]}`; number convention `{grouping:",",decimal:".",currency:"EUR",currency_coverage:0.31,decisive_agree:1.0}` where inferred |
 
 **Invariants:** one row per (run, col_index), written once with the run.
-Camelot-style rule: derived values (e.g. type_coverage) are recomputed by
-evals from the audit + cleaned table and must match — profiles cannot drift
-from the data they summarize.
+Derived values (`type_coverage`, `non_null`, `null_count`, `distinct_count`)
+are recomputed by evals from the cleaned table + audit and must match —
+profiles cannot drift from the data they summarize.
 
 ### 2.5 IssueSummary
 
-Aggregated per (run, detector class, column) for queryability; cell-level
-instances live in `audit.jsonl` (for fixed issues) and `report.md` /
-ReviewItem `cells` (for proposed/reported ones).
+Aggregated per (run, detector class, column) for **queryability**. This is a
+DB-side rollup, not the system of record: the complete, uncapped set of issue
+instances lives in `findings.jsonl` (§3.2), which is what evals and any
+downstream tooling consume.
 
 | Field | Type | Notes |
 |---|---|---|
@@ -129,11 +147,12 @@ ReviewItem `cells` (for proposed/reported ones).
 | `col_index` | int \| None | None for row/file-scope classes (DUP, STR-file) |
 | `cell_count` | int ≥ 1 | affected cells (rows for DUP) |
 | `disposition` | enum `fixed \| proposed \| reported` | tier outcome at plan time |
-| `samples` | JSON | ≤ 10 examples: `[{row, before, after?}, ...]` |
+| `samples` | JSON | ≤ 10 examples: `[{row, before, after?}, ...]` — a UI convenience, deliberately capped so the DB stays small; the full instance list is in `findings.jsonl` |
 | `evidence` | JSON | rule-specific (e.g. `{format_from:"%d/%m/%Y", proof_row: 17}`) |
 
 **Invariants:** written once with the run; `Σ cell_count` per class equals
-`Run.issue_counts[klass]` (checked by tests).
+`Run.issue_counts[klass]`, and equals the number of `findings.jsonl` lines of
+that class (both checked by `tests/test_store.py`).
 
 ### 2.6 ReviewItem
 
@@ -143,21 +162,25 @@ label `U.S.A.` → `USA` (12 cells)", "interpret column `date` as day-first
 
 | Field | Type | Notes |
 |---|---|---|
-| `id` | str, PK | 8-hex short id, unique per run, deterministic: sha256(run_id + rule + col + first_cell)[:8] — stable across re-runs for the same content |
+| `id` | str, PK per run | 8-hex, deterministic and **content-derived**: `sha256(content_sha256 + "\|" + policy_hash + "\|" + engine_version + "\|" + rule + "\|" + str(col_index) + "\|" + str(first_cell_row))[:8]`. Contains no run id and no timestamp, so re-running the same content under the same policy yields the same item ids. On the (astronomically unlikely) collision within one run, items are sorted by (rule, col_index, first_cell_row) and later ones get `_2`, `_3` suffixes |
 | `run_id` | str, FK Run | |
 | `rule` | str | e.g. `fix.date_canon_ambiguous`, `fix.label_merge_nn` |
 | `col_index` | int \| None | |
 | `description` | str | one human line, e.g. "date: ambiguous d/m — propose day-first" |
-| `proposal` | JSON | rule-specific; always includes per-cell `[{row, col, before, after}]` under `cells`, plus alternatives where relevant (`{candidates: [{label:"day-first", ...}, {label:"month-first", ...}]}`) |
+| `proposal` | JSON | rule-specific; always includes per-cell `[{row, col, before, after}]` under `cells`, plus alternatives where relevant (`{candidates: [{label:"day-first", ...}, {label:"month-first", ...}], recommended: "day-first"}`) |
 | `affected_cells` | int | = len(proposal.cells) |
 | `confidence` | float [0,1] | from the D12 formula |
 | `status` | enum `pending \| accepted \| rejected` | |
 | `decided_at` | datetime \| None | |
 
 **Invariants:** status transitions exactly once, `pending → accepted` or
-`pending → rejected`; rows are never deleted. A rejected item's (rule,
-col_index, proposal-hash) is never re-proposed for the same `content_sha256`
-(services check past runs). Accepting items is only valid while their run is
+`pending → rejected`; rows are never deleted. Every cell in `proposal.cells`
+is also a `findings.jsonl` instance of the item's class (SCOPE.md FR-11) — the
+review queue never contains an un-reported finding, which is what lets
+EVALS.md M2 precision and M3_clean_findings see review-tier noise. A rejected
+item's id (which is content-derived, hence stable) is never re-proposed for
+the same `content_sha256` — services check past runs by
+(content_sha256, item id). Accepting items is only valid while their run is
 the file's latest non-skipped run for that content hash.
 
 ### 2.7 Revision (append-only)
@@ -168,27 +191,40 @@ the file's latest non-skipped run for that content hash.
 | `run_id` | str, FK Run | |
 | `revision_no` | int ≥ 1 | unique per run; 1 = the auto-clean produced by the run itself |
 | `created_at` | datetime | |
-| `accepted_item_ids` | JSON | [] for revision 1; the newly accepted ReviewItem ids for r ≥ 2 |
+| `accepted_item_ids` | JSON | `[]` for revision 1; **all** ReviewItem ids accepted so far for r ≥ 2 (cumulative, not incremental) |
 | `cleaned_path` | str | `cleaned.csv` (r1) / `cleaned.r2.csv` … |
-| `audit_path` | str | `audit.jsonl` (r1) / `audit.r2.jsonl` — the *delta* audit for r ≥ 2 (changes applied on top of r−1) |
+| `audit_path` | str | `audit.jsonl` (r1) / `audit.r2.jsonl` — a **complete** audit of the revision against the parsed original, not a delta |
 
-**Invariants:** append-only; `revision_no` dense from 1. Reversibility chain:
-`revert(revision_r, audit_r) == revision_{r−1}` for r ≥ 2, and
-`revert(revision_1, audit_1) == parsed original` (FR-9). Each revision's
-files are written atomically and never rewritten.
+**Invariants:** append-only; `revision_no` dense from 1. Each revision is
+recomputed from the parsed original by applying the auto plan plus all
+accepted items (SCOPE.md FR-11), so the reversibility invariant is uniform:
+`revert(cleaned.r<N>, audit.r<N>) == parsed original` for every N ≥ 1 (FR-9).
+There is no revision *chain* to keep consistent — deliberately, because a
+delta chain multiplies the invariants that can break for no user-visible gain.
+`findings.jsonl` and `report.md` are written once, at revision 1: accepting a
+proposal does not change what was *detected*. Each revision's files are
+written atomically and never rewritten.
 
 ## 3. Artifact & interchange schemas
 
 ### 3.1 Audit log (`audit.jsonl`)
 
-Line 1 is a header entry; every subsequent line is one change. Entries are
-ordered by (pipeline stage, col, row) — the exact application order.
+Line 1 is a header entry; every subsequent line is one applied change. Entries
+are ordered by (pipeline stage, col, row) — the exact application order.
+**No run id and no timestamp appear anywhere in the file** — that is what
+makes byte-identity across runs achievable (FR-16, EVALS.md M6). The run is
+linked to its artifacts through `Run.artifact_dir`, and the header's
+`content_sha256` + `policy_hash` + `engine_version` identify the inputs
+exactly.
 
 ```json
-{"kind":"header","run_id":"7c9e…","source_path":"/data/in/sales.csv",
- "content_sha256":"9f86d0…","policy_hash":"3a5b12c4d5e6f708",
- "engine_version":"0.1.0","revision":1,"n_rows":412,"n_cols":7}
+{"kind":"header","source_name":"sales.csv","content_sha256":"9f86d0…",
+ "policy_hash":"3a5b12c4d5e6f708","engine_version":"0.1.0","revision":1,
+ "n_rows":412,"n_cols":7}
 ```
+
+(`source_name` is the file's basename, not its absolute path: the path is
+machine-specific and would break cross-machine byte-identity.)
 
 `cell_change` — value edits (WS, ENC, MISS, TYPE, DATE, CAT fixes):
 
@@ -208,14 +244,49 @@ ordered by (pipeline stage, col, row) — the exact application order.
 
 `row_pad`, `header_rename`, `column_add` follow the same shape (`row_pad`
 stores padded col indices; `header_rename` stores `before`/`after` names at
-`col`; `column_add` stores the synthetic column's index, name, and cells).
+`col`; `column_add` stores the synthetic column's index, name, and cells —
+used for `_overflow` and for headerless-file synthetic headers).
+
+A `sentinel → null` fix is an ordinary `cell_change` with `"after": null`
+(JSON null), matching the canonical-null definition in SCOPE.md D8.
 
 **Invariants (FR-8/FR-9):** every difference between the parsed original and
 the cleaned table corresponds to exactly one entry; no entry has
 `before == after`; coordinates are original-table; applying entries in
 reverse order to the cleaned table reproduces the parsed original exactly.
 
-### 3.2 Policy (TOML)
+### 3.2 Findings log (`findings.jsonl`)
+
+One line per **detected issue instance**, at every tier — including the ones
+that produce no audit entry because nothing was changed (outliers, numeric
+sentinels, coercion failures, mixed number conventions) and the ones awaiting
+a human (review-tier proposals). This is the machine-readable interchange
+surface for detection (SCOPE.md FR-10/FR-12) and the input EVALS.md M2 and
+M3_clean_findings consume. It is a flat serialization of
+`CleanResult.issues`, ordered by (class, col, row); no header line, no ids, no
+timestamps.
+
+```json
+{"klass":"OUT","rule":"detect.outlier","tier":"report","row":204,"col":2,
+ "col_name":"amount","value":"48200.00",
+ "evidence":{"q1":12.5,"q3":49.0,"iqr":36.5,"upper_fence":158.5,"mad_z":41.2}}
+{"klass":"DATE","rule":"fix.date_canon_ambiguous","tier":"review","row":0,"col":4,
+ "col_name":"order_date","value":"03/04/2021","item_id":"a3f1c2d9",
+ "evidence":{"candidates":["%d/%m/%Y","%m/%d/%Y"],"recommended":"%d/%m/%Y","scope":"column"}}
+{"klass":"WS","rule":"fix.trim","tier":"auto","row":12,"col":0,"col_name":"name",
+ "value":" Ana ","evidence":{"kinds":["leading","trailing"]}}
+```
+
+Fields: `klass` (the nine values of the `issue_summaries` CHECK), `rule`,
+`tier`, `row` (null for column-scope findings that name no single cell),
+`col` / `col_name` (null for row-scope DUP), `value` (the cell text as parsed,
+before any fix), optional `item_id` linking to a ReviewItem, and `evidence`.
+
+**Invariants:** every auto-tier `cell_change` / `row_drop` in `audit.jsonl` has
+a corresponding `findings.jsonl` line at the same coordinates; every
+ReviewItem cell has one; counts per class equal `Run.issue_counts`.
+
+### 3.3 Policy (TOML)
 
 Effective policy = built-in defaults ⊕ folder/CLI policy file ⊕ CLI flags;
 the merged result (canonical JSON, sorted keys) is snapshotted on the Run and
@@ -236,6 +307,8 @@ date = true; cat = true; dup = true; out = true
 [thresholds]
 type_majority = 0.90
 auto_confidence = 0.95
+convention_agree = 0.95           # D7.5 auto threshold for ambiguous cells
+convention_min_decisive = 3       # D7.5 |D| minimum
 merge_dominance = 0.80
 nn_max_ratio = 0.05
 nn_min_majority = 20
@@ -250,14 +323,19 @@ outlier_min_n = 20
 
 Unknown keys are a validation error (fail loud, not silent-ignore).
 
-### 3.3 Report (`report.md`) skeleton
+### 3.4 Report (`report.md`) skeleton
 
 `# datasweep report — sales.csv` → summary table (rows/cols, encoding,
 dialect, issues by class, changes by tier) → per-column table (name, type,
-coverage, non-null, distinct, convention notes) → one section per issue class
-with samples → `## Review queue` (item id, description, confidence, cells) →
-`## Report-only findings` (outliers with values and fences, numeric
-sentinels, coercion failures) → footer (run id, hashes, engine version).
+coverage, non-null, **nulls**, distinct, convention notes) → one section per
+issue class with samples → `## Review queue` (item id, description,
+confidence, cells) → `## Report-only findings` (outliers with values and
+fences, numeric sentinels, coercion failures, mixed number conventions) →
+footer (`content_sha256`, `policy_hash`, `engine_version`, `revision`).
+
+The footer deliberately carries **no run id and no timestamp**: `report.md` is
+covered by the FR-16 byte-identity contract (EVALS.md M6) alongside
+`cleaned.*`, `audit.jsonl`, and `findings.jsonl`.
 
 ## 4. Storage mapping (SQLite)
 
@@ -279,7 +357,7 @@ CREATE TABLE watched_folders (
 CREATE TABLE source_files (
   id            TEXT PRIMARY KEY,
   path          TEXT NOT NULL UNIQUE,
-  folder_id     TEXT REFERENCES watched_folders(id),
+  folder_id     TEXT REFERENCES watched_folders(id) ON DELETE SET NULL,
   first_seen_at TEXT NOT NULL,
   last_seen_at  TEXT NOT NULL
 );
@@ -310,16 +388,17 @@ CREATE INDEX idx_runs_identity ON runs(content_sha256, policy_hash, engine_versi
 CREATE INDEX idx_runs_file     ON runs(file_id, started_at);
 
 CREATE TABLE column_profiles (
-  run_id        TEXT NOT NULL REFERENCES runs(id) ON DELETE CASCADE,
-  col_index     INTEGER NOT NULL CHECK (col_index >= 0),
-  name          TEXT NOT NULL,
-  original_name TEXT,
-  inferred_type TEXT NOT NULL CHECK (inferred_type IN
-                  ('bool','digits','integer','float','datetime','date','categorical','text')),
-  type_coverage REAL NOT NULL,
-  non_null      INTEGER NOT NULL,
+  run_id         TEXT NOT NULL REFERENCES runs(id) ON DELETE CASCADE,
+  col_index      INTEGER NOT NULL CHECK (col_index >= 0),
+  name           TEXT NOT NULL,
+  original_name  TEXT,
+  inferred_type  TEXT NOT NULL CHECK (inferred_type IN
+                   ('bool','digits','integer','float','datetime','date','categorical','text')),
+  type_coverage  REAL NOT NULL,
+  non_null       INTEGER NOT NULL,
+  null_count     INTEGER NOT NULL DEFAULT 0,
   distinct_count INTEGER NOT NULL,
-  stats         TEXT NOT NULL DEFAULT '{}',
+  stats          TEXT NOT NULL DEFAULT '{}',
   PRIMARY KEY (run_id, col_index)
 );
 
@@ -337,7 +416,7 @@ CREATE TABLE issue_summaries (
 CREATE INDEX idx_issues_run ON issue_summaries(run_id, klass);
 
 CREATE TABLE review_items (
-  id             TEXT NOT NULL,              -- 8-hex, deterministic
+  id             TEXT NOT NULL,              -- 8-hex, content-derived (§2.6)
   run_id         TEXT NOT NULL REFERENCES runs(id) ON DELETE CASCADE,
   rule           TEXT NOT NULL,
   col_index      INTEGER,
@@ -365,9 +444,11 @@ CREATE TABLE revisions (
 ```
 
 Runs are never deleted by the application; `ON DELETE CASCADE` exists only for
-manual maintenance. Status transitions on `runs` happen within the single
-processing transaction (insert with `started_at`, finalize once with the rest)
-— readers never observe a half-written run.
+manual maintenance. `source_files.folder_id` uses `ON DELETE SET NULL` so that
+deleting a watched folder cannot fail on, or destroy, run history (§2.1).
+Status transitions on `runs` happen within the single processing transaction
+(insert with `started_at`, finalize once with the rest) — readers never
+observe a half-written run.
 
 ## 5. Example records
 
@@ -405,9 +486,11 @@ processing transaction (insert with `started_at`, finalize once with the rest)
 
 ```json
 {"run_id":"7c9e…","col_index":2,"name":"amount","original_name":null,
- "inferred_type":"float","type_coverage":0.978,"non_null":405,"distinct_count":388,
+ "inferred_type":"float","type_coverage":0.978,"non_null":405,"null_count":7,
+ "distinct_count":388,
  "stats":{"min":0.99,"q1":12.5,"median":24.9,"q3":49.0,"max":2100.0,"mad":18.2,
-          "convention":{"grouping":",","decimal":".","currency":null}}}
+          "convention":{"grouping":",","decimal":".","currency":null,
+                        "decisive_agree":1.0}}}
 ```
 
 **IssueSummary**
@@ -443,4 +526,4 @@ processing transaction (insert with `started_at`, finalize once with the rest)
  "audit_path":"/home/abdoul/exports/.datasweep/sales.9f86d09f/audit.r2.jsonl"}
 ```
 
-Audit entry examples: §3.1.
+Audit entry examples: §3.1. Findings entry examples: §3.2.

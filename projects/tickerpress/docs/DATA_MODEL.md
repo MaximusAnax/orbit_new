@@ -18,10 +18,15 @@ IngestRun                                  (append-only log of ingest passes)
 Delivery 1 ──< DeliveryItem                (append-only exactly-once ledger)
 ```
 
-Committed lexicon files in `data/` (`cues_corporate.txt`,
+Committed lexicon files in `data/` (`cues_corporate.txt`, `cues_anti.txt`,
 `common_words.txt`, `legal_suffixes.txt`, `abbreviations.txt`,
 `tracking_params.txt`, `digest_template.md`) are engine data, not DB rows;
-they version with the code and are covered by `engine_version`.
+they version with the code and are covered by `engine_version`. They are read
+exclusively by `src/tickerpress/resources.py` (via `importlib.resources`) into
+an immutable `Lexicons` value that `services.py` passes into engine functions
+— no module under `engine/` ever opens a file (SCOPE architecture). Their
+sha256 hashes are frozen in `evals/fixtures/lexicon_manifest.json` and gated
+by M6_lex (SCOPE D19).
 
 ## 2. Entities
 
@@ -61,6 +66,10 @@ suffix-stripped short name) are created by `company add` (SCOPE FR-1).
 | `generated` | bool | true for auto-created aliases |
 | `created_at` | datetime | |
 
+There is deliberately **no per-alias threshold column**: θ is one committed
+engine constant (SCOPE FR-6, non-goal 10). Per-surface tuning is done with
+`prior` and the company's `context_terms`/`anti_terms`.
+
 Kind defaults applied at creation (all overridable):
 
 | kind | default strength | default prior |
@@ -94,7 +103,10 @@ ingests only; existing Mention rows keep their `alias_id` (FK is
 
 **Invariants:** `etag`/`last_modified`/`last_polled_at`/`last_status` are the
 only mutable fields, updated once per fetch. Deleting a feed is allowed only
-when it has no articles (otherwise disable it) — archive integrity.
+when it has no articles (otherwise disable it) — archive integrity. Ingest
+iterates enabled feeds in ascending `id` (SCOPE FR-2), which — with
+document-order item processing — makes article ids a pure function of the
+feed bytes.
 
 ### 2.4 IngestRun (append-only)
 
@@ -133,7 +145,8 @@ fields must reconcile with rows created by the run (checked by tests).
 | `first_seen_at` | datetime | ingest `now` |
 | `last_seen_at` | datetime | bumped when the same (feed, guid) is re-seen |
 | `content_sha256` | str (64 hex) | over normalized `title\nsummary\ncontent` |
-| `token_count` | int | total tokens across fields (lede rule input) |
+| `token_count` | int | total tokens across title + summary + content; reporting metadata only |
+| `content_token_count` | int | tokens in the **content** field only; 0 when `content` IS NULL. **This is the FR-8 lede-rule input** (`first ceil(0.25 · content_token_count)` tokens) |
 | `story_id` | int, FK Story | assigned exactly once, during the same ingest transaction that inserts the row |
 | `dedup_similarity` | float \| None | the Jaccard J against the argmax article when joining an existing story (1.0 for canonical-URL/content-hash fast paths); None when this article opened a new story. Explain (FR-13) reads this, never recomputes |
 
@@ -141,6 +154,7 @@ fields must reconcile with rows created by the run (checked by tests).
 insert except `last_seen_at`. `story_id` NOT NULL — every archived article
 belongs to exactly one story before its transaction commits. Re-seen items
 with changed content keep the first-ingested version (SCOPE D16).
+`content_token_count = 0` exactly when `content IS NULL OR content = ''`.
 
 ### 2.6 Story
 
@@ -170,17 +184,29 @@ eval substrate.
 | `id` | int, PK | |
 | `article_id` | int, FK Article | cascade delete (only via company delete paths — articles themselves persist) |
 | `company_ticker` | str, FK Company | cascade delete |
-| `alias_id` | int \| None, FK Alias | `ON DELETE SET NULL`; None also for pattern hits whose alias was later removed |
+| `alias_id` | int \| None, FK Alias | see alias-attribution rule below; `ON DELETE SET NULL`, so it is also None for hits whose alias was later removed |
 | `field` | enum `title \| summary \| content` | |
 | `char_start` / `char_end` | int | offsets into the normalized field text; `0 ≤ start < end` |
 | `surface` | str | exact matched text |
 | `matched_via` | enum `alias \| cashtag \| exchange_qualified` | which recognizer fired |
 | `strength` | enum `strong \| weak` | effective strength at match time |
-| `features` | JSON | full FR-6 feature vector, e.g. `{"prior":0.25,"coref_strong":0,"case_signal":1,"window_cues":1,"window_antis":0,"doc_cues":2,"doc_antis":0,"ctx_terms":1,"anti_terms":0,"hyphen_compound":0,"allcaps_run":0}` |
+| `features` | JSON | full FR-6 feature vector, e.g. `{"prior":0.25,"coref_strong":0,"case_signal":1,"window_cues":1,"window_antis":0,"doc_cues":2,"doc_antis":0,"ctx_terms":1,"anti_terms":0,"hyphen_compound":0,"allcaps_run":0}`; `{}` for strong candidates (not scored) |
 | `score` | float [0,1] | 1.0 for strong |
-| `threshold` | float | θ in effect (default 0.35) |
+| `threshold` | float | the θ in force at scoring time — always the committed engine default (0.35 at v0.1.0). Stored as provenance so rows written under a different `engine_version` stay interpretable; it is never per-alias (SCOPE FR-6) |
 | `accepted` | bool | `score ≥ threshold` |
 | `engine_version` | str | |
+
+**Alias attribution rule (fixes the pattern-hit ambiguity):**
+
+| `matched_via` | `alias_id` points at |
+|---|---|
+| `alias` | the alias row whose `text` matched |
+| `cashtag` | the company's `cashtag` alias row (`$TICKER`) |
+| `exchange_qualified` | the company's `ticker_symbol` alias row (the ticker is what the parenthetical carries) |
+
+If the referenced alias row is later deleted the FK nulls out; a NULL
+`alias_id` therefore always means "alias since removed", never "this
+recognizer has no alias".
 
 **Invariants:** written once at ingest, never updated. Recomputable: given
 the article's normalized text, the watchlist state at ingest time, and
@@ -200,11 +226,18 @@ computed on.
 | `mention_count` | int ≥ 1 | accepted mentions only |
 | `title_hit` | bool | FR-8 component |
 | `lede_hit` | bool | FR-8 component |
-| `relevance` | int 0–100 | `round(100·(0.5·title_hit + 0.25·lede_hit + 0.25·min(1, n/4)))` |
+| `relevance` | int 0–100 | `round_half_up(100·(0.5·title_hit + 0.25·lede_hit + 0.25·min(1, n/4)))` |
 
 **Invariants:** row exists iff the article has ≥ 1 accepted mention for the
 company; components stored so `relevance` is auditable (evals recompute from
 components and from mentions; both must match). Written once at ingest.
+
+`round_half_up(x) = floor(x + 0.5)`, never Python's banker's `round` (SCOPE
+FR-8). Because `relevance` is a function of three small integers, its
+attainable values are exactly
+`{6,13,19,25,31,38,44,50,56,63,69,75,81,88,94,100}`. EVALS §4 uses that
+discreteness to keep fixture stories decidably above or below the
+`min_relevance` / `alert_min_relevance` floors.
 
 ### 2.9 Delivery (append-only)
 
@@ -220,6 +253,10 @@ One composed message on one channel.
 | `subject` | str | e.g. `TickerPress digest — 2026-03-02` / `Alert: TSLA — <headline>` |
 | `body_text` | str | full rendered Markdown (audit copy; FileNotifier writes the same bytes) |
 | `error` | str \| None | set iff status = failed |
+
+A **dry run writes no Delivery row at all** (SCOPE FR-9): it renders and
+returns the body only. There is therefore no such thing as a permanently
+`composed` dry-run row, and dry runs never appear in the audit history.
 
 ### 2.10 DeliveryItem (append-only)
 
@@ -244,6 +281,8 @@ One composed message on one channel.
   (items stay uncounted ⇒ stories re-eligible).
 - The undelivered query considers only `counted=1` items.
 - Rows are never updated after the terminal transaction, never deleted.
+- The constraint is available in **every** configuration: the in-memory
+  backend is `SQLiteRepository(":memory:")`, not a dict store (§4).
 
 ## 3. Artifact & interchange schemas
 
@@ -259,7 +298,7 @@ Fixed Markdown; factual fields only; footer is part of the template
 - [Apple beats March-quarter estimates on services strength](https://wireone.example.com/apple-q2)
   — Wire One, 2026-03-01 21:30 UTC, relevance 94, matched: Apple, Apple Inc., AAPL — +3 other outlets
 - [Apple opens flagship store in Mumbai](https://techledger.example.com/apple-mumbai)
-  — Tech Ledger, 2026-03-01 09:10 UTC, relevance 45, matched: Apple
+  — Tech Ledger, 2026-03-01 09:10 UTC, relevance 44, matched: Apple
 
 ## TSLA — Tesla, Inc.
 - [Tesla recalls 12,000 vehicles over seatbelt fault](https://bizdaily.example.com/tesla-recall)
@@ -270,18 +309,21 @@ Informational only — links to third-party news coverage. Not investment advice
 ```
 
 Alert bodies use the same item line for a single story, subject
-`Alert: <TICKER> — <representative title>`, same footer.
+`Alert: <TICKER> — <representative title>`, same footer. (Relevance values in
+this example are attainable values from §2.8: 94 = title + lede + 3 mentions,
+44 = lede + 3 mentions, 75 = title + ≥4 mentions.)
 
 ### 3.2 Webhook payload (live `WebhookNotifier`)
 
 ```json
 {"text": "<body_text>",
  "items": [{"ticker": "AAPL", "story_id": 41, "url": "https://…", "title": "…",
-            "relevance": 93, "published_at": "2026-03-01T21:30:00Z"}]}
+            "relevance": 94, "published_at": "2026-03-01T21:30:00Z"}]}
 ```
 
 Slack-incoming-webhook-compatible: Slack renders `text`; richer consumers
-read `items`.
+read `items`. `relevance` is the same story-level value carried by the
+corresponding `delivery_items` row.
 
 ### 3.3 Outbox files (`FileNotifier`)
 
@@ -295,6 +337,14 @@ Default `~/.tickerpress/tickerpress.db`; tests use `:memory:` or tmp path.
 WAL mode, foreign keys ON, all writes transactional. Ingest wraps each
 article's insert + story assignment + mentions + appearances in one
 transaction; readers never observe a half-scored article.
+
+**Repository backends.** `store/` exposes one `Repository` protocol and one
+implementation, `SQLiteRepository`. `InMemoryRepository(...)` is a thin
+factory returning `SQLiteRepository(":memory:")` — *not* a dict-backed
+second implementation. Rationale: the exactly-once contract is a partial
+unique index, and a dict store would silently lack it, making ledger tests
+backend-dependent. This also satisfies the CONVENTIONS.md in-memory-backend
+requirement without a parallel code path to keep in sync.
 
 ```sql
 CREATE TABLE companies (
@@ -357,23 +407,25 @@ CREATE TABLE stories (
 );
 
 CREATE TABLE articles (
-  id               INTEGER PRIMARY KEY,
-  feed_id          INTEGER NOT NULL REFERENCES feeds(id),
-  item_guid        TEXT NOT NULL,
-  url              TEXT NOT NULL,
-  canonical_url    TEXT NOT NULL,
-  title            TEXT NOT NULL,
-  summary          TEXT NOT NULL DEFAULT '',
-  content          TEXT,
-  published_at     TEXT NOT NULL,
-  published_source TEXT NOT NULL CHECK (published_source IN ('feed','fallback')),
-  first_seen_at    TEXT NOT NULL,
-  last_seen_at     TEXT NOT NULL,
-  content_sha256   TEXT NOT NULL,
-  token_count      INTEGER NOT NULL,
-  story_id         INTEGER NOT NULL REFERENCES stories(id),
-  dedup_similarity REAL CHECK (dedup_similarity BETWEEN 0.0 AND 1.0),
-  UNIQUE (feed_id, item_guid)
+  id                  INTEGER PRIMARY KEY,
+  feed_id             INTEGER NOT NULL REFERENCES feeds(id),
+  item_guid           TEXT NOT NULL,
+  url                 TEXT NOT NULL,
+  canonical_url       TEXT NOT NULL,
+  title               TEXT NOT NULL,
+  summary             TEXT NOT NULL DEFAULT '',
+  content             TEXT,
+  published_at        TEXT NOT NULL,
+  published_source    TEXT NOT NULL CHECK (published_source IN ('feed','fallback')),
+  first_seen_at       TEXT NOT NULL,
+  last_seen_at        TEXT NOT NULL,
+  content_sha256      TEXT NOT NULL,
+  token_count         INTEGER NOT NULL,
+  content_token_count INTEGER NOT NULL DEFAULT 0,
+  story_id            INTEGER NOT NULL REFERENCES stories(id),
+  dedup_similarity    REAL CHECK (dedup_similarity BETWEEN 0.0 AND 1.0),
+  UNIQUE (feed_id, item_guid),
+  CHECK ((content IS NULL OR content = '') = (content_token_count = 0))
 );
 CREATE INDEX idx_articles_story     ON articles(story_id);
 CREATE INDEX idx_articles_published ON articles(published_at);   -- dedup window scans
@@ -489,9 +541,12 @@ The undelivered-selection query for a channel joins that view against
  "summary":"Apple Inc. (NASDAQ: AAPL) reported quarterly revenue of $96.4 billion, ahead of analyst estimates, as services growth offset softer iPhone sales. Shares rose 3% in extended trading.",
  "content":null,"published_at":"2026-03-01T21:30:00Z","published_source":"feed",
  "first_seen_at":"2026-03-02T13:00:00Z","last_seen_at":"2026-03-02T13:00:00Z",
- "content_sha256":"4e8a1c…","token_count":41,"story_id":41,
- "dedup_similarity":null}
+ "content_sha256":"4e8a1c…","token_count":41,"content_token_count":0,
+ "story_id":41,"dedup_similarity":null}
 ```
+
+(`content` is NULL, so `lede_hit` for this article can only come from the
+first sentence of the summary — which it does: `Apple Inc.` is in it.)
 
 **Story**
 
@@ -500,11 +555,9 @@ The undelivered-selection query for a channel joins that view against
  "first_published_at":"2026-03-01T21:30:00Z","representative_article_id":117}
 ```
 
-**Mentions** (one accepted strong, one accepted weak with evidence, one
-rejected trap from a different article; article 117's third accepted
-mention — the exchange-qualified `AAPL` in the summary, `matched_via:
-"exchange_qualified"` — is omitted for brevity but accounts for
-`mention_count: 3` below)
+**Mentions** — article 117's three accepted mentions (strong legal name,
+weak short name carried by coreference, exchange-qualified ticker) plus one
+rejected trap from a different article.
 
 ```json
 [{"id":901,"article_id":117,"company_ticker":"AAPL","alias_id":3,"field":"summary",
@@ -518,6 +571,10 @@ mention — the exchange-qualified `AAPL` in the summary, `matched_via:
               "window_antis":0,"doc_cues":3,"doc_antis":0,"ctx_terms":1,
               "anti_terms":0,"hyphen_compound":0,"allcaps_run":0},
   "score":1.0,"threshold":0.35,"accepted":true,"engine_version":"0.1.0"},
+ {"id":903,"article_id":117,"company_ticker":"AAPL","alias_id":1,"field":"summary",
+  "char_start":20,"char_end":24,"surface":"AAPL","matched_via":"exchange_qualified",
+  "strength":"strong","features":{},"score":1.0,"threshold":0.35,"accepted":true,
+  "engine_version":"0.1.0"},
  {"id":955,"article_id":131,"company_ticker":"AAPL","alias_id":4,"field":"summary",
   "char_start":52,"char_end":57,"surface":"Apple","matched_via":"alias",
   "strength":"weak",
@@ -526,6 +583,13 @@ mention — the exchange-qualified `AAPL` in the summary, `matched_via:
               "anti_terms":2,"hyphen_compound":0,"allcaps_run":0},
   "score":0.0,"threshold":0.35,"accepted":false,"engine_version":"0.1.0"}]
 ```
+
+Mention 902 illustrates the FR-6 rules: `case_signal` is 0 because the
+surface is title-initial (the title is one sentence), and the raw sum
+`0.25 + 0.50 + 0.20 + 0.15 + 0.15 = 1.25` clamps to 1.0. Mention 903 shows
+the alias-attribution rule: an `exchange_qualified` hit carries the
+`ticker_symbol` alias id (1). Mention 955 is the "Apple growers" trap shape:
+`0.25 + 0.10 − 0.30 − 0.20 − 0.40 = −0.55`, clamped to 0.
 
 **Appearance**
 
