@@ -1,0 +1,35 @@
+{
+  "config_version": "1.0.0",
+  "index": {
+    "window_weeks": 4,
+    "min_sales": 5,
+    "fence_sigma": 3.5,
+    "fence_floor_log": 0.7885,
+    "stale_max_weeks": 8,
+    "parent_weight_window_weeks": 8
+  },
+  "advisor": {
+    "horizons_weeks": [4, 12, 26],
+    "theta_buy": 0.12,
+    "theta_sell": 0.12,
+    "fee_assumption_pct": 0.12,
+    "conf_min": 0.52,
+    "conf_floor": 0.05,
+    "conf_cap": 0.95,
+    "z_half": 0.5,
+    "sigma_min_changes": 12,
+    "active_max_weeks": 26,
+    "active_transient_min": 0.005,
+    "q_index": [
+      {"max_stale_weeks": 0, "factor": 1.0},
+      {"max_stale_weeks": 2, "factor": 0.8},
+      {"max_stale_weeks": 8, "factor": 0.5}
+    ],
+    "source_factor": {"manual": 1.0, "news": 0.95, "social": 0.8},
+    "corroboration_step": 0.05,
+    "corroboration_max_steps": 2
+  },
+  "calibration": {
+    "bucket_edges": [0.45, 0.62]
+  }
+}

@@ -1,0 +1,15 @@
+# TickerPress — query parameters stripped during URL canonicalization
+# (SCOPE FR-4). These vary per syndication channel and would otherwise defeat
+# both article identity and the dedup canonical-URL fast path.
+#
+# A trailing '*' is a prefix wildcard: `utm_*` removes utm_source, utm_medium,
+# utm_campaign, utm_term, utm_content and any future sibling. Matching is
+# case-insensitive on the parameter name. '#' comments and blank lines ignored.
+
+utm_*
+fbclid
+gclid
+mc_cid
+mc_eid
+ref
+cmpid

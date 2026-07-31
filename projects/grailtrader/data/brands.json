@@ -1,0 +1,305 @@
+{
+  "brands": [
+    {
+      "id": "helmut-lang",
+      "name": "Helmut Lang",
+      "aliases": ["Helmut Lang", "HL", "Helmut"],
+      "notes": "Founder-era archive house; the founder exited in 2005 and the archive premium on his era is the canonical case for era-level pricing.",
+      "eras": [
+        {"id": "helmut-lang:helmut", "designer": "Helmut Lang", "label": "Helmut Lang era", "start": "1986-01", "end": "2005-01", "notes": "The archive era; closed when the founder left the label bearing his name."},
+        {"id": "helmut-lang:post", "designer": "various", "label": "post-founder", "start": "2005-02", "end": null, "notes": "Post-founder ownership and design teams; priced well below the founder era."}
+      ]
+    },
+    {
+      "id": "celine",
+      "name": "Celine",
+      "aliases": ["Celine", "Céline", "Old Celine"],
+      "notes": "The 'Old Celine' effect after Phoebe Philo's 2017 departure is the reference case for a closed era re-rating.",
+      "eras": [
+        {"id": "celine:philo", "designer": "Phoebe Philo", "label": "Phoebe Philo era", "start": "2008-10", "end": "2018-01", "notes": "The 'Old Celine' archive; accent dropped from the logo by her successor."},
+        {"id": "celine:slimane", "designer": "Hedi Slimane", "label": "Hedi Slimane era", "start": "2018-02", "end": "2024-09", "notes": ""},
+        {"id": "celine:rider", "designer": "Michael Rider", "label": "Michael Rider era", "start": "2024-10", "end": null, "notes": "Appointed autumn 2024."}
+      ]
+    },
+    {
+      "id": "dior-homme",
+      "name": "Dior Homme",
+      "aliases": ["Dior Homme", "Dior Men", "Dior Men's"],
+      "notes": "Menswear line kept separate from the mainline; the Slimane era carries a durable archive premium.",
+      "eras": [
+        {"id": "dior-homme:slimane", "designer": "Hedi Slimane", "label": "Hedi Slimane era", "start": "2000-09", "end": "2007-02", "notes": "The skinny-tailoring archive era."},
+        {"id": "dior-homme:van-assche", "designer": "Kris Van Assche", "label": "Kris Van Assche era", "start": "2007-03", "end": "2018-03", "notes": ""},
+        {"id": "dior-homme:jones", "designer": "Kim Jones", "label": "Kim Jones era", "start": "2018-04", "end": null, "notes": "Line renamed Dior Men."}
+      ]
+    },
+    {
+      "id": "dior",
+      "name": "Christian Dior",
+      "aliases": ["Christian Dior", "Dior womenswear"],
+      "notes": "Mainline house, tracked separately from the menswear line.",
+      "eras": [
+        {"id": "dior:galliano", "designer": "John Galliano", "label": "John Galliano era", "start": "1996-10", "end": "2011-02", "notes": ""},
+        {"id": "dior:gaytten", "designer": "Bill Gaytten", "label": "Bill Gaytten interim", "start": "2011-03", "end": "2012-03", "notes": "Interim studio direction."},
+        {"id": "dior:simons", "designer": "Raf Simons", "label": "Raf Simons era", "start": "2012-04", "end": "2015-10", "notes": ""},
+        {"id": "dior:chiuri", "designer": "Maria Grazia Chiuri", "label": "Maria Grazia Chiuri era", "start": "2016-07", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "maison-margiela",
+      "name": "Maison Margiela",
+      "aliases": ["Maison Margiela", "Margiela", "MMM", "Maison Martin Margiela"],
+      "notes": "Founder-anonymous house; the Martin Margiela era is the archive era.",
+      "eras": [
+        {"id": "maison-margiela:martin", "designer": "Martin Margiela", "label": "Martin Margiela era", "start": "1988-01", "end": "2009-10", "notes": "Founder era; the archive collectors price."},
+        {"id": "maison-margiela:team", "designer": "design team", "label": "anonymous team era", "start": "2009-11", "end": "2014-09", "notes": ""},
+        {"id": "maison-margiela:galliano", "designer": "John Galliano", "label": "John Galliano era", "start": "2014-10", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "raf-simons",
+      "name": "Raf Simons",
+      "aliases": ["Raf Simons", "Raf"],
+      "notes": "Namesake label; mainline closed in 2022, which permanently froze its archive.",
+      "eras": [
+        {"id": "raf-simons:raf", "designer": "Raf Simons", "label": "Raf Simons mainline", "start": "1995-01", "end": "2022-12", "notes": "Label wound down at the end of 2022."}
+      ]
+    },
+    {
+      "id": "rick-owens",
+      "name": "Rick Owens",
+      "aliases": ["Rick Owens", "Rick", "DRKSHDW"],
+      "notes": "Founder-led, single open era.",
+      "eras": [
+        {"id": "rick-owens:rick", "designer": "Rick Owens", "label": "Rick Owens era", "start": "1994-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "off-white",
+      "name": "Off-White",
+      "aliases": ["Off-White", "Off White", "OW"],
+      "notes": "Hype-era label; resale prices spiked sharply after the founder's death in November 2021.",
+      "eras": [
+        {"id": "off-white:abloh", "designer": "Virgil Abloh", "label": "Virgil Abloh era", "start": "2013-01", "end": "2021-11", "notes": "Closed by the founder's death."},
+        {"id": "off-white:post", "designer": "design team", "label": "post-Abloh", "start": "2021-12", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "louis-vuitton-mens",
+      "name": "Louis Vuitton Men's",
+      "aliases": ["Louis Vuitton Men's", "LV Men", "Louis Vuitton menswear"],
+      "notes": "Menswear line; collab-heavy, with a closed Abloh era.",
+      "eras": [
+        {"id": "louis-vuitton-mens:jones", "designer": "Kim Jones", "label": "Kim Jones era", "start": "2011-04", "end": "2018-01", "notes": "Includes the Supreme collaboration season."},
+        {"id": "louis-vuitton-mens:abloh", "designer": "Virgil Abloh", "label": "Virgil Abloh era", "start": "2018-03", "end": "2021-11", "notes": "Closed by the designer's death."},
+        {"id": "louis-vuitton-mens:studio", "designer": "studio", "label": "studio interim", "start": "2021-12", "end": "2023-01", "notes": ""},
+        {"id": "louis-vuitton-mens:pharrell", "designer": "Pharrell Williams", "label": "Pharrell Williams era", "start": "2023-02", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "jil-sander",
+      "name": "Jil Sander",
+      "aliases": ["Jil Sander", "JS"],
+      "notes": "Minimalist house with several sharply defined eras, including a well-collected Raf Simons tenure.",
+      "eras": [
+        {"id": "jil-sander:founder", "designer": "Jil Sander", "label": "founder era", "start": "1968-01", "end": "2000-01", "notes": ""},
+        {"id": "jil-sander:vukmirovic", "designer": "Milan Vukmirovic", "label": "Milan Vukmirovic era", "start": "2000-02", "end": "2003-04", "notes": ""},
+        {"id": "jil-sander:founder-return", "designer": "Jil Sander", "label": "founder return", "start": "2003-05", "end": "2004-11", "notes": "Brief return by the founder."},
+        {"id": "jil-sander:simons", "designer": "Raf Simons", "label": "Raf Simons era", "start": "2005-07", "end": "2012-02", "notes": "Widely collected."},
+        {"id": "jil-sander:paglialunga", "designer": "Rodolfo Paglialunga", "label": "Rodolfo Paglialunga era", "start": "2014-02", "end": "2017-03", "notes": ""},
+        {"id": "jil-sander:meier", "designer": "Lucie and Luke Meier", "label": "Meier era", "start": "2017-04", "end": "2024-04", "notes": ""},
+        {"id": "jil-sander:bellotti", "designer": "Simone Bellotti", "label": "Simone Bellotti era", "start": "2024-10", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "prada",
+      "name": "Prada",
+      "aliases": ["Prada"],
+      "notes": "Founder-family led; the co-creative-director arrangement from 2020 is treated as a new era.",
+      "eras": [
+        {"id": "prada:miuccia", "designer": "Miuccia Prada", "label": "Miuccia Prada era", "start": "1988-01", "end": "2020-01", "notes": ""},
+        {"id": "prada:miuccia-raf", "designer": "Miuccia Prada and Raf Simons", "label": "Prada / Simons era", "start": "2020-02", "end": null, "notes": "Co-creative direction announced February 2020."}
+      ]
+    },
+    {
+      "id": "gucci",
+      "name": "Gucci",
+      "aliases": ["Gucci"],
+      "notes": "Megabrand with strongly era-differentiated archive demand.",
+      "eras": [
+        {"id": "gucci:tom-ford", "designer": "Tom Ford", "label": "Tom Ford era", "start": "1994-01", "end": "2004-03", "notes": "Heavily collected archive era."},
+        {"id": "gucci:giannini", "designer": "Frida Giannini", "label": "Frida Giannini era", "start": "2006-01", "end": "2014-12", "notes": ""},
+        {"id": "gucci:michele", "designer": "Alessandro Michele", "label": "Alessandro Michele era", "start": "2015-01", "end": "2022-11", "notes": ""},
+        {"id": "gucci:de-sarno", "designer": "Sabato De Sarno", "label": "Sabato De Sarno era", "start": "2023-01", "end": "2025-02", "notes": ""},
+        {"id": "gucci:demna", "designer": "Demna", "label": "Demna era", "start": "2025-07", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "balenciaga",
+      "name": "Balenciaga",
+      "aliases": ["Balenciaga"],
+      "notes": "House whose resale demand fell measurably after the November 2022 campaign controversy.",
+      "eras": [
+        {"id": "balenciaga:ghesquiere", "designer": "Nicolas Ghesquiere", "label": "Nicolas Ghesquiere era", "start": "1997-08", "end": "2012-11", "notes": "Archive era."},
+        {"id": "balenciaga:wang", "designer": "Alexander Wang", "label": "Alexander Wang era", "start": "2012-12", "end": "2015-07", "notes": ""},
+        {"id": "balenciaga:demna", "designer": "Demna", "label": "Demna era", "start": "2015-10", "end": "2025-06", "notes": ""},
+        {"id": "balenciaga:piccioli", "designer": "Pierpaolo Piccioli", "label": "Pierpaolo Piccioli era", "start": "2025-07", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "saint-laurent",
+      "name": "Saint Laurent",
+      "aliases": ["Saint Laurent", "YSL", "Yves Saint Laurent"],
+      "notes": "The Slimane tenure renamed the ready-to-wear line and is priced as its own era.",
+      "eras": [
+        {"id": "saint-laurent:pilati", "designer": "Stefano Pilati", "label": "Stefano Pilati era", "start": "2004-06", "end": "2012-02", "notes": ""},
+        {"id": "saint-laurent:slimane", "designer": "Hedi Slimane", "label": "Hedi Slimane era", "start": "2012-03", "end": "2016-03", "notes": ""},
+        {"id": "saint-laurent:vaccarello", "designer": "Anthony Vaccarello", "label": "Anthony Vaccarello era", "start": "2016-04", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "bottega-veneta",
+      "name": "Bottega Veneta",
+      "aliases": ["Bottega Veneta", "Bottega", "BV"],
+      "notes": "Quiet-luxury house with distinct, well-documented tenures.",
+      "eras": [
+        {"id": "bottega-veneta:maier", "designer": "Tomas Maier", "label": "Tomas Maier era", "start": "2001-01", "end": "2018-06", "notes": ""},
+        {"id": "bottega-veneta:lee", "designer": "Daniel Lee", "label": "Daniel Lee era", "start": "2018-07", "end": "2021-11", "notes": ""},
+        {"id": "bottega-veneta:blazy", "designer": "Matthieu Blazy", "label": "Matthieu Blazy era", "start": "2021-12", "end": "2024-12", "notes": ""},
+        {"id": "bottega-veneta:trotter", "designer": "Louise Trotter", "label": "Louise Trotter era", "start": "2025-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "number-n-nine",
+      "name": "Number (N)ine",
+      "aliases": ["Number (N)ine", "Number Nine", "NNN"],
+      "notes": "Closed Japanese label; the whole run is a single closed era, which is why its archive is finite.",
+      "eras": [
+        {"id": "number-n-nine:miyashita", "designer": "Takahiro Miyashita", "label": "Takahiro Miyashita era", "start": "1996-01", "end": "2009-03", "notes": "Label closed in 2009."}
+      ]
+    },
+    {
+      "id": "undercover",
+      "name": "Undercover",
+      "aliases": ["Undercover", "UC"],
+      "notes": "Founder-led Japanese label, single open era.",
+      "eras": [
+        {"id": "undercover:takahashi", "designer": "Jun Takahashi", "label": "Jun Takahashi era", "start": "1990-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "comme-des-garcons",
+      "name": "Comme des Garcons",
+      "aliases": ["Comme des Garcons", "Comme des Garçons", "CDG"],
+      "notes": "Founder-led, single open era; sub-lines are not separate brands in this gazetteer.",
+      "eras": [
+        {"id": "comme-des-garcons:rei", "designer": "Rei Kawakubo", "label": "Rei Kawakubo era", "start": "1969-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "junya-watanabe",
+      "name": "Junya Watanabe",
+      "aliases": ["Junya Watanabe", "Junya"],
+      "notes": "Founder-led line under the Comme des Garcons umbrella, tracked separately.",
+      "eras": [
+        {"id": "junya-watanabe:junya", "designer": "Junya Watanabe", "label": "Junya Watanabe era", "start": "1992-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "yohji-yamamoto",
+      "name": "Yohji Yamamoto",
+      "aliases": ["Yohji Yamamoto", "Yohji", "Y's"],
+      "notes": "Founder-led, single open era.",
+      "eras": [
+        {"id": "yohji-yamamoto:yohji", "designer": "Yohji Yamamoto", "label": "Yohji Yamamoto era", "start": "1981-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "issey-miyake",
+      "name": "Issey Miyake",
+      "aliases": ["Issey Miyake", "Issey"],
+      "notes": "Founder handed over design direction in 2007; later eras are studio-led.",
+      "eras": [
+        {"id": "issey-miyake:issey", "designer": "Issey Miyake", "label": "Issey Miyake era", "start": "1970-01", "end": "2007-01", "notes": ""},
+        {"id": "issey-miyake:fujiwara", "designer": "Dai Fujiwara", "label": "Dai Fujiwara era", "start": "2007-02", "end": "2011-04", "notes": ""},
+        {"id": "issey-miyake:miyamae", "designer": "Yoshiyuki Miyamae", "label": "Yoshiyuki Miyamae era", "start": "2011-05", "end": "2019-03", "notes": ""},
+        {"id": "issey-miyake:kondo", "designer": "Satoshi Kondo", "label": "Satoshi Kondo era", "start": "2019-04", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "stone-island",
+      "name": "Stone Island",
+      "aliases": ["Stone Island", "SI"],
+      "notes": "Technical outerwear house; the Massimo Osti period is the collected archive era.",
+      "eras": [
+        {"id": "stone-island:osti", "designer": "Massimo Osti", "label": "Massimo Osti era", "start": "1982-01", "end": "1994-12", "notes": ""},
+        {"id": "stone-island:post", "designer": "design team", "label": "post-Osti", "start": "1995-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "cp-company",
+      "name": "C.P. Company",
+      "aliases": ["C.P. Company", "CP Company", "CPC"],
+      "notes": "Founded by Massimo Osti; the founder era is the archive era.",
+      "eras": [
+        {"id": "cp-company:osti", "designer": "Massimo Osti", "label": "Massimo Osti era", "start": "1971-01", "end": "1983-12", "notes": ""},
+        {"id": "cp-company:post", "designer": "design team", "label": "post-Osti", "start": "1984-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "vetements",
+      "name": "Vetements",
+      "aliases": ["Vetements", "Vêtements"],
+      "notes": "Collective label; the first creative director's era is the collected one.",
+      "eras": [
+        {"id": "vetements:demna", "designer": "Demna", "label": "Demna era", "start": "2014-01", "end": "2019-05", "notes": ""},
+        {"id": "vetements:guram", "designer": "Guram Gvasalia", "label": "Guram Gvasalia era", "start": "2019-06", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "jean-paul-gaultier",
+      "name": "Jean Paul Gaultier",
+      "aliases": ["Jean Paul Gaultier", "JPG", "Gaultier"],
+      "notes": "Founder retired from runway in 2020; the archive saw a documented celebrity-driven revival.",
+      "eras": [
+        {"id": "jean-paul-gaultier:founder", "designer": "Jean Paul Gaultier", "label": "founder era", "start": "1976-01", "end": "2020-01", "notes": "Founder's final runway show was January 2020."},
+        {"id": "jean-paul-gaultier:guests", "designer": "guest designers", "label": "guest-designer era", "start": "2020-02", "end": null, "notes": "Rotating guest couturiers."}
+      ]
+    },
+    {
+      "id": "acne-studios",
+      "name": "Acne Studios",
+      "aliases": ["Acne Studios", "Acne"],
+      "notes": "Founder-led, single open era.",
+      "eras": [
+        {"id": "acne-studios:johansson", "designer": "Jonny Johansson", "label": "Jonny Johansson era", "start": "1996-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "lemaire",
+      "name": "Lemaire",
+      "aliases": ["Lemaire"],
+      "notes": "Founder-led, single open era.",
+      "eras": [
+        {"id": "lemaire:christophe", "designer": "Christophe Lemaire and Sarah-Linh Tran", "label": "Lemaire era", "start": "2015-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "our-legacy",
+      "name": "Our Legacy",
+      "aliases": ["Our Legacy"],
+      "notes": "Founder-led Swedish label, single open era.",
+      "eras": [
+        {"id": "our-legacy:founders", "designer": "Christopher Nying and Jockum Hallin", "label": "founder era", "start": "2005-01", "end": null, "notes": ""}
+      ]
+    },
+    {
+      "id": "martine-rose",
+      "name": "Martine Rose",
+      "aliases": ["Martine Rose"],
+      "notes": "Founder-led, single open era.",
+      "eras": [
+        {"id": "martine-rose:martine", "designer": "Martine Rose", "label": "Martine Rose era", "start": "2007-01", "end": null, "notes": ""}
+      ]
+    }
+  ]
+}

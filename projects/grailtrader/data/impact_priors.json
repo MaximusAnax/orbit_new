@@ -1,0 +1,169 @@
+{
+  "priors": [
+    {
+      "key": "designer_departure.resignation",
+      "target": "era",
+      "direction": "bullish",
+      "permanent_pct": 0.12,
+      "transient_pct": 0.1,
+      "half_life_weeks": 8.0,
+      "base_conf": 0.72,
+      "rationale": "A designer's exit closes their era, so the supply of pieces carrying that signature stops growing; resale demand re-rates the closed era upward and a slice of the move is a short-lived attention spike.",
+      "source_note": "The RealReal resale reporting on 'Old Celine' after Phoebe Philo's December 2017 departure: sustained double-digit lift in Philo-era resale demand and price through 2018, on top of an announcement-week spike."
+    },
+    {
+      "key": "designer_departure.ousted",
+      "target": "era",
+      "direction": "bullish",
+      "permanent_pct": 0.12,
+      "transient_pct": 0.14,
+      "half_life_weeks": 7.0,
+      "base_conf": 0.7,
+      "rationale": "An abrupt, contested exit closes the era the same way a resignation does, but the news cycle is louder, so more of the move is attention that fades.",
+      "source_note": "Pattern observed across abrupt creative-director exits covered by BoF/WWD: sharper announcement-week resale search and price spikes than planned departures, with a similar durable era premium once the era is closed."
+    },
+    {
+      "key": "designer_departure.death",
+      "target": "era",
+      "direction": "bullish",
+      "permanent_pct": 0.2,
+      "transient_pct": 0.25,
+      "half_life_weeks": 6.0,
+      "base_conf": 0.78,
+      "rationale": "When a designer dies, their era's supply is permanently finite and demand spikes; resale prices have jumped sharply within days and partially retraced over the following weeks.",
+      "source_note": "StockX resale data on Off-White and Louis Vuitton x Nike after Virgil Abloh's death, Nov 2021: double-digit price spikes within days, partial decay over weeks."
+    },
+    {
+      "key": "designer_departure.house_closure",
+      "target": "era",
+      "direction": "bullish",
+      "permanent_pct": 0.18,
+      "transient_pct": 0.12,
+      "half_life_weeks": 10.0,
+      "base_conf": 0.75,
+      "rationale": "A house shutting down freezes the whole archive: nothing further will ever be produced, so the re-rating is large and durable while the news itself decays slowly.",
+      "source_note": "Archive premiums observed after label closures (e.g. the Raf Simons mainline closing in 2022 and the long-run premium on founder-era Helmut Lang after 2005) — durable level shifts rather than spikes."
+    },
+    {
+      "key": "designer_appointment.acclaimed.brand",
+      "target": "brand",
+      "direction": "bullish",
+      "permanent_pct": 0.06,
+      "transient_pct": 0.08,
+      "half_life_weeks": 8.0,
+      "base_conf": 0.62,
+      "rationale": "A well-regarded appointment raises the whole house's heat: search and resale interest lift across the brand, with part of the lift persisting as renewed relevance.",
+      "source_note": "Lyst Index methodology, which builds brand heat from search volume and social moments; appointment announcements are among the largest recurring movers in its quarterly rankings."
+    },
+    {
+      "key": "designer_appointment.neutral.brand",
+      "target": "brand",
+      "direction": "bullish",
+      "permanent_pct": 0.02,
+      "transient_pct": 0.04,
+      "half_life_weeks": 8.0,
+      "base_conf": 0.52,
+      "rationale": "An appointment with a mixed or unformed reputation still puts the house in the news, but the market waits for the first collection before repricing much.",
+      "source_note": "Lyst Index brand-heat moves for appointments without strong prior critical standing: measurable but small relative to acclaimed hires."
+    },
+    {
+      "key": "designer_appointment.unproven.brand",
+      "target": "brand",
+      "direction": "bullish",
+      "permanent_pct": 0.0,
+      "transient_pct": 0.03,
+      "half_life_weeks": 8.0,
+      "base_conf": 0.46,
+      "rationale": "An unproven appointment generates coverage but no durable revaluation; treat it as context, not as a trade.",
+      "source_note": "Lyst Index: coverage spikes for first-time creative directors do not persist into sustained demand until a collection ships. base_conf sits below conf_min by design."
+    },
+    {
+      "key": "designer_appointment.*.predecessor_era",
+      "target": "predecessor_era",
+      "direction": "bullish",
+      "permanent_pct": 0.06,
+      "transient_pct": 0.04,
+      "half_life_weeks": 8.0,
+      "base_conf": 0.64,
+      "rationale": "Naming a successor formally closes the previous designer's era: that archive stops growing, which is the mechanism behind durable era premiums.",
+      "source_note": "The 'Old Celine' pattern (The RealReal, 2018) after Hedi Slimane succeeded Phoebe Philo: the predecessor era, not the house, carried the durable premium."
+    },
+    {
+      "key": "collab_announcement.*",
+      "target": "brand",
+      "direction": "bullish",
+      "permanent_pct": 0.02,
+      "transient_pct": 0.1,
+      "half_life_weeks": 4.0,
+      "base_conf": 0.6,
+      "rationale": "A collaboration announcement is a hype cycle: resale interest in the brand spikes around the drop and mostly fades, leaving a small residue of broadened audience.",
+      "source_note": "Supreme x Louis Vuitton (2017) and Nike x Off-White 'The Ten' (2017) resale premiums: very large announcement/drop-window spikes on the collab pieces with a short half-life, and a smaller spillover onto the parent brands."
+    },
+    {
+      "key": "celebrity_cosign.*",
+      "target": "given",
+      "direction": "bullish",
+      "permanent_pct": 0.0,
+      "transient_pct": 0.1,
+      "half_life_weeks": 3.0,
+      "base_conf": 0.5,
+      "rationale": "A high-profile celebrity moment lifts search and resale demand for the worn brand/era quickly, and the effect fades within weeks unless reinforced.",
+      "source_note": "Lyst Index methodology (brand heat from search/social moments); Lyst/Depop-reported search spikes for vintage Jean Paul Gaultier during the Bella Hadid-driven revival. Tier scaling a_list 1.0 / b_list 0.5 / niche 0.25 applied to T. base_conf sits below conf_min (0.52) by design: a co-sign is context, not a trade - and its total modeled move (<= 0.10) also sits below theta."
+    },
+    {
+      "key": "runway_reception.acclaimed",
+      "target": "brand",
+      "direction": "bullish",
+      "permanent_pct": 0.02,
+      "transient_pct": 0.05,
+      "half_life_weeks": 6.0,
+      "base_conf": 0.52,
+      "rationale": "A well-received show raises the house's standing for a season; some of that survives as reputation, most of it decays with the news cycle.",
+      "source_note": "Lyst Index quarterly moves following widely praised shows: measurable brand-heat lift, largely reversed by the following quarter."
+    },
+    {
+      "key": "runway_reception.panned",
+      "target": "brand",
+      "direction": "bearish",
+      "permanent_pct": 0.0,
+      "transient_pct": -0.04,
+      "half_life_weeks": 6.0,
+      "base_conf": 0.5,
+      "rationale": "A badly received show dents near-term desirability without changing what the archive is worth; the effect is small and temporary.",
+      "source_note": "Lyst Index: negative critical receptions register as short-lived declines in brand heat and rarely move secondhand price levels durably."
+    },
+    {
+      "key": "brand_scandal.minor",
+      "target": "brand",
+      "direction": "bearish",
+      "permanent_pct": -0.05,
+      "transient_pct": -0.05,
+      "half_life_weeks": 6.0,
+      "base_conf": 0.58,
+      "rationale": "A contained controversy makes buyers hesitate to wear the logo; demand softens modestly and partly recovers.",
+      "source_note": "Smaller-scale controversy episodes reported by Grailed/StockX demand data: single-digit percentage demand declines that largely mean-revert within a quarter."
+    },
+    {
+      "key": "brand_scandal.moderate",
+      "target": "brand",
+      "direction": "bearish",
+      "permanent_pct": -0.1,
+      "transient_pct": -0.1,
+      "half_life_weeks": 8.0,
+      "base_conf": 0.68,
+      "rationale": "A sustained controversy suppresses demand across the house: buyers avoid the branding, sellers cut prices, and only part of the demand returns.",
+      "source_note": "adidas-Yeezy split, Oct 2022: resale demand and prices for the affected line fell sharply and did not fully recover over the following months."
+    },
+    {
+      "key": "brand_scandal.severe",
+      "target": "brand",
+      "direction": "bearish",
+      "permanent_pct": -0.15,
+      "transient_pct": -0.15,
+      "half_life_weeks": 10.0,
+      "base_conf": 0.74,
+      "rationale": "A severe scandal is a durable reputational hit: the brand becomes socially costly to wear, and resale demand takes a lasting step down on top of the immediate slump.",
+      "source_note": "Balenciaga campaign scandal, Nov 2022: StockX/Grailed demand data showed a double-digit drop in resale demand within weeks and a persistently lower level afterwards."
+    }
+  ]
+}

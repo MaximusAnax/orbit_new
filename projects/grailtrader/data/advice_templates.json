@@ -1,0 +1,152 @@
+{
+  "footer": "GrailTrader models a collectibles market — unregulated, illiquid (sales take weeks to months), with authenticity risk. This is information about that model, not investment advice.",
+  "forbidden_lexicon": [
+    "guaranteed",
+    "guarantee",
+    "can't lose",
+    "cannot lose",
+    "sure thing",
+    "risk-free",
+    "riskless",
+    "will definitely",
+    "easy money",
+    "no risk",
+    "zero risk",
+    "certain profit",
+    "cannot fail",
+    "always wins",
+    "free money"
+  ],
+  "required_markers": [
+    {"section": "action", "marker": "Action:"},
+    {"section": "expected_move", "marker": "Modeled move:"},
+    {"section": "drivers", "marker": "Why now:"},
+    {"section": "valuation", "marker": "Valuation:"},
+    {"section": "valuation_method", "marker": "Method:"},
+    {"section": "confidence", "marker": "Confidence:"},
+    {"section": "falsifier", "marker": "Falsifier:"},
+    {"section": "fees", "marker": "Fees & liquidity:"}
+  ],
+  "templates": [
+    {
+      "id": "buy-event-driven",
+      "action": "buy",
+      "hold_reasons": [],
+      "garment_statuses": [],
+      "headline": "Consider buying: {garment_label}\nAction: buy · Modeled move: {expected_move} over {horizon_weeks} weeks",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "weakens if the market has already repriced this event, or if this piece's size and condition make it slow to move",
+      "fee_note": "Fees & liquidity: acting costs roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    },
+    {
+      "id": "sell-into-spike",
+      "action": "sell",
+      "hold_reasons": [],
+      "garment_statuses": ["owned", "sold_archived"],
+      "headline": "Consider selling: {garment_label}\nAction: sell · Modeled move: {expected_move} over {horizon_weeks} weeks",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "weakens if attention on this name keeps building instead of decaying, or if supply stays unusually thin",
+      "fee_note": "Fees & liquidity: acting costs roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    },
+    {
+      "id": "sell-avoid-watching",
+      "action": "sell",
+      "hold_reasons": [],
+      "garment_statuses": ["watching"],
+      "headline": "Avoid or wait: {garment_label}\nAction: sell · Modeled move: {expected_move} over {horizon_weeks} weeks",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "weakens if attention on this name keeps building instead of decaying, or if supply stays unusually thin",
+      "fee_note": "Fees & liquidity: buying in costs roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    },
+    {
+      "id": "hold-quiet",
+      "action": "hold",
+      "hold_reasons": ["no_active_events"],
+      "garment_statuses": [],
+      "headline": "Holding: {garment_label}\nAction: hold · Modeled move: none modeled — {hold_reason}",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "changes as soon as a confirmed event touches this brand, era or category",
+      "fee_note": "Fees & liquidity: any action would cost roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    },
+    {
+      "id": "hold-no-index",
+      "action": "hold",
+      "hold_reasons": ["no_index"],
+      "garment_statuses": [],
+      "headline": "Holding: {garment_label}\nAction: hold · Modeled move: none modeled — {hold_reason}",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "changes once enough sold comps exist for this brand, era or category to build an index",
+      "fee_note": "Fees & liquidity: any action would cost roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    },
+    {
+      "id": "hold-stale-index",
+      "action": "hold",
+      "hold_reasons": ["stale_index"],
+      "garment_statuses": [],
+      "headline": "Holding: {garment_label}\nAction: hold · Modeled move: none modeled — {hold_reason}",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "changes once fresh sold comps arrive for this stratum",
+      "fee_note": "Fees & liquidity: any action would cost roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    },
+    {
+      "id": "hold-insufficient-history",
+      "action": "hold",
+      "hold_reasons": ["insufficient_history"],
+      "garment_statuses": [],
+      "headline": "Holding: {garment_label}\nAction: hold · Modeled move: none modeled — {hold_reason}",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "changes once this stratum has enough published weeks to estimate its own volatility",
+      "fee_note": "Fees & liquidity: any action would cost roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    },
+    {
+      "id": "hold-no-baseline",
+      "action": "hold",
+      "hold_reasons": ["no_baseline"],
+      "garment_statuses": [],
+      "headline": "Holding: {garment_label}\nAction: hold · Modeled move: none modeled — {hold_reason}",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "changes once the index covers a week before the driving event, giving the model something to measure the move against",
+      "fee_note": "Fees & liquidity: any action would cost roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    },
+    {
+      "id": "hold-below-threshold",
+      "action": "hold",
+      "hold_reasons": ["below_threshold"],
+      "garment_statuses": [],
+      "headline": "Holding: {garment_label}\nAction: hold · Modeled move: {expected_move} over {horizon_weeks} weeks — {hold_reason}",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "changes if a further event stacks onto this stratum and pushes the modeled move past the fee threshold",
+      "fee_note": "Fees & liquidity: the modeled move is smaller than the roughly {fee_assumption_pct} one-way cost of acting, which is why this is a hold."
+    },
+    {
+      "id": "hold-low-confidence",
+      "action": "hold",
+      "hold_reasons": ["low_confidence"],
+      "garment_statuses": [],
+      "headline": "Holding: {garment_label}\nAction: hold · Modeled move: {expected_move} over {horizon_weeks} weeks — {hold_reason}",
+      "drivers": "Why now:\n{driver_lines}",
+      "valuation_context": "Valuation: {fair_value} · Method: {valuation_method} · Typical excellent-condition comp for the leaf stratum: {level_usd}",
+      "uncertainty": "Confidence: {confidence} · Falsifier: {falsifier}",
+      "falsifier": "changes if corroboration rises, the index freshens, or a stronger driver joins the picture",
+      "fee_note": "Fees & liquidity: acting would cost roughly {fee_assumption_pct} one way in platform and payment fees, and this market clears over weeks to months, not days."
+    }
+  ]
+}
