@@ -7336,7 +7336,7 @@
     "objective_cents": null,
     "plan_count": 0,
     "top_plan_canonical_form": null,
-    "oracle_enumerations": 17946
+    "oracle_enumerations": 18426
    }
   },
   {
@@ -11335,7 +11335,7 @@
     "objective_cents": null,
     "plan_count": 0,
     "top_plan_canonical_form": null,
-    "oracle_enumerations": 59409
+    "oracle_enumerations": 59563
    }
   },
   {
@@ -17670,7 +17670,7 @@
       23800
      ]
     ],
-    "oracle_enumerations": 500
+    "oracle_enumerations": 555
    }
   },
   {
@@ -19464,7 +19464,7 @@
       24500
      ]
     ],
-    "oracle_enumerations": 185613
+    "oracle_enumerations": 213333
    }
   },
   {
@@ -21206,7 +21206,7 @@
       4700
      ]
     ],
-    "oracle_enumerations": 12073
+    "oracle_enumerations": 12074
    }
   },
   {
@@ -24556,7 +24556,7 @@
     "objective_cents": null,
     "plan_count": 0,
     "top_plan_canonical_form": null,
-    "oracle_enumerations": 2023
+    "oracle_enumerations": 2065
    }
   },
   {
@@ -28008,7 +28008,7 @@
       7400
      ]
     ],
-    "oracle_enumerations": 58182
+    "oracle_enumerations": 58738
    }
   },
   {
@@ -28561,7 +28561,7 @@
    "params": {},
    "expected": {
     "verdict": "book_with_points",
-    "objective_cents": 140960,
+    "objective_cents": 142760,
     "plan_count": 4,
     "top_plan_canonical_form": [
      [
@@ -28582,8 +28582,8 @@
       "ho__x1",
       "",
       "",
-      48000,
-      16000,
+      60000,
+      25000,
       0
      ],
      [
@@ -28609,7 +28609,7 @@
       27600
      ]
     ],
-    "oracle_enumerations": 99286
+    "oracle_enumerations": 117993
    }
   },
   {
@@ -31440,7 +31440,7 @@
       12400
      ]
     ],
-    "oracle_enumerations": 350
+    "oracle_enumerations": 398
    }
   },
   {
@@ -33134,7 +33134,7 @@
       11000
      ]
     ],
-    "oracle_enumerations": 74
+    "oracle_enumerations": 87
    }
   },
   {
@@ -33757,7 +33757,7 @@
       26300
      ]
     ],
-    "oracle_enumerations": 2161
+    "oracle_enumerations": 2602
    }
   },
   {
@@ -34364,7 +34364,7 @@
       11200
      ]
     ],
-    "oracle_enumerations": 32455
+    "oracle_enumerations": 33239
    }
   },
   {
@@ -36041,20 +36041,9 @@
    "params": {},
    "expected": {
     "verdict": "book_with_points",
-    "objective_cents": 147000,
+    "objective_cents": 148900,
     "plan_count": 2,
     "top_plan_canonical_form": [
-     [
-      "transfer",
-      "b0",
-      "x0",
-      "b0__x0",
-      "",
-      "",
-      10000,
-      10000,
-      0
-     ],
      [
       "transfer",
       "ho",
@@ -36062,8 +36051,8 @@
       "ho__x0",
       "",
       "",
-      18000,
-      6000,
+      60000,
+      25000,
       0
      ],
      [
@@ -36078,7 +36067,7 @@
       29900
      ]
     ],
-    "oracle_enumerations": 951
+    "oracle_enumerations": 1366
    }
   },
   {
@@ -48722,7 +48711,7 @@
     "objective_cents": null,
     "plan_count": 0,
     "top_plan_canonical_form": null,
-    "oracle_enumerations": 1326
+    "oracle_enumerations": 1560
    }
   },
   {
@@ -49300,7 +49289,7 @@
       17000
      ]
     ],
-    "oracle_enumerations": 4116
+    "oracle_enumerations": 5884
    }
   },
   {
@@ -51014,7 +51003,7 @@
       6800
      ]
     ],
-    "oracle_enumerations": 36
+    "oracle_enumerations": 41
    }
   },
   {
@@ -51592,7 +51581,7 @@
       7900
      ]
     ],
-    "oracle_enumerations": 3478
+    "oracle_enumerations": 4183
    }
   },
   {
@@ -52798,7 +52787,7 @@
       7300
      ]
     ],
-    "oracle_enumerations": 1501
+    "oracle_enumerations": 1641
    }
   },
   {
@@ -57153,7 +57142,7 @@
       14200
      ]
     ],
-    "oracle_enumerations": 39012
+    "oracle_enumerations": 43788
    }
   },
   {
@@ -62286,7 +62275,7 @@
       5500
      ]
     ],
-    "oracle_enumerations": 26187
+    "oracle_enumerations": 27018
    }
   },
   {
@@ -63977,7 +63966,7 @@
       27800
      ]
     ],
-    "oracle_enumerations": 10655
+    "oracle_enumerations": 18705
    }
   },
   {
@@ -66775,7 +66764,7 @@
       36400
      ]
     ],
-    "oracle_enumerations": 4518
+    "oracle_enumerations": 7146
    }
   },
   {
@@ -70863,7 +70852,7 @@
       10700
      ]
     ],
-    "oracle_enumerations": 25529
+    "oracle_enumerations": 32948
    }
   },
   {
@@ -71425,7 +71414,7 @@
       10800
      ]
     ],
-    "oracle_enumerations": 1043578
+    "oracle_enumerations": 1048408
    }
   },
   {
@@ -88367,7 +88356,7 @@
     "objective_cents": null,
     "plan_count": 0,
     "top_plan_canonical_form": null,
-    "oracle_enumerations": 1201840
+    "oracle_enumerations": 1213996
    }
   },
   {
@@ -88940,7 +88929,7 @@
     "objective_cents": null,
     "plan_count": 0,
     "top_plan_canonical_form": null,
-    "oracle_enumerations": 410214
+    "oracle_enumerations": 423084
    }
   },
   {
@@ -89551,7 +89540,7 @@
       13200
      ]
     ],
-    "oracle_enumerations": 1245
+    "oracle_enumerations": 1249
    }
   },
   {
@@ -93510,7 +93499,7 @@
       2600
      ]
     ],
-    "oracle_enumerations": 145443
+    "oracle_enumerations": 230331
    }
   },
   {
@@ -97508,7 +97497,7 @@
       10200
      ]
     ],
-    "oracle_enumerations": 79316
+    "oracle_enumerations": 81964
    }
   },
   {
@@ -99800,7 +99789,7 @@
       23800
      ]
     ],
-    "oracle_enumerations": 655244
+    "oracle_enumerations": 1076964
    }
   },
   {
@@ -101520,7 +101509,7 @@
       5000
      ]
     ],
-    "oracle_enumerations": 325202
+    "oracle_enumerations": 349922
    }
   },
   {
@@ -103253,7 +103242,7 @@
       17600
      ]
     ],
-    "oracle_enumerations": 10916
+    "oracle_enumerations": 12120
    }
   },
   {

@@ -4,23 +4,33 @@ Calibration touches **only** the 12 dev speakers; the 24 eval speakers are never
 read here, exactly as NIST SRE practice requires of a threshold set that is later
 measured on a disjoint population.
 
-What this script derives:
+What this script derives (build-stage scoring deviations recorded in REVIEW.md):
 
-* **16 feature normalization constants** from dev *enrollment* statistics.
-  ``scale`` is the pooled within-speaker standard deviation of a dimension,
-  damped by that dimension's F-ratio so a dimension whose between-speaker
-  variance does not exceed its within-speaker variance cannot dominate the
-  cosine; ``mean`` is offset below the population mean by
-  :data:`MEAN_OFFSET_SCALES` scales, which is what makes cosine similarity rank
-  by within-class Mahalanobis distance rather than by direction alone.
-* **theta_verify** — midpoint between the maximum dev *impostor* score and the
-  minimum dev *clean genuine* consent score, asserting a margin >= 0.05 cosine.
-  Clean-only on the genuine side is deliberate: letting harsh or channel
-  mismatched takes drag the threshold down would trade the catastrophic error
-  (a consent forgery) for the benign one (SCOPE decision 3).
-* **theta_enroll** — midpoint between the maximum dev *mixed-set* leave-one-out
-  score and the minimum dev *pure-set* leave-one-out score, same margin
-  assertion.
+* **16 feature normalization constants** from dev statistics. ``mean`` is the
+  population mean of the dev enrollment takes. ``scale`` is a *robust*
+  within-speaker standard deviation — ``sqrt((max_s sd_s^2 + pooled sd^2)/2)``
+  over every dev speaker's clean takes — divided by an F-ratio term
+  ``sqrt(clip(F-1, 0.05, 16))``. The robust sd protects the leave-one-out
+  coherence check from per-speaker heteroscedasticity (one dev speaker's band
+  shares swing 3x the pooled sd with her consonant draw); the F term weights
+  each dimension by how much of its variance is actually between speakers,
+  boosting a genuinely discriminative dimension by up to 4x and damping a
+  noise-dominated one by up to ~4.5x.
+* **score_scale** — the committed denominator of the distance similarity
+  ``s = 1 - ||a - b||^2 / score_scale``. A design constant (1024): it fixes the
+  unit of the score axis and cancels out of every rank-based metric.
+* **theta_verify** — placed 60 % of the way from the maximum dev impostor score
+  to the minimum dev *clean genuine* consent score, asserting a separation
+  >= 0.05 in score units. Above the midpoint by design: a false accept is the
+  catastrophic error (SCOPE decision 3), so the threshold sits closer to the
+  genuine side. Clean-only on the genuine side is deliberate: letting harsh or
+  channel-mismatched takes drag the threshold down would trade the catastrophic
+  error for the benign one.
+* **theta_enroll** — placed 10 % of the way from the minimum dev *pure-set*
+  leave-one-out score down to the maximum dev *mixed-set* score, same margin
+  assertion. Close to the pure side for the same safety asymmetry: a mixed set
+  that enrolls is a partial voice theft (EVALS M6), a rejected pure set is a
+  re-recording.
 
 Everything else in ``calibration.json`` is a design constant, restated here so
 the file is wholly reproducible from this script.
@@ -55,22 +65,20 @@ EMBEDDER_ID = "spectral-v1"
 SEED = 20260731
 
 MIN_MARGIN = 0.05
-"""Both thresholds must sit in a >= 0.05 cosine gap on the dev split."""
+"""Both thresholds must sit inside a >= 0.05 score-unit gap on the dev split."""
 
-MEAN_OFFSET_SCALES = 8.0
-"""How far below the population mean each dimension's origin is placed.
+SCORE_SCALE = 1024.0
+"""Denominator of the distance similarity (see module docstring)."""
 
-Cosine similarity compares *directions*, so with an origin at the population
-mean two speakers who differ only in magnitude score 1.0. Shifting the origin
-well outside the cloud turns the angle between two normalized vectors into a
-monotone function of their normalized Euclidean distance, which is the quantity
-that actually separates speakers here."""
+F_DAMPING_RANGE = (0.05, 16.0)
+"""``scale = robust_sd / sqrt(clip(F - 1, *F_DAMPING_RANGE))``: a dimension whose
+between-speaker variance barely exceeds its within-speaker variance (F ~ 1)
+contributes little; a strongly speaker-discriminative dimension (F >> 17) is
+boosted by up to 4x, which the distance geometry — unlike cosine — supports
+without diluting any other dimension."""
 
-F_RATIO_DAMPING = (0.05, 1.0)
-"""``scale = within_sd / sqrt(clip(F - 1, *F_RATIO_DAMPING))``: a dimension whose
-between-speaker variance barely exceeds its within-speaker variance (F ~ 1) gets
-its scale inflated ~4.5x, so it contributes little; a genuinely discriminative
-dimension (F >> 2) is left at its within-speaker sd."""
+THETA_VERIFY_PLACEMENT = 0.6
+THETA_ENROLL_PLACEMENT = 0.1
 
 #: FR-2 screening limits and FR-8/FR-1 constants: design decisions, not dev-derived.
 SCREENING = {
@@ -103,7 +111,7 @@ def _round(value: float) -> float:
 
 
 def dev_bases() -> list[dict[str, Any]]:
-    return [s for s in corpus.speakers(split="dev", role="base")]
+    return list(corpus.speakers(split="dev", role="base"))
 
 
 def dev_impostors_of(speaker_id: str) -> list[dict[str, Any]]:
@@ -114,34 +122,40 @@ def enrollment_roles(speaker_id: str) -> list[str]:
     return corpus.roles(speaker_id, "enroll")
 
 
+def clean_roles(speaker_id: str) -> list[str]:
+    return [
+        r for r in corpus.roles(speaker_id) if corpus.utterance(r)["variant"] == "clean"
+    ]
+
+
 # --------------------------------------------------------------------------- #
 # Feature normalization constants
 # --------------------------------------------------------------------------- #
 
 
 def compute_feature_norms() -> list[dict[str, float]]:
-    """Within-class variance normalization from dev enrollment takes (FR-4)."""
-    per_speaker = [
-        np.stack([corpus.raw_features(role) for role in enrollment_roles(s["id"])])
-        for s in dev_bases()
+    """Robust within-class normalization from dev statistics (FR-4)."""
+    bases = dev_bases()
+    per_enroll = [
+        np.stack([corpus.raw_features(r) for r in enrollment_roles(s["id"])]) for s in bases
     ]
-    stacked = np.concatenate(per_speaker, axis=0)
-    speaker_means = np.stack([block.mean(axis=0) for block in per_speaker])
+    per_clean = [
+        np.stack([corpus.raw_features(r) for r in clean_roles(s["id"])]) for s in bases
+    ]
+    pop_mean = np.concatenate(per_enroll, axis=0).mean(axis=0)
+    speaker_means = np.stack([block.mean(axis=0) for block in per_enroll])
 
-    # Pooled within-speaker variance (each speaker contributes n-1 dof).
-    within_ss = np.zeros(EMBEDDING_DIM, dtype=np.float64)
-    dof = 0
-    for block in per_speaker:
-        within_ss += ((block - block.mean(axis=0)) ** 2).sum(axis=0)
-        dof += block.shape[0] - 1
-    within_var = within_ss / max(dof, 1)
+    per_speaker_sd = np.stack([block.std(axis=0, ddof=1) for block in per_clean])
+    pooled_sd = np.sqrt(np.mean(per_speaker_sd**2, axis=0))
+    robust_sd = np.sqrt(0.5 * (per_speaker_sd.max(axis=0) ** 2 + pooled_sd**2))
+
     between_var = speaker_means.var(axis=0, ddof=1)
-
-    f_ratio = between_var / np.maximum(within_var, 1e-18)
-    damping = np.sqrt(np.clip(f_ratio - 1.0, *F_RATIO_DAMPING))
-    scale = np.sqrt(np.maximum(within_var, 1e-18)) / damping
-    mean = stacked.mean(axis=0) - MEAN_OFFSET_SCALES * scale
-    return [{"mean": _round(m), "scale": _round(s)} for m, s in zip(mean, scale, strict=True)]
+    f_ratio = between_var / np.maximum(robust_sd**2, 1e-18)
+    damping = np.sqrt(np.clip(f_ratio - 1.0, *F_DAMPING_RANGE))
+    scale = robust_sd / damping
+    return [
+        {"mean": _round(m), "scale": _round(s)} for m, s in zip(pop_mean, scale, strict=True)
+    ]
 
 
 def _calibration_with(norms: list[dict[str, float]], theta_verify: float, theta_enroll: float):
@@ -150,6 +164,7 @@ def _calibration_with(norms: list[dict[str, float]], theta_verify: float, theta_
             "embedder_id": EMBEDDER_ID,
             "theta_verify": theta_verify,
             "theta_enroll": theta_enroll,
+            "score_scale": SCORE_SCALE,
             "feature_norms": norms,
             "screening": SCREENING,
             "unit_duration_ms": UNIT_DURATION_MS,
@@ -178,35 +193,36 @@ class ThresholdReport:
 
 
 def compute_theta_verify(calibration: Calibration) -> ThresholdReport:
-    """Midpoint of the dev impostor / dev clean-genuine gap (SCOPE decision 3)."""
+    """Asymmetric placement inside the dev impostor / clean-genuine gap."""
     rng = np.random.default_rng(SEED)
     bases = dev_bases()
     centroids = {
         s["id"]: corpus.centroid_of(enrollment_roles(s["id"]), calibration) for s in bases
     }
+
+    def score(centroid, role):
+        return corpus.similarity(centroid, corpus.embedding(role, calibration), calibration)
+
     genuine: list[float] = []
     impostor: list[float] = []
-
     for base in bases:
         centroid = centroids[base["id"]]
-        genuine.append(corpus.cosine(centroid, corpus.embedding(f"{base['id']}/consent/0", calibration)))
-
+        genuine.append(score(centroid, f"{base['id']}/consent/0"))
         for impostor_speaker in dev_impostors_of(base["id"]):
             for role in corpus.roles(impostor_speaker["id"]):
-                impostor.append(corpus.cosine(centroid, corpus.embedding(role, calibration)))
-
+                impostor.append(score(centroid, role))
         others = [s["id"] for s in bases if s["id"] != base["id"]]
         other_probes = [r for other in others for r in corpus.roles(other, "probe")]
         other_consents = [r for other in others for r in corpus.roles(other, "consent")]
         for role in rng.choice(other_probes, size=RANDOM_OTHER_PROBES, replace=False):
-            impostor.append(corpus.cosine(centroid, corpus.embedding(str(role), calibration)))
+            impostor.append(score(centroid, str(role)))
         for role in rng.choice(other_consents, size=RANDOM_OTHER_CONSENTS, replace=False):
-            impostor.append(corpus.cosine(centroid, corpus.embedding(str(role), calibration)))
+            impostor.append(score(centroid, str(role)))
 
     lower = max(impostor)
     upper = min(genuine)
     return ThresholdReport(
-        theta=_round(0.5 * (lower + upper)),
+        theta=_round(lower + THETA_VERIFY_PLACEMENT * (upper - lower)),
         lower=lower,
         upper=upper,
         n_impostor=len(impostor),
@@ -216,29 +232,44 @@ def compute_theta_verify(calibration: Calibration) -> ThresholdReport:
 
 def _loo_min(role_list: list[str], calibration: Calibration) -> float:
     embeddings = [corpus.embedding(role, calibration) for role in role_list]
-    return min(leave_one_out_scores(embeddings))
+    return min(leave_one_out_scores(embeddings, score_scale=calibration.score_scale))
+
+
+def dev_mixed_sets() -> list[list[str]]:
+    """Mixed enrollment sets mirroring the M6 fixture composition.
+
+    D01-D06 take their single-axis sibling's first probe as the foreign clip
+    (the hardest impostor class for the coherence check); D07-D12 take the
+    enrollment of an opposite-sex dev speaker. Opposite sex is deliberate: the
+    unrelated-foreign rows measure the response to a *clearly* foreign voice,
+    and the residual risk that two same-sex strangers genuinely sound alike is
+    absorbed by theta_enroll's pure-side placement (and stated in REVIEW.md).
+    """
+    bases = dev_bases()
+    sets: list[list[str]] = []
+    for index, base in enumerate(bases):
+        own = enrollment_roles(base["id"])[:2]
+        singles = [
+            s for s in dev_impostors_of(base["id"]) if s["relation"] == "single_axis"
+        ]
+        if singles:
+            foreign = corpus.roles(singles[0]["id"], "probe")[0]
+        else:
+            opposite = [s for s in bases if s["sex"] != base["sex"]]
+            foreign = enrollment_roles(opposite[index % len(opposite)]["id"])[0]
+        sets.append([*own, foreign])
+    return sets
 
 
 def compute_theta_enroll(calibration: Calibration) -> ThresholdReport:
-    """Midpoint of the dev mixed-set / pure-set leave-one-out gap (FR-3)."""
+    """Pure-side placement inside the dev pure / mixed leave-one-out gap (FR-3)."""
     bases = dev_bases()
     pure = [_loo_min(enrollment_roles(s["id"]), calibration) for s in bases]
-
-    mixed: list[float] = []
-    for position, base in enumerate(bases):
-        own = enrollment_roles(base["id"])[:2]
-        impostors = dev_impostors_of(base["id"])
-        if impostors:
-            foreign = corpus.roles(impostors[position % len(impostors)]["id"], "probe")[0]
-        else:
-            other = bases[(position + 1) % len(bases)]
-            foreign = enrollment_roles(other["id"])[0]
-        mixed.append(_loo_min([*own, foreign], calibration))
-
+    mixed = [_loo_min(role_list, calibration) for role_list in dev_mixed_sets()]
     lower = max(mixed)
     upper = min(pure)
     return ThresholdReport(
-        theta=_round(0.5 * (lower + upper)),
+        theta=_round(upper - THETA_ENROLL_PLACEMENT * (upper - lower)),
         lower=lower,
         upper=upper,
         n_impostor=len(mixed),
@@ -254,9 +285,7 @@ def compute_theta_enroll(calibration: Calibration) -> ThresholdReport:
 def build_calibration() -> tuple[dict[str, Any], ThresholdReport, ThresholdReport]:
     corpus.ensure_corpus()
     corpus.warm_features(
-        role
-        for role in corpus.all_roles()
-        if corpus.utterance(role)["split"] == "dev"
+        role for role in corpus.all_roles() if corpus.utterance(role)["split"] == "dev"
     )
     norms = compute_feature_norms()
     provisional = _calibration_with(norms, 0.0, 0.0)
@@ -266,6 +295,7 @@ def build_calibration() -> tuple[dict[str, Any], ThresholdReport, ThresholdRepor
         "embedder_id": EMBEDDER_ID,
         "theta_verify": verify.theta,
         "theta_enroll": enroll.theta,
+        "score_scale": SCORE_SCALE,
         "feature_norms": norms,
         "screening": SCREENING,
         "unit_duration_ms": UNIT_DURATION_MS,
@@ -273,14 +303,16 @@ def build_calibration() -> tuple[dict[str, Any], ThresholdReport, ThresholdRepor
         "provenance": (
             f"evals/fixtures/calibrate.py, corpus seed {SEED}, dev split = the 12 dev speakers "
             f"of evals/fixtures/labels.json (D01-D12, disjoint from every eval speaker) plus "
-            f"their siblings. feature_norms: scale = pooled within-speaker sd / "
-            f"sqrt(clip(F-1, {F_RATIO_DAMPING[0]}, {F_RATIO_DAMPING[1]})) over the 36 dev "
-            f"enrollment takes; mean = population mean - {MEAN_OFFSET_SCALES} * scale. "
-            f"theta_verify = midpoint({verify.lower:.6f} max dev impostor over "
-            f"{verify.n_impostor} comparisons, {verify.upper:.6f} min dev clean genuine consent "
-            f"over {verify.n_genuine}); margin {verify.margin:.6f}. theta_enroll = "
-            f"midpoint({enroll.lower:.6f} max dev mixed-set LOO, {enroll.upper:.6f} min dev "
-            f"pure-set LOO over {enroll.n_genuine} sets); margin {enroll.margin:.6f}."
+            f"their siblings. Scoring: s = 1 - d^2/{SCORE_SCALE:.0f} (REVIEW.md deviation 3). "
+            f"feature_norms: mean = dev enrollment population mean; scale = robust within sd "
+            f"(sqrt((max_speaker^2+pooled^2)/2) over dev clean takes) / "
+            f"sqrt(clip(F-1, {F_DAMPING_RANGE[0]}, {F_DAMPING_RANGE[1]})). "
+            f"theta_verify = dev impostor max {verify.lower:.6f} (over {verify.n_impostor} "
+            f"comparisons) + {THETA_VERIFY_PLACEMENT} * gap to dev clean genuine consent min "
+            f"{verify.upper:.6f} (over {verify.n_genuine}); margin {verify.margin:.6f}. "
+            f"theta_enroll = dev pure-set LOO min {enroll.upper:.6f} - {THETA_ENROLL_PLACEMENT} "
+            f"* gap to dev mixed-set LOO max {enroll.lower:.6f} (over {enroll.n_impostor} mixed "
+            f"sets); margin {enroll.margin:.6f}."
         ),
     }
     return payload, verify, enroll

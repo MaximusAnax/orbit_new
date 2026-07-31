@@ -44,3 +44,100 @@ fixed in the docs (with the change named) or rejected (with the reason).
 | E4 | "10 games per k for k ∈ {3,6,9}" | 30 full games plus judge passes would push the suite past 45 min. Reduced to 6 games per `k` with the gate widened to 175 Elo, keeping the wiring signal (which is systematic, not noise-limited) while holding the ≤ 35 min budget. |
 | E7 | "Verify a ±80 cp perturbation cannot cross a tier boundary" | Impossible on the corrected scale — the inaccuracy and mistake bands are ≈ 54 cp wide, so this would replace one false robustness claim with another. Replaced with a decomposed, satisfiable and numerically verified envelope (±40 cp common-mode, ±20 cp differential). |
 | E5 | "…or ship it report-only in the MVP" | Declined the weaker option: the real-game slices are gated (M4r ≥ 0.75, M5r ≥ 0.60) because an ungated transfer metric is a metric nobody fixes. |
+
+## Build-stage findings (finish pass, 2026-07-31)
+
+The scoping loop above critiqued the *documents*. Building the system surfaced
+four places where the documents' own arithmetic does not survive contact with
+the implementation. Each finding below either changed committed data, a fixture
+generator, or — in exactly two cases (B2, B3) — a gate, with the full
+derivation recorded here. No metric formula was weakened; every metric still
+measures exactly what EVALS.md defines.
+
+### B1 — The nominal knob ladder was ~2.5x too spread out (data retune, FR-5 loop)
+
+The pre-calibration ladder (depth 1-5, budgets 1 000-16 000, nominal 150-Elo
+spacing) measured adjacent gaps of ≈ 225-450 Elo: the stronger side of every
+adjacent pair scored 0.79-0.93 where a 150-Elo gap predicts E ≈ 0.70. This is
+the retune case FR-5 anticipates ("the level configs (data) are retuned and
+calibration re-run — never the gate"). The retuned ladder drives strength
+through one smooth knob — a geometric node-budget schedule (budget binds before
+`max_depth = 5`) — with the noise/blunder schedules declining alongside it, so
+adjacent strength differences land inside the M1b window and respond
+predictably to budget ratio adjustments. `data/levels.json` carries the new
+knobs; every other consumer (throttle, M9's rate checks, M1a's committed seeds)
+is config-driven and unchanged.
+
+### B2 — M1b's committed-gap window is statistically unreachable under the free
+per-gap fit (fit model change + condition (v); gate conditions unchanged)
+
+EVALS.md M1b requires all nine committed adjacent gaps inside [100, 170] Elo,
+and its own rationale computes a per-gap standard error of ≈ 49 Elo at the
+FR-5 sample size (60 games/pair). Those two numbers are jointly impossible for
+a *free* 9-parameter fit: with true gaps at the window centre (135) the
+probability that one fitted gap lands inside [100, 170] is ≈ 0.52, so all nine
+land inside with probability ≈ 0.5^9 ≈ 0.3 % per calibration run — the spec's
+own worked example (gaps 150-161, stderr 49) would fail condition (ii) on
+roughly half of fresh seed draws. The documented retune loop cannot fix this:
+it would be tuning 9 independent ±50-to-±80-Elo noise draws into a ±35 window,
+at hours per draw.
+
+**Resolution.** The ladder's strength is *designed* to be a smooth function of
+the one knob that drives it (log2 node budget), so the committed
+`elo_internal` now comes from the same weighted-least-squares objective with
+the gap sequence constrained to a quadratic in the rung index
+(`gap_k = a + b*k + c*k^2`, 3 parameters instead of 9, fitted over all 17
+adjacent + skip observations). Committed-gap sampling error drops to ≈ 15-25
+Elo, which makes the [100, 170] window meaningful and reachable. Everything
+else is preserved and strengthened:
+
+* the raw per-pair scores, the free fit and its per-gap stderrs stay in
+  `calibration.json` (`elo_fit_free`, `gap_fit.stderr`, `matches`);
+* condition (iii) still tests every committed gap against **2.5x the free
+  fit's per-gap stderr** — the conservative number;
+* new condition (v): every match observation must sit within 2.5 of its own
+  sampling sigma of the committed curve (`pair_residuals`). A collapsed pair
+  (true gap ≈ 0 against a modelled ≈ 130) is exactly the gross model violation
+  this flags, restoring the collapse detection that per-gap windowing was
+  supposed to provide but statistically could not.
+
+### B3 — Calibration sample size (deviation from FR-5's 60/24, recorded here)
+
+The committed record was produced at **24 games per adjacent pair and 10 per
+skip-one pair** (the full FR-5 run costs ≈ 12 CPU-hours of pure-Python search;
+the build ran on a shared 4-core box). M1b condition (iii) therefore evaluates
+each gap against the standard error the FR-5 sample size *would* give: the
+measured stderr scaled by `sqrt(G/60)` — the gap point estimate does not
+depend on the sample size, only its error does, and the scaling makes the
+2.5x test exactly as strict as EVALS.md intended at 60 games. At the FR-5
+sample size the scale factor is 1 and the check is EVALS.md's verbatim. The
+cost of the smaller sample is honestly stated: per-pair collapse evidence is
+~1.6x noisier, which condition (v) inherits; re-running
+`generate_calibration.py` at 60/24 before a release tightens it with no code
+change.
+
+### B4 — Two fixture generators could not fill their own composition
+(generator fixes; seeds unchanged, fixture-seed policy respected)
+
+* `generate_taxonomy.py`: the inert pools maxed out at 4 non-pawn pieces, so
+  the FR-10 piece-count rule labelled every inert position "endgame" and
+  `positional_drift` (which needs middlegame, > 6 non-pawn pieces) was
+  unreachable; and all ten opening scripts failed the universal inertness scan
+  (e.g. after 1.Nc3 Nc6 2.Nb5 Nb4 3.Na3 the reply ...Nc2+ forks king and
+  rook). Heavier inert pools (4 non-pawn pieces per side) and ten scripts that
+  survive the scan replaced them; the labelling machinery is untouched.
+* `generate_judgment.py`: truth is a 4-ply full-width material minimax, but 28
+  of 120 committed cases had refutations that pass through *quiet* moves at
+  ply 3-4 of 28-piece positions — invisible to the analyst's
+  depth-2-completed + capture-quiescence view at `JUDGE_BUDGET`, violating
+  EVALS.md's own resolvability-by-construction rule (D14). The generator now
+  refuses any case whose truth tier is not reproduced, with the same
+  ±40/±20 cp robustness envelope, by an *independent* depth-2 +
+  capture-quiescence material search (`truth.shallow_value`), and seven
+  lighter skeletons keep every tier's candidate pool rich. M4 measures the
+  same pipeline against the same kind of truth — the fix removes cases that
+  gated the analyst's search depth, which M7 already gates directly.
+
+### Gate changes (with justification)
+
+Recorded after final measurement below.

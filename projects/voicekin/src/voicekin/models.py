@@ -195,6 +195,7 @@ class Calibration(BaseModel):
     embedder_id: str
     theta_verify: float = Field(ge=-1.0, le=1.0)
     theta_enroll: float = Field(ge=-1.0, le=1.0)
+    score_scale: float = Field(gt=0.0)
     feature_norms: list[FeatureNorm]
     screening: ScreeningLimits
     unit_duration_ms: int = Field(gt=0)

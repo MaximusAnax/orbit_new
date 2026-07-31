@@ -340,17 +340,28 @@ def run(
         )
         observations.append((low, high, smoothed, count))
 
-    ratings, covariance, free = fit_elo(observations, level_ids)
+    ratings_free, covariance, free = fit_elo(observations, level_ids)
+    ratings, gap_model, level_model, pair_residuals = fit_gap_model(observations, level_ids)
 
     index_of = {lid: k for k, lid in enumerate(free)}
-    elo_fit = []
+    elo_fit_free = []
     for lid in level_ids:
         if lid == ANCHOR_LEVEL_ID:
             stderr = 0.0
         else:
             stderr = math.sqrt(max(float(covariance[index_of[lid], index_of[lid]]), 0.0))
-        elo_fit.append({"level_id": lid, "elo_internal": ratings[lid], "stderr": stderr})
+        elo_fit_free.append({"level_id": lid, "elo_internal": ratings_free[lid], "stderr": stderr})
 
+    #: The committed curve is the parametric fit; ``elo_fit`` mirrors it.
+    model_stderr = {int(entry["level_id"]): float(entry["stderr"]) for entry in level_model}
+    elo_fit = [
+        {"level_id": lid, "elo_internal": ratings[lid], "stderr": model_stderr.get(lid, 0.0)}
+        for lid in level_ids
+    ]
+
+    # ``gap_fit`` carries the committed (model) gap with the *free* fit's
+    # per-gap standard error — the conservative number M1b's 2.5x-stderr test
+    # runs against (docs/REVIEW.md, build-stage finding B2).
     gap_fit = []
     for low, high in pair_list(len(levels), skip=1):
         gap_fit.append(
@@ -435,9 +446,13 @@ def run(
         "games_per_adjacent_pair": games_adjacent,
         "games_per_skip_pair": games_skip,
         "acpl_games_per_level": acpl_games,
+        "fit_model": "wls-quadratic-gaps (gap_k = a + b*k + c*k^2); see docs/REVIEW.md B2",
         "matches": matches,
         "elo_fit": elo_fit,
         "gap_fit": gap_fit,
+        "elo_fit_free": elo_fit_free,
+        "gap_model": gap_model,
+        "pair_residuals": pair_residuals,
         "acpl": acpl_records,
         "levels_sha256": sha256_of(levels_path),
     }

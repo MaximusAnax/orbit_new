@@ -15,8 +15,8 @@ from dataclasses import dataclass
 import numpy as np
 
 from voicekin.engine.dsp import VoiceFeatures
-from voicekin.engine.verification import cosine_similarity
-from voicekin.engine.voicebox import RADIATION_DB_OCT, REFERENCE_F1_HZ, REFERENCE_F2_HZ
+from voicekin.engine.verification import DEFAULT_SCORE_SCALE, distance_similarity
+from voicekin.engine.voicebox import RADIATION_DB_OCT
 from voicekin.models import EnrollmentSample, SampleStatus, VoiceParams
 
 MIN_ACCEPTED_SAMPLES = 3
@@ -26,6 +26,15 @@ MIN_VOICED_SECONDS = 10.0
 FORMANT_SCALE_RANGE = (0.60, 1.60)
 TILT_RANGE_DB_OCT = (-24.0, 0.0)
 MAX_RELATIVE_F0_RANGE = 0.5
+
+#: What the FR-4 estimator reports for a ``formant_scale = 1.0`` voice: the
+#: measured F1/F2 trimmed means over balanced pseudo-speech, per axis. Derived
+#: from the dev fixture split (the measured location divided by the generating
+#: vocal-tract factor is stable to a few percent across speakers), so the
+#: derived ``formant_scale`` lands near the vocal-tract factor that actually
+#: produced the enrollment audio.
+F1_ANCHOR_HZ = 520.0
+F2_ANCHOR_HZ = 1080.0
 
 _EPS = 1e-12
 
@@ -40,23 +49,34 @@ def l2_normalize(vector: Sequence[float]) -> list[float]:
 
 
 def centroid(embeddings: Sequence[Sequence[float]]) -> list[float]:
-    """L2-normalized mean of the sample embeddings (FR-3)."""
+    """Mean of the sample embeddings (FR-3).
+
+    Build-stage deviation (REVIEW.md): the mean is *not* L2-normalized, because
+    scoring is by calibrated Euclidean distance and normalizing the centroid
+    would move it off the samples' true center.
+    """
     if not embeddings:
         raise ValueError("a centroid needs at least one embedding")
     stacked = np.asarray(embeddings, dtype=np.float64)
     if stacked.ndim != 2:
         raise ValueError("embeddings must all share one dimensionality")
-    return l2_normalize(stacked.mean(axis=0))
+    return [float(v) for v in stacked.mean(axis=0)]
 
 
-def leave_one_out_scores(embeddings: Sequence[Sequence[float]]) -> list[float]:
+def leave_one_out_scores(
+    embeddings: Sequence[Sequence[float]],
+    *,
+    score_scale: float = DEFAULT_SCORE_SCALE,
+) -> list[float]:
     """Each embedding scored against the centroid of the *other* embeddings."""
     if len(embeddings) < 2:
         raise ValueError("leave-one-out coherence needs at least two embeddings")
     scores: list[float] = []
     for index in range(len(embeddings)):
         others = [e for position, e in enumerate(embeddings) if position != index]
-        scores.append(cosine_similarity(embeddings[index], centroid(others)))
+        scores.append(
+            distance_similarity(embeddings[index], centroid(others), score_scale=score_scale)
+        )
     return scores
 
 
@@ -71,9 +91,14 @@ class CoherenceResult:
     theta_enroll: float
 
 
-def check_coherence(embeddings: Sequence[Sequence[float]], theta_enroll: float) -> CoherenceResult:
+def check_coherence(
+    embeddings: Sequence[Sequence[float]],
+    theta_enroll: float,
+    *,
+    score_scale: float = DEFAULT_SCORE_SCALE,
+) -> CoherenceResult:
     """Refuse an enrollment set whose members do not agree on one speaker."""
-    scores = leave_one_out_scores(embeddings)
+    scores = leave_one_out_scores(embeddings, score_scale=score_scale)
     worst_index = int(np.argmin(scores))
     min_score = float(scores[worst_index])
     return CoherenceResult(
@@ -110,36 +135,99 @@ def is_enrolled_complete(samples: Sequence[EnrollmentSample]) -> bool:
     return len(accepted) >= MIN_ACCEPTED_SAMPLES and voiced_seconds(accepted) >= MIN_VOICED_SECONDS
 
 
-def derive_voice_params(features: Sequence[VoiceFeatures]) -> VoiceParams:
-    """Derive the offline synthesizer's parameters from enrollment analysis (FR-3).
+#: Analysis-by-synthesis refinement constants (FR-3). The calibration sentence
+#: is fixed, English-like, and long enough (~6 s) for stable measurements; the
+#: seed is fixed, so the derivation is a deterministic function of the
+#: enrollment features (FR-15).
+DERIVATION_TEXT = "the house is ready and the morning is quiet now so we can begin"
+DERIVATION_SEED = 20260731
+DERIVATION_UNIT_MS = 180
+DERIVATION_ITERATIONS = 2
+_F0_STEP_CLIP = 0.2
+_TILT_STEP_CLIP_DB = 8.0
+_SCALE_STEP_CLIP = (0.75, 1.35)
 
-    Medians across samples, so one atypical take cannot drag the voice: pitch
-    from the log-F0 median, declination span from the log-F0 IQR, the
-    vocal-tract-length proxy from F1/F2 relative to the reference vowel space,
-    and the source tilt straight from the spectral regression.
-    """
-    if not features:
-        raise ValueError("voice parameters need at least one analysed sample")
+
+def _initial_voice_params(features: Sequence[VoiceFeatures]) -> VoiceParams:
+    """Direct estimates: the starting point of the refinement."""
     log_f0 = float(np.median([f.log_f0_median for f in features]))
     f0_base = float(np.exp(log_f0))
     relative_range = float(np.median([f.log_f0_iqr for f in features]))
     f0_range = f0_base * float(np.clip(relative_range, 0.0, MAX_RELATIVE_F0_RANGE))
-
     f1 = float(np.median([f.f1_median for f in features]))
     f2 = float(np.median([f.f2_median for f in features]))
-    scale = 0.5 * (f1 / REFERENCE_F1_HZ + f2 / REFERENCE_F2_HZ)
-    formant_scale = float(np.clip(scale, *FORMANT_SCALE_RANGE))
-
+    scale = 0.5 * (f1 / F1_ANCHOR_HZ + f2 / F2_ANCHOR_HZ)
     # The measured slope includes lip radiation; the synthesizer wants the
-    # *source* slope, so the round trip analyse -> derive -> synthesize -> analyse
-    # is a fixed point rather than drifting +6 dB/octave each pass.
+    # *source* slope.
     tilt = float(np.median([f.tilt_db_oct for f in features])) - RADIATION_DB_OCT
     return VoiceParams(
         f0_base_hz=f0_base,
         f0_range_hz=f0_range,
-        formant_scale=formant_scale,
+        formant_scale=float(np.clip(scale, *FORMANT_SCALE_RANGE)),
         tilt_db_oct=float(np.clip(tilt, *TILT_RANGE_DB_OCT)),
     )
+
+
+def derive_voice_params(features: Sequence[VoiceFeatures]) -> VoiceParams:
+    """Derive the offline synthesizer's parameters from enrollment analysis (FR-3).
+
+    Two stages, both deterministic. First, direct estimates: pitch from the
+    log-F0 median across samples, declination span from the log-F0 IQR, the
+    vocal-tract-length proxy from F1/F2 against the dev-measured anchors, source
+    tilt from the spectral regression minus lip radiation. Then
+    **analysis-by-synthesis refinement**: render a fixed calibration sentence
+    through the stub, re-measure it with the same FR-4 analysis, and correct
+    ``f0_base``, ``formant_scale`` and ``tilt`` so the *measured* render matches
+    the *measured* enrollment. The refinement is what makes EVALS M3 hold: the
+    stub's render-to-measurement map is not the identity (its F1 shifts with
+    text content, and its formant stack tilts the 450-1600 Hz band by an amount
+    that depends on the formant scale), and inverting it per profile keeps the
+    rendered voice on top of its own enrollment instead of merely near it.
+    """
+    if not features:
+        raise ValueError("voice parameters need at least one analysed sample")
+    from voicekin.engine.dsp import analyze_voice  # local: avoids an import cycle
+    from voicekin.engine.synthesis import stub_render
+
+    target_log_f0 = float(np.median([f.log_f0_median for f in features]))
+    target_f1 = float(np.median([f.f1_median for f in features]))
+    target_f2 = float(np.median([f.f2_median for f in features]))
+    target_tilt = float(np.median([f.tilt_db_oct for f in features]))
+
+    params = _initial_voice_params(features)
+    for _ in range(DERIVATION_ITERATIONS):
+        rendered = stub_render(
+            DERIVATION_TEXT,
+            params,
+            sample_rate=16_000,
+            seed=DERIVATION_SEED,
+            unit_duration_ms=DERIVATION_UNIT_MS,
+        )
+        measured = analyze_voice(rendered)
+        f0_step = float(
+            np.clip(target_log_f0 - measured.log_f0_median, -_F0_STEP_CLIP, _F0_STEP_CLIP)
+        )
+        scale_step = float(
+            np.clip(
+                0.5 * (target_f1 / max(measured.f1_median, 1.0)
+                       + target_f2 / max(measured.f2_median, 1.0)),
+                *_SCALE_STEP_CLIP,
+            )
+        )
+        tilt_step = float(
+            np.clip(
+                target_tilt - measured.tilt_db_oct, -_TILT_STEP_CLIP_DB, _TILT_STEP_CLIP_DB
+            )
+        )
+        params = VoiceParams(
+            f0_base_hz=params.f0_base_hz * float(np.exp(f0_step)),
+            f0_range_hz=params.f0_range_hz,
+            formant_scale=float(
+                np.clip(params.formant_scale * scale_step, *FORMANT_SCALE_RANGE)
+            ),
+            tilt_db_oct=float(np.clip(params.tilt_db_oct + tilt_step, *TILT_RANGE_DB_OCT)),
+        )
+    return params
 
 
 __all__ = [

@@ -152,7 +152,7 @@ def build_case(rng: random.Random, case_id: str) -> dict[str, Any] | None:
     files = build_random_world(rng)
     cards = [c for c in ("cb0", "cb1") if rng.random() < 0.8] or ["cb0"]
     kind = rng.choices(["flight_ow", "flight_rt", "cash"], weights=[4, 4, 2])[0]
-    pax = 1 if kind == "cash" else rng.choices([1, 2], weights=[3, 2])[0]
+    pax = 1 if kind == "cash" else rng.choices([1, 2], weights=[3, 1])[0]
 
     # The typical points need this scenario must fund: the cheapest matching
     # award times passengers (times two legs for a round trip).
@@ -166,16 +166,20 @@ def build_case(rng: random.Random, case_id: str) -> dict[str, Any] | None:
     # while splits, hub chains and tier boundaries succeed.
     pool = ["b0", "b1", "ho"]
     rng.shuffle(pool)
-    count = rng.choices([1, 2, 3], weights=[1, 5, 4])[0]
+    count = rng.choices([1, 2, 3], weights=[1, 6, 5])[0]
     balances: dict[str, int] = {}
-    for name in pool[:count]:
+    for index, name in enumerate(pool[:count]):
         step = 3000 if name == "ho" else 2000
         if name == "ho":
             # Hotel balances hover around the 60k tier boundary of the 3:1 edge.
             points = rng.randrange(step * 10, step * 51, step)
         else:
-            low = max(step * 4, (need // 4) // step * step)
-            high = max(low + step * 2, min(step * 55, need * 11 // 10) // step * step)
+            # The first bank drawn holds most of the need (but usually not all
+            # of it); later programs top the pool up past the need, so most
+            # scenarios are fundable yet rarely from a single source.
+            share = (0.55, 0.95) if index == 0 else (0.35, 0.75)
+            low = max(step * 4, int(need * share[0]) // step * step)
+            high = max(low + step * 2, min(step * 55, int(need * share[1])) // step * step)
             points = rng.randrange(low, high + step, step)
         balances[name] = points
     if rng.random() < 0.25:  # a partial opening balance in a paying program

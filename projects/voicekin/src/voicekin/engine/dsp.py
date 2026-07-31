@@ -615,18 +615,62 @@ class VoiceFeatures:
         )
 
 
-def _median(values: np.ndarray, fallback: float) -> float:
-    """Median over the finite entries; ``fallback`` when there are none."""
+def trimmed_location(values: np.ndarray, fallback: float, trim: float = FORMANT_TRIM_FRACTION) -> float:
+    """Trimmed mean over the finite entries; ``fallback`` when there are none."""
     finite = values[np.isfinite(values)] if values.size else values
-    return float(np.median(finite)) if finite.size else fallback
+    if finite.size == 0:
+        return fallback
+    lo, hi = np.percentile(finite, [100.0 * trim, 100.0 * (1.0 - trim)])
+    core = finite[(finite >= lo) & (finite <= hi)]
+    return float(core.mean()) if core.size else float(finite.mean())
+
+
+def _mean_envelope_tilt(mean_power: np.ndarray, sample_rate: int) -> float:
+    """Clip-level tilt: 1/f-weighted regression on the smoothed mean spectrum."""
+    n_fft = 2 * (mean_power.shape[0] - 1)
+    freqs = np.fft.rfftfreq(n_fft, d=1.0 / sample_rate)
+    mask = (freqs >= TILT_BAND_HZ[0]) & (freqs <= TILT_BAND_HZ[1])
+    if not mask.any():  # pragma: no cover - impossible at 16 kHz
+        return 0.0
+    envelope = smooth_spectrum(mean_power[None, :])[0][mask]
+    peak = float(np.max(envelope))
+    if peak <= 0.0:
+        return 0.0
+    floor = peak * 10.0 ** (-TILT_DYNAMIC_RANGE_DB / 10.0)
+    db = 10.0 * np.log10(np.maximum(envelope, max(floor, _EPS)))
+    octaves = np.log2(freqs[mask])
+    weights = 1.0 / np.maximum(freqs[mask], _EPS)
+    weights = weights / weights.sum()
+    centre = float(weights @ octaves)
+    x = octaves - centre
+    denom = float(weights @ (x**2))
+    return float((weights * (db - float(weights @ db))) @ x / max(denom, _EPS))
+
+
+def _interp_rolloff(banded: np.ndarray, freqs: np.ndarray, fraction: float) -> float:
+    """Sub-bin interpolated rolloff of a single spectrum (quantization-free)."""
+    cumulative = np.cumsum(banded)
+    total = float(cumulative[-1]) if cumulative.size else 0.0
+    if total <= 0.0:
+        return 0.0
+    target = fraction * total
+    index = int(np.argmax(cumulative >= target))
+    if index == 0:
+        return float(freqs[0])
+    span = float(cumulative[index] - cumulative[index - 1])
+    step = (target - float(cumulative[index - 1])) / max(span, _EPS)
+    return float(freqs[index - 1] + step * (freqs[index] - freqs[index - 1]))
 
 
 def analyze_voice(clip: AudioClip, frames: FrameAnalysis | None = None) -> VoiceFeatures:
     """Measure the 16 raw source-filter features of a clip (FR-4).
 
-    Statistics are taken over *voiced* frames only where voicing is meaningful
-    (pitch, formants, tilt); an unvoiced clip degrades to neutral constants
-    rather than to noise.
+    Pitch and formants are measured over *voiced* frames; the spectral-shape
+    block (tilt, centroid, rolloff, band shares) is measured on the
+    noise-subtracted mean spectrum of the strongly periodic frames
+    (:data:`SHAPE_NAC_THRESHOLD`), so it describes the vowel nuclei rather than
+    the take's consonant draw or its noise floor. An unvoiced clip degrades to
+    neutral constants rather than to noise.
     """
     analysis = frames if frames is not None else analyze_frames(clip)
     if analysis.n_frames == 0:
@@ -639,7 +683,7 @@ def analyze_voice(clip: AudioClip, frames: FrameAnalysis | None = None) -> Voice
             tilt_db_oct=0.0,
             centroid_hz=0.0,
             rolloff_hz=0.0,
-            band_ratios=tuple([1.0 / N_MEL_BANDS] * N_MEL_BANDS),
+            band_ratios=tuple([np.sqrt(1.0 / N_MEL_BANDS)] * N_MEL_BANDS),
         )
 
     voiced = analysis.voiced
@@ -652,21 +696,38 @@ def analyze_voice(clip: AudioClip, frames: FrameAnalysis | None = None) -> Voice
     q75, q25 = np.percentile(log_f0, [75.0, 25.0]) if log_f0.size > 1 else (0.0, 0.0)
 
     f1, f2 = estimate_formants(voiced_frames, analysis.sample_rate)
-    power, _ = power_spectrum(voiced_frames)
-    # Median, not mean: a handful of loud frames should not decide the spectral
-    # balance of a whole recording.
-    ratios = np.median(band_ratios(power, analysis.sample_rate), axis=0)
+
+    shape_selection = selection & (analysis.nac_peak >= SHAPE_NAC_THRESHOLD)
+    if not bool(shape_selection.any()):
+        shape_selection = selection
+    all_power, _ = power_spectrum(analysis.frames)
+    noise = noise_psd(all_power, analysis.energy)
+    mean_power = speech_spectrum(all_power[shape_selection], noise)
+
+    n_fft = 2 * (mean_power.shape[0] - 1)
+    freqs = np.fft.rfftfreq(n_fft, d=1.0 / analysis.sample_rate)
+    bank = mel_filterbank(N_MEL_BANDS, n_fft, analysis.sample_rate)
+    energies = bank @ mean_power
+    shares = np.sqrt(energies / max(float(energies.sum()), _EPS))
+
+    speech_mask = (freqs >= SPEECH_BAND_HZ[0]) & (
+        freqs <= min(SPEECH_BAND_HZ[1], analysis.sample_rate / 2.0)
+    )
+    banded = mean_power[speech_mask]
+    band_freqs = freqs[speech_mask]
+    total = float(banded.sum())
+    centroid = float(banded @ band_freqs / total) if total > 0.0 else 0.0
 
     return VoiceFeatures(
         log_f0_median=float(np.median(log_f0)),
         log_f0_iqr=float(q75 - q25),
         voiced_ratio=analysis.voiced_ratio,
-        f1_median=_median(f1, float(np.mean(F1_BAND_HZ))),
-        f2_median=_median(f2, float(np.mean(F2_BAND_HZ))),
-        tilt_db_oct=_median(spectral_tilt(power, analysis.sample_rate), 0.0),
-        centroid_hz=_median(spectral_centroid(power, analysis.sample_rate), 0.0),
-        rolloff_hz=_median(spectral_rolloff(power, analysis.sample_rate), 0.0),
-        band_ratios=tuple(float(v) for v in ratios),
+        f1_median=trimmed_location(f1, float(np.mean(F1_BAND_HZ))),
+        f2_median=trimmed_location(f2, float(np.mean(F2_BAND_HZ))),
+        tilt_db_oct=_mean_envelope_tilt(mean_power, analysis.sample_rate),
+        centroid_hz=centroid,
+        rolloff_hz=_interp_rolloff(banded, band_freqs, ROLLOFF_FRACTION),
+        band_ratios=tuple(float(v) for v in shares),
     )
 
 
@@ -801,10 +862,12 @@ def apply_sos(x: np.ndarray, sos: np.ndarray, n_taps: int = 2048) -> np.ndarray:
 __all__ = [
     "F0_MAX_HZ",
     "F0_MIN_HZ",
+    "FORMANT_ANALYSIS_RATE",
     "FRAME_MS",
     "HOP_MS",
     "LPC_ORDER",
     "N_MEL_BANDS",
+    "SHAPE_NAC_THRESHOLD",
     "FrameAnalysis",
     "VoiceFeatures",
     "analyze_frames",
@@ -821,6 +884,7 @@ __all__ = [
     "levinson_durbin",
     "lpc_envelope",
     "mel_filterbank",
+    "noise_psd",
     "normalized_autocorrelation",
     "power_spectrum",
     "resonator_coefficients",
@@ -829,4 +893,6 @@ __all__ = [
     "spectral_centroid",
     "spectral_rolloff",
     "spectral_tilt",
+    "speech_spectrum",
+    "trimmed_location",
 ]

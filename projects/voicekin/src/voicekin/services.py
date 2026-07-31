@@ -453,7 +453,11 @@ class VoiceKinService:
         candidate = [s.embedding for s in existing if s.embedding is not None] + [embedding]
         loo_similarity: float | None = None
         if len(candidate) >= 2:
-            coherence = enroll_engine.check_coherence(candidate, self.calibration.theta_enroll)
+            coherence = enroll_engine.check_coherence(
+                candidate,
+                self.calibration.theta_enroll,
+                score_scale=self.calibration.score_scale,
+            )
             loo_similarity = coherence.min_score
             if not coherence.coherent:
                 intake = self._reject_sample(
@@ -671,6 +675,7 @@ class VoiceKinService:
             embed_probe=embed_probe,
             centroid=profile.centroid,
             theta_verify=self.calibration.theta_verify,
+            score_scale=self.calibration.score_scale,
         )
 
         update: dict[str, Any] = {"decided_at": now, "audio_sha256": digest}

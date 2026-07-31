@@ -201,15 +201,13 @@ def all_roles() -> list[str]:
 
 
 def normalize_vector(raw: Sequence[float], calibration: Calibration) -> np.ndarray:
-    """Affine normalization + L2, exactly as ``SpectralStatsEmbedder`` does."""
+    """Affine normalization, exactly as ``SpectralStatsEmbedder`` does."""
     array = np.asarray(raw, dtype=np.float64)
     if array.shape[0] != EMBEDDING_DIM:  # pragma: no cover - guarded upstream
         raise ValueError(f"expected {EMBEDDING_DIM} raw features, got {array.shape[0]}")
     means = np.array([n.mean for n in calibration.feature_norms], dtype=np.float64)
     scales = np.array([n.scale for n in calibration.feature_norms], dtype=np.float64)
-    scaled = (array - means) / scales
-    norm = float(np.linalg.norm(scaled))
-    return scaled / norm if norm > 1e-12 else scaled
+    return (array - means) / scales
 
 
 def embedding(role: str, calibration: Calibration) -> np.ndarray:
@@ -217,18 +215,14 @@ def embedding(role: str, calibration: Calibration) -> np.ndarray:
 
 
 def centroid_of(role_list: Sequence[str], calibration: Calibration) -> np.ndarray:
-    """L2-normalized mean of per-sample embeddings (FR-3)."""
-    stacked = np.stack([embedding(role, calibration) for role in role_list])
-    mean = stacked.mean(axis=0)
-    norm = float(np.linalg.norm(mean))
-    return mean / norm if norm > 1e-12 else mean
+    """Mean of per-sample embeddings (FR-3; not L2-normalized — see REVIEW.md)."""
+    return np.stack([embedding(role, calibration) for role in role_list]).mean(axis=0)
 
 
-def cosine(a: Sequence[float], b: Sequence[float]) -> float:
-    left = np.asarray(a, dtype=np.float64)
-    right = np.asarray(b, dtype=np.float64)
-    denominator = float(np.linalg.norm(left) * np.linalg.norm(right))
-    return float(np.dot(left, right) / denominator) if denominator > 1e-12 else 0.0
+def similarity(a: Sequence[float], b: Sequence[float], calibration: Calibration) -> float:
+    """The shipped scoring rule: calibrated distance similarity."""
+    diff = np.asarray(a, dtype=np.float64) - np.asarray(b, dtype=np.float64)
+    return 1.0 - float(np.dot(diff, diff)) / calibration.score_scale
 
 
 __all__ = [
@@ -238,7 +232,6 @@ __all__ = [
     "all_roles",
     "centroid_of",
     "clip",
-    "cosine",
     "embedding",
     "ensure_corpus",
     "features",
@@ -248,6 +241,7 @@ __all__ = [
     "normalize_vector",
     "raw_features",
     "roles",
+    "similarity",
     "speaker",
     "speakers",
     "utterance",

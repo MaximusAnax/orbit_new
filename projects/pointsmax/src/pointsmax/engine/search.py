@@ -70,6 +70,10 @@ from .world import ActiveWorld
 #: tier anchor (see :meth:`FundingSearch._lattice`).
 MAX_ALIGN_WINDOW = 12
 
+#: Sentinel window meaning "every valid amount in range" — used for cost-tie
+#: edge groups, where FR-9's canonical tie-break can select interior amounts.
+DENSE_WINDOW = 1 << 30
+
 
 class SearchBudgetExceeded(RuntimeError):
     """The funding search hit its explicit expansion budget (FR-7c)."""
@@ -371,6 +375,19 @@ class FundingSearch:
                 lcm_all = math.lcm(lcm_all, quantum)
             for e in edges:
                 windows[e.id] = min(lcm_all // self._delivered_increment(e), MAX_ALIGN_WINDOW)
+        # Cost-tie groups: two fee-free edges with the *same* loss rate make every
+        # split of the residual cost-identical, and FR-9's final tie-break (the
+        # canonically smallest step list) can then land on any interior amount.
+        # Those edges get a dense lattice (capped to the span in _lattice); ties
+        # are rare and balances bound the span, so this stays cheap.
+        by_rate: dict[Fraction, list[TransferEdge]] = {}
+        for e in edges:
+            if e.fee_mcpp == 0:
+                by_rate.setdefault(self._edge_loss_rate(e), []).append(e)
+        for group in by_rate.values():
+            if len(group) > 1:
+                for e in group:
+                    windows[e.id] = DENSE_WINDOW
         self._window_cache[program_id] = windows
         return windows
 
@@ -424,6 +441,7 @@ class FundingSearch:
             cover = lo * inc
 
         limit = cover if cover is not None else ceiling
+        window = min(window, (limit - lowest) // inc + 1)
         anchors: list[int] = [limit] if cover_only else [limit, lowest]
         for anchor in extra_anchors:
             aligned = floor_to_multiple(anchor, inc)

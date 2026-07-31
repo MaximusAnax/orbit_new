@@ -249,6 +249,19 @@ def m1b_ladder_ordering() -> MetricResult:
                 f"(iii) gap L{low}->L{high} = {gap_value:.1f} < 2.5 x stderr {stderr:.1f}"
             )
 
+    # (v) collapse diagnostic: every match observation must sit within 2.5 of
+    # its own sampling error from the committed (parametric) ladder curve.  A
+    # collapsed pair pulls its raw delta ~ a full gap away from the model, which
+    # is what this flags now that the committed gaps come from the smooth fit
+    # (docs/REVIEW.md, build-stage finding B2).
+    RESIDUAL_Z_MAX = 2.5
+    for residual in record.get("pair_residuals", []):
+        if abs(float(residual["z"])) > RESIDUAL_Z_MAX:
+            failures.append(
+                f"(v) pair L{residual['low']}-L{residual['high']} sits "
+                f"{residual['z']:+.1f} sigma from the committed ladder curve"
+            )
+
     levels_path = datasets().levels_sha256
     if record.get("levels_sha256") != levels_path:
         failures.append("(iv) calibration.levels_sha256 does not match data/levels.json")

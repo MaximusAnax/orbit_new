@@ -160,7 +160,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 33412
+        "oracle_enumerations": 41521
       }
     },
     {
@@ -279,7 +279,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 24259
+        "oracle_enumerations": 26907
       }
     },
     {
@@ -628,7 +628,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 15496
+        "oracle_enumerations": 15633
       }
     },
     {
@@ -831,7 +831,7 @@
           }
         ],
         "candidate_sets": 5,
-        "oracle_enumerations": 24181
+        "oracle_enumerations": 25524
       }
     },
     {
@@ -970,7 +970,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 15775
+        "oracle_enumerations": 16283
       }
     },
     {
@@ -1128,7 +1128,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 47264
+        "oracle_enumerations": 47368
       }
     },
     {
@@ -1286,7 +1286,7 @@
           }
         ],
         "candidate_sets": 3,
-        "oracle_enumerations": 41483
+        "oracle_enumerations": 41801
       }
     },
     {
@@ -1456,7 +1456,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 168
+        "oracle_enumerations": 193
       }
     },
     {
@@ -1665,7 +1665,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 25001
+        "oracle_enumerations": 26621
       }
     },
     {
@@ -1824,7 +1824,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 30756
+        "oracle_enumerations": 30910
       }
     },
     {
@@ -2022,7 +2022,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 3297
+        "oracle_enumerations": 3621
       }
     },
     {
@@ -2098,7 +2098,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 163
+        "oracle_enumerations": 191
       }
     },
     {
@@ -2238,7 +2238,7 @@
           }
         ],
         "candidate_sets": 5,
-        "oracle_enumerations": 1103722
+        "oracle_enumerations": 1103734
       }
     },
     {
@@ -2378,7 +2378,7 @@
           }
         ],
         "candidate_sets": 5,
-        "oracle_enumerations": 999258
+        "oracle_enumerations": 999270
       }
     },
     {
@@ -2988,7 +2988,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 268971
+        "oracle_enumerations": 272355
       }
     },
     {
@@ -3418,7 +3418,7 @@
           }
         ],
         "candidate_sets": 5,
-        "oracle_enumerations": 1103673
+        "oracle_enumerations": 1153601
       }
     },
     {
@@ -3589,7 +3589,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 168
+        "oracle_enumerations": 183
       }
     },
     {
@@ -3971,7 +3971,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 4919
+        "oracle_enumerations": 5306
       }
     },
     {
@@ -4141,7 +4141,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 168
+        "oracle_enumerations": 189
       }
     },
     {
@@ -4299,7 +4299,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 5955
+        "oracle_enumerations": 7880
       }
     },
     {
@@ -4658,7 +4658,7 @@
           }
         ],
         "candidate_sets": 10,
-        "oracle_enumerations": 314954
+        "oracle_enumerations": 327467
       }
     },
     {
@@ -5364,7 +5364,7 @@
           }
         ],
         "candidate_sets": 12,
-        "oracle_enumerations": 1687907
+        "oracle_enumerations": 1756643
       }
     },
     {
@@ -5545,7 +5545,7 @@
           }
         ],
         "candidate_sets": 10,
-        "oracle_enumerations": 205453
+        "oracle_enumerations": 222448
       }
     },
     {
@@ -6459,7 +6459,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 36908
+        "oracle_enumerations": 37776
       }
     },
     {
@@ -7165,7 +7165,7 @@
           }
         ],
         "candidate_sets": 4,
-        "oracle_enumerations": 4849
+        "oracle_enumerations": 5077
       }
     },
     {
@@ -8107,7 +8107,7 @@
           }
         ],
         "candidate_sets": 6,
-        "oracle_enumerations": 32035
+        "oracle_enumerations": 32053
       }
     },
     {
@@ -9395,7 +9395,7 @@
           }
         ],
         "candidate_sets": 2,
-        "oracle_enumerations": 25090
+        "oracle_enumerations": 25612
       }
     },
     {

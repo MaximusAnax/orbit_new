@@ -70,10 +70,10 @@ SKELETONS: list[tuple[str, str]] = [
     # (the heavy skeletons alone cannot fill every tier once unresolvable
     # quiet-refutation cases are excluded — build-stage finding B4).
     ("rook-minor-mid", "2r1r1k1/pp3ppp/2n5/8/8/2N5/PP3PPP/2R1R1K1 w - - 0 1"),
-    ("queenless-light", "r4rk1/pp2ppbp/2n3p1/8/8/2N3P1/PP2PPBP/R4RK1 w - - 0 1"),
-    ("two-rook-bishop", "2r3k1/pp2bppp/8/8/8/8/PP2BPPP/2R3K1 w - - 0 1"),
+    ("queenless-light", "r1b2rk1/pp2ppbp/3p1np1/8/8/3P1NP1/PP2PPBP/R1B2RK1 w - - 0 1"),
+    ("rook-bishop-end", "2r3k1/pp2bppp/8/8/8/8/PP2BPPP/3R2K1 w - - 0 1"),
     ("knight-ending", "6k1/pp3ppp/2n5/8/8/2N5/PP3PPP/6K1 w - - 0 1"),
-    ("bishop-ending", "6k1/pp3ppp/4b3/8/8/4B3/PP3PPP/6K1 w - - 0 1"),
+    ("bishop-ending", "6k1/pp2bppp/8/8/8/8/PP2BPPP/6K1 w - - 0 1"),
     ("rook-ending", "3r2k1/pp3ppp/8/8/8/8/PP3PPP/2R3K1 w - - 0 1"),
     ("queen-ending", "3q2k1/pp3ppp/8/8/8/8/PP3PPP/2Q3K1 w - - 0 1"),
 ]

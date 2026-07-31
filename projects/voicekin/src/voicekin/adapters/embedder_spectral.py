@@ -1,8 +1,11 @@
 """``spectral-v1`` — the offline default speaker embedder (FR-4).
 
 16 dimensions of classical source-filter statistics, affinely normalized with
-constants committed in ``data/calibration.json`` and L2-normalized so cosine
-similarity is a dot product.
+constants committed in ``data/calibration.json``. Scoring is by the calibrated
+distance similarity in :mod:`voicekin.engine.verification` (build-stage
+deviation from raw cosine, recorded in REVIEW.md), so the embedding is the
+whitened feature vector itself — no L2 normalization, which would erase the
+distance information the scorer needs.
 
 No feature family may be dead weight: the pitch (dims 0-1), vocal-tract-length
 (dims 3-4) and tilt/shape (dims 5-7 plus the 8 band ratios) families are gated
@@ -17,7 +20,6 @@ import numpy as np
 from voicekin.adapters.embedder import Embedding
 from voicekin.engine.audio import AudioClip
 from voicekin.engine.dsp import FrameAnalysis, VoiceFeatures, analyze_voice
-from voicekin.engine.enrollment import l2_normalize
 from voicekin.models import EMBEDDING_DIM, Calibration
 
 SPECTRAL_EMBEDDER_ID = "spectral-v1"
@@ -59,7 +61,7 @@ class SpectralStatsEmbedder:
         raw = features.to_vector()
         if raw.shape[0] != EMBEDDING_DIM:  # pragma: no cover - guarded by VoiceFeatures
             raise ValueError(f"expected {EMBEDDING_DIM} raw features, got {raw.shape[0]}")
-        return l2_normalize((raw - self._means) / self._scales)
+        return [float(v) for v in (raw - self._means) / self._scales]
 
     def embed(self, clip: AudioClip, *, frames: FrameAnalysis | None = None) -> Embedding:
         """Measure and normalize a clip (FR-4)."""
