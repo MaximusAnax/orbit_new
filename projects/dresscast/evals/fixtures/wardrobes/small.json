@@ -37,7 +37,7 @@
   },
   {
     "id": "b2-lstee",
-    "name": "gray-long-sleeve-tee",
+    "name": "teal-long-sleeve-tee",
     "category": "long_sleeve_tee",
     "layer_role": "base",
     "accessory_class": null,
@@ -47,9 +47,9 @@
     "formality": 2,
     "colors": [
       {
-        "name": "gray",
-        "hue": null,
-        "neutral": true,
+        "name": "teal",
+        "hue": 180.0,
+        "neutral": false,
         "role": "main"
       }
     ],
@@ -72,7 +72,7 @@
   },
   {
     "id": "b3-polo",
-    "name": "navy-polo",
+    "name": "pink-polo",
     "category": "polo",
     "layer_role": "base",
     "accessory_class": null,
@@ -82,9 +82,9 @@
     "formality": 3,
     "colors": [
       {
-        "name": "navy",
-        "hue": null,
-        "neutral": true,
+        "name": "pink",
+        "hue": 330.0,
+        "neutral": false,
         "role": "main"
       }
     ],
@@ -214,7 +214,7 @@
   },
   {
     "id": "m1-thin",
-    "name": "beige-thin-sweater",
+    "name": "mustard-thin-sweater",
     "category": "sweater_thin",
     "layer_role": "mid",
     "accessory_class": null,
@@ -224,9 +224,9 @@
     "formality": 3,
     "colors": [
       {
-        "name": "beige",
-        "hue": null,
-        "neutral": true,
+        "name": "mustard",
+        "hue": 50.0,
+        "neutral": false,
         "role": "main"
       }
     ],
@@ -286,7 +286,7 @@
   },
   {
     "id": "m3-thick",
-    "name": "gray-lambswool-sweater",
+    "name": "green-lambswool-sweater",
     "category": "sweater_thick",
     "layer_role": "mid",
     "accessory_class": null,
@@ -296,9 +296,9 @@
     "formality": 3,
     "colors": [
       {
-        "name": "gray",
-        "hue": null,
-        "neutral": true,
+        "name": "green",
+        "hue": 120.0,
+        "neutral": false,
         "role": "main"
       }
     ],
@@ -322,7 +322,7 @@
   },
   {
     "id": "m4-hoodie",
-    "name": "navy-hoodie",
+    "name": "orange-hoodie",
     "category": "hoodie",
     "layer_role": "mid",
     "accessory_class": null,
@@ -332,9 +332,9 @@
     "formality": 2,
     "colors": [
       {
-        "name": "navy",
-        "hue": null,
-        "neutral": true,
+        "name": "orange",
+        "hue": 30.0,
+        "neutral": false,
         "role": "main"
       }
     ],
@@ -540,7 +540,7 @@
   },
   {
     "id": "p2-skirt",
-    "name": "black-thin-skirt",
+    "name": "burgundy-thin-skirt",
     "category": "skirt_thin",
     "layer_role": "bottom",
     "accessory_class": null,
@@ -550,9 +550,9 @@
     "formality": 3,
     "colors": [
       {
-        "name": "black",
-        "hue": null,
-        "neutral": true,
+        "name": "burgundy",
+        "hue": 350.0,
+        "neutral": false,
         "role": "main"
       }
     ],
@@ -576,7 +576,7 @@
   },
   {
     "id": "p3-chinos",
-    "name": "olive-chinos",
+    "name": "rust-chinos",
     "category": "trousers_thin",
     "layer_role": "bottom",
     "accessory_class": null,
@@ -586,9 +586,9 @@
     "formality": 3,
     "colors": [
       {
-        "name": "olive",
-        "hue": null,
-        "neutral": true,
+        "name": "rust",
+        "hue": 20.0,
+        "neutral": false,
         "role": "main"
       }
     ],

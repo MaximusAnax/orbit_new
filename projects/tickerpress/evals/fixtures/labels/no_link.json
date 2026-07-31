@@ -1,0 +1,30 @@
+{
+  "_comment": [
+    "15 hand-vetted must-not-merge pairs of BASE articles (EVALS §3, M2_trap and",
+    "M2_near). Each pair names two genuinely different stories.",
+    "band=near: the two articles quote the same press-release paragraph verbatim,",
+    "so their resemblance is authored into J in [0.40, 0.60) - close enough to the",
+    "tau = 0.60 threshold that the trap gate binds instead of testing pairs that",
+    "are trivially dissimilar. Exactly 5 of the 15 are near.",
+    "band=far: different events involving the same company in the same week - the",
+    "class that an over-eager clusterer merges."
+  ],
+  "pairs": [
+    {"a": 59, "b": 60, "band": "near", "why": "two takes on the same transit vote, sharing the authority's statement"},
+    {"a": 61, "b": 62, "band": "near", "why": "two takes on the same deposit-rate move, sharing the bank's statement"},
+    {"a": 63, "b": 64, "band": "near", "why": "two takes on the same endowment result, sharing the endowment office statement"},
+    {"a": 65, "b": 66, "band": "near", "why": "two takes on the same port recovery, sharing the port authority statement"},
+    {"a": 67, "b": 68, "band": "near", "why": "two takes on the same furnace restart, sharing the steelmaker's statement"},
+
+    {"a": 1, "b": 15, "band": "far", "why": "Apple earnings results vs the preview written a week earlier"},
+    {"a": 2, "b": 26, "band": "far", "why": "two different Tesla stories in the same week: a recall and charging access"},
+    {"a": 3, "b": 20, "band": "far", "why": "two different Amazon stories: fulfillment sites and a Prime price rise"},
+    {"a": 4, "b": 25, "band": "far", "why": "a Meta fine vs a sector piece on privacy tools"},
+    {"a": 5, "b": 16, "band": "far", "why": "the Visa settlement vs a regulator's separate fee proposal"},
+    {"a": 7, "b": 21, "band": "far", "why": "Caterpillar's backlog vs the construction-starts release"},
+    {"a": 8, "b": 17, "band": "far", "why": "Shell's project approval vs the oil-price session report"},
+    {"a": 9, "b": 33, "band": "far", "why": "Allstate's premium filing vs the sector repricing piece"},
+    {"a": 10, "b": 34, "band": "far", "why": "Alphabet's cloud region vs the search-advertising slowdown"},
+    {"a": 11, "b": 29, "band": "far", "why": "Target's forecast vs the grocery pricing piece"}
+  ]
+}

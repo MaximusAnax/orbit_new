@@ -19,7 +19,6 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 import chess
-
 from chessmentor.constants import JUDGE_BUDGET
 from chessmentor.engine.session import make_move_record
 from chessmentor.engine.throttle import choose_cpu_move
@@ -128,9 +127,7 @@ def play_ladder_game(
         level = white_level if board.turn == chess.WHITE else black_level
         choice = choose_cpu_move(board, level, game_seed=seed, ply=ply, book=book)
         records.append(
-            make_move_record(
-                board, choice.move, ply, is_book=choice.is_book, cpu_meta=choice.meta
-            )
+            make_move_record(board, choice.move, ply, is_book=choice.is_book, cpu_meta=choice.meta)
         )
         board.push(choice.move)
         played = len(board.move_stack)

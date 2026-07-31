@@ -9,6 +9,7 @@ that expected values can be worked out by hand inside the tests.
 from __future__ import annotations
 
 from datetime import date
+from pathlib import Path
 from typing import Any
 
 import pytest
@@ -408,3 +409,50 @@ def wallet() -> Wallet:
 def shipped_world() -> World:
     """The committed ``data/world/`` dataset, fully FR-1 validated."""
     return CommittedWorldProvider().load()
+
+
+@pytest.fixture
+def world_dir(tmp_path) -> Path:
+    """The synthetic world written to disk, for surfaces that take ``--world DIR``."""
+    import json
+
+    directory = tmp_path / "world"
+    directory.mkdir()
+    for name, payload in sealed(world_files()).items():
+        (directory / name).write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return directory
+
+
+@pytest.fixture
+def repo():
+    from pointsmax.store import InMemoryRepository
+
+    return InMemoryRepository()
+
+
+@pytest.fixture
+def service(repo, world):
+    """A service on the synthetic world with an empty in-memory store."""
+    from pointsmax.service import PointsMaxService
+
+    return PointsMaxService(repo, world)
+
+
+@pytest.fixture
+def stocked_service(service):
+    """A service holding both gating cards and a spread of balances."""
+    service.add_card("card_a", at="2026-07-01T00:00:00Z")
+    service.add_card("card_b", at="2026-07-01T00:00:00Z")
+    service.set_balance("bank_a", 100000, at="2026-07-01T00:00:00Z")
+    service.set_balance("bank_b", 80000, at="2026-07-01T00:00:00Z")
+    return service
+
+
+@pytest.fixture
+def client(stocked_service):
+    """FastAPI TestClient bound to the stocked in-memory service."""
+    from fastapi.testclient import TestClient
+
+    from pointsmax.api.app import create_app
+
+    return TestClient(create_app(stocked_service))

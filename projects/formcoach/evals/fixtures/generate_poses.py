@@ -1379,14 +1379,21 @@ def build_photo(photo_id: str, source: dict, rep_index: int, phase: str) -> dict
     return {"sidecar": sidecar, "label": photo_label}
 
 
+#: Eight committed reps whose feature values are recomputed from the committed
+#: keypoints by ``handcheck_features`` above.  Drawn from the lowest-noise clips
+#: so the residual gap between a raw frame and the engine's smoothed frame stays
+#: well inside the M3 gate, and chosen to cover every single-frame feature in the
+#: catalog; the two window features (``bar_drift_frac``,
+#: ``hip_shoulder_rise_ratio``) are not single-frame quantities and are pinned by
+#: M3 instead.
 HANDCHECK_PLAN = [
-    ("squat_side_02", 0, ["depth_ratio", "trunk_lean_deg"], "bottom"),
-    ("squat_side_03", 1, ["depth_ratio", "trunk_lean_deg"], "bottom"),
-    ("squat_front_02", 0, ["fppa_deg", "lateral_shift_frac"], "bottom"),
-    ("squat_front_09", 1, ["fppa_deg", "lateral_shift_frac"], "bottom"),
-    ("deadlift_side_04", 0, ["hip_ext_angle_deg"], "top"),
-    ("deadlift_side_01", 1, ["hip_ext_angle_deg"], "top"),
-    ("pushup_side_02", 0, ["elbow_angle_deg", "hip_dev_frac"], "bottom"),
+    ("squat_side_01", 0, ["depth_ratio", "trunk_lean_deg"], "bottom"),
+    ("squat_side_04", 2, ["depth_ratio", "trunk_lean_deg"], "bottom"),
+    ("squat_front_12", 0, ["fppa_deg", "lateral_shift_frac"], "bottom"),
+    ("squat_front_02", 1, ["fppa_deg", "lateral_shift_frac"], "bottom"),
+    ("deadlift_side_06", 1, ["hip_ext_angle_deg"], "top"),
+    ("deadlift_side_10", 2, ["hip_ext_angle_deg"], "top"),
+    ("pushup_side_12", 0, ["elbow_angle_deg", "hip_dev_frac"], "bottom"),
     ("pushup_side_01", 1, ["elbow_angle_deg", "hip_dev_frac"], "bottom"),
 ]
 

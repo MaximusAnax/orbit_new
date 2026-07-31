@@ -146,6 +146,10 @@ def garment(
 # --------------------------------------------------------------------------
 # 6 base tops, 4 mids, 4 outers (one waterproofness-2 shell, one parka),
 # 5 bottoms, 1 leg base, 3 footwear, 3 accessories = 26 garments.
+# Ten of the 23 core garments carry a hue (teal, pink, blue, red, mustard,
+# green, yellow, rust, orange, burgundy) across seven 30-degree families, so the palette term has
+# something to discriminate: an all-neutral fixture would make S_color a
+# constant 1.0 and EVALS.md M8's colour lift vacuous.
 # Core enumeration: 6·5·3·(1+4+6)·(1+4)·(1+1) = 9,900 (metrics.py asserts it).
 # Every clo sits at its category preset, so EVALS.md §5.2's band arithmetic
 # holds exactly: Icl in [0.311, 2.040].
@@ -156,22 +160,22 @@ DRESSY = ["casual", "work", "formal"]
 SMALL: list[dict[str, Any]] = [
     garment("b1-tee", "white-tee", "tshirt", ["white"], ["casual", "sport", "outdoor"],
             formality=2, tags=["minimal"]),
-    garment("b2-lstee", "gray-long-sleeve-tee", "long_sleeve_tee", ["gray"],
+    garment("b2-lstee", "teal-long-sleeve-tee", "long_sleeve_tee", ["teal"],
             ["casual", "outdoor"], formality=2, tags=["minimal"]),
-    garment("b3-polo", "navy-polo", "polo", ["navy"], EVERYDAY, formality=3, tags=["preppy"]),
+    garment("b3-polo", "pink-polo", "polo", ["pink"], EVERYDAY, formality=3, tags=["preppy"]),
     garment("b4-ssshirt", "blue-short-sleeve-shirt", "shirt_short_sleeve", ["blue"], EVERYDAY,
             formality=3, tags=["preppy"]),
     garment("b5-oxford", "white-oxford-shirt", "shirt_long_sleeve", ["white"], DRESSY,
             formality=3, tags=["preppy", "classic"]),
     garment("b6-flannel", "red-flannel-shirt", "flannel_shirt", ["red"], ["casual", "outdoor"],
             formality=2, tags=["outdoorsy"]),
-    garment("m1-thin", "beige-thin-sweater", "sweater_thin", ["beige"], DRESSY, formality=3,
+    garment("m1-thin", "mustard-thin-sweater", "sweater_thin", ["mustard"], DRESSY, formality=3,
             tags=["classic"]),
     garment("m2-fleece", "olive-fleece", "fleece", ["olive"], ["casual", "outdoor", "work"],
             formality=2, tags=["outdoorsy"]),
-    garment("m3-thick", "gray-lambswool-sweater", "sweater_thick", ["gray"], DRESSY,
+    garment("m3-thick", "green-lambswool-sweater", "sweater_thick", ["green"], DRESSY,
             formality=3, tags=["classic"]),
-    garment("m4-hoodie", "navy-hoodie", "hoodie", ["navy"],
+    garment("m4-hoodie", "orange-hoodie", "hoodie", ["orange"],
             ["casual", "outdoor", "work", "sport"], formality=2, tags=["outdoorsy", "sporty"]),
     garment("o1-shell", "yellow-rain-shell", "rain_shell", ["yellow"],
             ["casual", "outdoor", "work", "sport"], formality=2, waterproofness=2,
@@ -184,9 +188,9 @@ SMALL: list[dict[str, Any]] = [
             formality=2, waterproofness=2, windproofness=2, tags=["outdoorsy"]),
     garment("p1-shorts", "beige-shorts", "shorts", ["beige"], ["casual", "sport", "outdoor"],
             formality=2, tags=["minimal"]),
-    garment("p2-skirt", "black-thin-skirt", "skirt_thin", ["black"], DRESSY, formality=3,
+    garment("p2-skirt", "burgundy-thin-skirt", "skirt_thin", ["burgundy"], DRESSY, formality=3,
             tags=["classic"]),
-    garment("p3-chinos", "olive-chinos", "trousers_thin", ["olive"], EVERYDAY, formality=3,
+    garment("p3-chinos", "rust-chinos", "trousers_thin", ["rust"], EVERYDAY, formality=3,
             tags=["preppy", "classic"]),
     garment("p4-jeans", "dark-jeans", "jeans", ["denim"], ["casual", "outdoor", "work"],
             formality=2, tags=["classic"]),

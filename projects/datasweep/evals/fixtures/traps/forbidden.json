@@ -1,0 +1,123 @@
+{
+ "_comment": [
+  "Hand-authored tier ground truth (EVALS.md §4.3). Each expectation carries",
+  "both halves of the locked contract: `forbid_auto` marks cells that must",
+  "receive no auto-tier change (M3_trap, gated at 0), and `expect` names the",
+  "disposition that must actually be produced (M7, gated at 1.0).",
+  "`expect_candidates`, where present, must match the proposal's candidate set",
+  "exactly - that is how 'with both candidate interpretations' (US-3) becomes",
+  "machine-checked rather than aspirational."
+ ],
+ "trap_ambiguous_dates.csv": [
+  {
+   "id": "amb_date_col",
+   "klass": "DATE",
+   "scope": "column",
+   "col_name": "event_date",
+   "cells": [[0, 1], [4, 1], [9, 1], [17, 1], [23, 1]],
+   "forbid_auto": true,
+   "expect": "review",
+   "expect_rule": "fix.date_canon_ambiguous",
+   "expect_candidates": ["%d/%m/%Y", "%m/%d/%Y"],
+   "note": "every component <= 12 in both positions: nothing proves the order"
+  }
+ ],
+ "trap_decimal_ambiguity.csv": [
+  {
+   "id": "amb_decimal_col",
+   "klass": "TYPE",
+   "scope": "column",
+   "col_name": "amount",
+   "cells": [[0, 1], [5, 1], [11, 1], [19, 1]],
+   "forbid_auto": true,
+   "expect": "review",
+   "expect_rule": "fix.number_canon_ambiguous",
+   "expect_candidates": ["COMMA", "DOT"],
+   "note": "`1.234` parses under both conventions and no cell is decisive"
+  }
+ ],
+ "trap_sentinel_words.csv": [
+  {
+   "id": "none_is_a_category",
+   "klass": "MISS",
+   "scope": "cells",
+   "col_name": "medication",
+   "cells": [[1, 1], [4, 1], [7, 1], [11, 1], [15, 1], [19, 1]],
+   "forbid_auto": true,
+   "expect": "review",
+   "expect_rule": "fix.sentinel_null_soft",
+   "note": "'None' in a medication column means 'no medication', not missing"
+  }
+ ],
+ "trap_numeric_sentinel.csv": [
+  {
+   "id": "minus9999",
+   "klass": "MISS",
+   "scope": "cells",
+   "col_name": "temperature_c",
+   "cells": [[3, 2], [4, 2], [5, 2], [11, 2]],
+   "forbid_auto": true,
+   "expect": "report",
+   "expect_rule": "detect.numeric_sentinel",
+   "note": "a documented missing code; convention is not proof, so never nulled"
+  }
+ ],
+ "trap_similar_labels.csv": [
+  {
+   "id": "iran_iraq",
+   "klass": "CAT",
+   "scope": "cells",
+   "col_name": "country",
+   "cells": [[0, 1], [1, 1], [4, 1], [5, 1], [8, 1], [9, 1]],
+   "forbid_auto": true,
+   "expect": "none",
+   "note": "both members are frequent legitimate labels: proposing anything is the error"
+  },
+  {
+   "id": "slovakia_slovenia",
+   "klass": "CAT",
+   "scope": "cells",
+   "col_name": "country",
+   "cells": [[2, 1], [3, 1], [6, 1], [7, 1], [10, 1], [11, 1]],
+   "forbid_auto": true,
+   "expect": "none",
+   "note": "distance 2 and both >= 8 chars, so inside D10b's window - the rarity guard must save them"
+  }
+ ],
+ "trap_near_dup_rows.csv": [
+  {
+   "id": "near_dup_pairs",
+   "klass": "DUP",
+   "scope": "rows",
+   "col_name": null,
+   "cells": [[1, 0], [3, 0], [5, 0], [7, 0], [9, 0], [11, 0], [13, 0], [15, 0]],
+   "forbid_auto": true,
+   "expect": "none",
+   "note": "identical except the timestamp: fuzzy dedup is a non-goal, exact-only keeps DUP precision exact"
+  }
+ ],
+ "trap_leading_zeros.csv": [
+  {
+   "id": "zip_digits",
+   "klass": "TYPE",
+   "scope": "cells",
+   "col_name": "zip",
+   "cells": [[0, 0], [1, 0], [3, 0], [8, 0], [22, 0]],
+   "forbid_auto": true,
+   "expect": "none",
+   "expect_type": "digits",
+   "note": "D7.8 - a digits column is never numerically coerced; 02134 must stay 02134"
+  },
+  {
+   "id": "sku_digits",
+   "klass": "TYPE",
+   "scope": "cells",
+   "col_name": "sku",
+   "cells": [[0, 1], [3, 1], [8, 1], [12, 1], [22, 1]],
+   "forbid_auto": true,
+   "expect": "none",
+   "expect_type": "digits",
+   "note": "leading-zero SKUs are identifiers, not numbers"
+  }
+ ]
+}

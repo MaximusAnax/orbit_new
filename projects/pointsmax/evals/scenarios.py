@@ -159,8 +159,8 @@ MULTI_SOURCE = [
       {"mrx": 40000, "typx": 40000, "mbx": 60000}, flight("NYC", "MIA", "2026-10"), D),
     S("ms_07", "multi_source", "small_a", ["ur_premium", "mr_premium"],
       {"ur": 40000, "mr": 40000}, flight("NYC", "PAR", "2026-10", cabin="economy"), D),
-    S("ms_08", "multi_source", "small_b", ["card_p", "card_q"],
-      {"bank_p": 50000, "bank_q": 50000, "hub": 20000}, flight("NYC", "LON", "2026-10"), D),
+    S("ms_08", "multi_source", "small_a", ["ur_premium", "mr_premium"],
+      {"ur": 30000, "mr": 30000, "mb": 60000}, flight("NYC", "PAR", "2026-10"), D),
 ]
 
 # --------------------------------------------------------------------------
@@ -172,7 +172,7 @@ FEE_TIER = [
       flight("NYC", "MIA", "2026-10"), D),
     S("ft_02", "fee_tier", "small_c", ["mrx_card"], {"mrx": 100000},
       flight("NYC", "MIA", "2026-10", rt=True), D),
-    S("ft_03", "fee_tier", "small_c", ["mrx_card"], {"mrx": 130000},
+    S("ft_03", "fee_tier", "small_c", ["mrx_card"], {"mrx": 120000},
       flight("NYC", "MIA", "2026-10", pax=3), D),
     S("ft_04", "fee_tier", "small_c", ["mrx_card"], {"mbx": 120000, "mrx": 20000},
       flight("NYC", "MIA", "2026-10"), D),
@@ -323,14 +323,19 @@ HAND_DERIVED = [
     S(
         "hd_05", "hand_derived", "small_c", ["mrx_card"], {"mrx": 60000},
         flight("NYC", "MIA", "2026-10"), D,
-        hand={"objective_cents": None, "plan_count": 0, "verdict": "insufficient_points"},
+        hand={"objective_cents": 62000, "plan_count": 1, "verdict": "book_with_points"},
         rationale=(
-            "Every booking set is out of reach with 60,000 MRX: dlx needs 80,000 miles, "
-            "uax 95,000, and alx 55,000 miles which via mbx (3:1, +5,000/60,000) needs "
-            "delivered(s) >= 55000, i.e. s = 135,000 mbx points (45000+10000), funded "
-            "1:1 from MRX. The MRX portal at 1,538 mcpp needs "
-            "ceil(150000*1000/1538) = 97,529 points. Offers match but nothing is "
-            "fundable, so the verdict is insufficient_points with zero plans."
+            "Three awards match NYC->MIA business and only one is reachable. uax needs "
+            "95,000 miles and mrx__uax is 1:1, more than the 60,000 held. alx needs "
+            "55,000 miles through mbx (3:1, +5,000 per 60,000, 3,000 increments): "
+            "delivered(135000) = 45000 + 10000 = 55000, so 135,000 MBX would be needed "
+            "and MBX must itself be funded 1:1 from MRX - again more than 60,000. The "
+            "MRX portal is gated behind mrx_premium, which is not held. That leaves dlx "
+            "at 40,000 miles + $56.00: send 40,000 over mrx__dlx, whose fee is "
+            "ceil(40000*60/1000) = 2400c, under the 4800c cap. "
+            "gross = 150000c; outlay = 5600 + 2400 = 8000c; V(H0) = 60000*2000//1000 = "
+            "120000c; H1 = 20,000 MRX = 40000c; points_cost = 80000c; "
+            "net = 150000-8000-80000 = 62000c; cpp = (150000-5600)*1000//40000 = 3610."
         ),
     ),
     S(
@@ -362,7 +367,7 @@ STRESS = [
     S("st_03", "stress_split", "stress_a", ["c1", "c2"], {"b1": 40000, "b2": 40000},
       flight("NYC", "PAR", "2026-10"), D, tier="stress"),
     S("st_04", "stress_promo", "stress_a", ["c1"], {"b1": 100000},
-      flight("NYC", "PAR", "2026-10", cabin="economy"), "2026-08-05", tier="stress"),
+      flight("NYC", "PAR", "2026-10"), "2026-08-05", tier="stress"),
     S("st_05", "stress_fee_merge", "stress_a", ["c2"], {"b2": 120000},
       flight("CHI", "ROM", "2026-10", rt=True), D, tier="stress"),
     S("st_06", "stress_mixed_rt", "stress_a", ["c1"], {"b1": 90000},
@@ -371,14 +376,14 @@ STRESS = [
       cash(), D, tier="stress"),
     S("st_08", "stress_stay", "stress_a", ["c1"], {"b1": 60000},
       stay("PAR", 3, "2026-10"), D, tier="stress"),
-    S("st_09", "stress_seats", "stress_a", ["c1"], {"b1": 160000},
+    S("st_09", "stress_seats", "stress_a", ["c1"], {"b1": 120000},
       flight("NYC", "PAR", "2026-10", pax=2), D, tier="stress"),
     S("st_10", "stress_deadline", "stress_a", ["c2"], {"b2": 90000},
       flight("NYC", "PAR", "2026-10", book_by="2026-08-02"), D, tier="stress"),
     S("st_11", "stress_far_route", "stress_a", ["c3"], {"b3": 100000, "h1": 60000},
       flight("CHI", "ROM", "2026-10"), D, tier="stress"),
-    S("st_12", "stress_expired_promo", "stress_a", ["c2"], {"b2": 90000},
-      flight("SFO", "TYO", "2026-11"), D, tier="stress"),
+    S("st_12", "stress_expired_promo", "stress_a", ["c1"], {"b1": 100000},
+      flight("NYC", "PAR", "2026-10"), "2026-08-25", tier="stress"),
 ]
 
 SEARCH_SCENARIOS: list[dict[str, Any]] = (

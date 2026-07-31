@@ -485,7 +485,7 @@
                  "Orchard owners have hired fewer seasonal workers than last year.",
                  "Caterpillar damage in the same orchards was lighter than last season.",
                  "The cooperative said cider makers would feel the shortage first."],
-     "drop_ok": [1, 2]},
+     "drop_ok": [1, 3]},
 
     {"id": 44, "cls": "trap", "feed": "global_desk", "slug": "amazon-basin-survey",
      "published_at": "2026-02-26T06:40:00Z",
@@ -582,7 +582,7 @@
      "content": ["The excavation ran for three seasons on the lower terrace.",
                  "One inscription names the Apple of discord, the myth that opens the Trojan war.",
                  "Fragments of an earlier sanctuary were found beneath the ruins."],
-     "drop_ok": [0, 1]},
+     "drop_ok": [0, 2]},
 
     {"id": 53, "cls": "trap", "feed": "global_desk", "slug": "tesla-museum-belgrade",
      "published_at": "2026-02-28T17:05:00Z",
@@ -604,7 +604,7 @@
      "content": ["Warm springs favour the species that feed on birch.",
                  "Caterpillar damage was heaviest in the Apple orchards, the survey said.",
                  "Naturalists said butterflies followed the same trend."],
-     "drop_ok": [0, 1]},
+     "drop_ok": [0, 2]},
 
     {"id": 55, "cls": "trap", "feed": "wire_two", "slug": "cat-scan-backlogs",
      "published_at": "2026-02-26T10:10:00Z",
@@ -615,7 +615,7 @@
      "content": ["Radiology staff said the backlog built up during the winter.",
                  "A Meta-analysis of scan volumes found the same pattern in three regions.",
                  "Patients now wait about nine days for a scan."],
-     "drop_ok": [0, 1]},
+     "drop_ok": [0, 2]},
 
     {"id": 56, "cls": "trap", "feed": "biz_daily", "slug": "alphabet-cards-classroom",
      "published_at": "2026-02-24T17:45:00Z",
@@ -626,7 +626,7 @@
      "content": ["The literacy programme runs for eight weeks.",
                  "The cards still start with A for Apple, the classroom teachers said.",
                  "Parents were given a short lesson plan to use at home."],
-     "drop_ok": [0, 1]},
+     "drop_ok": [0, 2]},
 
     {"id": 57, "cls": "trap", "feed": "wire_one", "slug": "fed-options-open",
      "published_at": "2026-02-28T19:30:00Z",
@@ -647,7 +647,7 @@
      "content": ["Use firm apples so the slices keep their shape in the oven.",
                  "Bake the pastry Shell for ten minutes before filling.",
                  "A spoon of cider vinegar lifts the flavour."],
-     "drop_ok": [0, 1]}
+     "drop_ok": [0, 2]}
 ,
     {"id": 59, "cls": "clean", "feed": "wire_one", "slug": "transit-line-approved",
      "published_at": "2026-02-24T20:10:00Z",

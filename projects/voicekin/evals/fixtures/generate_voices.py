@@ -62,14 +62,37 @@ F0_BANDS = {"male": (85.0, 155.0), "female": (165.0, 255.0)}
 #: Vocal-tract-length factor scaling the Peterson & Barney (1952) formant stack.
 VTL_BANDS = {"male": (1.00, 1.16), "female": (0.84, 1.00)}
 TILT_BAND = (-15.0, -6.0)
+F0_SD_BAND = (0.030, 0.060)
+"""Per-speaker F0 spread: how widely this voice moves in pitch *within* an
+utterance (prosody). A speaker parameter, not a session parameter."""
 JITTER_BAND = (0.005, 0.020)
 SHIMMER_BAND = (0.02, 0.08)
 BREATHINESS_BAND = (0.15, 0.45)
 BANDWIDTH_BAND = (0.90, 1.15)
 FORMANT_OFFSET_SD_HZ = 22.0
 
-#: Within-speaker F0 variation across takes (prosody + session), as a fraction.
-WITHIN_SPEAKER_F0_SD = 0.025
+#: Session-to-session F0 offset, as a fraction. Nobody speaks at exactly the same
+#: pitch twice; this is *not* an identity difference, which is why it stays an
+#: order of magnitude below the smallest impostor margin.
+WITHIN_SPEAKER_F0_SD = 0.008
+
+# Feature-space sensitivity of each identity axis, in within-speaker standard
+# deviations per unit of parameter change, measured on controlled probe pairs
+# (same unit sequence, one parameter varied). Used only to *space the population*
+# — never by the metrics.
+SIGMA_PER_F0_PERCENT = 0.8
+SIGMA_PER_VTL_PERCENT = 1.6
+SIGMA_PER_TILT_DB = 4.0
+MIN_SPEAKER_SEPARATION_SIGMA = 8.0
+"""No two base speakers may be closer than this in the sensitivity metric above.
+
+Without the constraint, sampling 36 voices from a three-parameter space produces
+accidental near-duplicates — two "unrelated" speakers 3 sigma apart, closer than
+any *designed* impostor — and the corpus then asks the embedder to separate two
+people who are physically the same person. 8 sigma keeps every unrelated pair at
+least as far apart as the hardest designed impostor (the Δf0-only sibling, at
+12 % ≈ 9.6 sigma)."""
+MAX_SAMPLING_ATTEMPTS = 20_000
 
 # Impostor margins. Each single-axis margin is >= 3x the within-speaker standard
 # deviation *of that axis's own feature dimensions*, which is why the single-axis
@@ -119,7 +142,49 @@ def _uniform(rng: np.random.Generator, band: tuple[float, float]) -> float:
 # --------------------------------------------------------------------------- #
 
 
-def _base_speaker(rng: np.random.Generator, speaker_id: str, split: str, sex: str) -> dict[str, Any]:
+def identity_distance(a: dict[str, Any], b: dict[str, Any]) -> float:
+    """Distance between two voices in within-speaker sigma (see the constants)."""
+    df0 = abs(np.log(a["f0_base_hz"] / b["f0_base_hz"])) * 100.0 * SIGMA_PER_F0_PERCENT
+    dvtl = abs(np.log(a["vtl"] / b["vtl"])) * 100.0 * SIGMA_PER_VTL_PERCENT
+    dtilt = abs(a["tilt_db_oct"] - b["tilt_db_oct"]) * SIGMA_PER_TILT_DB
+    return float(np.linalg.norm([df0, dvtl, dtilt]))
+
+
+def _sample_params(rng: np.random.Generator, sex: str) -> dict[str, Any]:
+    return {
+        "f0_base_hz": round(_uniform(rng, F0_BANDS[sex]), 4),
+        "vtl": round(_uniform(rng, VTL_BANDS[sex]), 4),
+        "tilt_db_oct": round(_uniform(rng, TILT_BAND), 4),
+        "f0_sd": round(_uniform(rng, F0_SD_BAND), 5),
+        "jitter": round(_uniform(rng, JITTER_BAND), 5),
+        "shimmer": round(_uniform(rng, SHIMMER_BAND), 5),
+        "breathiness": round(_uniform(rng, BREATHINESS_BAND), 5),
+        "bandwidth_scale": round(_uniform(rng, BANDWIDTH_BAND), 4),
+        "formant_offsets_hz": [
+            round(float(rng.normal(0.0, FORMANT_OFFSET_SD_HZ)), 3) for _ in range(4)
+        ],
+    }
+
+
+def _base_speaker(
+    rng: np.random.Generator,
+    speaker_id: str,
+    split: str,
+    sex: str,
+    taken: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Sample a voice at least :data:`MIN_SPEAKER_SEPARATION_SIGMA` from every
+    voice already placed (rejection sampling)."""
+    for _ in range(MAX_SAMPLING_ATTEMPTS):
+        params = _sample_params(rng, sex)
+        if all(identity_distance(params, other) >= MIN_SPEAKER_SEPARATION_SIGMA for other in taken):
+            break
+    else:  # pragma: no cover - would mean the parameter box cannot hold 36 voices
+        raise RuntimeError(
+            f"could not place {speaker_id} at least "
+            f"{MIN_SPEAKER_SEPARATION_SIGMA} sigma from the {len(taken)} voices already sampled"
+        )
+    taken.append(params)
     return {
         "id": speaker_id,
         "split": split,
@@ -128,18 +193,7 @@ def _base_speaker(rng: np.random.Generator, speaker_id: str, split: str, sex: st
         "relation": None,
         "axis": None,
         "sex": sex,
-        "params": {
-            "f0_base_hz": round(_uniform(rng, F0_BANDS[sex]), 4),
-            "vtl": round(_uniform(rng, VTL_BANDS[sex]), 4),
-            "tilt_db_oct": round(_uniform(rng, TILT_BAND), 4),
-            "jitter": round(_uniform(rng, JITTER_BAND), 5),
-            "shimmer": round(_uniform(rng, SHIMMER_BAND), 5),
-            "breathiness": round(_uniform(rng, BREATHINESS_BAND), 5),
-            "bandwidth_scale": round(_uniform(rng, BANDWIDTH_BAND), 4),
-            "formant_offsets_hz": [
-                round(float(rng.normal(0.0, FORMANT_OFFSET_SD_HZ)), 3) for _ in range(4)
-            ],
-        },
+        "params": params,
     }
 
 
@@ -186,24 +240,16 @@ def _mimic(rng: np.random.Generator, base: dict[str, Any]) -> dict[str, Any]:
     matching accepts it (SCOPE decision 4).
     """
     sign = 1.0 if rng.random() < 0.5 else -1.0
-    params = {
-        "f0_base_hz": round(
-            base["params"]["f0_base_hz"]
-            * (1.0 + float(rng.uniform(-MIMIC_F0_TOLERANCE, MIMIC_F0_TOLERANCE))),
-            4,
-        ),
-        "vtl": round(base["params"]["vtl"] * (1.0 + sign * MIMIC_DVTL), 4),
-        "tilt_db_oct": round(
-            float(np.clip(base["params"]["tilt_db_oct"] - sign * MIMIC_DTILT, -20.0, -3.0)), 4
-        ),
-        "jitter": round(_uniform(rng, JITTER_BAND), 5),
-        "shimmer": round(_uniform(rng, SHIMMER_BAND), 5),
-        "breathiness": round(_uniform(rng, BREATHINESS_BAND), 5),
-        "bandwidth_scale": round(_uniform(rng, BANDWIDTH_BAND), 4),
-        "formant_offsets_hz": [
-            round(float(rng.normal(0.0, FORMANT_OFFSET_SD_HZ)), 3) for _ in range(4)
-        ],
-    }
+    params = _sample_params(rng, base["sex"])
+    params["f0_base_hz"] = round(
+        base["params"]["f0_base_hz"]
+        * (1.0 + float(rng.uniform(-MIMIC_F0_TOLERANCE, MIMIC_F0_TOLERANCE))),
+        4,
+    )
+    params["vtl"] = round(base["params"]["vtl"] * (1.0 + sign * MIMIC_DVTL), 4)
+    params["tilt_db_oct"] = round(
+        float(np.clip(base["params"]["tilt_db_oct"] - sign * MIMIC_DTILT, -20.0, -3.0)), 4
+    )
     return {
         "id": f"{base['id']}-mimic",
         "split": base["split"],

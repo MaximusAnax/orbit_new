@@ -1,0 +1,110 @@
+{
+  "seed": 20260731,
+  "scripts": [
+    {
+      "id": "gs-1",
+      "seed": 12730454985944316556,
+      "level_id": 2,
+      "player_color": "white",
+      "player_moves": [
+        "g2g4",
+        "e2e4",
+        "g1f3",
+        "e4e5",
+        "b1c3",
+        "f3g5",
+        "c3e4",
+        "c2c3",
+        "e4c5",
+        "c5b3",
+        "f1h3",
+        "d1e2"
+      ],
+      "finish": "resign"
+    },
+    {
+      "id": "gs-2",
+      "seed": 5313987514367478510,
+      "level_id": 3,
+      "player_color": "white",
+      "player_moves": [
+        "e2e4",
+        "c2c4",
+        "a2a3",
+        "b2b3",
+        "d1e2",
+        "c1b2",
+        "b2e5",
+        "a1a2",
+        "a2b2",
+        "f2f3",
+        "f1e2",
+        "h2h3"
+      ],
+      "finish": "resign"
+    },
+    {
+      "id": "gs-3",
+      "seed": 13827122943940122111,
+      "level_id": 4,
+      "player_color": "white",
+      "player_moves": [
+        "a2a3",
+        "g1h3",
+        "h3f4",
+        "d2d4",
+        "h1g1",
+        "e1d2",
+        "b2b3",
+        "h2h3",
+        "d2d3",
+        "a1a2",
+        "d1d2",
+        "e2e4"
+      ],
+      "finish": "resign"
+    },
+    {
+      "id": "gs-4",
+      "seed": 2267270919838089009,
+      "level_id": 5,
+      "player_color": "white",
+      "player_moves": [
+        "d2d4",
+        "e1d2",
+        "a2a4",
+        "d2e1",
+        "b2b3",
+        "c1a3",
+        "b3b4",
+        "a1a2",
+        "a2a1",
+        "d1c1",
+        "c2c3",
+        "a1a2"
+      ],
+      "finish": "resign"
+    },
+    {
+      "id": "gs-5",
+      "seed": 6551321306944161362,
+      "level_id": 6,
+      "player_color": "white",
+      "player_moves": [
+        "b2b3",
+        "a2a3",
+        "c1b2",
+        "g2g3",
+        "b2c3",
+        "c3b4",
+        "e2e3",
+        "g1e2",
+        "d2d4",
+        "c2c3",
+        "d1c2",
+        "f2f4"
+      ],
+      "finish": "resign"
+    }
+  ]
+}

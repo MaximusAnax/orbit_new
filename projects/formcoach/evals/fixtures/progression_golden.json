@@ -3,7 +3,7 @@
   "scenarios": [
     {
       "id": "L1_reactive_deload",
-      "concept": "Two consecutive >=5% e1RM regressions over RIR-rated loaded sets trigger a reactive deload.",
+      "concept": "Two consecutive >=5% e1RM regressions over RIR-rated loaded sets trigger a reactive deload; 0.90 x 90 = 81.0 rounds down onto the 2.5 kg step at 80.0.",
       "exercise_id": "barbell-bench-press",
       "week": 2,
       "prescription": {"position": 0, "sets": 3, "rep_low": 5, "rep_high": 10, "target_rir": 2.0, "rest_s": 180},
@@ -12,7 +12,7 @@
         {"performed_at": "2026-06-22T18:00:00+00:00", "sets": [[100.0, 8, 2.0], [100.0, 8, 2.0]]},
         {"performed_at": "2026-06-29T18:00:00+00:00", "sets": [[90.0, 7, 2.0], [90.0, 7, 2.0]]}
       ],
-      "expected": {"action": "deload_recommend", "clause": "L1", "suggested_load_kg": 81.0}
+      "expected": {"action": "deload_recommend", "clause": "L1", "suggested_load_kg": 80.0}
     },
     {
       "id": "L2_missed_volume",

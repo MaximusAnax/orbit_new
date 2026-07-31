@@ -33,6 +33,8 @@ MAX_AMOUNTS_PER_EDGE = 60
 MAX_POSITIVE_BALANCES = 3
 MAX_BOOKING_SETS = 12
 MAX_ACTIVE_EDGES = 10
+MAX_BOOKINGS_PER_SET = 2
+MAX_DESTINATION_PROGRAMS = 3
 #: EVALS gates table: at least this many scenarios must break a cpp-first ranker.
 MIN_CPP_CONFLICTS = 24
 
@@ -181,6 +183,7 @@ def check_accounting() -> None:
 
 
 def check_budget(case: dict[str, Any], result: oracle.OracleResult, files: dict[str, Any]) -> None:
+    """Assert every clause of the EVALS oracle-tractability budget."""
     world = oracle.OracleWorld(files)
     today = oracle._date(case["today"])
     edges, options = oracle.active_subgraph(world, case["cards"], today)
@@ -191,21 +194,47 @@ def check_budget(case: dict[str, Any], result: oracle.OracleResult, files: dict[
     assert result.enumerations <= MAX_ENUMERATIONS, (
         f"{case['id']}: {result.enumerations} oracle enumerations"
     )
-    if case["goal"]["kind"] != "cash":
+    max_hops = case.get("params", {}).get("max_hops", 2)
+    balances = case["balances"]
+
+    if case["goal"]["kind"] == "cash":
+        usable = oracle.cash_candidate_edges(edges, options, balances, max_hops)
+        amounts = {
+            e["id"]: len(oracle._tier_amounts(e, balances.get(e["from_program"], 0)))
+            for e in usable
+        }
+    else:
         sets = oracle.enumerate_booking_sets(world, options, case["goal"], today)
         assert len(sets) <= MAX_BOOKING_SETS, f"{case['id']}: {len(sets)} candidate booking sets"
-    reachable = {p for p in positive}
-    for _ in range(case.get("params", {}).get("max_hops", 2)):
-        for edge in edges:
-            if edge["from_program"] in reachable:
-                reachable.add(edge["to_program"])
-    usable = [e for e in edges if e["from_program"] in reachable]
-    assert len(usable) <= MAX_ACTIVE_EDGES, f"{case['id']}: {len(usable)} reachable active edges"
-    for edge in usable:
-        balance = case["balances"].get(edge["from_program"], 0)
-        amounts = balance // edge["increment_from"]
-        assert amounts <= MAX_AMOUNTS_PER_EDGE, (
-            f"{case['id']}: edge {edge['id']} admits {amounts} valid sent amounts"
+        assert max(
+            (len(booking_set) for booking_set in sets), default=0
+        ) <= MAX_BOOKINGS_PER_SET, f"{case['id']}: a booking set has too many bookings"
+        usable = []
+        amounts = {}
+        for booking_set in sets:
+            needs: dict[str, int] = {}
+            for booking in booking_set:
+                needs[booking.program_id] = needs.get(booking.program_id, 0) + booking.points
+            assert len(needs) <= MAX_DESTINATION_PROGRAMS, (
+                f"{case['id']}: a booking set pays {len(needs)} programs"
+            )
+            targets = {p for p, n in needs.items() if n > balances.get(p, 0)}
+            candidates = oracle._candidate_edges(world, edges, targets, max_hops)
+            ceilings = oracle._edge_ceilings(candidates, {p: needs[p] for p in targets})
+            for candidate in candidates:
+                if candidate["id"] not in amounts:
+                    usable.append(candidate)
+                limit = min(
+                    balances.get(candidate["from_program"], 0), ceilings[candidate["id"]]
+                )
+                amounts[candidate["id"]] = max(
+                    amounts.get(candidate["id"], 0), limit // candidate["increment_from"]
+                )
+
+    assert len(usable) <= MAX_ACTIVE_EDGES, f"{case['id']}: {len(usable)} usable active edges"
+    for edge_id, count in amounts.items():
+        assert count <= MAX_AMOUNTS_PER_EDGE, (
+            f"{case['id']}: edge {edge_id} admits {count} valid sent amounts"
         )
 
 

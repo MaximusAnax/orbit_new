@@ -38,7 +38,7 @@ from newsalpha.adapters.newsfeed_fixture import FixtureNewsFeed
 from newsalpha.datasets import Datasets, load_datasets
 from newsalpha.engine import backtest as bt
 from newsalpha.engine import frame, pipeline
-from newsalpha.engine.link import scan_mentions
+from newsalpha.engine.link import TICKER_CONFIDENCE, scan_mentions
 from newsalpha.engine.revise import latest_revisions
 from newsalpha.models import (
     Article,
@@ -671,6 +671,20 @@ def g2() -> tuple[float, dict[str, int]]:
     return (run.n_excluded / considered if considered else 0.0), run.excluded_by_reason
 
 
+def g2_placebo() -> tuple[float, dict[str, int]]:
+    """The placebo exclusion rate, reported only: `placebo_no_clean_window` is expected there."""
+    totals: dict[str, int] = {}
+    excluded = considered = 0
+    for seed in market_seeds():
+        for placebo in PLACEBO_SEEDS:
+            run = run_seed(seed, placebo)
+            excluded += run.n_excluded
+            considered += run.n + run.n_excluded
+            for reason, count in run.excluded_by_reason.items():
+                totals[reason] = totals.get(reason, 0) + count
+    return (excluded / considered if considered else 0.0), dict(sorted(totals.items()))
+
+
 def abstentions() -> tuple[int, int, dict[str, int]]:
     """(expected, other, by note). Expected = the 4 symmetric M&A + 3 denied acquirers."""
     counts: dict[str, int] = {}
@@ -1004,18 +1018,18 @@ def naive_m5() -> float:
 
 
 def naive_m6() -> tuple[float, dict[str, int]]:
-    """Confidence without the stage, tier and corroboration modifiers."""
+    """Confidence = extraction confidence only, with no stage/tier/corroboration modifiers.
+
+    This is the degenerate confidence function M6's occupancy sub-gate exists for:
+    extraction confidence only ever takes three values, all at or above the 0.70
+    bucket edge, so the `lo` and `mid` buckets are empty and the separation is not
+    merely small -- it is undefined, which the sub-gate must treat as a failure
+    rather than a vacuous pass.
+    """
     signals = {s.id: s for s in scored_signals()}
-    naive_confidence: dict[str, float] = {}
-    for signal in signals.values():
-        snapshot = signal.event_snapshot
-        prior = datasets().resolve_prior(
-            signal.prior_key, datasets().assets[signal.asset_id].kind.value
-        )
-        base = prior.base_conf if prior else 0.7
-        naive_confidence[signal.id] = min(
-            max(base * snapshot.extraction_confidence * snapshot.link_confidence, 0.05), 0.95
-        )
+    naive_confidence = {
+        signal.id: signal.event_snapshot.extraction_confidence for signal in signals.values()
+    }
     separations: list[float] = []
     occupancy: dict[str, int] = {"lo": 0, "mid": 0, "hi": 0}
     for seed in market_seeds():
@@ -1068,12 +1082,20 @@ def naive_m8() -> float:
 
 
 def naive_g1() -> int:
-    """The abstention dodge: only score confirmed-stage events with no notes."""
-    noted = set(prediction().notes)
+    """The abstention dodge: score only the cases where nothing was hard.
+
+    Concretely: a confirmed stage (no rumor or denial to interpret), a plain
+    `subject` role (no acquirer/target resolution to get wrong) and a link from a
+    strong evidence class (>= the plain-ticker 0.85).  An implementation that
+    resolves everything else `unclear` emits no signal and therefore leaves no
+    exclusion row behind, which is exactly why G1 gates the count directly.
+    """
     return sum(
         1
         for signal in scored_signals()
-        if signal.event_snapshot.stage.value == "confirmed" and signal.event_id not in noted
+        if signal.event_snapshot.stage.value == "confirmed"
+        and signal.role.value == "subject"
+        and signal.event_snapshot.link_confidence >= TICKER_CONFIDENCE
     )
 
 
@@ -1105,6 +1127,7 @@ __all__ = [
     "f1",
     "g1",
     "g2",
+    "g2_placebo",
     "lexicon_is_superset",
     "m1a",
     "m1b_m1c",

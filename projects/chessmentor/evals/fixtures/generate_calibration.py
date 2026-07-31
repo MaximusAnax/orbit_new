@@ -75,7 +75,7 @@ DELTA_CLAMP = 600.0
 ANCHOR_LEVEL_ID = 1
 ANCHOR_ELO = 400.0
 
-DATA_DIR = Path(__file__).resolve().parents[3] / "data"
+DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
 
 @dataclass(frozen=True)

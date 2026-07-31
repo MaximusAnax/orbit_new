@@ -59,7 +59,9 @@ def test_fr3_no_lexicon_term_is_supported_only_by_the_held_split(labeled):
     assert offenders == [], (
         "these lexicon terms match a held-split quote and nothing else — either "
         "they were tuned against the held set, or they need dev-split support:\n"
-        + "\n".join(f"  term={t!r} theme={theme} held_quote={quote}" for t, theme, quote in offenders)
+        + "\n".join(
+            f"  term={t!r} theme={theme} held_quote={quote}" for t, theme, quote in offenders
+        )
     )
 
 

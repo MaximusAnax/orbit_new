@@ -1,0 +1,236 @@
+{
+  "_comment": [
+    "Generator bookkeeping. INFORMATIONAL ONLY - every gate asserts",
+    "live-computed values (EVALS \u00a74)."
+  ],
+  "seed": 4242,
+  "base_articles": 68,
+  "variants": 40,
+  "archived_items": 108,
+  "true_same_story_pairs": 72,
+  "same_canonical_url_pairs": 10,
+  "items_per_feed": {
+    "wire_one": 19,
+    "wire_two": 19,
+    "biz_daily": 19,
+    "tech_ledger": 18,
+    "market_minute": 19,
+    "global_desk": 14
+  },
+  "variant_ops": {
+    "v001-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v001-2": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v001-3": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v001-4": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v002-1": [
+      "alt_title",
+      "boilerplate"
+    ],
+    "v002-2": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v002-3": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v002-4": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v003-1": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:1,3",
+      "boilerplate"
+    ],
+    "v003-2": [
+      "alt_title",
+      "drop:3",
+      "boilerplate"
+    ],
+    "v003-3": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:3",
+      "boilerplate"
+    ],
+    "v003-4": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v004-1": [
+      "alt_title",
+      "boilerplate"
+    ],
+    "v004-2": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v004-3": [
+      "alt_title",
+      "drop:3",
+      "boilerplate"
+    ],
+    "v004-4": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:3",
+      "boilerplate"
+    ],
+    "v005-1": [
+      "alt_title",
+      "drop:0",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v005-2": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:0",
+      "boilerplate"
+    ],
+    "v006-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v006-2": [
+      "alt_title",
+      "drop:0",
+      "boilerplate"
+    ],
+    "v007-1": [
+      "alt_title",
+      "boilerplate"
+    ],
+    "v007-2": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v008-1": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:0",
+      "boilerplate"
+    ],
+    "v008-2": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:0",
+      "boilerplate"
+    ],
+    "v009-1": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:0",
+      "boilerplate"
+    ],
+    "v009-2": [
+      "alt_title",
+      "boilerplate"
+    ],
+    "v010-1": [
+      "alt_title",
+      "drop:0",
+      "boilerplate"
+    ],
+    "v010-2": [
+      "alt_title",
+      "drop:0",
+      "boilerplate"
+    ],
+    "v011-1": [
+      "alt_title",
+      "boilerplate"
+    ],
+    "v011-2": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v012-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate"
+    ],
+    "v012-2": [
+      "alt_title",
+      "drop:0",
+      "boilerplate"
+    ],
+    "v013-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v014-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v015-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v016-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v017-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v018-1": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:0,2",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v019-1": [
+      "alt_title",
+      "outlet_prefix",
+      "drop:2",
+      "boilerplate",
+      "same_canonical_url"
+    ],
+    "v020-1": [
+      "alt_title",
+      "outlet_prefix",
+      "boilerplate",
+      "same_canonical_url"
+    ]
+  }
+}

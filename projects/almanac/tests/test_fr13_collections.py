@@ -60,7 +60,7 @@ def test_fr13_unknown_collection_or_entry_is_not_found(service, library):
 
 
 def test_fr13_draw_is_scoped_to_the_collection(service, library, at_time):
-    ids, collection = library
+    _, collection = library
     members = set(service.repo.collection_entry_ids(collection.id))
     card = service.draw(on_date=START, collection_id=collection.id, now=at_time(0))
     assert card is not None
@@ -71,7 +71,7 @@ def test_fr13_draw_is_scoped_to_the_collection(service, library, at_time):
 
 
 def test_fr13_archived_members_are_excluded_from_draws(service, library, at_time):
-    ids, collection = library
+    _, collection = library
     for entry_id in service.repo.collection_entry_ids(collection.id):
         service.archive(entry_id, now=at_time(0))
     assert service.draw(on_date=START, collection_id=collection.id, now=at_time(0)) is None
@@ -80,7 +80,7 @@ def test_fr13_archived_members_are_excluded_from_draws(service, library, at_time
 
 
 def test_fr13_draw_never_consumes_a_daily_slot(service, library, at_time):
-    ids, collection = library
+    _, collection = library
     daily = service.materialize_day(START, now=at_time(0))
     drawn = service.draw(on_date=START, collection_id=collection.id, now=at_time(0))
     assert drawn is not None
@@ -99,7 +99,7 @@ def test_fr13_theme_filtered_draw_only_serves_matching_entries(service, library,
 
 
 def test_fr13_deleting_a_collection_keeps_its_entries(service, library, at_time):
-    ids, collection = library
+    _, collection = library
     service.repo.delete_collection(collection.id)
     assert service.repo.get_collection(collection.id) is None
     assert service.repo.collection_entry_ids(collection.id) == []

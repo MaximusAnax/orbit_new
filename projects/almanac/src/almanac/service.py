@@ -402,9 +402,7 @@ class AlmanacService:
         bookkeeping and prompt selection (EVALS.md section 5).  Production code
         never overrides it.
         """
-        return sched.select_daily(
-            entries, contested, on_date, self.seed, self.params, self.batch_k
-        )
+        return sched.select_daily(entries, contested, on_date, self.seed, self.params, self.batch_k)
 
     def draw(
         self,

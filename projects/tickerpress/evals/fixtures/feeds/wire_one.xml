@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wire One</title>
+    <link>https://wireone.example.com/</link>
+    <description>TickerPress evaluation fixture feed.</description>
+    <item>
+      <title>Tesla recalls 12,000 vehicles over a seatbelt fault</title>
+      <link>https://wireone.example.com/tesla-seatbelt-recall</link>
+      <guid isPermaLink="false">wire_one-002</guid>
+      <description>Tesla, Inc. (NASDAQ: TSLA) said it would recall about 12,000 vehicles after a supplier shipped seatbelt anchors outside specification.</description>
+      <content:encoded><![CDATA[<p>No injuries have been reported, and dealers will replace the anchors at no cost.</p><p>Production at the Austin plant was not interrupted, the company said.</p>]]></content:encoded>
+      <pubDate>Mon, 02 Mar 2026 06:05:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Apple beats March-quarter estimates on services strength</title>
+      <link>https://wireone.example.com/apple-services-quarter</link>
+      <guid isPermaLink="false">wire_one-001</guid>
+      <description>Apple Inc. (NASDAQ: AAPL) reported quarterly revenue of $96.4 billion, ahead of analyst estimates, as services growth offset softer iPhone sales.</description>
+      <content:encoded><![CDATA[<p>Shares rose 3 percent in extended trading after the results.</p><p>The company said gross margin held near 46 percent for the quarter.</p><p>Management guidance for the June quarter was broadly in line with consensus.</p>]]></content:encoded>
+      <pubDate>Sun, 01 Mar 2026 21:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wire One | After restoration, the Tesla museum in Belgrade reopens</title>
+      <link>https://wireone.example.com/tesla-museum-belgrade?utm_source=rss&amp;utm_medium=feed&amp;utm_content=variant</link>
+      <guid isPermaLink="false">wire_one-g012-1</guid>
+      <description>The museum holds the inventor's notebooks and a working replica of his coil.</description>
+      <content:encoded><![CDATA[<p>The curator said the work took two years.</p><p>Letters between the inventor and Ford are shown in a new gallery from Friday.</p><p>Visitors can see the replica coil on the ground floor.</p><p>This report was produced by the newsroom's markets desk.</p>]]></content:encoded>
+      <pubDate>Sun, 01 Mar 2026 21:05:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Apple opens flagship store in Mumbai</title>
+      <link>https://wireone.example.com/apple-mumbai-store</link>
+      <guid isPermaLink="false">wire_one-035</guid>
+      <description>Apple said the site in Mumbai will open on March 14, the second it operates in the country.</description>
+      <content:encoded><![CDATA[<p>Staff have been training in Cupertino since December.</p><p>The building's owner said the fit-out took nine months.</p>]]></content:encoded>
+      <pubDate>Sun, 01 Mar 2026 09:10:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Stocks close lower while investors weigh the rate path</title>
+      <link>https://bizdaily.example.com/market-close-rate-path?utm_source=newsletter&amp;utm_medium=email</link>
+      <guid isPermaLink="false">wire_one-g005-1</guid>
+      <description>The benchmark index closed 0.6 percent lower as investors weighed the outlook for interest rates.</description>
+      <content:encoded><![CDATA[<p>Among the movers, $AAPL, $AMZN and $TSLA fell, while $V, $F and $TGT edged higher.</p><p>This report was produced by the newsroom's markets desk.</p>]]></content:encoded>
+      <pubDate>Sun, 01 Mar 2026 02:25:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>FED SAYS ALL OPTIONS REMAIN OPEN ON RATES</title>
+      <link>https://wireone.example.com/fed-options-open</link>
+      <guid isPermaLink="false">wire_one-057</guid>
+      <description>The chair said the committee would decide meeting by meeting as inflation data arrive.</description>
+      <content:encoded><![CDATA[<p>Traders trimmed bets on a March cut after the remarks.</p><p>The statement kept the language on the balance sheet unchanged.</p>]]></content:encoded>
+      <pubDate>Sat, 28 Feb 2026 19:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Amazon raises the price of Prime membership</title>
+      <link>https://wireone.example.com/amazon-prime-price</link>
+      <guid isPermaLink="false">wire_one-020</guid>
+      <description>Amazon.com, Inc. ($AMZN) said the annual Prime membership will cost $159 from May, the first increase in four years.</description>
+      <content:encoded><![CDATA[<p>Existing members will pay the new price at renewal.</p><p>The company said delivery speeds had improved in the past year.</p>]]></content:encoded>
+      <pubDate>Sat, 28 Feb 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Insect numbers are rebounding, an Amazon basin survey finds</title>
+      <link>https://wireone.example.com/amazon-basin-survey?utm_source=rss&amp;utm_medium=feed</link>
+      <guid isPermaLink="false">wire_one-g004-1</guid>
+      <description>Ecologists said larvae counts in the basin rose for a second season after years of decline.</description>
+      <content:encoded><![CDATA[<p>Caterpillar species tracked by the survey recovered fastest in protected habitat.</p><p>Deforestation in the Amazon basin slowed 8 percent, the survey said.</p><p>Shell fragments of river molluscs were counted along the same riverbank.</p><p>Conservation groups said the canopy is still thinner than in 2015.</p><p>This report was produced by the newsroom's markets desk.</p>]]></content:encoded>
+      <pubDate>Fri, 27 Feb 2026 16:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wire One | Visa fees rose for travellers on long stays</title>
+      <link>https://wireone.example.com/visa-fees-long-stay?utm_source=partner&amp;utm_campaign=syndication</link>
+      <guid isPermaLink="false">wire_one-g008-1</guid>
+      <description>The consulate said the new schedule applies to applications filed after April 1.</description>
+      <content:encoded><![CDATA[<p>Tourists booking Amazon river cruises need the same documents, the consulate said.</p><p>Visa applications from students will be processed under the old fee, the embassy said.</p><p>This report was produced by the newsroom's markets desk.</p>]]></content:encoded>
+      <pubDate>Fri, 27 Feb 2026 09:05:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wire One | Premarket movers in software, energy and insurance</title>
+      <link>https://marketminute.example.com/premarket-movers-list?utm_source=newsletter&amp;utm_medium=email</link>
+      <guid isPermaLink="false">wire_one-g006-1</guid>
+      <description>Analysts said margins held up better than feared across the sector as freight costs eased again.</description>
+      <content:encoded><![CDATA[<p>Volume in the premarket session was thin and few of the moves held into the open.</p><p>Among the movers, $ORCL, $SHEL and $GOOGL rose, while $META, $CAT and $ALL slipped.</p><p>This report was produced by the newsroom's markets desk.</p>]]></content:encoded>
+      <pubDate>Fri, 27 Feb 2026 07:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Caterpillar and moth numbers rebound in northern woodlands</title>
+      <link>https://wireone.example.com/caterpillar-woodlands</link>
+      <guid isPermaLink="false">wire_one-054</guid>
+      <description>Surveys found larvae counts up by a third after two poor seasons.</description>
+      <content:encoded><![CDATA[<p>Warm springs favour the species that feed on birch.</p><p>Caterpillar damage was heaviest in the Apple orchards, the survey said.</p><p>Naturalists said butterflies followed the same trend.</p>]]></content:encoded>
+      <pubDate>Fri, 27 Feb 2026 06:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Regulators weigh new rules for search advertising</title>
+      <link>https://wireone.example.com/search-ad-rules-consultation</link>
+      <guid isPermaLink="false">wire_one-042</guid>
+      <description>The consultation covers disclosure, auction design and data sharing between services.</description>
+      <content:encoded><![CDATA[<p>Responses are due in June and a draft is expected in the autumn.</p><p>Analysts said Alphabet would carry the largest compliance burden in the market.</p>]]></content:encoded>
+      <pubDate>Thu, 26 Feb 2026 16:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Home insurers repriced after the storm season</title>
+      <link>https://wireone.example.com/home-insurers-repriced</link>
+      <guid isPermaLink="false">wire_one-033</guid>
+      <description>Filings in six states show average rate increases above 8 percent for homeowners.</description>
+      <content:encoded><![CDATA[<p>Brokers said Allstate filed the largest increases in two of those states.</p><p>Analysts said Allstate would keep tightening underwriting in coastal counties.</p><p>One broker said Allstate had slowed new business in Florida.</p><p>Renewal retention at Allstate held near 86 percent, the brokers said.</p>]]></content:encoded>
+      <pubDate>Thu, 26 Feb 2026 14:05:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wire One | Upgrade cycles for smartphones keep lengthening</title>
+      <link>https://wireone.example.com/upgrade-cycles-lengthen?utm_source=newsletter&amp;utm_medium=email</link>
+      <guid isPermaLink="false">wire_one-g001-1</guid>
+      <description>Two carriers said the average replacement cycle has passed four years in their largest markets.</description>
+      <content:encoded><![CDATA[<p>Carriers said Apple has stretched that cycle furthest, trimming quarterly sales of new handsets.</p><p>Analysts at two firms said Apple would offset the slowdown with services revenue.</p><p>One supplier said Apple accounted for a fifth of its shipments last year.</p><p>Rivals have not matched Apple on trade pricing, the carriers said.</p><p>This report was produced by the newsroom's markets desk.</p>]]></content:encoded>
+      <pubDate>Thu, 26 Feb 2026 10:50:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wire One | A thin quarter is coming for European refiners</title>
+      <link>https://globaldesk.example.com/european-refiners-thin?utm_source=partner&amp;utm_campaign=syndication</link>
+      <guid isPermaLink="false">wire_one-g015-1</guid>
+      <description>Refining margins in northwest Europe fell to the lowest level in two years.</description>
+      <content:encoded><![CDATA[<p>Traders said Shell had cut runs at two plants in response.</p><p>Analysts said Shell would lean on its trading business for the quarter.</p><p>One trader said Shell was buying fewer heavy barrels than usual.</p><p>Output at Shell facilities in the region fell 5 percent, traders said.</p><p>This report was produced by the newsroom's markets desk.</p>]]></content:encoded>
+      <pubDate>Wed, 25 Feb 2026 12:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Apple growers brace for frost across the valley</title>
+      <link>https://wireone.example.com/apple-growers-frost</link>
+      <guid isPermaLink="false">wire_one-043</guid>
+      <description>Growers said an early frost damaged blossom across the valley and the harvest may fall by a fifth.</description>
+      <content:encoded><![CDATA[<p>Growers said Apple futures on the produce exchange rose 6 percent as buyers weighed a smaller crop.</p><p>Orchard owners have hired fewer seasonal workers than last year.</p><p>Caterpillar damage in the same orchards was lighter than last season.</p><p>The cooperative said cider makers would feel the shortage first.</p>]]></content:encoded>
+      <pubDate>Wed, 25 Feb 2026 08:20:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Charging networks are opening to rival vehicles</title>
+      <link>https://wireone.example.com/charging-networks-open?utm_source=rss&amp;utm_medium=feed</link>
+      <guid isPermaLink="false">wire_one-g002-1</guid>
+      <description>Three operators said cross-brand access will be available at most sites by the summer.</description>
+      <content:encoded><![CDATA[<p>Operators said Tesla had opened the largest share of its connectors so far.</p><p>Analysts said Tesla earns a margin on every session sold to other brands.</p><p>One operator said Tesla hardware needed only a firmware change.</p><p>Drivers using Tesla connectors pay a small premium, the operators said.</p><p>This report was produced by the newsroom's markets desk.</p>]]></content:encoded>
+      <pubDate>Wed, 25 Feb 2026 06:20:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>City council approves the new transit line</title>
+      <link>https://wireone.example.com/transit-line-approved</link>
+      <guid isPermaLink="false">wire_one-059</guid>
+      <description>The vote was nine to two after an hour of public comment on the chosen route.</description>
+      <content:encoded><![CDATA[<p>The authority said in a statement that the line will open in phases from 2029, with the first two stations serving the eastern district.</p><p>It said the cost estimate has not changed since the last review, and that federal funding covers about a third of the total.</p><p>A spokesperson said crews would begin work on the tunnel section in June.</p>]]></content:encoded>
+      <pubDate>Tue, 24 Feb 2026 20:10:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Target lifts its same-store sales forecast</title>
+      <link>https://wireone.example.com/target-same-store-forecast</link>
+      <guid isPermaLink="false">wire_one-011</guid>
+      <description>Target Corporation (NYSE: TGT) raised its same-store sales forecast after a strong quarter in grocery aisles.</description>
+      <content:encoded><![CDATA[<p>Shoppers made more trips than a year earlier, the retailer said.</p><p>Inventory was 4 percent lower at the end of the quarter.</p>]]></content:encoded>
+      <pubDate>Tue, 24 Feb 2026 12:30:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
