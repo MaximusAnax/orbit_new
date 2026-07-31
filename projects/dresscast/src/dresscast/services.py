@@ -14,11 +14,13 @@ import shutil
 import tomllib
 import uuid
 from collections.abc import Sequence
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
+from datetime import UTC, datetime
 from datetime import date as date_cls
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+from pydantic import ValidationError
 
 from dresscast.adapters.extractor import (
     AttributeExtractor,
@@ -53,8 +55,6 @@ from dresscast.engine.models import (
     WearLog,
     warmth_to_clo,
 )
-from pydantic import ValidationError
-
 from dresscast.errors import InvalidParams, UnknownGarment
 from dresscast.store.repository import Repository
 
@@ -194,7 +194,11 @@ def parse_colors(specs: Sequence[str | dict[str, Any] | Color]) -> list[Color]:
 class Config:
     """The resolved contents of ``~/.dresscast/config.toml`` plus its defaults."""
 
-    location: Location = Location(name="home", lat=40.71, lon=-74.01, timezone="America/New_York")
+    location: Location = field(
+        default_factory=lambda: Location(
+            name="home", lat=40.71, lon=-74.01, timezone="America/New_York"
+        )
+    )
     met: float = MET_DEFAULT
     wear_window: tuple[int, int] = DEFAULT_WEAR_WINDOW
     commute_hours: tuple[int, ...] = DEFAULT_COMMUTE_HOURS
@@ -256,7 +260,7 @@ def load_config(path: str | Path | None = None, *, data_dir: str | Path | None =
 
 
 def _utcnow() -> datetime:
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def _validation_error(exc: ValidationError) -> InvalidParams:

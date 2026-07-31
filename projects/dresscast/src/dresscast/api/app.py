@@ -12,7 +12,7 @@ reads it.
 from __future__ import annotations
 
 from collections.abc import Callable, Iterator
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Annotated, Any
 
 from fastapi import Depends, FastAPI, Query, Request, Response, status
@@ -96,7 +96,7 @@ def create_app(
     tests); ``service_factory`` opens one per request; neither means "open the
     default SQLite database per request".
     """
-    now_fn = clock or (lambda: datetime.now(timezone.utc))
+    now_fn = clock or (lambda: datetime.now(UTC))
 
     app = FastAPI(
         title="dresscast",

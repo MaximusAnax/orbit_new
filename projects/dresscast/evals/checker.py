@@ -286,7 +286,10 @@ def achievable_band(
     fallback: list[float | None] = [None] * len(hours)
     for anchor in range(1, 6):
         allowed = set(range(anchor, anchor + spread + 1))
-        keep = lambda items: [g for g in items if g.formality in allowed]  # noqa: E731
+
+        def keep(items: Sequence[Garment], _allowed: set[int] = allowed) -> list[Garment]:
+            return [g for g in items if g.formality in _allowed]
+
         base, full = keep(cand.base), keep(cand.full_body)
         bottom, foot = keep(cand.bottom), keep(cand.footwear)
         mids, outers, legs = keep(cand.mid), keep(cand.outer), keep(cand.leg_base)

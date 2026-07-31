@@ -9,11 +9,8 @@ edge — never inside the engine (FR-19).
 from __future__ import annotations
 
 import json
-import sys
 from collections.abc import Callable, Sequence
-from datetime import date as date_cls
-from datetime import datetime, timezone
-from pathlib import Path
+from datetime import UTC, datetime
 from typing import Annotated, Any
 
 import typer
@@ -73,7 +70,7 @@ class Context:
         return self._service
 
     def now(self) -> datetime:
-        return datetime.now(timezone.utc)
+        return datetime.now(UTC)
 
     def today(self) -> str:
         return self.now().astimezone().date().isoformat()

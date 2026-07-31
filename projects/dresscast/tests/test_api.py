@@ -3,18 +3,17 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
+from conftest import diurnal, make_forecast, small_wardrobe
 from dresscast.api import create_app
 from dresscast.services import Config, DresscastService
 from dresscast.store.memory import InMemoryRepository
 from fastapi.testclient import TestClient
 
-from conftest import diurnal, make_forecast, small_wardrobe
-
-NOW = datetime(2026, 4, 14, 6, 30, tzinfo=timezone.utc)
+NOW = datetime(2026, 4, 14, 6, 30, tzinfo=UTC)
 DATE = "2026-04-14"
 
 

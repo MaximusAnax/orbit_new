@@ -23,8 +23,9 @@ import math
 import random
 from collections.abc import Iterator, Sequence
 from dataclasses import dataclass, field
+from datetime import UTC, datetime, timedelta
 from datetime import date as date_cls
-from datetime import datetime, timedelta, timezone
+from itertools import pairwise
 from pathlib import Path
 from typing import Any
 
@@ -55,13 +56,14 @@ from dresscast.engine.models import (
 from dresscast.errors import InfeasibleWardrobe
 from dresscast.services import Config, DresscastService
 from dresscast.store.memory import InMemoryRepository
+
 from evals import checker
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 WEATHER = FIXTURES / "weather"
 
 #: Every timestamp in the suite is a literal (EVALS.md §1: no wall clock).
-EPOCH = datetime(2026, 1, 1, 6, 0, 0, tzinfo=timezone.utc)
+EPOCH = datetime(2026, 1, 1, 6, 0, 0, tzinfo=UTC)
 
 SWING_SCENARIOS = frozenset(
     {
@@ -194,7 +196,7 @@ def build_history(
 
 @dataclass(frozen=True, slots=True)
 class Case:
-    """One (scenario day × wardrobe × request) cell of the suite."""
+    """One (scenario day x wardrobe x request) cell of the suite."""
 
     scenario: str
     wardrobe_name: str
@@ -375,7 +377,7 @@ def brute_force(case: Case) -> Reference:
     neither.  It is what M2b's denominator, M2c's per-hour extremes, M3's
     static opponent and M8's per-component ceilings are computed from.
     """
-    ctx, engine_cand, band = _engine_context(case)
+    ctx, _engine_cand, band = _engine_context(case)
     hours = checker.window_hours(case.forecast, case.params)
     cand = checker.candidates(case.garments, case.params, hours)
     table = comfort.target_table(ctx, band)
@@ -1383,7 +1385,7 @@ def check_run(
     # (c) rank monotonicity
     scores = [o.score_total for o in rec.outfits]
     tally.assert_(
-        all(a >= b - 1e-12 for a, b in zip(scores, scores[1:], strict=False)),
+        all(a >= b - 1e-12 for a, b in pairwise(scores)),
         f"M4(c) {case.label}: score_total is not non-increasing in rank",
     )
 

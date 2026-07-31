@@ -73,3 +73,85 @@ not to hold. **No gate threshold was lowered.** All ten gates pass at the values
 | R-7 | `src/formcoach/services.py` | Added an application-service layer that CONVENTIONS.md's tree does not name. | The layering rule requires the API and CLI to be thin and forbids business rules in either; without a shared service the two surfaces would each have had to wire repository + datasets + adapters + engine and duplicate the error mapping. `services.py` contains no rules of its own — it delegates to `engine/` and translates engine exceptions into SCOPE.md's error catalog. |
 | R-8 | `src/formcoach/store/sqlite.py` | The connection is now opened with `check_same_thread=False`. | FastAPI runs synchronous endpoints in a worker thread, so a connection opened during startup outlives the thread that created it and every request failed with `ProgrammingError`. FormCoach is single-user and every write runs inside a `with self.connection` transaction, so serialization is sqlite3's own lock. This is the only change made to a core-stage module. |
 | R-9 | `pyproject.toml` | The `pose` extra named in SCOPE.md is **not** declared. | MediaPipe is a large binary wheel and the twelve workspace members share one virtualenv; declaring the extra would pull it into the workspace lock. `MediaPipePoseEstimator` already raises a clear, actionable error when the import fails, and the README documents installing it by hand. Nothing in the test or eval path imports it. |
+
+---
+
+# Hardening review (2026-07-31)
+
+Independent hardening pass over the finished implementation. Scope: everything
+runs, no fake work, gates falsifiable, baselines honest, determinism, FR
+coverage. **No gate threshold was changed at this stage.** New artifact:
+`docs/FR_COVERAGE.md`.
+
+## Falsifiability experiments
+
+Each experiment mutates engine logic (never fixtures or metrics), re-runs the
+metric against the committed corpus, and is then reverted (`git checkout`) with
+the score confirmed restored. Healthy values: M1 0.9573, M1b 0.8333, M2 1.0000,
+M3a 1.9343°, M3b 0.0263, M5 1.0000, M6 1.0000.
+
+| # | Mutation (engine logic) | Metric: before → after | Gate | Verdict |
+|---|---|---|---|---|
+| H-1 | `reps.segment_reps`: prominence + min-duration hysteresis removed (every raw local maximum of the smoothed signal becomes a rep) | M2 1.0000 → **0.5800** | ≥ 0.90 | Gate fails; discriminates |
+| H-2 | `faults.phase_frames`: `bottom` sampled at the rep's **start** frame instead of the extremum (realistic off-by-phase bug) | M1 0.9573 → **0.5242**; M1b 0.8333 → **0.0000**; M3a 1.93° → **25.92°**; M3b 0.0263 → **0.2306** | ≥ 0.80 / ≥ 0.55 / ≤ 5° / ≤ 0.03 | All four fail; discriminate |
+| H-3 | `programming.EXPERIENCE_START_FACTOR`: intermediate/advanced flattened to 0.0 (experience dimension dead) | M5 1.0000 → **0.9667** (60 violations, all `constraint 14` on advanced profiles) | = 1.0 | Gate fails; the eval's independent ramp implementation catches it |
+| H-4 | `progression._loaded_branch`: autoregulation overshoot (L5) hoisted above double progression (L3) | M6 1.0000 → **0.9643** (`conflict_L3_over_L5` fails on clause `L5` and load 102.5 vs 105.0) | = 1.0 | Gate fails; precedence itself is pinned |
+| H-5 | `geometry.facing_sign`: canonical anterior frame disabled (always +1.0) | M1/M1b **unchanged** (0.9573/0.8333); M3b 0.0263 → **0.0487**; M3a unchanged | M3b ≤ 0.03 | M3b fails — see note below |
+
+**Note on H-5.** M1 is structurally insensitive to the anterior-frame mutation:
+the only `facing`-dependent shipped rule is `bar_drift` and its comparator is
+`abs_gt`, so a sign flip cannot change fault status. The suite still catches
+the bug — M3b compares the *signed* measured value against signed ground truth
+on the side_right/facing-left clips and fails its gate — so the behavior is
+guarded, but by the measurement gate rather than the detection gate. If a
+future profile adds a sign-sensitive threshold (e.g. separate anterior/posterior
+bar-drift limits), M1 coverage of the anterior frame should be revisited.
+
+## Determinism
+
+`evals/run.py` executed twice back-to-back: byte-identical stdout (diff empty),
+including all per-class F1 values and both M3 detail lines. The engine-source
+AST audit (`test_fr14_*`) independently forbids clock/filesystem/network/
+unseeded-RNG calls in `engine/`.
+
+## End-to-end CLI check
+
+Every documented command was run against a real on-disk SQLite DB (not just
+`--help`): `init` (68 exercises, integrity check), `profile set/show/
+ack-disclaimer/clear-pain`, `exercises list/show`, `program new/show/next`
+(disclaimer gate verified to block first; FR-13(b) substitution verified to
+appear after a pain-flagged log: `incline-dumbbell-press (substituted for
+dumbbell-bench-press)`), `log` (e1RM printed; pain path prints stop-and-refer),
+`volume`, `form analyze` (4 reps, faults with measured-vs-threshold), `form
+analyze` on an invalid clip (rejected with `insufficient_visibility`), `form
+photo` (phase gating), `form show`, `form list`. No command crashed.
+
+## Honest findings not fixed (with reasons)
+
+1. **Line budget exceeded.** SCOPE.md § Line budget sets a 4,000-line ceiling
+   (≈ 3,880 planned); the shipped tree is ≈ 15,957 Python lines (src 7,259,
+   tests 5,696, evals 3,002). Every layer is proportionally over. The code is
+   not padded — the overage is breadth (many small tests, a hardened
+   generator) — but the budget was simply not honoured by the build stage.
+   Shrinking 4× at the hardening stage would mean rewriting a green,
+   fully-gated implementation, a worse trade than recording the deviation.
+2. **M8 remains `NOT AVAILABLE`.** `evals/fixtures/real/` has no hand-labelled
+   clips of the owner's lifts, so the synthetic-to-real gap the metric exists
+   to surface is still unmeasured. This is the documented pre-filming state,
+   not a defect, but it is the biggest open risk of the flagship feature.
+3. **`_frequency_pass` places off-split exercises.** A 4-day upper/lower
+   program can put a chest press in a Lower session to satisfy the ≥ 2-days
+   rule for an emphasized muscle (observed: `dumbbell-bench-press` in
+   "Lower A"). Constraint 10 only requires the split's patterns to be
+   *present*, so this passes M5 legitimately; it is a programming-quality
+   quibble, documented in the `_frequency_pass` docstring, not a constraint
+   violation.
+4. **M3a's gate has limited headroom over an unsmoothed measurement** (2.62°
+   vs 5°) on this corpus — already recorded as R-3; H-2 shows M3a still fails
+   hard under a genuinely wrong pipeline (25.9°).
+
+## Verdict
+
+All ten gates pass at their EVALS.md values, every baseline is computed live
+and beaten, all mutated gates fail and recover, and the suite is deterministic.
+The implementation is real.

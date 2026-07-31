@@ -17,7 +17,7 @@ from pathlib import Path
 if __package__ in (None, ""):  # running the file directly, not as `evals.run`
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from evals.metrics import FIXTURES, EvalReport, build_report  # noqa: E402
+from evals.metrics import FIXTURES, EvalReport, build_report
 
 RULE = "-" * 108
 
