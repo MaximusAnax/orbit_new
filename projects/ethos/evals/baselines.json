@@ -1,7 +1,7 @@
 {
   "baseline_first_tradition_only:M5": 0.0,
-  "baseline_no_verifier:M4": 0.0,
-  "baseline_reject_all:M4": 1.0,
+  "baseline_no_verifier:M4a": 0.16666666666666666,
+  "baseline_reject_all:M4b": 1.0,
   "baseline_s1_zero_abstain:M2a": 0.075,
   "baseline_s1_zero_abstain:M2a_near": 0.0,
   "baseline_s1_zero_abstain:M2b": 0.0,

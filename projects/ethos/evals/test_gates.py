@@ -94,6 +94,27 @@ def test_gate_m4_tamper_fr8_fr9(values: dict, measured: dict) -> None:
     assert values["M4b"] == pytest.approx(0.0), measured["problems"]["M4"]
 
 
+def test_gate_metric_diagnostics_are_empty_fr8(measured: dict) -> None:
+    """A stale clean polish case, a fallback body that differs from the
+    deterministic one, or a persisted unverified answer all leave M4a/M4b at
+    their passing values while hollowing the metric out. The diagnostics are
+    therefore gates, not commentary."""
+    assert measured["problems"] == {"M3": [], "M4": [], "M5": []}, measured["problems"]
+
+
+def test_gate_m4_baselines_are_measured_not_asserted_fr8(measured: dict) -> None:
+    """`baseline_no_verifier` and `baseline_reject_all` must come from running
+    the same 50 cases through the pipeline with the FR-8 gate swapped out — if
+    they were constants the two exact M4 gates would be self-certifying."""
+    baselines = measured["baselines"]
+    assert baselines["baseline_reject_all:M4b"] == pytest.approx(1.0)
+    # FR-9 envelope parse-back is a separate mechanism from FR-8, so disabling
+    # the verifier still catches the mutations that break the strict envelope
+    # grammar (measured: 5/30). The other 25 are FR-8's alone.
+    assert baselines["baseline_no_verifier:M4a"] <= 0.20
+    assert baselines["baseline_no_verifier:M4a"] < measured["values"]["M4a"]
+
+
 def test_gate_m5_completeness_fr5_fr6(values: dict, measured: dict) -> None:
     assert values["M5"] == pytest.approx(1.0), measured["problems"]["M5"]
 

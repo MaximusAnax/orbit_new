@@ -50,6 +50,7 @@ BASELINE_OF = {
     "M1-coll": "baseline_title_overlap",
     "M1b": "baseline_title_overlap",
     "M1b'": "baseline_title_overlap",
+    "M1gap": "baseline_title_overlap",
     "M1a": "baseline_title_overlap",
     "M1c": "baseline_title_overlap",
     "M1d": "baseline_title_overlap",
@@ -98,9 +99,7 @@ def measure() -> dict[str, object]:
         baselines[f"baseline_title_overlap:{key}"] = value
     for key, value in M.m2_suite(null_rule, fixtures).items():
         baselines[f"baseline_s1_zero_abstain:{key}"] = value
-    baselines.update(
-        {f"{k}:M4": v for k, v in M.m4_baselines(corpus, polish_cases).items()}
-    )
+    baselines.update(M.m4_baselines(corpus, polish_cases))
     first_only, _ = M.m5_completeness(corpus, M.BaselineFirstTraditionOnly(corpus))
     baselines["baseline_first_tradition_only:M5"] = first_only
 
@@ -183,7 +182,12 @@ def scorecard(result: dict[str, object]) -> int:
         print(f"{gate:<12}{'':>10}{'':>9}{'all pass':>14}  {status}")
         for error in errors[:5]:
             print(f"    {error}")
+    # Diagnostics are gate failures, not commentary. A stale *clean* polish case
+    # ("changed nothing"), a fallback body that differs from the deterministic
+    # one, or a persisted unverified answer all leave M4a/M4b at their passing
+    # values while making the metric meaningless, so they must fail the run.
     for label, problems in result["problems"].items():  # type: ignore[union-attr]
+        failures += bool(problems)
         for problem in problems[:5]:
             print(f"    {label}: {problem}")
     c19 = gates.check_c19(result["freeze"])  # type: ignore[arg-type]

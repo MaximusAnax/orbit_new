@@ -397,9 +397,17 @@ def m3_over_corpus_dir(corpus: Corpus, data_dir: Any) -> float:
 # --- M4: tamper detection ---------------------------------------------------
 
 
-def m4_tamper(corpus: Corpus, cases: list[dict[str, Any]]) -> dict[str, Any]:
-    """M4a recall over mutated cases, M4b false-positive rate over clean ones."""
-    from ethos.service import EthosService
+def m4_tamper(
+    corpus: Corpus, cases: list[dict[str, Any]], verifier: Any = None
+) -> dict[str, Any]:
+    """M4a recall over mutated cases, M4b false-positive rate over clean ones.
+
+    `verifier` swaps the FR-8 gate the service calls, which is how the two M4
+    reference baselines are *measured* through the real pipeline rather than
+    asserted (`baseline_no_verifier`, `baseline_reject_all`). It is `None` —
+    the real verifier — for the metric itself.
+    """
+    from ethos.service import EthosService, IntegrityError
     from ethos.store.memory_repo import MemoryRepository
 
     from evals.faulty_polisher import FaultyPolisher, MutationError
@@ -409,7 +417,7 @@ def m4_tamper(corpus: Corpus, cases: list[dict[str, Any]]) -> dict[str, Any]:
     for case in cases:
         polisher = FaultyPolisher(case)
         repo = MemoryRepository()
-        service = EthosService(corpus, repo, polisher=polisher)
+        service = EthosService(corpus, repo, polisher=polisher, verifier=verifier)
         service.init_store(TIMESTAMP)
         topic_id = case["topic_id"]
         traditions = case.get("traditions")
@@ -427,6 +435,18 @@ def m4_tamper(corpus: Corpus, cases: list[dict[str, Any]]) -> dict[str, Any]:
                 clean += 1
             else:
                 mutated += 1
+            continue
+        except IntegrityError as exc:
+            # The deterministic fallback itself failed FR-8: nothing was served,
+            # so the polish did not survive, but this is a composer/corpus bug
+            # (or a reject-all verifier) and must be visible rather than fatal.
+            problems.append(f"{case['id']}: deterministic render failed FR-8 — {exc}")
+            if polisher.clean:
+                clean += 1
+                clean_rejected += 1
+            else:
+                mutated += 1
+                mutated_rejected += 1
             continue
         answer = result.answer
         assert answer is not None
@@ -457,15 +477,34 @@ def m4_tamper(corpus: Corpus, cases: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _accept_everything(*_args: Any, **_kwargs: Any) -> list[Any]:
+    """`baseline_no_verifier` — FR-8 disabled: nothing is ever rejected."""
+    return []
+
+
+def _reject_everything(*_args: Any, **_kwargs: Any) -> list[Any]:
+    """`baseline_reject_all` — a verifier that refuses every answer."""
+    from ethos.engine.verify import Failure
+
+    return [Failure("baseline", "reject-all verifier")]
+
+
 def m4_baselines(corpus: Corpus, cases: list[dict[str, Any]]) -> dict[str, float]:
-    """`baseline_no_verifier` (M4a) and `baseline_reject_all` (M4b)."""
+    """`baseline_no_verifier` (M4a) and `baseline_reject_all` (M4b), **measured**
+    by running the same 50 cases through the same pipeline with the FR-8 gate
+    swapped out. Recording these as constants would have made the two most
+    important gates in the suite self-certifying.
+    """
     mutated = sum(1 for case in cases if case["mode"] != "clean")
     clean = sum(1 for case in cases if case["mode"] == "clean")
     if not mutated or not clean:  # pragma: no cover - a malformed case list
         raise ValueError("polish_cases.json must contain clean and mutated cases")
-    # With FR-8 disabled nothing is ever rejected, so recall is 0 over the mutated
-    # cases; a verifier that rejects everything has a false-positive rate of 1.
-    return {"baseline_no_verifier": 0.0, "baseline_reject_all": 1.0}
+    no_verifier = m4_tamper(corpus, cases, verifier=_accept_everything)
+    reject_all = m4_tamper(corpus, cases, verifier=_reject_everything)
+    return {
+        "baseline_no_verifier:M4a": no_verifier["M4a"],
+        "baseline_reject_all:M4b": reject_all["M4b"],
+    }
 
 
 # --- M5: answer completeness & well-formedness ------------------------------

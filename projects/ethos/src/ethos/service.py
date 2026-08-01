@@ -5,6 +5,7 @@ which is I/O (SCOPE architecture note). The engine composes; this persists.
 """
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
 
 from ethos.adapters.polisher import ProsePolisher
@@ -65,6 +66,15 @@ class IntegrityError(RuntimeError):
         self.failures = failures
 
 
+#: The FR-8 gate as the service calls it. Injectable so the eval suite can
+#: *measure* its `baseline_no_verifier` / `baseline_reject_all` reference
+#: implementations through the real pipeline instead of asserting their values
+#: (EVALS § Naive baselines). Production always gets `engine.verify.verify`.
+VerifyFn = Callable[
+    [AnswerBody, Corpus, str, list[str] | None, str, str | None], list[Failure]
+]
+
+
 @dataclass(frozen=True)
 class Refusal:
     outcome: str
@@ -87,11 +97,13 @@ class EthosService:
         repo: Repository,
         router: TopicRouter | None = None,
         polisher: ProsePolisher | None = None,
+        verifier: VerifyFn | None = None,
     ) -> None:
         self.corpus = corpus
         self.repo = repo
         self.router = router if router is not None else LexicalRouter()
         self.polisher = polisher
+        self.verifier: VerifyFn = verifier if verifier is not None else verify
         self.index = build_index(corpus.topics, corpus.router_config, corpus.stopwords)
         self._titles = {t.id: t.title for t in corpus.topics}
         self._names = {t.id: t.name for t in corpus.traditions}
@@ -136,7 +148,7 @@ class EthosService:
                 try:
                     candidate = env_mod.parse(polished, position_ids)
                     candidate_render = render_text(candidate, self._titles, self._names)
-                    failures = verify(
+                    failures = self.verifier(
                         candidate, self.corpus, candidate_render, traditions, pre_env, polished
                     )
                 except env_mod.EnvelopeError:
@@ -146,7 +158,7 @@ class EthosService:
                     return candidate, candidate_render, True, False
                 polish_fell_back = True
         rendered = render_text(body, self._titles, self._names)
-        failures = verify(body, self.corpus, rendered, traditions, pre_env, None)
+        failures = self.verifier(body, self.corpus, rendered, traditions, pre_env, None)
         if failures:
             raise IntegrityError(failures)
         return body, rendered, polish_used, polish_fell_back
