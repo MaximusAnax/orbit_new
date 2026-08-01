@@ -89,3 +89,91 @@ No gate threshold was changed. Two spec-level notes for the record:
    `--write-baselines` run; 0.000 is that measurement, and it is recorded in
    `evals/baselines.json` rather than the estimate.
 2. **The `M1a` composite is reported at 0.887 and remains un-gated**, per finding 8.
+
+## Hardening pass (2026-08-01)
+
+An adversarial review of the shipped implementation: establish that it is real,
+then fix what is not. `docs/FR_COVERAGE.md` is the resulting FR-by-FR audit.
+No gate threshold was weakened and no spec document was edited.
+
+### Establishing it is real
+
+`uv run python verify_all.py ethos` green at entry (295 tests, 35 eval gates,
+lint ok, cli ok, 7,749 lines) and at exit (299 tests). Every documented CLI
+command was run end to end against a real SQLite database — `init`, `ask`
+(routed / forced / filtered / `--json` / refusal), `topics`, `topic`,
+`traditions`, `tradition`, `reading`, `history`, `show`, `corpus stats`,
+`corpus validate` — and the API was served under `uvicorn` and exercised over
+HTTP (`/health`, `POST /questions`, `/passages/{id}`).
+
+Ten rendered citations were hand-checked against the raw corpus files and
+against the named editions: Matthew 5:37 and Exodus 1:19–20 (KJV 1611),
+Qur'an 33:70 (Pickthall 1930), Leviticus 19:11 (JPS 1917), Analects II.22 and
+XIII.18 (Legge 1861), NE II.6 / IV.6 / IV.7 / VI.5 (Ross 1925), and the
+`reference_only` paraphrases for Sahih Muslim 2605 and Ketubot 16b–17a. Every
+quoted string byte-matches its committed record, every locator matches, every
+source line is rebuilt correctly from the source record, and every quotation is
+the real text of the named public-domain translation. The two paraphrase
+citations carry the exact label line and no quotable text.
+
+The eval suite was run twice end to end; the scorecards are byte-identical
+(sha256 `aa8c16fb6171babff188f041d3bf62d0c51e3ef566ae22adb96d30b822cfcd46`).
+
+### Falsifiability experiments
+
+Each mutation was applied to the engine, measured, then reverted, and recovery
+confirmed.
+
+| # | Mutation | Gate under test | Before | After | Reverted |
+|---|---|---|---|---|---|
+| 1 | `render_text` folds the en-dash in every printed locator (`Exodus 1:19–20` → `Exodus 1:19-20`) | citation integrity | M3 **1.000** | M3 **0.926**, naming `Exodus 1:19-20 != Exodus 1:19–20` and `Ketubot 16b-17a != Ketubot 16b–17a`; FR-8 additionally raised `IntegrityError` on the null path so no such answer could be served or persisted | M3 back to **1.000**, 0 failures |
+| 2 | `score_topic` degraded to a raw keyword count (no IDF, no length normalisation, no phrase bonus) | routing | M1-direct 0.990 / M1-coll 0.875 / M1b 0.764 / M1b′ 0.646 / M1c 0.950 / M1d 0.900 / M2b 0.023 | **0.917 / 0.625 / 0.486 / 0.396 / 0.783 / 0.800 / 0.196** — 7 of the 10 routing gates fail. M2a and M2a_near are unmoved (0.850 / 0.846), confirming that κ, not the score, carries the abstention decision (SCOPE D10). M1gap *improves* to 0.090, correctly: the gap gate measures memorisation, not competence | all values restored exactly |
+| 3 | `SqliteRepository` opened with `check_same_thread=True` | store + API thread safety | both threaded tests green | 4/4 repo workers and 8/8 API workers raise `ProgrammingError: SQLite objects created in a thread can only be used in that same thread` | green |
+| 4 | `RLock` removed (isolated probe on an equivalent connection) | store thread safety | — | `OperationalError: cannot start a transaction within a transaction`, and 295 distinct `lastrowid` values out of 308 inserts — one asker would be handed another asker's answer id | n/a (probe was external) |
+| 5 | `MAX_REGION_GROWTH` tightened 1.4 → 1.2 | M4b's clean-case pricing of the FR-8 (e) length bound | M4b 0.000 | M4b **0.150**, naming pc-c18 / pc-c19 / pc-c20 — the three clean cases EVALS requires to change a region by 30–40%. Before the fix below it would have been 0.05 (one case) | M4b back to 0.000 |
+
+### Defects found and fixed
+
+| # | Defect | Fix |
+|---|---|---|
+| 1 | **The two M4 baselines were hardcoded.** `m4_baselines` returned `{"baseline_no_verifier": 0.0, "baseline_reject_all": 1.0}` with a comment arguing why those values must hold. EVALS requires baselines to be *measured* reference implementations; as written, the two exact gates that certify the trust boundary were self-certifying. | `EthosService` gained an injectable `verifier` seam (production always gets `engine.verify.verify`), and `m4_baselines` now runs the same 50 cases through the same pipeline with FR-8 accept-all / reject-all. Measured: `baseline_no_verifier:M4a` = **0.167**, `baseline_reject_all:M4b` = **1.000**. The 0.167 is informative rather than the assumed 0.0 — 5 of the 30 mutations are caught by the FR-9 envelope parse-back alone, so 25 are FR-8's own work. |
+| 2 | **Metric diagnostics were commentary, not gates.** `run.py` printed the M3/M4/M5 problem lists without counting them. A stale *clean* polish case ("changed nothing"), a fallback body differing from the deterministic one, or a persisted unverified answer all leave M4a = 1.0 / M4b = 0.0 while hollowing the metric out, and the run still said "all gates pass". | Non-empty diagnostics now fail the run, plus `test_gate_metric_diagnostics_are_empty_fr8`. |
+| 3 | **A null-path `IntegrityError` during M4 killed the whole scorecard** with an uncaught traceback, so a single composer or corpus bug made every other gate result unreadable (observed during falsifiability experiment 1). | `m4_tamper` catches it, records it as a named diagnostic, and counts the case as rejected; the scorecard still prints and now fails via defect 2. |
+| 4 | **`polish_cases.json` composition was mandated by EVALS and gated nowhere — and had already eroded.** EVALS § M4 requires 20 clean / 30 mutated, all 25 classes, every FR-8 check exercised, ≥ 5 clean cases whose work+number prose survives verbatim (the only thing pricing check (e)), and ≥ 3 clean cases changing a mutable region by 30–40% (the only thing pricing the length bound). `pc-c18` and `pc-c20` were *labelled* "30-40% length change" but measured **0.296** and **0.286**, so only one case was in band. | New predicate `m4_case_composition` + `test_gate_m4_fixture_composition_fr8_fr9`, wired into the M4 diagnostics. `pc-c18` 0.296 → **0.338** and `pc-c20` 0.286 → **0.374** brought back in band; falsifiability experiment 5 shows the bound is now genuinely priced. |
+| 5 | **The scorecard's baseline column silently showed `—` for M4a, M4b and M1gap** because `BASELINE_OF` looked up `baseline_no_verifier:M4a` while `baselines.json` stored `baseline_no_verifier:M4`. EVALS requires a baseline column for every metric. | Keys aligned to the metric names; `M1gap` added to `BASELINE_OF`. |
+| 6 | **C17's JSON half asserted its property in a comment** (`first = True  # JSON: safeguards is the first field of AnswerBody`), so a field reorder in `AnswerBody` would have passed 60 of the 120 cells. A routed cell whose fixture question stopped routing home also reported "rendered no safeguard block", which is a misleading symptom. | The JSON cells check `next(iter(body.model_dump())) == "safeguards"`; a routing drift is reported as itself, and `check_c17_safeguard_cells` surfaces a cell's `error` string. |
+| 7 | **No threaded regression test at the API level.** `SqliteRepository` already carried `check_same_thread=False` + `RLock`, but only the repository was exercised concurrently; the app holds one service (and one connection) for its lifetime while Starlette runs sync endpoints on a threadpool, and nothing proved that combination. | `test_fr13_sqlite_backed_api_is_thread_safe`: 8 barrier-synchronised POSTs asserting no worker errors, 8 distinct question and answer ids, and that every id handed back resolves to the row that writer wrote. Falsifiable in both directions (experiments 3 and 4). |
+| 8 | **Stale README facts**: the worked example printed alternates the router no longer returns, "40+ named editions" against 36 committed sources, an M4a baseline of 0.00, and "~60 s" for a suite that takes ~90 s. | Corrected against measured output. |
+
+### Not changed, and why
+
+- **τ = 0.0 / κ = 0.30 stay as committed.** They are frozen tuning with a
+  recorded `tuning_note` and a hash pinned by C19; EVALS forbids tuning them on
+  anything but the direct and colloquial tiers. Nothing in this pass produced
+  evidence to move them.
+- **`M5`'s baseline stays 0.000**, per the build-stage note above.
+
+### Weakest part (measured, stated honestly)
+
+The coverage floor κ is brittle to a single out-of-vocabulary token. Measured
+over the 96 direct-tier questions, all of which route correctly at baseline:
+
+| Perturbation | Abstentions | Accuracy |
+|---|---|---|
+| none | 0/96 | 0.990 |
+| append `" (3)"` | **5/96** | 0.938 |
+| prefix `"Sarah asks: "` | **5/96** | 0.938 |
+| append `" thx"` | **5/96** | 0.938 |
+| append `" asking for a friend"` | 0/96 | 0.990 |
+
+One digit, one proper name, or one SMS abbreviation refuses about 5% of
+questions the router otherwise gets right, because an unseen term takes the
+maximum IDF and dominates the coverage denominator of a short query. This is the
+designed cost of SCOPE D10's two-signal abstention and it is invisible to M2b,
+whose 260-question denominator is clean prose. It is a real product limitation:
+the mitigations that exist are the printed top-3 alternates and the
+`--topic` valve, both of which keep a mis-refusal correctable rather than
+dead-ending it. Two honest fixes are available and both are out of scope for a
+hardening pass because they move frozen tuning: cap the IDF an unseen term can
+contribute to `coverage`, or normalise coverage by the *matched* rather than the
+*total* IDF mass. Recorded here rather than silently repaired.
