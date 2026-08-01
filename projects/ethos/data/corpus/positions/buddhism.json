@@ -1,0 +1,590 @@
+[
+  {
+    "id": "killing_and_self_defense--buddhism",
+    "topic_id": "killing_and_self_defense",
+    "tradition_id": "buddhism",
+    "stance": "forbidden",
+    "summary": "The first precept renounces killing, and the Dhammapada's reason is analogical: all beings fear death as you do. Intention is decisive in Buddhist ethics, so force meant to restrain differs karmically from force meant to kill — but the tradition offers no doctrine of justified lethal defense, and its ideal figures absorb harm rather than inflict it.",
+    "reasoning": [
+      {
+        "text": "From one's own fear of death the verse reasons to every being's, grounding the precept in shared sentience.",
+        "passage_id": "dhp-129-130"
+      },
+      {
+        "text": "The greatest conqueror is the one who conquers himself, not the victor over others.",
+        "passage_id": "dhp-103-conqueror"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-129-130",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-103-conqueror",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Some Mahayana texts (e.g. the Upaya-kausalya Sutra's captain story) contemplate compassionate killing by a bodhisattva who accepts the karmic cost — an edge case, not a license.",
+    "further_reading": [
+      {
+        "author": "Peter Harvey",
+        "title": "An Introduction to Buddhist Ethics",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": "chapter on the first precept"
+      }
+    ],
+    "curator_note": "Drafted from Dhp 129–130 and 103 (Müller)."
+  },
+  {
+    "id": "capital_punishment--buddhism",
+    "topic_id": "capital_punishment",
+    "tradition_id": "buddhism",
+    "stance": "forbidden",
+    "summary": "A ruler who kills, even lawfully, acts against the first precept: the just man of the Dhammapada carries no matter by violence but proceeds by law and equity. The tradition's model kings renounce execution, and the emperor Ashoka's edicts of restraint became its political ideal — punishment reformed toward restraint and rehabilitation, never death.",
+    "reasoning": [
+      {
+        "text": "Justice is defined against violence: the just leader guides by law and equity, not force.",
+        "passage_id": "dhp-256-257-just"
+      },
+      {
+        "text": "The universal fear of death makes state killing no less killing.",
+        "passage_id": "dhp-129-130"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-256-257-just",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-129-130",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Historical Buddhist kingdoms did execute; the normative literature consistently condemns it, and modern Buddhist leaders have campaigned for abolition — practice lagging precept is acknowledged within the tradition.",
+    "further_reading": [
+      {
+        "author": "Damien Keown",
+        "title": "Buddhist Ethics: A Very Short Introduction",
+        "year": 2005,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Dhp 256–257 and 129–130 (Müller), with Ashoka's edicts in view."
+  },
+  {
+    "id": "suicide_and_self_harm--buddhism",
+    "topic_id": "suicide_and_self_harm",
+    "tradition_id": "buddhism",
+    "stance": "discouraged",
+    "summary": "A human birth is rare opportunity, and the self is its own lord: the path's answer to despair is mastery and care of this life, not its destruction. Ending one's life does not end suffering in a tradition of rebirth — it forfeits the very condition of practice. The texts treat those who harm themselves with compassion, and the counsel is always toward the path's slow relief of suffering.",
+    "reasoning": [
+      {
+        "text": "Self-mastery is the use the path makes of this life; the verse is cited against despair's conclusion.",
+        "passage_id": "dhp-160-self-lord"
+      },
+      {
+        "text": "The precept verse names destroying life as digging up one's own root — self-destruction included.",
+        "passage_id": "dhp-246-247-precepts"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-160-self-lord",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-246-247-precepts",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "The Pali canon's cases of gravely ill monks who took their lives (e.g. Channa in MN 144) end with the Buddha declining to condemn where craving was absent — read by scholars as pastoral nuance at the edge of a firm general discouragement.",
+    "further_reading": [
+      {
+        "author": "Damien Keown",
+        "title": "Buddhism and Bioethics",
+        "year": 1995,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Dhp 160 and 246–247 (Müller), with MN 144 for the hard cases."
+  },
+  {
+    "id": "euthanasia_and_end_of_life--buddhism",
+    "topic_id": "euthanasia_and_end_of_life",
+    "tradition_id": "buddhism",
+    "stance": "discouraged",
+    "summary": "Intentionally ending a life — one's own or a patient's — falls under the first precept, and the monastic code expels a monk who praises death to the suffering. Yet Buddhism does not demand prolonging dying: declining futile treatment accords with mindfulness of impermanence, and a lucid, accepted death is the tradition's own ideal. What is refused is the deliberate act of killing, not the letting-go.",
+    "reasoning": [
+      {
+        "text": "All beings fear death; the analogy does not lapse at the bedside.",
+        "passage_id": "dhp-129-130"
+      },
+      {
+        "text": "Contentment and trust, the best riches and relationships, frame the good death as accepted rather than engineered.",
+        "passage_id": "dhp-204-contentment"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-129-130",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-204-contentment",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "The Vinaya's third parajika covers inciting or assisting death, including from compassion; modern teachers differ on withdrawal of life support, most permitting it when death is simply allowed to complete itself.",
+    "further_reading": [
+      {
+        "author": "Damien Keown",
+        "title": "Buddhism and Bioethics",
+        "year": 1995,
+        "kind": "book",
+        "url": null,
+        "note": "end-of-life chapters"
+      }
+    ],
+    "curator_note": "Drafted from Dhp 129–130 and 204 (Müller), with Vinaya parajika 3 in view."
+  },
+  {
+    "id": "animals_and_diet--buddhism",
+    "topic_id": "animals_and_diet",
+    "tradition_id": "buddhism",
+    "stance": "context_dependent",
+    "summary": "The boundless mind of the Metta Sutta extends to all beings, and the first precept protects animals as it does humans — no Buddhist may slaughter. Yet the early tradition permitted monks meat not seen, heard, or suspected to be killed for them, and Buddhist cultures divide: Theravada laity commonly eat meat; much of Mahayana monasticism is vegetarian on bodhisattva grounds.",
+    "reasoning": [
+      {
+        "text": "Boundless friendliness toward all beings is the cultivated stance from which animal ethics flows.",
+        "passage_id": "snp-149-metta"
+      },
+      {
+        "text": "The precept verse counts destroying life among the acts by which one digs up one's own root.",
+        "passage_id": "dhp-246-247-precepts"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "snp-149-metta",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-246-247-precepts",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "The threefold-purity rule (MN 55) versus the Lankavatara Sutra's vegetarianism marks the Theravada–Mahayana divide on meat.",
+    "further_reading": [
+      {
+        "author": "Paul Waldau",
+        "title": "The Specter of Speciesism: Buddhist and Christian Views of Animals",
+        "year": 2001,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Snp 149 (Fausböll) and Dhp 246–247 (Müller)."
+  },
+  {
+    "id": "wealth_and_generosity--buddhism",
+    "topic_id": "wealth_and_generosity",
+    "tradition_id": "buddhism",
+    "stance": "encouraged",
+    "summary": "Dana — giving — is the first perfection and the layperson's foundational practice: fools alone do not praise liberality, and the wise rejoice in it. Wealth rightly earned is no evil in the early texts, but craving is, and contentment is called the best riches; generosity is the discipline that loosens grasping while sustaining the community of practice.",
+    "reasoning": [
+      {
+        "text": "Liberality is praised as the wise man's joy and the path to blessing.",
+        "passage_id": "dhp-177-liberality"
+      },
+      {
+        "text": "Contentment as the best riches reframes what wealth is for.",
+        "passage_id": "dhp-204-contentment"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-177-liberality",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-204-contentment",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Peter Harvey",
+        "title": "An Introduction to Buddhist Ethics",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": "on dana and lay economic ethics"
+      }
+    ],
+    "curator_note": "Drafted from Dhp 177 and 204 (Müller)."
+  },
+  {
+    "id": "theft_and_property--buddhism",
+    "topic_id": "theft_and_property",
+    "tradition_id": "buddhism",
+    "stance": "forbidden",
+    "summary": "Taking what is not given is the second precept: the formulation is wider than theft, covering everything from burglary to sharp dealing, and the verse counts it among the acts by which one digs up one's own root. The wrong is double — harm to the owner and the feeding of one's own greed — so the remedy is paired: restitution outwardly, renunciation inwardly.",
+    "reasoning": [
+      {
+        "text": "The precept verse names taking the not-given among the self-destructive acts.",
+        "passage_id": "dhp-246-247-precepts"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-246-247-precepts",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Peter Harvey",
+        "title": "An Introduction to Buddhist Ethics",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": "on the second precept"
+      }
+    ],
+    "curator_note": "Drafted from Dhp 246–247 (Müller) and the precept formulas."
+  },
+  {
+    "id": "forgiveness_and_revenge--buddhism",
+    "topic_id": "forgiveness_and_revenge",
+    "tradition_id": "buddhism",
+    "stance": "obligatory",
+    "summary": "Hatred never ceases by hatred — this is presented not as commandment but as observed law, like fire needing fuel. Resentment held is suffering self-inflicted; the practice is to meet anger with love and the greedy with liberality, dissolving the enmity rather than repaying it. Forgiveness here is less a favor to the offender than the release of one's own burning.",
+    "reasoning": [
+      {
+        "text": "The old rule: hatred ceases only by love, so revenge merely continues the harm into oneself.",
+        "passage_id": "dhp-5-hatred"
+      },
+      {
+        "text": "Each vice is overcome by its counter-virtue — the practical method of release.",
+        "passage_id": "dhp-223-overcome"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-5-hatred",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-223-overcome",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Sharon Salzberg",
+        "title": "Lovingkindness: The Revolutionary Art of Happiness",
+        "year": 1995,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Dhp 5 and 223 (Müller)."
+  },
+  {
+    "id": "anger_and_hatred--buddhism",
+    "topic_id": "anger_and_hatred",
+    "tradition_id": "buddhism",
+    "stance": "discouraged",
+    "summary": "Anger is one of the three poisons at the root of suffering: it distorts perception, burns its bearer first, and propagates by reciprocity — harsh speech returns harsh speech, blow answers blow. The discipline is neither expression nor suppression but transformation: overcome anger by love, cultivate metta until the reactive pattern loses its fuel.",
+    "reasoning": [
+      {
+        "text": "Overcoming anger by love is the prescribed counter-practice, not mere restraint.",
+        "passage_id": "dhp-223-overcome"
+      },
+      {
+        "text": "Harsh speech is painful and returns upon the speaker — anger's reciprocal mechanics stated plainly.",
+        "passage_id": "dhp-133-harsh-speech"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-223-overcome",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-133-harsh-speech",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Thich Nhat Hanh",
+        "title": "Anger: Wisdom for Cooling the Flames",
+        "year": 2001,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Dhp 223 and 133 (Müller)."
+  },
+  {
+    "id": "duties_to_parents--buddhism",
+    "topic_id": "duties_to_parents",
+    "tradition_id": "buddhism",
+    "stance": "obligatory",
+    "summary": "Waiting on mother and father is named among the highest blessings, and the discourses call parents 'Brahma' to their children — worthy of the reverence given the gods, because they gave and sustained life. The debt is repaid materially in their age and, most fully, by establishing them in generosity and wisdom; care of parents is the layperson's elemental practice.",
+    "reasoning": [
+      {
+        "text": "The Mangala Sutta lists service to parents among the highest blessings of a well-lived life.",
+        "passage_id": "snp-262-mangala"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "snp-262-mangala",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "The Sigalovada Sutta (DN 31) details the reciprocal duties of children and parents; the Kataññu Suttas make the debt to parents nearly unrepayable except by their spiritual establishment.",
+    "further_reading": [
+      {
+        "author": "Rupert Gethin",
+        "title": "The Foundations of Buddhism",
+        "year": 1998,
+        "kind": "book",
+        "url": null,
+        "note": "on lay ethics"
+      }
+    ],
+    "curator_note": "Drafted from Snp 262 (Fausböll), with DN 31 and AN 2.31–32 in view."
+  },
+  {
+    "id": "speech_and_gossip--buddhism",
+    "topic_id": "speech_and_gossip",
+    "tradition_id": "buddhism",
+    "stance": "forbidden",
+    "summary": "Right speech, the third factor of the path, renounces four things: falsehood, divisive talk, harsh words, and idle chatter. Gossip typically manages all four at once. The verse's logic is reciprocal — angry speech is painful and returns in kind — and the positive discipline asks of each utterance that it be true, useful, and timely, a standard idle talk rarely survives.",
+    "reasoning": [
+      {
+        "text": "Harsh and divisive speech returns upon the speaker, so the tongue is guarded for one's own sake as well as others'.",
+        "passage_id": "dhp-133-harsh-speech"
+      },
+      {
+        "text": "The precept verse places false speech beside killing and theft among the root-destroying acts.",
+        "passage_id": "dhp-246-247-precepts"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-133-harsh-speech",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-246-247-precepts",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Peter Harvey",
+        "title": "An Introduction to Buddhist Ethics",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": "on right speech"
+      }
+    ],
+    "curator_note": "Drafted from Dhp 133 and 246–247 (Müller), with the right-speech formulas (AN 5.198) in view."
+  },
+  {
+    "id": "intoxicants_and_sobriety--buddhism",
+    "topic_id": "intoxicants_and_sobriety",
+    "tradition_id": "buddhism",
+    "stance": "discouraged",
+    "summary": "The fifth precept renounces intoxicants because they occasion heedlessness: a practice built on mindfulness cannot rent out the mind. The verse counts drink among the acts by which one digs up one's own root — not sin against a god, but sabotage of one's own clarity, from which the other four precepts fall more easily.",
+    "reasoning": [
+      {
+        "text": "Giving oneself to intoxicating liquors is listed among the self-destructive acts.",
+        "passage_id": "dhp-246-247-precepts"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-246-247-precepts",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Lay practice varies: some traditions read the precept as strict abstinence, others as avoiding heedlessness; monastics abstain entirely.",
+    "further_reading": [
+      {
+        "author": "Peter Harvey",
+        "title": "An Introduction to Buddhist Ethics",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": "on the fifth precept"
+      }
+    ],
+    "curator_note": "Drafted from Dhp 246–247 (Müller)."
+  },
+  {
+    "id": "envy_and_contentment--buddhism",
+    "topic_id": "envy_and_contentment",
+    "tradition_id": "buddhism",
+    "stance": "discouraged",
+    "summary": "Envy of another's portion destroys the very peace practice builds: the mendicant who envies does not obtain concentration. Its antidote is twofold — contentment, called the best riches, and mudita, the trained capacity to take joy in others' good fortune. Comparison is treated as a form of craving, dissolved by attention rather than argued away.",
+    "reasoning": [
+      {
+        "text": "The envious mendicant does not obtain peace of mind — envy is self-defeating on the path's own terms.",
+        "passage_id": "dhp-365-envy"
+      },
+      {
+        "text": "Contentment as the best riches names the state envy forfeits.",
+        "passage_id": "dhp-204-contentment"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-365-envy",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-204-contentment",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Bronwyn Finnigan",
+        "title": "Ethics in Indian and Tibetan Buddhism",
+        "year": 2021,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/ethics-indian-buddhism/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Dhp 365 and 204 (Müller), with mudita among the brahmaviharas."
+  },
+  {
+    "id": "courage_and_fear--buddhism",
+    "topic_id": "courage_and_fear",
+    "tradition_id": "buddhism",
+    "stance": "reframed",
+    "summary": "Buddhism relocates courage: the conqueror of a thousand thousand men is outranked by the one who conquers himself. Fear arises from clinging — to self, possessions, reputation — so fearlessness is not bravado but the fruit of releasing what fear protects. The gift of fearlessness (abhaya-dana), making others safe from oneself, is counted a form of generosity.",
+    "reasoning": [
+      {
+        "text": "The greatest conquest is of oneself — valor turned inward.",
+        "passage_id": "dhp-103-conqueror"
+      },
+      {
+        "text": "The boundless friendly mind is the settled state in which fear has no foothold.",
+        "passage_id": "snp-149-metta"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-103-conqueror",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "snp-149-metta",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Rupert Gethin",
+        "title": "The Foundations of Buddhism",
+        "year": 1998,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Dhp 103 (Müller) and Snp 149 (Fausböll)."
+  },
+  {
+    "id": "judging_others--buddhism",
+    "topic_id": "judging_others",
+    "tradition_id": "buddhism",
+    "stance": "discouraged",
+    "summary": "The sage attends to his own misdeeds, not the perversities of others: fault-finding is diagnosed as a leak in one's own practice, feeding conceit and aversion at once. Discernment of what is wholesome is required — the path is nothing else — but it is turned first and hardest on oneself, and extended to others with the same compassion one hopes to receive.",
+    "reasoning": [
+      {
+        "text": "The judging eye is redirected to its owner: one's own faults are the sage's study.",
+        "passage_id": "dhp-50-own-misdeeds"
+      },
+      {
+        "text": "Harsh speech about others returns upon the speaker in kind.",
+        "passage_id": "dhp-133-harsh-speech"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-50-own-misdeeds",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-133-harsh-speech",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Bronwyn Finnigan",
+        "title": "Ethics in Indian and Tibetan Buddhism",
+        "year": 2021,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/ethics-indian-buddhism/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Dhp 50 and 133 (Müller)."
+  }
+]
