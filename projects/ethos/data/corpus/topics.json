@@ -315,10 +315,6 @@
         "weight": 2
       },
       {
-        "term": "keeping up appearances",
-        "weight": 2
-      },
-      {
         "term": "said yes when I meant no",
         "weight": 2
       },
@@ -375,10 +371,6 @@
       },
       {
         "term": "commitment",
-        "weight": 2
-      },
-      {
-        "term": "keep my word",
         "weight": 2
       },
       {
@@ -535,10 +527,6 @@
       },
       {
         "term": "promised her",
-        "weight": 2
-      },
-      {
-        "term": "keeping promises",
         "weight": 2
       },
       {
@@ -1395,10 +1383,6 @@
         "weight": 2
       },
       {
-        "term": "wrongful conviction",
-        "weight": 2
-      },
-      {
         "term": "abolish",
         "weight": 2
       },
@@ -1732,10 +1716,6 @@
         "weight": 2
       },
       {
-        "term": "wants to die",
-        "weight": 2
-      },
-      {
         "term": "harm himself",
         "weight": 2
       },
@@ -1872,15 +1852,7 @@
         "weight": 2
       },
       {
-        "term": "wanting to die",
-        "weight": 2
-      },
-      {
         "term": "giving away his things",
-        "weight": 2
-      },
-      {
-        "term": "saying goodbye",
         "weight": 2
       },
       {
@@ -2077,10 +2049,6 @@
         "weight": 2
       },
       {
-        "term": "keeping her alive",
-        "weight": 2
-      },
-      {
         "term": "breathing tube",
         "weight": 2
       },
@@ -2242,10 +2210,6 @@
       },
       {
         "term": "signed a directive",
-        "weight": 2
-      },
-      {
-        "term": "wanted no machines",
         "weight": 2
       }
     ],
@@ -2886,10 +2850,6 @@
         "weight": 2
       },
       {
-        "term": "keeping wealth",
-        "weight": 2
-      },
-      {
         "term": "hoarding money",
         "weight": 2
       },
@@ -2978,10 +2938,6 @@
       },
       {
         "term": "belongs to",
-        "weight": 2
-      },
-      {
-        "term": "keep what I found",
         "weight": 2
       },
       {
@@ -3117,10 +3073,6 @@
         "weight": 2
       },
       {
-        "term": "keep the wallet",
-        "weight": 2
-      },
-      {
         "term": "return what I took",
         "weight": 2
       },
@@ -3166,10 +3118,6 @@
       },
       {
         "term": "kept the extra",
-        "weight": 2
-      },
-      {
-        "term": "wrong change",
         "weight": 2
       },
       {
@@ -3519,10 +3467,6 @@
       },
       {
         "term": "lending to family",
-        "weight": 2
-      },
-      {
-        "term": "lending to a friend",
         "weight": 2
       },
       {
@@ -3888,10 +3832,6 @@
       },
       {
         "term": "wronged by",
-        "weight": 2
-      },
-      {
-        "term": "betrayal by a friend",
         "weight": 2
       },
       {
@@ -6419,10 +6359,6 @@
         "weight": 2
       },
       {
-        "term": "wanting admiration",
-        "weight": 2
-      },
-      {
         "term": "need to be admired",
         "weight": 2
       },
@@ -6658,10 +6594,6 @@
         "weight": 2
       },
       {
-        "term": "jealous of my friend",
-        "weight": 2
-      },
-      {
         "term": "jealousy at work",
         "weight": 2
       },
@@ -6671,14 +6603,6 @@
       },
       {
         "term": "coveting",
-        "weight": 2
-      },
-      {
-        "term": "wanting his job",
-        "weight": 2
-      },
-      {
-        "term": "wanting her life",
         "weight": 2
       },
       {
@@ -6762,15 +6686,7 @@
         "weight": 2
       },
       {
-        "term": "keeping up with neighbours",
-        "weight": 2
-      },
-      {
         "term": "social comparison",
-        "weight": 2
-      },
-      {
-        "term": "richer friends",
         "weight": 2
       },
       {
@@ -7242,10 +7158,6 @@
         "weight": 2
       },
       {
-        "term": "say something difficult",
-        "weight": 2
-      },
-      {
         "term": "shaking",
         "weight": 2
       },
@@ -7279,10 +7191,6 @@
       },
       {
         "term": "panic",
-        "weight": 2
-      },
-      {
-        "term": "nerve to say",
         "weight": 2
       },
       {
@@ -7327,10 +7235,6 @@
       },
       {
         "term": "physical courage",
-        "weight": 2
-      },
-      {
-        "term": "moral courage",
         "weight": 2
       },
       {
@@ -7517,10 +7421,6 @@
         "weight": 2
       },
       {
-        "term": "moral high ground",
-        "weight": 2
-      },
-      {
         "term": "call out",
         "weight": 2
       },
@@ -7625,10 +7525,6 @@
         "weight": 2
       },
       {
-        "term": "moral superiority",
-        "weight": 2
-      },
-      {
         "term": "disapprove of",
         "weight": 2
       },
@@ -7718,10 +7614,6 @@
       },
       {
         "term": "holier-than-thou",
-        "weight": 2
-      },
-      {
-        "term": "moral superiority over",
         "weight": 2
       },
       {
