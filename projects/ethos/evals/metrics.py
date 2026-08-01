@@ -477,6 +477,93 @@ def m4_tamper(
     }
 
 
+#: Every FR-8 check plus the FR-9 envelope parse-back, each of which EVALS § M4
+#: requires at least one mutation class to exercise.
+M4_CHECKS = frozenset("abcdefghi") | {"envelope"}
+M4_CLEAN_CASES = 20
+M4_MUTATED_CASES = 30
+M4_MUTATION_CLASSES = 25
+
+
+def m4_case_composition(corpus: Corpus, cases: list[dict[str, Any]]) -> list[str]:
+    """EVALS § M4: the properties of `polish_cases.json` that make M4a/M4b mean
+    anything — and which the M4a/M4b *values* cannot detect.
+
+    In particular "M4b is not vacuous" rests on >= 5 clean cases whose mutable
+    prose legitimately names a work and a number and is preserved verbatim: a
+    check (e) that scanned whole regions instead of changed spans would reject
+    them. Delete those five and M4b stays 0.0 with the gate hollowed out.
+    """
+    import re
+
+    from ethos.engine import envelope as env_mod
+    from ethos.engine.verify import PROSE_LOCATOR_SCAN
+
+    from evals.faulty_polisher import FaultyPolisher, MutationError
+
+    problems: list[str] = []
+    clean = [case for case in cases if case["mode"] == "clean"]
+    mutated = [case for case in cases if case["mode"] != "clean"]
+    if len(clean) != M4_CLEAN_CASES:
+        problems.append(f"polish_cases: {len(clean)} clean cases, EVALS requires 20")
+    if len(mutated) != M4_MUTATED_CASES:
+        problems.append(f"polish_cases: {len(mutated)} mutated cases, EVALS requires 30")
+    classes = {case["mode"] for case in mutated}
+    if len(classes) != M4_MUTATION_CLASSES:
+        problems.append(
+            f"polish_cases: {len(classes)} distinct mutation classes, EVALS requires 25"
+        )
+    exercised = {
+        part.strip()
+        for case in mutated
+        for part in str(case.get("check", "")).split("+")
+        if part.strip()
+    }
+    for missing in sorted(M4_CHECKS - exercised):
+        problems.append(f"polish_cases: no mutation class exercises FR-8 check ({missing})")
+    for unknown in sorted(exercised - M4_CHECKS):
+        problems.append(f"polish_cases: case names unknown FR-8 check ({unknown})")
+
+    scan = [re.compile(pattern) for pattern in PROSE_LOCATOR_SCAN]
+    work_number = length_priced = 0
+    for case in clean:
+        body, _text = compose_unverified(corpus, case["topic_id"], case.get("traditions"))
+        pre = env_mod.serialize(body, case.get("traditions"))
+        try:
+            post = FaultyPolisher(case).polish(pre)
+        except MutationError as exc:
+            problems.append(f"polish_cases: clean case {case['id']} is stale — {exc}")
+            continue
+        if post == pre:
+            problems.append(f"polish_cases: clean case {case['id']} changes nothing")
+            continue
+        pre_regions = {tag: payload for tag, payload, mutable in env_mod.regions_of(pre) if mutable}
+        post_regions = {
+            tag: payload for tag, payload, mutable in env_mod.regions_of(post) if mutable
+        }
+        if any(
+            any(rx.search(payload) for rx in scan) and any(rx.search(pre_regions.get(tag, "")) for rx in scan)
+            for tag, payload in post_regions.items()
+        ):
+            work_number += 1
+        for tag, payload in post_regions.items():
+            base = pre_regions.get(tag, "")
+            if base and 0.30 <= abs(len(payload) / len(base) - 1.0) <= 0.40:
+                length_priced += 1
+                break
+    if work_number < 5:
+        problems.append(
+            f"polish_cases: only {work_number} clean cases preserve work+number prose"
+            " (EVALS requires >= 5; without them check (e) is untested)"
+        )
+    if length_priced < 3:
+        problems.append(
+            f"polish_cases: only {length_priced} clean cases change a mutable region by"
+            " 30-40% (EVALS requires >= 3; without them the length bound is untested)"
+        )
+    return problems
+
+
 def _accept_everything(*_args: Any, **_kwargs: Any) -> list[Any]:
     """`baseline_no_verifier` — FR-8 disabled: nothing is ever rejected."""
     return []

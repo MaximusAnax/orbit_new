@@ -604,6 +604,8 @@ def check_c17_safeguard_cells(cells: list[dict[str, Any]]) -> list[str]:
         name = cell.get("cell", "?")
         expected = cell.get("expected") or []
         got = cell.get("got") or []
+        if cell.get("error"):
+            errors.append(f"C17: {name} did not render: {cell['error']}")
         if not got:
             errors.append(f"C17: {name} rendered no safeguard block")
         if got != expected:

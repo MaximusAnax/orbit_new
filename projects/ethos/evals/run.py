@@ -89,6 +89,7 @@ def measure() -> dict[str, object]:
     m4 = M.m4_tamper(corpus, polish_cases)
     values["M4a"] = m4["M4a"]
     values["M4b"] = m4["M4b"]
+    m4_fixture = M.m4_case_composition(corpus, polish_cases)
     m5, m5_problems = M.m5_completeness(corpus)
     values["M5"] = m5
 
@@ -117,7 +118,11 @@ def measure() -> dict[str, object]:
         "values": values,
         "baselines": baselines,
         "gates": gate_results,
-        "problems": {"M3": m3_failures, "M4": m4["problems"], "M5": m5_problems},
+        "problems": {
+            "M3": m3_failures,
+            "M4": m4["problems"] + m4_fixture,
+            "M5": m5_problems,
+        },
         "freeze": record,
         "harness": harness,
         "fixtures": fixtures,

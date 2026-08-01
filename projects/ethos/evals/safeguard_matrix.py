@@ -90,8 +90,17 @@ def _cell(
                 "error": "refused"}
     body = result.answer.body
     if routed and body.routing.topic_id != topic_id:
-        # the routed cell only makes sense when the fixture question routes home
-        return {"cell": name, "expected": [], "got": [], "first": True}
+        # The routed half of the matrix is only meaningful when the topic's first
+        # direct fixture question still routes home. Report that as its own gate
+        # failure rather than as a missing safeguard block, which is what the
+        # symptom would otherwise look like.
+        return {
+            "cell": name,
+            "expected": _expected(corpus, topic_id),
+            "got": [],
+            "first": False,
+            "error": f"direct fixture question now routes to {body.routing.topic_id}",
+        }
     got = [{"id": s.id, "kind": s.kind.value, "text": s.text} for s in body.safeguards]
     if surface == "text":
         lines = result.answer.rendered_text.split("\n")
@@ -103,7 +112,10 @@ def _cell(
             if line == f"[!] {s['text']}"
         ]
     else:
-        first = True  # JSON: `safeguards` is the first field of AnswerBody
+        # JSON surface: "first in render order" means `safeguards` is the first
+        # key a client sees. Check it rather than assert it in a comment — a
+        # field reorder in AnswerBody would otherwise pass this half of C17.
+        first = next(iter(body.model_dump()), None) == "safeguards"
     return {
         "cell": name,
         "expected": _expected(corpus, topic_id),

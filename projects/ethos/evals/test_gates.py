@@ -94,6 +94,22 @@ def test_gate_m4_tamper_fr8_fr9(values: dict, measured: dict) -> None:
     assert values["M4b"] == pytest.approx(0.0), measured["problems"]["M4"]
 
 
+def test_gate_m4_fixture_composition_fr8_fr9() -> None:
+    """EVALS § M4 mandates properties of `polish_cases.json` that the M4a/M4b
+    values themselves cannot detect: 20 clean / 30 mutated, all 25 classes,
+    every FR-8 check exercised, >= 5 clean cases preserving work+number prose
+    (the only thing pricing check (e)), and >= 3 changing a mutable region by
+    30-40% (the only thing pricing the length bound). Nothing gated them, so
+    they had already eroded: only 1 of the 3 length cases was in band."""
+    from ethos.corpus import default_data_dir, load_corpus
+
+    from evals import metrics as M
+
+    corpus = load_corpus(default_data_dir())
+    cases = gates.load_fixture("polish_cases.json")
+    assert M.m4_case_composition(corpus, cases) == []
+
+
 def test_gate_metric_diagnostics_are_empty_fr8(measured: dict) -> None:
     """A stale clean polish case, a fallback body that differs from the
     deterministic one, or a persisted unverified answer all leave M4a/M4b at
