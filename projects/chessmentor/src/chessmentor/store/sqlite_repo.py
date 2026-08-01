@@ -4,12 +4,28 @@ Schema DDL follows DATA_MODEL.md table-for-table.  Structural invariants live in
 CHECK / UNIQUE constraints where SQLite can express them; the cross-row ones
 (single in-progress game, immutability, append-only ordering) are enforced by
 :mod:`chessmentor.store._guards`, which the in-memory backend shares.
+
+**Threading.**  The served path (FR-14) runs sync handlers in Starlette's
+thread pool, and FastAPI resolves a sync generator dependency's setup and its
+teardown as *separate* pool submissions — so one request's connection is
+routinely opened on one worker thread and closed on another.  With sqlite3's
+default ``check_same_thread=True`` that raises ``ProgrammingError`` under
+concurrency.  The connection is therefore opened with ``check_same_thread=
+False``, which is safe because CPython's sqlite3 is built in serialized mode
+(``sqlite3.threadsafety == 3``) and every connection has its own mutex.  What
+that mutex does *not* protect is a multi-statement transaction: ``with
+self._connection`` shares one implicit transaction across the whole process, so
+a second thread entering it would have its partial work committed (or rolled
+back) by the first.  Every write batch and every read-modify-write composite
+below therefore runs under :attr:`_lock`, a re-entrant lock so the guard reads
+those methods perform can nest inside it.
 """
 
 from __future__ import annotations
 
 import json
 import sqlite3
+import threading
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
@@ -236,14 +252,17 @@ class SQLiteRepository:
         self.path = str(path)
         if self.path not in (":memory:", ""):
             Path(self.path).parent.mkdir(parents=True, exist_ok=True)
-        self._connection = sqlite3.connect(self.path)
+        # check_same_thread=False: see the module docstring.  Safe at
+        # sqlite3.threadsafety == 3; transactions are serialised by ``_lock``.
+        self._connection = sqlite3.connect(self.path, check_same_thread=False)
         self._connection.row_factory = sqlite3.Row
         self._connection.execute("PRAGMA foreign_keys = ON")
+        self._lock = threading.RLock()
 
     # -- lifecycle ---------------------------------------------------------- #
 
     def initialize(self, levels: Sequence[Level]) -> None:
-        with self._connection:
+        with self._lock, self._connection:
             self._connection.executescript(SCHEMA)
             for level in levels:
                 self._connection.execute(
@@ -285,7 +304,8 @@ class SQLiteRepository:
                 )
 
     def close(self) -> None:
-        self._connection.close()
+        with self._lock:
+            self._connection.close()
 
     # -- levels -------------------------------------------------------------- #
 
@@ -306,7 +326,7 @@ class SQLiteRepository:
         return PlayerProfile.model_validate(dict(row)) if row else None
 
     def save_profile(self, profile: PlayerProfile) -> PlayerProfile:
-        with self._connection:
+        with self._lock, self._connection:
             self._connection.execute(
                 """
                 INSERT INTO player_profile (id, display_name, challenge_mode, preferred_color,
@@ -340,7 +360,7 @@ class SQLiteRepository:
         return RatingState.model_validate(data)
 
     def save_rating_state(self, state: RatingState) -> RatingState:
-        with self._connection:
+        with self._lock, self._connection:
             self._connection.execute(
                 """
                 INSERT INTO rating_state (id, glicko_rating, glicko_rd, perf_ewma, judged_games,
@@ -386,8 +406,8 @@ class SQLiteRepository:
         return Game.model_validate(data)
 
     def create_game(self, game: Game) -> Game:
-        guard_single_in_progress(self.get_in_progress_game(), game)
-        with self._connection:
+        with self._lock, self._connection:  # guard read + insert: one composite
+            guard_single_in_progress(self.get_in_progress_game(), game)
             cursor = self._connection.execute(
                 """
                 INSERT INTO game (source, created_at, seed, player_color, level_id, level_elo,
@@ -422,13 +442,13 @@ class SQLiteRepository:
     def update_game(self, game: Game) -> Game:
         if game.id is None:
             raise ConflictError("cannot update a game without an id")
-        stored = self.get_game(game.id)
-        guard_game_mutable(stored)
-        if game.status is GameStatus.IN_PROGRESS:
-            other = self.get_in_progress_game()
-            if other is not None and other.id != game.id:
-                guard_single_in_progress(other, game)
-        with self._connection:
+        with self._lock, self._connection:  # guard reads + update: one composite
+            stored = self.get_game(game.id)
+            guard_game_mutable(stored)
+            if game.status is GameStatus.IN_PROGRESS:
+                other = self.get_in_progress_game()
+                if other is not None and other.id != game.id:
+                    guard_single_in_progress(other, game)
             self._connection.execute(
                 """
                 UPDATE game SET status=?, termination=?, result_score=?, ply_count=?,
@@ -496,9 +516,8 @@ class SQLiteRepository:
     # -- moves --------------------------------------------------------------- #
 
     def append_move(self, game_id: int, record: MoveRecord) -> MoveRecord:
-        existing = self.list_moves(game_id)
-        guard_move_append(existing, record)
-        with self._connection:
+        with self._lock, self._connection:  # guard read + append: one composite
+            guard_move_append(self.list_moves(game_id), record)
             cursor = self._connection.execute(
                 """
                 INSERT INTO move_record (game_id, ply, color, san, uci, fen_after, is_book, cpu_meta)
@@ -536,24 +555,24 @@ class SQLiteRepository:
     def add_analysis(self, analysis: GameAnalysis) -> GameAnalysis:
         if analysis.game_id is None:
             raise ConflictError("an analysis must reference a game")
-        existing = self._connection.execute(
-            """
-            SELECT id FROM game_analysis
-            WHERE game_id = ? AND analyst = ? AND analyst_version = ? AND node_budget = ?
-            """,
-            (
-                analysis.game_id,
-                str(analysis.analyst),
-                analysis.analyst_version,
-                analysis.node_budget,
-            ),
-        ).fetchone()
-        if existing is not None:
-            # The tuple pins the code that produced it, so a repeat request is a
-            # read (DATA_MODEL "Invariants": deterministic per FR-2/FR-16).
-            return self.get_analysis(int(existing["id"]))
+        with self._lock, self._connection:  # dedup read + multi-row insert: one composite
+            existing = self._connection.execute(
+                """
+                SELECT id FROM game_analysis
+                WHERE game_id = ? AND analyst = ? AND analyst_version = ? AND node_budget = ?
+                """,
+                (
+                    analysis.game_id,
+                    str(analysis.analyst),
+                    analysis.analyst_version,
+                    analysis.node_budget,
+                ),
+            ).fetchone()
+            if existing is not None:
+                # The tuple pins the code that produced it, so a repeat request is a
+                # read (DATA_MODEL "Invariants": deterministic per FR-2/FR-16).
+                return self.get_analysis(int(existing["id"]))
 
-        with self._connection:
             cursor = self._connection.execute(
                 """
                 INSERT INTO game_analysis (game_id, analyst, analyst_version, node_budget,
@@ -663,9 +682,9 @@ class SQLiteRepository:
     # -- rating events ---------------------------------------------------------- #
 
     def append_rating_event(self, event: RatingEvent) -> RatingEvent:
-        existing = [e.game_id for e in self.list_rating_events()]
-        guard_rating_event(self.get_rating_state(), existing, event)
-        with self._connection:
+        with self._lock, self._connection:  # guard reads + append: one composite
+            existing = [e.game_id for e in self.list_rating_events()]
+            guard_rating_event(self.get_rating_state(), existing, event)
             cursor = self._connection.execute(
                 """
                 INSERT INTO rating_event (game_id, created_at, result_score, opponent_elo,
@@ -714,7 +733,7 @@ class SQLiteRepository:
     # -- reports ------------------------------------------------------------------ #
 
     def add_report(self, report: CoachingReport) -> CoachingReport:
-        with self._connection:
+        with self._lock, self._connection:
             cursor = self._connection.execute(
                 """
                 INSERT INTO coaching_report (created_at, window, skipped_game_ids,
