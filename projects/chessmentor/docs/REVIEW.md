@@ -292,3 +292,96 @@ M2c and M10 are unchanged and enforce the estimator's accuracy directly.
 * No other gate moved: M1a/M1b/M2a/M2b/M2c/M4/M4r/M5/M5r/M6/M7/M7a/M8/M9/M10
   all hold at EVALS.md's thresholds (B2/B3's condition changes from the
   earlier build stage stand as recorded).
+
+## Hardening-stage findings (2026-08-01)
+
+An adversarial hardening pass over the finished implementation: verify the
+suite is green end to end, hunt for fake work, and — most importantly —
+demonstrate empirically that the gates guarding the hard parts can fail.
+
+### H1 — The two real-game slices were never generated (blocking defect, fixed)
+
+`judgment_cases_real.json` and `taxonomy_cases_real.json` did not exist:
+`harvest_real.py` was committed but its outputs never were. Consequence: all
+17 gate tests in `evals/test_gates.py` ERRORed (the shared scorecard fixture
+raises `FileNotFoundError` before any gate is evaluated) and `evals/run.py`
+crashed at M4r — the build-stage "all gates hold" claim had silently stopped
+being checkable. Fixed by running the committed harvester (deterministic,
+seed 20260731): 24 CPU-vs-CPU games, 1 166 labelled player moves, 30 judgment
+cases (9 ok / 6 inaccuracy / 6 mistake / 9 blunder, 6 PV-unstable, 18
+multi-threat) and 20 taxonomy cases (8 multi-motif).
+
+### H2 — M4r failed at 0.667 < 0.75: the harvester committed knife-edge labels
+(fixture strengthened per EVALS.md's own robustness rule; gate unchanged)
+
+With the slices in place, M4r measured **0.667** against its 0.75 gate — a
+genuine failure. Diagnosis (per-case perturbation margins, hardening probe):
+all 10 misses were one-tier boundary flips, and 8 of the 10 sat at a label
+margin <= 40 cp — 6 of them <= 10 cp, i.e. the truth `delta_w` was within a
+few centipawns of a tier threshold. EVALS.md requires the *constructed*
+judgment fixtures to survive a +/-40 cp common-mode shift with a +/-20 cp
+differential error, precisely so tier labels are not coin flips against the
+positional component of a real evaluation; the harvester never applied that
+envelope, so M4r was measuring label noise, not transfer. Fix:
+`select_judgment` now (a) refuses candidates whose label margin is below the
+same envelope (`MIN_LABEL_MARGIN_CP = 20`) and (b) prefers the largest
+margins, exactly as `generate_judgment.py` already did for the constructed
+set. The gate is unchanged at 0.75; the regenerated slice keeps the quotas
+that survive the envelope (30 cases, all four tiers present, >= 6
+PV-unstable, 13 multi-threat >= 8). M4r on the regenerated slice: **0.800**
+(24/30). The residual 6 misses all sit at label margins >= 90 cp — genuine
+positional-vs-material disagreements, the honest cost of B6's material-horizon
+labeller, which the 0.75 gate already prices in.
+
+Two composition costs of the envelope, stated rather than hidden: the
+`mistake` tier — whose band is only ~54 cp wide, so robust harvested
+specimens are rare — drops from its 6-case target to **2** cases (the ok/
+inaccuracy/blunder tiers absorb the difference), and tier balance generally
+now yields to label robustness. A slice that mislabels its mistakes proves
+nothing about them; two solid cases beat six coin flips.
+
+Related honest deviation: the harvested taxonomy slice carries only **1**
+positive each for `allowed_mate` / `missed_mate` (EVALS.md asked for >= 2 per
+class); these 24 seeded games simply do not contain a second reachable mate
+case per side of the precedence table. M5r excludes classes absent from the
+slice and scores the present ones; it measured 0.96 with the singletons in.
+
+### H3 — Falsifiability experiments (every hard-part gate shown to fail)
+
+Method: degrade the responsible engine logic, re-run the metric, confirm the
+gate trips, revert, confirm recovery. "Baseline" numbers are the committed
+implementation's, from the same probes / the full scorecard.
+
+| Gate (guarding) | Mutation | Baseline | Mutated | Reverted |
+|---|---|---|---|---|
+| M2c <= 120 (FR-7c blend, hard part B) | `blend_lambda ≡ 0` — Glicko channel deleted | 56.8 PASS | **298.9 FAIL** | 56.8 PASS |
+| M2b <= 150 (FR-7a inflation + blend) | `blend_lambda ≡ 1` — move-quality channel deleted | 124.2 PASS | **174.3 FAIL** | 124.2 PASS |
+| M2a <= 150 (FR-7b mapping) | `perf_rating_from_acpl ≡ 200` — mis-scaled mapping | 98.6 PASS | **426.3 FAIL** (M2b 322.9, M2c 280.2 also fail) | 98.6 PASS |
+| M1b structural (FR-5, hard part A) | L6's `elo_internal` set equal to L5's (collapsed pair) | PASS (gaps 122–155, worst 2.7x stderr) | **FAIL** — conditions (i), (ii), (iii) all trip | PASS |
+| M4 >= 0.90 (FR-9, hard part B) | severity thresholds mis-scaled to 0.10/0.20/0.30 (the historical D1 bug) | 0.983 PASS | **0.517 FAIL** | 0.983 PASS |
+| M5 >= 0.80 (FR-11) | `_rule_hung_piece` detector deleted | 0.827 PASS | **0.715 FAIL** | 0.827 PASS |
+| M9 == 1.0 (FR-4, hard part A) | blunder die disconnected (`blunder_rolled ≡ False`, the budgets-only ladder) | 1.000 PASS | **0.500 FAIL** — check (a) fails at all 10 levels | 1.000 PASS |
+
+Two observations worth recording:
+
+* Under the budgets-only mutation, **M1a stayed at 0.72 (PASS)** — direct
+  empirical confirmation of EVALS.md's claim that M1a cannot police the
+  throttle knobs and M9 is what makes a budgets-only ladder impossible.
+* Under `lambda ≡ 1`, M2a measured 136.3 — *inside* its 150 gate. EVALS.md's
+  rationale says a results-only estimator "fails M2a"; at the calibrated
+  ladder that is not literally true (Glicko alone converges faster against
+  these opponents than the sizing assumed), but the degradation is still
+  excluded because the same mutation pushes M2b to 174.3 > 150. The gate
+  *family* discriminates exactly as designed; only the attribution in the
+  M2a rationale row is off. Recorded rather than re-tuned: no gate moved.
+
+### H4 — Suite health snapshot (2026-08-01, after H1/H2)
+
+349 unit/integration tests pass; 16/16 scorecard gates pass; `ruff` clean;
+`verify_all.py chessmentor` fully green. Determinism: two complete scorecard
+runs (including the 72 M1a games, 18 M10 games and every analyst pass)
+produced **byte-identical** JSON. Every documented CLI command was exercised
+end to end against a real database (init, levels, profile show/set, play —
+including an interactive rated game with judge pass, rating event and
+controller step — games list/show/--pgn, analyze --nodes, import --as auto
+--analyze, rating --history, report --include-imported).

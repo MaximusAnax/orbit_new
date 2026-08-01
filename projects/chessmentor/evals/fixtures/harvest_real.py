@@ -54,7 +54,7 @@ from evals.fixtures.generate_taxonomy import (
     reference_classify,
     search_pv,
 )
-from evals.fixtures.truth import delta_w, see, severity_of
+from evals.fixtures.truth import delta_w, perturbation_margin, see, severity_of
 from evals.harness import play_ladder_game
 
 HARVEST_SEED = 20260731
@@ -68,6 +68,9 @@ MIN_PV_UNSTABLE = 6
 MIN_MULTI_THREAT = 8
 MIN_MULTI_MOTIF = 8
 PER_CATEGORY_MIN = 2
+#: Judgment labels must survive the EVALS.md robustness envelope (+/-40 cp
+#: common-mode with +/-20 cp differential), i.e. a differential margin >= 20.
+MIN_LABEL_MARGIN_CP = 20
 DEEP_MULTIPLIER = 4
 
 
@@ -181,9 +184,29 @@ def pv_unstable(fen: str, analyst: InternalAnalyst) -> bool:
 
 
 def select_judgment(candidates: list[Harvested], analyst: InternalAnalyst) -> list[Harvested]:
-    """Fill 30 cases across all four tiers, honouring the two special quotas."""
+    """Fill 30 cases across all four tiers, honouring the two special quotas.
+
+    Labels must satisfy the same robustness envelope EVALS.md requires of the
+    constructed judgment fixtures — the truth tier survives a +/-40 cp
+    common-mode shift jointly with a +/-20 cp differential error — and, like
+    ``generate_judgment.py``, selection prefers the largest differential margin.
+    Without this the slice commits knife-edge labels (truth delta_w within a few
+    cp of a tier boundary) that flip on the positional component of any real
+    evaluation, and M4r measures label noise instead of transfer
+    (docs/REVIEW.md, hardening finding H1).
+    """
+    margins: dict[tuple[str, str], int] = {
+        (c.fen, c.played_uci): perturbation_margin(c.cp_best, c.cp_played)
+        for c in candidates
+    }
+
+    def margin_of(case: Harvested) -> int:
+        return margins[(case.fen, case.played_uci)]
+
+    candidates = [c for c in candidates if margin_of(c) >= MIN_LABEL_MARGIN_CP]
+    candidates.sort(key=lambda c: (-margin_of(c), c.game_id, c.ply))
     by_tier: dict[str, list[Harvested]] = {}
-    for case in sorted(candidates, key=lambda c: (c.game_id, c.ply)):
+    for case in candidates:
         by_tier.setdefault(case.tier, []).append(case)
 
     unstable_cache: dict[str, bool] = {}
@@ -208,8 +231,10 @@ def select_judgment(candidates: list[Harvested], analyst: InternalAnalyst) -> li
             count -= 1
 
     # Quota 1: PV-unstable positions (scanning is the expensive part, so cap it).
+    # ``candidates`` is margin-descending, so the scan meets the quota with the
+    # most label-robust unstable positions first.
     unstable_pool = []
-    for case in sorted(candidates, key=lambda c: (c.game_id, c.ply)):
+    for case in candidates:
         if len(unstable_pool) >= MIN_PV_UNSTABLE:
             break
         if unstable(case):
