@@ -442,18 +442,18 @@ process-wide, so a second thread entering one would have its partial work
 committed or rolled back by the first.
 
 **Proof.** Six threads released from a barrier all calling `create_game`, with
-the lock removed, over three runs:
+the `create_game` lock removed (and `check_same_thread=False` left in, so the
+crash is not what is being measured). The race test failed on **3 of 3** runs;
+the run whose message was captured reads:
 
 ```
 AssertionError: 5 games created concurrently; the invariant allows exactly one
-AssertionError: 6 games created concurrently; …
-AssertionError: 5 games created concurrently; …
 ```
 
 DATA_MODEL.md's single-in-progress invariant — and SCOPE.md decision 16's
 explicit promise that "concurrent creation is a 409, not a silent abandon" —
-simply did not hold. With the lock: exactly 1
-created, 5 `ConflictError`, and one in-progress row in the table, on every run.
+simply did not hold. With the lock restored: exactly 1 created, 5
+`ConflictError`, and one in-progress row in the table, on every run.
 
 **Fix.** A `threading.RLock` on the repository, held across every write batch
 and every read-modify-write composite (re-entrant so the guards' own reads nest
@@ -528,7 +528,7 @@ The second collapse is EVALS.md's own named naive model, and it reproduces the
 scorecard's baseline column exactly (M5 0.022, M5r 0.037) — an independent check
 that the baselines printed beside the gates are measured, not asserted.
 
-**Severity tiers (M4 / M5's sibling), re-run against the harvested slice:**
+**Severity tiers (M4 / M4r), now including the regenerated harvested slice:**
 
 | Mutation | M4 (≥0.90) | M4r (≥0.75) |
 |---|---|---|
@@ -548,10 +548,18 @@ which is the honest cost B6 priced in.
   `evals/test_gates.py`. That is +7 on the previous commit — six threading
   regressions (H5/H6) and one telemetry witness (H7). H4's "349" was a
   miscount; the collected total at that commit was 366.
-* **16/16 scorecard gates** pass; full run 907 s.
+* **16/16 scorecard gates** pass; full runs 907 s and 976 s (the spread is
+  machine load, not the suite — the results are identical).
 * `ruff check chessmentor/` clean; `verify_all.py chessmentor` fully green.
 * **Determinism:** two complete scorecard runs — 72 M1a games, 18 M10 games,
-  every analyst pass — produced **byte-identical** JSON.
+  every analyst pass — produced **byte-identical** JSON (`diff` clean) and
+  byte-identical scorecard text once the wall-time line is removed. That line
+  is the only sanctioned difference.
+* Final scorecard: M1b PASS · M1a 0.736 (≥0.56) · M2a 98.6 (≤150) · M2b 124.2
+  (≤150) · M2c 56.8 (≤120) · M3 0.521 (≥0.45) · M4 0.983 (≥0.90) · M4r 0.800
+  (≥0.75) · M5 0.827 (≥0.80) · M5r 0.962 (≥0.60) · M6 1.000 (≥0.90) · M7 0.950
+  (≥0.92) · M7a 1.000 (=1.0) · M8 1.000 (=1.0) · M9 1.000 (=1.0) · M10 129.7
+  (≤175).
 * **CLI end to end, 44 invocations against one real SQLite database:** init,
   levels, profile show/set (both challenge modes and a colour change, each
   moving the recommendation), eight interactive games including session
@@ -563,7 +571,11 @@ which is the honest cost B6 priced in.
   import --as white to resolve an ambiguous side; and the error paths —
   missing game id, missing file, bad `--as`, ambiguous `--as auto`, and an
   uninitialised database. No crash, no traceback, and the controller visibly
-  adapted L4 → L6 → L7 as the estimate moved.
+  adapted L4 → L6 → L7 as the estimate moved. One behaviour worth naming
+  because it surprised the harness: `report` on a database with no analysed
+  games exits **0**, persists an empty report and prints "no mistakes flagged
+  in this window — nothing to work on yet". That is FR-12 applied to an empty
+  window rather than an error, and it is left as is.
 * **API end to end against a real uvicorn server** (not `TestClient`), 41 calls
   over every documented endpoint plus `/openapi.txt`, on a real SQLite file:
   every status code as specified, no traceback in the server log, and 40
