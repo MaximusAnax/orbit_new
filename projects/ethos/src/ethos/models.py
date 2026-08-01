@@ -134,6 +134,9 @@ class Source(_Model):
     def source_line(self) -> str:
         if self.license == License.reference_only:
             return f"{self.title} — {self.edition_note}"
+        if self.translator is None:
+            # English original: provenance is author + edition year (REVIEW.md #30)
+            return f"{self.title}, {self.author} ({self.translation_year})"
         return f"{self.title}, trans. {self.translator} ({self.translation_year})"
 
 

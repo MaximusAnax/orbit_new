@@ -1,0 +1,736 @@
+[
+  {
+    "id": "honesty_and_deception--islam",
+    "topic_id": "honesty_and_deception",
+    "tradition_id": "islam",
+    "stance": "forbidden",
+    "summary": "Truthfulness (sidq) is bound to God-consciousness: believers are commanded to fear God and speak straight, and lying is counted among the marks of hypocrisy. The tradition preserves a famous, tightly bounded set of exceptions — reconciliation, war, domestic peace — which jurists read narrowly, many allowing only ambiguity rather than falsehood even there.",
+    "reasoning": [
+      {
+        "text": "Straight speech is commanded as an expression of taqwa, tying honesty to piety itself.",
+        "passage_id": "quran-33-70"
+      },
+      {
+        "text": "The hadith of the three exceptions shows the tradition weighing truthfulness against reconciliation, and confining the exception rather than widening it.",
+        "passage_id": "muslim-2605-reconciliation"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-33-70",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "muslim-2605-reconciliation",
+        "role": "complicating",
+        "note": "the three permitted settings"
+      }
+    ],
+    "intra_tradition_note": "Scholars dispute whether the three exceptions license actual untruth or only tawriya (deliberate ambiguity); al-Ghazali's discussion is the classical treatment.",
+    "further_reading": [
+      {
+        "author": "Toshihiko Izutsu",
+        "title": "Ethico-Religious Concepts in the Qur'an",
+        "year": 1966,
+        "kind": "book",
+        "url": null,
+        "note": "chapter on sidq and kidhb"
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 33:70 (Pickthall) and Sahih Muslim 2605, with al-Ghazali's Ihya for the juristic framing."
+  },
+  {
+    "id": "promise_keeping_and_oaths--islam",
+    "topic_id": "promise_keeping_and_oaths",
+    "tradition_id": "islam",
+    "stance": "obligatory",
+    "summary": "The sura of contracts opens with the command to fulfil undertakings, and covenants sworn with God as surety may not be unravelled. Breaking promises is a mark of hypocrisy in the prophetic teaching; where an oath was rashly made toward sin, expiation is prescribed rather than casual release, preserving the oath's gravity.",
+    "reasoning": [
+      {
+        "text": "Fulfilling one's indentures is the opening command of the sura that governs communal life.",
+        "passage_id": "quran-5-1-indentures"
+      },
+      {
+        "text": "Oaths make God the guarantor, so breach wrongs God and not only the other party.",
+        "passage_id": "quran-16-91"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-5-1-indentures",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-16-91",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Wael B. Hallaq",
+        "title": "Sharī'a: Theory, Practice, Transformations",
+        "year": 2009,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 5:1 and 16:91 (Pickthall)."
+  },
+  {
+    "id": "killing_and_self_defense--islam",
+    "topic_id": "killing_and_self_defense",
+    "tradition_id": "islam",
+    "stance": "context_dependent",
+    "summary": "To kill one person wrongfully is as if to kill all mankind, and to save one life as if to save all — yet the same verse names exceptions 'with right', and the law recognizes defense of life among them. The sanctity of life is the rule; lawful cause, strictly construed, is the exception, and excess even in a just cause is forbidden.",
+    "reasoning": [
+      {
+        "text": "The Qur'an magnifies a single life to the scale of humanity, setting the default against killing.",
+        "passage_id": "quran-5-32"
+      },
+      {
+        "text": "Life may be taken only with right, and even the wronged party is barred from excess.",
+        "passage_id": "quran-17-33"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-5-32",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-17-33",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Khaled Abou El Fadl",
+        "title": "Rebellion and Violence in Islamic Law",
+        "year": 2001,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 5:32 and 17:33 (Pickthall)."
+  },
+  {
+    "id": "war_and_peace--islam",
+    "topic_id": "war_and_peace",
+    "tradition_id": "islam",
+    "stance": "context_dependent",
+    "summary": "Fighting is permitted against those who fight, with aggression expressly excluded and peace commanded whenever the enemy inclines to it. Classical jurisprudence built conditions of lawful war — authority, cause, conduct sparing non-combatants — on these verses; jihad's broader sense of striving includes and often exceeds the military one.",
+    "reasoning": [
+      {
+        "text": "Permission to fight is defensive in form and aggression is excluded by the verse itself.",
+        "passage_id": "quran-2-190"
+      },
+      {
+        "text": "Peace must be answered with peace, checking any doctrine of perpetual war.",
+        "passage_id": "quran-8-61"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-2-190",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-8-61",
+        "role": "complicating",
+        "note": "the peace command"
+      }
+    ],
+    "intra_tradition_note": "Jurists differed over whether unbelief itself or only aggression justifies war; the aggression-only reading predominates in modern scholarship.",
+    "further_reading": [
+      {
+        "author": "John Kelsay",
+        "title": "Arguing the Just War in Islam",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 2:190 and 8:61 (Pickthall)."
+  },
+  {
+    "id": "capital_punishment--islam",
+    "topic_id": "capital_punishment",
+    "tradition_id": "islam",
+    "stance": "permitted",
+    "summary": "Retaliation for murder is prescribed 'with right': the heir of the slain holds the claim, excess is forbidden, and courts hedge the penalty with strict proof. Yet the same texts commend forgoing retaliation as expiation, and the victim's family may accept compensation instead — a system in which execution is lawful, never mandatory, and mercy is honored above it.",
+    "reasoning": [
+      {
+        "text": "Life may be taken only with right, and the heir's power over the slayer is expressly bounded against excess.",
+        "passage_id": "quran-17-33"
+      },
+      {
+        "text": "The law of just retaliation is stated alongside the praise of those who forgo it as expiation.",
+        "passage_id": "quran-5-45"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-17-33",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-5-45",
+        "role": "complicating",
+        "note": "forgoing retaliation praised"
+      }
+    ],
+    "intra_tradition_note": "Modern Muslim jurists debate whether the qisas framework's aims are better served today by imprisonment and diya (compensation); several Muslim-majority states retain, others restrict, the penalty.",
+    "further_reading": [
+      {
+        "author": "Rudolph Peters",
+        "title": "Crime and Punishment in Islamic Law",
+        "year": 2005,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 17:33 and 5:45 (Pickthall)."
+  },
+  {
+    "id": "euthanasia_and_end_of_life--islam",
+    "topic_id": "euthanasia_and_end_of_life",
+    "tradition_id": "islam",
+    "stance": "forbidden",
+    "summary": "Life belongs to God, who alone appoints its term: 'kill not one another' is read to include hastening any death, one's own or a patient's, and trial borne with sabr carries reward. Contemporary juristic councils nevertheless permit withholding futile treatment and giving adequate pain relief — refusing to kill without demanding that dying be prolonged by every machine.",
+    "reasoning": [
+      {
+        "text": "The prohibition on killing one another, given with God's mercy as its ground, extends to mercy killing in classical exegesis.",
+        "passage_id": "quran-4-29"
+      },
+      {
+        "text": "Steadfastness under suffering is commanded and accompanied — endurance is not abandonment.",
+        "passage_id": "quran-2-153"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-4-29",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-2-153",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Fiqh councils (e.g. the Islamic Fiqh Academy) distinguish forbidden active euthanasia from permissible withdrawal of futile treatment when death is otherwise certain by ordinary signs.",
+    "further_reading": [
+      {
+        "author": "Abdulaziz Sachedina",
+        "title": "Islamic Biomedical Ethics: Principles and Application",
+        "year": 2009,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 4:29 and 2:153 (Pickthall), with contemporary fiqh council rulings for the distinctions."
+  },
+  {
+    "id": "animals_and_diet--islam",
+    "topic_id": "animals_and_diet",
+    "tradition_id": "islam",
+    "stance": "permitted",
+    "summary": "Cattle are made lawful as food within a law of named exceptions, so eating meat is permitted, not required. But animals are called communities like ourselves, gathered to their Lord, and the prophetic traditions command sharpening the blade and sparing the animal distress — permission to eat is fenced by accountability for cruelty.",
+    "reasoning": [
+      {
+        "text": "The lawfulness of cattle as food is stated in the sura of contracts itself.",
+        "passage_id": "quran-5-1-indentures"
+      },
+      {
+        "text": "Animals as communities like unto you places them inside God's concern, grounding duties of kindness.",
+        "passage_id": "quran-6-38"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-6-38",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-5-1-indentures",
+        "role": "supporting",
+        "note": "lawfulness of cattle"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Richard C. Foltz",
+        "title": "Animals in Islamic Tradition and Muslim Cultures",
+        "year": 2006,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 6:38 and 5:1 (Pickthall), with the slaughter hadiths in view."
+  },
+  {
+    "id": "wealth_and_generosity--islam",
+    "topic_id": "wealth_and_generosity",
+    "tradition_id": "islam",
+    "stance": "obligatory",
+    "summary": "Almsgiving in Islam is not charity from surplus but zakat — a fixed, obligatory purification of wealth ranked with prayer among the pillars. Beyond the obligation, piety is measured by giving what one loves, to kin, orphans, the needy, and the wayfarer; wealth withheld from these claims is impure, not merely ungenerous.",
+    "reasoning": [
+      {
+        "text": "Righteousness is defined by concrete giving to the vulnerable alongside worship and the poor-due.",
+        "passage_id": "quran-2-177-excerpt"
+      },
+      {
+        "text": "Piety is unattained until one spends of what one loves, pushing generosity past comfort.",
+        "passage_id": "quran-3-92"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-2-177-excerpt",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-3-92",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Amy Singer",
+        "title": "Charity in Islamic Societies",
+        "year": 2008,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 2:177 and 3:92 (Pickthall)."
+  },
+  {
+    "id": "theft_and_property--islam",
+    "topic_id": "theft_and_property",
+    "tradition_id": "islam",
+    "stance": "forbidden",
+    "summary": "Theft draws one of the Qur'an's fixed penalties, marking it as a crime against God's limits and not only against the owner. The jurists who administered that severity also hedged it: strict thresholds and standards of proof, doubt suspending the penalty, and the caliph Umar's famous refusal to apply it in famine — gravity in principle, protective restraint in practice.",
+    "reasoning": [
+      {
+        "text": "The hadd verse fixes theft among the gravest public wrongs.",
+        "passage_id": "quran-5-38"
+      },
+      {
+        "text": "The debtor-relief verse shows the law's protective concern for the desperate, the same spirit that suspended punishment in famine.",
+        "passage_id": "quran-2-280"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-5-38",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-2-280",
+        "role": "complicating",
+        "note": "protection of the desperate"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Wael B. Hallaq",
+        "title": "Sharī'a: Theory, Practice, Transformations",
+        "year": 2009,
+        "kind": "book",
+        "url": null,
+        "note": "on hudud procedure and restraint"
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 5:38 and 2:280 (Pickthall), with the famine precedent from Umar's caliphate."
+  },
+  {
+    "id": "usury_and_lending--islam",
+    "topic_id": "usury_and_lending",
+    "tradition_id": "islam",
+    "stance": "forbidden",
+    "summary": "The Qur'an draws a categorical line: trade is permitted, riba forbidden — guaranteed increase on a loan is not profit but exploitation. The creditor owes the struggling debtor postponement, and remitting the debt is praised as better; the ban protects the needy borrower and disciplines money into the service of real exchange.",
+    "reasoning": [
+      {
+        "text": "The distinction between trade and usury is stated as divine law, not economic preference.",
+        "passage_id": "quran-2-275-excerpt"
+      },
+      {
+        "text": "Postponement for the straitened debtor, and remission praised above repayment, reveal the ban's protective purpose.",
+        "passage_id": "quran-2-280"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-2-275-excerpt",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-2-280",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Modern debate divides those who identify riba with all interest from reformers who confine it to exploitative rates; Islamic finance is the institutional outcome of the stricter view.",
+    "further_reading": [
+      {
+        "author": "Mahmoud A. El-Gamal",
+        "title": "Islamic Finance: Law, Economics, and Practice",
+        "year": 2006,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 2:275 and 2:280 (Pickthall)."
+  },
+  {
+    "id": "forgiveness_and_revenge--islam",
+    "topic_id": "forgiveness_and_revenge",
+    "tradition_id": "islam",
+    "stance": "encouraged",
+    "summary": "Proportionate response to a wrong is permitted — an ill for its like, never more — but the Qur'an consistently sets pardon above it: whoever forgives and sets things right is rewarded by God directly, and repelling evil with what is better turns enemies to friends. Justice is the floor; forgiveness is the summons.",
+    "reasoning": [
+      {
+        "text": "Like-for-like response is bounded and pardon joined to amendment is rewarded by God.",
+        "passage_id": "quran-42-40"
+      },
+      {
+        "text": "Answering evil with something better transforms enmity itself.",
+        "passage_id": "quran-41-34"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-42-40",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-41-34",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Toshihiko Izutsu",
+        "title": "Ethico-Religious Concepts in the Qur'an",
+        "year": 1966,
+        "kind": "book",
+        "url": null,
+        "note": "on hilm and 'afw"
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 42:40 and 41:34 (Pickthall)."
+  },
+  {
+    "id": "duties_to_parents--islam",
+    "topic_id": "duties_to_parents",
+    "tradition_id": "islam",
+    "stance": "obligatory",
+    "summary": "Kindness to parents is decreed in the same verse as worship of God alone, and its demands sharpen precisely when parents age: not a syllable of contempt, no repulse, gracious speech, the wing of humility, and prayer for them as they once cared for the child. Obedience finds its limit only where a parent commands sin, and kindness is owed even then.",
+    "reasoning": [
+      {
+        "text": "The decree joins worship of God with kindness to parents and forbids even 'Fie' to the aged.",
+        "passage_id": "quran-17-23-24"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-17-23-24",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Qur'an 29:8 withdraws obedience where parents press toward idolatry while still commanding kind company — the tradition's own boundary case.",
+    "further_reading": [
+      {
+        "author": "Michael Cook",
+        "title": "The Koran: A Very Short Introduction",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 17:23–24 (Pickthall), with 29:8 and 31:15 for the limit."
+  },
+  {
+    "id": "marriage_and_fidelity--islam",
+    "topic_id": "marriage_and_fidelity",
+    "tradition_id": "islam",
+    "stance": "forbidden",
+    "summary": "Marriage in Islam is a solemn covenant (mithaq), and adultery is barred with unusual force: the command is not merely to abstain but not even to come near it. The law protects the marriage bond from both sides — through modesty norms upstream of temptation and through the gravity attached to zina itself.",
+    "reasoning": [
+      {
+        "text": "The prohibition covers approaching adultery, placing the guard rails well before the act.",
+        "passage_id": "quran-17-32"
+      },
+      {
+        "text": "Marriage's contractual seriousness draws on the general command to fulfil undertakings.",
+        "passage_id": "quran-5-1-indentures"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-17-32",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-5-1-indentures",
+        "role": "supporting",
+        "note": "covenant-keeping"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Kecia Ali",
+        "title": "Marriage and Slavery in Early Islam",
+        "year": 2010,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 17:32 and 5:1 (Pickthall), with 4:21 (mithaq) in view."
+  },
+  {
+    "id": "divorce--islam",
+    "topic_id": "divorce",
+    "tradition_id": "islam",
+    "stance": "permitted",
+    "summary": "Divorce is lawful in Islam and regulated in detail: staged pronouncements, waiting periods, arbitration from both families first, and the standing command that a wife be retained in honour or released in kindness. A well-known hadith calls it the most disliked of permitted things — the law's permission is real, and so is its reluctance.",
+    "reasoning": [
+      {
+        "text": "The divorce verses regulate rather than forbid, insisting on honour or kindness at every stage.",
+        "passage_id": "quran-2-229-excerpt"
+      },
+      {
+        "text": "Family arbitration is prescribed before dissolution, structuring repair before release.",
+        "passage_id": "quran-4-35"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-2-229-excerpt",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-4-35",
+        "role": "complicating",
+        "note": "arbitration first"
+      }
+    ],
+    "intra_tradition_note": "Schools differ over unilateral talaq, judicial divorce (khul'), and modern statutory reform; the 'most hateful of permitted things' hadith frames all of them.",
+    "further_reading": [
+      {
+        "author": "Judith E. Tucker",
+        "title": "Women, Family, and Gender in Islamic Law",
+        "year": 2008,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 2:229 and 4:35 (Pickthall)."
+  },
+  {
+    "id": "speech_and_gossip--islam",
+    "topic_id": "speech_and_gossip",
+    "tradition_id": "islam",
+    "stance": "forbidden",
+    "summary": "Backbiting is likened to eating the flesh of a dead brother — an image chosen to make the tongue's casual cruelty repulsive — and the verse bars its roots as well: suspicion and spying. Ghiba, speaking truth about someone who would hate to hear it spoken, is itself the sin; slander is worse. Speech is guarded because honor, like property, is inviolable.",
+    "reasoning": [
+      {
+        "text": "The Qur'an forbids backbiting through the dead-brother image and bars suspicion and spying as its roots.",
+        "passage_id": "quran-49-12"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-49-12",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "The jurists enumerate narrow exceptions — testimony, seeking redress, warning against harm — each bounded by necessity.",
+    "further_reading": [
+      {
+        "author": "al-Ghazali (trans. Muhtar Holland)",
+        "title": "On the Duties of Brotherhood",
+        "year": 1975,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 49:12 (Pickthall), with the Ihya's rules of the tongue in view."
+  },
+  {
+    "id": "intoxicants_and_sobriety--islam",
+    "topic_id": "intoxicants_and_sobriety",
+    "tradition_id": "islam",
+    "stance": "forbidden",
+    "summary": "Strong drink is named an infamy of Satan's handiwork and commanded to be left aside — the endpoint of a staged revelation that first discouraged and finally prohibited. The ban is total for the observant: what intoxicates in quantity is forbidden in any quantity, because the mind that prays five times daily is not to be surrendered at all.",
+    "reasoning": [
+      {
+        "text": "The definitive verse groups strong drink with idolatry's apparatus and commands leaving it aside for success.",
+        "passage_id": "quran-5-90"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-5-90",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Kathryn Kueny",
+        "title": "The Rhetoric of Sobriety: Wine in Early Islam",
+        "year": 2001,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 5:90 (Pickthall), with 2:219 and 4:43 for the staged revelation."
+  },
+  {
+    "id": "pride_and_humility--islam",
+    "topic_id": "pride_and_humility",
+    "tradition_id": "islam",
+    "stance": "forbidden",
+    "summary": "Kibr — arrogance — is the sin of Iblis, and Luqman's counsel forbids even its bodily grammar: the scornful cheek, the strutting walk. God loves no braggart boaster; greatness belongs to God alone, and the believer's bearing toward others is commanded into modesty. Humility here is not self-abasement but the truthful posture of a creature.",
+    "reasoning": [
+      {
+        "text": "Scorn of face and pertness of gait are forbidden along with the boasting heart they express.",
+        "passage_id": "quran-31-18"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-31-18",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "W. Montgomery Watt",
+        "title": "The Faith and Practice of al-Ghazali",
+        "year": 1953,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 31:18 (Pickthall), with the hadith on a mustard-seed of pride in view."
+  },
+  {
+    "id": "obedience_and_civil_authority--islam",
+    "topic_id": "obedience_and_civil_authority",
+    "tradition_id": "islam",
+    "stance": "context_dependent",
+    "summary": "Believers are commanded to obey God, the messenger, and those in authority — but disputes are referred back to God, and the juristic maxim is fixed: no obedience to a creature in disobedience to the Creator. Political quietism and activism have both claimed this verse; what neither can claim is obedience without limit.",
+    "reasoning": [
+      {
+        "text": "The obedience verse itself routes disputes back to God and the messenger, grounding the limit the jurists made a maxim.",
+        "passage_id": "quran-4-59"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-4-59",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Sunni political thought historically leaned toward obedience for the sake of order; the duty of commanding right and forbidding wrong presses the other way — a managed, permanent tension.",
+    "further_reading": [
+      {
+        "author": "Michael Cook",
+        "title": "Commanding Right and Forbidding Wrong in Islamic Thought",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 4:59 (Pickthall) with the la ta'ata maxim."
+  },
+  {
+    "id": "courage_and_fear--islam",
+    "topic_id": "courage_and_fear",
+    "tradition_id": "islam",
+    "stance": "encouraged",
+    "summary": "The Qur'an's courage is sabr — steadfastness sought through patience and prayer, with God's company promised to the steadfast. After defeat the believers are told not to faint or grieve; fear of hardship is human, but collapse before it is unbelief's posture. Courage is thus a form of trust, exercised as much in endurance as in daring.",
+    "reasoning": [
+      {
+        "text": "Help is sought in steadfastness and prayer, and God is with the steadfast.",
+        "passage_id": "quran-2-153"
+      },
+      {
+        "text": "After Uhud the command is not to faint nor grieve — morale itself is made a duty.",
+        "passage_id": "quran-3-139"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "quran-2-153",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "quran-3-139",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Majid Fakhry",
+        "title": "Ethical Theories in Islam",
+        "year": 1991,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Qur'an 2:153 and 3:139 (Pickthall)."
+  }
+]

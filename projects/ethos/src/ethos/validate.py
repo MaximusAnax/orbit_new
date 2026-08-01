@@ -112,8 +112,9 @@ def check_c4_quotable_sources(corpus: Corpus) -> list[str]:
             continue
         if source.license not in QUOTABLE:
             errors.append(f"C4: quoted passage {passage.id} from non-quotable source")
-        if not source.translator or not source.translation_year or not source.url:
-            errors.append(f"C4: source {source.id} missing translator/year/url")
+        named = source.translator or source.author  # English originals: author suffices
+        if not named or not source.translation_year or not source.url:
+            errors.append(f"C4: source {source.id} missing translator-or-author/year/url")
     return errors
 
 

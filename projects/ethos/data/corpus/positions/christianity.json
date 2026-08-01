@@ -1,0 +1,824 @@
+[
+  {
+    "id": "honesty_and_deception--christianity",
+    "topic_id": "honesty_and_deception",
+    "tradition_id": "christianity",
+    "stance": "forbidden",
+    "summary": "Speech is answerable to the God of truth: a disciple's yes should mean yes, and deliberate deceit belongs to the old self that is being put away. The mainline, sharpened by Augustine and Aquinas, holds every lie disordered, though not every silence or evasion; hard cases like the Hebrew midwives are honored for mercy, not for the falsehood itself.",
+    "reasoning": [
+      {
+        "text": "Jesus commands plain, reliable speech that needs no oath to prop it up.",
+        "passage_id": "kjv-matthew-5-37"
+      },
+      {
+        "text": "Scripture itself preserves cases where deceivers of the murderous are blessed, which the tradition reads as praise of their mercy rather than their method.",
+        "passage_id": "kjv-exodus-1-19-20"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-matthew-5-37",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-exodus-1-19-20",
+        "role": "complicating",
+        "note": "the midwives' deception is blessed"
+      }
+    ],
+    "intra_tradition_note": "Augustine and Aquinas prohibit all lying absolutely; many later Christians allow benevolent untruths in extremity, and casuistry developed mental reservation precisely to avoid calling them lies.",
+    "further_reading": [
+      {
+        "author": "Sissela Bok",
+        "title": "Lying: Moral Choice in Public and Private Life",
+        "year": 1978,
+        "kind": "book",
+        "url": null,
+        "note": "the modern classic, engaging Augustine directly"
+      },
+      {
+        "author": "Paul J. Griffiths",
+        "title": "Lying: An Augustinian Theology of Duplicity",
+        "year": 2004,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Matthew 5 (KJV), Exodus 1, Augustine's On Lying, and ST II-II Q.110."
+  },
+  {
+    "id": "promise_keeping_and_oaths--christianity",
+    "topic_id": "promise_keeping_and_oaths",
+    "tradition_id": "christianity",
+    "stance": "obligatory",
+    "summary": "A vow once made must be paid: better never to promise than to promise and fail. The righteous person of the Psalms swears to his own hurt and does not change, so cost is no release from a commitment. Jesus presses further, urging speech so trustworthy that oath-taking itself becomes unnecessary.",
+    "reasoning": [
+      {
+        "text": "Ecclesiastes treats an unpaid vow as an offense, preferring restraint in promising to failure in performing.",
+        "passage_id": "kjv-ecclesiastes-5-4-5"
+      },
+      {
+        "text": "Keeping one's sworn word even when it hurts marks the person fit to dwell with God.",
+        "passage_id": "kjv-psalm-15-4"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-ecclesiastes-5-4-5",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-psalm-15-4",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Some communions (Quakers, Anabaptists) read Matthew 5's 'swear not at all' as forbidding oaths outright, while most treat it as demanding truthfulness beneath any oath.",
+    "further_reading": [
+      {
+        "author": "Allen Habib",
+        "title": "Promises",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/promises/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ecclesiastes 5, Psalm 15, Matthew 5:33-37 (KJV)."
+  },
+  {
+    "id": "killing_and_self_defense--christianity",
+    "topic_id": "killing_and_self_defense",
+    "tradition_id": "christianity",
+    "stance": "context_dependent",
+    "summary": "Innocent human life is inviolable because every person bears God's image; murder is absolutely excluded. Yet the commandment sits beside provisions for defense, and Aquinas's double-effect analysis permits repelling an attacker with force that may kill, provided death is not the aim. Nonviolent strands take the harder saying about non-resistance as binding.",
+    "reasoning": [
+      {
+        "text": "The sixth commandment fixes the prohibition of unlawful killing at the center of biblical ethics.",
+        "passage_id": "kjv-exodus-20-13"
+      },
+      {
+        "text": "Aquinas argues an act of self-defense can be licit though lethal, when the death is beside the intention.",
+        "passage_id": "summa-64-7-double-effect"
+      },
+      {
+        "text": "The non-resistance saying keeps a pacifist witness alive within the tradition.",
+        "passage_id": "kjv-matthew-5-39"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-exodus-20-13",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "summa-64-7-double-effect",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-matthew-5-39",
+        "role": "complicating",
+        "note": "the pacifist counter-text"
+      }
+    ],
+    "intra_tradition_note": "Historic peace churches read Matthew 5:39 as excluding lethal defense altogether; the majority tradition follows Aquinas.",
+    "further_reading": [
+      {
+        "author": "Alison McIntyre",
+        "title": "Doctrine of Double Effect",
+        "year": 2019,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/double-effect/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Exodus 20, ST II-II Q.64 art.7, Matthew 5 (KJV)."
+  },
+  {
+    "id": "war_and_peace--christianity",
+    "topic_id": "war_and_peace",
+    "tradition_id": "christianity",
+    "stance": "context_dependent",
+    "summary": "From Augustine forward the mainline holds that war can be just — waged by lawful authority, for a wronged cause, with right intention — yet remains an occasion for grief rather than glory. The beatitude on peacemakers and the early church's aversion to bloodshed keep a standing pacifist minority and press every justification hard.",
+    "reasoning": [
+      {
+        "text": "Augustine grounds just war in the other side's wrongdoing, and insists even a just war is matter for mourning.",
+        "passage_id": "augustine-city-19-7-just-war"
+      },
+      {
+        "text": "The blessing on peacemakers makes peace, not victory, the gospel's default.",
+        "passage_id": "kjv-matthew-5-9"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "augustine-city-19-7-just-war",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-matthew-5-9",
+        "role": "complicating",
+        "note": "the peacemaking counterweight"
+      }
+    ],
+    "intra_tradition_note": "Pacifist communions (Mennonites, Quakers) reject just-war reasoning entirely; Catholic and magisterial Protestant teaching retains it with increasingly strict conditions.",
+    "further_reading": [
+      {
+        "author": "Seth Lazar",
+        "title": "War",
+        "year": 2020,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/war/",
+        "note": null
+      },
+      {
+        "author": "Michael Walzer",
+        "title": "Just and Unjust Wars",
+        "year": 1977,
+        "kind": "book",
+        "url": null,
+        "note": "the modern restatement the tradition argues with"
+      }
+    ],
+    "curator_note": "Drafted from City of God XIX (Dods) and Matthew 5 (KJV)."
+  },
+  {
+    "id": "capital_punishment--christianity",
+    "topic_id": "capital_punishment",
+    "tradition_id": "christianity",
+    "stance": "contested",
+    "summary": "Scripture arms the magistrate with the sword, and for most of its history the church accepted execution as lawful retribution. Yet the same gospels show mercy interrupting a lawful stoning, and modern teaching — Catholic doctrine most explicitly — now judges the penalty inadmissible where society can be protected without it. The tradition is genuinely divided between these readings.",
+    "reasoning": [
+      {
+        "text": "Paul presents the ruler's sword as God's instrument against evildoers, the classic warrant for capital jurisdiction.",
+        "passage_id": "kjv-romans-13-4"
+      },
+      {
+        "text": "Jesus disarms the executioners of a lawfully condemned woman, a standing precedent of mercy over maximal punishment.",
+        "passage_id": "kjv-john-8-7"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-romans-13-4",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-john-8-7",
+        "role": "complicating",
+        "note": "mercy halting a lawful execution"
+      }
+    ],
+    "intra_tradition_note": "The 2018 revision of the Catholic Catechism calls the death penalty inadmissible; many Protestant bodies concur while others retain Romans 13 warrant — a live intra-Christian dispute.",
+    "further_reading": [
+      {
+        "author": "Hugo Adam Bedau (ed.)",
+        "title": "The Death Penalty in America: Current Controversies",
+        "year": 1997,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Romans 13, John 8 (KJV), and the 2018 Catechism revision for the reception history."
+  },
+  {
+    "id": "suicide_and_self_harm--christianity",
+    "topic_id": "suicide_and_self_harm",
+    "tradition_id": "christianity",
+    "stance": "forbidden",
+    "summary": "Life is God's gift and remains God's own: the body is not one's possession to destroy, and Augustine found no scriptural permission for taking one's own life even to escape suffering or shame. The prohibition is firm, but the modern pastoral tradition treats those who die this way with compassion, recognizing that despair and illness diminish culpability.",
+    "reasoning": [
+      {
+        "text": "Augustine's survey of scripture finds neither precept nor permission for self-killing, fixing the mainline teaching.",
+        "passage_id": "augustine-city-1-20-suicide"
+      },
+      {
+        "text": "Paul's claim that the body is God's temple and not one's own removes self-destruction from the sphere of private right.",
+        "passage_id": "kjv-1corinthians-6-19-20"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "augustine-city-1-20-suicide",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-1corinthians-6-19-20",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Older practice denied funeral rites to those who died by suicide; contemporary teaching across communions emphasizes diminished responsibility, mourning with the bereaved, and care for the despairing.",
+    "further_reading": [
+      {
+        "author": "Michael Cholbi",
+        "title": "Suicide",
+        "year": 2021,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/suicide/",
+        "note": "survey including the Augustinian argument"
+      }
+    ],
+    "curator_note": "Drafted from City of God I.20 (Dods) and 1 Corinthians 6 (KJV)."
+  },
+  {
+    "id": "euthanasia_and_end_of_life--christianity",
+    "topic_id": "euthanasia_and_end_of_life",
+    "tradition_id": "christianity",
+    "stance": "forbidden",
+    "summary": "Because the Lord gives and takes away, deliberately hastening death — one's own or another's — usurps a dominion that is not ours, and Aquinas's condemnation of self-killing extends to killing the suffering out of mercy. The same tradition permits declining disproportionate treatment and giving pain relief that may shorten life, so refusing to kill is not a command to prolong dying at any cost.",
+    "reasoning": [
+      {
+        "text": "Job blesses the God who gives and takes away, framing the end of life as received rather than chosen.",
+        "passage_id": "kjv-job-1-21"
+      },
+      {
+        "text": "Aquinas's judgment that self-killing offends nature, community, and God grounds the rejection of mercy killing.",
+        "passage_id": "summa-64-5-suicide"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-job-1-21",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "summa-64-5-suicide",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Catholic teaching distinguishes euthanasia from withdrawing 'extraordinary means' and from double-effect analgesia, both licit; some liberal Protestant voices defend physician-assisted death, a minority position.",
+    "further_reading": [
+      {
+        "author": "Robert Young",
+        "title": "Voluntary Euthanasia",
+        "year": 2019,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/euthanasia-voluntary/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Job 1 (KJV), ST II-II Q.64, and the Declaration on Euthanasia (1980) for the distinctions."
+  },
+  {
+    "id": "wealth_and_generosity--christianity",
+    "topic_id": "wealth_and_generosity",
+    "tradition_id": "christianity",
+    "stance": "encouraged",
+    "summary": "Treasure stored on earth captures the heart that stores it, and giving is pronounced more blessed than receiving; almsgiving has been central Christian practice from the beginning. Wealth as such is not condemned — the rich are charged to be humble, generous, and ready to distribute — but it is treated as spiritually hazardous and held under judgment.",
+    "reasoning": [
+      {
+        "text": "The Sermon on the Mount warns that the heart follows the treasure, making detachment a matter of spiritual survival.",
+        "passage_id": "kjv-matthew-6-19-21"
+      },
+      {
+        "text": "A remembered saying of Jesus makes giving itself the greater blessing.",
+        "passage_id": "kjv-acts-20-35"
+      },
+      {
+        "text": "The rich are not ordered to renounce but to distribute — wealth is a stewardship, not a possession.",
+        "passage_id": "kjv-1timothy-6-17-18"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-matthew-6-19-21",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-acts-20-35",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-1timothy-6-17-18",
+        "role": "complicating",
+        "note": "wealth charged, not condemned"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Peter Brown",
+        "title": "Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West",
+        "year": 2012,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Matthew 6, Acts 20, 1 Timothy 6 (KJV)."
+  },
+  {
+    "id": "theft_and_property--christianity",
+    "topic_id": "theft_and_property",
+    "tradition_id": "christianity",
+    "stance": "context_dependent",
+    "summary": "The eighth commandment fixes stealing among the primary wrongs, and restitution belongs to repentance. Yet property in this tradition is stewardship under God, ordered to common use: Aquinas teaches that in extreme necessity the starving person who takes bread commits no theft at all, because need makes creation's goods common again. Ordinary taking remains squarely condemned.",
+    "reasoning": [
+      {
+        "text": "The commandment places property under divine protection and makes honest dealing a covenant obligation.",
+        "passage_id": "kjv-exodus-20-15"
+      },
+      {
+        "text": "Aquinas marks the limit of the property right: in extreme need, taking for survival is not theft, properly speaking.",
+        "passage_id": "summa-66-7-necessity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-exodus-20-15",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "summa-66-7-necessity",
+        "role": "complicating",
+        "note": "extreme necessity"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "John Finnis",
+        "title": "Aquinas: Moral, Political, and Legal Theory",
+        "year": 1998,
+        "kind": "book",
+        "url": null,
+        "note": "chapter on justice and property"
+      }
+    ],
+    "curator_note": "Drafted from Exodus 20 (KJV) and ST II-II Q.66 art.7."
+  },
+  {
+    "id": "usury_and_lending--christianity",
+    "topic_id": "usury_and_lending",
+    "tradition_id": "christianity",
+    "stance": "forbidden",
+    "summary": "Classical Christian teaching condemned usury outright: lending should imitate God's kindness — hoping for nothing again — and Aquinas argued that charging for money's use sells what does not exist. The condemnation targeted exploitation of the needy borrower; modern teaching tolerates moderate commercial interest while retaining the old judgment against predatory lending.",
+    "reasoning": [
+      {
+        "text": "Jesus commands lending that expects nothing back, set inside love of enemies.",
+        "passage_id": "kjv-luke-6-35"
+      },
+      {
+        "text": "Aquinas's analysis makes usury an injustice in itself, not merely an excess.",
+        "passage_id": "summa-78-1-usury"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-luke-6-35",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "summa-78-1-usury",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "From the sixteenth century, casuistry admitted extrinsic titles to interest, and the modern church accepts ordinary commercial credit; the label 'usury' now attaches to exploitative rates.",
+    "further_reading": [
+      {
+        "author": "John T. Noonan Jr.",
+        "title": "The Scholastic Analysis of Usury",
+        "year": 1957,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Luke 6 (KJV) and ST II-II Q.78, with Noonan for the development."
+  },
+  {
+    "id": "forgiveness_and_revenge--christianity",
+    "topic_id": "forgiveness_and_revenge",
+    "tradition_id": "christianity",
+    "stance": "obligatory",
+    "summary": "Forgiveness is not a counsel of perfection but a condition of the disciple's own pardon: forgive, that you may be forgiven. Private vengeance is renounced and handed to God's justice, which frees the wronged person from the offender without denying the wrong. Reconciliation is sought seventy times seven, though the tradition distinguishes forgiving from excusing or from foregoing lawful protection.",
+    "reasoning": [
+      {
+        "text": "The Lord's Prayer binds divine forgiveness to our forgiving, making it a requirement of the praying life.",
+        "passage_id": "kjv-matthew-6-14-15"
+      },
+      {
+        "text": "Paul relocates vengeance from the wronged hand to God's, ending the cycle of retaliation.",
+        "passage_id": "kjv-romans-12-19"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-matthew-6-14-15",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-romans-12-19",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Paul Hughes and Brandon Warmke",
+        "title": "Forgiveness",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/forgiveness/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Matthew 6 and Romans 12 (KJV)."
+  },
+  {
+    "id": "duties_to_parents--christianity",
+    "topic_id": "duties_to_parents",
+    "tradition_id": "christianity",
+    "stance": "obligatory",
+    "summary": "Honoring father and mother is commanded with a promise, and the apostolic teaching makes failure to provide for one's own household a denial of the faith — so filial duty includes concrete care, not only respect. Yet discipleship relativizes even this bond: parents are honored under God, not in place of God, and Jesus rebukes those who dress up neglect as piety.",
+    "reasoning": [
+      {
+        "text": "The fifth commandment sets honor of parents at the head of the duties toward neighbor.",
+        "passage_id": "kjv-exodus-20-12"
+      },
+      {
+        "text": "Providing for one's own, especially the aged of one's house, is treated as a test of faith.",
+        "passage_id": "kjv-1timothy-5-8"
+      },
+      {
+        "text": "The hard saying about hating father and mother shows the bond is penultimate, not ultimate.",
+        "passage_id": "kjv-luke-14-26"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-exodus-20-12",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-1timothy-5-8",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-luke-14-26",
+        "role": "complicating",
+        "note": "discipleship above family"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Diane Jeske",
+        "title": "Special Obligations",
+        "year": 2019,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/special-obligations/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Exodus 20, 1 Timothy 5, Luke 14, Mark 7 (KJV)."
+  },
+  {
+    "id": "marriage_and_fidelity--christianity",
+    "topic_id": "marriage_and_fidelity",
+    "tradition_id": "christianity",
+    "stance": "forbidden",
+    "summary": "Adultery is excluded by commandment, and Jesus deepens the demand: the one-flesh union joined by God asks faithfulness of the heart, so that cultivated desire for another is already betrayal. Fidelity is not mere abstention but the positive keeping of a covenant that images God's own faithfulness.",
+    "reasoning": [
+      {
+        "text": "Marriage is grounded in creation as a union God joins, beyond private contract.",
+        "passage_id": "kjv-matthew-19-6"
+      },
+      {
+        "text": "The Sermon on the Mount moves adultery from outward act to inward intention, making the guarding of desire part of faithfulness.",
+        "passage_id": "kjv-matthew-5-28"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-matthew-19-6",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-matthew-5-28",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Elizabeth Brake",
+        "title": "Marriage and Domestic Partnership",
+        "year": 2020,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/marriage/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Matthew 19, Matthew 5, Exodus 20 (KJV)."
+  },
+  {
+    "id": "divorce--christianity",
+    "topic_id": "divorce",
+    "tradition_id": "christianity",
+    "stance": "discouraged",
+    "summary": "What God has joined, man should not put asunder: Jesus treats the Mosaic divorce provision as a concession to hardness of heart, not the design. The exception clause for unfaithfulness and Paul's provision for abandonment ground the historic grounds for separation, and the communions divide over remarriage — from Catholic indissolubility to broader Protestant and Orthodox accommodation.",
+    "reasoning": [
+      {
+        "text": "Jesus recalls marriage to its beginning and names remarriage after groundless divorce adultery.",
+        "passage_id": "kjv-matthew-19-8-9"
+      },
+      {
+        "text": "Paul releases the believer abandoned by an unbelieving spouse, showing the bond can be dissolved by desertion.",
+        "passage_id": "kjv-1corinthians-7-15"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-matthew-19-8-9",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-1corinthians-7-15",
+        "role": "complicating",
+        "note": "the Pauline privilege"
+      }
+    ],
+    "intra_tradition_note": "Catholic doctrine holds sacramental marriage indissoluble (annulment aside); Orthodoxy tolerates penitential remarriage; most Protestant bodies accept divorce for cause — one of the sharpest intra-Christian divides.",
+    "further_reading": [
+      {
+        "author": "David Instone-Brewer",
+        "title": "Divorce and Remarriage in the Bible",
+        "year": 2002,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Matthew 19 and 1 Corinthians 7 (KJV)."
+  },
+  {
+    "id": "hospitality_and_strangers--christianity",
+    "topic_id": "hospitality_and_strangers",
+    "tradition_id": "christianity",
+    "stance": "obligatory",
+    "summary": "The stranger at the door may be an angel unawares, and in the judgment scene Christ himself is the stranger taken in or turned away. Hospitality is therefore not optional warmth from surplus but a practice on which one is finally judged, continuous with Israel's command to love the sojourner because you were sojourners.",
+    "reasoning": [
+      {
+        "text": "The letter to the Hebrews commands remembrance of strangers with Abraham's angelic guests in view.",
+        "passage_id": "kjv-hebrews-13-2"
+      },
+      {
+        "text": "In the parable of the sheep and goats, welcome given the stranger is welcome given to Christ.",
+        "passage_id": "kjv-matthew-25-35"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-hebrews-13-2",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-matthew-25-35",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Christine D. Pohl",
+        "title": "Making Room: Recovering Hospitality as a Christian Tradition",
+        "year": 1999,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Hebrews 13 and Matthew 25 (KJV)."
+  },
+  {
+    "id": "pride_and_humility--christianity",
+    "topic_id": "pride_and_humility",
+    "tradition_id": "christianity",
+    "stance": "discouraged",
+    "summary": "Pride goes before destruction; in the tradition's moral catalogues it is the root sin, the self enthroned where God belongs. Jesus's banquet saying promises reversal — the self-exalted abased, the humble exalted — and humility is prized not as self-contempt but as truthful standing before God, from which honest service becomes possible.",
+    "reasoning": [
+      {
+        "text": "The proverb ties pride to ruin as self-deception that precedes a fall.",
+        "passage_id": "kjv-proverbs-16-18"
+      },
+      {
+        "text": "Jesus fixes the reversal of self-exaltation as a standing pattern of the kingdom.",
+        "passage_id": "kjv-luke-14-11"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-proverbs-16-18",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-luke-14-11",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "C. S. Lewis",
+        "title": "Mere Christianity",
+        "year": 1952,
+        "kind": "book",
+        "url": null,
+        "note": "'The Great Sin' chapter on pride"
+      }
+    ],
+    "curator_note": "Drafted from Proverbs 16 and Luke 14 (KJV)."
+  },
+  {
+    "id": "envy_and_contentment--christianity",
+    "topic_id": "envy_and_contentment",
+    "tradition_id": "christianity",
+    "stance": "forbidden",
+    "summary": "The tenth commandment legislates desire itself: coveting the neighbor's goods is sin before any act follows. Against envy the tradition sets learned contentment — Paul's secret of sufficiency in any state — and gratitude as the discipline that starves comparison. Envy is counted among the deadly sins because it grieves at another's good.",
+    "reasoning": [
+      {
+        "text": "The commandment against coveting places the interior life of desire under God's law.",
+        "passage_id": "kjv-exodus-20-17"
+      },
+      {
+        "text": "Paul testifies that contentment is learned in every circumstance, not granted by circumstances.",
+        "passage_id": "kjv-philippians-4-11"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-exodus-20-17",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-philippians-4-11",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Rebecca Konyndyk DeYoung",
+        "title": "Glittering Vices: A New Look at the Seven Deadly Sins and Their Remedies",
+        "year": 2009,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Exodus 20 and Philippians 4 (KJV)."
+  },
+  {
+    "id": "obedience_and_civil_authority--christianity",
+    "topic_id": "obedience_and_civil_authority",
+    "tradition_id": "christianity",
+    "stance": "context_dependent",
+    "summary": "The powers that be are ordained of God, so ordinary law claims the Christian conscience and taxes are paid without resentment. But the same apostles who wrote so also answered a direct command with 'we ought to obey God rather than men' — obedience is real yet bounded, and where authority commands sin, resistance becomes duty.",
+    "reasoning": [
+      {
+        "text": "Paul grounds civil obedience in God's ordering of authority, not the ruler's own claim.",
+        "passage_id": "kjv-romans-13-1"
+      },
+      {
+        "text": "Peter's answer before the council marks the fixed limit: no human command can override God's.",
+        "passage_id": "kjv-acts-5-29"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-romans-13-1",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-acts-5-29",
+        "role": "complicating",
+        "note": "the limit of obedience"
+      }
+    ],
+    "intra_tradition_note": "Christian history runs from quietist readings of Romans 13 to theologies of resistance (Barmen, civil-rights preaching); the tension is internal to the canon itself.",
+    "further_reading": [
+      {
+        "author": "Richard Dagger and David Lefkowitz",
+        "title": "Political Obligation",
+        "year": 2021,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/political-obligation/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Romans 13 and Acts 5 (KJV)."
+  },
+  {
+    "id": "judging_others--christianity",
+    "topic_id": "judging_others",
+    "tradition_id": "christianity",
+    "stance": "discouraged",
+    "summary": "Judge not, that ye be not judged: the measure used on others returns upon the user, and the beam in one's own eye disqualifies the eager critic. Yet the same Jesus commands judging righteous judgment, so the tradition distinguishes condemnation of persons, which is forbidden, from discernment of conduct, which love sometimes requires.",
+    "reasoning": [
+      {
+        "text": "The Sermon on the Mount turns judgment back on the judge, targeting hypocrisy and contempt.",
+        "passage_id": "kjv-matthew-7-1-2"
+      },
+      {
+        "text": "The command to judge righteous judgment shows that discernment, unlike condemnation, is required.",
+        "passage_id": "kjv-john-7-24"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kjv-matthew-7-1-2",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kjv-john-7-24",
+        "role": "complicating",
+        "note": "righteous judgment commanded"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "William C. Mattison III",
+        "title": "Introducing Moral Theology: True Happiness and the Virtues",
+        "year": 2008,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Matthew 7 and John 7 (KJV)."
+  }
+]

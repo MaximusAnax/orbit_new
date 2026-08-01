@@ -1,0 +1,2175 @@
+[
+  {
+    "id": "honesty_and_deception",
+    "title": "Honesty and deception",
+    "description": "Whether and when it is wrong to lie, deceive, or shade the truth — including white lies told to spare feelings, deception meant to protect someone, and honesty that wounds.",
+    "question_forms": [
+      "Is it wrong to lie?",
+      "Is a white lie acceptable?",
+      "Should I tell the truth even if it hurts someone?",
+      "Is it ok to deceive someone to protect them?"
+    ],
+    "keywords": [
+      {
+        "term": "lie",
+        "weight": 3
+      },
+      {
+        "term": "lying",
+        "weight": 3
+      },
+      {
+        "term": "white lie",
+        "weight": 3
+      },
+      {
+        "term": "honesty",
+        "weight": 3
+      },
+      {
+        "term": "deceive",
+        "weight": 3
+      },
+      {
+        "term": "deception",
+        "weight": 3
+      },
+      {
+        "term": "truth",
+        "weight": 2
+      },
+      {
+        "term": "truthful",
+        "weight": 2
+      },
+      {
+        "term": "fib",
+        "weight": 2
+      },
+      {
+        "term": "spare feelings",
+        "weight": 2
+      },
+      {
+        "term": "spare her feelings",
+        "weight": 2
+      },
+      {
+        "term": "cover for",
+        "weight": 2
+      },
+      {
+        "term": "mislead",
+        "weight": 2
+      },
+      {
+        "term": "sugarcoat",
+        "weight": 2
+      },
+      {
+        "term": "compliment",
+        "weight": 1
+      },
+      {
+        "term": "pretend",
+        "weight": 1
+      },
+      {
+        "term": "haircut",
+        "weight": 1
+      },
+      {
+        "term": "novel",
+        "weight": 1
+      },
+      {
+        "term": "surprise party",
+        "weight": 1
+      },
+      {
+        "term": "resume",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "promise_keeping_and_oaths",
+      "speech_and_gossip"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "promise_keeping_and_oaths",
+    "title": "Promise keeping and oaths",
+    "description": "The force of a promise, vow, oath, or pledge once given: whether commitments bind when keeping them becomes costly, and whether a promise made under pressure or to the dying still obliges.",
+    "question_forms": [
+      "Do I have to keep a promise?",
+      "Is it wrong to break a promise when circumstances change?",
+      "Are oaths binding?",
+      "Must I honor a commitment that has become very costly?"
+    ],
+    "keywords": [
+      {
+        "term": "promise",
+        "weight": 3
+      },
+      {
+        "term": "break a promise",
+        "weight": 3
+      },
+      {
+        "term": "oath",
+        "weight": 3
+      },
+      {
+        "term": "vow",
+        "weight": 3
+      },
+      {
+        "term": "pledge",
+        "weight": 2
+      },
+      {
+        "term": "commitment",
+        "weight": 2
+      },
+      {
+        "term": "keep my word",
+        "weight": 2
+      },
+      {
+        "term": "gave my word",
+        "weight": 2
+      },
+      {
+        "term": "went back on",
+        "weight": 2
+      },
+      {
+        "term": "backed out",
+        "weight": 2
+      },
+      {
+        "term": "swore",
+        "weight": 2
+      },
+      {
+        "term": "swear",
+        "weight": 2
+      },
+      {
+        "term": "deathbed",
+        "weight": 1
+      },
+      {
+        "term": "reneged",
+        "weight": 2
+      },
+      {
+        "term": "flake",
+        "weight": 1
+      },
+      {
+        "term": "rain check",
+        "weight": 1
+      },
+      {
+        "term": "godparent",
+        "weight": 1
+      },
+      {
+        "term": "wedding toast",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "honesty_and_deception",
+      "marriage_and_fidelity"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "killing_and_self_defense",
+    "title": "Killing and self-defense",
+    "description": "The taking of a human life outside war and law: homicide, defending yourself or another against an attacker, and whether lethal force is ever justified for a private person.",
+    "question_forms": [
+      "Is killing ever justified?",
+      "Is it wrong to kill in self-defense?",
+      "May I use lethal force to protect my family?",
+      "Is taking a life always a sin?"
+    ],
+    "keywords": [
+      {
+        "term": "kill",
+        "weight": 3
+      },
+      {
+        "term": "killing",
+        "weight": 3
+      },
+      {
+        "term": "self-defense",
+        "weight": 3
+      },
+      {
+        "term": "self defense",
+        "weight": 3
+      },
+      {
+        "term": "murder",
+        "weight": 3
+      },
+      {
+        "term": "lethal force",
+        "weight": 2
+      },
+      {
+        "term": "take a life",
+        "weight": 2
+      },
+      {
+        "term": "homicide",
+        "weight": 2
+      },
+      {
+        "term": "attacker",
+        "weight": 2
+      },
+      {
+        "term": "intruder",
+        "weight": 2
+      },
+      {
+        "term": "burglar",
+        "weight": 1
+      },
+      {
+        "term": "broke into",
+        "weight": 2
+      },
+      {
+        "term": "protect my family",
+        "weight": 2
+      },
+      {
+        "term": "gun",
+        "weight": 1
+      },
+      {
+        "term": "fight back",
+        "weight": 2
+      },
+      {
+        "term": "assailant",
+        "weight": 2
+      },
+      {
+        "term": "mugger",
+        "weight": 1
+      },
+      {
+        "term": "knife",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "war_and_peace",
+      "capital_punishment"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "war_and_peace",
+    "title": "War and peace",
+    "description": "Whether a nation or people may wage war, what makes a war just or unjust, the duties of soldiers, and the standing of pacifism and peacemaking.",
+    "question_forms": [
+      "Is war ever just?",
+      "Is it wrong to fight in a war?",
+      "Can violence between nations be morally defended?",
+      "Should I be a pacifist?"
+    ],
+    "keywords": [
+      {
+        "term": "war",
+        "weight": 3
+      },
+      {
+        "term": "just war",
+        "weight": 3
+      },
+      {
+        "term": "pacifism",
+        "weight": 3
+      },
+      {
+        "term": "pacifist",
+        "weight": 3
+      },
+      {
+        "term": "peace",
+        "weight": 2
+      },
+      {
+        "term": "soldier",
+        "weight": 2
+      },
+      {
+        "term": "battle",
+        "weight": 2
+      },
+      {
+        "term": "army",
+        "weight": 2
+      },
+      {
+        "term": "enlist",
+        "weight": 2
+      },
+      {
+        "term": "military",
+        "weight": 2
+      },
+      {
+        "term": "invade",
+        "weight": 2
+      },
+      {
+        "term": "invasion",
+        "weight": 2
+      },
+      {
+        "term": "draft",
+        "weight": 1
+      },
+      {
+        "term": "conscientious objector",
+        "weight": 2
+      },
+      {
+        "term": "deployment",
+        "weight": 1
+      },
+      {
+        "term": "civilians",
+        "weight": 1
+      },
+      {
+        "term": "combat",
+        "weight": 2
+      },
+      {
+        "term": "nation",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "killing_and_self_defense",
+      "obedience_and_civil_authority"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "capital_punishment",
+    "title": "Capital punishment",
+    "description": "Whether the state may execute offenders: retribution and deterrence against mercy, the risk of irreversible error, and who, if anyone, has authority over a wrongdoer's life.",
+    "question_forms": [
+      "Is the death penalty just?",
+      "Is it wrong for the state to execute criminals?",
+      "Does a murderer deserve to die?",
+      "Should capital punishment be abolished?"
+    ],
+    "keywords": [
+      {
+        "term": "death penalty",
+        "weight": 3
+      },
+      {
+        "term": "capital punishment",
+        "weight": 3
+      },
+      {
+        "term": "execute",
+        "weight": 3
+      },
+      {
+        "term": "execution",
+        "weight": 3
+      },
+      {
+        "term": "death row",
+        "weight": 2
+      },
+      {
+        "term": "deterrence",
+        "weight": 2
+      },
+      {
+        "term": "retribution",
+        "weight": 2
+      },
+      {
+        "term": "hang",
+        "weight": 1
+      },
+      {
+        "term": "lethal injection",
+        "weight": 2
+      },
+      {
+        "term": "sentenced to die",
+        "weight": 2
+      },
+      {
+        "term": "murderer",
+        "weight": 2
+      },
+      {
+        "term": "convict",
+        "weight": 1
+      },
+      {
+        "term": "wrongful conviction",
+        "weight": 2
+      },
+      {
+        "term": "abolish",
+        "weight": 1
+      },
+      {
+        "term": "jury",
+        "weight": 1
+      },
+      {
+        "term": "verdict",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "killing_and_self_defense",
+      "forgiveness_and_revenge"
+    ],
+    "sensitive": false,
+    "safeguard_ids": [
+      "not_legal_advice"
+    ]
+  },
+  {
+    "id": "suicide_and_self_harm",
+    "title": "Suicide and self-harm",
+    "description": "How traditions have regarded the taking or harming of one's own life: despair, honor, and duty; the claims of God, community, and self; and compassion for the suffering person.",
+    "question_forms": [
+      "What do traditions teach about suicide?",
+      "Is taking your own life wrong?",
+      "How have religions viewed self-harm?",
+      "Is suicide condemned in every tradition?"
+    ],
+    "keywords": [
+      {
+        "term": "suicide",
+        "weight": 3
+      },
+      {
+        "term": "self-harm",
+        "weight": 3
+      },
+      {
+        "term": "take my own life",
+        "weight": 3
+      },
+      {
+        "term": "end my life",
+        "weight": 3
+      },
+      {
+        "term": "kill myself",
+        "weight": 3
+      },
+      {
+        "term": "self-destruction",
+        "weight": 2
+      },
+      {
+        "term": "despair",
+        "weight": 2
+      },
+      {
+        "term": "hopeless",
+        "weight": 1
+      },
+      {
+        "term": "cutting",
+        "weight": 1
+      },
+      {
+        "term": "overdose",
+        "weight": 1
+      },
+      {
+        "term": "seppuku",
+        "weight": 1
+      },
+      {
+        "term": "martyrdom",
+        "weight": 1
+      },
+      {
+        "term": "living is pointless",
+        "weight": 2
+      },
+      {
+        "term": "burden to everyone",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "euthanasia_and_end_of_life",
+      "courage_and_fear"
+    ],
+    "sensitive": true,
+    "safeguard_ids": [
+      "crisis_resources"
+    ]
+  },
+  {
+    "id": "euthanasia_and_end_of_life",
+    "title": "Euthanasia and end of life",
+    "description": "Hastening death or withdrawing treatment for the dying and gravely ill: mercy toward suffering, the limits of medicine, and who may decide when a life should end.",
+    "question_forms": [
+      "Is euthanasia ever permissible?",
+      "Is it wrong to help someone die?",
+      "May treatment be withdrawn from the dying?",
+      "What do traditions say about assisted dying?"
+    ],
+    "keywords": [
+      {
+        "term": "euthanasia",
+        "weight": 3
+      },
+      {
+        "term": "assisted dying",
+        "weight": 3
+      },
+      {
+        "term": "assisted suicide",
+        "weight": 3
+      },
+      {
+        "term": "end of life",
+        "weight": 3
+      },
+      {
+        "term": "mercy killing",
+        "weight": 2
+      },
+      {
+        "term": "life support",
+        "weight": 2
+      },
+      {
+        "term": "terminal",
+        "weight": 2
+      },
+      {
+        "term": "terminally ill",
+        "weight": 2
+      },
+      {
+        "term": "hospice",
+        "weight": 2
+      },
+      {
+        "term": "palliative",
+        "weight": 2
+      },
+      {
+        "term": "ventilator",
+        "weight": 1
+      },
+      {
+        "term": "feeding tube",
+        "weight": 1
+      },
+      {
+        "term": "hasten death",
+        "weight": 2
+      },
+      {
+        "term": "dying",
+        "weight": 2
+      },
+      {
+        "term": "grandmother",
+        "weight": 1
+      },
+      {
+        "term": "prognosis",
+        "weight": 1
+      },
+      {
+        "term": "hospital",
+        "weight": 1
+      },
+      {
+        "term": "morphine",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "suicide_and_self_harm",
+      "killing_and_self_defense"
+    ],
+    "sensitive": true,
+    "safeguard_ids": [
+      "crisis_resources",
+      "not_medical_advice"
+    ]
+  },
+  {
+    "id": "animals_and_diet",
+    "title": "Animals and diet",
+    "description": "What we owe non-human animals: eating meat, vegetarianism, slaughter and sacrifice, cruelty and kindness to creatures, and whether animal suffering counts morally.",
+    "question_forms": [
+      "Is it wrong to eat meat?",
+      "Should I be vegetarian?",
+      "Do animals have moral standing?",
+      "Is killing animals for food acceptable?"
+    ],
+    "keywords": [
+      {
+        "term": "eat meat",
+        "weight": 3
+      },
+      {
+        "term": "meat",
+        "weight": 3
+      },
+      {
+        "term": "vegetarian",
+        "weight": 3
+      },
+      {
+        "term": "vegetarianism",
+        "weight": 3
+      },
+      {
+        "term": "animals",
+        "weight": 3
+      },
+      {
+        "term": "animal",
+        "weight": 3
+      },
+      {
+        "term": "vegan",
+        "weight": 2
+      },
+      {
+        "term": "slaughter",
+        "weight": 2
+      },
+      {
+        "term": "cruelty",
+        "weight": 2
+      },
+      {
+        "term": "livestock",
+        "weight": 2
+      },
+      {
+        "term": "factory farm",
+        "weight": 2
+      },
+      {
+        "term": "hunting",
+        "weight": 2
+      },
+      {
+        "term": "steak",
+        "weight": 1
+      },
+      {
+        "term": "chicken",
+        "weight": 1
+      },
+      {
+        "term": "fishing",
+        "weight": 1
+      },
+      {
+        "term": "creatures",
+        "weight": 2
+      },
+      {
+        "term": "barbecue",
+        "weight": 1
+      },
+      {
+        "term": "kosher",
+        "weight": 1
+      },
+      {
+        "term": "suffering of beasts",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "killing_and_self_defense",
+      "intoxicants_and_sobriety"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "wealth_and_generosity",
+    "title": "Wealth and generosity",
+    "description": "Money, possession, and giving: how much to give and to whom, the dangers of riches, duties of charity and almsgiving, and whether prosperity itself needs justification.",
+    "question_forms": [
+      "How much should I give to charity?",
+      "Is it wrong to be rich?",
+      "Do I have a duty to help the poor?",
+      "What do traditions teach about generosity?"
+    ],
+    "keywords": [
+      {
+        "term": "charity",
+        "weight": 3
+      },
+      {
+        "term": "give",
+        "weight": 2
+      },
+      {
+        "term": "giving",
+        "weight": 3
+      },
+      {
+        "term": "generosity",
+        "weight": 3
+      },
+      {
+        "term": "wealth",
+        "weight": 3
+      },
+      {
+        "term": "rich",
+        "weight": 3
+      },
+      {
+        "term": "poor",
+        "weight": 2
+      },
+      {
+        "term": "almsgiving",
+        "weight": 2
+      },
+      {
+        "term": "alms",
+        "weight": 2
+      },
+      {
+        "term": "donate",
+        "weight": 2
+      },
+      {
+        "term": "donation",
+        "weight": 2
+      },
+      {
+        "term": "money",
+        "weight": 2
+      },
+      {
+        "term": "tithe",
+        "weight": 2
+      },
+      {
+        "term": "possessions",
+        "weight": 2
+      },
+      {
+        "term": "bonus",
+        "weight": 1
+      },
+      {
+        "term": "salary",
+        "weight": 1
+      },
+      {
+        "term": "beggar",
+        "weight": 1
+      },
+      {
+        "term": "homeless",
+        "weight": 1
+      },
+      {
+        "term": "hoard",
+        "weight": 2
+      },
+      {
+        "term": "windfall",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "envy_and_contentment",
+      "usury_and_lending"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "theft_and_property",
+    "title": "Theft and property",
+    "description": "Taking what belongs to another: stealing outright, keeping what was found, cheating on small things, and whether desperate need can ever excuse taking.",
+    "question_forms": [
+      "Is stealing always wrong?",
+      "Is it wrong to keep something I found?",
+      "Can theft be excused by desperate need?",
+      "What counts as taking what is not mine?"
+    ],
+    "keywords": [
+      {
+        "term": "steal",
+        "weight": 3
+      },
+      {
+        "term": "stealing",
+        "weight": 3
+      },
+      {
+        "term": "theft",
+        "weight": 3
+      },
+      {
+        "term": "stole",
+        "weight": 3
+      },
+      {
+        "term": "shoplift",
+        "weight": 2
+      },
+      {
+        "term": "property",
+        "weight": 2
+      },
+      {
+        "term": "belongs to",
+        "weight": 2
+      },
+      {
+        "term": "keep what I found",
+        "weight": 2
+      },
+      {
+        "term": "found a wallet",
+        "weight": 2
+      },
+      {
+        "term": "pirated",
+        "weight": 1
+      },
+      {
+        "term": "wallet",
+        "weight": 1
+      },
+      {
+        "term": "starving",
+        "weight": 1
+      },
+      {
+        "term": "pocketed",
+        "weight": 2
+      },
+      {
+        "term": "wage theft",
+        "weight": 1
+      },
+      {
+        "term": "overcharged",
+        "weight": 1
+      },
+      {
+        "term": "cash register",
+        "weight": 1
+      },
+      {
+        "term": "office supplies",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "wealth_and_generosity",
+      "usury_and_lending"
+    ],
+    "sensitive": false,
+    "safeguard_ids": [
+      "not_legal_advice"
+    ]
+  },
+  {
+    "id": "usury_and_lending",
+    "title": "Usury and lending",
+    "description": "Lending money and charging interest: usury bans and their rationales, debt and the debtor, exploitation of the needy borrower, and honest dealing in credit.",
+    "question_forms": [
+      "Is charging interest wrong?",
+      "What do traditions teach about usury?",
+      "Is it wrong to profit from lending money?",
+      "May I lend to someone in need at interest?"
+    ],
+    "keywords": [
+      {
+        "term": "interest",
+        "weight": 3
+      },
+      {
+        "term": "usury",
+        "weight": 3
+      },
+      {
+        "term": "lend",
+        "weight": 3
+      },
+      {
+        "term": "lending",
+        "weight": 3
+      },
+      {
+        "term": "loan",
+        "weight": 3
+      },
+      {
+        "term": "debt",
+        "weight": 2
+      },
+      {
+        "term": "borrow",
+        "weight": 2
+      },
+      {
+        "term": "borrower",
+        "weight": 2
+      },
+      {
+        "term": "creditor",
+        "weight": 2
+      },
+      {
+        "term": "debtor",
+        "weight": 2
+      },
+      {
+        "term": "riba",
+        "weight": 2
+      },
+      {
+        "term": "payday",
+        "weight": 1
+      },
+      {
+        "term": "apr",
+        "weight": 1
+      },
+      {
+        "term": "mortgage",
+        "weight": 1
+      },
+      {
+        "term": "pawn",
+        "weight": 1
+      },
+      {
+        "term": "repay",
+        "weight": 2
+      },
+      {
+        "term": "installments",
+        "weight": 1
+      },
+      {
+        "term": "collateral",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "wealth_and_generosity",
+      "theft_and_property"
+    ],
+    "sensitive": false,
+    "safeguard_ids": [
+      "not_legal_advice"
+    ]
+  },
+  {
+    "id": "forgiveness_and_revenge",
+    "title": "Forgiveness and revenge",
+    "description": "Answering wrongs done to us: retaliation and payback, grudges, mercy toward offenders, reconciliation, and whether forgiveness can be owed or must be earned.",
+    "question_forms": [
+      "Should I forgive someone who wronged me?",
+      "Is revenge ever justified?",
+      "Must I forgive if they are not sorry?",
+      "Is holding a grudge wrong?"
+    ],
+    "keywords": [
+      {
+        "term": "forgive",
+        "weight": 3
+      },
+      {
+        "term": "forgiveness",
+        "weight": 3
+      },
+      {
+        "term": "revenge",
+        "weight": 3
+      },
+      {
+        "term": "vengeance",
+        "weight": 3
+      },
+      {
+        "term": "grudge",
+        "weight": 3
+      },
+      {
+        "term": "retaliate",
+        "weight": 2
+      },
+      {
+        "term": "payback",
+        "weight": 2
+      },
+      {
+        "term": "get even",
+        "weight": 2
+      },
+      {
+        "term": "get back at",
+        "weight": 2
+      },
+      {
+        "term": "wronged me",
+        "weight": 2
+      },
+      {
+        "term": "reconcile",
+        "weight": 2
+      },
+      {
+        "term": "reconciliation",
+        "weight": 2
+      },
+      {
+        "term": "apologize",
+        "weight": 2
+      },
+      {
+        "term": "apology",
+        "weight": 2
+      },
+      {
+        "term": "betrayed",
+        "weight": 1
+      },
+      {
+        "term": "cheated me",
+        "weight": 1
+      },
+      {
+        "term": "ex",
+        "weight": 1
+      },
+      {
+        "term": "settle the score",
+        "weight": 2
+      }
+    ],
+    "related_topics": [
+      "anger_and_hatred",
+      "judging_others"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "anger_and_hatred",
+    "title": "Anger and hatred",
+    "description": "The passions of rage, resentment, and hate: whether anger is ever righteous or useful, how it distorts judgment, and the disciplines traditions prescribe for mastering temper.",
+    "question_forms": [
+      "Is it wrong to be angry?",
+      "Can anger ever be righteous?",
+      "How should I deal with hatred?",
+      "Is losing my temper a moral failure?"
+    ],
+    "keywords": [
+      {
+        "term": "anger",
+        "weight": 3
+      },
+      {
+        "term": "angry",
+        "weight": 3
+      },
+      {
+        "term": "hatred",
+        "weight": 3
+      },
+      {
+        "term": "hate",
+        "weight": 3
+      },
+      {
+        "term": "temper",
+        "weight": 3
+      },
+      {
+        "term": "rage",
+        "weight": 2
+      },
+      {
+        "term": "resentment",
+        "weight": 2
+      },
+      {
+        "term": "furious",
+        "weight": 2
+      },
+      {
+        "term": "wrath",
+        "weight": 2
+      },
+      {
+        "term": "irritated",
+        "weight": 2
+      },
+      {
+        "term": "blew up at",
+        "weight": 2
+      },
+      {
+        "term": "yelled",
+        "weight": 2
+      },
+      {
+        "term": "yelling",
+        "weight": 2
+      },
+      {
+        "term": "snapped at",
+        "weight": 2
+      },
+      {
+        "term": "road rage",
+        "weight": 1
+      },
+      {
+        "term": "slammed the door",
+        "weight": 1
+      },
+      {
+        "term": "fuming",
+        "weight": 2
+      },
+      {
+        "term": "boiling",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "forgiveness_and_revenge",
+      "speech_and_gossip"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "duties_to_parents",
+    "title": "Duties to parents",
+    "description": "What children owe their mother and father: honor, obedience, gratitude, and care in old age; and the limits of filial duty when parents err or demand too much.",
+    "question_forms": [
+      "What do I owe my parents?",
+      "Must I obey my parents as an adult?",
+      "Am I obligated to care for my aging parents?",
+      "How far does honoring your father and mother go?"
+    ],
+    "keywords": [
+      {
+        "term": "parents",
+        "weight": 3
+      },
+      {
+        "term": "father",
+        "weight": 3
+      },
+      {
+        "term": "mother",
+        "weight": 3
+      },
+      {
+        "term": "filial",
+        "weight": 3
+      },
+      {
+        "term": "honor your parents",
+        "weight": 3
+      },
+      {
+        "term": "aging parents",
+        "weight": 2
+      },
+      {
+        "term": "elderly",
+        "weight": 2
+      },
+      {
+        "term": "nursing home",
+        "weight": 2
+      },
+      {
+        "term": "care for them",
+        "weight": 2
+      },
+      {
+        "term": "dad",
+        "weight": 2
+      },
+      {
+        "term": "mom",
+        "weight": 2
+      },
+      {
+        "term": "obey",
+        "weight": 1
+      },
+      {
+        "term": "gratitude",
+        "weight": 2
+      },
+      {
+        "term": "estranged",
+        "weight": 1
+      },
+      {
+        "term": "inheritance",
+        "weight": 1
+      },
+      {
+        "term": "move back home",
+        "weight": 1
+      },
+      {
+        "term": "call her more",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "obedience_and_civil_authority",
+      "hospitality_and_strangers"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "marriage_and_fidelity",
+    "title": "Marriage and fidelity",
+    "description": "The obligations of spouses: faithfulness and adultery, the nature of the marital bond, temptation and emotional affairs, and what loyalty in marriage demands.",
+    "question_forms": [
+      "Is adultery always wrong?",
+      "What makes marriage binding?",
+      "Is an emotional affair a betrayal?",
+      "What do traditions teach about faithfulness in marriage?"
+    ],
+    "keywords": [
+      {
+        "term": "marriage",
+        "weight": 3
+      },
+      {
+        "term": "adultery",
+        "weight": 3
+      },
+      {
+        "term": "faithful",
+        "weight": 3
+      },
+      {
+        "term": "fidelity",
+        "weight": 3
+      },
+      {
+        "term": "affair",
+        "weight": 3
+      },
+      {
+        "term": "cheat on",
+        "weight": 3
+      },
+      {
+        "term": "cheating",
+        "weight": 2
+      },
+      {
+        "term": "spouse",
+        "weight": 2
+      },
+      {
+        "term": "husband",
+        "weight": 2
+      },
+      {
+        "term": "wife",
+        "weight": 2
+      },
+      {
+        "term": "unfaithful",
+        "weight": 2
+      },
+      {
+        "term": "temptation",
+        "weight": 2
+      },
+      {
+        "term": "coworker",
+        "weight": 1
+      },
+      {
+        "term": "flirting",
+        "weight": 2
+      },
+      {
+        "term": "texting late",
+        "weight": 1
+      },
+      {
+        "term": "anniversary",
+        "weight": 1
+      },
+      {
+        "term": "vows",
+        "weight": 2
+      },
+      {
+        "term": "dating app",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "divorce",
+      "promise_keeping_and_oaths"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "divorce",
+    "title": "Divorce",
+    "description": "Ending a marriage: when, if ever, separation and remarriage are permitted, the grounds traditions have recognized, and duties to a former spouse and to children of the marriage.",
+    "question_forms": [
+      "Is divorce wrong?",
+      "When is it permissible to end a marriage?",
+      "What grounds justify divorce?",
+      "Is remarriage after divorce acceptable?"
+    ],
+    "keywords": [
+      {
+        "term": "divorce",
+        "weight": 3
+      },
+      {
+        "term": "remarriage",
+        "weight": 3
+      },
+      {
+        "term": "end a marriage",
+        "weight": 3
+      },
+      {
+        "term": "separation",
+        "weight": 2
+      },
+      {
+        "term": "separate",
+        "weight": 2
+      },
+      {
+        "term": "annulment",
+        "weight": 2
+      },
+      {
+        "term": "custody",
+        "weight": 2
+      },
+      {
+        "term": "leave my husband",
+        "weight": 2
+      },
+      {
+        "term": "leave my wife",
+        "weight": 2
+      },
+      {
+        "term": "split up",
+        "weight": 2
+      },
+      {
+        "term": "grown apart",
+        "weight": 2
+      },
+      {
+        "term": "irreconcilable",
+        "weight": 2
+      },
+      {
+        "term": "lawyer",
+        "weight": 1
+      },
+      {
+        "term": "alimony",
+        "weight": 1
+      },
+      {
+        "term": "kids",
+        "weight": 1
+      },
+      {
+        "term": "counseling",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "marriage_and_fidelity",
+      "promise_keeping_and_oaths"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "hospitality_and_strangers",
+    "title": "Hospitality and strangers",
+    "description": "Welcoming the outsider: duties to guests, travelers, foreigners, and refugees; the sacredness of the guest in many traditions; and how far welcome must extend.",
+    "question_forms": [
+      "What do we owe strangers?",
+      "Is hospitality a moral duty?",
+      "Should I welcome a foreigner in need?",
+      "How should guests be treated?"
+    ],
+    "keywords": [
+      {
+        "term": "stranger",
+        "weight": 3
+      },
+      {
+        "term": "strangers",
+        "weight": 3
+      },
+      {
+        "term": "hospitality",
+        "weight": 3
+      },
+      {
+        "term": "guest",
+        "weight": 3
+      },
+      {
+        "term": "welcome",
+        "weight": 2
+      },
+      {
+        "term": "foreigner",
+        "weight": 2
+      },
+      {
+        "term": "refugee",
+        "weight": 2
+      },
+      {
+        "term": "traveler",
+        "weight": 2
+      },
+      {
+        "term": "sojourner",
+        "weight": 2
+      },
+      {
+        "term": "outsider",
+        "weight": 2
+      },
+      {
+        "term": "host",
+        "weight": 2
+      },
+      {
+        "term": "newcomer",
+        "weight": 2
+      },
+      {
+        "term": "couch",
+        "weight": 1
+      },
+      {
+        "term": "new neighbor",
+        "weight": 1
+      },
+      {
+        "term": "moved to town",
+        "weight": 1
+      },
+      {
+        "term": "spare room",
+        "weight": 1
+      },
+      {
+        "term": "invite them over",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "wealth_and_generosity",
+      "duties_to_parents"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "speech_and_gossip",
+    "title": "Speech and gossip",
+    "description": "The ethics of the tongue: gossip, slander, tale-bearing, and idle talk; harm done by words even when true; and disciplines of silence and measured speech.",
+    "question_forms": [
+      "Is gossip wrong?",
+      "Is it wrong to talk about people behind their backs?",
+      "What do traditions teach about harmful speech?",
+      "Should I repeat something true but damaging?"
+    ],
+    "keywords": [
+      {
+        "term": "gossip",
+        "weight": 3
+      },
+      {
+        "term": "slander",
+        "weight": 3
+      },
+      {
+        "term": "behind their back",
+        "weight": 3
+      },
+      {
+        "term": "behind her back",
+        "weight": 2
+      },
+      {
+        "term": "rumor",
+        "weight": 3
+      },
+      {
+        "term": "talk about people",
+        "weight": 2
+      },
+      {
+        "term": "tale-bearing",
+        "weight": 2
+      },
+      {
+        "term": "badmouth",
+        "weight": 2
+      },
+      {
+        "term": "trash talk",
+        "weight": 2
+      },
+      {
+        "term": "idle talk",
+        "weight": 2
+      },
+      {
+        "term": "vent",
+        "weight": 1
+      },
+      {
+        "term": "group chat",
+        "weight": 1
+      },
+      {
+        "term": "screenshot",
+        "weight": 1
+      },
+      {
+        "term": "spill",
+        "weight": 1
+      },
+      {
+        "term": "drama",
+        "weight": 1
+      },
+      {
+        "term": "water cooler",
+        "weight": 1
+      },
+      {
+        "term": "tongue",
+        "weight": 2
+      },
+      {
+        "term": "silence",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "honesty_and_deception",
+      "judging_others"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "intoxicants_and_sobriety",
+    "title": "Intoxicants and sobriety",
+    "description": "Alcohol and other intoxicants: outright bans, permitted moderation, drunkenness and its harms, and sobriety as a discipline of mind and self-command.",
+    "question_forms": [
+      "Is drinking alcohol wrong?",
+      "What do traditions teach about intoxicants?",
+      "Is getting drunk a moral failing?",
+      "Should I drink at all?"
+    ],
+    "keywords": [
+      {
+        "term": "alcohol",
+        "weight": 3
+      },
+      {
+        "term": "drinking",
+        "weight": 3
+      },
+      {
+        "term": "drunk",
+        "weight": 3
+      },
+      {
+        "term": "intoxicants",
+        "weight": 3
+      },
+      {
+        "term": "sober",
+        "weight": 3
+      },
+      {
+        "term": "sobriety",
+        "weight": 2
+      },
+      {
+        "term": "wine",
+        "weight": 2
+      },
+      {
+        "term": "beer",
+        "weight": 2
+      },
+      {
+        "term": "drugs",
+        "weight": 2
+      },
+      {
+        "term": "drunkenness",
+        "weight": 2
+      },
+      {
+        "term": "hungover",
+        "weight": 2
+      },
+      {
+        "term": "hangover",
+        "weight": 2
+      },
+      {
+        "term": "happy hour",
+        "weight": 1
+      },
+      {
+        "term": "one more round",
+        "weight": 1
+      },
+      {
+        "term": "blackout",
+        "weight": 2
+      },
+      {
+        "term": "wasted",
+        "weight": 2
+      },
+      {
+        "term": "dry january",
+        "weight": 1
+      },
+      {
+        "term": "cannabis",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "courage_and_fear",
+      "animals_and_diet"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "pride_and_humility",
+    "title": "Pride and humility",
+    "description": "Self-regard and its distortions: arrogance, vanity, and boasting against humility, modesty, and honest self-assessment — and whether proper pride has a place.",
+    "question_forms": [
+      "Is pride a vice?",
+      "Why do traditions praise humility?",
+      "Is it wrong to boast about achievements?",
+      "Can self-respect become arrogance?"
+    ],
+    "keywords": [
+      {
+        "term": "pride",
+        "weight": 3
+      },
+      {
+        "term": "proud",
+        "weight": 3
+      },
+      {
+        "term": "humility",
+        "weight": 3
+      },
+      {
+        "term": "humble",
+        "weight": 3
+      },
+      {
+        "term": "arrogance",
+        "weight": 3
+      },
+      {
+        "term": "arrogant",
+        "weight": 2
+      },
+      {
+        "term": "boast",
+        "weight": 2
+      },
+      {
+        "term": "bragging",
+        "weight": 2
+      },
+      {
+        "term": "brag",
+        "weight": 2
+      },
+      {
+        "term": "vanity",
+        "weight": 2
+      },
+      {
+        "term": "ego",
+        "weight": 2
+      },
+      {
+        "term": "show off",
+        "weight": 2
+      },
+      {
+        "term": "modesty",
+        "weight": 2
+      },
+      {
+        "term": "conceited",
+        "weight": 2
+      },
+      {
+        "term": "humblebrag",
+        "weight": 1
+      },
+      {
+        "term": "linkedin",
+        "weight": 1
+      },
+      {
+        "term": "take credit",
+        "weight": 1
+      },
+      {
+        "term": "self-promotion",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "envy_and_contentment",
+      "judging_others"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "envy_and_contentment",
+    "title": "Envy and contentment",
+    "description": "Wanting what others have: envy, covetousness, and comparison against gratitude and contentment with one's portion — and how rivalry corrodes both desire and joy.",
+    "question_forms": [
+      "How do I stop envying others?",
+      "Is envy a sin?",
+      "Why is contentment praised?",
+      "Is it wrong to covet what my neighbor has?"
+    ],
+    "keywords": [
+      {
+        "term": "envy",
+        "weight": 3
+      },
+      {
+        "term": "jealous",
+        "weight": 3
+      },
+      {
+        "term": "jealousy",
+        "weight": 3
+      },
+      {
+        "term": "covet",
+        "weight": 3
+      },
+      {
+        "term": "contentment",
+        "weight": 3
+      },
+      {
+        "term": "content",
+        "weight": 2
+      },
+      {
+        "term": "comparison",
+        "weight": 2
+      },
+      {
+        "term": "comparing myself",
+        "weight": 2
+      },
+      {
+        "term": "gratitude",
+        "weight": 2
+      },
+      {
+        "term": "grateful",
+        "weight": 2
+      },
+      {
+        "term": "resent their success",
+        "weight": 2
+      },
+      {
+        "term": "keeping up",
+        "weight": 2
+      },
+      {
+        "term": "instagram",
+        "weight": 1
+      },
+      {
+        "term": "promotion",
+        "weight": 1
+      },
+      {
+        "term": "his raise",
+        "weight": 1
+      },
+      {
+        "term": "her house",
+        "weight": 1
+      },
+      {
+        "term": "enough",
+        "weight": 1
+      },
+      {
+        "term": "portion",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "pride_and_humility",
+      "wealth_and_generosity"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "obedience_and_civil_authority",
+    "title": "Obedience and civil authority",
+    "description": "The citizen and the state: obeying law and government, paying what is owed, the duty to resist unjust commands, and when conscience overrides authority.",
+    "question_forms": [
+      "Must I obey the law?",
+      "Is it wrong to disobey the government?",
+      "When may an unjust law be resisted?",
+      "Do traditions require obedience to rulers?"
+    ],
+    "keywords": [
+      {
+        "term": "law",
+        "weight": 3
+      },
+      {
+        "term": "government",
+        "weight": 3
+      },
+      {
+        "term": "authority",
+        "weight": 3
+      },
+      {
+        "term": "obey the law",
+        "weight": 3
+      },
+      {
+        "term": "disobey",
+        "weight": 3
+      },
+      {
+        "term": "civil disobedience",
+        "weight": 2
+      },
+      {
+        "term": "unjust law",
+        "weight": 2
+      },
+      {
+        "term": "ruler",
+        "weight": 2
+      },
+      {
+        "term": "state",
+        "weight": 2
+      },
+      {
+        "term": "taxes",
+        "weight": 2
+      },
+      {
+        "term": "protest",
+        "weight": 2
+      },
+      {
+        "term": "police",
+        "weight": 1
+      },
+      {
+        "term": "regulation",
+        "weight": 1
+      },
+      {
+        "term": "jaywalk",
+        "weight": 1
+      },
+      {
+        "term": "speed limit",
+        "weight": 1
+      },
+      {
+        "term": "curfew",
+        "weight": 1
+      },
+      {
+        "term": "permit",
+        "weight": 1
+      },
+      {
+        "term": "conscience",
+        "weight": 2
+      }
+    ],
+    "related_topics": [
+      "war_and_peace",
+      "duties_to_parents"
+    ],
+    "sensitive": false,
+    "safeguard_ids": [
+      "not_legal_advice"
+    ]
+  },
+  {
+    "id": "courage_and_fear",
+    "title": "Courage and fear",
+    "description": "Facing danger and hardship well: bravery, cowardice, endurance, and fear of death; whether courage is bodily daring, moral firmness, or both.",
+    "question_forms": [
+      "What is courage?",
+      "Is fear shameful?",
+      "How do I act bravely when afraid?",
+      "Is cowardice a moral failure?"
+    ],
+    "keywords": [
+      {
+        "term": "courage",
+        "weight": 3
+      },
+      {
+        "term": "brave",
+        "weight": 3
+      },
+      {
+        "term": "bravery",
+        "weight": 3
+      },
+      {
+        "term": "fear",
+        "weight": 3
+      },
+      {
+        "term": "coward",
+        "weight": 3
+      },
+      {
+        "term": "cowardice",
+        "weight": 2
+      },
+      {
+        "term": "afraid",
+        "weight": 2
+      },
+      {
+        "term": "scared",
+        "weight": 2
+      },
+      {
+        "term": "fearless",
+        "weight": 2
+      },
+      {
+        "term": "endurance",
+        "weight": 2
+      },
+      {
+        "term": "daring",
+        "weight": 2
+      },
+      {
+        "term": "risk",
+        "weight": 1
+      },
+      {
+        "term": "speak up",
+        "weight": 2
+      },
+      {
+        "term": "stand up to",
+        "weight": 2
+      },
+      {
+        "term": "backbone",
+        "weight": 1
+      },
+      {
+        "term": "confront",
+        "weight": 2
+      },
+      {
+        "term": "stage fright",
+        "weight": 1
+      },
+      {
+        "term": "whistleblow",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "anger_and_hatred",
+      "pride_and_humility"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  },
+  {
+    "id": "judging_others",
+    "title": "Judging others",
+    "description": "Passing judgment on other people's character and conduct: condemnation and hypocrisy, charitable interpretation, holding to standards without contempt, and who is fit to judge.",
+    "question_forms": [
+      "Is it wrong to judge people?",
+      "Should I point out others' faults?",
+      "How do I hold standards without being judgmental?",
+      "What does judge not mean?"
+    ],
+    "keywords": [
+      {
+        "term": "judge",
+        "weight": 3
+      },
+      {
+        "term": "judging",
+        "weight": 3
+      },
+      {
+        "term": "judgmental",
+        "weight": 3
+      },
+      {
+        "term": "condemn",
+        "weight": 3
+      },
+      {
+        "term": "criticize",
+        "weight": 2
+      },
+      {
+        "term": "critical",
+        "weight": 2
+      },
+      {
+        "term": "hypocrisy",
+        "weight": 2
+      },
+      {
+        "term": "hypocrite",
+        "weight": 2
+      },
+      {
+        "term": "faults",
+        "weight": 2
+      },
+      {
+        "term": "flaws",
+        "weight": 2
+      },
+      {
+        "term": "look down on",
+        "weight": 2
+      },
+      {
+        "term": "benefit of the doubt",
+        "weight": 2
+      },
+      {
+        "term": "moral high ground",
+        "weight": 2
+      },
+      {
+        "term": "call out",
+        "weight": 1
+      },
+      {
+        "term": "cancel",
+        "weight": 1
+      },
+      {
+        "term": "side eye",
+        "weight": 1
+      },
+      {
+        "term": "parenting choices",
+        "weight": 1
+      },
+      {
+        "term": "lifestyle",
+        "weight": 1
+      }
+    ],
+    "related_topics": [
+      "speech_and_gossip",
+      "pride_and_humility"
+    ],
+    "sensitive": false,
+    "safeguard_ids": []
+  }
+]
