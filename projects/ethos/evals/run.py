@@ -22,6 +22,7 @@ if str(ROOT / "src") not in sys.path:
 
 from ethos.corpus import default_data_dir, load_corpus  # noqa: E402
 from ethos.engine.router import build_index, index_to_json  # noqa: E402
+
 from evals import corpus_gates as gates  # noqa: E402
 from evals import metrics as M  # noqa: E402
 

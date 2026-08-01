@@ -125,6 +125,29 @@ def test_gate_c20_out_of_scope_composition_fr4(gate_results: dict) -> None:
     assert gate_results["C20"] == [], gate_results["C20"]
 
 
+# --- R1: no instrument grades itself ----------------------------------------
+
+
+def test_independent_checker_isolation() -> None:
+    """M3's checker may import nothing but json, pathlib, re and sys — if it shared
+    a loader or a model with the verifier it certifies, it would stop being
+    independent evidence (EVALS R1)."""
+    import ast
+
+    allowed = {"json", "pathlib", "re", "sys"}
+    source = (ROOT / "evals" / "independent_check.py").read_text(encoding="utf-8")
+    imported: set[str] = set()
+    for node in ast.walk(ast.parse(source)):
+        if isinstance(node, ast.Import):
+            imported.update(alias.name.split(".")[0] for alias in node.names)
+        elif isinstance(node, ast.ImportFrom):
+            if node.level:  # a relative import would reach back into the package
+                imported.add(f".{node.module or ''}")
+            elif node.module:
+                imported.add(node.module.split(".")[0])
+    assert imported <= allowed | {"__future__"}, sorted(imported - allowed)
+
+
 # --- D0 (FR-15) -------------------------------------------------------------
 
 

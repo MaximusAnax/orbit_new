@@ -466,10 +466,11 @@ def m4_baselines(corpus: Corpus, cases: list[dict[str, Any]]) -> dict[str, float
     """`baseline_no_verifier` (M4a) and `baseline_reject_all` (M4b)."""
     mutated = sum(1 for case in cases if case["mode"] != "clean")
     clean = sum(1 for case in cases if case["mode"] == "clean")
-    return {
-        "baseline_no_verifier": 0.0 if mutated else 0.0,
-        "baseline_reject_all": 1.0 if clean else 0.0,
-    }
+    if not mutated or not clean:  # pragma: no cover - a malformed case list
+        raise ValueError("polish_cases.json must contain clean and mutated cases")
+    # With FR-8 disabled nothing is ever rejected, so recall is 0 over the mutated
+    # cases; a verifier that rejects everything has a false-positive rate of 1.
+    return {"baseline_no_verifier": 0.0, "baseline_reject_all": 1.0}
 
 
 # --- M5: answer completeness & well-formedness ------------------------------
@@ -491,9 +492,7 @@ def _section_wellformed(perspective: Any, text: str) -> bool:
             return False
         if f"[{quote.marker}]" not in text:
             return False
-    if not perspective.further_reading:
-        return False
-    return True
+    return bool(perspective.further_reading)
 
 
 def m5_completeness(corpus: Corpus, renderer: Any = None) -> tuple[float, list[str]]:
