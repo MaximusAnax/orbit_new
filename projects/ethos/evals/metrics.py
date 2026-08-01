@@ -7,7 +7,6 @@ question counts as a **miss**, never as "not applicable".
 """
 from __future__ import annotations
 
-import statistics
 from dataclasses import dataclass
 from typing import Any
 
@@ -258,10 +257,6 @@ def sweep(harness: RouterHarness, fixtures: dict[str, Any], taus, kappas) -> lis
                 }
             )
     return rows
-
-
-def median(values: list[float]) -> float:
-    return statistics.median(values) if values else 0.0
 
 
 # --- composition helpers (shared by M3 and M5) ------------------------------

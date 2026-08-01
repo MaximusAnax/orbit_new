@@ -147,16 +147,4 @@ class FaultyPolisher:
         return out
 
 
-def paraphrase_ops(envelope: str, tradition_id: str) -> list[dict[str, Any]]:
-    """Helper used when authoring clean cases: rewrite one summary harmlessly."""
-    region = _find(envelope, f"M:summary:{tradition_id}")
-    return [
-        {
-            "op": "replace_region",
-            "region": f"M:summary:{tradition_id}",
-            "replace": region.payload,
-        }
-    ]
-
-
 __all__ = ["FaultyPolisher", "MutationError", "apply_op", "regions"]

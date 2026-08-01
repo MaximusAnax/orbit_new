@@ -73,7 +73,7 @@ def load_fixtures() -> dict[str, list]:
     return {name: gates.load_fixture(f"{name}.json") for name in FIXTURE_SETS}
 
 
-def measure(verbose: bool = True) -> dict[str, object]:
+def measure() -> dict[str, object]:
     """Everything the scorecard, the gate tests and the baselines file need."""
     corpus = load_corpus(default_data_dir())
     fixtures = load_fixtures()
@@ -122,7 +122,6 @@ def measure(verbose: bool = True) -> dict[str, object]:
         "freeze": record,
         "harness": harness,
         "fixtures": fixtures,
-        "verbose": verbose,
     }
 
 
