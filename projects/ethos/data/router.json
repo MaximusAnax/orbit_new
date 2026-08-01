@@ -1,0 +1,8 @@
+{
+  "k1": 1.5,
+  "b": 0.75,
+  "w_phrase": 2.0,
+  "tau": 6.0,
+  "kappa": 0.42,
+  "tuning_note": "Provisional corpus-stage defaults (tau=6.0, kappa=0.42) committed with the initial corpus on 2026-08-01, before any fixtures existed; no tier has been inspected against them. They MUST be re-swept jointly on the direct+colloquial tiers only (oblique tiers and oos_questions.json hash-frozen first) at the engine/eval stage, and this note replaced with the sweep record and resulting M1/M2a/M2b values per EVALS C19."
+}
