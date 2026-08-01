@@ -18697,6 +18697,30 @@
       {
         "term": "impossible",
         "weight": 1
+      },
+      {
+        "term": "dock",
+        "weight": 2
+      },
+      {
+        "term": "public gallery",
+        "weight": 2
+      },
+      {
+        "term": "courtroom",
+        "weight": 2
+      },
+      {
+        "term": "defendant",
+        "weight": 2
+      },
+      {
+        "term": "trial",
+        "weight": 2
+      },
+      {
+        "term": "sentencing hearing",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -29745,6 +29769,46 @@
       {
         "term": "impossible",
         "weight": 1
+      },
+      {
+        "term": "pheasant",
+        "weight": 2
+      },
+      {
+        "term": "pheasants",
+        "weight": 2
+      },
+      {
+        "term": "grouse",
+        "weight": 2
+      },
+      {
+        "term": "venison",
+        "weight": 2
+      },
+      {
+        "term": "game birds",
+        "weight": 2
+      },
+      {
+        "term": "rabbit",
+        "weight": 2
+      },
+      {
+        "term": "deer",
+        "weight": 2
+      },
+      {
+        "term": "shoot birds",
+        "weight": 2
+      },
+      {
+        "term": "shooting party",
+        "weight": 2
+      },
+      {
+        "term": "gun dog",
+        "weight": 2
       }
     ],
     "related_topics": [

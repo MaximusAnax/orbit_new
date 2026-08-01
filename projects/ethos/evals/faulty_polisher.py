@@ -50,8 +50,14 @@ def regions(envelope: str) -> list[Region]:
 
 
 def _find(envelope: str, tag: str) -> Region:
-    for region in regions(envelope):
-        if region.tag == tag or region.tag.endswith(f":{tag}"):
+    """Exact tag, else the first region whose tag extends it (`M:summary` matches
+    `M:summary:<tradition>`), else a suffix match."""
+    found = regions(envelope)
+    for region in found:
+        if region.tag == tag:
+            return region
+    for region in found:
+        if region.tag.startswith(f"{tag}:") or region.tag.endswith(f":{tag}"):
             return region
     raise MutationError(f"no region matching {tag!r}")
 

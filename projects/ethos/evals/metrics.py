@@ -441,6 +441,9 @@ def m4_tamper(corpus: Corpus, cases: list[dict[str, Any]]) -> dict[str, Any]:
             clean_rejected += int(rejected)
             if rejected:
                 problems.append(f"{case['id']}: clean case was rejected (false positive)")
+            elif not answer.polish_used:
+                # a no-op "polish" would score as a pass without exercising check (e)
+                problems.append(f"{case['id']}: clean case changed nothing (stale fixture)")
         else:
             mutated += 1
             mutated_rejected += int(rejected)

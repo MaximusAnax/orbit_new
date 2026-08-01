@@ -53,9 +53,16 @@ def load_raw_corpus(data_dir: Path) -> dict:
 
 
 def source_line(source: dict) -> str:
-    """The exact string the render must print (DATA_MODEL § Plain-text render)."""
+    """The exact string the render must print (DATA_MODEL § Source, derived).
+
+    Rebuilt here from the raw record rather than imported, which is the whole
+    point of this module. English originals (Mill, Bentham) carry no translator,
+    so their line is `title, author (year)`.
+    """
     if source["license"] == "reference_only":
         return f"{source['title']} — {source['edition_note']}"
+    if source.get("translator") is None:
+        return f"{source['title']}, {source['author']} ({source['translation_year']})"
     return f"{source['title']}, trans. {source['translator']} ({source['translation_year']})"
 
 
