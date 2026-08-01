@@ -1,0 +1,407 @@
+[
+  {
+    "id": "ne-1-3-young-hearer",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE I.3, 1095a2",
+    "text": "Hence a young man is not a proper hearer of lectures on political science; for he is inexperienced in the actions that occur in life, but its discussions start from these and are about these.",
+    "paraphrase": null,
+    "context_note": "Aristotle is setting the entry conditions for ethical inquiry itself: judgment about conduct is a competence built from lived experience, not a technique anyone can pick up. It qualifies who may usefully assess character, not what is true.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-1-7-rational-function",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE I.7, 1098a3",
+    "text": "There remains, then, an active life of the element that has a rational principle; of this, one part has such a principle in the sense of being obedient to one, the other in the sense of possessing one and exercising thought.",
+    "paraphrase": null,
+    "context_note": "The conclusion of the function argument, which locates the distinctively human good in rational activity. It is descriptive of what human flourishing consists in, and only indirectly a claim about the standing of creatures that lack reason.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-1-8-equipment",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE I.8, 1099a33",
+    "text": "Yet evidently, as we said, it needs the external goods as well; for it is impossible, or not easy, to do noble acts without the proper equipment.",
+    "paraphrase": null,
+    "context_note": "Aristotle concedes that flourishing is not wholly insulated from fortune: friends, wealth and political power are instruments of noble action. The admission is what keeps his ethics from treating poverty as morally weightless.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-2-6-mean-choice",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE II.6, 1106b36",
+    "text": "Virtue, then, is a state of character concerned with choice, lying in a mean, i.e. the mean relative to us, this being determined by a rational principle, and by that principle by which the man of practical wisdom would determine it.",
+    "paraphrase": null,
+    "context_note": "The formal definition of moral virtue, and the hinge of the whole system. Note that the mean is relative to the agent and fixed by the judgment of the practically wise person, not by a formula or an arithmetical midpoint.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-2-6-no-mean-envy",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE II.6, 1107a9",
+    "text": "But not every action nor every passion admits of a mean; for some have names that already imply badness, e.g. spite, shamelessness, envy, and in the case of actions adultery, theft, murder.",
+    "paraphrase": null,
+    "context_note": "Aristotle's own limit on the doctrine of the mean: some passions and acts are vicious under any description, so there is no right amount of them. Envy is his stock example, which is why the tradition treats it as a defect rather than an excess.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-2-7-nemesis",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE II.7, 1108a35",
+    "text": "Righteous indignation is a mean between envy and spite, and these states are concerned with the pain and pleasure that are felt at the fortunes of our neighbours; the man who is characterized by righteous indignation is pained at undeserved good fortune, the envious man, going beyond him, is pained at all good fortune.",
+    "paraphrase": null,
+    "context_note": "From the tabulation of the means. Nemesis names a trained sensitivity to what people deserve; envy and spite are its two failures. Aristotle later doubts whether these belong to the virtues proper, and the passage is more sketch than settled doctrine.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-2-9-hard-to-hit",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE II.9, 1109a24",
+    "text": "Hence also it is no easy task to be good. For in everything it is no easy task to find the middle, e.g. to find the middle of a circle is not for every one but for him who knows.",
+    "paraphrase": null,
+    "context_note": "Closing the account of the mean, Aristotle concedes how demanding the standard is. The line is regularly used to explain why the tradition counsels patience with people who are still learning rather than swift condemnation.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-3-1-pardon",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE III.1, 1109b30",
+    "text": "Since virtue is concerned with passions and actions, and on voluntary passions and actions praise and blame are bestowed, on those that are involuntary pardon, and sometimes also pity, to distinguish the voluntary and the involuntary is presumably necessary for those who are studying the nature of virtue.",
+    "paraphrase": null,
+    "context_note": "The opening of Book III, which makes voluntariness the gatekeeper of praise and blame. Pardon here is not a gift bestowed on the guilty but the correct response to an act that was not fully the agent's own.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-3-5-drunkenness",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE III.5, 1113b30",
+    "text": "Indeed we punish a man for his very ignorance, if he is thought responsible for the ignorance, as when penalties are doubled in the case of drunkenness; for the moving principle is in the man himself, since he had the power of not getting drunk and his getting drunk was the cause of his ignorance.",
+    "paraphrase": null,
+    "context_note": "Part of the argument that character is self-incurred. Aristotle reports an Athenian legal practice to show that impairment chosen in advance aggravates rather than excuses, which is his sharpest statement about drink.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-3-6-death-terrible",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE III.6, 1115a26",
+    "text": "Now death is the most terrible of all things; for it is the end, and nothing is thought to be any longer either good or bad for the dead.",
+    "paraphrase": null,
+    "context_note": "Aristotle refuses to explain fear away. Death really is the worst of the things that can be feared, which is what makes standing firm against it an achievement rather than a correction of a mistaken belief.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-3-7-brave-right-things",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE III.7, 1115b17",
+    "text": "The man, then, who faces and who fears the right things and from the right motive, in the right way and at the right time, and who feels confidence under the corresponding conditions, is brave; for the brave man feels and acts according to the merits of the case and in whatever way the rule directs.",
+    "paraphrase": null,
+    "context_note": "The definition of courage as a mean between cowardice and rashness. The five qualifications are not padding: each names a way a display of daring can fail to be brave at all.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-3-8-citizen-courage",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE III.8, 1116a17",
+    "text": "Courage, then, is something of this sort, but the name is also applied to five other kinds. First comes the courage of the citizen-soldier; for this is most like true courage.",
+    "paraphrase": null,
+    "context_note": "Aristotle catalogues five counterfeits of courage, including action from legal penalty, from experience, from spirit, from optimism and from ignorance. Each resembles bravery in the deed and differs in the motive.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-3-9-brave-man-pained",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE III.9, 1117b9",
+    "text": "And the more he is possessed of virtue in its entirety and the happier he is, the more he will be pained at the thought of death; for life is best worth living for such a man, and he is knowingly losing the greatest goods, and this is painful.",
+    "paraphrase": null,
+    "context_note": "A striking reversal: the better a person's life, the harder courage becomes, because more is at stake in losing it. Aristotle uses it to deny that the brave man is insensible or that virtue is always pleasant in the exercise.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-3-11-insensibility",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE III.11, 1119a6",
+    "text": "People who fall short with regard to pleasures and delight in them less than they should are hardly found; for such insensibility is not human.",
+    "paraphrase": null,
+    "context_note": "The deficiency opposed to self-indulgence. Aristotle names it only to dismiss it as rare, but its presence in the scheme is what stops temperance from collapsing into abstinence.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-3-11-temperate-craving",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE III.11, 1119a16",
+    "text": "The temperate man craves for the things he ought, as he ought, and when he ought; and this is what rational principle directs.",
+    "paraphrase": null,
+    "context_note": "The positive account of sophrosyne, given in the same right-things, right-way, right-time formula used for courage. Temperance is a trained appetite, not a suppressed one.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-1-liberal-giving",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.1, 1120a24",
+    "text": "Now virtuous actions are noble and done for the sake of the noble. Therefore the liberal man, like other virtuous men, will give for the sake of the noble, and rightly; for he will give to the right people, the right amounts, and at the right time, with all the other qualifications that accompany right giving.",
+    "paraphrase": null,
+    "context_note": "The core of the account of liberality. What makes giving virtuous is the fit between recipient, amount, occasion and motive, so a large gift made carelessly or for display does not qualify.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-1-meanness-incurable",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.1, 1121b13",
+    "text": "Meanness is both incurable (for old age and every disability is thought to make men mean) and more innate in men than prodigality; for most men are fonder of getting money than of giving.",
+    "paraphrase": null,
+    "context_note": "Aristotle breaks his own symmetry here: the two extremes around liberality are not equally bad or equally common. The judgment shapes how the tradition weighs stinginess against extravagance.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-2-magnificent-artist",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.2, 1122a34",
+    "text": "The magnificent man is like an artist; for he can see what is fitting and spend large sums tastefully.",
+    "paraphrase": null,
+    "context_note": "Magnificence is the virtue of large-scale expenditure, distinct from liberality and available only to those with means. Aristotle treats good spending as a skill of perception, which is why he compares it to art.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-3-proud-worthy",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.3, 1123b1",
+    "text": "Now the man is thought to be proud who thinks himself worthy of great things, being worthy of them; for he who does so beyond his deserts is a fool, but no virtuous man is foolish or silly.",
+    "paraphrase": null,
+    "context_note": "The definition of megalopsychia, greatness of soul, usually rendered proper pride. The virtue is accuracy about one's own worth, so both overclaiming and underclaiming are failures of self-knowledge.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-3-crown-of-virtues",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.3, 1124a1",
+    "text": "Pride, then, seems to be a sort of crown of the virtues; for it makes them greater, and it is not found without them. Therefore it is hard to be truly proud; for it is impossible without nobility and goodness of character.",
+    "paraphrase": null,
+    "context_note": "Proper pride presupposes the other virtues rather than competing with them, which is why Aristotle can call it a crown. The claim has always been the most contested part of his catalogue.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-3-unduly-humble",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.3, 1125a19",
+    "text": "The unduly humble man, being worthy of good things, robs himself of what he deserves, and seems to have something bad about him from the fact that he does not think himself worthy of good things, and seems also not to know himself.",
+    "paraphrase": null,
+    "context_note": "Aristotle's verdict on self-deprecation: it is a vice of deficiency, not modesty. The passage marks the sharpest divergence between the classical catalogue of virtues and later accounts that place humility near the centre.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-5-good-temper",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.5, 1125b26",
+    "text": "Good temper is a mean with respect to anger; the middle state being unnamed, and the extremes almost without a name as well, we place good temper in the middle position, though it inclines towards the deficiency, which is without a name.",
+    "paraphrase": null,
+    "context_note": "The opening of the treatment of praotes, good temper. Aristotle admits the Greek vocabulary is inadequate here, and notes the mean leans towards the calmer side without collapsing into it.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-5-angry-rightly",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.5, 1125b31",
+    "text": "The man who is angry at the right things and with the right people, and, further, as he ought, when he ought, and as long as he ought, is praised.",
+    "paraphrase": null,
+    "context_note": "Anger is assessed by its object, target, manner, occasion and duration rather than by its presence or absence. This is the tradition's central alternative to treating anger as simply a defect.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-5-inirascible-blamed",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.5, 1126a3",
+    "text": "The deficiency, whether it is a sort of inirascibility or whatever it is, is blamed. For those who are not angry at the things they should be angry at are thought to be fools, and so are those who are not angry in the right way, at the right time, or with the right persons.",
+    "paraphrase": null,
+    "context_note": "The counterweight to any reading of good temper as the absence of anger: failing to be angry at what warrants it is itself a vice, and Aristotle blames it in plain terms.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-5-slavish-endurance",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.5, 1126a7",
+    "text": "For such a man is thought not to feel things nor to be pained by them, and, since he does not get angry, he is thought unlikely to defend himself; and to endure being insulted and put up with insult to one's friends is slavish.",
+    "paraphrase": null,
+    "context_note": "Aristotle's hardest line against unconditional patience. He is describing a failure of self-respect and of loyalty, not recommending retaliation, and the following lines still condemn excess.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-5-revenge-relieves",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.5, 1126a20",
+    "text": "Sulky people are hard to appease, and retain their anger long; for they repress their passion. But it ceases when they retaliate; for revenge relieves them of their anger, producing in them pleasure instead of pain.",
+    "paraphrase": null,
+    "context_note": "A clinical description of the grudge, listed among the vices of excess. Aristotle explains why revenge feels like resolution while naming the state it resolves as a defect of character.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-6-obsequious-quarrelsome",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.6, 1126b11",
+    "text": "In gatherings of men, in social life and the interchange of words and deeds, some men are thought to be obsequious, namely those who to give pleasure praise everything and never oppose, but think it their duty to give no pain to the people they meet.",
+    "paraphrase": null,
+    "context_note": "The start of the unnamed virtue of friendliness in company, a mean between flattery and quarrelsomeness. Aristotle treats ordinary conversation as an arena of character, not a morally neutral zone.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-7-truthful-character",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.7, 1127b4",
+    "text": "The man who loves truth, and is truthful where nothing is at stake, will be still more truthful where something is at stake; he will avoid falsehood as something base, seeing that he avoided it for its own sake.",
+    "paraphrase": null,
+    "context_note": "Truthfulness here is a trait of character, not a rule about assertions. Aristotle's test is the small unwitnessed case, because reliability under pressure is produced by what a person is already like.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-8-buffoon",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.8, 1128a4",
+    "text": "Those who carry humour to excess are thought to be vulgar buffoons, striving after humour at all costs, and aiming rather at raising a laugh than at saying what is becoming and at not giving pain to the object of their fun.",
+    "paraphrase": null,
+    "context_note": "From the account of wit as a mean between buffoonery and boorishness. The diagnostic is whether the speaker is willing to hurt an absent or present target for the sake of the laugh.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-4-8-well-bred-law",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IV.8, 1128a31",
+    "text": "The refined and well-bred man, therefore, will be as we have described, being as it were a law to himself.",
+    "paraphrase": null,
+    "context_note": "Aristotle declines to supply a code for talk. Because no rule can enumerate what is fitting to say in company, the standard is the judgment of a well-formed speaker.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-5-5-money-by-law",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE V.5, 1133a30",
+    "text": "And this is why it has the name money (nomisma) — because it exists not by nature but by law (nomos) and it is in our power to change it and make it useless.",
+    "paraphrase": null,
+    "context_note": "From the analysis of exchange and reciprocity in the account of justice. Aristotle here calls money a convention, which sits awkwardly beside the argument elsewhere that interest is unnatural.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-5-10-equity",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE V.10, 1137b26",
+    "text": "When the law speaks universally, then, and a case arises on it which is not covered by the universal statement, then it is right, where the legislator fails us and has erred by over-simplicity, to correct the omission — to say what the legislator himself would have said had he been present.",
+    "paraphrase": null,
+    "context_note": "The account of epieikeia, equity, which is a correction of law where law is defective through generality. It licenses departure from the letter only in the direction the lawgiver would himself have gone.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-6-5-practical-wisdom",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE VI.5, 1140b5",
+    "text": "The remaining alternative, then, is that it is a true and reasoned state of capacity to act with regard to the things that are good or bad for man.",
+    "paraphrase": null,
+    "context_note": "The definition of phronesis, practical wisdom. It is neither scientific knowledge nor craft skill, and it is what supplies the judgment that the definition of virtue refers to.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-9-2-competing-claims",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE IX.2, 1164b23",
+    "text": "Such questions as the following also present a difficulty: should one in all things give the preference to one's father and obey him, or should one when ill trust a doctor, and when one has to elect a general choose a man of military skill?",
+    "paraphrase": null,
+    "context_note": "Aristotle opens a chapter of unresolved conflicts among obligations to friends, benefactors and kin, and concludes that such cases admit no precise general answer. It is his standing objection to rule-first ethics.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ne-10-9-law-compulsive",
+    "source_id": "aristotle-ne-ross",
+    "locator": "NE X.9, 1180a21",
+    "text": "The law has compulsive power, while it is at the same time a rule proceeding from a sort of practical wisdom and reason.",
+    "paraphrase": null,
+    "context_note": "The bridge from the Ethics to the Politics: laws are not merely coercive but educative, forming the habits that make virtue possible. Aristotle adds that people resent persons who oppose them but not the impersonal law.",
+    "transcription_checked": true
+  },
+  {
+    "id": "pol-1-8-animals-for-man",
+    "source_id": "aristotle-politics-jowett",
+    "locator": "Pol I.8, 1256b20",
+    "text": "Now if nature makes nothing incomplete, and nothing in vain, the inference must be that she has made all animals for the sake of man.",
+    "paraphrase": null,
+    "context_note": "Aristotle's teleological argument about the natural order of acquisition, the classical source for the view that animals are for human use. The inference rests on a purposive biology that later readers of the tradition have not generally retained.",
+    "transcription_checked": true
+  },
+  {
+    "id": "pol-1-10-money-begets",
+    "source_id": "aristotle-politics-jowett",
+    "locator": "Pol I.10, 1258b2",
+    "text": "The most hated sort, and with the greatest reason, is usury, which makes a gain out of money itself, and not from the natural object of it. For money was intended to be used in exchange, but not to increase at interest.",
+    "paraphrase": null,
+    "context_note": "The classical argument against interest, resting on the claim that each thing has a natural use. Aristotle's target is the pursuit of acquisition without limit rather than credit as such.",
+    "transcription_checked": true
+  },
+  {
+    "id": "pol-3-4-good-man-citizen",
+    "source_id": "aristotle-politics-jowett",
+    "locator": "Pol III.4, 1276b34",
+    "text": "Hence it is evident that the good citizen need not of necessity possess the virtue which makes a good man.",
+    "paraphrase": null,
+    "context_note": "Because the virtue of a citizen is relative to the constitution he serves, and constitutions can be bad, civic excellence and human excellence can come apart. The distinction is what keeps obedience from being self-justifying.",
+    "transcription_checked": true
+  },
+  {
+    "id": "summa-102-6-animal-cruelty",
+    "source_id": "summa-theologica",
+    "locator": "ST I-II, Q.102, art.6",
+    "text": "The reason for this was to remove men's minds from practising cruelty on other men, lest through being cruel to animals one become cruel to human beings.",
+    "paraphrase": null,
+    "context_note": "Aquinas explains scriptural precepts protecting animals as safeguards for human character rather than as duties owed to the creatures. The indirect argument concedes that habitual cruelty deforms the one who practises it.",
+    "transcription_checked": true
+  },
+  {
+    "id": "summa-96-4-unjust-law",
+    "source_id": "summa-theologica",
+    "locator": "ST I-II, Q.96, art.4",
+    "text": "Such are acts of violence rather than laws; because, as Augustine says, ‘a law that is not just, seems to be no law at all.’ Wherefore such laws do not bind in conscience.",
+    "paraphrase": null,
+    "context_note": "Aquinas is distinguishing laws that are merely burdensome from laws that are unjust in their end, author or form. He immediately adds that even unjust laws may be obeyed to avoid scandal or disturbance.",
+    "transcription_checked": true
+  },
+  {
+    "id": "summa-108-1-vengeance",
+    "source_id": "summa-theologica",
+    "locator": "ST II-II, Q.108, art.1",
+    "text": "Vengeance is lawful and virtuous so far as it tends to the prevention of evil.",
+    "paraphrase": null,
+    "context_note": "Aquinas treats vindicatio as a potential part of justice, distinguishing corrective punishment aimed at restraining wrongdoing from private hatred. The permission is tightly conditioned on right authority and right intention.",
+    "transcription_checked": true
+  },
+  {
+    "id": "summa-73-2-backbiting",
+    "source_id": "summa-theologica",
+    "locator": "ST II-II, Q.73, art.2",
+    "text": "Backbiting, as to its genus, is a mortal sin, since it is opposed to charity, which is the spiritual life of the soul. Yet it happens sometimes that a backbiter's words are venial sins, either because the words are so few or so slight that a person's good name is not injured thereby.",
+    "paraphrase": null,
+    "context_note": "Detraction is damaging a person's reputation behind his back, distinguished by Aquinas from open reproof and from tale-bearing. The graded assessment turns on what harm the words actually do.",
+    "transcription_checked": true
+  },
+  {
+    "id": "summa-161-1-humility",
+    "source_id": "summa-theologica",
+    "locator": "ST II-II, Q.161, art.1",
+    "text": "It belongs properly to humility, that a man restrain himself from being borne towards that which is above him.",
+    "paraphrase": null,
+    "context_note": "Aquinas adds humility to the classical catalogue while keeping magnanimity alongside it, holding that a person may rightly deem himself worthy of great things in view of gifts received and think little of himself in view of his own deficiency.",
+    "transcription_checked": true
+  },
+  {
+    "id": "summa-36-1-envy",
+    "source_id": "summa-theologica",
+    "locator": "ST II-II, Q.36, art.1",
+    "text": "We grieve over a man's good, in so far as his good surpasses ours; this is envy properly speaking, and is always sinful.",
+    "paraphrase": null,
+    "context_note": "Aquinas separates envy proper from three neighbouring sorrows that are not sinful, such as fear of harm from another's advancement or grief that an unworthy person prospers. The narrowing matters for how the vice is diagnosed.",
+    "transcription_checked": true
+  },
+  {
+    "id": "summa-60-4-interpret-best",
+    "source_id": "summa-theologica",
+    "locator": "ST II-II, Q.60, art.4",
+    "text": "He who interprets doubtful matters for the best, may happen to be deceived more often than not; yet it is better to err frequently through thinking well of a wicked man, than to err less frequently through having an evil opinion of a good man, because in the latter case an injury is inflicted on someone.",
+    "paraphrase": null,
+    "context_note": "Aquinas's rule of charitable interpretation, argued on the asymmetry of the two errors rather than on optimism. He limits it to doubtful matters and exempts judges, who must decide on evidence.",
+    "transcription_checked": true
+  }
+]
