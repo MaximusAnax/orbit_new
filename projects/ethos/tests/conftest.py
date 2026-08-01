@@ -3,7 +3,6 @@ the fixture for most of the engine tests (EVALS § fixture strategy)."""
 from __future__ import annotations
 
 import pytest
-
 from ethos.corpus import default_data_dir, load_corpus
 from ethos.engine.compose import compose_answer, render_text
 from ethos.engine.retrieve import retrieve

@@ -3,7 +3,6 @@ check *rejects* a mutation — a verifier never observed red is not evidence."""
 from __future__ import annotations
 
 import pytest
-
 from ethos.engine import envelope as env_mod
 from ethos.engine.verify import check_body, check_render_independently, verify
 from ethos.models import Stance
@@ -56,7 +55,7 @@ def test_fr8_b_homoglyph_in_quote(corpus, case):
     broken = body.model_copy(deep=True)
     quote = broken.perspectives[0].quotes[0]
     broken.perspectives[0].quotes[0] = quote.model_copy(
-        update={"text": quote.text.replace("e", "е", 1)}  # Cyrillic small ie
+        update={"text": quote.text.replace("e", "е", 1)}  # noqa: RUF001 - Cyrillic ie
     )
     assert "b" in _checks(check_body(broken, corpus, None, envelope))
 

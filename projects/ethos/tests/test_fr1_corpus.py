@@ -5,11 +5,10 @@ import copy
 import json
 
 import pytest
-from pydantic import ValidationError
-
 from ethos.corpus import compute_corpus_version, default_data_dir, read_raw
 from ethos.engine import corpus as gates
 from ethos.models import Passage
+from pydantic import ValidationError
 
 
 def test_fr1_all_corpus_gates_pass(corpus):
@@ -34,8 +33,8 @@ def test_fr1_c1_catches_a_folding_loader(corpus):
     """A loader that folded an en-dash in a locator is caught by C1 alone."""
     tampered = copy.deepcopy(corpus)
     tampered.raw = corpus.raw
-    victim = next(p for p in tampered.passages if "–" in p.locator)
-    folded = victim.model_copy(update={"locator": victim.locator.replace("–", "-")})
+    victim = next(p for p in tampered.passages if "–" in p.locator)  # noqa: RUF001
+    folded = victim.model_copy(update={"locator": victim.locator.replace("–", "-")})  # noqa: RUF001
     tampered.passages = [folded if p.id == victim.id else p for p in tampered.passages]
     tampered.__post_init__()
     failures = gates.check_c1_byte_preserving(tampered)

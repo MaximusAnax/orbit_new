@@ -1,12 +1,10 @@
 """FR-4: confidence, IDF-weighted coverage, and the two-signal reject option."""
 from __future__ import annotations
 
-from dataclasses import replace
+import dataclasses
 
 import pytest
-
 from ethos.engine.router import build_index, route
-from ethos.models import RouterConfig
 from ethos.service import EthosService
 from ethos.store.memory_repo import MemoryRepository
 
@@ -56,8 +54,10 @@ def test_fr4_abstention_never_depends_on_a_clock_or_randomness(index):
 
 
 def test_fr4_index_is_frozen_dataclass(index):
-    with pytest.raises(Exception):
-        replace(index, n_topics=1).config = None  # frozen: no in-place mutation
+    """No routing state can be mutated after the index is built."""
+    with pytest.raises(dataclasses.FrozenInstanceError):
+        index.n_topics = 1
+    assert dataclasses.replace(index, n_topics=99).n_topics == 99  # copies, never mutates
 
 
 def test_fr4_forced_topic_bypasses_router(corpus):

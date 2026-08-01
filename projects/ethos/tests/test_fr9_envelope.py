@@ -6,7 +6,6 @@ import pathlib
 import sys
 
 import pytest
-
 from ethos.adapters.polisher import NullPolisher, ProsePolisher
 from ethos.engine import envelope as env_mod
 from ethos.service import EthosService
@@ -15,15 +14,20 @@ from ethos.store.memory_repo import MemoryRepository
 TS = "2026-08-01T12:00:00Z"
 
 
+PARAPHRASE_MARK = "In other words, the same claim, said again."
+
+
 class CleanPolisher:
-    """Rewrites only mutable regions, preserving every immutable one."""
+    """Rewrites only mutable regions, within the length bound, preserving every
+    immutable region byte-for-byte."""
 
     def polish(self, envelope: str) -> str:
         out = []
         for line in envelope.split("\n"):
             if line.startswith("[[M:summary:"):
                 tag = line[2 : line.index("]]")]
-                out.append(f"[[{tag}]]Rephrased, but the same claim.[[/{tag}]]")
+                payload = line[line.index("]]") + 2 : line.rindex(f"[[/{tag}]]")]
+                out.append(f"[[{tag}]]{payload} {PARAPHRASE_MARK}[[/{tag}]]")
             else:
                 out.append(line)
         return "\n".join(out)
@@ -88,7 +92,7 @@ def test_fr9_clean_polish_is_accepted_and_used(corpus):
     assert result.answer.polish_used is True
     assert result.answer.polish_fell_back is False
     assert result.answer.verified is True
-    assert "Rephrased, but the same claim." in result.answer.rendered_text
+    assert PARAPHRASE_MARK in result.answer.rendered_text
 
 
 def test_fr9_fallback_sets_flag_and_serves_the_deterministic_render(corpus):

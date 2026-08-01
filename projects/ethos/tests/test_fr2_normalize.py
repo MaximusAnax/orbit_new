@@ -3,7 +3,6 @@ corpus — only router documents and queries."""
 from __future__ import annotations
 
 import pytest
-
 from ethos.engine.normalize import normalize, porter_stem, tokenize
 
 
@@ -45,9 +44,9 @@ def test_fr2_short_words_are_left_alone():
 
 
 def test_fr2_nfkc_and_casefold_cases():
-    assert tokenize("Qur’an") == ["qur", "an"]
+    assert tokenize("Qur’an") == ["qur", "an"]  # noqa: RUF001
     assert tokenize("ﬁdelity") == ["fidelity"]  # NFKC decomposes the ligature
-    assert tokenize("Ketubot 16b–17a") == ["ketubot", "16b", "17a"]
+    assert tokenize("Ketubot 16b–17a") == ["ketubot", "16b", "17a"]  # noqa: RUF001
     assert tokenize("STRAßE") == ["strasse"]
 
 
