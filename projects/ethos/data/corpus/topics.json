@@ -195,15 +195,143 @@
         "weight": 2
       },
       {
-        "term": "prettier version",
-        "weight": 2
-      },
-      {
-        "term": "kept the truth from",
-        "weight": 2
-      },
-      {
         "term": "not the whole story",
+        "weight": 2
+      },
+      {
+        "term": "told a lie",
+        "weight": 2
+      },
+      {
+        "term": "lie to her",
+        "weight": 2
+      },
+      {
+        "term": "lie to him",
+        "weight": 2
+      },
+      {
+        "term": "telling lies",
+        "weight": 2
+      },
+      {
+        "term": "being dishonest",
+        "weight": 2
+      },
+      {
+        "term": "honest with him",
+        "weight": 2
+      },
+      {
+        "term": "honest with her",
+        "weight": 2
+      },
+      {
+        "term": "hid it",
+        "weight": 2
+      },
+      {
+        "term": "hiding it",
+        "weight": 2
+      },
+      {
+        "term": "kept it secret",
+        "weight": 2
+      },
+      {
+        "term": "kept it hidden",
+        "weight": 2
+      },
+      {
+        "term": "omitted",
+        "weight": 2
+      },
+      {
+        "term": "exaggeration",
+        "weight": 2
+      },
+      {
+        "term": "embellish",
+        "weight": 2
+      },
+      {
+        "term": "overstate",
+        "weight": 2
+      },
+      {
+        "term": "made it sound better",
+        "weight": 2
+      },
+      {
+        "term": "faked",
+        "weight": 2
+      },
+      {
+        "term": "faking",
+        "weight": 2
+      },
+      {
+        "term": "insincere",
+        "weight": 2
+      },
+      {
+        "term": "two-faced",
+        "weight": 2
+      },
+      {
+        "term": "deceitful",
+        "weight": 2
+      },
+      {
+        "term": "misleading",
+        "weight": 2
+      },
+      {
+        "term": "false impression",
+        "weight": 2
+      },
+      {
+        "term": "tall tale",
+        "weight": 2
+      },
+      {
+        "term": "covering for him",
+        "weight": 2
+      },
+      {
+        "term": "covering for her",
+        "weight": 2
+      },
+      {
+        "term": "took the blame",
+        "weight": 2
+      },
+      {
+        "term": "plausible excuse",
+        "weight": 2
+      },
+      {
+        "term": "invented a reason",
+        "weight": 2
+      },
+      {
+        "term": "keeping up appearances",
+        "weight": 2
+      },
+      {
+        "term": "said yes when I meant no",
+        "weight": 2
+      },
+      {
+        "term": "prettier account",
+        "weight": 2
+      },
+      {
+        "term": "shaded the truth",
+        "weight": 2
+      },
+      {
+        "term": "economical",
         "weight": 2
       }
     ],
@@ -378,14 +506,6 @@
         "weight": 2
       },
       {
-        "term": "signed up to",
-        "weight": 2
-      },
-      {
-        "term": "said I would do it",
-        "weight": 2
-      },
-      {
         "term": "let him down",
         "weight": 2
       },
@@ -395,6 +515,134 @@
       },
       {
         "term": "keep to it",
+        "weight": 2
+      },
+      {
+        "term": "broke my promise",
+        "weight": 2
+      },
+      {
+        "term": "broken promise",
+        "weight": 2
+      },
+      {
+        "term": "made a promise",
+        "weight": 2
+      },
+      {
+        "term": "promised him",
+        "weight": 2
+      },
+      {
+        "term": "promised her",
+        "weight": 2
+      },
+      {
+        "term": "keeping promises",
+        "weight": 2
+      },
+      {
+        "term": "binding promise",
+        "weight": 2
+      },
+      {
+        "term": "sworn promise",
+        "weight": 2
+      },
+      {
+        "term": "word I gave",
+        "weight": 2
+      },
+      {
+        "term": "honour my word",
+        "weight": 2
+      },
+      {
+        "term": "commitment I made",
+        "weight": 2
+      },
+      {
+        "term": "agreed to help",
+        "weight": 2
+      },
+      {
+        "term": "undertook",
+        "weight": 2
+      },
+      {
+        "term": "appointment",
+        "weight": 2
+      },
+      {
+        "term": "backing out",
+        "weight": 2
+      },
+      {
+        "term": "cancel on",
+        "weight": 2
+      },
+      {
+        "term": "no-show",
+        "weight": 2
+      },
+      {
+        "term": "let people down",
+        "weight": 2
+      },
+      {
+        "term": "unreliable",
+        "weight": 2
+      },
+      {
+        "term": "dependable",
+        "weight": 2
+      },
+      {
+        "term": "stick to it",
+        "weight": 2
+      },
+      {
+        "term": "hold me to it",
+        "weight": 2
+      },
+      {
+        "term": "get out of it",
+        "weight": 2
+      },
+      {
+        "term": "wriggle out",
+        "weight": 2
+      },
+      {
+        "term": "promised to pay",
+        "weight": 2
+      },
+      {
+        "term": "handshake deal",
+        "weight": 2
+      },
+      {
+        "term": "verbal agreement",
+        "weight": 2
+      },
+      {
+        "term": "signed a contract",
+        "weight": 2
+      },
+      {
+        "term": "obligated to appear",
+        "weight": 2
+      },
+      {
+        "term": "took on the job",
+        "weight": 2
+      },
+      {
+        "term": "said I would turn up",
+        "weight": 2
+      },
+      {
+        "term": "volunteer rota",
         "weight": 2
       }
     ],
@@ -593,15 +841,139 @@
         "weight": 2
       },
       {
-        "term": "hammer",
-        "weight": 2
-      },
-      {
-        "term": "throat",
-        "weight": 2
-      },
-      {
         "term": "wounded him",
+        "weight": 2
+      },
+      {
+        "term": "took a life",
+        "weight": 2
+      },
+      {
+        "term": "ended his life",
+        "weight": 2
+      },
+      {
+        "term": "manslaughter",
+        "weight": 2
+      },
+      {
+        "term": "slay",
+        "weight": 2
+      },
+      {
+        "term": "violence",
+        "weight": 2
+      },
+      {
+        "term": "violent",
+        "weight": 2
+      },
+      {
+        "term": "deadly force",
+        "weight": 2
+      },
+      {
+        "term": "defend myself against",
+        "weight": 2
+      },
+      {
+        "term": "protect myself",
+        "weight": 2
+      },
+      {
+        "term": "protect my children",
+        "weight": 2
+      },
+      {
+        "term": "he came at me",
+        "weight": 2
+      },
+      {
+        "term": "break-in",
+        "weight": 2
+      },
+      {
+        "term": "home invasion",
+        "weight": 2
+      },
+      {
+        "term": "prowler",
+        "weight": 2
+      },
+      {
+        "term": "robber",
+        "weight": 2
+      },
+      {
+        "term": "armed",
+        "weight": 2
+      },
+      {
+        "term": "unarmed",
+        "weight": 2
+      },
+      {
+        "term": "choke",
+        "weight": 2
+      },
+      {
+        "term": "strangled",
+        "weight": 2
+      },
+      {
+        "term": "beat him unconscious",
+        "weight": 2
+      },
+      {
+        "term": "shot at",
+        "weight": 2
+      },
+      {
+        "term": "pulled a gun",
+        "weight": 2
+      },
+      {
+        "term": "stabbing",
+        "weight": 2
+      },
+      {
+        "term": "life or death",
+        "weight": 2
+      },
+      {
+        "term": "kill or be killed",
+        "weight": 2
+      },
+      {
+        "term": "no other way out",
+        "weight": 2
+      },
+      {
+        "term": "defence of others",
+        "weight": 2
+      },
+      {
+        "term": "protecting a stranger",
+        "weight": 2
+      },
+      {
+        "term": "attacked in the street",
+        "weight": 2
+      },
+      {
+        "term": "had him by the neck",
+        "weight": 2
+      },
+      {
+        "term": "fatal blow",
+        "weight": 2
+      },
+      {
+        "term": "reached for something",
+        "weight": 2
+      },
+      {
+        "term": "in my bag",
         "weight": 2
       }
     ],
@@ -812,14 +1184,6 @@
         "weight": 2
       },
       {
-        "term": "my unit",
-        "weight": 2
-      },
-      {
-        "term": "clear a village",
-        "weight": 2
-      },
-      {
         "term": "refuse orders",
         "weight": 2
       },
@@ -829,6 +1193,138 @@
       },
       {
         "term": "sent to fight",
+        "weight": 2
+      },
+      {
+        "term": "at war",
+        "weight": 2
+      },
+      {
+        "term": "go to war",
+        "weight": 2
+      },
+      {
+        "term": "wage war",
+        "weight": 2
+      },
+      {
+        "term": "warfare",
+        "weight": 2
+      },
+      {
+        "term": "armed conflict",
+        "weight": 2
+      },
+      {
+        "term": "invasion of",
+        "weight": 2
+      },
+      {
+        "term": "occupying force",
+        "weight": 2
+      },
+      {
+        "term": "navy",
+        "weight": 2
+      },
+      {
+        "term": "air force",
+        "weight": 2
+      },
+      {
+        "term": "commander",
+        "weight": 2
+      },
+      {
+        "term": "orders to attack",
+        "weight": 2
+      },
+      {
+        "term": "shelling",
+        "weight": 2
+      },
+      {
+        "term": "missiles",
+        "weight": 2
+      },
+      {
+        "term": "air raid",
+        "weight": 2
+      },
+      {
+        "term": "siege",
+        "weight": 2
+      },
+      {
+        "term": "prisoners of war",
+        "weight": 2
+      },
+      {
+        "term": "non-combatants",
+        "weight": 2
+      },
+      {
+        "term": "civilian casualties",
+        "weight": 2
+      },
+      {
+        "term": "resistance fighters",
+        "weight": 2
+      },
+      {
+        "term": "insurgents",
+        "weight": 2
+      },
+      {
+        "term": "treaty",
+        "weight": 2
+      },
+      {
+        "term": "armistice",
+        "weight": 2
+      },
+      {
+        "term": "peace talks",
+        "weight": 2
+      },
+      {
+        "term": "disarmament",
+        "weight": 2
+      },
+      {
+        "term": "nuclear weapons",
+        "weight": 2
+      },
+      {
+        "term": "conscript",
+        "weight": 2
+      },
+      {
+        "term": "deserter",
+        "weight": 2
+      },
+      {
+        "term": "refuse to serve",
+        "weight": 2
+      },
+      {
+        "term": "defending the country",
+        "weight": 2
+      },
+      {
+        "term": "patriotism",
+        "weight": 2
+      },
+      {
+        "term": "sent overseas",
+        "weight": 2
+      },
+      {
+        "term": "shipped out",
+        "weight": 2
+      },
+      {
+        "term": "the village we were ordered into",
         "weight": 2
       }
     ],
@@ -1015,7 +1511,127 @@
         "weight": 2
       },
       {
-        "term": "convicted of the worst crimes",
+        "term": "sentenced to death",
+        "weight": 2
+      },
+      {
+        "term": "on death row",
+        "weight": 2
+      },
+      {
+        "term": "executing prisoners",
+        "weight": 2
+      },
+      {
+        "term": "judicial killing",
+        "weight": 2
+      },
+      {
+        "term": "executed the man",
+        "weight": 2
+      },
+      {
+        "term": "execution chamber",
+        "weight": 2
+      },
+      {
+        "term": "last meal",
+        "weight": 2
+      },
+      {
+        "term": "stay of execution",
+        "weight": 2
+      },
+      {
+        "term": "commuted",
+        "weight": 2
+      },
+      {
+        "term": "life without parole",
+        "weight": 2
+      },
+      {
+        "term": "hang him",
+        "weight": 2
+      },
+      {
+        "term": "hanged for",
+        "weight": 2
+      },
+      {
+        "term": "beheaded",
+        "weight": 2
+      },
+      {
+        "term": "stoning",
+        "weight": 2
+      },
+      {
+        "term": "electrocution",
+        "weight": 2
+      },
+      {
+        "term": "injection",
+        "weight": 2
+      },
+      {
+        "term": "miscarriage of justice",
+        "weight": 2
+      },
+      {
+        "term": "exoneration",
+        "weight": 2
+      },
+      {
+        "term": "wrongly executed",
+        "weight": 2
+      },
+      {
+        "term": "murder trial",
+        "weight": 2
+      },
+      {
+        "term": "capital crime",
+        "weight": 2
+      },
+      {
+        "term": "eye for an eye",
+        "weight": 2
+      },
+      {
+        "term": "retributive",
+        "weight": 2
+      },
+      {
+        "term": "deterrent effect",
+        "weight": 2
+      },
+      {
+        "term": "abolition",
+        "weight": 2
+      },
+      {
+        "term": "moratorium",
+        "weight": 2
+      },
+      {
+        "term": "hangs criminals",
+        "weight": 2
+      },
+      {
+        "term": "worst crimes",
+        "weight": 2
+      },
+      {
+        "term": "asked for a pardon",
+        "weight": 2
+      },
+      {
+        "term": "condemned prisoner",
+        "weight": 2
+      },
+      {
+        "term": "gas chamber",
         "weight": 2
       }
     ],
@@ -1164,14 +1780,6 @@
         "weight": 2
       },
       {
-        "term": "took her own life",
-        "weight": 2
-      },
-      {
-        "term": "ended her life",
-        "weight": 2
-      },
-      {
         "term": "self-inflicted",
         "weight": 2
       },
@@ -1185,10 +1793,6 @@
       },
       {
         "term": "killed himself",
-        "weight": 2
-      },
-      {
-        "term": "left a note",
         "weight": 2
       },
       {
@@ -1212,15 +1816,127 @@
         "weight": 2
       },
       {
-        "term": "wants out",
+        "term": "taking one's own life",
         "weight": 2
       },
       {
-        "term": "found her",
+        "term": "ending one's life",
         "weight": 2
       },
       {
-        "term": "took his life himself",
+        "term": "suicidal thoughts",
+        "weight": 2
+      },
+      {
+        "term": "threatened to kill himself",
+        "weight": 2
+      },
+      {
+        "term": "self-injury",
+        "weight": 2
+      },
+      {
+        "term": "cutting herself",
+        "weight": 2
+      },
+      {
+        "term": "harming themselves",
+        "weight": 2
+      },
+      {
+        "term": "hurting himself",
+        "weight": 2
+      },
+      {
+        "term": "pills",
+        "weight": 2
+      },
+      {
+        "term": "overdosing",
+        "weight": 2
+      },
+      {
+        "term": "jumped from",
+        "weight": 2
+      },
+      {
+        "term": "hanged himself",
+        "weight": 2
+      },
+      {
+        "term": "despair over",
+        "weight": 2
+      },
+      {
+        "term": "no way out",
+        "weight": 2
+      },
+      {
+        "term": "wanting to die",
+        "weight": 2
+      },
+      {
+        "term": "giving away his things",
+        "weight": 2
+      },
+      {
+        "term": "saying goodbye",
+        "weight": 2
+      },
+      {
+        "term": "crisis line",
+        "weight": 2
+      },
+      {
+        "term": "helpline",
+        "weight": 2
+      },
+      {
+        "term": "prevention",
+        "weight": 2
+      },
+      {
+        "term": "bereaved",
+        "weight": 2
+      },
+      {
+        "term": "took their own lives",
+        "weight": 2
+      },
+      {
+        "term": "ended it",
+        "weight": 2
+      },
+      {
+        "term": "self-destructive",
+        "weight": 2
+      },
+      {
+        "term": "life not worth living",
+        "weight": 2
+      },
+      {
+        "term": "burden on others",
+        "weight": 2
+      },
+      {
+        "term": "self-immolation",
+        "weight": 2
+      },
+      {
+        "term": "note on the table",
+        "weight": 2
+      },
+      {
+        "term": "found him",
+        "weight": 2
+      },
+      {
+        "term": "cope without him",
+        "weight": 2
+      },
+      {
+        "term": "nothing left to live for",
         "weight": 2
       }
     ],
@@ -1413,23 +2129,123 @@
         "weight": 2
       },
       {
-        "term": "keep him alive",
+        "term": "withdraw treatment",
         "weight": 2
       },
       {
-        "term": "consultant",
+        "term": "switch off the machine",
         "weight": 2
       },
       {
-        "term": "machines",
+        "term": "turn off the ventilator",
         "weight": 2
       },
       {
-        "term": "nothing more the doctors can do",
+        "term": "breathing machine",
         "weight": 2
       },
       {
-        "term": "ease her going",
+        "term": "tube feeding",
+        "weight": 2
+      },
+      {
+        "term": "resuscitation order",
+        "weight": 2
+      },
+      {
+        "term": "palliative sedation",
+        "weight": 2
+      },
+      {
+        "term": "terminal diagnosis",
+        "weight": 2
+      },
+      {
+        "term": "weeks to live",
+        "weight": 2
+      },
+      {
+        "term": "dying of cancer",
+        "weight": 2
+      },
+      {
+        "term": "incurable illness",
+        "weight": 2
+      },
+      {
+        "term": "in agony",
+        "weight": 2
+      },
+      {
+        "term": "unbearable suffering",
+        "weight": 2
+      },
+      {
+        "term": "ease his passing",
+        "weight": 2
+      },
+      {
+        "term": "help her die peacefully",
+        "weight": 2
+      },
+      {
+        "term": "physician assisted",
+        "weight": 2
+      },
+      {
+        "term": "euthanise",
+        "weight": 2
+      },
+      {
+        "term": "hastening the end",
+        "weight": 2
+      },
+      {
+        "term": "prolonging life",
+        "weight": 2
+      },
+      {
+        "term": "artificially",
+        "weight": 2
+      },
+      {
+        "term": "coma",
+        "weight": 2
+      },
+      {
+        "term": "vegetative state",
+        "weight": 2
+      },
+      {
+        "term": "next of kin",
+        "weight": 2
+      },
+      {
+        "term": "hospice care",
+        "weight": 2
+      },
+      {
+        "term": "end-of-life care",
+        "weight": 2
+      },
+      {
+        "term": "medical team",
+        "weight": 2
+      },
+      {
+        "term": "specialist told us",
+        "weight": 2
+      },
+      {
+        "term": "no more treatment",
+        "weight": 2
+      },
+      {
+        "term": "signed a directive",
+        "weight": 2
+      },
+      {
+        "term": "wanted no machines",
         "weight": 2
       }
     ],
@@ -1651,7 +2467,135 @@
         "weight": 2
       },
       {
-        "term": "how the pigs are kept",
+        "term": "eating flesh",
+        "weight": 2
+      },
+      {
+        "term": "giving up meat",
+        "weight": 2
+      },
+      {
+        "term": "meat eater",
+        "weight": 2
+      },
+      {
+        "term": "plant-based",
+        "weight": 2
+      },
+      {
+        "term": "vegetarian diet",
+        "weight": 2
+      },
+      {
+        "term": "animal products",
+        "weight": 2
+      },
+      {
+        "term": "milk and eggs",
+        "weight": 2
+      },
+      {
+        "term": "slaughtered",
+        "weight": 2
+      },
+      {
+        "term": "killing a beast",
+        "weight": 2
+      },
+      {
+        "term": "hunt for sport",
+        "weight": 2
+      },
+      {
+        "term": "shooting birds",
+        "weight": 2
+      },
+      {
+        "term": "fishing trip",
+        "weight": 2
+      },
+      {
+        "term": "farming conditions",
+        "weight": 2
+      },
+      {
+        "term": "caged hens",
+        "weight": 2
+      },
+      {
+        "term": "battery farm",
+        "weight": 2
+      },
+      {
+        "term": "pigs kept",
+        "weight": 2
+      },
+      {
+        "term": "cattle",
+        "weight": 2
+      },
+      {
+        "term": "sheep",
+        "weight": 2
+      },
+      {
+        "term": "goat",
+        "weight": 2
+      },
+      {
+        "term": "halal",
+        "weight": 2
+      },
+      {
+        "term": "kosher slaughter",
+        "weight": 2
+      },
+      {
+        "term": "animal sacrifice",
+        "weight": 2
+      },
+      {
+        "term": "sacrificial",
+        "weight": 2
+      },
+      {
+        "term": "cruel to a dog",
+        "weight": 2
+      },
+      {
+        "term": "pets",
+        "weight": 2
+      },
+      {
+        "term": "mistreat animals",
+        "weight": 2
+      },
+      {
+        "term": "ahimsa",
+        "weight": 2
+      },
+      {
+        "term": "non-violence to creatures",
+        "weight": 2
+      },
+      {
+        "term": "feel pain",
+        "weight": 2
+      },
+      {
+        "term": "suffering of an animal",
+        "weight": 2
+      },
+      {
+        "term": "butchered",
+        "weight": 2
+      },
+      {
+        "term": "throat cut",
+        "weight": 2
+      },
+      {
+        "term": "village festival",
         "weight": 2
       }
     ],
@@ -1795,6 +2739,198 @@
       },
       {
         "term": "afford",
+        "weight": 2
+      },
+      {
+        "term": "charitable",
+        "weight": 2
+      },
+      {
+        "term": "donate to",
+        "weight": 2
+      },
+      {
+        "term": "offering",
+        "weight": 2
+      },
+      {
+        "term": "zakat",
+        "weight": 2
+      },
+      {
+        "term": "tzedakah",
+        "weight": 2
+      },
+      {
+        "term": "needy",
+        "weight": 2
+      },
+      {
+        "term": "destitute",
+        "weight": 2
+      },
+      {
+        "term": "poverty",
+        "weight": 2
+      },
+      {
+        "term": "share my money",
+        "weight": 2
+      },
+      {
+        "term": "keeping it all",
+        "weight": 2
+      },
+      {
+        "term": "luxury",
+        "weight": 2
+      },
+      {
+        "term": "spend on myself",
+        "weight": 2
+      },
+      {
+        "term": "comfortably off",
+        "weight": 2
+      },
+      {
+        "term": "stingy",
+        "weight": 2
+      },
+      {
+        "term": "generous",
+        "weight": 2
+      },
+      {
+        "term": "open-handed",
+        "weight": 2
+      },
+      {
+        "term": "earn more",
+        "weight": 2
+      },
+      {
+        "term": "how much to give",
+        "weight": 2
+      },
+      {
+        "term": "giving to charity",
+        "weight": 2
+      },
+      {
+        "term": "charitable giving",
+        "weight": 2
+      },
+      {
+        "term": "donations",
+        "weight": 2
+      },
+      {
+        "term": "alms to the poor",
+        "weight": 2
+      },
+      {
+        "term": "help the needy",
+        "weight": 2
+      },
+      {
+        "term": "poverty nearby",
+        "weight": 2
+      },
+      {
+        "term": "my income",
+        "weight": 2
+      },
+      {
+        "term": "my salary",
+        "weight": 2
+      },
+      {
+        "term": "my savings",
+        "weight": 2
+      },
+      {
+        "term": "spare money",
+        "weight": 2
+      },
+      {
+        "term": "disposable income",
+        "weight": 2
+      },
+      {
+        "term": "luxuries",
+        "weight": 2
+      },
+      {
+        "term": "expensive things",
+        "weight": 2
+      },
+      {
+        "term": "big house",
+        "weight": 2
+      },
+      {
+        "term": "inherited money",
+        "weight": 2
+      },
+      {
+        "term": "lottery",
+        "weight": 2
+      },
+      {
+        "term": "bonus at work",
+        "weight": 2
+      },
+      {
+        "term": "pay rise",
+        "weight": 2
+      },
+      {
+        "term": "keeping wealth",
+        "weight": 2
+      },
+      {
+        "term": "hoarding money",
+        "weight": 2
+      },
+      {
+        "term": "accumulate",
+        "weight": 2
+      },
+      {
+        "term": "tight-fisted",
+        "weight": 2
+      },
+      {
+        "term": "greedy with money",
+        "weight": 2
+      },
+      {
+        "term": "sharing wealth",
+        "weight": 2
+      },
+      {
+        "term": "support relatives",
+        "weight": 2
+      },
+      {
+        "term": "family who have less",
+        "weight": 2
+      },
+      {
+        "term": "church collection",
+        "weight": 2
+      },
+      {
+        "term": "temple donation",
+        "weight": 2
+      },
+      {
+        "term": "sponsor a child",
+        "weight": 2
+      },
+      {
+        "term": "smallest note",
         "weight": 2
       }
     ],
@@ -1955,6 +3091,190 @@
       {
         "term": "feed my family",
         "weight": 2
+      },
+      {
+        "term": "took it without paying",
+        "weight": 2
+      },
+      {
+        "term": "stole from",
+        "weight": 2
+      },
+      {
+        "term": "taking from work",
+        "weight": 2
+      },
+      {
+        "term": "embezzle",
+        "weight": 2
+      },
+      {
+        "term": "defraud",
+        "weight": 2
+      },
+      {
+        "term": "dishonest gain",
+        "weight": 2
+      },
+      {
+        "term": "keep the wallet",
+        "weight": 2
+      },
+      {
+        "term": "return what I took",
+        "weight": 2
+      },
+      {
+        "term": "borrowed and never returned",
+        "weight": 2
+      },
+      {
+        "term": "help myself",
+        "weight": 2
+      },
+      {
+        "term": "till",
+        "weight": 2
+      },
+      {
+        "term": "checkout",
+        "weight": 2
+      },
+      {
+        "term": "receipt",
+        "weight": 2
+      },
+      {
+        "term": "expenses",
+        "weight": 2
+      },
+      {
+        "term": "stealing from",
+        "weight": 2
+      },
+      {
+        "term": "stole it",
+        "weight": 2
+      },
+      {
+        "term": "took what was not mine",
+        "weight": 2
+      },
+      {
+        "term": "pocketed the money",
+        "weight": 2
+      },
+      {
+        "term": "kept the extra",
+        "weight": 2
+      },
+      {
+        "term": "wrong change",
+        "weight": 2
+      },
+      {
+        "term": "undercharged",
+        "weight": 2
+      },
+      {
+        "term": "not charged for",
+        "weight": 2
+      },
+      {
+        "term": "forgot to scan",
+        "weight": 2
+      },
+      {
+        "term": "walked out without paying",
+        "weight": 2
+      },
+      {
+        "term": "nicked it",
+        "weight": 2
+      },
+      {
+        "term": "pinched",
+        "weight": 2
+      },
+      {
+        "term": "robbery",
+        "weight": 2
+      },
+      {
+        "term": "burgle",
+        "weight": 2
+      },
+      {
+        "term": "break into a house",
+        "weight": 2
+      },
+      {
+        "term": "pickpocket",
+        "weight": 2
+      },
+      {
+        "term": "fraud",
+        "weight": 2
+      },
+      {
+        "term": "cheating the company",
+        "weight": 2
+      },
+      {
+        "term": "fiddle expenses",
+        "weight": 2
+      },
+      {
+        "term": "using work property",
+        "weight": 2
+      },
+      {
+        "term": "taking stationery",
+        "weight": 2
+      },
+      {
+        "term": "borrowing without asking",
+        "weight": 2
+      },
+      {
+        "term": "pirate software",
+        "weight": 2
+      },
+      {
+        "term": "illegal download",
+        "weight": 2
+      },
+      {
+        "term": "copyright",
+        "weight": 2
+      },
+      {
+        "term": "plagiarise",
+        "weight": 2
+      },
+      {
+        "term": "found money",
+        "weight": 2
+      },
+      {
+        "term": "finders keepers",
+        "weight": 2
+      },
+      {
+        "term": "hand it in",
+        "weight": 2
+      },
+      {
+        "term": "return the wallet",
+        "weight": 2
+      },
+      {
+        "term": "self-checkout",
+        "weight": 2
+      },
+      {
+        "term": "charger",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -2100,6 +3420,202 @@
       {
         "term": "cash advance",
         "weight": 2
+      },
+      {
+        "term": "interest on the loan",
+        "weight": 2
+      },
+      {
+        "term": "charging him extra",
+        "weight": 2
+      },
+      {
+        "term": "moneylender",
+        "weight": 2
+      },
+      {
+        "term": "lender",
+        "weight": 2
+      },
+      {
+        "term": "lends",
+        "weight": 2
+      },
+      {
+        "term": "borrowing",
+        "weight": 2
+      },
+      {
+        "term": "owe",
+        "weight": 2
+      },
+      {
+        "term": "owed",
+        "weight": 2
+      },
+      {
+        "term": "arrears",
+        "weight": 2
+      },
+      {
+        "term": "default",
+        "weight": 2
+      },
+      {
+        "term": "repay the loan",
+        "weight": 2
+      },
+      {
+        "term": "interest-free",
+        "weight": 2
+      },
+      {
+        "term": "profit on a loan",
+        "weight": 2
+      },
+      {
+        "term": "extortionate",
+        "weight": 2
+      },
+      {
+        "term": "rates",
+        "weight": 2
+      },
+      {
+        "term": "minimum payment",
+        "weight": 2
+      },
+      {
+        "term": "card balance",
+        "weight": 2
+      },
+      {
+        "term": "charging interest",
+        "weight": 2
+      },
+      {
+        "term": "interest payments",
+        "weight": 2
+      },
+      {
+        "term": "high interest",
+        "weight": 2
+      },
+      {
+        "term": "exorbitant",
+        "weight": 2
+      },
+      {
+        "term": "usurious",
+        "weight": 2
+      },
+      {
+        "term": "moneylending",
+        "weight": 2
+      },
+      {
+        "term": "lend at interest",
+        "weight": 2
+      },
+      {
+        "term": "lending to family",
+        "weight": 2
+      },
+      {
+        "term": "lending to a friend",
+        "weight": 2
+      },
+      {
+        "term": "loan to my brother",
+        "weight": 2
+      },
+      {
+        "term": "loan repayments",
+        "weight": 2
+      },
+      {
+        "term": "monthly repayment",
+        "weight": 2
+      },
+      {
+        "term": "defaulted",
+        "weight": 2
+      },
+      {
+        "term": "cannot repay",
+        "weight": 2
+      },
+      {
+        "term": "debt collector",
+        "weight": 2
+      },
+      {
+        "term": "bailiff",
+        "weight": 2
+      },
+      {
+        "term": "write off the debt",
+        "weight": 2
+      },
+      {
+        "term": "cancel the debt",
+        "weight": 2
+      },
+      {
+        "term": "jubilee",
+        "weight": 2
+      },
+      {
+        "term": "interest-bearing",
+        "weight": 2
+      },
+      {
+        "term": "bank charges",
+        "weight": 2
+      },
+      {
+        "term": "overdraft",
+        "weight": 2
+      },
+      {
+        "term": "payday lender",
+        "weight": 2
+      },
+      {
+        "term": "doorstep lender",
+        "weight": 2
+      },
+      {
+        "term": "pawnbroker",
+        "weight": 2
+      },
+      {
+        "term": "credit at interest",
+        "weight": 2
+      },
+      {
+        "term": "mortgage interest",
+        "weight": 2
+      },
+      {
+        "term": "student loan",
+        "weight": 2
+      },
+      {
+        "term": "profit from a loan",
+        "weight": 2
+      },
+      {
+        "term": "charge my cousin",
+        "weight": 2
+      },
+      {
+        "term": "hands out cash",
+        "weight": 2
+      },
+      {
+        "term": "takes back more",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -2232,6 +3748,186 @@
       },
       {
         "term": "owed me an apology",
+        "weight": 2
+      },
+      {
+        "term": "forgave",
+        "weight": 2
+      },
+      {
+        "term": "unforgiving",
+        "weight": 2
+      },
+      {
+        "term": "pardon him",
+        "weight": 2
+      },
+      {
+        "term": "retribution",
+        "weight": 2
+      },
+      {
+        "term": "get revenge",
+        "weight": 2
+      },
+      {
+        "term": "hit back",
+        "weight": 2
+      },
+      {
+        "term": "punish him",
+        "weight": 2
+      },
+      {
+        "term": "made it right",
+        "weight": 2
+      },
+      {
+        "term": "said sorry",
+        "weight": 2
+      },
+      {
+        "term": "reconciled",
+        "weight": 2
+      },
+      {
+        "term": "bury the hatchet",
+        "weight": 2
+      },
+      {
+        "term": "still angry with",
+        "weight": 2
+      },
+      {
+        "term": "what he did to my family",
+        "weight": 2
+      },
+      {
+        "term": "forgive him",
+        "weight": 2
+      },
+      {
+        "term": "forgive her",
+        "weight": 2
+      },
+      {
+        "term": "forgiving someone",
+        "weight": 2
+      },
+      {
+        "term": "ask forgiveness",
+        "weight": 2
+      },
+      {
+        "term": "seek forgiveness",
+        "weight": 2
+      },
+      {
+        "term": "refuse to forgive",
+        "weight": 2
+      },
+      {
+        "term": "cannot forgive",
+        "weight": 2
+      },
+      {
+        "term": "hold a grudge against",
+        "weight": 2
+      },
+      {
+        "term": "grudges",
+        "weight": 2
+      },
+      {
+        "term": "resent him",
+        "weight": 2
+      },
+      {
+        "term": "resentment toward",
+        "weight": 2
+      },
+      {
+        "term": "revenge on",
+        "weight": 2
+      },
+      {
+        "term": "take revenge",
+        "weight": 2
+      },
+      {
+        "term": "avenge",
+        "weight": 2
+      },
+      {
+        "term": "vengeance against",
+        "weight": 2
+      },
+      {
+        "term": "retaliation",
+        "weight": 2
+      },
+      {
+        "term": "pay him back",
+        "weight": 2
+      },
+      {
+        "term": "get my own back",
+        "weight": 2
+      },
+      {
+        "term": "settle a score",
+        "weight": 2
+      },
+      {
+        "term": "punish them for",
+        "weight": 2
+      },
+      {
+        "term": "they hurt me",
+        "weight": 2
+      },
+      {
+        "term": "wronged by",
+        "weight": 2
+      },
+      {
+        "term": "betrayal by a friend",
+        "weight": 2
+      },
+      {
+        "term": "apology from him",
+        "weight": 2
+      },
+      {
+        "term": "apologised to me",
+        "weight": 2
+      },
+      {
+        "term": "unrepentant",
+        "weight": 2
+      },
+      {
+        "term": "no remorse",
+        "weight": 2
+      },
+      {
+        "term": "reconciliation with",
+        "weight": 2
+      },
+      {
+        "term": "make peace with",
+        "weight": 2
+      },
+      {
+        "term": "let bygones",
+        "weight": 2
+      },
+      {
+        "term": "still bitter about",
+        "weight": 2
+      },
+      {
+        "term": "wrecked our car",
         "weight": 2
       }
     ],
@@ -2380,6 +4076,202 @@
       {
         "term": "shouted at",
         "weight": 2
+      },
+      {
+        "term": "furious with",
+        "weight": 2
+      },
+      {
+        "term": "lost it",
+        "weight": 2
+      },
+      {
+        "term": "blew up",
+        "weight": 2
+      },
+      {
+        "term": "shouting match",
+        "weight": 2
+      },
+      {
+        "term": "screamed",
+        "weight": 2
+      },
+      {
+        "term": "hostility",
+        "weight": 2
+      },
+      {
+        "term": "contempt for him",
+        "weight": 2
+      },
+      {
+        "term": "spite",
+        "weight": 2
+      },
+      {
+        "term": "malice",
+        "weight": 2
+      },
+      {
+        "term": "provoked",
+        "weight": 2
+      },
+      {
+        "term": "riled",
+        "weight": 2
+      },
+      {
+        "term": "snapped at her",
+        "weight": 2
+      },
+      {
+        "term": "raged",
+        "weight": 2
+      },
+      {
+        "term": "calm down",
+        "weight": 2
+      },
+      {
+        "term": "patience",
+        "weight": 2
+      },
+      {
+        "term": "angry with him",
+        "weight": 2
+      },
+      {
+        "term": "angry at her",
+        "weight": 2
+      },
+      {
+        "term": "get angry",
+        "weight": 2
+      },
+      {
+        "term": "feeling angry",
+        "weight": 2
+      },
+      {
+        "term": "fury",
+        "weight": 2
+      },
+      {
+        "term": "furious at",
+        "weight": 2
+      },
+      {
+        "term": "enraged",
+        "weight": 2
+      },
+      {
+        "term": "irate",
+        "weight": 2
+      },
+      {
+        "term": "cross with",
+        "weight": 2
+      },
+      {
+        "term": "annoyed",
+        "weight": 2
+      },
+      {
+        "term": "exasperated",
+        "weight": 2
+      },
+      {
+        "term": "lost my cool",
+        "weight": 2
+      },
+      {
+        "term": "blew my top",
+        "weight": 2
+      },
+      {
+        "term": "saw red",
+        "weight": 2
+      },
+      {
+        "term": "shouted at my children",
+        "weight": 2
+      },
+      {
+        "term": "yelling at my wife",
+        "weight": 2
+      },
+      {
+        "term": "screaming match",
+        "weight": 2
+      },
+      {
+        "term": "threw something",
+        "weight": 2
+      },
+      {
+        "term": "hate him",
+        "weight": 2
+      },
+      {
+        "term": "hating someone",
+        "weight": 2
+      },
+      {
+        "term": "loathing",
+        "weight": 2
+      },
+      {
+        "term": "detest",
+        "weight": 2
+      },
+      {
+        "term": "despise",
+        "weight": 2
+      },
+      {
+        "term": "bitter towards",
+        "weight": 2
+      },
+      {
+        "term": "harsh words",
+        "weight": 2
+      },
+      {
+        "term": "said things I regret",
+        "weight": 2
+      },
+      {
+        "term": "took it out on",
+        "weight": 2
+      },
+      {
+        "term": "snapping at people",
+        "weight": 2
+      },
+      {
+        "term": "short temper",
+        "weight": 2
+      },
+      {
+        "term": "quick to anger",
+        "weight": 2
+      },
+      {
+        "term": "control my temper",
+        "weight": 2
+      },
+      {
+        "term": "cool down",
+        "weight": 2
+      },
+      {
+        "term": "outburst",
+        "weight": 2
+      },
+      {
+        "term": "in a rage",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -2507,6 +4399,198 @@
       {
         "term": "my old man",
         "weight": 2
+      },
+      {
+        "term": "my father",
+        "weight": 2
+      },
+      {
+        "term": "my mother",
+        "weight": 2
+      },
+      {
+        "term": "my mum",
+        "weight": 2
+      },
+      {
+        "term": "my dad",
+        "weight": 2
+      },
+      {
+        "term": "honour them",
+        "weight": 2
+      },
+      {
+        "term": "obey them",
+        "weight": 2
+      },
+      {
+        "term": "filial piety",
+        "weight": 2
+      },
+      {
+        "term": "ageing",
+        "weight": 2
+      },
+      {
+        "term": "frail",
+        "weight": 2
+      },
+      {
+        "term": "dementia",
+        "weight": 2
+      },
+      {
+        "term": "look after them",
+        "weight": 2
+      },
+      {
+        "term": "they raised me",
+        "weight": 2
+      },
+      {
+        "term": "visit my parents",
+        "weight": 2
+      },
+      {
+        "term": "ring my mother",
+        "weight": 2
+      },
+      {
+        "term": "duty to them",
+        "weight": 2
+      },
+      {
+        "term": "ungrateful",
+        "weight": 2
+      },
+      {
+        "term": "disown",
+        "weight": 2
+      },
+      {
+        "term": "honour father",
+        "weight": 2
+      },
+      {
+        "term": "honour mother",
+        "weight": 2
+      },
+      {
+        "term": "respect my parents",
+        "weight": 2
+      },
+      {
+        "term": "obey my father",
+        "weight": 2
+      },
+      {
+        "term": "obey my mother",
+        "weight": 2
+      },
+      {
+        "term": "look after mum",
+        "weight": 2
+      },
+      {
+        "term": "look after dad",
+        "weight": 2
+      },
+      {
+        "term": "care for my mother",
+        "weight": 2
+      },
+      {
+        "term": "care for my father",
+        "weight": 2
+      },
+      {
+        "term": "elderly mother",
+        "weight": 2
+      },
+      {
+        "term": "elderly father",
+        "weight": 2
+      },
+      {
+        "term": "ageing mother",
+        "weight": 2
+      },
+      {
+        "term": "frail father",
+        "weight": 2
+      },
+      {
+        "term": "care home fees",
+        "weight": 2
+      },
+      {
+        "term": "nursing care",
+        "weight": 2
+      },
+      {
+        "term": "moving in with us",
+        "weight": 2
+      },
+      {
+        "term": "visit every week",
+        "weight": 2
+      },
+      {
+        "term": "phone my mother",
+        "weight": 2
+      },
+      {
+        "term": "ring them",
+        "weight": 2
+      },
+      {
+        "term": "duty to my family",
+        "weight": 2
+      },
+      {
+        "term": "filial obligation",
+        "weight": 2
+      },
+      {
+        "term": "ungrateful child",
+        "weight": 2
+      },
+      {
+        "term": "cut them off",
+        "weight": 2
+      },
+      {
+        "term": "estrangement",
+        "weight": 2
+      },
+      {
+        "term": "abusive parent",
+        "weight": 2
+      },
+      {
+        "term": "siblings share the care",
+        "weight": 2
+      },
+      {
+        "term": "inheritance from them",
+        "weight": 2
+      },
+      {
+        "term": "grandparents",
+        "weight": 2
+      },
+      {
+        "term": "my parents expect",
+        "weight": 2
+      },
+      {
+        "term": "adult son",
+        "weight": 2
+      },
+      {
+        "term": "adult daughter",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -2630,6 +4714,186 @@
       {
         "term": "married",
         "weight": 2
+      },
+      {
+        "term": "my wife",
+        "weight": 2
+      },
+      {
+        "term": "my husband",
+        "weight": 2
+      },
+      {
+        "term": "marriage vows",
+        "weight": 2
+      },
+      {
+        "term": "cheated on her",
+        "weight": 2
+      },
+      {
+        "term": "cheating on him",
+        "weight": 2
+      },
+      {
+        "term": "affair with",
+        "weight": 2
+      },
+      {
+        "term": "unfaithful to",
+        "weight": 2
+      },
+      {
+        "term": "flirt",
+        "weight": 2
+      },
+      {
+        "term": "attracted to someone",
+        "weight": 2
+      },
+      {
+        "term": "secret texts",
+        "weight": 2
+      },
+      {
+        "term": "betray my wife",
+        "weight": 2
+      },
+      {
+        "term": "loyalty to my spouse",
+        "weight": 2
+      },
+      {
+        "term": "married man",
+        "weight": 2
+      },
+      {
+        "term": "married woman",
+        "weight": 2
+      },
+      {
+        "term": "faithful to my wife",
+        "weight": 2
+      },
+      {
+        "term": "faithful to my husband",
+        "weight": 2
+      },
+      {
+        "term": "cheated on my wife",
+        "weight": 2
+      },
+      {
+        "term": "cheating on my spouse",
+        "weight": 2
+      },
+      {
+        "term": "having an affair",
+        "weight": 2
+      },
+      {
+        "term": "affair with a colleague",
+        "weight": 2
+      },
+      {
+        "term": "adulterous",
+        "weight": 2
+      },
+      {
+        "term": "adultery with",
+        "weight": 2
+      },
+      {
+        "term": "slept with someone else",
+        "weight": 2
+      },
+      {
+        "term": "one-night stand",
+        "weight": 2
+      },
+      {
+        "term": "kissed another",
+        "weight": 2
+      },
+      {
+        "term": "emotional attachment",
+        "weight": 2
+      },
+      {
+        "term": "feelings for someone else",
+        "weight": 2
+      },
+      {
+        "term": "crush on a colleague",
+        "weight": 2
+      },
+      {
+        "term": "inappropriate messages",
+        "weight": 2
+      },
+      {
+        "term": "texting someone",
+        "weight": 2
+      },
+      {
+        "term": "secret messages",
+        "weight": 2
+      },
+      {
+        "term": "hiding my phone",
+        "weight": 2
+      },
+      {
+        "term": "dating apps while married",
+        "weight": 2
+      },
+      {
+        "term": "unfaithful husband",
+        "weight": 2
+      },
+      {
+        "term": "unfaithful wife",
+        "weight": 2
+      },
+      {
+        "term": "betrayed my marriage",
+        "weight": 2
+      },
+      {
+        "term": "marital bond",
+        "weight": 2
+      },
+      {
+        "term": "sacred bond",
+        "weight": 2
+      },
+      {
+        "term": "wedding vows",
+        "weight": 2
+      },
+      {
+        "term": "monogamy",
+        "weight": 2
+      },
+      {
+        "term": "open marriage",
+        "weight": 2
+      },
+      {
+        "term": "resist temptation",
+        "weight": 2
+      },
+      {
+        "term": "married for years",
+        "weight": 2
+      },
+      {
+        "term": "my partner",
+        "weight": 2
+      },
+      {
+        "term": "my spouse",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -2748,6 +5012,178 @@
       },
       {
         "term": "ex-husband",
+        "weight": 2
+      },
+      {
+        "term": "split from",
+        "weight": 2
+      },
+      {
+        "term": "separate from my wife",
+        "weight": 2
+      },
+      {
+        "term": "leave the marriage",
+        "weight": 2
+      },
+      {
+        "term": "break up the family",
+        "weight": 2
+      },
+      {
+        "term": "marriage is over",
+        "weight": 2
+      },
+      {
+        "term": "ending our marriage",
+        "weight": 2
+      },
+      {
+        "term": "remarry",
+        "weight": 2
+      },
+      {
+        "term": "divorced",
+        "weight": 2
+      },
+      {
+        "term": "moving out",
+        "weight": 2
+      },
+      {
+        "term": "decree",
+        "weight": 2
+      },
+      {
+        "term": "unhappy marriage",
+        "weight": 2
+      },
+      {
+        "term": "stay married",
+        "weight": 2
+      },
+      {
+        "term": "custody of the children",
+        "weight": 2
+      },
+      {
+        "term": "get a divorce",
+        "weight": 2
+      },
+      {
+        "term": "filing for divorce",
+        "weight": 2
+      },
+      {
+        "term": "divorce proceedings",
+        "weight": 2
+      },
+      {
+        "term": "divorcing my wife",
+        "weight": 2
+      },
+      {
+        "term": "divorcing my husband",
+        "weight": 2
+      },
+      {
+        "term": "end our marriage",
+        "weight": 2
+      },
+      {
+        "term": "marriage ended",
+        "weight": 2
+      },
+      {
+        "term": "separating from",
+        "weight": 2
+      },
+      {
+        "term": "legally separated",
+        "weight": 2
+      },
+      {
+        "term": "trial separation",
+        "weight": 2
+      },
+      {
+        "term": "moved out of the house",
+        "weight": 2
+      },
+      {
+        "term": "living apart",
+        "weight": 2
+      },
+      {
+        "term": "split up with",
+        "weight": 2
+      },
+      {
+        "term": "break up a marriage",
+        "weight": 2
+      },
+      {
+        "term": "annul the marriage",
+        "weight": 2
+      },
+      {
+        "term": "grounds for divorce",
+        "weight": 2
+      },
+      {
+        "term": "irretrievable breakdown",
+        "weight": 2
+      },
+      {
+        "term": "unhappy for years",
+        "weight": 2
+      },
+      {
+        "term": "fallen out of love",
+        "weight": 2
+      },
+      {
+        "term": "grown apart from",
+        "weight": 2
+      },
+      {
+        "term": "staying for the children",
+        "weight": 2
+      },
+      {
+        "term": "custody arrangements",
+        "weight": 2
+      },
+      {
+        "term": "access to the children",
+        "weight": 2
+      },
+      {
+        "term": "maintenance",
+        "weight": 2
+      },
+      {
+        "term": "alimony payments",
+        "weight": 2
+      },
+      {
+        "term": "remarry after divorce",
+        "weight": 2
+      },
+      {
+        "term": "second wife",
+        "weight": 2
+      },
+      {
+        "term": "second husband",
+        "weight": 2
+      },
+      {
+        "term": "divorced and remarried",
+        "weight": 2
+      },
+      {
+        "term": "separate bedrooms",
         "weight": 2
       }
     ],
@@ -2871,6 +5307,182 @@
       },
       {
         "term": "take them in",
+        "weight": 2
+      },
+      {
+        "term": "welcome them",
+        "weight": 2
+      },
+      {
+        "term": "take in a stranger",
+        "weight": 2
+      },
+      {
+        "term": "open my door",
+        "weight": 2
+      },
+      {
+        "term": "guest room",
+        "weight": 2
+      },
+      {
+        "term": "shelter",
+        "weight": 2
+      },
+      {
+        "term": "homeless family",
+        "weight": 2
+      },
+      {
+        "term": "migrant",
+        "weight": 2
+      },
+      {
+        "term": "invite the neighbour",
+        "weight": 2
+      },
+      {
+        "term": "share a meal",
+        "weight": 2
+      },
+      {
+        "term": "turn them away",
+        "weight": 2
+      },
+      {
+        "term": "knocked on my door",
+        "weight": 2
+      },
+      {
+        "term": "put them up for the night",
+        "weight": 2
+      },
+      {
+        "term": "welcome a stranger",
+        "weight": 2
+      },
+      {
+        "term": "welcoming strangers",
+        "weight": 2
+      },
+      {
+        "term": "hospitality to guests",
+        "weight": 2
+      },
+      {
+        "term": "host a guest",
+        "weight": 2
+      },
+      {
+        "term": "guests in my home",
+        "weight": 2
+      },
+      {
+        "term": "put up a guest",
+        "weight": 2
+      },
+      {
+        "term": "spare bedroom",
+        "weight": 2
+      },
+      {
+        "term": "offer a bed",
+        "weight": 2
+      },
+      {
+        "term": "offer food",
+        "weight": 2
+      },
+      {
+        "term": "feed a stranger",
+        "weight": 2
+      },
+      {
+        "term": "shelter for the night",
+        "weight": 2
+      },
+      {
+        "term": "take in a family",
+        "weight": 2
+      },
+      {
+        "term": "refugees arriving",
+        "weight": 2
+      },
+      {
+        "term": "asylum seekers",
+        "weight": 2
+      },
+      {
+        "term": "migrants",
+        "weight": 2
+      },
+      {
+        "term": "foreigners in our town",
+        "weight": 2
+      },
+      {
+        "term": "newcomers",
+        "weight": 2
+      },
+      {
+        "term": "incomers",
+        "weight": 2
+      },
+      {
+        "term": "immigrant family",
+        "weight": 2
+      },
+      {
+        "term": "strangers at the door",
+        "weight": 2
+      },
+      {
+        "term": "knock at the door",
+        "weight": 2
+      },
+      {
+        "term": "turn away a stranger",
+        "weight": 2
+      },
+      {
+        "term": "refuse to help a stranger",
+        "weight": 2
+      },
+      {
+        "term": "community welcome",
+        "weight": 2
+      },
+      {
+        "term": "neighbourliness",
+        "weight": 2
+      },
+      {
+        "term": "be neighbourly",
+        "weight": 2
+      },
+      {
+        "term": "new to the area",
+        "weight": 2
+      },
+      {
+        "term": "invite for a meal",
+        "weight": 2
+      },
+      {
+        "term": "share my table",
+        "weight": 2
+      },
+      {
+        "term": "sanctuary",
+        "weight": 2
+      },
+      {
+        "term": "destitute family",
+        "weight": 2
+      },
+      {
+        "term": "nowhere to sleep",
         "weight": 2
       }
     ],
@@ -3002,6 +5614,198 @@
       },
       {
         "term": "whisper",
+        "weight": 2
+      },
+      {
+        "term": "gossiped",
+        "weight": 2
+      },
+      {
+        "term": "talked about her",
+        "weight": 2
+      },
+      {
+        "term": "spread a rumour",
+        "weight": 2
+      },
+      {
+        "term": "passed it on",
+        "weight": 2
+      },
+      {
+        "term": "told others",
+        "weight": 2
+      },
+      {
+        "term": "private business",
+        "weight": 2
+      },
+      {
+        "term": "in confidence",
+        "weight": 2
+      },
+      {
+        "term": "defame",
+        "weight": 2
+      },
+      {
+        "term": "smear",
+        "weight": 2
+      },
+      {
+        "term": "slander him",
+        "weight": 2
+      },
+      {
+        "term": "loose tongue",
+        "weight": 2
+      },
+      {
+        "term": "chatter",
+        "weight": 2
+      },
+      {
+        "term": "hold my tongue",
+        "weight": 2
+      },
+      {
+        "term": "keep it to myself",
+        "weight": 2
+      },
+      {
+        "term": "gossiping about",
+        "weight": 2
+      },
+      {
+        "term": "gossip about her",
+        "weight": 2
+      },
+      {
+        "term": "talking behind backs",
+        "weight": 2
+      },
+      {
+        "term": "said behind my back",
+        "weight": 2
+      },
+      {
+        "term": "spread rumours",
+        "weight": 2
+      },
+      {
+        "term": "rumour mill",
+        "weight": 2
+      },
+      {
+        "term": "spreading stories",
+        "weight": 2
+      },
+      {
+        "term": "tell tales",
+        "weight": 2
+      },
+      {
+        "term": "tale bearer",
+        "weight": 2
+      },
+      {
+        "term": "malicious talk",
+        "weight": 2
+      },
+      {
+        "term": "backbiting",
+        "weight": 2
+      },
+      {
+        "term": "slandering",
+        "weight": 2
+      },
+      {
+        "term": "defamation",
+        "weight": 2
+      },
+      {
+        "term": "character assassination",
+        "weight": 2
+      },
+      {
+        "term": "smear someone",
+        "weight": 2
+      },
+      {
+        "term": "badmouthing",
+        "weight": 2
+      },
+      {
+        "term": "running someone down",
+        "weight": 2
+      },
+      {
+        "term": "put someone down",
+        "weight": 2
+      },
+      {
+        "term": "mocking someone",
+        "weight": 2
+      },
+      {
+        "term": "laughing at someone",
+        "weight": 2
+      },
+      {
+        "term": "sharing private things",
+        "weight": 2
+      },
+      {
+        "term": "told a secret",
+        "weight": 2
+      },
+      {
+        "term": "betrayed a confidence",
+        "weight": 2
+      },
+      {
+        "term": "breach of trust",
+        "weight": 2
+      },
+      {
+        "term": "indiscreet",
+        "weight": 2
+      },
+      {
+        "term": "blabbed",
+        "weight": 2
+      },
+      {
+        "term": "loose lips",
+        "weight": 2
+      },
+      {
+        "term": "idle chatter",
+        "weight": 2
+      },
+      {
+        "term": "office gossip",
+        "weight": 2
+      },
+      {
+        "term": "workplace chat",
+        "weight": 2
+      },
+      {
+        "term": "whispering campaign",
+        "weight": 2
+      },
+      {
+        "term": "hold your tongue",
+        "weight": 2
+      },
+      {
+        "term": "guard my speech",
+        "weight": 2
+      },
+      {
+        "term": "lashon hara",
         "weight": 2
       }
     ],
@@ -3146,6 +5950,198 @@
       {
         "term": "drank too much",
         "weight": 2
+      },
+      {
+        "term": "drank",
+        "weight": 2
+      },
+      {
+        "term": "drinks",
+        "weight": 2
+      },
+      {
+        "term": "alcohol problem",
+        "weight": 2
+      },
+      {
+        "term": "bottle",
+        "weight": 2
+      },
+      {
+        "term": "pints",
+        "weight": 2
+      },
+      {
+        "term": "whisky",
+        "weight": 2
+      },
+      {
+        "term": "spirits",
+        "weight": 2
+      },
+      {
+        "term": "get drunk",
+        "weight": 2
+      },
+      {
+        "term": "teetotal",
+        "weight": 2
+      },
+      {
+        "term": "abstain from drink",
+        "weight": 2
+      },
+      {
+        "term": "sober up",
+        "weight": 2
+      },
+      {
+        "term": "drinking too much",
+        "weight": 2
+      },
+      {
+        "term": "stoned",
+        "weight": 2
+      },
+      {
+        "term": "weed",
+        "weight": 2
+      },
+      {
+        "term": "drinking alcohol",
+        "weight": 2
+      },
+      {
+        "term": "having a drink",
+        "weight": 2
+      },
+      {
+        "term": "a few drinks",
+        "weight": 2
+      },
+      {
+        "term": "drinks every night",
+        "weight": 2
+      },
+      {
+        "term": "heavy drinking",
+        "weight": 2
+      },
+      {
+        "term": "binge drinking",
+        "weight": 2
+      },
+      {
+        "term": "drinking problem",
+        "weight": 2
+      },
+      {
+        "term": "alcoholic",
+        "weight": 2
+      },
+      {
+        "term": "alcoholism",
+        "weight": 2
+      },
+      {
+        "term": "drunk again",
+        "weight": 2
+      },
+      {
+        "term": "getting drunk",
+        "weight": 2
+      },
+      {
+        "term": "intoxicated",
+        "weight": 2
+      },
+      {
+        "term": "inebriated",
+        "weight": 2
+      },
+      {
+        "term": "hammered",
+        "weight": 2
+      },
+      {
+        "term": "plastered",
+        "weight": 2
+      },
+      {
+        "term": "boozing",
+        "weight": 2
+      },
+      {
+        "term": "booze",
+        "weight": 2
+      },
+      {
+        "term": "a bottle a night",
+        "weight": 2
+      },
+      {
+        "term": "wine every evening",
+        "weight": 2
+      },
+      {
+        "term": "beer after work",
+        "weight": 2
+      },
+      {
+        "term": "vodka",
+        "weight": 2
+      },
+      {
+        "term": "pub crawl",
+        "weight": 2
+      },
+      {
+        "term": "rounds at the bar",
+        "weight": 2
+      },
+      {
+        "term": "hangovers",
+        "weight": 2
+      },
+      {
+        "term": "drink driving",
+        "weight": 2
+      },
+      {
+        "term": "giving up alcohol",
+        "weight": 2
+      },
+      {
+        "term": "staying sober",
+        "weight": 2
+      },
+      {
+        "term": "abstinence from wine",
+        "weight": 2
+      },
+      {
+        "term": "teetotaller",
+        "weight": 2
+      },
+      {
+        "term": "marijuana",
+        "weight": 2
+      },
+      {
+        "term": "smoking weed",
+        "weight": 2
+      },
+      {
+        "term": "getting high",
+        "weight": 2
+      },
+      {
+        "term": "opium",
+        "weight": 2
+      },
+      {
+        "term": "the drink",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -3285,6 +6281,194 @@
       {
         "term": "fish for compliments",
         "weight": 2
+      },
+      {
+        "term": "humble myself",
+        "weight": 2
+      },
+      {
+        "term": "boasted",
+        "weight": 2
+      },
+      {
+        "term": "showed off",
+        "weight": 2
+      },
+      {
+        "term": "big-headed",
+        "weight": 2
+      },
+      {
+        "term": "self-satisfied",
+        "weight": 2
+      },
+      {
+        "term": "credit I did not earn",
+        "weight": 2
+      },
+      {
+        "term": "prize",
+        "weight": 2
+      },
+      {
+        "term": "recognition for",
+        "weight": 2
+      },
+      {
+        "term": "praise from others",
+        "weight": 2
+      },
+      {
+        "term": "needing to be admired",
+        "weight": 2
+      },
+      {
+        "term": "accept help",
+        "weight": 2
+      },
+      {
+        "term": "status",
+        "weight": 2
+      },
+      {
+        "term": "being proud",
+        "weight": 2
+      },
+      {
+        "term": "proud of myself",
+        "weight": 2
+      },
+      {
+        "term": "pride in my work",
+        "weight": 2
+      },
+      {
+        "term": "too proud",
+        "weight": 2
+      },
+      {
+        "term": "false modesty",
+        "weight": 2
+      },
+      {
+        "term": "modest about",
+        "weight": 2
+      },
+      {
+        "term": "humble about",
+        "weight": 2
+      },
+      {
+        "term": "humility before",
+        "weight": 2
+      },
+      {
+        "term": "humbling",
+        "weight": 2
+      },
+      {
+        "term": "arrogant man",
+        "weight": 2
+      },
+      {
+        "term": "arrogance of",
+        "weight": 2
+      },
+      {
+        "term": "conceit",
+        "weight": 2
+      },
+      {
+        "term": "self-regard",
+        "weight": 2
+      },
+      {
+        "term": "egotistical",
+        "weight": 2
+      },
+      {
+        "term": "big ego",
+        "weight": 2
+      },
+      {
+        "term": "superiority",
+        "weight": 2
+      },
+      {
+        "term": "superior to others",
+        "weight": 2
+      },
+      {
+        "term": "boastful",
+        "weight": 2
+      },
+      {
+        "term": "bragging about",
+        "weight": 2
+      },
+      {
+        "term": "showing off",
+        "weight": 2
+      },
+      {
+        "term": "ostentatious",
+        "weight": 2
+      },
+      {
+        "term": "seeking praise",
+        "weight": 2
+      },
+      {
+        "term": "wanting admiration",
+        "weight": 2
+      },
+      {
+        "term": "need to be admired",
+        "weight": 2
+      },
+      {
+        "term": "fishing for compliments",
+        "weight": 2
+      },
+      {
+        "term": "taking all the credit",
+        "weight": 2
+      },
+      {
+        "term": "credit for the work",
+        "weight": 2
+      },
+      {
+        "term": "recognition at work",
+        "weight": 2
+      },
+      {
+        "term": "awards",
+        "weight": 2
+      },
+      {
+        "term": "prizes",
+        "weight": 2
+      },
+      {
+        "term": "status symbols",
+        "weight": 2
+      },
+      {
+        "term": "name-dropping",
+        "weight": 2
+      },
+      {
+        "term": "self-promotion online",
+        "weight": 2
+      },
+      {
+        "term": "too proud to ask",
+        "weight": 2
+      },
+      {
+        "term": "swallow my pride",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -3419,6 +6603,182 @@
       },
       {
         "term": "highlight reel",
+        "weight": 2
+      },
+      {
+        "term": "envious",
+        "weight": 2
+      },
+      {
+        "term": "jealousy of",
+        "weight": 2
+      },
+      {
+        "term": "wanting what they have",
+        "weight": 2
+      },
+      {
+        "term": "begrudge",
+        "weight": 2
+      },
+      {
+        "term": "cannot be happy for",
+        "weight": 2
+      },
+      {
+        "term": "congratulate him",
+        "weight": 2
+      },
+      {
+        "term": "compare my life",
+        "weight": 2
+      },
+      {
+        "term": "want what he has",
+        "weight": 2
+      },
+      {
+        "term": "satisfied with my lot",
+        "weight": 2
+      },
+      {
+        "term": "thankful for what I have",
+        "weight": 2
+      },
+      {
+        "term": "envy of others",
+        "weight": 2
+      },
+      {
+        "term": "envious of him",
+        "weight": 2
+      },
+      {
+        "term": "envious of her",
+        "weight": 2
+      },
+      {
+        "term": "jealous of my friend",
+        "weight": 2
+      },
+      {
+        "term": "jealousy at work",
+        "weight": 2
+      },
+      {
+        "term": "covetous",
+        "weight": 2
+      },
+      {
+        "term": "coveting",
+        "weight": 2
+      },
+      {
+        "term": "wanting his job",
+        "weight": 2
+      },
+      {
+        "term": "wanting her life",
+        "weight": 2
+      },
+      {
+        "term": "comparison with others",
+        "weight": 2
+      },
+      {
+        "term": "comparing lives",
+        "weight": 2
+      },
+      {
+        "term": "always comparing",
+        "weight": 2
+      },
+      {
+        "term": "measuring myself against",
+        "weight": 2
+      },
+      {
+        "term": "feel behind",
+        "weight": 2
+      },
+      {
+        "term": "falling behind others",
+        "weight": 2
+      },
+      {
+        "term": "their good fortune",
+        "weight": 2
+      },
+      {
+        "term": "his promotion",
+        "weight": 2
+      },
+      {
+        "term": "her success",
+        "weight": 2
+      },
+      {
+        "term": "someone else got",
+        "weight": 2
+      },
+      {
+        "term": "passed over",
+        "weight": 2
+      },
+      {
+        "term": "resentful of success",
+        "weight": 2
+      },
+      {
+        "term": "cannot celebrate",
+        "weight": 2
+      },
+      {
+        "term": "grudging congratulations",
+        "weight": 2
+      },
+      {
+        "term": "contented with",
+        "weight": 2
+      },
+      {
+        "term": "content with little",
+        "weight": 2
+      },
+      {
+        "term": "gratitude for what",
+        "weight": 2
+      },
+      {
+        "term": "thankful",
+        "weight": 2
+      },
+      {
+        "term": "count my blessings",
+        "weight": 2
+      },
+      {
+        "term": "satisfied with my life",
+        "weight": 2
+      },
+      {
+        "term": "keeping up with neighbours",
+        "weight": 2
+      },
+      {
+        "term": "social comparison",
+        "weight": 2
+      },
+      {
+        "term": "richer friends",
+        "weight": 2
+      },
+      {
+        "term": "my portion in life",
+        "weight": 2
+      },
+      {
+        "term": "a house of their own",
         "weight": 2
       }
     ],
@@ -3563,6 +6923,202 @@
       {
         "term": "council",
         "weight": 2
+      },
+      {
+        "term": "obey the rules",
+        "weight": 2
+      },
+      {
+        "term": "follow the law",
+        "weight": 2
+      },
+      {
+        "term": "lawful",
+        "weight": 2
+      },
+      {
+        "term": "unlawful",
+        "weight": 2
+      },
+      {
+        "term": "break the law",
+        "weight": 2
+      },
+      {
+        "term": "evade tax",
+        "weight": 2
+      },
+      {
+        "term": "undeclared",
+        "weight": 2
+      },
+      {
+        "term": "smuggle",
+        "weight": 2
+      },
+      {
+        "term": "bribe an official",
+        "weight": 2
+      },
+      {
+        "term": "ordered by the state",
+        "weight": 2
+      },
+      {
+        "term": "ruler's command",
+        "weight": 2
+      },
+      {
+        "term": "disobedience",
+        "weight": 2
+      },
+      {
+        "term": "protest march",
+        "weight": 2
+      },
+      {
+        "term": "obeying the law",
+        "weight": 2
+      },
+      {
+        "term": "obey the government",
+        "weight": 2
+      },
+      {
+        "term": "obedience to authority",
+        "weight": 2
+      },
+      {
+        "term": "submit to authority",
+        "weight": 2
+      },
+      {
+        "term": "lawful authority",
+        "weight": 2
+      },
+      {
+        "term": "unjust laws",
+        "weight": 2
+      },
+      {
+        "term": "breaking laws",
+        "weight": 2
+      },
+      {
+        "term": "civil disobedience against",
+        "weight": 2
+      },
+      {
+        "term": "disobeying orders",
+        "weight": 2
+      },
+      {
+        "term": "defy the state",
+        "weight": 2
+      },
+      {
+        "term": "defy authority",
+        "weight": 2
+      },
+      {
+        "term": "resist the regime",
+        "weight": 2
+      },
+      {
+        "term": "protest against the state",
+        "weight": 2
+      },
+      {
+        "term": "demonstration",
+        "weight": 2
+      },
+      {
+        "term": "permit for the march",
+        "weight": 2
+      },
+      {
+        "term": "banned protest",
+        "weight": 2
+      },
+      {
+        "term": "police orders",
+        "weight": 2
+      },
+      {
+        "term": "curfew imposed",
+        "weight": 2
+      },
+      {
+        "term": "emergency powers",
+        "weight": 2
+      },
+      {
+        "term": "paying taxes",
+        "weight": 2
+      },
+      {
+        "term": "tax evasion",
+        "weight": 2
+      },
+      {
+        "term": "dodge tax",
+        "weight": 2
+      },
+      {
+        "term": "undeclared income",
+        "weight": 2
+      },
+      {
+        "term": "cash in hand",
+        "weight": 2
+      },
+      {
+        "term": "smuggling",
+        "weight": 2
+      },
+      {
+        "term": "bribe",
+        "weight": 2
+      },
+      {
+        "term": "corrupt officials",
+        "weight": 2
+      },
+      {
+        "term": "conscience against the law",
+        "weight": 2
+      },
+      {
+        "term": "obey rulers",
+        "weight": 2
+      },
+      {
+        "term": "magistrate",
+        "weight": 2
+      },
+      {
+        "term": "jury duty",
+        "weight": 2
+      },
+      {
+        "term": "fines",
+        "weight": 2
+      },
+      {
+        "term": "regulations",
+        "weight": 2
+      },
+      {
+        "term": "speeding",
+        "weight": 2
+      },
+      {
+        "term": "parking ticket",
+        "weight": 2
+      },
+      {
+        "term": "no permission",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -3699,6 +7255,198 @@
       },
       {
         "term": "face up to",
+        "weight": 2
+      },
+      {
+        "term": "brave enough",
+        "weight": 2
+      },
+      {
+        "term": "be brave",
+        "weight": 2
+      },
+      {
+        "term": "felt afraid",
+        "weight": 2
+      },
+      {
+        "term": "fearful",
+        "weight": 2
+      },
+      {
+        "term": "dread",
+        "weight": 2
+      },
+      {
+        "term": "panic",
+        "weight": 2
+      },
+      {
+        "term": "nerve to say",
+        "weight": 2
+      },
+      {
+        "term": "stood up to him",
+        "weight": 2
+      },
+      {
+        "term": "backed down",
+        "weight": 2
+      },
+      {
+        "term": "ran away",
+        "weight": 2
+      },
+      {
+        "term": "faced it",
+        "weight": 2
+      },
+      {
+        "term": "confronted him",
+        "weight": 2
+      },
+      {
+        "term": "speak out",
+        "weight": 2
+      },
+      {
+        "term": "courageous",
+        "weight": 2
+      },
+      {
+        "term": "being brave",
+        "weight": 2
+      },
+      {
+        "term": "be courageous",
+        "weight": 2
+      },
+      {
+        "term": "act bravely",
+        "weight": 2
+      },
+      {
+        "term": "physical courage",
+        "weight": 2
+      },
+      {
+        "term": "moral courage",
+        "weight": 2
+      },
+      {
+        "term": "fortitude",
+        "weight": 2
+      },
+      {
+        "term": "stand firm",
+        "weight": 2
+      },
+      {
+        "term": "hold my nerve",
+        "weight": 2
+      },
+      {
+        "term": "lose my nerve",
+        "weight": 2
+      },
+      {
+        "term": "lost my nerve",
+        "weight": 2
+      },
+      {
+        "term": "nerves",
+        "weight": 2
+      },
+      {
+        "term": "nervous",
+        "weight": 2
+      },
+      {
+        "term": "anxious about",
+        "weight": 2
+      },
+      {
+        "term": "afraid to speak",
+        "weight": 2
+      },
+      {
+        "term": "afraid of dying",
+        "weight": 2
+      },
+      {
+        "term": "fear of death",
+        "weight": 2
+      },
+      {
+        "term": "fear of failure",
+        "weight": 2
+      },
+      {
+        "term": "terror",
+        "weight": 2
+      },
+      {
+        "term": "terrified of",
+        "weight": 2
+      },
+      {
+        "term": "dread it",
+        "weight": 2
+      },
+      {
+        "term": "panic attack",
+        "weight": 2
+      },
+      {
+        "term": "cowardly",
+        "weight": 2
+      },
+      {
+        "term": "act of cowardice",
+        "weight": 2
+      },
+      {
+        "term": "backing down",
+        "weight": 2
+      },
+      {
+        "term": "faced my fear",
+        "weight": 2
+      },
+      {
+        "term": "face the danger",
+        "weight": 2
+      },
+      {
+        "term": "risk my life",
+        "weight": 2
+      },
+      {
+        "term": "speak truth to power",
+        "weight": 2
+      },
+      {
+        "term": "whistleblowing",
+        "weight": 2
+      },
+      {
+        "term": "blow the whistle",
+        "weight": 2
+      },
+      {
+        "term": "stand up for someone",
+        "weight": 2
+      },
+      {
+        "term": "defend the weak",
+        "weight": 2
+      },
+      {
+        "term": "shaking with fear",
+        "weight": 2
+      },
+      {
+        "term": "said nothing again",
         "weight": 2
       }
     ],
@@ -3846,6 +7594,194 @@
       },
       {
         "term": "public shaming",
+        "weight": 2
+      },
+      {
+        "term": "judging her",
+        "weight": 2
+      },
+      {
+        "term": "judged him",
+        "weight": 2
+      },
+      {
+        "term": "condemned them",
+        "weight": 2
+      },
+      {
+        "term": "look down on people",
+        "weight": 2
+      },
+      {
+        "term": "harsh judgment",
+        "weight": 2
+      },
+      {
+        "term": "criticized her",
+        "weight": 2
+      },
+      {
+        "term": "faults of others",
+        "weight": 2
+      },
+      {
+        "term": "moral superiority",
+        "weight": 2
+      },
+      {
+        "term": "disapprove of",
+        "weight": 2
+      },
+      {
+        "term": "snap judgment",
+        "weight": 2
+      },
+      {
+        "term": "first impression",
+        "weight": 2
+      },
+      {
+        "term": "assume the worst of",
+        "weight": 2
+      },
+      {
+        "term": "judging people",
+        "weight": 2
+      },
+      {
+        "term": "judging others harshly",
+        "weight": 2
+      },
+      {
+        "term": "being judgmental",
+        "weight": 2
+      },
+      {
+        "term": "passing judgment",
+        "weight": 2
+      },
+      {
+        "term": "judge her for",
+        "weight": 2
+      },
+      {
+        "term": "condemning others",
+        "weight": 2
+      },
+      {
+        "term": "condemnation of",
+        "weight": 2
+      },
+      {
+        "term": "censure",
+        "weight": 2
+      },
+      {
+        "term": "criticising others",
+        "weight": 2
+      },
+      {
+        "term": "harsh criticism",
+        "weight": 2
+      },
+      {
+        "term": "faultfinding",
+        "weight": 2
+      },
+      {
+        "term": "nitpicking",
+        "weight": 2
+      },
+      {
+        "term": "look down on others",
+        "weight": 2
+      },
+      {
+        "term": "contempt for people",
+        "weight": 2
+      },
+      {
+        "term": "sneer",
+        "weight": 2
+      },
+      {
+        "term": "disdain",
+        "weight": 2
+      },
+      {
+        "term": "hypocritical judgment",
+        "weight": 2
+      },
+      {
+        "term": "plank in my own eye",
+        "weight": 2
+      },
+      {
+        "term": "holier-than-thou",
+        "weight": 2
+      },
+      {
+        "term": "moral superiority over",
+        "weight": 2
+      },
+      {
+        "term": "self-righteousness",
+        "weight": 2
+      },
+      {
+        "term": "benefit of the doubt for",
+        "weight": 2
+      },
+      {
+        "term": "charitable interpretation",
+        "weight": 2
+      },
+      {
+        "term": "giving people a chance",
+        "weight": 2
+      },
+      {
+        "term": "first impressions of",
+        "weight": 2
+      },
+      {
+        "term": "prejudged",
+        "weight": 2
+      },
+      {
+        "term": "stereotyping",
+        "weight": 2
+      },
+      {
+        "term": "writing someone off",
+        "weight": 2
+      },
+      {
+        "term": "cancelling people",
+        "weight": 2
+      },
+      {
+        "term": "pile-ons",
+        "weight": 2
+      },
+      {
+        "term": "online shaming",
+        "weight": 2
+      },
+      {
+        "term": "calling people out",
+        "weight": 2
+      },
+      {
+        "term": "her choices",
+        "weight": 2
+      },
+      {
+        "term": "how she lives",
+        "weight": 2
+      },
+      {
+        "term": "lifestyle choices",
         "weight": 2
       }
     ],
