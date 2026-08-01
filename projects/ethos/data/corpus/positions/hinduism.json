@@ -1,0 +1,517 @@
+[
+  {
+    "id": "killing_and_self_defense--hinduism",
+    "topic_id": "killing_and_self_defense",
+    "tradition_id": "hinduism",
+    "stance": "context_dependent",
+    "summary": "Ahimsa heads Manu's summary of the law binding on all, and the merit of non-injury pervades the tradition. Yet dharma is indexed to role and situation: the same texts permit slaying an actual assassin without hesitation, and the Gita's metaphysics of the unslayable self consoles the warrior whose station requires force. Context — role, necessity, intent — determines the act's weight.",
+    "reasoning": [
+      {
+        "text": "Non-injury is declared the first element of the law for all four castes.",
+        "passage_id": "manu-10-63-summary"
+      },
+      {
+        "text": "Against an approaching assassin, defense is expressly permitted regardless of the attacker's status.",
+        "passage_id": "manu-8-350-assassin"
+      },
+      {
+        "text": "The self is beyond slaying — a reframing of death that the tradition confines to the context of duty.",
+        "passage_id": "gita-2-19"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-10-63-summary",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "manu-8-350-assassin",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "gita-2-19",
+        "role": "complicating",
+        "note": "metaphysical reframing, easily misread"
+      }
+    ],
+    "intra_tradition_note": "Ascetic traditions absolutize ahimsa; the householder and royal codes carve out defense and punishment — a structured disagreement about whose dharma governs.",
+    "further_reading": [
+      {
+        "author": "Christopher Key Chapple",
+        "title": "Nonviolence to Animals, Earth, and Self in Asian Traditions",
+        "year": 1993,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Manu 10.63, 8.350 (Bühler) and Gita 2.19 (Telang)."
+  },
+  {
+    "id": "war_and_peace--hinduism",
+    "topic_id": "war_and_peace",
+    "tradition_id": "hinduism",
+    "stance": "context_dependent",
+    "summary": "For the kshatriya there is nothing better than a righteous battle — war can be duty, and shirking it adharma. But the same lawbooks rank battle last among the king's expedients, after conciliation, gifts, and diplomacy, and hedge combat with rules sparing the fallen and the fleeing. War is dharma only when righteous in cause, last in resort, and restrained in conduct.",
+    "reasoning": [
+      {
+        "text": "The Gita grounds the warrior's participation in a righteous cause as duty.",
+        "passage_id": "gita-2-31-battle"
+      },
+      {
+        "text": "Manu commands conquest by conciliation and diplomacy first, battle only when unavoidable.",
+        "passage_id": "manu-7-198-conciliation"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "gita-2-31-battle",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "manu-7-198-conciliation",
+        "role": "complicating",
+        "note": "war as last resort"
+      }
+    ],
+    "intra_tradition_note": "Gandhi read the Gita as inner allegory and made ahimsa a political method; traditional readings keep the kshatriya frame — both are live within modern Hinduism.",
+    "further_reading": [
+      {
+        "author": "Torkel Brekke (ed.)",
+        "title": "The Ethics of War in Asian Civilizations",
+        "year": 2006,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Gita 2.31 (Telang) and Manu 7.198 (Bühler)."
+  },
+  {
+    "id": "suicide_and_self_harm--hinduism",
+    "topic_id": "suicide_and_self_harm",
+    "tradition_id": "hinduism",
+    "stance": "context_dependent",
+    "summary": "Suicide from despair is condemned — the texts deny such a death its funeral libations, and self-harm abandons duties still owed. Yet the same literature ritualizes a renunciant's final departure: the aged ascetic, duties complete, may walk out subsisting on water and air until the body sinks. What is forbidden to despair is, in a wholly different register, permitted to completion.",
+    "reasoning": [
+      {
+        "text": "Denial of libations to those who die by their own hand marks the condemnation of suicide from despair.",
+        "passage_id": "manu-5-89-suicide"
+      },
+      {
+        "text": "The great departure permitted to the renunciant shows the tradition distinguishing despairing self-destruction from ritual completion.",
+        "passage_id": "manu-6-31-departure"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-5-89-suicide",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "manu-6-31-departure",
+        "role": "complicating",
+        "note": "the ascetic's departure"
+      }
+    ],
+    "intra_tradition_note": "Practices like prayopavesha (fasting unto death under strict conditions) remain contested; modern Hindu teachers uniformly counsel the despairing toward life and care.",
+    "further_reading": [
+      {
+        "author": "S. Cromwell Crawford",
+        "title": "Hindu Bioethics for the Twenty-First Century",
+        "year": 2003,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Manu 5.89 and 6.31 (Bühler)."
+  },
+  {
+    "id": "animals_and_diet--hinduism",
+    "topic_id": "animals_and_diet",
+    "tradition_id": "hinduism",
+    "stance": "discouraged",
+    "summary": "Meat cannot be had without injury, and injury bars the highest ends — so Manu counsels shunning it, and the vegetarian ideal became central to much of Hindu practice, with the cow especially protected. The same chapter preserves the older layer: no sin in the natural appetites, but abstention brings great reward. Eating meat is thus tolerated below, renounced above.",
+    "reasoning": [
+      {
+        "text": "The causal argument: meat entails harm, harm impedes bliss, therefore shun meat.",
+        "passage_id": "manu-5-48-meat"
+      },
+      {
+        "text": "Manu's own counter-verse tolerates the natural way while ranking abstention higher.",
+        "passage_id": "manu-5-56-no-sin"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-5-48-meat",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "manu-5-56-no-sin",
+        "role": "complicating",
+        "note": "the permission layer"
+      }
+    ],
+    "intra_tradition_note": "Regional and caste practice varies widely; Vaishnava traditions are strictly vegetarian while others permit meat outside ritual contexts.",
+    "further_reading": [
+      {
+        "author": "Christopher Key Chapple",
+        "title": "Nonviolence to Animals, Earth, and Self in Asian Traditions",
+        "year": 1993,
+        "kind": "book",
+        "url": null,
+        "note": "chapters on ahimsa and diet"
+      }
+    ],
+    "curator_note": "Drafted from Manu 5.48 and 5.56 (Bühler)."
+  },
+  {
+    "id": "usury_and_lending--hinduism",
+    "topic_id": "usury_and_lending",
+    "tradition_id": "hinduism",
+    "stance": "permitted",
+    "summary": "The dharmashastra regulates rather than bans interest: lawful rates are fixed, compounding is bounded, and interest beyond the legal rate is 'a usurious way' unrecoverable at law. Lending is a recognized livelihood — though the highest castes were traditionally discouraged from it — and the debtor's obligation to repay is itself a matter of dharma.",
+    "reasoning": [
+      {
+        "text": "Manu caps lawful interest and names what exceeds it usury, void at law.",
+        "passage_id": "manu-8-152-interest"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-8-152-interest",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Texts discourage Brahmanas and Kshatriyas from moneylending while regulating it for others — a status-indexed, not universal, restriction.",
+    "further_reading": [
+      {
+        "author": "P. V. Kane",
+        "title": "History of Dharmasastra, vol. III",
+        "year": 1946,
+        "kind": "book",
+        "url": null,
+        "note": "on debts and interest"
+      }
+    ],
+    "curator_note": "Drafted from Manu 8.152 (Bühler) with the adjacent debt chapters."
+  },
+  {
+    "id": "anger_and_hatred--hinduism",
+    "topic_id": "anger_and_hatred",
+    "tradition_id": "hinduism",
+    "stance": "discouraged",
+    "summary": "The Gita analyzes anger as a link in a causal chain running from attachment to ruin: desire thwarted becomes anger, anger destroys discrimination, and with it memory, reason, and the person. Named among the three gates of hell with desire and greed, anger is not managed but starved — cut at its root in attachment, by the discipline of unattached action.",
+    "reasoning": [
+      {
+        "text": "The chain from attachment through anger to utter ruin is the Gita's diagnosis.",
+        "passage_id": "gita-2-62-63-anger"
+      },
+      {
+        "text": "Anger stands among the threefold gate of hell, to be abandoned with its siblings.",
+        "passage_id": "gita-16-21-gates"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "gita-2-62-63-anger",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "gita-16-21-gates",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Eknath Easwaran",
+        "title": "The Bhagavad Gita (translation and introduction)",
+        "year": 1985,
+        "kind": "primary_translation",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Gita 2.62–63 and 16.21 (Telang)."
+  },
+  {
+    "id": "duties_to_parents--hinduism",
+    "topic_id": "duties_to_parents",
+    "tradition_id": "hinduism",
+    "stance": "obligatory",
+    "summary": "The mother is a thousand times more venerable than the father, the father a hundred times more than the teacher — and the pain parents bear for a child cannot be repaid in a hundred years. Service to parents is one of the debts every person is born owing; in the puranic ideal, honoring them equals pilgrimage to all holy places.",
+    "reasoning": [
+      {
+        "text": "Manu's ladder of veneration places the mother at its summit.",
+        "passage_id": "manu-2-145-mother"
+      },
+      {
+        "text": "The parental debt is declared uncompensable in principle.",
+        "passage_id": "manu-2-227-debt"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-2-145-mother",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "manu-2-227-debt",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Gavin Flood",
+        "title": "An Introduction to Hinduism",
+        "year": 1996,
+        "kind": "book",
+        "url": null,
+        "note": "on the ashramas and household duty"
+      }
+    ],
+    "curator_note": "Drafted from Manu 2.145 and 2.227 (Bühler)."
+  },
+  {
+    "id": "marriage_and_fidelity--hinduism",
+    "topic_id": "marriage_and_fidelity",
+    "tradition_id": "hinduism",
+    "stance": "obligatory",
+    "summary": "Let mutual fidelity continue until death — Manu offers this as the summary of the highest law for husband and wife. Marriage is samskara, a sacrament joining families and generations, within which faithfulness is not a bargain but a vow with cosmic weight; adultery is treated in the lawbooks among the gravest offenses against social order.",
+    "reasoning": [
+      {
+        "text": "Manu's one-line summary makes mutual fidelity until death the marriage law's core.",
+        "passage_id": "manu-9-101-fidelity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-9-101-fidelity",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "P. V. Kane",
+        "title": "History of Dharmasastra, vol. II",
+        "year": 1941,
+        "kind": "book",
+        "url": null,
+        "note": "on marriage as samskara"
+      }
+    ],
+    "curator_note": "Drafted from Manu 9.101 (Bühler)."
+  },
+  {
+    "id": "divorce--hinduism",
+    "topic_id": "divorce",
+    "tradition_id": "hinduism",
+    "stance": "forbidden",
+    "summary": "Classical Hindu law treats marriage as sacrament rather than contract: what fidelity-until-death summarizes, no decree dissolves, and the dharmashastra provides no general divorce. Yet the texts wrestle with failed fact — waiting periods for the absent husband, the Arthashastra's release by mutual enmity for some marriage forms — and modern statute now permits divorce, over the sacramental theory it displaced.",
+    "reasoning": [
+      {
+        "text": "Fidelity until death as the summary of marriage law leaves no room for dissolution in the classical theory.",
+        "passage_id": "manu-9-101-fidelity"
+      },
+      {
+        "text": "The waiting-period rules show the law confronting marriages sundered in fact if not in form.",
+        "passage_id": "manu-9-76-absence"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-9-101-fidelity",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "manu-9-76-absence",
+        "role": "complicating",
+        "note": "abandonment provisions"
+      }
+    ],
+    "intra_tradition_note": "The Hindu Marriage Act (1955) introduced statutory divorce; customary law in many communities had long permitted it — the sacramental theory was never the whole practice.",
+    "further_reading": [
+      {
+        "author": "Werner Menski",
+        "title": "Hindu Law: Beyond Tradition and Modernity",
+        "year": 2003,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Manu 9.101 and 9.76 (Bühler), with Arthashastra 3.3 and the 1955 Act for context."
+  },
+  {
+    "id": "hospitality_and_strangers--hinduism",
+    "topic_id": "hospitality_and_strangers",
+    "tradition_id": "hinduism",
+    "stance": "obligatory",
+    "summary": "The guest is a daily sacrifice: feeding the atithi is one of the householder's five obligatory offerings, and even the poorest owe grass, room, water, and a kind word. The guest arrives bearing a claim — turned away, he takes the host's merit with him. In the Upanishadic formula, the guest is to be revered as a god.",
+    "reasoning": [
+      {
+        "text": "The four things that never fail in the houses of the good define hospitality's floor for every household.",
+        "passage_id": "manu-3-101-grass"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-3-101-grass",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Klaus K. Klostermaier",
+        "title": "A Survey of Hinduism",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": "on the householder's duties"
+      }
+    ],
+    "curator_note": "Drafted from Manu 3.101 (Bühler), with Taittiriya Upanishad 1.11 (atithi devo bhava) in view."
+  },
+  {
+    "id": "intoxicants_and_sobriety--hinduism",
+    "topic_id": "intoxicants_and_sobriety",
+    "tradition_id": "hinduism",
+    "stance": "discouraged",
+    "summary": "Sura-drinking stands among the five mortal sins of the lawbooks — for the twice-born, intoxication defiles ritual purity and self-command alike. Yet Manu's own tolerant verse concedes no sin in the natural appetites while ranking abstention higher, and practice across castes and centuries has varied. The consistent thread is that clarity and discipline outrank indulgence.",
+    "reasoning": [
+      {
+        "text": "Sura-drinking is listed among the mahapataka, the gravest category of offense.",
+        "passage_id": "manu-11-55-mahapataka"
+      },
+      {
+        "text": "The tolerant counter-verse tempers prohibition into hierarchy: permitted below, renounced above.",
+        "passage_id": "manu-5-56-no-sin"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "manu-11-55-mahapataka",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "manu-5-56-no-sin",
+        "role": "complicating",
+        "note": "the permission layer"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "P. V. Kane",
+        "title": "History of Dharmasastra, vol. II",
+        "year": 1941,
+        "kind": "book",
+        "url": null,
+        "note": "on purity rules"
+      }
+    ],
+    "curator_note": "Drafted from Manu 11.55 and 5.56 (Bühler)."
+  },
+  {
+    "id": "envy_and_contentment--hinduism",
+    "topic_id": "envy_and_contentment",
+    "tradition_id": "hinduism",
+    "stance": "discouraged",
+    "summary": "The beloved devotee of the Gita hates no being, is free from the idea of 'mine', and is contented — envy has no purchase where possession itself is loosened. Greed stands with desire and anger at the threefold gate of hell. The tradition's remedy is santosha, contentment, cultivated by unattached action rather than by acquiring what the neighbor has.",
+    "reasoning": [
+      {
+        "text": "The devotee's portrait — friendly, without 'mine', contented — is the positive against which envy is measured.",
+        "passage_id": "gita-12-13-14-content"
+      },
+      {
+        "text": "Avarice stands at the gate of hell beside desire and anger.",
+        "passage_id": "gita-16-21-gates"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "gita-12-13-14-content",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "gita-16-21-gates",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Eknath Easwaran",
+        "title": "The Bhagavad Gita (translation and introduction)",
+        "year": 1985,
+        "kind": "primary_translation",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Gita 12.13–14 and 16.21 (Telang)."
+  },
+  {
+    "id": "courage_and_fear--hinduism",
+    "topic_id": "courage_and_fear",
+    "tradition_id": "hinduism",
+    "stance": "encouraged",
+    "summary": "Courage in the Gita is svadharma enacted: for the warrior, valour and not slinking from battle are natural duties, and Arjuna's despair is answered not with comfort but with a summons to act. The deeper teaching universalizes it — do your duty without attachment to outcomes — making fearlessness a fruit of surrendered action rather than confidence in results.",
+    "reasoning": [
+      {
+        "text": "Valour and steadfastness in battle are the kshatriya's natural duties.",
+        "passage_id": "gita-18-43-kshatriya"
+      },
+      {
+        "text": "Acting without attachment to fruits is the inner form of Gita courage, available to every station.",
+        "passage_id": "gita-2-47-action"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "gita-18-43-kshatriya",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "gita-2-47-action",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Eknath Easwaran",
+        "title": "The Bhagavad Gita (translation and introduction)",
+        "year": 1985,
+        "kind": "primary_translation",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Gita 18.43 and 2.47 (Telang)."
+  }
+]

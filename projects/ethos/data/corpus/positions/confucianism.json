@@ -1,0 +1,517 @@
+[
+  {
+    "id": "honesty_and_deception--confucianism",
+    "topic_id": "honesty_and_deception",
+    "tradition_id": "confucianism",
+    "stance": "context_dependent",
+    "summary": "Trustworthiness (xin) is a cardinal virtue: a person whose word cannot be relied on has no standing, and sincerity is the ground of all relationships. Yet truth-telling is not an isolated rule; it serves the web of relational duties. Where blunt disclosure would betray a deeper obligation — as between father and son — uprightness may require discretion rather than testimony.",
+    "reasoning": [
+      {
+        "text": "Without truthfulness a person cannot get on, as a carriage cannot move without its yoke-bar.",
+        "passage_id": "analects-2-22"
+      },
+      {
+        "text": "Relational duties can override third-party claims to disclosure, as in the sheep-stealing father.",
+        "passage_id": "analects-13-18"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-2-22",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-13-18",
+        "role": "complicating",
+        "note": "the classic hard case"
+      }
+    ],
+    "intra_tradition_note": "Later Confucians (notably Zhu Xi's school) read XIII.18 narrowly, as protecting the parent-child bond, not licensing deception generally.",
+    "further_reading": [
+      {
+        "author": "Mark Csikszentmihalyi",
+        "title": "Confucius",
+        "year": 2020,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/confucius/",
+        "note": "survey with a section on the upright-father case"
+      }
+    ],
+    "curator_note": "Drafted from Legge's Analects (II.22, XIII.18)."
+  },
+  {
+    "id": "promise_keeping_and_oaths--confucianism",
+    "topic_id": "promise_keeping_and_oaths",
+    "tradition_id": "confucianism",
+    "stance": "context_dependent",
+    "summary": "A commitment rightly made must be able to be made good — which is why the Analects moralizes the making as much as the keeping: agree according to what is right, and your word can stand. Mencius presses further: the great man does not cling to literal fidelity for its own sake but speaks and does what is right, so a promise whose keeping would work wrong loses its claim.",
+    "reasoning": [
+      {
+        "text": "Agreements made according to what is right are the ones whose words can be made good.",
+        "passage_id": "analects-1-13"
+      },
+      {
+        "text": "Mencius subordinates literal resoluteness to righteousness itself.",
+        "passage_id": "mencius-4-11-right"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-1-13",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "mencius-4-11-right",
+        "role": "complicating",
+        "note": "righteousness over literalism"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Bryan W. Van Norden",
+        "title": "Mencius",
+        "year": 2019,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/mencius/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Analects I.13 and Mencius IV.B.11 (Legge)."
+  },
+  {
+    "id": "war_and_peace--confucianism",
+    "topic_id": "war_and_peace",
+    "tradition_id": "confucianism",
+    "stance": "discouraged",
+    "summary": "Mencius calls the self-advertised masters of battle great criminals: the benevolent ruler wins adherence by virtue, not conquest, and a government that must rely on war has already failed at governing. Confucius adds the ruler's responsibility downward — to lead an untrained people to war is to throw them away. Force is conceded at the margins; the tradition's energy goes to making it unnecessary.",
+    "reasoning": [
+      {
+        "text": "Skill at marshalling troops, prized for itself, is criminality in Mencius's verdict.",
+        "passage_id": "mencius-7-4-war"
+      },
+      {
+        "text": "Leading an uninstructed people to war is to throw them away — war's cost falls on the ruler's conscience.",
+        "passage_id": "analects-13-30-war"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mencius-7-4-war",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-13-30-war",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Xunzi and the statecraft tradition allowed punitive expeditions by the righteous king; the shared premise is that legitimacy, not victory, justifies arms.",
+    "further_reading": [
+      {
+        "author": "Daniel A. Bell",
+        "title": "Confucian Political Ethics",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Mencius VII.B.4 and Analects XIII.30 (Legge)."
+  },
+  {
+    "id": "wealth_and_generosity--confucianism",
+    "topic_id": "wealth_and_generosity",
+    "tradition_id": "confucianism",
+    "stance": "context_dependent",
+    "summary": "Riches and honours are what men desire — the Analects concedes the appetite and moralizes the means: wealth not gotten in the proper way should not be held, and ill-gotten prosperity is a floating cloud. Contentment with coarse rice is modeled without being commanded. Generosity flows through role-duties — kin, guests, the people one governs — rather than an abstract command to give.",
+    "reasoning": [
+      {
+        "text": "Joy with coarse rice and water, and unrighteous riches as floating cloud, model wealth's right weight.",
+        "passage_id": "analects-7-15-cloud"
+      },
+      {
+        "text": "The proper way governs both acquiring wealth and escaping poverty.",
+        "passage_id": "analects-4-5-proper-way"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-7-15-cloud",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-4-5-proper-way",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Michael Puett and Christine Gross-Loh",
+        "title": "The Path: What Chinese Philosophers Can Teach Us About the Good Life",
+        "year": 2016,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Analects VII.15 and IV.5 (Legge)."
+  },
+  {
+    "id": "theft_and_property--confucianism",
+    "topic_id": "theft_and_property",
+    "tradition_id": "confucianism",
+    "stance": "forbidden",
+    "summary": "Stealing violates the trust that makes common life possible, and the exemplary person would rather hold poverty in the proper way than wealth wrongly. But the Analects' distinctive move is diagnostic: asked how to end theft, Confucius answers the ruler — were you not covetous, they would not steal. Property crime is a symptom of moral disorder at the top as much as at the bottom.",
+    "reasoning": [
+      {
+        "text": "The remedy for theft begins with the ruler's own covetousness — disorder flows downward.",
+        "passage_id": "analects-12-18-covet"
+      },
+      {
+        "text": "Holding what is not got in the proper way is itself excluded for the superior man.",
+        "passage_id": "analects-4-5-proper-way"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-12-18-covet",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-4-5-proper-way",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Philip J. Ivanhoe",
+        "title": "Confucian Moral Self Cultivation",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Analects XII.18 and IV.5 (Legge)."
+  },
+  {
+    "id": "anger_and_hatred--confucianism",
+    "topic_id": "anger_and_hatred",
+    "tradition_id": "confucianism",
+    "stance": "discouraged",
+    "summary": "A morning's anger that disregards one's own life and entangles one's parents is the Analects' textbook case of delusion: rage narrows the field of vision until relational duty disappears. The cultivated person does not transfer anger from its object to bystanders, and ritual propriety supplies the forms — pause, address, measured speech — through which strong feeling passes without wreckage.",
+    "reasoning": [
+      {
+        "text": "Anger disregarding self and parents is named a delusion — clouded judgment with relational cost.",
+        "passage_id": "analects-12-21-anger"
+      },
+      {
+        "text": "Slow speech and earnest conduct are the discipline within which temper is held.",
+        "passage_id": "analects-4-24-slow-speech"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-12-21-anger",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-4-24-slow-speech",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "The tradition praises Yen Hui for 'not transferring his anger' — the target is displacement and excess, not the feeling itself.",
+    "further_reading": [
+      {
+        "author": "Philip J. Ivanhoe",
+        "title": "Confucian Moral Self Cultivation",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": "on emotional cultivation"
+      }
+    ],
+    "curator_note": "Drafted from Analects XII.21 and IV.24 (Legge), with VI.2 (Yen Hui) in view."
+  },
+  {
+    "id": "duties_to_parents--confucianism",
+    "topic_id": "duties_to_parents",
+    "tradition_id": "confucianism",
+    "stance": "obligatory",
+    "summary": "Filial piety (xiao) is the root from which humaneness grows, and it demands more than provision: dogs and horses can be supported too — without reverence, support does not distinguish itself. The duty includes gentle remonstrance when parents err, persisting respectfully rather than abandoning either the parent or the point; care of parents structures adult life, not childhood only.",
+    "reasoning": [
+      {
+        "text": "Support without reverence fails as filial piety; the heart's posture is the duty's core.",
+        "passage_id": "analects-2-7-reverence"
+      },
+      {
+        "text": "Remonstrance conducted inside reverence shows obedience is not silence before parental error.",
+        "passage_id": "analects-4-18-remonstrate"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-2-7-reverence",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-4-18-remonstrate",
+        "role": "complicating",
+        "note": "duty to disagree gently"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Mark Csikszentmihalyi",
+        "title": "Confucius",
+        "year": 2020,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/confucius/",
+        "note": "on xiao"
+      }
+    ],
+    "curator_note": "Drafted from Analects II.7 and IV.18 (Legge)."
+  },
+  {
+    "id": "marriage_and_fidelity--confucianism",
+    "topic_id": "marriage_and_fidelity",
+    "tradition_id": "confucianism",
+    "stance": "obligatory",
+    "summary": "Marriage is the greatest of the human relations in Mencius's phrase — the bond from which family, and through family the state, is woven. Its ethics is role-based: distinct duties of husband and wife, ancestral continuity, and the household as the first school of virtue. Fidelity belongs to the relation's proper form; its breach disorders not two people but the web that depends on them.",
+    "reasoning": [
+      {
+        "text": "The dwelling-together of male and female is the greatest of human relations, the web's first thread.",
+        "passage_id": "mencius-5-2-relations"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mencius-5-2-relations",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Classical texts frame the spousal relation asymmetrically; modern Confucian thinkers rework the role-ethics toward mutuality while keeping the relational frame.",
+    "further_reading": [
+      {
+        "author": "Bryan W. Van Norden",
+        "title": "Mencius",
+        "year": 2019,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/mencius/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Mencius V.A.2 (Legge), with the five relations in view."
+  },
+  {
+    "id": "hospitality_and_strangers--confucianism",
+    "topic_id": "hospitality_and_strangers",
+    "tradition_id": "confucianism",
+    "stance": "encouraged",
+    "summary": "Behave abroad as if receiving a great guest: hospitality is not one duty among others but the very grammar of humaneness, extended outward from the family hall. The reciprocity rule — do not impose what you would not wish — supplies its measure, and ritual propriety its forms: the stranger is met with the ceremony that enacts respect before feeling catches up.",
+    "reasoning": [
+      {
+        "text": "Treating everyone as a great guest is offered as a description of ren itself.",
+        "passage_id": "analects-12-2-guest"
+      },
+      {
+        "text": "Reciprocity, the one word for a whole life, sets hospitality's measure.",
+        "passage_id": "analects-15-23-shu"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-12-2-guest",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-15-23-shu",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Michael Puett and Christine Gross-Loh",
+        "title": "The Path: What Chinese Philosophers Can Teach Us About the Good Life",
+        "year": 2016,
+        "kind": "book",
+        "url": null,
+        "note": "on ritual and everyday relations"
+      }
+    ],
+    "curator_note": "Drafted from Analects XII.2 and XV.23 (Legge)."
+  },
+  {
+    "id": "speech_and_gossip--confucianism",
+    "topic_id": "speech_and_gossip",
+    "tradition_id": "confucianism",
+    "stance": "discouraged",
+    "summary": "The superior man is slow in speech and earnest in conduct: words are held to the standard of what one's actions can redeem, and fine, insinuating talk is flagged as virtue's counterfeit. Gossip fails on both counts — it spends words where no deed answers, and it trades in others' affairs to polish one's own standing. The discipline is economy: say less, do more, and let character speak.",
+    "reasoning": [
+      {
+        "text": "Slow speech and earnest conduct set the exemplary ratio of word to deed.",
+        "passage_id": "analects-4-24-slow-speech"
+      },
+      {
+        "text": "Fine words and an insinuating appearance are seldom associated with true virtue.",
+        "passage_id": "analects-1-3-fine-words"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-4-24-slow-speech",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-1-3-fine-words",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Amy Olberding",
+        "title": "The Wrong of Rudeness: Learning Modern Civility from Ancient Chinese Philosophy",
+        "year": 2019,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Analects IV.24 and I.3 (Legge)."
+  },
+  {
+    "id": "pride_and_humility--confucianism",
+    "topic_id": "pride_and_humility",
+    "tradition_id": "confucianism",
+    "stance": "discouraged",
+    "summary": "The superior man has a dignified ease without pride; the mean man, pride without dignified ease. Confucian humility is not self-deprecation but accuracy — the cultivated person needs no display because his substance is settled, while arrogance is display compensating for its absence. Ritual deference trains the posture until it becomes character.",
+    "reasoning": [
+      {
+        "text": "Dignity without pride versus pride without dignity marks the real distinction — substance against display.",
+        "passage_id": "analects-13-26-dignity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-13-26-dignity",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Amy Olberding",
+        "title": "The Wrong of Rudeness: Learning Modern Civility from Ancient Chinese Philosophy",
+        "year": 2019,
+        "kind": "book",
+        "url": null,
+        "note": "on deference and display"
+      }
+    ],
+    "curator_note": "Drafted from Analects XIII.26 (Legge)."
+  },
+  {
+    "id": "obedience_and_civil_authority--confucianism",
+    "topic_id": "obedience_and_civil_authority",
+    "tradition_id": "confucianism",
+    "stance": "context_dependent",
+    "summary": "Order is a great good and the minister serves loyally — but Confucian loyalty is remonstrance, not compliance: do not impose on the ruler, and withstand him to his face. Authority earns obedience by virtue; when it commands wrongly, the duty is to object at cost, and Mencius pushes further, justifying the removal of a ruler who has ceased to be one.",
+    "reasoning": [
+      {
+        "text": "Serving a ruler means withstanding him to his face rather than deceiving or flattering him.",
+        "passage_id": "analects-14-22-withstand"
+      },
+      {
+        "text": "Courage's definition — seeing the right and doing it — binds the subordinate against convenient silence.",
+        "passage_id": "analects-2-24-courage"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-14-22-withstand",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-2-24-courage",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Mencius I.B.8 declares the killing of the tyrant Chou the killing of 'a mere fellow', not regicide — the tradition's sharpest statement of forfeited authority.",
+    "further_reading": [
+      {
+        "author": "Daniel A. Bell",
+        "title": "Confucian Political Ethics",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Analects XIV.22 and II.24 (Legge), with Mencius I.B.8."
+  },
+  {
+    "id": "courage_and_fear--confucianism",
+    "topic_id": "courage_and_fear",
+    "tradition_id": "confucianism",
+    "stance": "encouraged",
+    "summary": "To see what is right and not to do it is want of courage: the Confucian coward is not the man who trembles but the man who knows and shirks. Boldness stands with virtue and wisdom in the exemplary person's threefold way, and it is subordinated to righteousness — daring without it is mere insubordination. Courage is thus cultivated judgment acting, not temperament.",
+    "reasoning": [
+      {
+        "text": "Courage is defined as doing the seen right, making moral failure its true opposite.",
+        "passage_id": "analects-2-24-courage"
+      },
+      {
+        "text": "The bold freedom from fear belongs to the threefold way alongside virtue and wisdom.",
+        "passage_id": "analects-14-30-bold"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "analects-2-24-courage",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "analects-14-30-bold",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Philip J. Ivanhoe",
+        "title": "Confucian Moral Self Cultivation",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Analects II.24 and XIV.30 (Legge)."
+  }
+]
