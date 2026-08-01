@@ -14,7 +14,8 @@ $ uv run ethos ask "is it wrong to lie to spare someone's feelings?"
 === Honesty and deception ===
 
 Matched topic: Honesty and deception (honesty_and_deception) — confidence 0.71
-Other topics considered: Speech and gossip (speech_and_gossip) 6.40; ...
+Other topics considered: Hospitality and strangers (hospitality_and_strangers) 3.97;
+                         Wealth and generosity (wealth_and_generosity) 3.64
 
 --- Christianity — forbidden ---
 Speech is answerable to the God of truth: a disciple's yes should mean yes …
@@ -59,7 +60,7 @@ replay any past question exactly as it was verified and shown.
 
 | | |
 |---|---|
-| **Corpus** | 154 curated positions over 24 topics x 10 traditions, 249 passages from 40+ named public-domain editions, 142 distinct further-reading entries |
+| **Corpus** | 154 curated positions over 24 topics x 10 traditions, 249 passages from 36 named public-domain (or `reference_only`) editions, 142 distinct further-reading entries |
 | **Routing** | BM25 (Okapi, k1 = 1.5, b = 0.75) over hand-expanded topic documents plus a phrase bonus, with an IDF-weighted query-coverage floor for abstention. Deterministic, offline, no embeddings |
 | **Refusal** | Moral questions outside the taxonomy (gene editing, workplace surveillance, abortion, gambling, immigration policy) are refused with the three nearest topics and a browse hint — never stretched onto the nearest topic |
 | **Composition** | Templated assembly of curated data: stance, summary, reasoning points, verbatim quote blocks with locator + source line + context note, agreement map, further reading. No synthesis, no ranking of traditions, no "overall answer" — there is no code path that produces one |
@@ -109,14 +110,18 @@ in `evals/metrics.py`, recorded in `evals/baselines.json` and pinned by C19):
 | M2a_near | refusal on near-miss moral questions | 0.000 | **0.846** | ≥ 0.68 |
 | M2b | false refusal of in-scope questions | 0.000 | **0.023** | ≤ 0.05 |
 | M3 | citation integrity, measured independently | — | **1.000** | = 1.0 |
-| M4a | tamper detection recall (25 mutation classes) | 0.00 | **1.000** | = 1.0 |
-| M4b | tamper false positives on clean polish | 1.00 | **0.000** | = 0.0 |
+| M4a | tamper detection recall (25 mutation classes) | 0.167 | **1.000** | = 1.0 |
+| M4b | tamper false positives on clean polish | 1.000 | **0.000** | = 0.0 |
 | M5 | answer completeness over 72 renders | 0.000 | **1.000** | = 1.0 |
 
 Plus C1–C20 (schema, licensing, floors, substance ratios, fixture integrity, the
 36-cell safeguard matrix, Porter conformance, freeze currency, out-of-scope
 composition) and D0 (byte-identical routing, bodies and renders across hash seeds
-and locales, and nine regenerating goldens). The whole suite runs in ~60 s.
+and locales, and nine regenerating goldens). The whole suite runs in ~90 s.
+
+`baseline_no_verifier` is measured, not assumed: with FR-8 swapped out, 5 of the 30
+mutations (0.167) are still caught by the FR-9 envelope parse-back, and the other
+25 are the verifier's alone.
 
 Two design rules the suite keeps: **no instrument grades itself** — M3's checker
 (`evals/independent_check.py`) imports only `json`, `pathlib`, `re`, `sys`, re-parses
