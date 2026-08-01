@@ -1,0 +1,184 @@
+"""One pytest per gate, at its EVALS threshold; test names reference FR ids.
+
+The whole suite shares a single session-scoped measurement so the ~1,000 routings
+and ~600 compositions happen once.
+"""
+from __future__ import annotations
+
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from evals import corpus_gates as gates  # noqa: E402
+from evals import run as runner  # noqa: E402
+
+
+@pytest.fixture(scope="session")
+def measured() -> dict:
+    return runner.measure()
+
+
+@pytest.fixture(scope="session")
+def values(measured: dict) -> dict:
+    return measured["values"]
+
+
+@pytest.fixture(scope="session")
+def gate_results(measured: dict) -> dict:
+    return measured["gates"]
+
+
+# --- M1 (FR-3) --------------------------------------------------------------
+
+
+def test_gate_m1_direct_fr3(values: dict) -> None:
+    assert values["M1-direct"] >= 0.97
+
+
+def test_gate_m1_colloquial_fr3(values: dict) -> None:
+    assert values["M1-coll"] >= 0.85
+
+
+def test_gate_m1b_oblique_fr3(values: dict) -> None:
+    assert values["M1b"] >= 0.70
+
+
+def test_gate_m1b_holdout_fr3(values: dict) -> None:
+    assert values["M1b'"] >= 0.55
+
+
+def test_gate_m1gap_holdout_fr3(values: dict) -> None:
+    """The anti-memorisation instrument: lexicon stuffing raises M1b, not M1b'."""
+    assert values["M1gap"] <= 0.15
+
+
+def test_gate_m1c_recall_at_3_fr3(values: dict) -> None:
+    assert values["M1c"] >= 0.95
+
+
+def test_gate_m1d_dual_home_fr3(values: dict) -> None:
+    assert values["M1d"] >= 0.85
+
+
+# --- M2 (FR-4) --------------------------------------------------------------
+
+
+def test_gate_m2a_refusal_fr4(values: dict) -> None:
+    assert values["M2a"] >= 0.80
+
+
+def test_gate_m2a_near_refusal_fr4(values: dict) -> None:
+    assert values["M2a_near"] >= 0.68
+
+
+def test_gate_m2b_false_refusal_fr4(values: dict) -> None:
+    assert values["M2b"] <= 0.05
+
+
+# --- M3-M5 (FR-6/7/8/9) -----------------------------------------------------
+
+
+def test_gate_m3_citation_integrity_fr7(values: dict, measured: dict) -> None:
+    assert values["M3"] == pytest.approx(1.0), measured["problems"]["M3"]
+
+
+def test_gate_m4_tamper_fr8_fr9(values: dict, measured: dict) -> None:
+    assert values["M4a"] == pytest.approx(1.0), measured["problems"]["M4"]
+    assert values["M4b"] == pytest.approx(0.0), measured["problems"]["M4"]
+
+
+def test_gate_m5_completeness_fr5_fr6(values: dict, measured: dict) -> None:
+    assert values["M5"] == pytest.approx(1.0), measured["problems"]["M5"]
+
+
+# --- C-gates ----------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "gate",
+    [f"C{n}" for n in range(1, 19) if n != 19] + ["C20"],
+)
+def test_gate_corpus_c_gates_fr1(gate: str, gate_results: dict) -> None:
+    assert gate_results.get(gate) == [], gate_results.get(gate)
+
+
+def test_gate_c17_safeguard_matrix_fr10(gate_results: dict) -> None:
+    assert gate_results["C17"] == [], gate_results["C17"]
+
+
+def test_gate_c18_normalization_fr2(gate_results: dict) -> None:
+    assert gate_results["C18"] == [], gate_results["C18"]
+
+
+def test_gate_c19_baselines_current_fr1(measured: dict) -> None:
+    assert gates.check_c19(measured["freeze"]) == []
+
+
+def test_gate_c20_out_of_scope_composition_fr4(gate_results: dict) -> None:
+    assert gate_results["C20"] == [], gate_results["C20"]
+
+
+# --- D0 (FR-15) -------------------------------------------------------------
+
+
+def test_gate_d0_determinism_fr15(gate_results: dict) -> None:
+    """D0(c) index byte-stability and D0(d) stored-render reproduction."""
+    assert gate_results["D0"] == [], gate_results["D0"]
+
+
+DETERMINISM_SCRIPT = """
+import json, sys
+sys.path.insert(0, {root!r})
+sys.path.insert(0, {src!r})
+from ethos.corpus import default_data_dir, load_corpus
+from ethos.engine.router import build_index, index_to_json
+from evals.metrics import RouterHarness, compose_unverified
+from evals.corpus_gates import load_fixture
+corpus = load_corpus(default_data_dir())
+harness = RouterHarness(corpus)
+out = {{"index": index_to_json(harness.index), "routes": [], "answers": []}}
+for question in load_fixture("routing_questions.json"):
+    routed = harness.route(question["text"])
+    out["routes"].append([question["id"], routed.top1, list(routed.top3),
+                          round(routed.s1, 9), round(routed.coverage, 9)])
+for topic in corpus.topics:
+    body, text = compose_unverified(corpus, topic.id, None)
+    out["answers"].append([body.model_dump_json(), text])
+sys.stdout.write(json.dumps(out, sort_keys=True, ensure_ascii=False))
+"""
+
+
+def _run_determinism(env_extra: dict[str, str]) -> str:
+    import os
+
+    env = dict(os.environ)
+    env.update(env_extra)
+    script = DETERMINISM_SCRIPT.format(root=str(ROOT), src=str(ROOT / "src"))
+    proc = subprocess.run(
+        [sys.executable, "-c", script],
+        capture_output=True,
+        text=True,
+        env=env,
+        check=False,
+    )
+    assert proc.returncode == 0, proc.stderr[-2000:]
+    return proc.stdout
+
+
+def test_gate_d0_hash_seed_and_locale_fr15() -> None:
+    """D0(a): identical routing, bodies and renders across hash seeds and locales."""
+    base = _run_determinism({"PYTHONHASHSEED": "0", "LC_ALL": "en_US.UTF-8"})
+    other_seed = _run_determinism({"PYTHONHASHSEED": "1", "LC_ALL": "en_US.UTF-8"})
+    c_locale = _run_determinism({"PYTHONHASHSEED": "0", "LC_ALL": "C"})
+    assert base == other_seed
+    assert base == c_locale
+    payload = json.loads(base)
+    assert len(payload["routes"]) == 240
+    assert len(payload["answers"]) == 24

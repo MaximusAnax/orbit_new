@@ -103,6 +103,10 @@ def measure(verbose: bool = True) -> dict[str, object]:
     first_only, _ = M.m5_completeness(corpus, M.BaselineFirstTraditionOnly(corpus))
     baselines["baseline_first_tradition_only:M5"] = first_only
 
+    record = dict(gates.freeze_record(corpus))
+    record.update(baselines)
+    record.update({f"measured:{key}": value for key, value in values.items()})
+
     oos_s1, direct_s1 = M.c20_scores(harness, fixtures)
     gate_results = gates.run_corpus_gates(corpus)
     gate_results["C20"] = gates.check_c20(corpus, oos_s1, direct_s1)
@@ -114,7 +118,7 @@ def measure(verbose: bool = True) -> dict[str, object]:
         "baselines": baselines,
         "gates": gate_results,
         "problems": {"M3": m3_failures, "M4": m4["problems"], "M5": m5_problems},
-        "freeze": gates.freeze_record(corpus),
+        "freeze": record,
         "harness": harness,
         "fixtures": fixtures,
         "verbose": verbose,
@@ -194,8 +198,6 @@ def scorecard(result: dict[str, object]) -> int:
 
 def write_baselines(result: dict[str, object]) -> int:
     payload = dict(result["freeze"])  # type: ignore[arg-type]
-    payload.update(result["baselines"])  # type: ignore[arg-type]
-    payload.update({f"measured:{k}": v for k, v in result["values"].items()})  # type: ignore[union-attr]
     BASELINES.write_text(
         json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
         encoding="utf-8",
