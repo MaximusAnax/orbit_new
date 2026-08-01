@@ -39,7 +39,7 @@
     "id": "mill-util-2-veracity",
     "source_id": "mill-utilitarianism",
     "locator": "Utilitarianism ch.2",
-    "text": "But inasmuch as the cultivation in ourselves of a sensitive feeling on the subject of veracity, is one of the most useful, and the enfeeblement of that feeling one of the most hurtful, things to which our conduct can be instrumental; and inasmuch as any, even unintentional, deviation from truth, does that much towards weakening the trustworthiness of human assertion, which is not only the principal support of all present social well-being, but the insufficiency of which does more than any one thing that can be named to keep back civilisation,",
+    "text": "the cultivation in ourselves of a sensitive feeling on the subject of veracity, is one of the most useful, and the enfeeblement of that feeling one of the most hurtful, things to which our conduct can be instrumental; and any, even unintentional, deviation from truth, does that much towards weakening the trustworthiness of human assertion, which is not only the principal support of all present social well-being, but the insufficiency of which does more than any one thing that can be named to keep back civilisation,
     "paraphrase": null,
     "context_note": "Mill's answer to 'useful lies': the institution of trustworthy assertion is itself among the greatest utilities, so each convenient lie spends a common inheritance. Exceptions exist and should themselves be rule-governed.",
     "transcription_checked": true
@@ -114,6 +114,78 @@
     "text": "no man of ripe years and of sound mind, acting freely, and with his eyes open, ought to be hindered, with a view to his advantage, from making such bargain, in the way of obtaining money, as he thinks fit:",
     "paraphrase": null,
     "context_note": "Bentham against the usury laws — and against his teacher Adam Smith: consenting adults' credit bargains are presumptively utility-increasing, and rate caps chiefly starve the risky borrower into worse hands.",
+    "transcription_checked": true
+  },
+  {
+    "id": "bentham-ipml-17-extirpate",
+    "source_id": "bentham-ipml",
+    "locator": "IPML ch.17",
+    "text": "With what chance of success, for example, would a legislator go about to extirpate drunkenness and fornication by dint of legal punishment?",
+    "paraphrase": null,
+    "context_note": "From Bentham's chapter on the limits of the penal branch of jurisprudence: conduct that private ethics may condemn can still lie beyond profitable legislation, because the punishment needed would cost more suffering than the practice it suppresses.",
+    "transcription_checked": true
+  },
+  {
+    "id": "mill-liberty-4-help",
+    "source_id": "mill-onliberty",
+    "locator": "On Liberty ch.4",
+    "text": "Human beings owe to each other help to distinguish the better from the worse, and encouragement to choose the former and avoid the latter.",
+    "paraphrase": null,
+    "context_note": "Mill's answer to the charge that his doctrine counsels selfish indifference: refusing to coerce a neighbour is not refusing to counsel, remonstrate with, or think ill of him — persuasion is owed precisely because compulsion is not.",
+    "transcription_checked": true
+  },
+  {
+    "id": "mill-liberty-1-tyranny",
+    "source_id": "mill-onliberty",
+    "locator": "On Liberty ch.1",
+    "text": "Protection, therefore, against the tyranny of the magistrate is not enough: there needs protection also against the tyranny of the prevailing opinion and feeling; against the tendency of society to impose, by other means than civil penalties, its own ideas and practices as rules of conduct on those who dissent from them;",
+    "paraphrase": null,
+    "context_note": "Mill's warning that collective disapproval can coerce as thoroughly as law and with fewer checks; it marks the point at which everyday moral judgment of others turns into a social penalty.",
+    "transcription_checked": true
+  },
+  {
+    "id": "mill-liberty-4-social-return",
+    "source_id": "mill-onliberty",
+    "locator": "On Liberty ch.4",
+    "text": "Every one who receives the protection of society owes a return for the benefit, and the fact of living in society renders it indispensable that each should be bound to observe a certain line of conduct towards the rest.",
+    "paraphrase": null,
+    "context_note": "The opening of Mill's chapter on the authority of society: the argument that limits interference with self-regarding conduct also grounds genuine civic obligation — bearing one's share of the burdens that protect everyone.",
+    "transcription_checked": true
+  },
+  {
+    "id": "mill-liberty-1-own-good",
+    "source_id": "mill-onliberty",
+    "locator": "On Liberty ch.1",
+    "text": "The only freedom which deserves the name, is that of pursuing our own good in our own way, so long as we do not attempt to deprive others of theirs, or impede their efforts to obtain it.",
+    "paraphrase": null,
+    "context_note": "Mill's statement of the liberty the harm principle protects. Where law or custom crosses that boundary, the utilitarian case for compliance is weakened rather than reinforced by the same reasoning that recommends obedience elsewhere.",
+    "transcription_checked": true
+  },
+  {
+    "id": "mill-liberty-3-corn-dealer",
+    "source_id": "mill-onliberty",
+    "locator": "On Liberty ch.3",
+    "text": "An opinion that corn-dealers are starvers of the poor, or that private property is robbery, ought to be unmolested when simply circulated through the press, but may justly incur punishment when delivered orally to an excited mob assembled before the house of a corn-dealer,",
+    "paraphrase": null,
+    "context_note": "Mill's worked example that words are judged by their circumstances and effects: the identical proposition is protected in print and blamable when it becomes an instigation before an angry crowd.",
+    "transcription_checked": true
+  },
+  {
+    "id": "mill-liberty-2-silencing",
+    "source_id": "mill-onliberty",
+    "locator": "On Liberty ch.2",
+    "text": "the peculiar evil of silencing the expression of an opinion is, that it is robbing the human race; posterity as well as the existing generation; those who dissent from the opinion, still more than those who hold it.",
+    "paraphrase": null,
+    "context_note": "Mill grounds free discussion in utility rather than right: suppression costs everyone the chance to exchange error for truth, or to hold a true belief for living reasons. Restraints on speech therefore have to be argued for, not assumed.",
+    "transcription_checked": true
+  },
+  {
+    "id": "mill-liberty-2-manner",
+    "source_id": "mill-onliberty",
+    "locator": "On Liberty ch.2",
+    "text": "Undoubtedly the manner of asserting an opinion, even though it be a true one, may be very objectionable, and may justly incur severe censure.",
+    "paraphrase": null,
+    "context_note": "Having defended the freest expression of opinion, Mill immediately concedes that how a thing is said — invective, stigmatising opponents as bad men — can itself deserve blame, though he doubts such offences can safely be handed to law.",
     "transcription_checked": true
   }
 ]

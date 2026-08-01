@@ -326,5 +326,242 @@
       }
     ],
     "curator_note": "Drafted from Subjection ch.4 and Utilitarianism ch.2."
+  },
+  {
+    "id": "intoxicants_and_sobriety--utilitarianism",
+    "topic_id": "intoxicants_and_sobriety",
+    "tradition_id": "utilitarianism",
+    "stance": "permitted",
+    "summary": "Drinking is a self-regarding act, and over such acts neither magistrate nor neighbour holds rightful power: prohibition buys little abstinence and pays for it in secrecy, adulterated supply, and punished appetite. What the calculus does condemn is drink whose costs land on others — the violent husband, the officer on duty, the household whose support is drunk away — and a person with that record may fairly be restrained where an ordinary drinker may not. Sobriety remains worth commending, because a clouded mind forfeits the pleasures it would most miss; but that recommendation is addressed to the drinker's judgment rather than enforced against it.",
+    "reasoning": [
+      {
+        "text": "Intoxication that touches only the drinker lies outside legitimate coercion; the case changes the moment a definite risk falls on someone else.",
+        "passage_id": "mill-liberty-4-drunk"
+      },
+      {
+        "text": "Prohibition is a poor instrument: the punishment needed to suppress the practice would cost more suffering than the practice does.",
+        "passage_id": "bentham-ipml-17-extirpate"
+      },
+      {
+        "text": "What heavy drinking spends is capacity for the pleasures worth having — a reason for temperance that is not a reason for compulsion.",
+        "passage_id": "mill-util-2-socrates"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-liberty-4-drunk",
+        "role": "core",
+        "note": "the line drawn case by case"
+      },
+      {
+        "passage_id": "mill-liberty-1-harm",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "bentham-ipml-17-extirpate",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "mill-util-2-socrates",
+        "role": "complicating",
+        "note": "quality of pleasure counts against the bottle"
+      }
+    ],
+    "intra_tradition_note": "Bentham files drunkenness among offences against one's self, punishable only where the mischief spreads; later welfare-minded utilitarians defend taxes, licensing hours and treatment programmes as harm reduction rather than paternalism — an argument about instruments, conducted inside the same framework.",
+    "further_reading": [
+      {
+        "author": "Gerald Dworkin",
+        "title": "Paternalism",
+        "year": 2020,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/paternalism/",
+        "note": "the debate Mill's chapter opened"
+      },
+      {
+        "author": "John Stuart Mill",
+        "title": "On Liberty",
+        "year": 1859,
+        "kind": "primary_translation",
+        "url": "https://www.gutenberg.org/ebooks/34901",
+        "note": "the drink examples sit in the later chapters"
+      }
+    ],
+    "curator_note": "Drafted from On Liberty ch.1 and ch.4, IPML ch.17 on the limits of penal law, and Utilitarianism ch.2 on higher pleasures."
+  },
+  {
+    "id": "judging_others--utilitarianism",
+    "topic_id": "judging_others",
+    "tradition_id": "utilitarianism",
+    "stance": "permitted",
+    "summary": "Appraising character is one of the ways a society improves itself without coercion, so it is not to be given up. A person may be avoided, warned against, or thought less of, and saying so plainly is often owed rather than withheld: help in telling better from worse is a debt we carry to one another. The limit lies in what appraisal becomes. When disapproval hardens into a penalty imposed on conduct that injures nobody, it turns into a rule by prevailing feeling that is harder to escape than law, since it answers to no appeal. Weigh conduct by its effects, and stop where the effects stop.",
+    "reasoning": [
+      {
+        "text": "Acting on an unfavourable opinion — withdrawing company, cautioning a friend — is the exercise of one's own liberty, not the punishment of another's.",
+        "passage_id": "mill-liberty-4-opinion"
+      },
+      {
+        "text": "Candid counsel is owed, not intrusive: where compulsion is ruled out, persuasion and remonstrance are what remain.",
+        "passage_id": "mill-liberty-4-help"
+      },
+      {
+        "text": "Massed disapproval coerces more finely than statute, so judgment of self-regarding conduct is exactly where restraint pays.",
+        "passage_id": "mill-liberty-1-tyranny"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-liberty-4-opinion",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "mill-liberty-4-help",
+        "role": "supporting",
+        "note": "against reading the doctrine as indifference"
+      },
+      {
+        "passage_id": "mill-liberty-1-tyranny",
+        "role": "complicating",
+        "note": "the social sanction as its own tyranny"
+      }
+    ],
+    "intra_tradition_note": "Utilitarians differ over how much of a good society's discipline should run on moral disapproval: some treat the popular sanction as a cheap and effective substitute for law, while others read the warning about social tyranny as counselling that it be spent sparingly.",
+    "further_reading": [
+      {
+        "author": "David O. Brink",
+        "title": "Mill's Moral and Political Philosophy",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/mill-moral-political/",
+        "note": null
+      },
+      {
+        "author": "C. L. Ten",
+        "title": "Mill on Liberty",
+        "year": 1980,
+        "kind": "book",
+        "url": null,
+        "note": "on penalties of opinion versus natural consequences"
+      }
+    ],
+    "curator_note": "Drafted from On Liberty ch.1 (tyranny of prevailing opinion) and ch.4 (unfavourable opinion; the duty of candid help)."
+  },
+  {
+    "id": "obedience_and_civil_authority--utilitarianism",
+    "topic_id": "obedience_and_civil_authority",
+    "tradition_id": "utilitarianism",
+    "stance": "encouraged",
+    "summary": "Law earns compliance by what it produces. A predictable legal order is among the largest goods on offer — nearly every plan a person makes rests on it — and each casual breach draws down that general security while adding a mite to everyone's uncertainty. Whoever takes the protection owes the return. The standing counsel is therefore to obey punctually and to criticize freely, since argument, election and open agitation buy reform far more cheaply than defiance does. Compliance is not unconditional: where a statute inflicts more mischief than refusing it would, or reaches conduct that injures no one, the same reckoning that recommended obedience withdraws it.",
+    "reasoning": [
+      {
+        "text": "Living under a society's protection carries a return in observed obligations; general security is the good a legal order supplies.",
+        "passage_id": "mill-liberty-4-social-return"
+      },
+      {
+        "text": "The test is the balance of consequences, never the pedigree of the command — compliance and refusal are audited alike.",
+        "passage_id": "mill-util-2-ghp"
+      },
+      {
+        "text": "A law that invades conduct harming nobody forfeits the very ground on which obedience was recommended.",
+        "passage_id": "mill-liberty-1-own-good"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-liberty-4-social-return",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "mill-util-2-ghp",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "mill-liberty-1-own-good",
+        "role": "complicating",
+        "note": "the boundary law may not cross"
+      }
+    ],
+    "intra_tradition_note": "Bentham's motto for the good citizen — obey punctually, censure freely — sits beside his account of resistance as warranted once the probable mischiefs of submission exceed those of resisting; where that line falls in a given case, and whether open disobedience with acceptance of the penalty lowers or raises the cost, is the tradition's live disagreement.",
+    "further_reading": [
+      {
+        "author": "Richard Dagger & David Lefkowitz",
+        "title": "Political Obligation",
+        "year": 2021,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/political-obligation/",
+        "note": "surveys the utilitarian accounts and their critics"
+      },
+      {
+        "author": "Jeremy Bentham",
+        "title": "A Fragment on Government",
+        "year": 1776,
+        "kind": "book",
+        "url": null,
+        "note": "the preface states the obey-punctually motto"
+      }
+    ],
+    "curator_note": "Drafted from On Liberty ch.4 (the return owed for social protection) and ch.1, with Utilitarianism ch.2 for the test; Bentham's Fragment preface consulted for the motto, quoted nowhere."
+  },
+  {
+    "id": "speech_and_gossip--utilitarianism",
+    "topic_id": "speech_and_gossip",
+    "tradition_id": "utilitarianism",
+    "stance": "context_dependent",
+    "summary": "Words are acts with effects, and the effects are the whole of the test. Being true settles nothing by itself: an accurate story passed along for entertainment can cost someone a job or a marriage, and the small pleasure of retelling is poor coin against that. The same reckoning protects a great deal of unwelcome talk — the warning to a friend about to be cheated, the exposure of a powerful wrongdoer, criticism the subject would rather bury — because silence has costs too, borne by people who never learn what they were not told. Ask who gains, who is injured, and whether the telling was needed at all.",
+    "reasoning": [
+      {
+        "text": "The same words are harmless in one setting and mischievous in another; circumstances, not the bare proposition, decide.",
+        "passage_id": "mill-liberty-3-corn-dealer"
+      },
+      {
+        "text": "Manner belongs to the act: contemptuous or stigmatising talk earns censure even when what it asserts is accurate.",
+        "passage_id": "mill-liberty-2-manner"
+      },
+      {
+        "text": "Silence carries its own price, paid by everyone who would have learned something, so any restraint on speech has to be argued for.",
+        "passage_id": "mill-liberty-2-silencing"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-liberty-3-corn-dealer",
+        "role": "core",
+        "note": "the same sentence, protected in print and punishable to a mob"
+      },
+      {
+        "passage_id": "mill-liberty-2-manner",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "mill-liberty-2-silencing",
+        "role": "complicating",
+        "note": "the cost of suppression, which gossip rules also incur"
+      }
+    ],
+    "intra_tradition_note": "The internal argument here is rules against cases: whether a standing rule about not repeating damaging private facts does better than reckoning each occasion on its merits, given how badly a teller estimates harm that falls on someone absent.",
+    "further_reading": [
+      {
+        "author": "David van Mill",
+        "title": "Freedom of Speech",
+        "year": 2021,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/freedom-speech/",
+        "note": null
+      },
+      {
+        "author": "Frederick Schauer",
+        "title": "Free Speech: A Philosophical Enquiry",
+        "year": 1982,
+        "kind": "book",
+        "url": null,
+        "note": "assesses the arguments from utility"
+      }
+    ],
+    "curator_note": "Drafted from On Liberty ch.2 (the evil of silencing; the morality of public discussion) and ch.3 (the corn-dealer example)."
   }
 ]
