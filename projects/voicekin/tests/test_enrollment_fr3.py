@@ -19,7 +19,7 @@ from voicekin.engine.enrollment import (
     leave_one_out_scores,
     voiced_seconds,
 )
-from voicekin.engine.verification import cosine_similarity
+from voicekin.engine.verification import DEFAULT_SCORE_SCALE, distance_similarity
 from voicekin.models import EnrollmentSample, SampleRejectReason, SampleStatus
 
 TS = "2026-07-31T12:00:00Z"
@@ -47,11 +47,14 @@ def _sample(index: int, *, duration=6.0, voiced=0.75, accepted=True) -> Enrollme
 # --------------------------------------------------------------------------- #
 
 
-def test_fr3_centroid_is_the_l2_normalized_mean():
+def test_fr3_centroid_is_the_plain_mean():
+    """REVIEW.md build deviation 3: scoring is calibrated distance, so the
+    centroid is the samples' true mean — L2-normalizing it would move it off
+    the center the distance scorer measures against."""
     vectors = [[3.0, 0.0], [0.0, 4.0]]
     result = centroid(vectors)
-    assert float(np.linalg.norm(result)) == pytest.approx(1.0)
-    assert result == pytest.approx(l2_normalize([1.5, 2.0]))
+    assert result == pytest.approx([1.5, 2.0])
+    assert float(np.linalg.norm(l2_normalize(result))) == pytest.approx(1.0)
 
 
 def test_fr3_centroid_needs_at_least_one_embedding():
@@ -72,7 +75,10 @@ def test_fr3_leave_one_out_scores_each_sample_against_the_others():
     vectors = [[1.0, 0.0], [1.0, 0.0], [0.0, 1.0]]
     scores = leave_one_out_scores(vectors)
     assert len(scores) == 3
-    assert scores[2] == pytest.approx(0.0, abs=1e-9)
+    # Sample 2 vs centroid([1,0],[1,0]) = [1,0]: squared distance 2.
+    assert scores[2] == pytest.approx(1.0 - 2.0 / DEFAULT_SCORE_SCALE)
+    # Sample 0 vs centroid([1,0],[0,1]) = [.5,.5]: squared distance 0.5.
+    assert scores[0] == pytest.approx(1.0 - 0.5 / DEFAULT_SCORE_SCALE)
     assert scores[0] > scores[2]
 
 
@@ -154,18 +160,36 @@ def test_fr3_rejected_samples_do_not_count_toward_completeness():
 # --------------------------------------------------------------------------- #
 
 
-def test_fr3_voice_params_track_the_enrolled_identity():
-    alice = derive_voice_params(
-        [analyze_voice(render_voice(ALICE, 7.5, seed=4100 + k)) for k in range(3)]
-    )
-    bob = derive_voice_params(
-        [analyze_voice(render_voice(BOB, 7.5, seed=4100 + k)) for k in range(3)]
-    )
+def test_fr3_voice_params_track_the_enrolled_identity(embedder, calibration):
+    """Pitch and vocal-tract scale are physically identified; the derived tilt is
+    an analysis-by-synthesis proxy (whatever source slope makes the stub's
+    *measured* tilt match the enrollment's), so the identity property asserted
+    for it is the one FR-8 needs: the render lands on its own enrollment."""
+    from voicekin.engine.synthesis import stub_render
+
+    profiles = {}
+    for name, speaker in (("alice", ALICE), ("bob", BOB)):
+        embeddings = [embedder.embed(render_voice(speaker, 7.5, seed=4100 + k)) for k in range(3)]
+        params = derive_voice_params(
+            [analyze_voice(render_voice(speaker, 7.5, seed=4100 + k)) for k in range(3)]
+        )
+        profiles[name] = (centroid(embeddings), params)
+
+    (alice_centroid, alice), (bob_centroid, bob) = profiles["alice"], profiles["bob"]
     assert alice.f0_base_hz == pytest.approx(ALICE.f0_base_hz, rel=0.10)
     assert bob.f0_base_hz == pytest.approx(BOB.f0_base_hz, rel=0.10)
     assert alice.formant_scale < bob.formant_scale
-    assert alice.tilt_db_oct > bob.tilt_db_oct
     assert alice.f0_range_hz > 0.0
+
+    text = "the house is ready and dinner is on the table now"
+    for params, own, other in ((alice, alice_centroid, bob_centroid),
+                               (bob, bob_centroid, alice_centroid)):
+        rendered = embedder.embed(
+            stub_render(text, params, sample_rate=16_000, seed=7, unit_duration_ms=180)
+        )
+        own_score = distance_similarity(rendered, own, score_scale=calibration.score_scale)
+        other_score = distance_similarity(rendered, other, score_scale=calibration.score_scale)
+        assert own_score > other_score
 
 
 def test_fr3_voice_params_are_deterministic():
@@ -186,8 +210,11 @@ def test_fr3_derived_params_stay_inside_their_committed_ranges():
     assert -24.0 <= extreme.tilt_db_oct <= 0.0
 
 
-def test_fr3_centroid_is_closer_to_its_own_speaker(embedder):
+def test_fr3_centroid_is_closer_to_its_own_speaker(embedder, calibration):
     alice = centroid([embedder.embed(render_voice(ALICE, 7.5, seed=4100 + k)) for k in range(3)])
     bob = centroid([embedder.embed(render_voice(BOB, 7.5, seed=4100 + k)) for k in range(3)])
     probe = embedder.embed(render_voice(ALICE, 5.0, seed=9001))
-    assert cosine_similarity(probe, alice) > cosine_similarity(probe, bob)
+    scale = calibration.score_scale
+    assert distance_similarity(probe, alice, score_scale=scale) > distance_similarity(
+        probe, bob, score_scale=scale
+    )

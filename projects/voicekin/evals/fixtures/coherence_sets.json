@@ -1,0 +1,416 @@
+{
+ "mixed": [
+  {
+   "foreign_class": "single_f0",
+   "foreign_role": "S01-sib-f0/probe/0",
+   "own_roles": [
+    "S01/enroll/0",
+    "S01/enroll/1"
+   ],
+   "speaker": "S01"
+  },
+  {
+   "foreign_class": "single_f0",
+   "foreign_role": "S02-sib-f0/probe/0",
+   "own_roles": [
+    "S02/enroll/0",
+    "S02/enroll/1"
+   ],
+   "speaker": "S02"
+  },
+  {
+   "foreign_class": "joint",
+   "foreign_role": "S03-sib-joint/probe/0",
+   "own_roles": [
+    "S03/enroll/0",
+    "S03/enroll/1"
+   ],
+   "speaker": "S03"
+  },
+  {
+   "foreign_class": "joint",
+   "foreign_role": "S04-sib-joint/probe/0",
+   "own_roles": [
+    "S04/enroll/0",
+    "S04/enroll/1"
+   ],
+   "speaker": "S04"
+  },
+  {
+   "foreign_class": "single_vtl",
+   "foreign_role": "S05-sib-vtl/probe/0",
+   "own_roles": [
+    "S05/enroll/0",
+    "S05/enroll/1"
+   ],
+   "speaker": "S05"
+  },
+  {
+   "foreign_class": "single_vtl",
+   "foreign_role": "S06-sib-vtl/probe/0",
+   "own_roles": [
+    "S06/enroll/0",
+    "S06/enroll/1"
+   ],
+   "speaker": "S06"
+  },
+  {
+   "foreign_class": "joint",
+   "foreign_role": "S07-sib-joint/probe/0",
+   "own_roles": [
+    "S07/enroll/0",
+    "S07/enroll/1"
+   ],
+   "speaker": "S07"
+  },
+  {
+   "foreign_class": "joint",
+   "foreign_role": "S08-sib-joint/probe/0",
+   "own_roles": [
+    "S08/enroll/0",
+    "S08/enroll/1"
+   ],
+   "speaker": "S08"
+  },
+  {
+   "foreign_class": "single_tilt",
+   "foreign_role": "S09-sib-tilt/probe/0",
+   "own_roles": [
+    "S09/enroll/0",
+    "S09/enroll/1"
+   ],
+   "speaker": "S09"
+  },
+  {
+   "foreign_class": "single_tilt",
+   "foreign_role": "S10-sib-tilt/probe/0",
+   "own_roles": [
+    "S10/enroll/0",
+    "S10/enroll/1"
+   ],
+   "speaker": "S10"
+  },
+  {
+   "foreign_class": "joint",
+   "foreign_role": "S11-sib-joint/probe/0",
+   "own_roles": [
+    "S11/enroll/0",
+    "S11/enroll/1"
+   ],
+   "speaker": "S11"
+  },
+  {
+   "foreign_class": "joint",
+   "foreign_role": "S12-sib-joint/probe/0",
+   "own_roles": [
+    "S12/enroll/0",
+    "S12/enroll/1"
+   ],
+   "speaker": "S12"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S20/enroll/0",
+   "own_roles": [
+    "S13/enroll/0",
+    "S13/enroll/1"
+   ],
+   "speaker": "S13"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S03/enroll/0",
+   "own_roles": [
+    "S14/enroll/0",
+    "S14/enroll/1"
+   ],
+   "speaker": "S14"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S24/enroll/0",
+   "own_roles": [
+    "S15/enroll/0",
+    "S15/enroll/1"
+   ],
+   "speaker": "S15"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S14/enroll/0",
+   "own_roles": [
+    "S16/enroll/0",
+    "S16/enroll/1"
+   ],
+   "speaker": "S16"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S24/enroll/0",
+   "own_roles": [
+    "S17/enroll/0",
+    "S17/enroll/1"
+   ],
+   "speaker": "S17"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S03/enroll/0",
+   "own_roles": [
+    "S18/enroll/0",
+    "S18/enroll/1"
+   ],
+   "speaker": "S18"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S12/enroll/0",
+   "own_roles": [
+    "S19/enroll/0",
+    "S19/enroll/1"
+   ],
+   "speaker": "S19"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S16/enroll/0",
+   "own_roles": [
+    "S20/enroll/0",
+    "S20/enroll/1"
+   ],
+   "speaker": "S20"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S06/enroll/0",
+   "own_roles": [
+    "S21/enroll/0",
+    "S21/enroll/1"
+   ],
+   "speaker": "S21"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S16/enroll/0",
+   "own_roles": [
+    "S22/enroll/0",
+    "S22/enroll/1"
+   ],
+   "speaker": "S22"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S02/enroll/0",
+   "own_roles": [
+    "S23/enroll/0",
+    "S23/enroll/1"
+   ],
+   "speaker": "S23"
+  },
+  {
+   "foreign_class": "unrelated",
+   "foreign_role": "S11/enroll/0",
+   "own_roles": [
+    "S24/enroll/0",
+    "S24/enroll/1"
+   ],
+   "speaker": "S24"
+  }
+ ],
+ "pure": [
+  {
+   "roles": [
+    "S01/enroll/0",
+    "S01/enroll/1",
+    "S01/enroll/2"
+   ],
+   "speaker": "S01"
+  },
+  {
+   "roles": [
+    "S02/enroll/0",
+    "S02/enroll/1",
+    "S02/enroll/2"
+   ],
+   "speaker": "S02"
+  },
+  {
+   "roles": [
+    "S03/enroll/0",
+    "S03/enroll/1",
+    "S03/enroll/2"
+   ],
+   "speaker": "S03"
+  },
+  {
+   "roles": [
+    "S04/enroll/0",
+    "S04/enroll/1",
+    "S04/enroll/2"
+   ],
+   "speaker": "S04"
+  },
+  {
+   "roles": [
+    "S05/enroll/0",
+    "S05/enroll/1",
+    "S05/enroll/2"
+   ],
+   "speaker": "S05"
+  },
+  {
+   "roles": [
+    "S06/enroll/0",
+    "S06/enroll/1",
+    "S06/enroll/2"
+   ],
+   "speaker": "S06"
+  },
+  {
+   "roles": [
+    "S07/enroll/0",
+    "S07/enroll/1",
+    "S07/enroll/2"
+   ],
+   "speaker": "S07"
+  },
+  {
+   "roles": [
+    "S08/enroll/0",
+    "S08/enroll/1",
+    "S08/enroll/2"
+   ],
+   "speaker": "S08"
+  },
+  {
+   "roles": [
+    "S09/enroll/0",
+    "S09/enroll/1",
+    "S09/enroll/2"
+   ],
+   "speaker": "S09"
+  },
+  {
+   "roles": [
+    "S10/enroll/0",
+    "S10/enroll/1",
+    "S10/enroll/2"
+   ],
+   "speaker": "S10"
+  },
+  {
+   "roles": [
+    "S11/enroll/0",
+    "S11/enroll/1",
+    "S11/enroll/2"
+   ],
+   "speaker": "S11"
+  },
+  {
+   "roles": [
+    "S12/enroll/0",
+    "S12/enroll/1",
+    "S12/enroll/2"
+   ],
+   "speaker": "S12"
+  },
+  {
+   "roles": [
+    "S13/enroll/0",
+    "S13/enroll/1",
+    "S13/enroll/2"
+   ],
+   "speaker": "S13"
+  },
+  {
+   "roles": [
+    "S14/enroll/0",
+    "S14/enroll/1",
+    "S14/enroll/2"
+   ],
+   "speaker": "S14"
+  },
+  {
+   "roles": [
+    "S15/enroll/0",
+    "S15/enroll/1",
+    "S15/enroll/2"
+   ],
+   "speaker": "S15"
+  },
+  {
+   "roles": [
+    "S16/enroll/0",
+    "S16/enroll/1",
+    "S16/enroll/2"
+   ],
+   "speaker": "S16"
+  },
+  {
+   "roles": [
+    "S17/enroll/0",
+    "S17/enroll/1",
+    "S17/enroll/2"
+   ],
+   "speaker": "S17"
+  },
+  {
+   "roles": [
+    "S18/enroll/0",
+    "S18/enroll/1",
+    "S18/enroll/2"
+   ],
+   "speaker": "S18"
+  },
+  {
+   "roles": [
+    "S19/enroll/0",
+    "S19/enroll/1",
+    "S19/enroll/2"
+   ],
+   "speaker": "S19"
+  },
+  {
+   "roles": [
+    "S20/enroll/0",
+    "S20/enroll/1",
+    "S20/enroll/2"
+   ],
+   "speaker": "S20"
+  },
+  {
+   "roles": [
+    "S21/enroll/0",
+    "S21/enroll/1",
+    "S21/enroll/2"
+   ],
+   "speaker": "S21"
+  },
+  {
+   "roles": [
+    "S22/enroll/0",
+    "S22/enroll/1",
+    "S22/enroll/2"
+   ],
+   "speaker": "S22"
+  },
+  {
+   "roles": [
+    "S23/enroll/0",
+    "S23/enroll/1",
+    "S23/enroll/2"
+   ],
+   "speaker": "S23"
+  },
+  {
+   "roles": [
+    "S24/enroll/0",
+    "S24/enroll/1",
+    "S24/enroll/2"
+   ],
+   "speaker": "S24"
+  }
+ ],
+ "seed": 20260732,
+ "source": "labels.json via build_derived.py"
+}

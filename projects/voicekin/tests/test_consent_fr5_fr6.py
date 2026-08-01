@@ -204,9 +204,11 @@ def test_fr5_replayed_enrollment_audio_is_rejected():
 
 
 def test_fr5_speaker_mismatch_records_the_score_it_computed():
-    decision = _decide(embed_probe=lambda: [0.0, 1.0] + [0.0] * 14)
+    # Probe [0, 12, ...] vs centroid [1, 0, ...]: squared distance 145, so the
+    # shipped scoring rule gives 1 - 145/1024 ~ 0.858 < the 0.9 threshold.
+    decision = _decide(embed_probe=lambda: [0.0, 12.0] + [0.0] * 14)
     assert decision.reject_reason is ConsentRejectReason.SPEAKER_MISMATCH
-    assert decision.similarity == pytest.approx(0.0)
+    assert decision.similarity == pytest.approx(1.0 - 145.0 / 1024.0)
     assert decision.threshold == 0.9
 
 

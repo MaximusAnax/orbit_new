@@ -267,8 +267,28 @@ def test_d0_search_is_deterministic_per_position_fr2() -> None:
 
 
 def test_d0_offline_path_never_imports_a_live_adapter_fr16() -> None:
-    """The eval runtime path must not pull in Stockfish or the Lichess explorer."""
-    import sys
+    """The eval runtime path must not pull in Stockfish or the Lichess explorer.
 
-    assert "chessmentor.adapters.analyst_stockfish" not in sys.modules
-    assert "chessmentor.adapters.book_lichess" not in sys.modules
+    Checked in a subprocess so the verdict is about the eval modules' import
+    graph, not about whatever else this pytest process imported (the adapter
+    unit tests import the live modules on purpose).
+    """
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    project_root = Path(__file__).resolve().parents[1]
+    script = (
+        "import sys;"
+        f"sys.path.insert(0, {str(project_root)!r});"
+        "import evals.metrics, evals.harness, evals.baselines;"
+        "loaded = set(sys.modules);"
+        "assert 'chessmentor.adapters.analyst_stockfish' not in loaded, 'stockfish imported';"
+        "assert 'chessmentor.adapters.book_lichess' not in loaded, 'lichess imported';"
+        "print('ok')"
+    )
+    result = subprocess.run(
+        [sys.executable, "-c", script], capture_output=True, text=True, check=False
+    )
+    assert result.returncode == 0, result.stderr
+    assert "ok" in result.stdout

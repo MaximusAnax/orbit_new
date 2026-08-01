@@ -1,7 +1,7 @@
 {
   "embedder_id": "spectral-v1",
-  "theta_verify": 0.797849,
-  "theta_enroll": 0.596778,
+  "theta_verify": 0.800034,
+  "theta_enroll": 0.544407,
   "score_scale": 1024.0,
   "feature_norms": [
     {
@@ -17,12 +17,12 @@
       "scale": 0.024231
     },
     {
-      "mean": 474.297444,
-      "scale": 2.29326
+      "mean": 476.302344,
+      "scale": 2.29174
     },
     {
-      "mean": 1179.535451,
-      "scale": 14.973073
+      "mean": 1353.436495,
+      "scale": 12.56585
     },
     {
       "mean": -13.910762,
@@ -83,5 +83,5 @@
   },
   "unit_duration_ms": 180,
   "consent_grace_days": 30,
-  "provenance": "evals/fixtures/calibrate.py, corpus seed 20260731, dev split = the 12 dev speakers of evals/fixtures/labels.json (D01-D12, disjoint from every eval speaker) plus their siblings. Scoring: s = 1 - d^2/1024 (REVIEW.md deviation 3). feature_norms: mean = dev enrollment population mean; scale = robust within sd (sqrt((max_speaker^2+pooled^2)/2) over dev clean takes) / sqrt(clip(F-1, 0.05, 16.0)). theta_verify = dev impostor max 0.640471 (over 216 comparisons) + 0.6 * gap to dev clean genuine consent min 0.902768 (over 12); margin 0.262297. theta_enroll = dev pure-set LOO min 0.610630 - 0.1 * gap to dev mixed-set LOO max 0.472103 (over 12 mixed sets); margin 0.138527."
+  "provenance": "evals/fixtures/calibrate.py, corpus seed 20260731, dev split = the 12 dev speakers of evals/fixtures/labels.json (D01-D12, disjoint from every eval speaker) plus their siblings. Scoring: s = 1 - d^2/1024 (REVIEW.md deviation 3). feature_norms: mean = dev enrollment population mean; scale = robust within sd (sqrt((max_speaker^2+pooled^2)/2) over dev clean takes) / sqrt(clip(F-1, 0.05, 16.0)). theta_verify = dev impostor max 0.643883 (over 216 comparisons) + 0.6 * gap to dev clean genuine consent min 0.904135 (over 12); margin 0.260252. theta_enroll = dev pure-set LOO min 0.552971 - 0.1 * gap to dev mixed-set LOO max 0.467333 (over 12 mixed sets); margin 0.085638."
 }

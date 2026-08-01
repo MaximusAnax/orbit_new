@@ -40,7 +40,7 @@ from voicekin.engine.dsp import (
     spectral_tilt,
 )
 from voicekin.engine.enrollment import centroid
-from voicekin.engine.verification import cosine_similarity
+from voicekin.engine.verification import distance_similarity
 from voicekin.models import EMBEDDING_DIM, Calibration, FeatureNorm
 
 
@@ -230,7 +230,9 @@ def test_fr4_embedding_is_sixteen_dimensional_and_deterministic(embedder):
     first = embedder.embed(clip)
     assert len(first) == EMBEDDING_DIM
     assert first == embedder.embed(clip)
-    assert float(np.linalg.norm(first)) == pytest.approx(1.0)
+    # The embedding is the whitened feature vector itself (REVIEW.md build
+    # deviation 3): finite in every dimension, deliberately not unit-norm.
+    assert np.all(np.isfinite(first))
 
 
 def test_fr4_embedder_refuses_foreign_calibration_constants(calibration):
@@ -239,11 +241,15 @@ def test_fr4_embedder_refuses_foreign_calibration_constants(calibration):
         SpectralStatsEmbedder(foreign)
 
 
+def _score(embedding, reference, calibration) -> float:
+    return distance_similarity(embedding, reference, score_scale=calibration.score_scale)
+
+
 def test_fr4_same_speaker_scores_above_different_speakers(embedder, calibration):
     alice = centroid([embedder.embed(render_voice(ALICE, 7.5, seed=4100 + k)) for k in range(3)])
-    genuine = cosine_similarity(embedder.embed(render_voice(ALICE, 9.0, seed=7700)), alice)
+    genuine = _score(embedder.embed(render_voice(ALICE, 9.0, seed=7700)), alice, calibration)
     for impostor in (BOB, CARLA):
-        score = cosine_similarity(embedder.embed(render_voice(impostor, 9.0, seed=7700)), alice)
+        score = _score(embedder.embed(render_voice(impostor, 9.0, seed=7700)), alice, calibration)
         assert score < genuine
         assert score < calibration.theta_verify
     assert genuine >= calibration.theta_verify
@@ -259,14 +265,14 @@ def test_fr4_single_axis_siblings_are_rejected_no_family_is_dead(
     """EVALS M1b in miniature: an embedder blind to one axis fails exactly here."""
     alice = centroid([embedder.embed(render_voice(ALICE, 7.5, seed=4100 + k)) for k in range(3)])
     sibling = ALICE.shifted(**shift)
-    score = cosine_similarity(embedder.embed(render_voice(sibling, 9.0, seed=7710)), alice)
+    score = _score(embedder.embed(render_voice(sibling, 9.0, seed=7710)), alice, calibration)
     assert score < calibration.theta_verify, f"{axis} sibling accepted at {score}"
 
 
 def test_fr4_pitch_mimic_is_rejected(embedder, calibration):
     """A housemate can imitate pitch; the tract and source give them away."""
     alice = centroid([embedder.embed(render_voice(ALICE, 7.5, seed=4100 + k)) for k in range(3)])
-    score = cosine_similarity(embedder.embed(render_voice(MIMIC, 9.0, seed=7705)), alice)
+    score = _score(embedder.embed(render_voice(MIMIC, 9.0, seed=7705)), alice, calibration)
     assert score < calibration.theta_verify
 
 

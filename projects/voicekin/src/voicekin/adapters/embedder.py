@@ -7,7 +7,8 @@ from typing import Protocol, runtime_checkable
 from voicekin.engine.audio import AudioClip
 
 Embedding = list[float]
-"""A speaker embedding. Scored by cosine similarity, so scale is irrelevant."""
+"""A speaker embedding, scored by the calibrated distance similarity in
+:mod:`voicekin.engine.verification` (REVIEW.md build deviation 3)."""
 
 
 class MissingOptionalDependency(RuntimeError):

@@ -8,9 +8,13 @@ which is what makes FR-15's replay determinism unconditional.
 from __future__ import annotations
 
 import re
+from typing import TYPE_CHECKING
 
 from voicekin.engine.audio import AudioClip, encode_wav, payload_sha256
 from voicekin.engine.voicebox import Unit
+
+if TYPE_CHECKING:  # pragma: no cover - typing only
+    from voicekin.engine.voicebox import VoiceboxParams
 
 MAX_TEXT_CHARS = 500
 
@@ -254,7 +258,7 @@ utterance stops embedding near its own enrollment (EVALS M3). The dither is draw
 from the same seed as the synthesis, so byte determinism is untouched."""
 
 
-def stub_voicebox_params(voice_params: "VoiceParamsLike") -> "VoiceboxParams":
+def stub_voicebox_params(voice_params: VoiceParamsLike) -> VoiceboxParams:
     """Map the four stored voice parameters onto the synthesis core (FR-8)."""
     from voicekin.engine.voicebox import VoiceboxParams
 
@@ -282,7 +286,7 @@ def _stub_dither(samples, seed: int):
 
 def stub_render(
     text: str,
-    voice_params: "VoiceParamsLike",
+    voice_params: VoiceParamsLike,
     *,
     sample_rate: int,
     seed: int,

@@ -47,17 +47,24 @@ def test_fr7b_acpl_mean_is_strictly_decreasing(levels) -> None:
 
 
 def test_fr4_ladder_knobs_are_monotone_in_difficulty(levels) -> None:
-    """M9's premise: the throttle knobs really are wired and ordered."""
+    """M9's premise: the throttle knobs really are wired and ordered.
+
+    Every rung keeps ``noise_sigma_cp > 0`` and ``blunder_prob > 0``: the FR-5
+    calibration landed the whole [100, 170]-gap ladder inside the throttled
+    region of the knob space (a clean sigma=0/p=0 top rung would add a final
+    gap far above 170 — docs/REVIEW.md B5), so US-3's human-plausible-error
+    machinery is active at every level and M9's checks (a) and (c) apply to
+    all ten rungs.
+    """
     for prev, nxt in pairwise(levels):
         assert nxt.node_budget > prev.node_budget
         assert nxt.max_depth >= prev.max_depth
         assert nxt.noise_sigma_cp <= prev.noise_sigma_cp
         assert nxt.blunder_prob <= prev.blunder_prob
         assert nxt.book_plies >= prev.book_plies
-    assert levels[0].noise_sigma_cp > 0
-    assert levels[0].blunder_prob > 0
-    assert levels[-1].noise_sigma_cp == 0
-    assert levels[-1].blunder_prob == 0
+    for level in levels:
+        assert level.noise_sigma_cp > 0
+        assert level.blunder_prob > 0
 
 
 def test_ladder_ids_are_contiguous(levels) -> None:

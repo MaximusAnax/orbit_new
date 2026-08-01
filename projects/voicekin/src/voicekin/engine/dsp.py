@@ -32,8 +32,16 @@ F2_BAND_HZ = (600.0, 3400.0)
 MIN_FORMANT_SEPARATION_HZ = 120.0
 FORMANT_MIN_HZ = 120.0
 FORMANT_MAX_HZ = 4200.0
-MAX_FORMANT_BANDWIDTH_HZ = 700.0
-"""Poles broader than this are not formants — the standard resonance criterion."""
+MAX_FORMANT_BANDWIDTH_HZ = 400.0
+"""Poles broader than this are not formants — the standard resonance criterion.
+
+400 Hz is the classical tracker cutoff (Markel & Gray 1976-era practice; real
+F1-F3 bandwidths run 40-250 Hz and LPC estimates inflate them somewhat). The cap
+matters because order-12 LPC routinely spends a *broad* pole pair between two
+sharp formants — e.g. a 630 Hz-bandwidth pole midway between a 520 Hz F1 and a
+1500 Hz F2 — and a generous cap lets that filler pole win the per-band "lowest
+qualifying pole" selection, dragging the F2 statistic to the valley between the
+formants instead of the formant itself."""
 
 #: Spectral-tilt regression band (Hz). Both edges are chosen against known
 #: contaminants, measured on the dev fixtures. Above ~1.6 kHz a realistic

@@ -21,7 +21,6 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-
 from voicekin.engine import audio as audio_engine
 from voicekin.engine import dsp as dsp_engine
 from voicekin.engine.audio import AudioClip, normalize_intake
