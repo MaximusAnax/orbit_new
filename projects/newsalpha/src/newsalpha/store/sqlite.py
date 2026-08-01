@@ -8,6 +8,13 @@ event per (cluster_id, event_type).
 
 JSON columns hold canonical (sorted-keys, compact) serializations so byte
 identity is well defined.  Single-user, single-process (SCOPE D-17).
+
+Thread-safety: FastAPI runs sync endpoints in a threadpool, so the one
+connection built at startup is used from many threads.  ``check_same_thread``
+is disabled (CPython's ``sqlite3.threadsafety == 3`` -- the C level is
+serialized) and an ``RLock`` is held across every write batch and every
+read-modify-write composite, so transactions cannot interleave and one
+thread's commit or rollback can never capture another's uncommitted rows.
 """
 
 from __future__ import annotations
@@ -15,6 +22,7 @@ from __future__ import annotations
 import json
 import os
 import sqlite3
+import threading
 from pathlib import Path
 from typing import Any
 
@@ -212,15 +220,20 @@ class SQLiteRepository:
         self.path = Path(path) if path is not None and str(path) != ":memory:" else path
         if isinstance(self.path, Path):
             self.path.parent.mkdir(parents=True, exist_ok=True)
-        self._connection = sqlite3.connect(str(self.path) if self.path is not None else ":memory:")
+        self._connection = sqlite3.connect(
+            str(self.path) if self.path is not None else ":memory:",
+            check_same_thread=False,  # threadpool handlers share it; see module docstring
+        )
         self._connection.row_factory = sqlite3.Row
         self._connection.execute("PRAGMA foreign_keys = ON")
+        self._lock = threading.RLock()  # serializes write batches across threads
 
     # -- schema ------------------------------------------------------------ #
 
     def initialize(self) -> None:
-        self._connection.executescript(SCHEMA)
-        self._connection.commit()
+        with self._lock:
+            self._connection.executescript(SCHEMA)
+            self._connection.commit()
 
     def reset(self) -> None:
         tables = [
@@ -238,10 +251,11 @@ class SQLiteRepository:
             "article",
             "asset",
         ]
-        self.initialize()
-        for table in tables:
-            self._connection.execute(f"DELETE FROM {table}")
-        self._connection.commit()
+        with self._lock:
+            self.initialize()
+            for table in tables:
+                self._connection.execute(f"DELETE FROM {table}")
+            self._connection.commit()
 
     def close(self) -> None:
         self._connection.close()
@@ -249,7 +263,7 @@ class SQLiteRepository:
     # -- assets & watchlist ------------------------------------------------ #
 
     def replace_assets(self, assets: list[Asset]) -> int:
-        with self._connection:
+        with self._lock, self._connection:
             self._connection.execute("DELETE FROM asset")
             # Indexes first so equity/crypto benchmark_id foreign keys resolve.
             ordered = sorted(assets, key=lambda a: (a.kind.value != "index", a.id))
@@ -298,7 +312,7 @@ class SQLiteRepository:
 
     def add_watchlist(self, item: WatchlistItem) -> bool:
         try:
-            with self._connection:
+            with self._lock, self._connection:
                 cursor = self._connection.execute(
                     "INSERT OR IGNORE INTO watchlist_item (asset_id, added_at) VALUES (?,?)",
                     (item.asset_id, item.added_at),
@@ -308,7 +322,7 @@ class SQLiteRepository:
         return cursor.rowcount > 0
 
     def remove_watchlist(self, asset_id: str) -> bool:
-        with self._connection:
+        with self._lock, self._connection:
             cursor = self._connection.execute(
                 "DELETE FROM watchlist_item WHERE asset_id = ?", (asset_id,)
             )
@@ -324,7 +338,7 @@ class SQLiteRepository:
 
     def add_articles(self, articles: list[Article]) -> int:
         added = 0
-        with self._connection:
+        with self._lock, self._connection:
             for article in articles:
                 cursor = self._connection.execute(
                     "INSERT OR IGNORE INTO article (id, external_id, url, source_domain, tier, "
@@ -386,7 +400,7 @@ class SQLiteRepository:
         events: list[Event],
         links: list[EventLink],
     ) -> None:
-        with self._connection:
+        with self._lock, self._connection:
             self._connection.execute("DELETE FROM event_link")
             self._connection.execute("DELETE FROM event")
             self._connection.execute("DELETE FROM cluster_member")
@@ -513,7 +527,7 @@ class SQLiteRepository:
     def add_signals(self, signals: list[Signal]) -> int:
         added = 0
         try:
-            with self._connection:
+            with self._lock, self._connection:
                 for signal in signals:
                     if self._connection.execute(
                         "SELECT 1 FROM signal WHERE id = ?", (signal.id,)
@@ -595,7 +609,7 @@ class SQLiteRepository:
 
     def add_aliases(self, aliases: list[SignalKeyAlias]) -> int:
         added = 0
-        with self._connection:
+        with self._lock, self._connection:
             for alias in aliases:
                 cursor = self._connection.execute(
                     "INSERT OR IGNORE INTO signal_key_alias (from_key, to_key, created_as_of) "
@@ -620,7 +634,7 @@ class SQLiteRepository:
     def add_briefs(self, briefs: list[Brief]) -> int:
         added = 0
         try:
-            with self._connection:
+            with self._lock, self._connection:
                 for brief in briefs:
                     if self._connection.execute(
                         "SELECT 1 FROM brief WHERE signal_id = ?", (brief.signal_id,)
@@ -666,7 +680,7 @@ class SQLiteRepository:
 
     def add_price_bars(self, bars: list[PriceBar]) -> int:
         added = 0
-        with self._connection:
+        with self._lock, self._connection:
             for bar in bars:
                 row = self._connection.execute(
                     "SELECT * FROM price_bar WHERE asset_id = ? AND date = ?",
@@ -733,7 +747,7 @@ class SQLiteRepository:
     # -- backtests --------------------------------------------------------- #
 
     def add_backtest(self, run: BacktestRun, results: list[BacktestResult]) -> None:
-        with self._connection:
+        with self._lock, self._connection:
             self._connection.execute(
                 "INSERT OR REPLACE INTO backtest_run (id, params, as_of, aggregates, per_type) "
                 "VALUES (?,?,?,?,?)",

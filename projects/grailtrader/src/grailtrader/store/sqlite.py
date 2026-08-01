@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import os
 import sqlite3
+import threading
 from collections.abc import Iterable, Sequence
 from pathlib import Path
 from typing import Any
@@ -207,26 +208,38 @@ def default_db_path() -> Path:
 
 
 class SQLiteRepository:
-    """The default backend: one local SQLite file, single writer (SCOPE D-17)."""
+    """The default backend: one local SQLite file, single writer (SCOPE D-17).
+
+    Thread-safety: FastAPI runs the sync API handlers (and the ``get_service``
+    dependency) on anyio threadpool worker threads, so this one long-lived
+    connection is used from many threads.  ``check_same_thread`` is therefore
+    disabled — safe because CPython's ``sqlite3.threadsafety == 3`` (the C level
+    is serialized) — and every method holds a re-entrant lock for its whole
+    body, so one thread's write batch (``with self._conn:``) can never
+    interleave with, commit, or roll back another thread's, and a read never
+    observes an uncommitted batch on the shared connection.
+    """
 
     def __init__(self, path: str | os.PathLike[str] | None = None) -> None:
         self.path = Path(path) if path is not None else default_db_path()
         if str(self.path) != ":memory:":
             self.path.parent.mkdir(parents=True, exist_ok=True)
-        self._conn = sqlite3.connect(str(self.path))
+        self._conn = sqlite3.connect(str(self.path), check_same_thread=False)
         self._conn.row_factory = sqlite3.Row
         self._conn.execute("PRAGMA foreign_keys = ON")
+        self._lock = threading.RLock()
 
     # -- lifecycle ----------------------------------------------------------- #
 
     def initialize(self, *, reset: bool = False) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             if reset:
                 self._conn.executescript(_DROP)
             self._conn.executescript(SCHEMA)
 
     def close(self) -> None:
-        self._conn.close()
+        with self._lock:
+            self._conn.close()
 
     def __enter__(self) -> SQLiteRepository:
         return self
@@ -237,7 +250,7 @@ class SQLiteRepository:
     # -- gazetteer ----------------------------------------------------------- #
 
     def replace_gazetteer(self, brands: Sequence[Brand]) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute("DELETE FROM designer_era")
             self._conn.execute("DELETE FROM brand")
             for brand in brands:
@@ -263,12 +276,14 @@ class SQLiteRepository:
                     )
 
     def list_brands(self) -> list[Brand]:
-        rows = self._conn.execute("SELECT * FROM brand ORDER BY id").fetchall()
-        return [self._brand_from_row(row) for row in rows]
+        with self._lock:
+            rows = self._conn.execute("SELECT * FROM brand ORDER BY id").fetchall()
+            return [self._brand_from_row(row) for row in rows]
 
     def get_brand(self, brand_id: str) -> Brand | None:
-        row = self._conn.execute("SELECT * FROM brand WHERE id = ?", (brand_id,)).fetchone()
-        return None if row is None else self._brand_from_row(row)
+        with self._lock:
+            row = self._conn.execute("SELECT * FROM brand WHERE id = ?", (brand_id,)).fetchone()
+            return None if row is None else self._brand_from_row(row)
 
     def _brand_from_row(self, row: sqlite3.Row) -> Brand:
         eras = self._conn.execute(
@@ -297,7 +312,7 @@ class SQLiteRepository:
 
     def add_listings(self, listings: Iterable[Listing]) -> int:
         added = 0
-        with self._conn:
+        with self._lock, self._conn:
             for listing in listings:
                 cursor = self._conn.execute(
                     "INSERT OR IGNORE INTO listing (id, source, external_id, brand_id, era_id,"
@@ -327,10 +342,14 @@ class SQLiteRepository:
         return added
 
     def listing_ids(self) -> set[str]:
-        return {row["id"] for row in self._conn.execute("SELECT id FROM listing")}
+        with self._lock:
+            return {row["id"] for row in self._conn.execute("SELECT id FROM listing")}
 
     def get_listing(self, listing_id: str) -> Listing | None:
-        row = self._conn.execute("SELECT * FROM listing WHERE id = ?", (listing_id,)).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT * FROM listing WHERE id = ?", (listing_id,)
+            ).fetchone()
         return None if row is None else _listing(row)
 
     def list_listings(
@@ -349,7 +368,8 @@ class SQLiteRepository:
         if clauses:
             sql += " WHERE " + " AND ".join(clauses)
         sql += " ORDER BY COALESCE(sold_at, listed_at), id"
-        rows = [_listing(row) for row in self._conn.execute(sql, params)]
+        with self._lock:
+            rows = [_listing(row) for row in self._conn.execute(sql, params)]
         if stratum is not None:
             rows = [row for row in rows if row.stratum_path.startswith(stratum)]
         return rows[:limit] if limit is not None else rows
@@ -357,7 +377,7 @@ class SQLiteRepository:
     # -- index --------------------------------------------------------------- #
 
     def replace_index_points(self, points: Iterable[IndexPoint]) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute("DELETE FROM index_point")
             self._conn.executemany(
                 "INSERT INTO index_point (stratum_id, week, level_usd, index_value, n_sales,"
@@ -398,6 +418,8 @@ class SQLiteRepository:
         if clauses:
             sql += " WHERE " + " AND ".join(clauses)
         sql += " ORDER BY stratum_id, week"
+        with self._lock:
+            rows = self._conn.execute(sql, params).fetchall()
         return [
             IndexPoint(
                 stratum_id=row["stratum_id"],
@@ -408,13 +430,13 @@ class SQLiteRepository:
                 n_excluded=row["n_excluded"],
                 built_as_of=row["built_as_of"],
             )
-            for row in self._conn.execute(sql, params)
+            for row in rows
         ]
 
     # -- events -------------------------------------------------------------- #
 
     def upsert_events(self, events: Iterable[FashionEvent]) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             for event in events:
                 self._conn.execute(
                     "INSERT INTO fashion_event (id, event_type, brand_id, era_id, attributes,"
@@ -439,7 +461,10 @@ class SQLiteRepository:
                 )
 
     def get_event(self, event_id: str) -> FashionEvent | None:
-        row = self._conn.execute("SELECT * FROM fashion_event WHERE id = ?", (event_id,)).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT * FROM fashion_event WHERE id = ?", (event_id,)
+            ).fetchone()
         return None if row is None else _event(row)
 
     def list_events(
@@ -468,13 +493,14 @@ class SQLiteRepository:
         if clauses:
             sql += " WHERE " + " AND ".join(clauses)
         sql += " ORDER BY occurred_on, id"
-        return [_event(row) for row in self._conn.execute(sql, params)]
+        with self._lock:
+            return [_event(row) for row in self._conn.execute(sql, params)]
 
     # -- garments ------------------------------------------------------------ #
 
     def add_garment(self, garment: Garment) -> None:
         try:
-            with self._conn:
+            with self._lock, self._conn:
                 self._conn.execute(
                     "INSERT INTO garment (id, label, brand_id, era_id, category, condition,"
                     " anchor_condition, size, status, acquisition_price, acquired_on,"
@@ -486,7 +512,7 @@ class SQLiteRepository:
             raise RepositoryError(f"garment {garment.id}: {exc}") from None
 
     def update_garment(self, garment: Garment) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             cursor = self._conn.execute(
                 "UPDATE garment SET label = ?, condition = ?, size = ?, status = ?,"
                 " acquisition_price = ?, acquired_on = ?, reference_price = ?,"
@@ -512,7 +538,10 @@ class SQLiteRepository:
             raise RepositoryError(f"unknown garment {garment.id}")
 
     def get_garment(self, garment_id: str) -> Garment | None:
-        row = self._conn.execute("SELECT * FROM garment WHERE id = ?", (garment_id,)).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT * FROM garment WHERE id = ?", (garment_id,)
+            ).fetchone()
         return None if row is None else _garment(row)
 
     def list_garments(
@@ -529,14 +558,15 @@ class SQLiteRepository:
         if clauses:
             sql += " WHERE " + " AND ".join(clauses)
         sql += " ORDER BY added_at, id"
-        return [_garment(row) for row in self._conn.execute(sql, params)]
+        with self._lock:
+            return [_garment(row) for row in self._conn.execute(sql, params)]
 
     # -- advice --------------------------------------------------------------- #
 
     def add_advice(self, advice: Advice) -> bool:
         if not advice.frame_checked:
             raise RepositoryError("FR-9: a non-frame-checked advice cannot be stored")
-        with self._conn:
+        with self._lock, self._conn:
             cursor = self._conn.execute(
                 "INSERT OR IGNORE INTO advice (id, garment_id, as_of_week, inputs_hash,"
                 " config_version, stratum_id, action, is_candidate, horizon_weeks,"
@@ -566,7 +596,8 @@ class SQLiteRepository:
         return cursor.rowcount > 0
 
     def get_advice(self, advice_id: str) -> Advice | None:
-        row = self._conn.execute("SELECT * FROM advice WHERE id = ?", (advice_id,)).fetchone()
+        with self._lock:
+            row = self._conn.execute("SELECT * FROM advice WHERE id = ?", (advice_id,)).fetchone()
         return None if row is None else _advice(row)
 
     def list_advice(
@@ -589,7 +620,8 @@ class SQLiteRepository:
         if clauses:
             sql += " WHERE " + " AND ".join(clauses)
         sql += " ORDER BY as_of_week, garment_id, created_as_of"
-        rows = [_advice(row) for row in self._conn.execute(sql, params)]
+        with self._lock:
+            rows = [_advice(row) for row in self._conn.execute(sql, params)]
         if not history:
             rows = current_advice(rows)
         if action is not None:
@@ -600,7 +632,7 @@ class SQLiteRepository:
 
     def add_backtest(self, run: BacktestRun, results: Iterable[BacktestResult]) -> None:
         try:
-            with self._conn:
+            with self._lock, self._conn:
                 self._conn.execute(
                     "INSERT INTO backtest_run (id, params, as_of, aggregates) VALUES (?,?,?,?)",
                     (
@@ -638,20 +670,25 @@ class SQLiteRepository:
             raise RepositoryError(f"backtest run {run.id}: {exc}") from None
 
     def get_backtest_run(self, run_id: str) -> BacktestRun | None:
-        row = self._conn.execute("SELECT * FROM backtest_run WHERE id = ?", (run_id,)).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT * FROM backtest_run WHERE id = ?", (run_id,)
+            ).fetchone()
         return None if row is None else _run(row)
 
     def list_backtest_runs(self, *, limit: int | None = None) -> list[BacktestRun]:
         sql = "SELECT * FROM backtest_run ORDER BY as_of DESC, id DESC"
         if limit is not None:
             sql += f" LIMIT {int(limit)}"
-        return [_run(row) for row in self._conn.execute(sql)]
+        with self._lock:
+            return [_run(row) for row in self._conn.execute(sql)]
 
     def list_backtest_results(self, run_id: str) -> list[BacktestResult]:
-        rows = self._conn.execute(
-            "SELECT * FROM backtest_result WHERE run_id = ? ORDER BY week, garment_id",
-            (run_id,),
-        )
+        with self._lock:
+            rows = self._conn.execute(
+                "SELECT * FROM backtest_result WHERE run_id = ? ORDER BY week, garment_id",
+                (run_id,),
+            ).fetchall()
         return [
             BacktestResult(
                 run_id=row["run_id"],

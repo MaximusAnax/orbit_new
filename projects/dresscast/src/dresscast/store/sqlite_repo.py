@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import threading
 import uuid
 from collections.abc import Sequence
 from datetime import datetime
@@ -49,15 +50,26 @@ def _dt(value: str) -> datetime:
 
 
 class SqliteRepository:
-    """The default backend.  WAL, foreign keys on, every multi-row effect atomic."""
+    """The default backend.  WAL, foreign keys on, every multi-row effect atomic.
+
+    Thread-safety: FastAPI runs sync handlers — and sync generator
+    dependencies' ``__enter__``/``__exit__`` — on anyio threadpool workers, so
+    the connection is touched from threads other than the one that built it.
+    ``check_same_thread`` is therefore disabled (CPython's
+    ``sqlite3.threadsafety == 3``: the C level is serialized) and ``self.lock``
+    is held from the first read of every read-modify-write composite through
+    its commit, so two threads' transactions can never interleave on the one
+    connection.
+    """
 
     def __init__(self, path: str | Path = ":memory:", *, now: datetime | None = None) -> None:
         self.path = str(path)
-        self.conn = sqlite3.connect(self.path)
+        self.conn = sqlite3.connect(self.path, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
         self.conn.execute("PRAGMA foreign_keys = ON")
         if self.path != ":memory:":
             self.conn.execute("PRAGMA journal_mode = WAL")
+        self.lock = threading.RLock()
         migrate(self.conn, now=now or datetime(2026, 1, 1))
 
     def close(self) -> None:
@@ -126,7 +138,7 @@ class SqliteRepository:
     def add_garment(self, garment: Garment) -> Garment:
         stored = garment if garment.id else garment.model_copy(update={"id": _new_id()})
         try:
-            with self.conn:
+            with self.lock, self.conn:
                 self.conn.execute(
                     "INSERT INTO garments VALUES (" + ",".join("?" * 21) + ")",
                     self._garment_row(stored),
@@ -178,26 +190,28 @@ class SqliteRepository:
         return rows
 
     def update_garment(self, garment: Garment) -> Garment:
-        self.get_garment(garment.id)
-        with self.conn:
-            self.conn.execute(
-                """UPDATE garments SET name=?, category=?, layer_role=?, accessory_class=?,
-                       clo=?, waterproofness=?, windproofness=?, formality=?, colors=?,
-                       style_tags=?, occasions=?, wears_before_laundry=?,
-                       wears_since_wash=?, status=?, overridden_fields=?, photo_path=?,
-                       photo_sha256=?, notes=?, created_at=?, updated_at=?
-                   WHERE id=?""",
-                (*self._garment_row(garment)[1:], garment.id),
-            )
+        with self.lock:
+            self.get_garment(garment.id)
+            with self.conn:
+                self.conn.execute(
+                    """UPDATE garments SET name=?, category=?, layer_role=?, accessory_class=?,
+                           clo=?, waterproofness=?, windproofness=?, formality=?, colors=?,
+                           style_tags=?, occasions=?, wears_before_laundry=?,
+                           wears_since_wash=?, status=?, overridden_fields=?, photo_path=?,
+                           photo_sha256=?, notes=?, created_at=?, updated_at=?
+                       WHERE id=?""",
+                    (*self._garment_row(garment)[1:], garment.id),
+                )
         return garment
 
     def set_status(self, garment_id: str, status: str, *, now: datetime) -> Garment:
-        garment = self.get_garment(garment_id)
-        check_transition(garment.status, status)
-        update: dict[str, Any] = {"status": status, "updated_at": now}
-        if status == "clean":
-            update["wears_since_wash"] = 0
-        return self.update_garment(garment.model_copy(update=update))
+        with self.lock:
+            garment = self.get_garment(garment_id)
+            check_transition(garment.status, status)
+            update: dict[str, Any] = {"status": status, "updated_at": now}
+            if status == "clean":
+                update["wears_since_wash"] = 0
+            return self.update_garment(garment.model_copy(update=update))
 
     # ------------------------------------------------------------------
     # Attribute suggestions
@@ -222,23 +236,24 @@ class SqliteRepository:
 
     def add_suggestion(self, suggestion: AttributeSuggestion) -> AttributeSuggestion:
         stored = suggestion if suggestion.id else suggestion.model_copy(update={"id": _new_id()})
-        self.get_garment(stored.garment_id)
-        with self.conn:
-            self.conn.execute(
-                "INSERT INTO attribute_suggestions VALUES (?,?,?,?,?,?,?,?)",
-                (
-                    stored.id,
-                    stored.garment_id,
-                    stored.source,
-                    json.dumps(stored.payload),
-                    stored.status,
-                    None
-                    if stored.accepted_fields is None
-                    else json.dumps([f.model_dump() for f in stored.accepted_fields]),
-                    stored.created_at.isoformat(),
-                    stored.resolved_at.isoformat() if stored.resolved_at else None,
-                ),
-            )
+        with self.lock:
+            self.get_garment(stored.garment_id)
+            with self.conn:
+                self.conn.execute(
+                    "INSERT INTO attribute_suggestions VALUES (?,?,?,?,?,?,?,?)",
+                    (
+                        stored.id,
+                        stored.garment_id,
+                        stored.source,
+                        json.dumps(stored.payload),
+                        stored.status,
+                        None
+                        if stored.accepted_fields is None
+                        else json.dumps([f.model_dump() for f in stored.accepted_fields]),
+                        stored.created_at.isoformat(),
+                        stored.resolved_at.isoformat() if stored.resolved_at else None,
+                    ),
+                )
         return stored
 
     def get_suggestion(self, suggestion_id: str) -> AttributeSuggestion:
@@ -262,55 +277,57 @@ class SqliteRepository:
     def accept_suggestion(
         self, suggestion_id: str, fields: Sequence[str], *, now: datetime
     ) -> tuple[AttributeSuggestion, Garment]:
-        suggestion = self.get_suggestion(suggestion_id)
-        if suggestion.status != "pending":
-            raise InvalidParams(
-                f"suggestion {suggestion_id!r} is already {suggestion.status}",
-                field="status",
+        with self.lock:
+            suggestion = self.get_suggestion(suggestion_id)
+            if suggestion.status != "pending":
+                raise InvalidParams(
+                    f"suggestion {suggestion_id!r} is already {suggestion.status}",
+                    field="status",
+                )
+            garment = self.get_garment(suggestion.garment_id)
+            merged, accepted = merge_suggestion(garment, suggestion.payload, fields, now=now)
+            resolved = suggestion.model_copy(
+                update={
+                    "status": "accepted",
+                    "accepted_fields": accepted,
+                    "resolved_at": now,
+                }
             )
-        garment = self.get_garment(suggestion.garment_id)
-        merged, accepted = merge_suggestion(garment, suggestion.payload, fields, now=now)
-        resolved = suggestion.model_copy(
-            update={
-                "status": "accepted",
-                "accepted_fields": accepted,
-                "resolved_at": now,
-            }
-        )
-        with self.conn:
-            self.conn.execute(
-                "UPDATE attribute_suggestions SET status=?, accepted_fields=?, resolved_at=? "
-                "WHERE id=?",
-                (
-                    "accepted",
-                    json.dumps([f.model_dump() for f in accepted]),
-                    now.isoformat(),
-                    suggestion_id,
-                ),
-            )
-            self.conn.execute(
-                """UPDATE garments SET name=?, category=?, layer_role=?, accessory_class=?,
-                       clo=?, waterproofness=?, windproofness=?, formality=?, colors=?,
-                       style_tags=?, occasions=?, wears_before_laundry=?,
-                       wears_since_wash=?, status=?, overridden_fields=?, photo_path=?,
-                       photo_sha256=?, notes=?, created_at=?, updated_at=?
-                   WHERE id=?""",
-                (*self._garment_row(merged)[1:], merged.id),
-            )
+            with self.conn:
+                self.conn.execute(
+                    "UPDATE attribute_suggestions SET status=?, accepted_fields=?, resolved_at=? "
+                    "WHERE id=?",
+                    (
+                        "accepted",
+                        json.dumps([f.model_dump() for f in accepted]),
+                        now.isoformat(),
+                        suggestion_id,
+                    ),
+                )
+                self.conn.execute(
+                    """UPDATE garments SET name=?, category=?, layer_role=?, accessory_class=?,
+                           clo=?, waterproofness=?, windproofness=?, formality=?, colors=?,
+                           style_tags=?, occasions=?, wears_before_laundry=?,
+                           wears_since_wash=?, status=?, overridden_fields=?, photo_path=?,
+                           photo_sha256=?, notes=?, created_at=?, updated_at=?
+                       WHERE id=?""",
+                    (*self._garment_row(merged)[1:], merged.id),
+                )
         return resolved, merged
 
     def reject_suggestion(self, suggestion_id: str, *, now: datetime) -> AttributeSuggestion:
-        suggestion = self.get_suggestion(suggestion_id)
-        if suggestion.status != "pending":
-            raise InvalidParams(
-                f"suggestion {suggestion_id!r} is already {suggestion.status}",
-                field="status",
-            )
-        with self.conn:
-            self.conn.execute(
-                "UPDATE attribute_suggestions SET status='rejected', resolved_at=? WHERE id=?",
-                (now.isoformat(), suggestion_id),
-            )
+        with self.lock:
+            suggestion = self.get_suggestion(suggestion_id)
+            if suggestion.status != "pending":
+                raise InvalidParams(
+                    f"suggestion {suggestion_id!r} is already {suggestion.status}",
+                    field="status",
+                )
+            with self.conn:
+                self.conn.execute(
+                    "UPDATE attribute_suggestions SET status='rejected', resolved_at=? WHERE id=?",
+                    (now.isoformat(), suggestion_id),
+                )
         return suggestion.model_copy(update={"status": "rejected", "resolved_at": now})
 
     # ------------------------------------------------------------------
@@ -319,7 +336,7 @@ class SqliteRepository:
 
     def add_snapshot(self, forecast: DayForecast) -> DayForecast:
         stored = forecast if forecast.id else forecast.model_copy(update={"id": _new_id()})
-        with self.conn:
+        with self.lock, self.conn:
             self.conn.execute(
                 "INSERT INTO forecast_snapshots VALUES (?,?,?,?,?,?,?,?,?)",
                 (
@@ -406,7 +423,7 @@ class SqliteRepository:
     def add_recommendation(self, recommendation: Recommendation) -> Recommendation:
         rec_id = recommendation.id or _new_id()
         outfits: list[ScoredOutfit] = []
-        with self.conn:
+        with self.lock, self.conn:
             self.conn.execute(
                 "INSERT INTO recommendations VALUES (?,?,?,?,?,?,?,?,?,?)",
                 (
@@ -542,35 +559,37 @@ class SqliteRepository:
         if not garment_ids:
             raise InvalidParams("a wear log must list at least one garment", field="garment_ids")
         unique = list(dict.fromkeys(garment_ids))
-        garments = [self.get_garment(g) for g in unique]
-        for g in garments:
-            if g.status == "retired":
-                raise InvalidTransition(
-                    f"{g.name!r} is retired and cannot be worn", garment_id=g.id
-                )
-        log = WearLog(
-            id=_new_id(),
-            date=date,
-            source=source,  # type: ignore[arg-type]
-            outfit_id=outfit_id,
-            created_at=now,
-            items=[WearLogItem(garment_id=g.id, layer_role=g.layer_role) for g in garments],
-        )
-        with self.conn:
-            self.conn.execute(
-                "INSERT INTO wear_logs VALUES (?,?,?,?,?)",
-                (log.id, log.date, log.source, log.outfit_id, log.created_at.isoformat()),
-            )
-            self.conn.executemany(
-                "INSERT INTO wear_log_items VALUES (?,?,?)",
-                [(log.id, i.garment_id, i.layer_role) for i in log.items],
-            )
+        with self.lock:
+            garments = [self.get_garment(g) for g in unique]
             for g in garments:
-                worn = apply_wear(g, now)
+                if g.status == "retired":
+                    raise InvalidTransition(
+                        f"{g.name!r} is retired and cannot be worn", garment_id=g.id
+                    )
+            log = WearLog(
+                id=_new_id(),
+                date=date,
+                source=source,  # type: ignore[arg-type]
+                outfit_id=outfit_id,
+                created_at=now,
+                items=[WearLogItem(garment_id=g.id, layer_role=g.layer_role) for g in garments],
+            )
+            with self.conn:
                 self.conn.execute(
-                    "UPDATE garments SET wears_since_wash=?, status=?, updated_at=? WHERE id=?",
-                    (worn.wears_since_wash, worn.status, worn.updated_at.isoformat(), g.id),
+                    "INSERT INTO wear_logs VALUES (?,?,?,?,?)",
+                    (log.id, log.date, log.source, log.outfit_id, log.created_at.isoformat()),
                 )
+                self.conn.executemany(
+                    "INSERT INTO wear_log_items VALUES (?,?,?)",
+                    [(log.id, i.garment_id, i.layer_role) for i in log.items],
+                )
+                for g in garments:
+                    worn = apply_wear(g, now)
+                    self.conn.execute(
+                        "UPDATE garments SET wears_since_wash=?, status=?, updated_at=? "
+                        "WHERE id=?",
+                        (worn.wears_since_wash, worn.status, worn.updated_at.isoformat(), g.id),
+                    )
         return log
 
     def _wear_log(self, row: sqlite3.Row) -> WearLog:
@@ -615,29 +634,31 @@ class SqliteRepository:
 
     def undo_wear_log(self, log_id: str, *, today: str, now: datetime) -> None:
         """FR-12: reverse a mistaken log, on its own calendar day only."""
-        log = self.get_wear_log(log_id)
-        if log.created_at.date().isoformat() != today:
-            raise InvalidParams(
-                "a wear log may only be undone on the calendar day it was created",
-                log_id=log_id,
-                created=log.created_at.date().isoformat(),
-                today=today,
-            )
-        with self.conn:
-            for item in log.items:
-                garment = self.get_garment(item.garment_id)
-                reverted = undo_wear(garment, now)
-                self.conn.execute(
-                    "UPDATE garments SET wears_since_wash=?, status=?, updated_at=? WHERE id=?",
-                    (
-                        reverted.wears_since_wash,
-                        reverted.status,
-                        reverted.updated_at.isoformat(),
-                        garment.id,
-                    ),
+        with self.lock:
+            log = self.get_wear_log(log_id)
+            if log.created_at.date().isoformat() != today:
+                raise InvalidParams(
+                    "a wear log may only be undone on the calendar day it was created",
+                    log_id=log_id,
+                    created=log.created_at.date().isoformat(),
+                    today=today,
                 )
-            self.conn.execute("DELETE FROM wear_log_items WHERE wear_log_id = ?", (log_id,))
-            self.conn.execute("DELETE FROM wear_logs WHERE id = ?", (log_id,))
+            with self.conn:
+                for item in log.items:
+                    garment = self.get_garment(item.garment_id)
+                    reverted = undo_wear(garment, now)
+                    self.conn.execute(
+                        "UPDATE garments SET wears_since_wash=?, status=?, updated_at=? "
+                        "WHERE id=?",
+                        (
+                            reverted.wears_since_wash,
+                            reverted.status,
+                            reverted.updated_at.isoformat(),
+                            garment.id,
+                        ),
+                    )
+                self.conn.execute("DELETE FROM wear_log_items WHERE wear_log_id = ?", (log_id,))
+                self.conn.execute("DELETE FROM wear_logs WHERE id = ?", (log_id,))
 
     def wear_history(self, date: str) -> WearHistory:
         """FR-11/HC-8's projection: last-worn dates and yesterday's core sets."""
@@ -678,35 +699,37 @@ class SqliteRepository:
         note: str | None = None,
     ) -> LaundryEvent:
         unique = list(dict.fromkeys(garment_ids))
-        garments = [self.get_garment(g) for g in unique]
-        for g in garments:
-            if g.status not in {"dirty", "in_laundry"}:
-                raise InvalidTransition(
-                    f"{g.name!r} is {g.status} and cannot be laundered",
-                    garment_id=g.id,
-                    status=g.status,
-                )
-        event = LaundryEvent(
-            id=_new_id(), created_at=now, note=note, garment_ids=[g.id for g in garments]
-        )
-        with self.conn:
-            self.conn.execute(
-                "INSERT INTO laundry_events VALUES (?,?,?)",
-                (event.id, event.created_at.isoformat(), event.note),
-            )
-            self.conn.executemany(
-                "INSERT INTO laundry_event_items VALUES (?,?)",
-                [(event.id, g.id) for g in garments],
-            )
+        with self.lock:
+            garments = [self.get_garment(g) for g in unique]
             for g in garments:
-                cleaned = wash(g, now)
+                if g.status not in {"dirty", "in_laundry"}:
+                    raise InvalidTransition(
+                        f"{g.name!r} is {g.status} and cannot be laundered",
+                        garment_id=g.id,
+                        status=g.status,
+                    )
+            event = LaundryEvent(
+                id=_new_id(), created_at=now, note=note, garment_ids=[g.id for g in garments]
+            )
+            with self.conn:
                 self.conn.execute(
-                    "UPDATE garments SET wears_since_wash=?, status=?, updated_at=? WHERE id=?",
-                    (
-                        cleaned.wears_since_wash,
-                        cleaned.status,
-                        cleaned.updated_at.isoformat(),
-                        g.id,
-                    ),
+                    "INSERT INTO laundry_events VALUES (?,?,?)",
+                    (event.id, event.created_at.isoformat(), event.note),
                 )
+                self.conn.executemany(
+                    "INSERT INTO laundry_event_items VALUES (?,?)",
+                    [(event.id, g.id) for g in garments],
+                )
+                for g in garments:
+                    cleaned = wash(g, now)
+                    self.conn.execute(
+                        "UPDATE garments SET wears_since_wash=?, status=?, updated_at=? "
+                        "WHERE id=?",
+                        (
+                            cleaned.wears_since_wash,
+                            cleaned.status,
+                            cleaned.updated_at.isoformat(),
+                            g.id,
+                        ),
+                    )
         return event

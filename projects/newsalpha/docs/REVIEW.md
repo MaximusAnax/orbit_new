@@ -177,3 +177,34 @@ Other hardening-stage verifications, recorded for the audit trail:
   `newsalpha`, and `test_market_truth_is_independent_of_the_shipped_priors`
   asserts the planted table is not a copy of `priors.json`.
 - FR coverage table written to `docs/FR_COVERAGE.md`; no FR unimplemented.
+
+## Cross-project audit — SQLite cross-thread connection (2026-08-01)
+
+**Verdict: vulnerable** (same defect class flowlist and pointsmax shipped).
+`SQLiteRepository.__init__` opened its long-lived connection with sqlite3's
+default `check_same_thread=True`; the served path (`uvicorn
+newsalpha.api.app:app`) constructs that repository once in the FastAPI
+lifespan on the event-loop thread, while every handler is sync `def` and runs
+on an anyio threadpool thread. The API tests never saw it because they inject
+`InMemoryRepository`.
+
+**Proof (observed before the fix):** `tests/test_store_threading.py` builds
+the real app via `create_app(db_path=tmp_path/"newsalpha.db")` (lifespan wires
+the real SQLite backend) and hits `GET /watchlist` through `TestClient` —
+`sqlite3.ProgrammingError: SQLite objects created in a thread can only be
+used in that same thread. The object was created in thread id 140060615341760
+and this is thread id 140060605900480.` raised from
+`list_watchlist`. A second test driving one repository from an 8-thread
+`ThreadPoolExecutor` with `add_price_bars` read-modify-write batches failed
+identically.
+
+**Fix (store/sqlite.py, pattern shared with the hardened siblings):** connect
+with `check_same_thread=False` (safe: CPython `sqlite3.threadsafety == 3`)
+plus a `threading.RLock` held across every write batch and read-modify-write
+composite — all ten `with self._connection:` transaction blocks became
+`with self._lock, self._connection:`, and `initialize`/`reset` take the lock
+too — so transactions cannot interleave and one thread's commit/rollback can
+never capture another's uncommitted rows. Reads stay lock-free (module-level
+serialization). No store redesign, no gate/metric/fixture touched. Both
+regression tests now pass and stay as guards; `verify_all.py newsalpha` is
+fully green (329 tests, 21 eval gates, ruff, CLI).

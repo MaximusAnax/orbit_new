@@ -295,3 +295,37 @@ one-way ratchet, and every gate is asserted as both an absolute and a margin
 over a live-computed baseline. Wardrobe import/export was cut to Non-goals to
 pay for it all: the honest re-split lands at ≈ 3,980 lines with a named cut list
 if the build runs over.
+
+## Cross-project audit (SQLite threading, 2026-08-01)
+
+flowlist and pointsmax shipped a repository whose SQLite connection was bound
+(sqlite3's default `check_same_thread=True`) to the constructing thread while
+FastAPI dispatches sync handlers to anyio threadpool workers. dresscast had the
+same defect: `SqliteRepository.__init__` opened `sqlite3.connect(path)` with no
+`check_same_thread` and held the connection for the object's life, and both
+served paths cross threads — `create_app(service=...)` pins a service built on
+the main thread while every handler runs on a worker thread, and the actual
+`dresscast serve` wiring (`service_factory`, one repository per request) runs
+the dependency's `__enter__` (opens the connection), the handler (uses it) and
+`__exit__` (closes it) as three separate `to_thread` hops that land on
+different workers under concurrent load. `test_api.py` never saw it because it
+injects `InMemoryRepository`.
+
+**Proof:** `tests/test_api_sqlite_threading.py` wires the real app to the real
+`SqliteRepository` on a tmp file. Before the fix, the pinned-service test
+failed deterministically on its first request and the concurrent
+`service_factory` test failed under an 8-thread hammer, both with
+`sqlite3.ProgrammingError: SQLite objects created in a thread can only be used
+in that same thread` (raised from `add_garment`'s `with self.conn:`, from a
+read in the handler, and from `close()` in the dependency's `__exit__`).
+
+**Fix (same pattern as the hardened siblings):** open the connection with
+`check_same_thread=False` (safe: CPython `sqlite3.threadsafety == 3`, the C
+level is serialized) and add a `threading.RLock` held across every write batch
+and every read-modify-write composite (`add_garment`, `update_garment`,
+`set_status`, `add_suggestion`, `accept_suggestion`, `reject_suggestion`,
+`add_snapshot`, `add_recommendation`, `add_wear_log`, `undo_wear_log`,
+`add_laundry_event`), so two threads' transactions can never interleave on the
+shared connection. No store redesign, no gate/metric/fixture change. Both
+regression tests now pass and stay as guards; `verify_all.py dresscast` is
+fully green (409 tests, 30/30 eval gates, ruff, cli).

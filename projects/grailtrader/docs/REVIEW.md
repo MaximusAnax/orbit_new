@@ -186,3 +186,40 @@ which is what the baseline column exists to argue.
   grades each advice at its own horizon, and no gate depends on long-horizon
   selection, so this is visible-by-design rather than hidden — but the
   {12, 26} horizons are close to dead weight on these fixtures.
+
+## Cross-project audit
+
+**2026-08-01 — shared-SQLite-connection thread-affinity bug (the flowlist /
+pointsmax defect class): grailtrader WAS vulnerable; fixed.**
+
+- **Finding.** `SQLiteRepository.__init__` opened `sqlite3.connect(path)` with
+  the default `check_same_thread=True` and held the connection for the object's
+  lifetime, while the served path shares one repository process-wide:
+  `api/app.py::get_service` builds a singleton `GrailTraderService` on first
+  use, and every route is a sync `def`, so FastAPI/uvicorn dispatches handlers
+  (and the `get_service` dependency itself) onto anyio threadpool workers —
+  i.e. the connection's creator thread and its user threads differ. The FR-12
+  API tests never saw it because they override `get_service` with an
+  `InMemoryRepository`.
+- **Proof.** New regression test
+  `tests/test_store_threading.py` builds the real app wired to the real SQLite
+  store on a tmp file (`GRAILTRADER_DB` + singleton reset) and drives it through
+  `TestClient`; before the fix the very first `GET /health` died with
+  `sqlite3.ProgrammingError: SQLite objects created in a thread can only be
+  used in that same thread. The object was created in thread id 140191182844032
+  and this is thread id 140191123203776.` (raised in `store/sqlite.py::
+  list_brands` via `service.brands()`), and the store-level companion test
+  failed identically when driven from a `ThreadPoolExecutor`.
+- **Fix** (same pattern as the hardened siblings, store-scoped like pointsmax):
+  `store/sqlite.py` now connects with `check_same_thread=False` (safe here:
+  CPython `sqlite3.threadsafety == 3`) and adds a `threading.RLock` held for
+  the whole body of every repository method — across each write batch
+  (`with self._lock, self._conn:`) and each read — so one thread's transaction
+  cannot interleave with, commit, or roll back another's, and reads never
+  observe an uncommitted batch on the shared connection. The lock lives in the
+  store (not a whole-request dependency lock) so acquire/release always happen
+  on the same worker thread. No API wiring, schema, eval gate, metric, or
+  fixture changed.
+- **Verification.** Both regression tests fail on the pre-fix store and pass
+  with the fix (5/5 repeat runs); `uv run python verify_all.py grailtrader` is
+  fully green: 297 tests, 30 eval gates pass / 0 fail, ruff ok, cli ok.
