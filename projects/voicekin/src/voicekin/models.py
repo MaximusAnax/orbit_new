@@ -232,8 +232,19 @@ class Instance(BaseModel):
         return self
 
 
+#: Number of mel-band amplitude controls in :class:`VoiceParams` (FR-3/FR-8).
+VOICE_PARAM_BANDS = 8
+
+
 class VoiceParams(BaseModel):
-    """Synthesizer parameters derived from the enrollment analysis (FR-3)."""
+    """Synthesizer parameters derived from the enrollment analysis (FR-3).
+
+    ``band_gains_db`` are the Klatt-style per-band amplitude controls (the A2-A6
+    parameters of Klatt 1980, on the embedder's 8-band mel grid): a corrective
+    spectral envelope the FR-3 derivation fits so the stub's rendered long-run
+    spectrum matches the enrolled voice's. Empty means a neutral envelope.
+    Recorded as build deviation 4 in REVIEW.md.
+    """
 
     model_config = ConfigDict(frozen=True)
 
@@ -241,6 +252,15 @@ class VoiceParams(BaseModel):
     f0_range_hz: float = Field(ge=0.0)
     formant_scale: float = Field(gt=0.0)
     tilt_db_oct: float
+    band_gains_db: tuple[float, ...] = ()
+
+    @model_validator(mode="after")
+    def _bands(self) -> VoiceParams:
+        if len(self.band_gains_db) not in (0, VOICE_PARAM_BANDS):
+            raise ValueError(f"band_gains_db must hold 0 or {VOICE_PARAM_BANDS} values")
+        if any(abs(g) > 24.0 for g in self.band_gains_db):
+            raise ValueError("band_gains_db entries must stay within +/-24 dB")
+        return self
 
 
 class VoiceProfile(BaseModel):
@@ -500,6 +520,7 @@ class AuditRecord(BaseModel):
 __all__ = [
     "EMBEDDING_DIM",
     "PRE_SCORING_CONSENT_REJECTIONS",
+    "VOICE_PARAM_BANDS",
     "AuditEvent",
     "AuditRecord",
     "Calibration",

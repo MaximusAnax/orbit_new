@@ -258,6 +258,54 @@ utterance stops embedding near its own enrollment (EVALS M3). The dither is draw
 from the same seed as the synthesis, so byte determinism is untouched."""
 
 
+def band_eq_centers(n_bands: int | None = None) -> "np.ndarray":
+    """Centre frequencies of the :class:`VoiceParams` band-gain grid (FR-8).
+
+    The same mel spacing over the same speech band as the embedder's 8 band
+    ratios, so the FR-3 derivation can fit the gains against the measured
+    band-share targets one-for-one.
+    """
+    import numpy as np
+
+    from voicekin.engine.dsp import SPEECH_BAND_HZ, hz_to_mel, mel_to_hz
+    from voicekin.models import VOICE_PARAM_BANDS
+
+    count = n_bands or VOICE_PARAM_BANDS
+    lo, hi = SPEECH_BAND_HZ
+    edges = mel_to_hz(np.linspace(hz_to_mel(lo), hz_to_mel(hi), count + 2))
+    return np.asarray(edges[1:-1], dtype=np.float64)
+
+
+def apply_band_gains(samples: "np.ndarray", gains_db, sample_rate: int) -> "np.ndarray":
+    """Impose the per-band corrective envelope (Klatt-style amplitude controls).
+
+    Gains are interpolated over log frequency between the band centres and
+    applied in the FFT domain — a smooth, zero-phase spectral envelope shaping.
+    Pure and deterministic; peak-limited so quantization cannot clip.
+    """
+    import numpy as np
+
+    gains = tuple(gains_db)
+    if samples.size == 0 or not gains:
+        return samples
+    centers = band_eq_centers(len(gains))
+    n_fft = 1 << int(np.ceil(np.log2(max(samples.size, 2))))
+    freqs = np.fft.rfftfreq(n_fft, d=1.0 / sample_rate)
+    curve = np.interp(
+        np.log(np.maximum(freqs, 1.0)),
+        np.log(centers),
+        np.asarray(gains, dtype=np.float64),
+        left=gains[0],
+        right=gains[-1],
+    )
+    shaped = np.fft.irfft(np.fft.rfft(samples, n_fft) * 10.0 ** (curve / 20.0), n_fft)
+    out = shaped[: samples.size]
+    peak = float(np.max(np.abs(out)))
+    if peak > 0.999:
+        out = out * (0.999 / peak)
+    return out
+
+
 def stub_voicebox_params(voice_params: VoiceParamsLike) -> VoiceboxParams:
     """Map the four stored voice parameters onto the synthesis core (FR-8)."""
     from voicekin.engine.voicebox import VoiceboxParams
@@ -307,6 +355,9 @@ def stub_render(
     samples = synthesize_units(
         units, stub_voicebox_params(voice_params), sample_rate=sample_rate, seed=seed
     )
+    samples = apply_band_gains(
+        samples, getattr(voice_params, "band_gains_db", ()), sample_rate
+    )
     return AudioClip(samples=_stub_dither(samples, seed), sample_rate=sample_rate)
 
 
@@ -338,6 +389,8 @@ __all__ = [
     "EmptyTextError",
     "TextNormalizationError",
     "TextTooLongError",
+    "apply_band_gains",
+    "band_eq_centers",
     "build_units",
     "expected_duration_s",
     "normalize_text",

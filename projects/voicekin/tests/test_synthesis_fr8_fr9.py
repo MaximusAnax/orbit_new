@@ -259,44 +259,46 @@ def test_fr8_stub_refuses_text_that_produces_no_units(synthesizer):
         synthesizer.synthesize("", PARAMS, sample_rate=16000, seed=1)
 
 
-@pytest.mark.parametrize("speaker", [ALICE, BOB])
-@pytest.mark.parametrize("text", ["dinner is ready in the kitchen", "hello there everyone"])
-def test_fr8_synthesis_re_embeds_to_its_own_profile(embedder, synthesizer, speaker, text):
-    """FR-8/EVALS M3: rendered speech must attribute back to the voice it came from.
+def _enrolled(spec, embedder, calibration):
+    clips = [render_voice(spec, 7.5, seed=4100 + k) for k in range(3)]
+    cent = centroid([embedder.embed(c) for c in clips])
+    params = derive_voice_params(
+        [analyze_voice(c) for c in clips],
+        centroid=cent,
+        feature_norms=calibration.feature_norms,
+    )
+    return cent, params
 
-    Scored as an argmax over all three profile centroids, so an identity beacon
-    that ignores ``voice_params`` cannot pass.
 
-    Known limitation, measured not assumed: the round trip
-    (enrollment -> voice_params -> stub -> embedding) preserves the pitch and
-    source-tilt axes but compresses the vocal-tract-length axis, because the
-    F1/F2 medians an order-12 LPC estimator reports vary less between speakers
-    than their tracts do. A third voice sitting *between* two enrolled voices on
-    the surviving axes is therefore not reliably attributable. ALICE and BOB are
-    well separated; CARLA is deliberately in between and is scored against, not
-    rendered from, here.
-    """
-    profiles = {}
-    for name, spec in (("alice", ALICE), ("bob", BOB), ("carla", CARLA)):
-        clips = [render_voice(spec, 7.5, seed=4100 + k) for k in range(3)]
-        profiles[name] = (
-            centroid([embedder.embed(c) for c in clips]),
-            derive_voice_params([analyze_voice(c) for c in clips]),
-        )
-    target = {ALICE: "alice", BOB: "bob"}[speaker]
+@pytest.mark.parametrize("target", ["alice", "bob", "carla"])
+def test_fr8_synthesis_re_embeds_to_its_own_profile(
+    embedder, synthesizer, calibration, target
+):
+    """FR-8/EVALS M3: rendered speech must attribute back to the voice it came
+    from — scored as an argmax over all three profile centroids, so an identity
+    beacon that ignores ``voice_params`` cannot pass. CARLA sits between ALICE
+    and BOB on every axis, so all three rendering correctly means the round
+    trip (enrollment -> voice_params -> stub -> embedding) carries identity,
+    not just a coarse high/low split."""
+    profiles = {
+        name: _enrolled(spec, embedder, calibration)
+        for name, spec in (("alice", ALICE), ("bob", BOB), ("carla", CARLA))
+    }
     rendered = synthesizer.synthesize(
-        normalize_text(text), profiles[target][1], sample_rate=TARGET_SAMPLE_RATE, seed=11
+        normalize_text("the calm dog sat by the door and the hot food is on the table"),
+        profiles[target][1],
+        sample_rate=TARGET_SAMPLE_RATE,
+        seed=11,
     )
     probe = embedder.embed(rendered)
     scores = {name: cosine_similarity(probe, cent) for name, (cent, _) in profiles.items()}
     assert max(scores, key=scores.get) == target, scores
 
 
-def test_fr8_synthesis_carries_the_pitch_of_its_profile(embedder, synthesizer):
-    """The identity axis the round trip does preserve, asserted directly."""
+def test_fr8_synthesis_carries_the_pitch_of_its_profile(embedder, synthesizer, calibration):
+    """The most directly interpretable identity axis, asserted in hertz."""
     for spec in (ALICE, BOB, CARLA):
-        clips = [render_voice(spec, 7.5, seed=4100 + k) for k in range(3)]
-        params = derive_voice_params([analyze_voice(c) for c in clips])
+        _, params = _enrolled(spec, embedder, calibration)
         rendered = synthesizer.synthesize(
             normalize_text("dinner is ready in the kitchen"),
             params,

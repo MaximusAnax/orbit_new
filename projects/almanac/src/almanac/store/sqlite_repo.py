@@ -11,6 +11,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import sqlite3
+import threading
 from collections.abc import Iterable, Sequence
 from pathlib import Path
 
@@ -183,13 +184,22 @@ def _surfacing(row: sqlite3.Row) -> Surfacing:
 
 
 class SqliteRepository(Repository):
-    """SQLite-backed storage. ``path=":memory:"`` gives an ephemeral database."""
+    """SQLite-backed storage. ``path=":memory:"`` gives an ephemeral database.
+
+    Thread-safety: FastAPI runs sync dependencies and sync handlers on anyio
+    threadpool workers, so the connection this class holds is used from threads
+    other than the one that opened it.  ``check_same_thread`` is therefore
+    disabled — safe because CPython's ``sqlite3.threadsafety == 3`` serializes
+    the C level — and a re-entrant lock is held across every write batch and
+    every read-modify-write composite so transactions cannot interleave.
+    """
 
     def __init__(self, path: str | Path = ":memory:") -> None:
         self.path = str(path)
         if self.path != ":memory:":
             Path(self.path).parent.mkdir(parents=True, exist_ok=True)
-        self._conn = sqlite3.connect(self.path)
+        self._lock = threading.RLock()
+        self._conn = sqlite3.connect(self.path, check_same_thread=False)
         self._conn.row_factory = sqlite3.Row
         self._conn.execute("PRAGMA foreign_keys = ON")
         self._conn.executescript(SCHEMA)
@@ -241,7 +251,7 @@ class SqliteRepository(Repository):
         templates: Sequence[PromptTemplate],
         misattributions: Sequence[MisattributionRecord],
     ) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute("DELETE FROM prompt_templates")
             self._conn.execute("DELETE FROM misattributions")
             self._conn.executemany(
@@ -319,7 +329,7 @@ class SqliteRepository(Repository):
         return row["value"] if row else None
 
     def set_config(self, key: str, value: str) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute(
                 "INSERT INTO config(key, value) VALUES (?, ?) "
                 "ON CONFLICT(key) DO UPDATE SET value = excluded.value",
@@ -333,7 +343,7 @@ class SqliteRepository(Repository):
     # --- entries ------------------------------------------------------------
     def add_entry(self, entry: Entry) -> None:
         try:
-            with self._conn:
+            with self._lock, self._conn:
                 self._conn.execute(
                     f"INSERT INTO entries({_ENTRY_COLUMNS}) "
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
@@ -364,7 +374,7 @@ class SqliteRepository(Repository):
         return _entry(row) if row else None
 
     def update_entry(self, entry: Entry) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._fts_delete(entry.id)
             cursor = self._conn.execute(
                 "UPDATE entries SET kind = ?, text = ?, normalized_hash = ?, author = ?, "
@@ -476,19 +486,22 @@ class SqliteRepository(Repository):
 
     # --- tags ---------------------------------------------------------------
     def upsert_tag(self, tag: Tag) -> Tag:
-        row = self._conn.execute("SELECT id, name FROM tags WHERE name = ?", (tag.name,)).fetchone()
-        if row is not None:
-            return Tag(id=row["id"], name=row["name"])
-        with self._conn:
-            self._conn.execute("INSERT INTO tags(id, name) VALUES (?, ?)", (tag.id, tag.name))
-        return tag
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT id, name FROM tags WHERE name = ?", (tag.name,)
+            ).fetchone()
+            if row is not None:
+                return Tag(id=row["id"], name=row["name"])
+            with self._conn:
+                self._conn.execute("INSERT INTO tags(id, name) VALUES (?, ?)", (tag.id, tag.name))
+            return tag
 
     def list_tags(self) -> list[Tag]:
         rows = self._conn.execute("SELECT id, name FROM tags ORDER BY name").fetchall()
         return [Tag(id=row["id"], name=row["name"]) for row in rows]
 
     def set_entry_tags(self, entry_id: str, tag_ids: Sequence[str]) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute("DELETE FROM entry_tags WHERE entry_id = ?", (entry_id,))
             self._conn.executemany(
                 "INSERT INTO entry_tags(entry_id, tag_id) VALUES (?, ?)",
@@ -506,7 +519,7 @@ class SqliteRepository(Repository):
 
     # --- themes -------------------------------------------------------------
     def set_entry_themes(self, entry_id: str, themes: Sequence[EntryTheme]) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute("DELETE FROM entry_themes WHERE entry_id = ?", (entry_id,))
             self._conn.executemany(
                 "INSERT INTO entry_themes(entry_id, theme_id, source) VALUES (?, ?, ?)",
@@ -532,35 +545,36 @@ class SqliteRepository(Repository):
 
     # --- surfacings ---------------------------------------------------------
     def add_surfacing(self, surfacing: Surfacing) -> None:
-        self.check_monotonic(surfacing)
-        try:
-            with self._conn:
-                self._conn.execute(
-                    f"INSERT INTO surfacings({_SURFACING_COLUMNS}) "
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                    (
-                        surfacing.id,
-                        surfacing.entry_id,
-                        surfacing.on_date.isoformat(),
-                        surfacing.slot,
-                        surfacing.kind.value,
-                        surfacing.select_pool.value,
-                        surfacing.prompt_template_id,
-                        surfacing.prompt_kind.value,
-                        surfacing.prompt_text,
-                        int(surfacing.personalized),
-                        int(surfacing.personalize_fell_back),
-                        int(surfacing.relaxed_cooldown),
-                        int(surfacing.prompt_recency_relaxed),
-                        surfacing.filter_theme_id,
-                        surfacing.filter_collection_id,
-                        surfacing.scheduler_version,
-                        surfacing.seed,
-                        surfacing.created_at.isoformat(),
-                    ),
-                )
-        except sqlite3.IntegrityError as exc:
-            raise DuplicateError(str(exc)) from exc
+        with self._lock:
+            self.check_monotonic(surfacing)
+            try:
+                with self._conn:
+                    self._conn.execute(
+                        f"INSERT INTO surfacings({_SURFACING_COLUMNS}) "
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                        (
+                            surfacing.id,
+                            surfacing.entry_id,
+                            surfacing.on_date.isoformat(),
+                            surfacing.slot,
+                            surfacing.kind.value,
+                            surfacing.select_pool.value,
+                            surfacing.prompt_template_id,
+                            surfacing.prompt_kind.value,
+                            surfacing.prompt_text,
+                            int(surfacing.personalized),
+                            int(surfacing.personalize_fell_back),
+                            int(surfacing.relaxed_cooldown),
+                            int(surfacing.prompt_recency_relaxed),
+                            surfacing.filter_theme_id,
+                            surfacing.filter_collection_id,
+                            surfacing.scheduler_version,
+                            surfacing.seed,
+                            surfacing.created_at.isoformat(),
+                        ),
+                    )
+            except sqlite3.IntegrityError as exc:
+                raise DuplicateError(str(exc)) from exc
 
     def get_surfacing(self, surfacing_id: str) -> Surfacing | None:
         row = self._conn.execute(
@@ -636,7 +650,7 @@ class SqliteRepository(Repository):
     # --- reflections --------------------------------------------------------
     def add_reflection(self, reflection: Reflection) -> None:
         try:
-            with self._conn:
+            with self._lock, self._conn:
                 self._conn.execute(
                     "INSERT INTO reflections(id, surfacing_id, entry_id, grade, text, logged_at) "
                     "VALUES (?, ?, ?, ?, ?, ?)",
@@ -713,7 +727,7 @@ class SqliteRepository(Repository):
         return self._state(row) if row else None
 
     def put_state(self, state: SchedulerState) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute(
                 "INSERT INTO scheduler_state(entry_id, exposure_count, last_surfaced_on, "
                 "interval_days, flat_streak) VALUES (?, ?, ?, ?, ?) "
@@ -736,7 +750,7 @@ class SqliteRepository(Repository):
     # --- collections --------------------------------------------------------
     def add_collection(self, collection: Collection) -> None:
         try:
-            with self._conn:
+            with self._lock, self._conn:
                 self._conn.execute(
                     "INSERT INTO collections(id, name, description, created_at) "
                     "VALUES (?, ?, ?, ?)",
@@ -769,7 +783,7 @@ class SqliteRepository(Repository):
         return [self._collection(row) for row in rows]
 
     def update_collection(self, collection: Collection) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             cursor = self._conn.execute(
                 "UPDATE collections SET name = ?, description = ? WHERE id = ?",
                 (collection.name, collection.description, collection.id),
@@ -778,36 +792,38 @@ class SqliteRepository(Repository):
                 raise KeyError(f"unknown collection {collection.id}")
 
     def delete_collection(self, collection_id: str) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute(
                 "DELETE FROM collection_entries WHERE collection_id = ?", (collection_id,)
             )
             self._conn.execute("DELETE FROM collections WHERE id = ?", (collection_id,))
 
     def add_collection_entry(self, collection_id: str, entry_id: str) -> int:
-        existing = self.collection_entry_ids(collection_id)
-        if entry_id in existing:
-            return existing.index(entry_id)
-        position = len(existing)
-        with self._conn:
-            self._conn.execute(
-                "INSERT INTO collection_entries(collection_id, entry_id, position) "
-                "VALUES (?, ?, ?)",
-                (collection_id, entry_id, position),
-            )
-        return position
+        with self._lock:
+            existing = self.collection_entry_ids(collection_id)
+            if entry_id in existing:
+                return existing.index(entry_id)
+            position = len(existing)
+            with self._conn:
+                self._conn.execute(
+                    "INSERT INTO collection_entries(collection_id, entry_id, position) "
+                    "VALUES (?, ?, ?)",
+                    (collection_id, entry_id, position),
+                )
+            return position
 
     def remove_collection_entry(self, collection_id: str, entry_id: str) -> None:
-        members = [eid for eid in self.collection_entry_ids(collection_id) if eid != entry_id]
-        with self._conn:
-            self._conn.execute(
-                "DELETE FROM collection_entries WHERE collection_id = ?", (collection_id,)
-            )
-            self._conn.executemany(
-                "INSERT INTO collection_entries(collection_id, entry_id, position) "
-                "VALUES (?, ?, ?)",
-                [(collection_id, eid, index) for index, eid in enumerate(members)],
-            )
+        with self._lock:
+            members = [eid for eid in self.collection_entry_ids(collection_id) if eid != entry_id]
+            with self._conn:
+                self._conn.execute(
+                    "DELETE FROM collection_entries WHERE collection_id = ?", (collection_id,)
+                )
+                self._conn.executemany(
+                    "INSERT INTO collection_entries(collection_id, entry_id, position) "
+                    "VALUES (?, ?, ?)",
+                    [(collection_id, eid, index) for index, eid in enumerate(members)],
+                )
 
     def collection_entry_ids(self, collection_id: str) -> list[str]:
         rows = self._conn.execute(
@@ -818,7 +834,7 @@ class SqliteRepository(Repository):
 
     # --- attribution flags --------------------------------------------------
     def upsert_attribution_flag(self, flag: AttributionFlag) -> None:
-        with self._conn:
+        with self._lock, self._conn:
             self._conn.execute(
                 "DELETE FROM attribution_flags WHERE entry_id = ? AND misattribution_id IS ?",
                 (flag.entry_id, flag.misattribution_id),

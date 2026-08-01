@@ -349,3 +349,39 @@ correction note under the §5 table; no threshold moved.
 - FR coverage table written to `docs/FR_COVERAGE.md` (all 17 FRs
   implemented and covered; EVALS.md §7's illustrative test-file names are
   mapped to the real `test_frN_*` modules there).
+
+## Cross-project audit
+
+### 2026-08-01 — SQLite cross-thread connection (the flowlist/pointsmax defect)
+
+**Vulnerable: yes.** `SqliteRepository.__init__` opened its long-lived
+connection with sqlite3's default `check_same_thread=True`, while the served
+path (uvicorn → FastAPI → sync handlers on anyio threadpool workers) uses it
+from other threads. Both real wirings crash:
+
+- Default wiring (`uvicorn almanac.api:app` → per-request `open_service`):
+  the connection is opened inside the sync `get_service` dependency on one
+  worker thread and used by the handler on another. Sequential requests sneak
+  through only because anyio reuses the last idle worker (LIFO); under 6
+  concurrent client threads the mismatch is immediate.
+- Shared-service wiring (`create_app(lambda: service)`, the documented
+  override that conftest uses with the memory repo): the first DB-touching
+  request crashes deterministically.
+
+**Proof** (pre-fix, real app + real SQLite store on a tmp file —
+`tests/test_sqlite_threading.py`, all three tests observed failing):
+`sqlite3.ProgrammingError: SQLite objects created in a thread can only be
+used in that same thread. The object was created in thread id X and this is
+thread id Y.` The in-memory `api_client` fixture can never see this, which is
+how the API suite missed it.
+
+**Fix** (same pattern as the hardened siblings, store shape unchanged):
+`sqlite3.connect(..., check_same_thread=False)` — safe here because
+`sqlite3.threadsafety == 3` (serialized C level) — plus a `threading.RLock`
+held across every write batch (`with self._lock, self._conn:`) and across
+each read-modify-write composite in full (`upsert_tag`, `add_surfacing`
+including its monotonicity check, `add_collection_entry`,
+`remove_collection_entry`), so transactions cannot interleave on the shared
+connection. Pure reads stay lock-free. The regression tests stay as a guard;
+`verify_all.py almanac` fully green after the fix (368 tests, 19/19 eval
+gates, ruff, CLI).

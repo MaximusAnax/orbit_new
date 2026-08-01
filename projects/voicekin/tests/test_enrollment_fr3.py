@@ -160,22 +160,27 @@ def test_fr3_rejected_samples_do_not_count_toward_completeness():
 # --------------------------------------------------------------------------- #
 
 
+def _derive(speaker, embedder, calibration, *, seed: int = 4100):
+    """Enrollment-shaped derivation: features + centroid from three takes."""
+    clips = [render_voice(speaker, 7.5, seed=seed + k) for k in range(3)]
+    embeddings = [embedder.embed(clip) for clip in clips]
+    params = derive_voice_params(
+        [analyze_voice(clip) for clip in clips],
+        centroid=centroid(embeddings),
+        feature_norms=calibration.feature_norms,
+    )
+    return centroid(embeddings), params
+
+
 def test_fr3_voice_params_track_the_enrolled_identity(embedder, calibration):
-    """Pitch and vocal-tract scale are physically identified; the derived tilt is
-    an analysis-by-synthesis proxy (whatever source slope makes the stub's
-    *measured* tilt match the enrollment's), so the identity property asserted
-    for it is the one FR-8 needs: the render lands on its own enrollment."""
+    """Pitch and vocal-tract scale are physically identified; the derived tilt
+    and band gains are analysis-by-synthesis proxies, so the identity property
+    asserted for them is the one FR-8 needs: the render lands on its own
+    enrollment."""
     from voicekin.engine.synthesis import stub_render
 
-    profiles = {}
-    for name, speaker in (("alice", ALICE), ("bob", BOB)):
-        embeddings = [embedder.embed(render_voice(speaker, 7.5, seed=4100 + k)) for k in range(3)]
-        params = derive_voice_params(
-            [analyze_voice(render_voice(speaker, 7.5, seed=4100 + k)) for k in range(3)]
-        )
-        profiles[name] = (centroid(embeddings), params)
-
-    (alice_centroid, alice), (bob_centroid, bob) = profiles["alice"], profiles["bob"]
+    alice_centroid, alice = _derive(ALICE, embedder, calibration)
+    bob_centroid, bob = _derive(BOB, embedder, calibration)
     assert alice.f0_base_hz == pytest.approx(ALICE.f0_base_hz, rel=0.10)
     assert bob.f0_base_hz == pytest.approx(BOB.f0_base_hz, rel=0.10)
     assert alice.formant_scale < bob.formant_scale
@@ -192,22 +197,23 @@ def test_fr3_voice_params_track_the_enrolled_identity(embedder, calibration):
         assert own_score > other_score
 
 
-def test_fr3_voice_params_are_deterministic():
-    features = [analyze_voice(render_voice(CARLA, 7.5, seed=4100 + k)) for k in range(3)]
-    assert derive_voice_params(features) == derive_voice_params(features)
+def test_fr3_voice_params_are_deterministic(embedder, calibration):
+    _, first = _derive(CARLA, embedder, calibration)
+    _, second = _derive(CARLA, embedder, calibration)
+    assert first == second
 
 
-def test_fr3_voice_params_need_analysis():
+def test_fr3_voice_params_need_analysis(calibration):
     with pytest.raises(ValueError, match="at least one"):
-        derive_voice_params([])
+        derive_voice_params([], centroid=[0.0] * 16, feature_norms=calibration.feature_norms)
 
 
-def test_fr3_derived_params_stay_inside_their_committed_ranges():
-    extreme = derive_voice_params(
-        [analyze_voice(render_voice(ALICE.shifted(vtl=0.5), 6.0, seed=42))]
-    )
+def test_fr3_derived_params_stay_inside_their_committed_ranges(embedder, calibration):
+    _, extreme = _derive(ALICE.shifted(vtl=0.5), embedder, calibration, seed=42)
     assert 0.60 <= extreme.formant_scale <= 1.60
     assert -24.0 <= extreme.tilt_db_oct <= 0.0
+    assert len(extreme.band_gains_db) == 8
+    assert all(abs(g) <= 18.0 for g in extreme.band_gains_db)
 
 
 def test_fr3_centroid_is_closer_to_its_own_speaker(embedder, calibration):

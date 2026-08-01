@@ -265,3 +265,43 @@ column exactly.
   `off` override with loud unknown-key rejection, and `serve` (live HTTP:
   health, filtered runs, report download, structured 404). Source hashes
   unchanged throughout.
+
+## Cross-project audit — SQLite cross-thread connection (2026-08-01)
+
+The defect class that shipped in flowlist and pointsmax (SQLite connection
+opened with sqlite3's default `check_same_thread=True` on one thread, then
+used from FastAPI's threadpool workers) was probed here: **datasweep was
+vulnerable**, in both served wirings.
+
+- **Default wiring** (`create_app()` → `default_service_factory`, the app
+  `datasweep serve` builds): the per-request `SqliteRepository` is
+  *constructed* in one anyio worker (sync generator dependency via
+  `contextmanager_in_threadpool`), *used* by the handler in another
+  (`run_in_threadpool`), and *closed* in a third.  anyio's LIFO idle-worker
+  reuse lets a lone request stay on one thread — which is why sequential
+  requests looked fine — but concurrent requests misalign the workers:
+  6 client threads × 10 `GET /folders` produced 47/60
+  `sqlite3.ProgrammingError: SQLite objects created in a thread can only be
+  used in that same thread`.
+- **Shared-service wiring** (`create_app(lambda: service)`, the documented
+  injection pattern, bound to a SQLite store): the connection is opened on
+  the composition root's thread, so even a single `GET /folders` raised the
+  same `ProgrammingError` deterministically.
+
+The API tests never saw either because they inject an in-memory repository.
+
+**Fix** (store-level, the pointsmax pattern; no redesign, per-request
+connections stay per-request): `SqliteRepository` now opens the connection
+with `check_same_thread=False` — safe because CPython ships SQLite in
+serialized mode (`sqlite3.threadsafety == 3`) — and holds a
+`threading.RLock` across every write batch and every read-modify-write
+composite (`upsert_source_file`, `finalize_run`, `decide_review_item`,
+`add_revision`, the run-exists+insert batches, and `close`) so transactions
+cannot interleave.
+
+**Regression guard:** `tests/test_thread_safety.py` — the real app on a tmp
+DB file under concurrent TestClient load, the shared-service wiring, and a
+direct 8-thread read-modify-write race on one repository.  All three failed
+with `sqlite3.ProgrammingError` before the fix (18/18 across six runs) and
+pass 10/10 after; `verify_all.py datasweep` fully green (408 tests, 14 eval
+gates, ruff, CLI).

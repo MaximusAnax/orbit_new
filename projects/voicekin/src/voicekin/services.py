@@ -308,6 +308,37 @@ class VoiceKinService:
             )
         return views
 
+    def profile_view(self, profile_id: str, now: str) -> ProfileView:
+        """One profile plus its FR-1 display annotations."""
+        self.require_instance()
+        profile = self.require_profile(profile_id)
+        consents = self.repository.list_consents(profile.id)
+        governing = governing_consent(consents)
+        return ProfileView(
+            profile=profile,
+            awaiting_consent=awaiting_consent(
+                profile, consents, now, self.calibration.consent_grace_days
+            ),
+            consent_status=governing.status if governing else None,
+        )
+
+    def list_consents(self, profile_id: str) -> list[ConsentRecord]:
+        self.require_instance()
+        self.require_profile(profile_id)
+        return self.repository.list_consents(profile_id)
+
+    def list_samples(self, profile_id: str) -> list[EnrollmentSample]:
+        self.require_instance()
+        self.require_profile(profile_id)
+        return self.repository.list_samples(profile_id)
+
+    def get_utterance(self, utterance_id_value: str) -> Utterance:
+        self.require_instance()
+        utterance = self.repository.get_utterance(utterance_id_value)
+        if utterance is None:
+            raise NotFoundError(f"no such utterance: {utterance_id_value}")
+        return utterance
+
     def set_enabled(self, profile_id: str, enabled: bool, now: str) -> VoiceProfile:
         """FR-1 kill switch — independent of consent."""
         self.require_instance()
@@ -354,7 +385,7 @@ class VoiceKinService:
             update["enrollment_fingerprint"] = enroll_engine.enrollment_fingerprint(
                 self.embedder.embedder_id, [s.sha256 for s in samples]
             )
-            update["voice_params"] = self._derive_voice_params(samples)
+            update["voice_params"] = self._derive_voice_params(samples, update["centroid"])
             if profile.enrolled_at is None:
                 update["enrolled_at"] = now
         else:
@@ -365,7 +396,9 @@ class VoiceKinService:
         self.repository.save_profile(updated)
         return updated
 
-    def _derive_voice_params(self, samples: Sequence[EnrollmentSample]):
+    def _derive_voice_params(
+        self, samples: Sequence[EnrollmentSample], centroid: Sequence[float]
+    ):
         features = []
         for sample in samples:
             if sample.path is None:
@@ -374,7 +407,9 @@ class VoiceKinService:
             features.append(analyze_voice(clip))
         if not features:
             raise ServiceError("enrollment audio is missing from the data home")
-        return enroll_engine.derive_voice_params(features)
+        return enroll_engine.derive_voice_params(
+            features, centroid=centroid, feature_norms=self.calibration.feature_norms
+        )
 
     def add_samples(
         self, profile_id: str, wav_paths: Sequence[Path], now: str
@@ -1137,8 +1172,12 @@ class VoiceKinService:
     def verify_output(self, wav_bytes: bytes) -> OutputProvenance | None:
         """Resolve a WAV to its utterance by PCM-payload hash (FR-10)."""
         self.require_instance()
-        digest = payload_sha256(wav_bytes)
-        utterance = self.repository.find_utterance_by_output_sha256(digest)
+        return self.provenance_by_sha256(payload_sha256(wav_bytes))
+
+    def provenance_by_sha256(self, output_sha256: str) -> OutputProvenance | None:
+        """FR-10 lookup by an already-computed payload hash (the API's route)."""
+        self.require_instance()
+        utterance = self.repository.find_utterance_by_output_sha256(output_sha256)
         if utterance is None:
             return None
         profile = self.require_profile(utterance.profile_id)
@@ -1147,6 +1186,27 @@ class VoiceKinService:
             profile=profile,
             audit_records=self.repository.list_audit_for_utterance(utterance.id),
         )
+
+    def revoke_consent_by_id(
+        self, consent_id_value: str, reason: str | None, now: str
+    ) -> ConsentRecord:
+        """FR-7 revocation addressed by consent id (the API's route).
+
+        Only the profile's **governing** record may be revoked — an older
+        record is already incapable of authorizing anything (FR-6), so
+        "revoking" it would only misrepresent history.
+        """
+        self.require_instance()
+        record = self.repository.get_consent(consent_id_value)
+        if record is None:
+            raise NotFoundError(f"no such consent record: {consent_id_value}")
+        governing = governing_consent(self.repository.list_consents(record.profile_id))
+        if governing is None or governing.id != record.id:
+            raise ServiceError(
+                f"consent {consent_id_value} is not the governing record for "
+                f"{record.profile_id} — only the governing consent can be revoked"
+            )
+        return self.revoke_consent(record.profile_id, reason, now)
 
     def read_manifest(self, path: Path) -> dict[str, Any]:
         """Read a delivered sidecar manifest (FR-10)."""

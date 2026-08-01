@@ -1,0 +1,94 @@
+{
+ "cases": [
+  {
+   "case": 1,
+   "expected": {
+    "bad_seq": 6,
+    "ok": false
+   },
+   "mutation": {
+    "key": "similarity",
+    "kind": "edit_detail",
+    "seq": 6,
+    "value": 0.123456
+   },
+   "name": "mutate a detail field"
+  },
+  {
+   "case": 2,
+   "expected": {
+    "bad_seq": 15,
+    "ok": false
+   },
+   "mutation": {
+    "kind": "edit_ts",
+    "seq": 15,
+    "value": "2031-01-01T00:00:00Z"
+   },
+   "name": "mutate ts"
+  },
+  {
+   "case": 3,
+   "expected": {
+    "bad_seq": 10,
+    "ok": false
+   },
+   "mutation": {
+    "kind": "delete",
+    "seq": 9
+   },
+   "name": "delete a mid-chain record"
+  },
+  {
+   "case": 4,
+   "expected": {
+    "bad_seq": 7,
+    "ok": false
+   },
+   "mutation": {
+    "kind": "swap_contents",
+    "seq_a": 7,
+    "seq_b": 8
+   },
+   "name": "reorder two records"
+  },
+  {
+   "case": 5,
+   "expected": {
+    "bad_seq": 23,
+    "ok": false
+   },
+   "mutation": {
+    "kind": "rehash_without_prev",
+    "seq": 23
+   },
+   "name": "rehash ignoring prev_hash"
+  },
+  {
+   "case": 6,
+   "expected": {
+    "bad_seq": 27,
+    "ok": false
+   },
+   "mutation": {
+    "from_seq": 27,
+    "kind": "truncate_and_forge"
+   },
+   "name": "truncate the tail, append a forged record"
+  },
+  {
+   "case": 7,
+   "expected": {
+    "ok": true
+   },
+   "mutation": {
+    "edit_key": "reason",
+    "edit_value": "cover story",
+    "from_seq": 27,
+    "kind": "truncate_and_recompute"
+   },
+   "name": "truncate and re-append correctly chained records (undetectable by design; FR-12 stated limit)"
+  }
+ ],
+ "session_events": 30
+}

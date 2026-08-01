@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import threading
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -149,25 +150,36 @@ def _dt(value: str | None) -> datetime | None:
 
 
 class SqliteRepository:
-    """Default backend.  ``path=':memory:'`` is supported for quick tests."""
+    """Default backend.  ``path=':memory:'`` is supported for quick tests.
+
+    Thread-safety: FastAPI dispatches sync handlers *and* the per-request
+    repository dependency to anyio threadpool workers, so under ``datasweep
+    serve`` a connection is constructed, used, and closed on different threads
+    (and the ``create_app(lambda: service)`` wiring shares one connection
+    across all workers).  ``check_same_thread`` is therefore disabled — safe
+    because CPython ships SQLite in serialized mode (``sqlite3.threadsafety ==
+    3``) — and ``_lock`` is held across every write batch and every
+    read-modify-write composite so transactions cannot interleave.
+    """
 
     def __init__(self, path: str | Path = ":memory:") -> None:
         self.path = str(path)
         if self.path != ":memory:":
             Path(self.path).parent.mkdir(parents=True, exist_ok=True)
-        self._conn = sqlite3.connect(self.path)
+        self._conn = sqlite3.connect(self.path, check_same_thread=False)
         self._conn.row_factory = sqlite3.Row
         self._conn.execute("PRAGMA foreign_keys = ON")
         if self.path != ":memory:":
             self._conn.execute("PRAGMA journal_mode = WAL")
         self._conn.executescript(SCHEMA)
+        self._lock = threading.RLock()
         self._conn.commit()
 
     # -- watched folders ---------------------------------------------------
 
     def add_folder(self, folder: WatchedFolder) -> WatchedFolder:
         try:
-            with self._conn:
+            with self._lock, self._conn:
                 self._conn.execute(
                     "INSERT INTO watched_folders (id, path, recursive, include, policy_path,"
                     " output_dir, enabled, created_at) VALUES (?,?,?,?,?,?,?,?)",
@@ -197,7 +209,7 @@ class SqliteRepository:
         return None if row is None else self._folder(row)
 
     def delete_folder(self, folder_id: str) -> bool:
-        with self._conn:
+        with self._lock, self._conn:
             cursor = self._conn.execute("DELETE FROM watched_folders WHERE id = ?", (folder_id,))
         return cursor.rowcount > 0
 
@@ -219,23 +231,24 @@ class SqliteRepository:
     def upsert_source_file(
         self, *, id: str, path: str, folder_id: str | None, now: datetime
     ) -> SourceFile:
-        existing = self.get_source_file(path)
-        with self._conn:
-            if existing is None:
+        with self._lock:  # read-modify-write: hold from first read to commit
+            existing = self.get_source_file(path)
+            with self._conn:
+                if existing is None:
+                    self._conn.execute(
+                        "INSERT INTO source_files (id, path, folder_id, first_seen_at,"
+                        " last_seen_at) VALUES (?,?,?,?,?)",
+                        (id, path, folder_id, now.isoformat(), now.isoformat()),
+                    )
+                    return SourceFile(
+                        id=id, path=path, folder_id=folder_id, first_seen_at=now, last_seen_at=now
+                    )
+                new_folder = folder_id if folder_id is not None else existing.folder_id
                 self._conn.execute(
-                    "INSERT INTO source_files (id, path, folder_id, first_seen_at, last_seen_at)"
-                    " VALUES (?,?,?,?,?)",
-                    (id, path, folder_id, now.isoformat(), now.isoformat()),
+                    "UPDATE source_files SET last_seen_at = ?, folder_id = ? WHERE path = ?",
+                    (now.isoformat(), new_folder, path),
                 )
-                return SourceFile(
-                    id=id, path=path, folder_id=folder_id, first_seen_at=now, last_seen_at=now
-                )
-            new_folder = folder_id if folder_id is not None else existing.folder_id
-            self._conn.execute(
-                "UPDATE source_files SET last_seen_at = ?, folder_id = ? WHERE path = ?",
-                (now.isoformat(), new_folder, path),
-            )
-        return existing.model_copy(update={"last_seen_at": now, "folder_id": new_folder})
+            return existing.model_copy(update={"last_seen_at": now, "folder_id": new_folder})
 
     def get_source_file(self, path: str) -> SourceFile | None:
         row = self._conn.execute("SELECT * FROM source_files WHERE path = ?", (path,)).fetchone()
@@ -259,7 +272,7 @@ class SqliteRepository:
 
     def add_run(self, run: Run) -> Run:
         try:
-            with self._conn:
+            with self._lock, self._conn:
                 self._conn.execute(
                     "INSERT INTO runs (id, file_id, content_sha256, policy_hash, policy_snapshot,"
                     " engine_version, started_at, finished_at, status, trigger_kind, format,"
@@ -272,32 +285,35 @@ class SqliteRepository:
         return run
 
     def finalize_run(self, run: Run) -> Run:
-        row = self._conn.execute("SELECT finished_at FROM runs WHERE id = ?", (run.id,)).fetchone()
-        if row is None:
-            raise UnknownRunError(f"unknown run: {run.id}", run_id=run.id)
-        if row["finished_at"] is not None:
-            raise DatasweepError(f"run {run.id} is already finalized (append-only)")
-        with self._conn:
-            self._conn.execute(
-                "UPDATE runs SET finished_at = ?, status = ?, format = ?, encoding = ?,"
-                " dialect = ?, n_rows = ?, n_cols = ?, issue_counts = ?, change_counts = ?,"
-                " artifact_dir = ?, error = ? WHERE id = ? AND finished_at IS NULL",
-                (
-                    run.finished_at.isoformat() if run.finished_at else None,
-                    run.status.value,
-                    run.format.value if run.format else None,
-                    run.encoding,
-                    _dumps(run.dialect) if run.dialect is not None else None,
-                    run.n_rows,
-                    run.n_cols,
-                    _dumps(run.issue_counts),
-                    _dumps(run.change_counts),
-                    run.artifact_dir,
-                    run.error,
-                    run.id,
-                ),
-            )
-        return run
+        with self._lock:  # read-modify-write: hold from the append-only check to commit
+            row = self._conn.execute(
+                "SELECT finished_at FROM runs WHERE id = ?", (run.id,)
+            ).fetchone()
+            if row is None:
+                raise UnknownRunError(f"unknown run: {run.id}", run_id=run.id)
+            if row["finished_at"] is not None:
+                raise DatasweepError(f"run {run.id} is already finalized (append-only)")
+            with self._conn:
+                self._conn.execute(
+                    "UPDATE runs SET finished_at = ?, status = ?, format = ?, encoding = ?,"
+                    " dialect = ?, n_rows = ?, n_cols = ?, issue_counts = ?, change_counts = ?,"
+                    " artifact_dir = ?, error = ? WHERE id = ? AND finished_at IS NULL",
+                    (
+                        run.finished_at.isoformat() if run.finished_at else None,
+                        run.status.value,
+                        run.format.value if run.format else None,
+                        run.encoding,
+                        _dumps(run.dialect) if run.dialect is not None else None,
+                        run.n_rows,
+                        run.n_cols,
+                        _dumps(run.issue_counts),
+                        _dumps(run.change_counts),
+                        run.artifact_dir,
+                        run.error,
+                        run.id,
+                    ),
+                )
+            return run
 
     def get_run(self, run_id: str) -> Run | None:
         row = self._conn.execute("SELECT * FROM runs WHERE id = ?", (run_id,)).fetchone()
@@ -383,28 +399,29 @@ class SqliteRepository:
     # -- profiles and rollups ---------------------------------------------
 
     def add_column_profiles(self, run_id: str, profiles: list[ColumnProfile]) -> None:
-        self._require_run(run_id)
-        with self._conn:
-            self._conn.executemany(
-                "INSERT INTO column_profiles (run_id, col_index, name, original_name,"
-                " inferred_type, type_coverage, non_null, null_count, distinct_count, stats)"
-                " VALUES (?,?,?,?,?,?,?,?,?,?)",
-                [
-                    (
-                        run_id,
-                        profile.col_index,
-                        profile.name,
-                        profile.original_name,
-                        profile.inferred_type.value,
-                        profile.type_coverage,
-                        profile.non_null,
-                        profile.null_count,
-                        profile.distinct_count,
-                        _dumps(profile.stats),
-                    )
-                    for profile in profiles
-                ],
-            )
+        with self._lock:  # composite: the run-exists check must hold at insert time
+            self._require_run(run_id)
+            with self._conn:
+                self._conn.executemany(
+                    "INSERT INTO column_profiles (run_id, col_index, name, original_name,"
+                    " inferred_type, type_coverage, non_null, null_count, distinct_count, stats)"
+                    " VALUES (?,?,?,?,?,?,?,?,?,?)",
+                    [
+                        (
+                            run_id,
+                            profile.col_index,
+                            profile.name,
+                            profile.original_name,
+                            profile.inferred_type.value,
+                            profile.type_coverage,
+                            profile.non_null,
+                            profile.null_count,
+                            profile.distinct_count,
+                            _dumps(profile.stats),
+                        )
+                        for profile in profiles
+                    ],
+                )
 
     def list_column_profiles(self, run_id: str) -> list[ColumnProfile]:
         rows = self._conn.execute(
@@ -427,26 +444,27 @@ class SqliteRepository:
         ]
 
     def add_issue_summaries(self, summaries: list[IssueSummary]) -> None:
-        for summary in summaries:
-            self._require_run(summary.run_id)
-        with self._conn:
-            self._conn.executemany(
-                "INSERT INTO issue_summaries (id, run_id, klass, col_index, cell_count,"
-                " disposition, samples, evidence) VALUES (?,?,?,?,?,?,?,?)",
-                [
-                    (
-                        summary.id,
-                        summary.run_id,
-                        summary.klass.value,
-                        summary.col_index,
-                        summary.cell_count,
-                        summary.disposition.value,
-                        _dumps(summary.samples),
-                        _dumps(summary.evidence),
-                    )
-                    for summary in summaries
-                ],
-            )
+        with self._lock:  # composite: the run-exists checks must hold at insert time
+            for summary in summaries:
+                self._require_run(summary.run_id)
+            with self._conn:
+                self._conn.executemany(
+                    "INSERT INTO issue_summaries (id, run_id, klass, col_index, cell_count,"
+                    " disposition, samples, evidence) VALUES (?,?,?,?,?,?,?,?)",
+                    [
+                        (
+                            summary.id,
+                            summary.run_id,
+                            summary.klass.value,
+                            summary.col_index,
+                            summary.cell_count,
+                            summary.disposition.value,
+                            _dumps(summary.samples),
+                            _dumps(summary.evidence),
+                        )
+                        for summary in summaries
+                    ],
+                )
 
     def list_issue_summaries(self, run_id: str) -> list[IssueSummary]:
         rows = self._conn.execute(
@@ -470,32 +488,33 @@ class SqliteRepository:
     # -- review queue ------------------------------------------------------
 
     def add_review_items(self, items: list[ReviewItem]) -> None:
-        for item in items:
-            self._require_run(item.run_id)
-        try:
-            with self._conn:
-                self._conn.executemany(
-                    "INSERT INTO review_items (id, run_id, rule, col_index, description,"
-                    " proposal, affected_cells, confidence, status, decided_at)"
-                    " VALUES (?,?,?,?,?,?,?,?,?,?)",
-                    [
-                        (
-                            item.id,
-                            item.run_id,
-                            item.rule,
-                            item.col_index,
-                            item.description,
-                            _dumps(item.proposal),
-                            item.affected_cells,
-                            item.confidence,
-                            item.status.value,
-                            item.decided_at.isoformat() if item.decided_at else None,
-                        )
-                        for item in items
-                    ],
-                )
-        except sqlite3.IntegrityError as exc:
-            raise DatasweepError(f"duplicate review item for run: {exc}") from exc
+        with self._lock:  # composite: the run-exists checks must hold at insert time
+            for item in items:
+                self._require_run(item.run_id)
+            try:
+                with self._conn:
+                    self._conn.executemany(
+                        "INSERT INTO review_items (id, run_id, rule, col_index, description,"
+                        " proposal, affected_cells, confidence, status, decided_at)"
+                        " VALUES (?,?,?,?,?,?,?,?,?,?)",
+                        [
+                            (
+                                item.id,
+                                item.run_id,
+                                item.rule,
+                                item.col_index,
+                                item.description,
+                                _dumps(item.proposal),
+                                item.affected_cells,
+                                item.confidence,
+                                item.status.value,
+                                item.decided_at.isoformat() if item.decided_at else None,
+                            )
+                            for item in items
+                        ],
+                    )
+            except sqlite3.IntegrityError as exc:
+                raise DatasweepError(f"duplicate review item for run: {exc}") from exc
 
     def list_review_items(self, run_id: str) -> list[ReviewItem]:
         rows = self._conn.execute(
@@ -512,23 +531,24 @@ class SqliteRepository:
     def decide_review_item(
         self, run_id: str, item_id: str, status: ReviewStatus, now: datetime
     ) -> ReviewItem:
-        item = self.get_review_item(run_id, item_id)
-        if item is None:
-            raise UnknownRunError(f"unknown review item: {item_id}", item_id=item_id)
-        if item.status is not ReviewStatus.PENDING:
-            raise ItemAlreadyDecidedError(
-                f"review item {item_id} is already {item.status.value}",
-                item_id=item_id,
-                status=item.status.value,
-            )
-        decided = item.decide(status, now)
-        with self._conn:
-            self._conn.execute(
-                "UPDATE review_items SET status = ?, decided_at = ?"
-                " WHERE run_id = ? AND id = ? AND status = 'pending'",
-                (decided.status.value, now.isoformat(), run_id, item_id),
-            )
-        return decided
+        with self._lock:  # read-modify-write: hold from the pending check to commit
+            item = self.get_review_item(run_id, item_id)
+            if item is None:
+                raise UnknownRunError(f"unknown review item: {item_id}", item_id=item_id)
+            if item.status is not ReviewStatus.PENDING:
+                raise ItemAlreadyDecidedError(
+                    f"review item {item_id} is already {item.status.value}",
+                    item_id=item_id,
+                    status=item.status.value,
+                )
+            decided = item.decide(status, now)
+            with self._conn:
+                self._conn.execute(
+                    "UPDATE review_items SET status = ?, decided_at = ?"
+                    " WHERE run_id = ? AND id = ? AND status = 'pending'",
+                    (decided.status.value, now.isoformat(), run_id, item_id),
+                )
+            return decided
 
     def rejected_item_ids(self, content_sha256: str) -> set[str]:
         rows = self._conn.execute(
@@ -556,32 +576,33 @@ class SqliteRepository:
     # -- revisions ---------------------------------------------------------
 
     def add_revision(self, revision: Revision) -> Revision:
-        self._require_run(revision.run_id)
-        existing = self.list_revisions(revision.run_id)
-        expected = len(existing) + 1
-        if revision.revision_no != expected:
-            raise DatasweepError(
-                f"revision numbers must be dense from 1: expected {expected}, "
-                f"got {revision.revision_no}"
-            )
-        try:
-            with self._conn:
-                self._conn.execute(
-                    "INSERT INTO revisions (id, run_id, revision_no, created_at,"
-                    " accepted_item_ids, cleaned_path, audit_path) VALUES (?,?,?,?,?,?,?)",
-                    (
-                        revision.id,
-                        revision.run_id,
-                        revision.revision_no,
-                        revision.created_at.isoformat(),
-                        _dumps(revision.accepted_item_ids),
-                        revision.cleaned_path,
-                        revision.audit_path,
-                    ),
+        with self._lock:  # read-modify-write: the dense-numbering check must hold at commit
+            self._require_run(revision.run_id)
+            existing = self.list_revisions(revision.run_id)
+            expected = len(existing) + 1
+            if revision.revision_no != expected:
+                raise DatasweepError(
+                    f"revision numbers must be dense from 1: expected {expected}, "
+                    f"got {revision.revision_no}"
                 )
-        except sqlite3.IntegrityError as exc:
-            raise DatasweepError(f"duplicate revision: {exc}") from exc
-        return revision
+            try:
+                with self._conn:
+                    self._conn.execute(
+                        "INSERT INTO revisions (id, run_id, revision_no, created_at,"
+                        " accepted_item_ids, cleaned_path, audit_path) VALUES (?,?,?,?,?,?,?)",
+                        (
+                            revision.id,
+                            revision.run_id,
+                            revision.revision_no,
+                            revision.created_at.isoformat(),
+                            _dumps(revision.accepted_item_ids),
+                            revision.cleaned_path,
+                            revision.audit_path,
+                        ),
+                    )
+            except sqlite3.IntegrityError as exc:
+                raise DatasweepError(f"duplicate revision: {exc}") from exc
+            return revision
 
     def list_revisions(self, run_id: str) -> list[Revision]:
         rows = self._conn.execute(
@@ -608,4 +629,5 @@ class SqliteRepository:
             raise UnknownRunError(f"unknown run: {run_id}", run_id=run_id)
 
     def close(self) -> None:
-        self._conn.close()
+        with self._lock:  # never close a connection out from under a write batch
+            self._conn.close()
