@@ -34,17 +34,20 @@ from ethos.models import (
 
 # (1) Anchored validation patterns — DATA_MODEL § Locator regexes, set 1 (C5).
 VALIDATION_REGEXES: dict[LocatorScheme, str] = {
-    LocatorScheme.chapter_verse: r"^[1-3]?\s?[A-Za-z'’\- ]+ \d+[:.]\d+([–-]\d+)?$",
-    LocatorScheme.book_section: r"^[A-Za-z ]+ [IVXLC]+\.\d+([–-]\d+)?$",
+    # The en-dashes below are load-bearing: real locators print ranges with
+    # U+2013 (as in "Ketubot 16b to 17a"), and folding one would make a citation
+    # disagree with the printed edition (DATA_MODEL § Loader contract).
+    LocatorScheme.chapter_verse: r"^[1-3]?\s?[A-Za-z'’\- ]+ \d+[:.]\d+([–-]\d+)?$",  # noqa: RUF001
+    LocatorScheme.book_section: r"^[A-Za-z ]+ [IVXLC]+\.\d+([–-]\d+)?$",  # noqa: RUF001
     LocatorScheme.part_question_article: r"^ST [I]+(-[I]+)?, Q\.\d+, art\.\d+$",
     LocatorScheme.bekker: r"^[A-Za-z ]+ [IVX]+\.\d+, \d{3,4}[ab]\d{1,2}$",
     LocatorScheme.stephanus: r"^[A-Za-z ]+ \d{1,3}[a-e]$",
     # Academy pagination is 2-3 digits: Critique of Practical Reason 5:27 is a
     # real two-digit page, so the doc's \d{3} is widened to \d{2,3} (recorded
     # deviation; the anchoring and the rest of the shape are unchanged).
-    LocatorScheme.academy_ed: r"^[A-Za-z ]+ \d:\d{2,3}([–-]\d{2,3})?$",
-    LocatorScheme.sutta_ref: r"^(DN|MN|SN|AN|Dhp|Snp) \d+(\.\d+)?([–-]\d+)?$",
-    LocatorScheme.folio: r"^[A-Za-z ]+ \d+[ab]([–-]\d+[ab])?$",
+    LocatorScheme.academy_ed: r"^[A-Za-z ]+ \d:\d{2,3}([–-]\d{2,3})?$",  # noqa: RUF001
+    LocatorScheme.sutta_ref: r"^(DN|MN|SN|AN|Dhp|Snp) \d+(\.\d+)?([–-]\d+)?$",  # noqa: RUF001
+    LocatorScheme.folio: r"^[A-Za-z ]+ \d+[ab]([–-]\d+[ab])?$",  # noqa: RUF001
     LocatorScheme.hadith_ref: r"^[A-Za-z\- ]+ \d+[a-z]?$",
     LocatorScheme.section: r"^[A-Za-z ]+ (ch\.)?\d+$",
 }

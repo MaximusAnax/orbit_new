@@ -33,8 +33,8 @@ from ethos.models import AnswerBody
 # Deliberately narrower than the anchored C5 validation regexes, and applied
 # only to polish-introduced spans (DATA_MODEL § Locator regexes, set 2).
 PROSE_LOCATOR_SCAN = [
-    r"\b\d+:\d+(?:[–-]\d+)?\b",
-    r"\b[IVXLC]{1,5}\.\d+(?:[–-]\d+)?\b",
+    r"\b\d+:\d+(?:[–-]\d+)?\b",  # noqa: RUF001 - en-dash ranges are real locators
+    r"\b[IVXLC]{1,5}\.\d+(?:[–-]\d+)?\b",  # noqa: RUF001
     r"\bQ\.\d+,\s*art\.\d+\b",
     r"\b\d{3,4}[ab]\d{1,2}\b",
     r"\b(?:DN|MN|SN|AN|Dhp|Snp)\s\d+(?:\.\d+)?\b",
@@ -250,4 +250,221 @@ def check_body(
     _check_perspectives(body, corpus, requested, failures)
     if polished_envelope is not None:
         _check_polish_diff(pre_polish_envelope, polished_envelope, failures)
+    return failures
+
+
+# --- the independent reader --------------------------------------------------
+# Everything below re-parses the printed answer and resolves it against the raw
+# json dicts. It shares no code with the composer and no object with the body:
+# a fabricated citation has to survive being read back off the page.
+
+_QUOTE_LINE = re.compile(r"^ {6}“(?P<text>.*)”$")
+_CITE_LINE = re.compile(r"^ {6}— (?P<rest>.+)$")
+_BULLET = re.compile(r"^ {2}• .*?(?: \[(?P<marker>C[1-9][0-9]*)\])?$")
+_MARKER_AT_END = re.compile(r" \[(C[1-9][0-9]*)\]$")
+_HEADER = re.compile(r"^--- (?P<name>.+) — (?P<stance>[a-z_]+) ---$")
+_TOPIC_LINE = re.compile(r"^(?:Matched topic|Topic): .+ \((?P<topic_id>[a-z0-9_]+)\)")
+_TABLE_LINE = re.compile(r"^ {2}\[(?P<marker>C[1-9][0-9]*)\] (?P<rest>.+)$")
+
+
+def _source_line_from_raw(source: dict[str, Any]) -> str:
+    if source.get("license") == "reference_only":
+        return f"{source['title']} — {source['edition_note']}"
+    if source.get("translator") is None:
+        return f"{source['title']}, {source['author']} ({source['translation_year']})"
+    return f"{source['title']}, trans. {source['translator']} ({source['translation_year']})"
+
+
+@dataclass(frozen=True)
+class PrintedCitation:
+    marker: str | None
+    text: str
+    is_paraphrase: bool
+    locator: str
+    source_line: str
+
+
+def parse_render(rendered_text: str) -> dict[str, Any]:
+    """Re-parse a printed answer per DATA_MODEL § Plain-text render."""
+    lines = rendered_text.split("\n")
+    citations: list[PrintedCitation] = []
+    table: dict[str, tuple[str, str, str]] = {}
+    traditions: list[str] = []
+    safeguards: list[str] = []
+    topic_id = ""
+    marker: str | None = None
+    in_table = False
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line.startswith("[!] "):
+            safeguards.append(line[4:])
+        elif not topic_id and _TOPIC_LINE.match(line):
+            topic_id = _TOPIC_LINE.match(line).group("topic_id")  # type: ignore[union-attr]
+        elif _HEADER.match(line):
+            traditions.append(_HEADER.match(line).group("name"))  # type: ignore[union-attr]
+        elif line.startswith("  • "):
+            found = _MARKER_AT_END.search(line)
+            marker = found.group(1) if found else None
+        elif line == "Citations:":
+            in_table = True
+        elif in_table and _TABLE_LINE.match(line):
+            hit = _TABLE_LINE.match(line)
+            parts = hit.group("rest").split(" — ")  # type: ignore[union-attr]
+            if len(parts) >= 3:
+                table[hit.group("marker")] = (  # type: ignore[union-attr]
+                    parts[0],
+                    " — ".join(parts[1:-1]),
+                    parts[-1],
+                )
+        elif _QUOTE_LINE.match(line):
+            text = _QUOTE_LINE.match(line).group("text")  # type: ignore[union-attr]
+            locator, source_line = _read_citation_line(lines, i + 1)
+            citations.append(PrintedCitation(marker, text, False, locator, source_line))
+        elif line == f"      {PARAPHRASE_LABEL}" and i + 1 < len(lines):
+            text = lines[i + 1][6:]
+            locator, source_line = _read_citation_line(lines, i + 2)
+            citations.append(PrintedCitation(marker, text, True, locator, source_line))
+            i += 1
+        i += 1
+    return {
+        "topic_id": topic_id,
+        "safeguards": safeguards,
+        "traditions": traditions,
+        "citations": citations,
+        "table": table,
+    }
+
+
+def _read_citation_line(lines: list[str], index: int) -> tuple[str, str]:
+    if index >= len(lines):
+        return "", ""
+    hit = _CITE_LINE.match(lines[index])
+    if hit is None:
+        return "", ""
+    rest = hit.group("rest").split(" — ", 1)
+    return (rest[0], rest[1] if len(rest) > 1 else "")
+
+
+def check_render_independently(rendered_text: str, raw: Any) -> list[Failure]:
+    """Resolve every printed citation against the raw corpus files.
+
+    `raw` is a :class:`~ethos.engine.corpus.RawCorpus` — plain json dicts, no
+    models. Comparison is raw string equality: no NFC, no strip, no casefold.
+    Shortfall counts too: if the corpus says a rendered position cites five
+    passages and only four blocks were printed, that is a failure.
+    """
+    failures: list[Failure] = []
+    parsed = parse_render(rendered_text)
+    passages = {p["id"]: p for p in raw.passages}
+    sources = {s["id"]: s for s in raw.sources}
+    by_text: dict[tuple[bool, str], list[dict[str, Any]]] = {}
+    for passage in passages.values():
+        if passage.get("text") is not None:
+            by_text.setdefault((False, passage["text"]), []).append(passage)
+        if passage.get("paraphrase") is not None:
+            by_text.setdefault((True, passage["paraphrase"]), []).append(passage)
+
+    for printed in parsed["citations"]:
+        matches = by_text.get((printed.is_paraphrase, printed.text), [])
+        if len(matches) != 1:
+            failures.append(
+                Failure(
+                    "render",
+                    f"printed text matches {len(matches)} committed passages: "
+                    f"{printed.text[:60]!r}",
+                )
+            )
+            continue
+        passage = matches[0]
+        if printed.locator != passage["locator"]:
+            failures.append(
+                Failure("render", f"{passage['id']}: printed locator {printed.locator!r}")
+            )
+        source = sources.get(passage["source_id"])
+        if source is None:
+            failures.append(Failure("render", f"{passage['id']}: source not in files"))
+            continue
+        if printed.source_line != _source_line_from_raw(source):
+            failures.append(
+                Failure("render", f"{passage['id']}: printed source line {printed.source_line!r}")
+            )
+        if printed.is_paraphrase and passage.get("text") is not None:
+            failures.append(Failure("render", f"{passage['id']}: quoted text shown as paraphrase"))
+        if printed.marker is None:
+            failures.append(Failure("render", f"{passage['id']}: quote block carries no marker"))
+            continue
+        entry = parsed["table"].get(printed.marker)
+        if entry is None:
+            failures.append(Failure("render", f"marker {printed.marker} missing from Citations"))
+        elif entry != (passage["id"], passage["locator"], passage["source_id"]):
+            failures.append(
+                Failure("render", f"marker {printed.marker}: Citations row disagrees with files")
+            )
+
+    markers = [c.marker for c in parsed["citations"] if c.marker is not None]
+    if len(set(markers)) != len(markers):
+        failures.append(Failure("render", "a marker labels more than one printed quote block"))
+    if set(parsed["table"]) != set(markers):
+        failures.append(Failure("render", "Citations table does not match the printed markers"))
+
+    expected = _expected_citation_count(parsed, raw)
+    if expected is not None and len(parsed["citations"]) != expected:
+        failures.append(
+            Failure(
+                "render",
+                f"{len(parsed['citations'])} citations printed, corpus expects {expected}",
+            )
+        )
+    return failures
+
+
+def _expected_citation_count(parsed: dict[str, Any], raw: Any) -> int | None:
+    """How many citations the rendered positions should have produced."""
+    names = {t["name"]: t["id"] for t in raw.traditions}
+    rendered_ids = [names[n] for n in parsed["traditions"] if n in names]
+    if len(rendered_ids) != len(parsed["traditions"]):
+        return None
+    total = 0
+    for position in raw.positions:
+        if position["topic_id"] != parsed["topic_id"]:
+            continue
+        if position["tradition_id"] not in rendered_ids:
+            continue
+        ids: list[str] = []
+        for point in position["reasoning"]:
+            if point.get("passage_id") and point["passage_id"] not in ids:
+                ids.append(point["passage_id"])
+        for ref in position["passages"]:
+            if ref["passage_id"] not in ids:
+                ids.append(ref["passage_id"])
+        total += len(ids)
+    return total
+
+
+def verify(
+    body: AnswerBody,
+    corpus: Corpus,
+    rendered_text: str,
+    requested: list[str] | None,
+    pre_polish_envelope: str,
+    polished_envelope: str | None = None,
+) -> list[Failure]:
+    """Both instruments. Empty list means the answer may be shown and stored."""
+    failures = check_body(body, corpus, requested, pre_polish_envelope, polished_envelope)
+    if corpus.raw is not None:
+        failures.extend(check_render_independently(rendered_text, corpus.raw))
+    topic = corpus.topic_by_id.get(body.routing.topic_id)
+    if topic is not None:
+        printed = parse_render(rendered_text)["safeguards"]
+        want = [
+            corpus.safeguard_by_id[sid].text
+            for sid in topic.safeguard_ids
+            if sid in corpus.safeguard_by_id
+        ]
+        if printed != want:
+            failures.append(Failure("d", "printed safeguard block is missing, reordered or altered"))
+        head = f"=== {topic.title} ===\n\n" + "".join(f"[!] {t}\n" for t in want)
+        if want and not rendered_text.startswith(head):
+            failures.append(Failure("d", "safeguard block is not first in render order"))
     return failures

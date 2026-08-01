@@ -2,11 +2,18 @@
 
 Append-only tables with UPDATE-abort triggers; verified answers only, enforced
 both at the application layer and by a CHECK constraint.
+
+Threading: the connection is opened with ``check_same_thread=False`` because a
+served API hands requests to a thread pool, and every statement runs under a
+re-entrant lock. Both halves are needed: without the flag sqlite3 refuses the
+cross-thread call, and without the lock two concurrent writes can interleave
+between the INSERT and the ``lastrowid`` read and hand back the wrong id.
 """
 from __future__ import annotations
 
 import json
 import sqlite3
+import threading
 from pathlib import Path
 
 from ethos.models import Answer, CorpusMeta, Question
@@ -53,26 +60,31 @@ class SqliteRepository:
     def __init__(self, path: Path | str) -> None:
         if isinstance(path, Path):
             path.parent.mkdir(parents=True, exist_ok=True)
+        self._lock = threading.RLock()
         self._conn = sqlite3.connect(str(path), check_same_thread=False)
-        self._conn.execute("PRAGMA foreign_keys = ON")
-        self._conn.executescript(_SCHEMA)
-        self._conn.commit()
+        with self._lock:
+            self._conn.execute("PRAGMA foreign_keys = ON")
+            self._conn.executescript(_SCHEMA)
+            self._conn.commit()
 
     def close(self) -> None:
-        self._conn.close()
+        with self._lock:
+            self._conn.close()
 
     def set_corpus_meta(self, meta: CorpusMeta) -> None:
-        self._conn.execute("DELETE FROM corpus_meta")
-        self._conn.execute(
-            "INSERT INTO corpus_meta (id, corpus_version, loaded_at) VALUES (1, ?, ?)",
-            (meta.corpus_version, meta.loaded_at),
-        )
-        self._conn.commit()
+        with self._lock:
+            self._conn.execute("DELETE FROM corpus_meta")
+            self._conn.execute(
+                "INSERT INTO corpus_meta (id, corpus_version, loaded_at) VALUES (1, ?, ?)",
+                (meta.corpus_version, meta.loaded_at),
+            )
+            self._conn.commit()
 
     def get_corpus_meta(self) -> CorpusMeta | None:
-        row = self._conn.execute(
-            "SELECT corpus_version, loaded_at FROM corpus_meta WHERE id = 1"
-        ).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT corpus_version, loaded_at FROM corpus_meta WHERE id = 1"
+            ).fetchone()
         return CorpusMeta(corpus_version=row[0], loaded_at=row[1]) if row else None
 
     def guard_corpus(self, current_version: str) -> None:
@@ -83,23 +95,28 @@ class SqliteRepository:
             )
 
     def add_question(self, question: Question) -> Question:
-        cursor = self._conn.execute(
-            "INSERT INTO question (text, asked_at, outcome, forced_topic_id, routing)"
-            " VALUES (?, ?, ?, ?, ?)",
-            (
-                question.text,
-                question.asked_at,
-                question.outcome.value,
-                question.forced_topic_id,
-                question.routing.model_dump_json() if question.routing else None,
-            ),
-        )
-        self._conn.commit()
-        return question.model_copy(update={"id": cursor.lastrowid})
+        with self._lock:
+            cursor = self._conn.execute(
+                "INSERT INTO question (text, asked_at, outcome, forced_topic_id, routing)"
+                " VALUES (?, ?, ?, ?, ?)",
+                (
+                    question.text,
+                    question.asked_at,
+                    question.outcome.value,
+                    question.forced_topic_id,
+                    question.routing.model_dump_json() if question.routing else None,
+                ),
+            )
+            self._conn.commit()
+            return question.model_copy(update={"id": cursor.lastrowid})
 
     def add_answer(self, answer: Answer) -> Answer:
         if not answer.verified:
             raise UnverifiedAnswerError("refusing to persist an unverified answer (FR-8)")
+        with self._lock:
+            return self._insert_answer(answer)
+
+    def _insert_answer(self, answer: Answer) -> Answer:
         cursor = self._conn.execute(
             "INSERT INTO answer (question_id, created_at, topic_id, options, corpus_version,"
             " composer_version, polish_used, polish_fell_back, verified, body, rendered_text)"
@@ -132,19 +149,21 @@ class SqliteRepository:
         )
 
     def get_question(self, question_id: int) -> Question | None:
-        row = self._conn.execute(
-            "SELECT id, text, asked_at, outcome, forced_topic_id, routing"
-            " FROM question WHERE id = ?",
-            (question_id,),
-        ).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT id, text, asked_at, outcome, forced_topic_id, routing"
+                " FROM question WHERE id = ?",
+                (question_id,),
+            ).fetchone()
         return self._question_from_row(row) if row else None
 
     def list_questions(self, limit: int, offset: int) -> list[Question]:
-        rows = self._conn.execute(
-            "SELECT id, text, asked_at, outcome, forced_topic_id, routing"
-            " FROM question ORDER BY id DESC LIMIT ? OFFSET ?",
-            (limit, offset),
-        ).fetchall()
+        with self._lock:
+            rows = self._conn.execute(
+                "SELECT id, text, asked_at, outcome, forced_topic_id, routing"
+                " FROM question ORDER BY id DESC LIMIT ? OFFSET ?",
+                (limit, offset),
+            ).fetchall()
         return [self._question_from_row(r) for r in rows]
 
     def _answer_from_row(self, row: tuple) -> Answer:
@@ -169,14 +188,16 @@ class SqliteRepository:
     )
 
     def get_answer(self, answer_id: int) -> Answer | None:
-        row = self._conn.execute(
-            f"SELECT {self._ANSWER_COLS} FROM answer WHERE id = ?", (answer_id,)
-        ).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                f"SELECT {self._ANSWER_COLS} FROM answer WHERE id = ?", (answer_id,)
+            ).fetchone()
         return self._answer_from_row(row) if row else None
 
     def get_answer_for_question(self, question_id: int) -> Answer | None:
-        row = self._conn.execute(
-            f"SELECT {self._ANSWER_COLS} FROM answer WHERE question_id = ? ORDER BY id LIMIT 1",
-            (question_id,),
-        ).fetchone()
+        with self._lock:
+            row = self._conn.execute(
+                f"SELECT {self._ANSWER_COLS} FROM answer WHERE question_id = ? ORDER BY id LIMIT 1",
+                (question_id,),
+            ).fetchone()
         return self._answer_from_row(row) if row else None

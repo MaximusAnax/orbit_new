@@ -177,11 +177,16 @@ def render_text(
             if point.marker and point.marker not in rendered_markers:
                 rendered_markers.append(point.marker)
                 _quote_block(lines, quotes_by_marker[point.marker])
-        remaining = [q for q in perspective.quotes if q.marker not in rendered_markers]
-        if remaining:
-            lines.append("  Also cited:")
-            for quote in remaining:
-                _quote_block(lines, quote)
+        # Quotes whose passage is cited by the position but not by a reasoning
+        # point still get a marker-bearing bullet: the render grammar binds a
+        # quote block to its marker through the bullet above it, so an unbound
+        # block would be unreadable to the independent checker (FR-8/M3).
+        for quote in perspective.quotes:
+            if quote.marker in rendered_markers:
+                continue
+            rendered_markers.append(quote.marker)
+            lines.append(f"  • Also cited. [{quote.marker}]")
+            _quote_block(lines, quote)
         if perspective.intra_tradition_note:
             lines.append(f"  Note: {perspective.intra_tradition_note}")
         lines.append("  Further reading:")
