@@ -68,27 +68,143 @@
       },
       {
         "term": "compliment",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "pretend",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "haircut",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "novel",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "surprise party",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "resume",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "lied to",
+        "weight": 2
+      },
+      {
+        "term": "made up a story",
+        "weight": 2
+      },
+      {
+        "term": "hide the truth",
+        "weight": 2
+      },
+      {
+        "term": "concealed",
+        "weight": 2
+      },
+      {
+        "term": "half-truth",
+        "weight": 2
+      },
+      {
+        "term": "exaggerated",
+        "weight": 2
+      },
+      {
+        "term": "not honest",
+        "weight": 2
+      },
+      {
+        "term": "little lie",
+        "weight": 2
+      },
+      {
+        "term": "kept quiet about",
+        "weight": 2
+      },
+      {
+        "term": "came clean",
+        "weight": 2
+      },
+      {
+        "term": "dishonest",
+        "weight": 2
+      },
+      {
+        "term": "untruth",
+        "weight": 2
+      },
+      {
+        "term": "dishonesty",
+        "weight": 2
+      },
+      {
+        "term": "misrepresent",
+        "weight": 2
+      },
+      {
+        "term": "fabricate",
+        "weight": 2
+      },
+      {
+        "term": "invent an excuse",
+        "weight": 2
+      },
+      {
+        "term": "cover up",
+        "weight": 2
+      },
+      {
+        "term": "spin the story",
+        "weight": 2
+      },
+      {
+        "term": "straight answer",
+        "weight": 2
+      },
+      {
+        "term": "honest answer",
+        "weight": 2
+      },
+      {
+        "term": "confess",
+        "weight": 2
+      },
+      {
+        "term": "be upfront",
+        "weight": 2
+      },
+      {
+        "term": "gloss over",
+        "weight": 2
+      },
+      {
+        "term": "lied about",
+        "weight": 2
+      },
+      {
+        "term": "alibi",
+        "weight": 2
+      },
+      {
+        "term": "made an excuse",
+        "weight": 2
+      },
+      {
+        "term": "prettier version",
+        "weight": 2
+      },
+      {
+        "term": "kept the truth from",
+        "weight": 2
+      },
+      {
+        "term": "not the whole story",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -159,7 +275,7 @@
       },
       {
         "term": "deathbed",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "reneged",
@@ -167,19 +283,119 @@
       },
       {
         "term": "flake",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "rain check",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "godparent",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "wedding toast",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "back out",
+        "weight": 2
+      },
+      {
+        "term": "let them down",
+        "weight": 2
+      },
+      {
+        "term": "said I would",
+        "weight": 2
+      },
+      {
+        "term": "agreed to",
+        "weight": 2
+      },
+      {
+        "term": "bail on",
+        "weight": 2
+      },
+      {
+        "term": "committed to",
+        "weight": 2
+      },
+      {
+        "term": "follow through",
+        "weight": 2
+      },
+      {
+        "term": "renege",
+        "weight": 2
+      },
+      {
+        "term": "sworn to",
+        "weight": 2
+      },
+      {
+        "term": "word of honour",
+        "weight": 2
+      },
+      {
+        "term": "undertaking",
+        "weight": 2
+      },
+      {
+        "term": "assurance",
+        "weight": 2
+      },
+      {
+        "term": "guarantee",
+        "weight": 2
+      },
+      {
+        "term": "swore an oath",
+        "weight": 2
+      },
+      {
+        "term": "stand by what I said",
+        "weight": 2
+      },
+      {
+        "term": "break my word",
+        "weight": 2
+      },
+      {
+        "term": "going back on my word",
+        "weight": 2
+      },
+      {
+        "term": "honour it",
+        "weight": 2
+      },
+      {
+        "term": "pull out",
+        "weight": 2
+      },
+      {
+        "term": "volunteered",
+        "weight": 2
+      },
+      {
+        "term": "signed up to",
+        "weight": 2
+      },
+      {
+        "term": "said I would do it",
+        "weight": 2
+      },
+      {
+        "term": "let him down",
+        "weight": 2
+      },
+      {
+        "term": "duty to do it",
+        "weight": 2
+      },
+      {
+        "term": "keep to it",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -242,7 +458,7 @@
       },
       {
         "term": "burglar",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "broke into",
@@ -254,7 +470,7 @@
       },
       {
         "term": "gun",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "fight back",
@@ -266,11 +482,127 @@
       },
       {
         "term": "mugger",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "knife",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "stab",
+        "weight": 2
+      },
+      {
+        "term": "stabbed",
+        "weight": 2
+      },
+      {
+        "term": "shoot",
+        "weight": 2
+      },
+      {
+        "term": "defend myself",
+        "weight": 2
+      },
+      {
+        "term": "weapon",
+        "weight": 2
+      },
+      {
+        "term": "threatened my life",
+        "weight": 2
+      },
+      {
+        "term": "attacked me",
+        "weight": 2
+      },
+      {
+        "term": "strangle",
+        "weight": 2
+      },
+      {
+        "term": "took his life",
+        "weight": 2
+      },
+      {
+        "term": "bare hands",
+        "weight": 2
+      },
+      {
+        "term": "came at me",
+        "weight": 2
+      },
+      {
+        "term": "assault",
+        "weight": 2
+      },
+      {
+        "term": "self defence",
+        "weight": 2
+      },
+      {
+        "term": "defend my home",
+        "weight": 2
+      },
+      {
+        "term": "deadly",
+        "weight": 2
+      },
+      {
+        "term": "fatal",
+        "weight": 2
+      },
+      {
+        "term": "kill him",
+        "weight": 2
+      },
+      {
+        "term": "hit him",
+        "weight": 2
+      },
+      {
+        "term": "stabbed him",
+        "weight": 2
+      },
+      {
+        "term": "shot him",
+        "weight": 2
+      },
+      {
+        "term": "hurt him badly",
+        "weight": 2
+      },
+      {
+        "term": "blade",
+        "weight": 2
+      },
+      {
+        "term": "firearm",
+        "weight": 2
+      },
+      {
+        "term": "pistol",
+        "weight": 2
+      },
+      {
+        "term": "defending my wife",
+        "weight": 2
+      },
+      {
+        "term": "stop an attacker",
+        "weight": 2
+      },
+      {
+        "term": "hammer",
+        "weight": 2
+      },
+      {
+        "term": "throat",
+        "weight": 2
+      },
+      {
+        "term": "wounded him",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -341,7 +673,7 @@
       },
       {
         "term": "draft",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "conscientious objector",
@@ -349,11 +681,11 @@
       },
       {
         "term": "deployment",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "civilians",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "combat",
@@ -361,7 +693,143 @@
       },
       {
         "term": "nation",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "enemy",
+        "weight": 2
+      },
+      {
+        "term": "troops",
+        "weight": 2
+      },
+      {
+        "term": "bombing",
+        "weight": 2
+      },
+      {
+        "term": "airstrike",
+        "weight": 2
+      },
+      {
+        "term": "front line",
+        "weight": 2
+      },
+      {
+        "term": "ceasefire",
+        "weight": 2
+      },
+      {
+        "term": "peacemaking",
+        "weight": 2
+      },
+      {
+        "term": "veteran",
+        "weight": 2
+      },
+      {
+        "term": "join the army",
+        "weight": 2
+      },
+      {
+        "term": "recruiter",
+        "weight": 2
+      },
+      {
+        "term": "occupation",
+        "weight": 2
+      },
+      {
+        "term": "signed up",
+        "weight": 2
+      },
+      {
+        "term": "basic training",
+        "weight": 2
+      },
+      {
+        "term": "called up",
+        "weight": 2
+      },
+      {
+        "term": "conscription",
+        "weight": 2
+      },
+      {
+        "term": "refuse to fight",
+        "weight": 2
+      },
+      {
+        "term": "bear arms",
+        "weight": 2
+      },
+      {
+        "term": "battlefield",
+        "weight": 2
+      },
+      {
+        "term": "armies",
+        "weight": 2
+      },
+      {
+        "term": "drone strike",
+        "weight": 2
+      },
+      {
+        "term": "bomb",
+        "weight": 2
+      },
+      {
+        "term": "kill civilians",
+        "weight": 2
+      },
+      {
+        "term": "soldiers",
+        "weight": 2
+      },
+      {
+        "term": "marines",
+        "weight": 2
+      },
+      {
+        "term": "regiment",
+        "weight": 2
+      },
+      {
+        "term": "war crimes",
+        "weight": 2
+      },
+      {
+        "term": "surrender",
+        "weight": 2
+      },
+      {
+        "term": "homeland",
+        "weight": 2
+      },
+      {
+        "term": "orders from above",
+        "weight": 2
+      },
+      {
+        "term": "my unit",
+        "weight": 2
+      },
+      {
+        "term": "clear a village",
+        "weight": 2
+      },
+      {
+        "term": "refuse orders",
+        "weight": 2
+      },
+      {
+        "term": "fight for my country",
+        "weight": 2
+      },
+      {
+        "term": "sent to fight",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -412,7 +880,7 @@
       },
       {
         "term": "hang",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "lethal injection",
@@ -428,7 +896,7 @@
       },
       {
         "term": "convict",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "wrongful conviction",
@@ -436,15 +904,119 @@
       },
       {
         "term": "abolish",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "jury",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "verdict",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "put to death",
+        "weight": 2
+      },
+      {
+        "term": "gallows",
+        "weight": 2
+      },
+      {
+        "term": "firing squad",
+        "weight": 2
+      },
+      {
+        "term": "clemency",
+        "weight": 2
+      },
+      {
+        "term": "pardon",
+        "weight": 2
+      },
+      {
+        "term": "electric chair",
+        "weight": 2
+      },
+      {
+        "term": "condemned man",
+        "weight": 2
+      },
+      {
+        "term": "innocent person",
+        "weight": 2
+      },
+      {
+        "term": "death sentence",
+        "weight": 2
+      },
+      {
+        "term": "exonerated",
+        "weight": 2
+      },
+      {
+        "term": "hanged",
+        "weight": 2
+      },
+      {
+        "term": "hanging",
+        "weight": 2
+      },
+      {
+        "term": "put him to death",
+        "weight": 2
+      },
+      {
+        "term": "execution date",
+        "weight": 2
+      },
+      {
+        "term": "capital case",
+        "weight": 2
+      },
+      {
+        "term": "state execution",
+        "weight": 2
+      },
+      {
+        "term": "prisoner",
+        "weight": 2
+      },
+      {
+        "term": "killer",
+        "weight": 2
+      },
+      {
+        "term": "executioner",
+        "weight": 2
+      },
+      {
+        "term": "governor",
+        "weight": 2
+      },
+      {
+        "term": "appeal",
+        "weight": 2
+      },
+      {
+        "term": "innocent man",
+        "weight": 2
+      },
+      {
+        "term": "wrongly convicted",
+        "weight": 2
+      },
+      {
+        "term": "death chamber",
+        "weight": 2
+      },
+      {
+        "term": "guillotine",
+        "weight": 2
+      },
+      {
+        "term": "convicted of the worst crimes",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -497,23 +1069,23 @@
       },
       {
         "term": "hopeless",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "cutting",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "overdose",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "seppuku",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "martyrdom",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "living is pointless",
@@ -521,7 +1093,135 @@
       },
       {
         "term": "burden to everyone",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "ends their own life",
+        "weight": 2
+      },
+      {
+        "term": "ended his own life",
+        "weight": 2
+      },
+      {
+        "term": "took his own life",
+        "weight": 2
+      },
+      {
+        "term": "kill himself",
+        "weight": 2
+      },
+      {
+        "term": "kill herself",
+        "weight": 2
+      },
+      {
+        "term": "wants to die",
+        "weight": 2
+      },
+      {
+        "term": "harm himself",
+        "weight": 2
+      },
+      {
+        "term": "no reason to live",
+        "weight": 2
+      },
+      {
+        "term": "sleeping pills",
+        "weight": 2
+      },
+      {
+        "term": "crisis",
+        "weight": 2
+      },
+      {
+        "term": "took an overdose",
+        "weight": 2
+      },
+      {
+        "term": "died by his own hand",
+        "weight": 2
+      },
+      {
+        "term": "ended it himself",
+        "weight": 2
+      },
+      {
+        "term": "better off without me",
+        "weight": 2
+      },
+      {
+        "term": "nothing to live for",
+        "weight": 2
+      },
+      {
+        "term": "fall on his sword",
+        "weight": 2
+      },
+      {
+        "term": "ritual suicide",
+        "weight": 2
+      },
+      {
+        "term": "took her own life",
+        "weight": 2
+      },
+      {
+        "term": "ended her life",
+        "weight": 2
+      },
+      {
+        "term": "self-inflicted",
+        "weight": 2
+      },
+      {
+        "term": "hurt herself",
+        "weight": 2
+      },
+      {
+        "term": "suicidal",
+        "weight": 2
+      },
+      {
+        "term": "killed himself",
+        "weight": 2
+      },
+      {
+        "term": "left a note",
+        "weight": 2
+      },
+      {
+        "term": "cannot go on",
+        "weight": 2
+      },
+      {
+        "term": "despairing",
+        "weight": 2
+      },
+      {
+        "term": "harming himself",
+        "weight": 2
+      },
+      {
+        "term": "overdosed",
+        "weight": 2
+      },
+      {
+        "term": "end it all",
+        "weight": 2
+      },
+      {
+        "term": "wants out",
+        "weight": 2
+      },
+      {
+        "term": "found her",
+        "weight": 2
+      },
+      {
+        "term": "took his life himself",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -586,11 +1286,11 @@
       },
       {
         "term": "ventilator",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "feeding tube",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "hasten death",
@@ -602,19 +1302,135 @@
       },
       {
         "term": "grandmother",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "prognosis",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "hospital",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "morphine",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "help her go",
+        "weight": 2
+      },
+      {
+        "term": "help him die",
+        "weight": 2
+      },
+      {
+        "term": "pull the plug",
+        "weight": 2
+      },
+      {
+        "term": "turn off the machine",
+        "weight": 2
+      },
+      {
+        "term": "switch it off",
+        "weight": 2
+      },
+      {
+        "term": "unbearable pain",
+        "weight": 2
+      },
+      {
+        "term": "comfort care",
+        "weight": 2
+      },
+      {
+        "term": "do not resuscitate",
+        "weight": 2
+      },
+      {
+        "term": "nurse",
+        "weight": 2
+      },
+      {
+        "term": "doctors",
+        "weight": 2
+      },
+      {
+        "term": "let him slip away",
+        "weight": 2
+      },
+      {
+        "term": "keeping her alive",
+        "weight": 2
+      },
+      {
+        "term": "breathing tube",
+        "weight": 2
+      },
+      {
+        "term": "resuscitate",
+        "weight": 2
+      },
+      {
+        "term": "last days",
+        "weight": 2
+      },
+      {
+        "term": "dying patient",
+        "weight": 2
+      },
+      {
+        "term": "terminal illness",
+        "weight": 2
+      },
+      {
+        "term": "incurable",
+        "weight": 2
+      },
+      {
+        "term": "suffering at the end",
+        "weight": 2
+      },
+      {
+        "term": "let her die",
+        "weight": 2
+      },
+      {
+        "term": "painless",
+        "weight": 2
+      },
+      {
+        "term": "right to die",
+        "weight": 2
+      },
+      {
+        "term": "living will",
+        "weight": 2
+      },
+      {
+        "term": "advance directive",
+        "weight": 2
+      },
+      {
+        "term": "keep him alive",
+        "weight": 2
+      },
+      {
+        "term": "consultant",
+        "weight": 2
+      },
+      {
+        "term": "machines",
+        "weight": 2
+      },
+      {
+        "term": "nothing more the doctors can do",
+        "weight": 2
+      },
+      {
+        "term": "ease her going",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -688,15 +1504,15 @@
       },
       {
         "term": "steak",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "chicken",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "fishing",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "creatures",
@@ -704,15 +1520,139 @@
       },
       {
         "term": "barbecue",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "kosher",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "suffering of beasts",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "burger",
+        "weight": 2
+      },
+      {
+        "term": "bacon",
+        "weight": 2
+      },
+      {
+        "term": "pork",
+        "weight": 2
+      },
+      {
+        "term": "beef",
+        "weight": 2
+      },
+      {
+        "term": "eating animals",
+        "weight": 2
+      },
+      {
+        "term": "diet",
+        "weight": 2
+      },
+      {
+        "term": "abattoir",
+        "weight": 2
+      },
+      {
+        "term": "welfare of animals",
+        "weight": 2
+      },
+      {
+        "term": "cruel to animals",
+        "weight": 2
+      },
+      {
+        "term": "leather",
+        "weight": 2
+      },
+      {
+        "term": "pet",
+        "weight": 2
+      },
+      {
+        "term": "how animals are treated",
+        "weight": 2
+      },
+      {
+        "term": "animal welfare",
+        "weight": 2
+      },
+      {
+        "term": "lamb",
+        "weight": 2
+      },
+      {
+        "term": "cow",
+        "weight": 2
+      },
+      {
+        "term": "pig",
+        "weight": 2
+      },
+      {
+        "term": "pigs",
+        "weight": 2
+      },
+      {
+        "term": "calf",
+        "weight": 2
+      },
+      {
+        "term": "fish",
+        "weight": 2
+      },
+      {
+        "term": "snare",
+        "weight": 2
+      },
+      {
+        "term": "slaughterhouse",
+        "weight": 2
+      },
+      {
+        "term": "butcher",
+        "weight": 2
+      },
+      {
+        "term": "farming",
+        "weight": 2
+      },
+      {
+        "term": "dairy",
+        "weight": 2
+      },
+      {
+        "term": "eggs",
+        "weight": 2
+      },
+      {
+        "term": "animal suffering",
+        "weight": 2
+      },
+      {
+        "term": "veganism",
+        "weight": 2
+      },
+      {
+        "term": "meat-free",
+        "weight": 2
+      },
+      {
+        "term": "sentient",
+        "weight": 2
+      },
+      {
+        "term": "ritual slaughter",
+        "weight": 2
+      },
+      {
+        "term": "how the pigs are kept",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -791,19 +1731,19 @@
       },
       {
         "term": "bonus",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "salary",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "beggar",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "homeless",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "hoard",
@@ -811,7 +1751,51 @@
       },
       {
         "term": "windfall",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "give away",
+        "weight": 2
+      },
+      {
+        "term": "give to the poor",
+        "weight": 2
+      },
+      {
+        "term": "spare change",
+        "weight": 2
+      },
+      {
+        "term": "food bank",
+        "weight": 2
+      },
+      {
+        "term": "savings",
+        "weight": 2
+      },
+      {
+        "term": "philanthropy",
+        "weight": 2
+      },
+      {
+        "term": "keep it for myself",
+        "weight": 2
+      },
+      {
+        "term": "share what I have",
+        "weight": 2
+      },
+      {
+        "term": "hand money",
+        "weight": 2
+      },
+      {
+        "term": "beg",
+        "weight": 2
+      },
+      {
+        "term": "afford",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -870,15 +1854,15 @@
       },
       {
         "term": "pirated",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "wallet",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "starving",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "pocketed",
@@ -886,19 +1870,91 @@
       },
       {
         "term": "wage theft",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "overcharged",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "cash register",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "office supplies",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "took without asking",
+        "weight": 2
+      },
+      {
+        "term": "shoplifting",
+        "weight": 2
+      },
+      {
+        "term": "took the money",
+        "weight": 2
+      },
+      {
+        "term": "kept the change",
+        "weight": 2
+      },
+      {
+        "term": "did not pay",
+        "weight": 2
+      },
+      {
+        "term": "sneak in",
+        "weight": 2
+      },
+      {
+        "term": "not mine",
+        "weight": 2
+      },
+      {
+        "term": "give it back",
+        "weight": 2
+      },
+      {
+        "term": "nicked",
+        "weight": 2
+      },
+      {
+        "term": "downloading",
+        "weight": 2
+      },
+      {
+        "term": "torrent",
+        "weight": 2
+      },
+      {
+        "term": "copy without paying",
+        "weight": 2
+      },
+      {
+        "term": "timesheet",
+        "weight": 2
+      },
+      {
+        "term": "unpaid hours",
+        "weight": 2
+      },
+      {
+        "term": "short-changed",
+        "weight": 2
+      },
+      {
+        "term": "withheld pay",
+        "weight": 2
+      },
+      {
+        "term": "take food",
+        "weight": 2
+      },
+      {
+        "term": "feed my family",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -967,19 +2023,19 @@
       },
       {
         "term": "payday",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "apr",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "mortgage",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "pawn",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "repay",
@@ -987,11 +2043,63 @@
       },
       {
         "term": "installments",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "collateral",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "charge interest",
+        "weight": 2
+      },
+      {
+        "term": "lent him",
+        "weight": 2
+      },
+      {
+        "term": "owes me",
+        "weight": 2
+      },
+      {
+        "term": "interest rate",
+        "weight": 2
+      },
+      {
+        "term": "loan shark",
+        "weight": 2
+      },
+      {
+        "term": "in debt",
+        "weight": 2
+      },
+      {
+        "term": "credit card",
+        "weight": 2
+      },
+      {
+        "term": "repayments",
+        "weight": 2
+      },
+      {
+        "term": "forgive the debt",
+        "weight": 2
+      },
+      {
+        "term": "percent",
+        "weight": 2
+      },
+      {
+        "term": "sky-high rates",
+        "weight": 2
+      },
+      {
+        "term": "quick cash",
+        "weight": 2
+      },
+      {
+        "term": "cash advance",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1072,18 +2180,58 @@
       },
       {
         "term": "betrayed",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "cheated me",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "ex",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "settle the score",
+        "weight": 2
+      },
+      {
+        "term": "let it go",
+        "weight": 2
+      },
+      {
+        "term": "hold it against",
+        "weight": 2
+      },
+      {
+        "term": "make him pay",
+        "weight": 2
+      },
+      {
+        "term": "even the score",
+        "weight": 2
+      },
+      {
+        "term": "let her off the hook",
+        "weight": 2
+      },
+      {
+        "term": "make amends",
+        "weight": 2
+      },
+      {
+        "term": "bear a grudge",
+        "weight": 2
+      },
+      {
+        "term": "still bitter",
+        "weight": 2
+      },
+      {
+        "term": "move past it",
+        "weight": 2
+      },
+      {
+        "term": "owed me an apology",
         "weight": 2
       }
     ],
@@ -1163,11 +2311,11 @@
       },
       {
         "term": "road rage",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "slammed the door",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "fuming",
@@ -1175,7 +2323,63 @@
       },
       {
         "term": "boiling",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "lost my temper",
+        "weight": 2
+      },
+      {
+        "term": "shouted",
+        "weight": 2
+      },
+      {
+        "term": "yelled at",
+        "weight": 2
+      },
+      {
+        "term": "seething",
+        "weight": 2
+      },
+      {
+        "term": "loathe",
+        "weight": 2
+      },
+      {
+        "term": "wound up",
+        "weight": 2
+      },
+      {
+        "term": "flew off the handle",
+        "weight": 2
+      },
+      {
+        "term": "storm out",
+        "weight": 2
+      },
+      {
+        "term": "cannot stand him",
+        "weight": 2
+      },
+      {
+        "term": "hate the man",
+        "weight": 2
+      },
+      {
+        "term": "bitterness",
+        "weight": 2
+      },
+      {
+        "term": "went off at",
+        "weight": 2
+      },
+      {
+        "term": "raised my voice",
+        "weight": 2
+      },
+      {
+        "term": "shouted at",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1242,7 +2446,7 @@
       },
       {
         "term": "obey",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "gratitude",
@@ -1250,19 +2454,59 @@
       },
       {
         "term": "estranged",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "inheritance",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "move back home",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "call her more",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "mum",
+        "weight": 2
+      },
+      {
+        "term": "look after my father",
+        "weight": 2
+      },
+      {
+        "term": "look after my mother",
+        "weight": 2
+      },
+      {
+        "term": "visit them",
+        "weight": 2
+      },
+      {
+        "term": "family duty",
+        "weight": 2
+      },
+      {
+        "term": "raised me",
+        "weight": 2
+      },
+      {
+        "term": "owe them",
+        "weight": 2
+      },
+      {
+        "term": "care home",
+        "weight": 2
+      },
+      {
+        "term": "adult child",
+        "weight": 2
+      },
+      {
+        "term": "my old man",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1333,7 +2577,7 @@
       },
       {
         "term": "coworker",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "flirting",
@@ -1341,11 +2585,11 @@
       },
       {
         "term": "texting late",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "anniversary",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "vows",
@@ -1353,7 +2597,39 @@
       },
       {
         "term": "dating app",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "kissed someone else",
+        "weight": 2
+      },
+      {
+        "term": "another woman",
+        "weight": 2
+      },
+      {
+        "term": "another man",
+        "weight": 2
+      },
+      {
+        "term": "loyal to my wife",
+        "weight": 2
+      },
+      {
+        "term": "loyal to my husband",
+        "weight": 2
+      },
+      {
+        "term": "secret relationship",
+        "weight": 2
+      },
+      {
+        "term": "slept with",
+        "weight": 2
+      },
+      {
+        "term": "married",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1424,19 +2700,55 @@
       },
       {
         "term": "lawyer",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "alimony",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "kids",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "counseling",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "end the marriage",
+        "weight": 2
+      },
+      {
+        "term": "walk away from the marriage",
+        "weight": 2
+      },
+      {
+        "term": "miserable",
+        "weight": 2
+      },
+      {
+        "term": "stay together for the kids",
+        "weight": 2
+      },
+      {
+        "term": "settlement",
+        "weight": 2
+      },
+      {
+        "term": "file for",
+        "weight": 2
+      },
+      {
+        "term": "second marriage",
+        "weight": 2
+      },
+      {
+        "term": "ex-wife",
+        "weight": 2
+      },
+      {
+        "term": "ex-husband",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1507,23 +2819,59 @@
       },
       {
         "term": "couch",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "new neighbor",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "moved to town",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "spare room",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "invite them over",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "put someone up",
+        "weight": 2
+      },
+      {
+        "term": "stay with us",
+        "weight": 2
+      },
+      {
+        "term": "houseguest",
+        "weight": 2
+      },
+      {
+        "term": "let him stay",
+        "weight": 2
+      },
+      {
+        "term": "arrived from abroad",
+        "weight": 2
+      },
+      {
+        "term": "immigrant",
+        "weight": 2
+      },
+      {
+        "term": "asylum",
+        "weight": 2
+      },
+      {
+        "term": "hosting",
+        "weight": 2
+      },
+      {
+        "term": "take them in",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1586,27 +2934,27 @@
       },
       {
         "term": "vent",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "group chat",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "screenshot",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "spill",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "drama",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "water cooler",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "tongue",
@@ -1614,7 +2962,47 @@
       },
       {
         "term": "silence",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "behind his back",
+        "weight": 2
+      },
+      {
+        "term": "told everyone",
+        "weight": 2
+      },
+      {
+        "term": "spread it",
+        "weight": 2
+      },
+      {
+        "term": "secret",
+        "weight": 2
+      },
+      {
+        "term": "slagging off",
+        "weight": 2
+      },
+      {
+        "term": "reputation",
+        "weight": 2
+      },
+      {
+        "term": "rumour",
+        "weight": 2
+      },
+      {
+        "term": "let slip",
+        "weight": 2
+      },
+      {
+        "term": "said about someone",
+        "weight": 2
+      },
+      {
+        "term": "whisper",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1685,11 +3073,11 @@
       },
       {
         "term": "happy hour",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "one more round",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "blackout",
@@ -1701,11 +3089,63 @@
       },
       {
         "term": "dry january",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "cannabis",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "pint",
+        "weight": 2
+      },
+      {
+        "term": "bottle of wine",
+        "weight": 2
+      },
+      {
+        "term": "night out",
+        "weight": 2
+      },
+      {
+        "term": "pub",
+        "weight": 2
+      },
+      {
+        "term": "shots",
+        "weight": 2
+      },
+      {
+        "term": "stay sober",
+        "weight": 2
+      },
+      {
+        "term": "quit drinking",
+        "weight": 2
+      },
+      {
+        "term": "binge",
+        "weight": 2
+      },
+      {
+        "term": "tipsy",
+        "weight": 2
+      },
+      {
+        "term": "got wasted",
+        "weight": 2
+      },
+      {
+        "term": "couple of beers",
+        "weight": 2
+      },
+      {
+        "term": "blacked out",
+        "weight": 2
+      },
+      {
+        "term": "drank too much",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1784,19 +3224,67 @@
       },
       {
         "term": "humblebrag",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "linkedin",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "take credit",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "self-promotion",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "feel good about myself",
+        "weight": 2
+      },
+      {
+        "term": "vain",
+        "weight": 2
+      },
+      {
+        "term": "credit for",
+        "weight": 2
+      },
+      {
+        "term": "impress",
+        "weight": 2
+      },
+      {
+        "term": "own success",
+        "weight": 2
+      },
+      {
+        "term": "praise",
+        "weight": 2
+      },
+      {
+        "term": "recognition",
+        "weight": 2
+      },
+      {
+        "term": "self-importance",
+        "weight": 2
+      },
+      {
+        "term": "never stops talking",
+        "weight": 2
+      },
+      {
+        "term": "notice what I did",
+        "weight": 2
+      },
+      {
+        "term": "award",
+        "weight": 2
+      },
+      {
+        "term": "fish for compliments",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1867,27 +3355,71 @@
       },
       {
         "term": "instagram",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "promotion",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "his raise",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "her house",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "falling behind",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "portion",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "jealous of",
+        "weight": 2
+      },
+      {
+        "term": "wish I had",
+        "weight": 2
+      },
+      {
+        "term": "better than mine",
+        "weight": 2
+      },
+      {
+        "term": "what everyone else got",
+        "weight": 2
+      },
+      {
+        "term": "got promoted",
+        "weight": 2
+      },
+      {
+        "term": "compare",
+        "weight": 2
+      },
+      {
+        "term": "satisfied with what",
+        "weight": 2
+      },
+      {
+        "term": "green with envy",
+        "weight": 2
+      },
+      {
+        "term": "scrolling",
+        "weight": 2
+      },
+      {
+        "term": "social media",
+        "weight": 2
+      },
+      {
+        "term": "highlight reel",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -1954,30 +3486,82 @@
       },
       {
         "term": "police",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "regulation",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "jaywalk",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "speed limit",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "curfew",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "permit",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "conscience",
+        "weight": 2
+      },
+      {
+        "term": "break the rules",
+        "weight": 2
+      },
+      {
+        "term": "against the law",
+        "weight": 2
+      },
+      {
+        "term": "illegal",
+        "weight": 2
+      },
+      {
+        "term": "citizen",
+        "weight": 2
+      },
+      {
+        "term": "pay my taxes",
+        "weight": 2
+      },
+      {
+        "term": "regime",
+        "weight": 2
+      },
+      {
+        "term": "court order",
+        "weight": 2
+      },
+      {
+        "term": "comply",
+        "weight": 2
+      },
+      {
+        "term": "break a rule",
+        "weight": 2
+      },
+      {
+        "term": "official",
+        "weight": 2
+      },
+      {
+        "term": "march",
+        "weight": 2
+      },
+      {
+        "term": "permission",
+        "weight": 2
+      },
+      {
+        "term": "council",
         "weight": 2
       }
     ],
@@ -2047,7 +3631,7 @@
       },
       {
         "term": "risk",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "speak up",
@@ -2059,7 +3643,7 @@
       },
       {
         "term": "backbone",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "confront",
@@ -2067,11 +3651,55 @@
       },
       {
         "term": "stage fright",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "whistleblow",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "bottled it",
+        "weight": 2
+      },
+      {
+        "term": "chickened out",
+        "weight": 2
+      },
+      {
+        "term": "nerve",
+        "weight": 2
+      },
+      {
+        "term": "terrified",
+        "weight": 2
+      },
+      {
+        "term": "frightened",
+        "weight": 2
+      },
+      {
+        "term": "avoid a confrontation",
+        "weight": 2
+      },
+      {
+        "term": "stand my ground",
+        "weight": 2
+      },
+      {
+        "term": "say something difficult",
+        "weight": 2
+      },
+      {
+        "term": "shaking",
+        "weight": 2
+      },
+      {
+        "term": "too scared",
+        "weight": 2
+      },
+      {
+        "term": "face up to",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -2146,23 +3774,79 @@
       },
       {
         "term": "call out",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "cancel",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "side eye",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "parenting choices",
-        "weight": 1
+        "weight": 2
       },
       {
         "term": "lifestyle",
-        "weight": 1
+        "weight": 2
+      },
+      {
+        "term": "judgy",
+        "weight": 2
+      },
+      {
+        "term": "assume the worst",
+        "weight": 2
+      },
+      {
+        "term": "write people off",
+        "weight": 2
+      },
+      {
+        "term": "point out",
+        "weight": 2
+      },
+      {
+        "term": "sloppy",
+        "weight": 2
+      },
+      {
+        "term": "harsh on",
+        "weight": 2
+      },
+      {
+        "term": "self-righteous",
+        "weight": 2
+      },
+      {
+        "term": "holier than thou",
+        "weight": 2
+      },
+      {
+        "term": "what kind of person",
+        "weight": 2
+      },
+      {
+        "term": "opinion of people",
+        "weight": 2
+      },
+      {
+        "term": "gave them a chance",
+        "weight": 2
+      },
+      {
+        "term": "old post",
+        "weight": 2
+      },
+      {
+        "term": "pile on",
+        "weight": 2
+      },
+      {
+        "term": "public shaming",
+        "weight": 2
       }
     ],
     "related_topics": [

@@ -443,11 +443,13 @@ committed or rolled back by the first.
 
 **Proof.** Six threads released from a barrier all calling `create_game`, with
 the `create_game` lock removed (and `check_same_thread=False` left in, so the
-crash is not what is being measured). The race test failed on **3 of 3** runs;
-the run whose message was captured reads:
+crash is not what is being measured). The race test failed on **3 of 3** runs,
+and on a clean re-measurement all six inserts landed every time:
 
 ```
-AssertionError: 5 games created concurrently; the invariant allows exactly one
+AssertionError: 6 games created concurrently; the invariant allows exactly one
+AssertionError: 6 games created concurrently; the invariant allows exactly one
+AssertionError: 6 games created concurrently; the invariant allows exactly one
 ```
 
 DATA_MODEL.md's single-in-progress invariant — and SCOPE.md decision 16's
