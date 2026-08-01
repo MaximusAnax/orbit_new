@@ -38,6 +38,22 @@ def test_fr2_porter_matches_published_sample(word, stem):
     assert porter_stem(word) == stem
 
 
+def test_fr2_c18_committed_porter_sample():
+    """Gate C18 against the committed 500-pair slice of Porter's published
+    vocabulary/output sample — the hermetic form of the conformance promise."""
+    import pathlib
+
+    from ethos.engine.corpus import check_c18_stemmer
+
+    fixtures = pathlib.Path(__file__).resolve().parents[1] / "evals/fixtures/stemmer"
+    voc = [w for w in fixtures.joinpath("voc.txt").read_text().splitlines()
+           if w and not w.startswith("#")]
+    out = [w for w in fixtures.joinpath("output.txt").read_text().splitlines()
+           if w and not w.startswith("#")]
+    assert len(voc) == len(out) == 500
+    assert check_c18_stemmer(list(zip(voc, out, strict=True)), porter_stem) == []
+
+
 def test_fr2_short_words_are_left_alone():
     assert porter_stem("is") == "is"
     assert porter_stem("as") == "as"
