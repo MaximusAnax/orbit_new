@@ -12,7 +12,8 @@ from ethos.adapters.router import LexicalRouter, TopicRouter
 from ethos.corpus import Corpus
 from ethos.engine import envelope as env_mod
 from ethos.engine.compose import COMPOSER_VERSION, compose_answer, render_text
-from ethos.engine.retrieve import retrieve
+from ethos.engine.corpus import corpus_stats, reading_entry_counts
+from ethos.engine.retrieve import reading_list, retrieve
 from ethos.engine.router import build_index
 from ethos.engine.verify import Failure, verify
 from ethos.models import (
@@ -256,72 +257,41 @@ class EthosService:
             raise UnknownTopicError(topic_id)
         if tradition_id is not None and tradition_id not in self.corpus.tradition_by_id:
             raise UnknownTraditionError(tradition_id)
-        seen: set[tuple[str, str, int | None]] = set()
-        out: list[dict] = []
-        for tradition in self.corpus.traditions:
-            if tradition_id is not None and tradition.id != tradition_id:
-                continue
-            position = self.corpus.position_by_cell.get((topic_id, tradition.id))
-            if position is None:
-                continue
-            for entry in position.further_reading:
-                key = (entry.author.casefold(), entry.title.casefold(), entry.year)
-                if key in seen:
-                    continue
-                seen.add(key)
-                out.append({"tradition_id": tradition.id, "entry": entry})
-        return out
+        requested = None if tradition_id is None else [tradition_id]
+        owner = {
+            entry.title: retrieved.position.tradition_id
+            for retrieved in retrieve(self.corpus, topic_id, requested).rendered
+            for entry in retrieved.position.further_reading
+        }
+        return [
+            {"tradition_id": owner.get(entry.title, ""), "entry": entry}
+            for entry in reading_list(self.corpus, topic_id, requested)
+        ]
 
     def substance_stats(self) -> dict:
+        """Counts plus the FR-1 layer-3 ratios. The ratios come from
+        `engine.corpus.corpus_stats` — the same function the C11-C16 gates use,
+        so `corpus stats` can never report a number the gates disagree with."""
         corpus = self.corpus
-        core_uses: dict[str, int] = {}
-        cited: set[str] = set()
-        complicating = 0
-        quoted_core = 0
-        reference_only_refs = 0
-        total_refs = 0
-        for position in corpus.positions:
-            has_complicating = False
-            has_quoted_core = False
-            for ref in position.passages:
-                total_refs += 1
-                cited.add(ref.passage_id)
-                passage = corpus.passage_by_id.get(ref.passage_id)
-                if passage is None:
-                    continue
-                if ref.role.value == "core":
-                    core_uses[ref.passage_id] = core_uses.get(ref.passage_id, 0) + 1
-                    if passage.text is not None:
-                        has_quoted_core = True
-                if ref.role.value == "complicating":
-                    has_complicating = True
-                if passage.text is None:
-                    reference_only_refs += 1
-            complicating += has_complicating
-            quoted_core += has_quoted_core
-        reading_keys: dict[tuple, int] = {}
-        for position in corpus.positions:
-            for entry in position.further_reading:
-                key = (entry.author.casefold(), entry.title.casefold(), entry.year)
-                reading_keys[key] = reading_keys.get(key, 0) + 1
+        stats = corpus_stats(corpus)
         stances: dict[str, set[str]] = {}
         for position in corpus.positions:
             stances.setdefault(position.topic_id, set()).add(position.stance.value)
-        n_positions = len(corpus.positions) or 1
+        reading = reading_entry_counts(corpus)
         return {
             "positions": len(corpus.positions),
             "topics": len(corpus.topics),
             "traditions": len(corpus.traditions),
             "passages": len(corpus.passages),
             "sources": len(corpus.sources),
-            "distinct_cited_passages": len(cited),
-            "max_core_reuse": max(core_uses.values(), default=0),
+            "distinct_cited_passages": int(stats["distinct_cited_passages"]),
+            "max_core_reuse": int(stats["max_core_reuse"]),
             "min_stances_per_topic": min((len(v) for v in stances.values()), default=0),
-            "complicating_share": complicating / n_positions,
-            "quoted_core_share": quoted_core / n_positions,
-            "reference_only_share": (reference_only_refs / total_refs) if total_refs else 0.0,
-            "distinct_reading_entries": len(reading_keys),
-            "max_reading_reuse": max(reading_keys.values(), default=0),
+            "complicating_share": stats["complicating_share"],
+            "quoted_core_share": stats["quoted_core_share"],
+            "reference_only_share": stats["reference_only_share"],
+            "distinct_reading_entries": int(stats["distinct_reading_entries"]),
+            "max_reading_reuse": max(reading.values(), default=0),
             "corpus_version": corpus.corpus_version,
         }
 

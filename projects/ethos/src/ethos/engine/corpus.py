@@ -517,6 +517,84 @@ def check_c16_reading_breadth(corpus: Corpus) -> list[str]:
 # validate` and evals/corpus_gates.py share one implementation.
 
 
+def topic_documents(corpus: Corpus) -> dict[str, set[str]]:
+    """Stemmed token sets of each topic document, for C9's distinctive-token
+    rule. Weight-3 keyword terms are included; weight-1/2 terms are not — the
+    scenario-vocabulary channel is deliberately left open (EVALS § C9)."""
+    docs: dict[str, set[str]] = {}
+    for topic in corpus.topics:
+        tokens = set(normalize(topic.title, corpus.stopwords))
+        tokens |= set(normalize(topic.description, corpus.stopwords))
+        for form in topic.question_forms:
+            tokens |= set(normalize(form, corpus.stopwords))
+        for keyword in topic.keywords:
+            if keyword.weight >= 3:
+                tokens |= set(normalize(keyword.term, corpus.stopwords))
+        docs[topic.id] = tokens
+    return docs
+
+
+def check_c9_fixture_questions(
+    corpus: Corpus, questions: list[dict[str, Any]], oblique_tiers: tuple[str, ...] = ("oblique",)
+) -> list[str]:
+    """C9: fixture lexical integrity.
+
+    * every truth topic exists;
+    * an oblique question may share no *distinctive* token (topic-document
+      frequency <= 3) with its own topic's title/description/forms/weight-3
+      keywords;
+    * a colloquial question's stemmed Jaccard against each of its topic's
+      question forms is < 0.5.
+    """
+    errors: list[str] = []
+    docs = topic_documents(corpus)
+    df: dict[str, int] = {}
+    for tokens in docs.values():
+        for token in tokens:
+            df[token] = df.get(token, 0) + 1
+    for question in questions:
+        truth = question.get("truth_topic") or (question.get("truth_topics") or [None])[0]
+        qid = question.get("id", question.get("text", "?"))
+        if truth not in corpus.topic_by_id:
+            errors.append(f"C9: {qid} names unknown topic {truth!r}")
+            continue
+        tokens = set(normalize(question["text"], corpus.stopwords))
+        tier = question.get("tier", "")
+        if tier in oblique_tiers:
+            leaked = {t for t in tokens & docs[truth] if df.get(t, 0) <= 3}
+            if leaked:
+                errors.append(f"C9: oblique {qid} reuses distinctive tokens {sorted(leaked)}")
+        if tier == "colloquial":
+            for form in corpus.topic_by_id[truth].question_forms:
+                form_tokens = set(normalize(form, corpus.stopwords))
+                union = tokens | form_tokens
+                jaccard = len(tokens & form_tokens) / len(union) if union else 0.0
+                if jaccard >= 0.5:
+                    errors.append(f"C9: colloquial {qid} restates a question form ({jaccard:.2f})")
+    return errors
+
+
+def check_c19_baselines(
+    recorded: dict[str, Any], current: dict[str, Any], tolerance: float = 0.02
+) -> list[str]:
+    """C19: committed hashes and measured baselines are still current."""
+    errors: list[str] = []
+    for key in sorted(set(recorded) | set(current)):
+        if key not in recorded:
+            errors.append(f"C19: {key} is not recorded in baselines.json")
+            continue
+        if key not in current:
+            errors.append(f"C19: {key} is recorded but no longer measured")
+            continue
+        was, now = recorded[key], current[key]
+        if isinstance(was, (int, float)) and isinstance(now, (int, float)):
+            if abs(float(was) - float(now)) > tolerance:
+                errors.append(f"C19: {key} moved {was} -> {now} (> ±{tolerance})")
+        elif was != now:
+            errors.append(f"C19: {key} changed; re-derive baselines in this commit")
+    return errors
+
+
 def check_c17_safeguard_cells(cells: list[dict[str, Any]]) -> list[str]:
     """C17: every rendered cell of the safeguard matrix must carry the topic's
     declared blocks, byte-identical and first. Each cell is
