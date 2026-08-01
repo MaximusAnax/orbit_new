@@ -7,8 +7,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from ethos.corpus import Corpus
-from ethos.models import Passage, PassageRef, PassageRole, Position
+from ethos.engine.corpus import Corpus
+from ethos.models import FurtherReading, Passage, PassageRef, PassageRole, Position
 
 _ROLE_ORDER = {PassageRole.core: 0, PassageRole.supporting: 1, PassageRole.complicating: 2}
 
@@ -58,3 +58,20 @@ def retrieve(corpus: Corpus, topic_id: str, requested: list[str] | None) -> Retr
         not_covered=not_covered,
         filtered_out=filtered_out,
     )
+
+
+def reading_list(
+    corpus: Corpus, topic_id: str, requested: list[str] | None
+) -> list[FurtherReading]:
+    """A topic's further reading, aggregated across the rendered traditions in
+    canonical order and de-duplicated on (author, title, year) — derived, never
+    stored (DATA_MODEL § Relationships)."""
+    seen: set[tuple[str, str, int | None]] = set()
+    entries: list[FurtherReading] = []
+    for retrieved in retrieve(corpus, topic_id, requested).rendered:
+        for entry in retrieved.position.further_reading:
+            key = (entry.author.casefold(), entry.title.casefold(), entry.year)
+            if key not in seen:
+                seen.add(key)
+                entries.append(entry)
+    return entries
