@@ -5,9 +5,9 @@ Run: ``uv run python chessmentor/evals/fixtures/generate_judgment.py --seed 2026
 Construction, exactly as EVALS.md specifies it:
 
 1. A **quiet base position** is composed from a committed skeleton plus a
-   material-offset recipe, and ``truth.quiet_by_see`` asserts EVALS.md's
-   quietness condition on it: no capture with ``|SEE| > 0`` exists for either
-   side (exactly even captures are permitted).
+   material-offset recipe, and ``truth.quiet_by_see`` asserts the quietness
+   condition on it: no capture with ``SEE > 0`` exists for either side (even
+   trades and volunteer-losing captures are permitted; see docs/REVIEW.md B4).
 2. Every legal move is scored by ``truth.forced_value``: a full-width negamax
    over python-chess move generation with a material-only leaf score, i.e. the
    **forced material delta within 4 plies**.  ``cp_best`` is the best move's

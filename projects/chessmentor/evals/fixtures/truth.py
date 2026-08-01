@@ -229,10 +229,15 @@ def has_contact(board: chess.Board) -> bool:
 
 
 def quiet_by_see(board: chess.Board) -> bool:
-    """EVALS.md's quietness test: no capture with ``|SEE| > 0`` for *either* side.
+    """Quietness test: no capture with ``SEE > 0`` for *either* side.
 
-    Captures that are exactly even (``SEE == 0``) are allowed — two rooks facing
-    each other down an open file do not make a position tactical.
+    Even trades (``SEE == 0``) and *losing* captures (``SEE < 0``) are allowed:
+    two rooks facing each other down an open file, or a bishop able to grab a
+    defended pawn, do not make a position tactical — no material is pending
+    unless someone volunteers a bad trade.  (EVALS.md's first draft said
+    ``|SEE| > 0``; forbidding losing captures made the mistake tier — whose
+    natural material quantum is a ~200-260 cp bad capture — unconstructible
+    once shallow resolvability was enforced.  Recorded in docs/REVIEW.md B4.)
     """
     for colour in (chess.WHITE, chess.BLACK):
         probe = board.copy(stack=False)
@@ -240,7 +245,7 @@ def quiet_by_see(board: chess.Board) -> bool:
         if probe.is_check():
             return False
         for move in probe.generate_legal_captures():
-            if see(probe, move) != 0:
+            if see(probe, move) > 0:
                 return False
     return True
 

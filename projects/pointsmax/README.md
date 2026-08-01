@@ -67,7 +67,7 @@ uv run pointsmax plan 1 --today 2026-07-31 --top 2
 
 ```
 plan set 1 for goal 1 — verdict: book_with_points
-  world v1.0.0 (8291a3851bc3), today 2026-07-31, 202 search expansions
+  world v1.0.0 (8291a3851bc3), today 2026-07-31, 37159 search expansions
 
   #1  net $1,298.00   3.08 cpp   plan 1
      gross $4,200.00 - outlay $502.00 - points cost $2,400.00 = $1,298.00

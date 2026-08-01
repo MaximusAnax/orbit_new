@@ -1,274 +1,285 @@
 [
-  {
-    "id": "sw_01",
-    "note": "flagship round trip on a single transferable currency",
-    "cards": [
-      "chase_sapphire_reserve"
-    ],
-    "balances": {
-      "chase_ur": 210000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "NYC",
-      "dest_city": "PAR",
-      "cabin": "business",
-      "round_trip": true,
-      "passengers": 1,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+ {
+  "id": "sw_01",
+  "note": "flagship round trip funded across Chase + Amex",
+  "cards": [
+   "chase_sapphire_reserve",
+   "amex_platinum"
+  ],
+  "balances": {
+   "chase_ur": 210000,
+   "amex_mr": 120000
   },
-  {
-    "id": "sw_02",
-    "note": "single one-way award from Amex",
-    "cards": [
-      "amex_platinum"
-    ],
-    "balances": {
-      "amex_mr": 130000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "NYC",
-      "dest_city": "PAR",
-      "cabin": "business",
-      "round_trip": false,
-      "passengers": 1,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "goal": {
+   "kind": "flight",
+   "origin_city": "NYC",
+   "dest_city": "PAR",
+   "cabin": "business",
+   "round_trip": true,
+   "passengers": 1,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
   },
-  {
-    "id": "sw_03",
-    "note": "2-passenger one-way that needs Marriott-hub funding",
-    "cards": [
-      "amex_platinum"
-    ],
-    "balances": {
-      "amex_mr": 100000,
-      "marriott_bonvoy": 400000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "NYC",
-      "dest_city": "PAR",
-      "cabin": "business",
-      "round_trip": false,
-      "passengers": 2,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_02",
+  "note": "single one-way award from Amex",
+  "cards": [
+   "amex_platinum"
+  ],
+  "balances": {
+   "amex_mr": 130000
   },
-  {
-    "id": "sw_04",
-    "note": "multi-source split: neither balance covers the award alone",
-    "cards": [
-      "chase_sapphire_reserve",
-      "amex_platinum"
-    ],
-    "balances": {
-      "chase_ur": 40000,
-      "amex_mr": 40000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "NYC",
-      "dest_city": "PAR",
-      "cabin": "business",
-      "round_trip": false,
-      "passengers": 1,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "goal": {
+   "kind": "flight",
+   "origin_city": "NYC",
+   "dest_city": "PAR",
+   "cabin": "business",
+   "round_trip": false,
+   "passengers": 1,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
   },
-  {
-    "id": "sw_05",
-    "note": "mixed award/portal round trip",
-    "cards": [
-      "chase_sapphire_reserve"
-    ],
-    "balances": {
-      "chase_ur": 350000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "NYC",
-      "dest_city": "PAR",
-      "cabin": "business",
-      "round_trip": true,
-      "passengers": 1,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_03",
+  "note": "2-passenger round trip needing Marriott-hub funding across two banks",
+  "cards": [
+   "amex_gold",
+   "citi_premier"
+  ],
+  "balances": {
+   "amex_mr": 100000,
+   "citi_typ": 80000,
+   "marriott_bonvoy": 400000
   },
-  {
-    "id": "sw_06",
-    "note": "hotel stay funded by a bank transfer",
-    "cards": [
-      "chase_sapphire_reserve"
-    ],
-    "balances": {
-      "chase_ur": 100000
-    },
-    "goal": {
-      "kind": "stay",
-      "city": "PAR",
-      "nights": 3,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "goal": {
+   "kind": "flight",
+   "origin_city": "NYC",
+   "dest_city": "PAR",
+   "cabin": "business",
+   "round_trip": true,
+   "passengers": 2,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
   },
-  {
-    "id": "sw_07",
-    "note": "cash liquidation across two currencies",
-    "cards": [
-      "chase_sapphire_reserve",
-      "amex_platinum"
-    ],
-    "balances": {
-      "chase_ur": 210000,
-      "amex_mr": 130000
-    },
-    "goal": {
-      "kind": "cash",
-      "cash_programs": null,
-      "cash_max_points": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_04",
+  "note": "round trip whose legs must split across three bank balances",
+  "cards": [
+   "chase_sapphire_reserve",
+   "amex_platinum",
+   "citi_premier"
+  ],
+  "balances": {
+   "chase_ur": 80000,
+   "amex_mr": 80000,
+   "citi_typ": 60000
   },
-  {
-    "id": "sw_08",
-    "note": "Citi to Turkish on a secondary route",
-    "cards": [
-      "citi_premier"
-    ],
-    "balances": {
-      "citi_typ": 120000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "CHI",
-      "dest_city": "ROM",
-      "cabin": "business",
-      "round_trip": false,
-      "passengers": 1,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "goal": {
+   "kind": "flight",
+   "origin_city": "NYC",
+   "dest_city": "PAR",
+   "cabin": "business",
+   "round_trip": true,
+   "passengers": 1,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
   },
-  {
-    "id": "sw_09",
-    "note": "Capital One to Avianca, tight booking window",
-    "cards": [
-      "capital_one_venture_x"
-    ],
-    "balances": {
-      "capital_one": 150000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "NYC",
-      "dest_city": "LIS",
-      "cabin": "business",
-      "round_trip": false,
-      "passengers": 1,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_05",
+  "note": "mixed award/portal round trip funded across Chase + Citi",
+  "cards": [
+   "chase_sapphire_reserve",
+   "citi_premier"
+  ],
+  "balances": {
+   "chase_ur": 200000,
+   "citi_typ": 150000
   },
-  {
-    "id": "sw_10",
-    "note": "Bilt funding a United round trip in November",
-    "cards": [
-      "bilt_mastercard_reserve"
-    ],
-    "balances": {
-      "bilt_rewards": 200000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "SFO",
-      "dest_city": "TYO",
-      "cabin": "business",
-      "round_trip": true,
-      "passengers": 1,
-      "travel_window_start": "2026-11-01",
-      "travel_window_end": "2026-11-30",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "goal": {
+   "kind": "flight",
+   "origin_city": "NYC",
+   "dest_city": "PAR",
+   "cabin": "business",
+   "round_trip": true,
+   "passengers": 1,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
   },
-  {
-    "id": "sw_11",
-    "note": "Amex to ANA: a two-day transfer against an open deadline",
-    "cards": [
-      "amex_business_platinum"
-    ],
-    "balances": {
-      "amex_mr": 200000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "SFO",
-      "dest_city": "TYO",
-      "cabin": "business",
-      "round_trip": false,
-      "passengers": 1,
-      "travel_window_start": "2026-11-01",
-      "travel_window_end": "2026-11-30",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_06",
+  "note": "hotel stay funded by a bank transfer",
+  "cards": [
+   "chase_sapphire_reserve"
+  ],
+  "balances": {
+   "chase_ur": 100000
   },
-  {
-    "id": "sw_12",
-    "note": "economy award with a portal comparator",
-    "cards": [
-      "chase_sapphire_preferred"
-    ],
-    "balances": {
-      "chase_ur": 90000
-    },
-    "goal": {
-      "kind": "flight",
-      "origin_city": "NYC",
-      "dest_city": "LON",
-      "cabin": "economy",
-      "round_trip": false,
-      "passengers": 1,
-      "travel_window_start": "2026-10-01",
-      "travel_window_end": "2026-10-31",
-      "book_by": null
-    },
-    "today": "2026-07-31",
-    "params": {}
-  }
+  "goal": {
+   "kind": "stay",
+   "city": "PAR",
+   "nights": 3,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
+  },
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_07",
+  "note": "cash liquidation across two currencies",
+  "cards": [
+   "chase_sapphire_reserve",
+   "amex_platinum"
+  ],
+  "balances": {
+   "chase_ur": 210000,
+   "amex_mr": 130000
+  },
+  "goal": {
+   "kind": "cash",
+   "cash_programs": null,
+   "cash_max_points": null
+  },
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_08",
+  "note": "Citi to Turkish on a secondary route",
+  "cards": [
+   "citi_premier"
+  ],
+  "balances": {
+   "citi_typ": 120000
+  },
+  "goal": {
+   "kind": "flight",
+   "origin_city": "CHI",
+   "dest_city": "ROM",
+   "cabin": "business",
+   "round_trip": false,
+   "passengers": 1,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
+  },
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_09",
+  "note": "Capital One to Avianca, tight booking window",
+  "cards": [
+   "capital_one_venture_x"
+  ],
+  "balances": {
+   "capital_one": 150000
+  },
+  "goal": {
+   "kind": "flight",
+   "origin_city": "NYC",
+   "dest_city": "LIS",
+   "cabin": "business",
+   "round_trip": false,
+   "passengers": 1,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
+  },
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_10",
+  "note": "Bilt + Amex + Marriott funding a Tokyo round trip",
+  "cards": [
+   "bilt_mastercard_reserve",
+   "amex_gold"
+  ],
+  "balances": {
+   "bilt_rewards": 130000,
+   "amex_mr": 90000,
+   "marriott_bonvoy": 120000
+  },
+  "goal": {
+   "kind": "flight",
+   "origin_city": "SFO",
+   "dest_city": "TYO",
+   "cabin": "business",
+   "round_trip": true,
+   "passengers": 1,
+   "travel_window_start": "2026-11-01",
+   "travel_window_end": "2026-11-30",
+   "book_by": null
+  },
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_11",
+  "note": "Amex to ANA: a two-day transfer against an open deadline",
+  "cards": [
+   "amex_business_platinum"
+  ],
+  "balances": {
+   "amex_mr": 200000
+  },
+  "goal": {
+   "kind": "flight",
+   "origin_city": "SFO",
+   "dest_city": "TYO",
+   "cabin": "business",
+   "round_trip": false,
+   "passengers": 1,
+   "travel_window_start": "2026-11-01",
+   "travel_window_end": "2026-11-30",
+   "book_by": null
+  },
+  "today": "2026-07-31",
+  "params": {}
+ },
+ {
+  "id": "sw_12",
+  "note": "economy award with a portal comparator",
+  "cards": [
+   "chase_sapphire_preferred"
+  ],
+  "balances": {
+   "chase_ur": 90000
+  },
+  "goal": {
+   "kind": "flight",
+   "origin_city": "NYC",
+   "dest_city": "LON",
+   "cabin": "economy",
+   "round_trip": false,
+   "passengers": 1,
+   "travel_window_start": "2026-10-01",
+   "travel_window_end": "2026-10-31",
+   "book_by": null
+  },
+  "today": "2026-07-31",
+  "params": {}
+ }
 ]

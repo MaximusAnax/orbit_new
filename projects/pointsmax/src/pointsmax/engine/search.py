@@ -74,6 +74,13 @@ MAX_ALIGN_WINDOW = 12
 #: edge groups, where FR-9's canonical tie-break can select interior amounts.
 DENSE_WINDOW = 1 << 30
 
+#: Largest span (in increments) the cost-tie densification will enumerate.  The
+#: oracle-tractability budget guarantees every fixture scenario fits (<= 60
+#: valid amounts per edge), so within the gated envelope tie-breaks are exact;
+#: past it the search still returns a cost-optimal plan but may not pick the
+#: canonically first among exact cost ties — bounded, and invisible to value.
+MAX_TIE_SPAN = 60
+
 
 class SearchBudgetExceeded(RuntimeError):
     """The funding search hit its explicit expansion budget (FR-7c)."""
@@ -441,7 +448,8 @@ class FundingSearch:
             cover = lo * inc
 
         limit = cover if cover is not None else ceiling
-        window = min(window, (limit - lowest) // inc + 1)
+        span = (limit - lowest) // inc + 1
+        window = min(span, MAX_TIE_SPAN) if window >= DENSE_WINDOW else min(window, span)
         anchors: list[int] = [limit] if cover_only else [limit, lowest]
         for anchor in extra_anchors:
             aligned = floor_to_multiple(anchor, inc)

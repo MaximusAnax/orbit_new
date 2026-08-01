@@ -215,6 +215,12 @@ def build_case(rng: random.Random, case_id: str) -> dict[str, Any] | None:
         )
     except oracle.OracleTooBig:
         return None
+    if result.verdict == "insufficient_points" and rng.random() < 0.85:
+        # Keep a sprinkling of negative-verdict scenarios for coverage, but not
+        # the flood the balance distribution would produce: a scenario in which
+        # *nothing* is fundable is a free tie for every baseline and tests
+        # little beyond FR-6 matching.
+        return None
     return {
         "id": case_id,
         "world": files,
