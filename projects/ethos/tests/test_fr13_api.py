@@ -1,10 +1,13 @@
 """FR-13: the FastAPI surface and its edge semantics (SCOPE § API sketch)."""
 from __future__ import annotations
 
+import threading
+
 import pytest
 from ethos.api.app import create_app
 from ethos.service import EthosService, IntegrityError
 from ethos.store.memory_repo import MemoryRepository
+from ethos.store.sqlite_repo import SqliteRepository
 from fastapi.testclient import TestClient
 
 TS = "2026-08-01T12:00:00Z"
@@ -129,6 +132,64 @@ def test_fr13_forced_topic_and_filter(client) -> None:
     assert client.post(
         "/questions", json={"text": "x", "asked_at": TS, "topic_id": "nope"}
     ).status_code == 404
+
+
+def test_fr13_sqlite_backed_api_is_thread_safe(corpus, tmp_path) -> None:
+    """The app holds one service — and therefore one sqlite connection — for its
+    whole lifetime, while Starlette runs every sync endpoint on a threadpool.
+
+    Both halves of `SqliteRepository`'s threading contract are load-bearing and
+    this test is red without either. Measured with the guard removed:
+    `check_same_thread=True` -> every worker but the connection's creator raises
+    `ProgrammingError: SQLite objects created in a thread can only be used in
+    that same thread`; dropping the `RLock` -> `OperationalError: cannot start a
+    transaction within a transaction` plus duplicate `lastrowid` values, i.e.
+    one asker is handed another asker's answer id.
+    """
+    store = SqliteRepository(tmp_path / "ethos.db")
+    service = EthosService(corpus, store)
+    service.init_store(TS)
+    client = TestClient(create_app(service))
+    payloads: list[dict] = []
+    errors: list[BaseException] = []
+    barrier = threading.Barrier(8)
+    lock = threading.Lock()
+
+    def worker(n: int) -> None:
+        try:
+            barrier.wait(timeout=30)
+            # Same text on purpose: re-asking must create a new question and a
+            # new answer (FR-11), which is what makes the id check meaningful.
+            response = client.post(
+                "/questions", json={"text": DIRECT_QUESTION, "asked_at": TS}
+            )
+            with lock:
+                payloads.append({"status": response.status_code, **response.json()})
+        except BaseException as exc:  # pragma: no cover - only on a regression
+            with lock:
+                errors.append(exc)
+
+    threads = [threading.Thread(target=worker, args=(n,), daemon=True) for n in range(8)]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join(timeout=60)
+
+    assert errors == [], errors
+    assert [p["status"] for p in payloads] == [200] * 8
+    question_ids = [p["question"]["id"] for p in payloads]
+    answer_ids = [p["answer"]["id"] for p in payloads]
+    assert len(set(question_ids)) == 8, question_ids
+    assert len(set(answer_ids)) == 8, answer_ids
+    # Every id the API handed back resolves to the row that writer actually wrote.
+    for payload in payloads:
+        stored = client.get(f"/answers/{payload['answer']['id']}/text").json()
+        assert stored["text"] == payload["answer"]["rendered_text"]
+        detail = client.get(f"/questions/{payload['question']['id']}").json()
+        assert detail["question"]["text"] == payload["question"]["text"]
+        assert detail["answer"]["id"] == payload["answer"]["id"]
+    assert len(store.list_questions(100, 0)) == 8
+    store.close()
 
 
 def test_fr13_history_and_stored_render(client) -> None:
