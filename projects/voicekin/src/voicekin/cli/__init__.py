@@ -69,8 +69,9 @@ NowOption = Annotated[
 
 @app.callback()
 def _main_callback(data_home: DataHomeOption = None) -> None:
-    if data_home is not None:
-        _STATE["data_home"] = data_home
+    # Always overwrite: the CLI may be invoked repeatedly in one process
+    # (tests, REPLs) and a stale data home must not leak across invocations.
+    _STATE["data_home"] = data_home
 
 
 def _service() -> VoiceKinService:

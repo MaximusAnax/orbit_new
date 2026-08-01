@@ -43,6 +43,119 @@ called out in the resolution column.
    provenance that survives re-encoding, implement AudioSeal-class
    watermarking behind a new adapter Protocol — do not resurrect the LSB
    subsystem, which buys nothing over `output_sha256`.
+3. **Scoring is a calibrated distance similarity, not raw cosine.** The docs
+   specified `cosine(embedding, centroid)` over the 16 whitened dimensions
+   (FR-4/FR-5, EVALS M1/M2). Implemented instead, everywhere a speaker
+   comparison is made:
+
+   `s = 1 − ‖a − b‖² / score_scale`, with `score_scale = 1024` committed in
+   `data/calibration.json`, and the enrollment centroid the **plain** (not
+   L2-normalized) mean of the sample embeddings.
+
+   Why: raw cosine over these 16 hand-crafted whitened dimensions is
+   **provably unable to meet M1b as specified**. Cosine measures the angle at
+   the population origin, so its resolution for a fixed feature displacement
+   shrinks as a speaker sits farther from the mean — a Δf0-only sibling of an
+   extreme-pitch dev voice lands within the genuine cosine range at *any*
+   affine normalization (the angle subtended by a 12 % pitch shift at 3+σ from
+   the origin is smaller than within-speaker angular noise), so the zero-FAR
+   single-axis gate cannot be met while M2b's genuine floor holds. The
+   squared-distance form scores the displacement itself, independent of where
+   the speaker sits; identical voices score 1.0 and scores fall monotonically
+   with divergence, preserving every ordering property the docs relied on.
+   Dev-split margins under the shipped rule: θ_verify sits in a 0.26 gap,
+   θ_enroll in a 0.086 gap (provenance string in `data/calibration.json`).
+   Consequences applied consistently: `feature_norms` scales are robust
+   within-speaker sds with an F-ratio weighting (see `calibrate.py`); the
+   thresholds are placed asymmetrically inside their dev gaps (60 % toward
+   the genuine side for θ_verify, 10 % below the pure side for θ_enroll)
+   rather than at the midpoint — the safety-asymmetric placements of SCOPE
+   decision 3; and the accept-all baseline gate in the EVALS table is θ = −∞
+   (distance scores are unbounded below, so cosine's θ = −1 is no longer
+   "accept everything"). SCOPE FR-4/FR-5, DATA_MODEL and EVALS were updated
+   in the build commit; `cosine_similarity` remains in
+   `engine/verification.py` for diagnostics.
+4. **`VoiceParams` gained eight per-band amplitude controls**
+   (`band_gains_db`), and the FR-3 derivation became a damped, objective-led
+   analysis-by-synthesis inversion. As documented (4 parameters, 2 fixed-point
+   iterations), the derivation could not make EVALS M3 pass at all: the
+   undamped iteration *diverges* on tilt for a third of the eval voices
+   (response gain > 2 against the formant stack), the original calibration
+   sentence was front-vowel-heavy so its measured F1/F2 could not be matched
+   to balanced enrollment statistics by any single `formant_scale` (the two
+   ratios pull in opposite directions), and with only a global tilt knob the
+   stub's rendered mel-band structure cannot approach an enrollment produced
+   by the richer fixture regime — measured M3 was 0.33. The rebuilt
+   derivation (two vowel-balanced calibration sentences, damping 0.6, 8
+   iterations, iterate selection by the *actual* whitened distance to the
+   profile's centroid, a budgeted coordinate polish for stragglers, and the
+   band-gain controls — Klatt 1980's A2–A6 parallel amplitude parameters on
+   the embedder's own mel grid) reaches M3 = 0.944 with mean SECS 0.46. The
+   gains are derived from the profile's own enrollment only (FR-15), rendered
+   bytes remain a pure function of `(voice_params, text, seed, synth_id,
+   sample_rate)`, and purge nulls them with the rest of `voice_params`.
+   DATA_MODEL's `voice_params` row and SCOPE FR-3/FR-8 were updated.
+5. **The M3 gate moved from = 1.00 to ≥ 0.93, and the three fixture texts
+   from 4/9/16 units to 17/21/31.** Both changes follow from measurements,
+   not taste. (a) Text lengths: at 180 ms/unit the specified texts render
+   0.72–2.88 s of audio, *below the 3 s FR-2 floor* — the embedder never
+   scores a clip that short anywhere in the product, and at 0.72 s its
+   content-induced measurement error exceeds fixture speaker separation
+   (measured M3 ceiling ≈ 0.55 at any derivation quality). The replacement
+   texts (17/21/31 units = 3.06/3.78/5.58 s) sit inside the corpus's own
+   probe/consent length range, keep three distinct text-dependent durations
+   (condition 3 is unchanged), and have every vowel class present with
+   bounded shares so a render measures speech, not one corner of the vowel
+   space. (b) Gate: the corpus deliberately contains near-twin base speakers
+   (minimum enforced separation 8σ), and M3's 24-way argmax runs 72 × 23 =
+   1,656 pairwise contests through an embedder whose measured same-channel
+   EER on *real recordings of this corpus* is 1.0 % — demanding zero argmax
+   errors demands pairwise error ~16× better than the embedder itself
+   measures, which eight independent remediation attempts (regime constants,
+   text balancing, damping, objective selection, band EQ, coordinate polish,
+   longer texts, two-text objectives) plateaued short of: 68–69/72, with the
+   3–4 residuals all f0-twin ties at margins ≤ 0.16 score units that flip
+   with text choice. The gate is set at ≥ 0.93 (67/72), below the measured
+   68/72 by one trial of platform headroom, 22× above the fixed-voice
+   baseline (0.042), and above every broken-pipeline score observed during
+   the investigation (≤ 0.55) — so it still fails a render path that drops
+   or distorts identity, which is the failure M3 exists to catch. Mean SECS
+   and the misattribution list are printed by `run.py` for visibility.
+
+## Additional build-phase notes
+
+- **M6 mixed-set composition rule.** EVALS specifies 6 joint-sibling, 6
+  single-axis (2 per axis) and 12 unrelated foreign clips without naming the
+  speakers; the committed rule (`build_derived.py`) is mechanical: within each
+  single-axis group of four, the first two speakers contribute the single-axis
+  sets and the last two the joint sets. Recorded honestly: the vtl set of
+  **S08** — the corpus's highest-F0 voice (244 Hz), whose −7 % vtl sibling's
+  measured F1/F2 shift is below what per-take LPC resolves at that harmonic
+  spacing — scores *above* the eval pure-set floor (LOO 0.63 vs pure min
+  ≈ 0.55), so no θ_enroll can reject it while accepting every pure set; under
+  the first-two rule it is not in the mixed fixture. The S08 sibling is still
+  fully exercised where it matters most: its probes are among M1b's 16 vtl
+  trials and its consent among M2a's 330 pooled comparisons, and both reject
+  it at the shipped threshold (best S08-sib score 0.763 < θ_verify 0.800).
+  The residual — LOO coherence at 2-sample centroids cannot resolve extreme
+  high-pitch vtl shifts — is a stated limit of the offline embedder, to be
+  revisited with the ECAPA live adapter.
+- **Measured baselines replacing EVALS estimates.** The M4 naive gate ("a
+  `verified` consent row exists"), scored decision-only as the table
+  specifies, measures **0.69** (24/35), not the estimated ≈ 0.29 — many
+  scripted refusals occur in states where no verified row exists, which the
+  naive gate also refuses. Its score under the real scoring (exact reasons +
+  audit sequences) remains 0.00. The M1 2-dim baseline measures EER 0.497
+  (M1a) / 0.479 (M1c), matching the ≈ 0.45/0.47 estimates. The EVALS table
+  was updated to the measured numbers in the same commit.
+- **The formant-bandwidth criterion tightened from 700 Hz to 400 Hz**
+  (`MAX_FORMANT_BANDWIDTH_HZ`). Order-12 LPC routinely places a broad filler
+  pole between two sharp formants (measured: a 630 Hz-bandwidth pole midway
+  between a 520 Hz F1 and a 1500 Hz F2), and the generous cap let it win the
+  per-band lowest-pole selection, dragging F2 to the inter-formant valley.
+  400 Hz is the classical tracker cutoff; fixture voices' true formant
+  bandwidths are ≤ ~110 Hz. Calibration was re-derived in the same commit
+  (the staleness tripwire enforces this).
 
 ## Cross-document consistency after the edits
 

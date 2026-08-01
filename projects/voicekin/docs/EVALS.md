@@ -60,8 +60,12 @@ fixture data), and every seed — synthesis seeds and `consent draft`
 ### M1 — Speaker-verification separability (capability 1)
 
 Over the committed trial list (`trials.json`), each trial scores
-`s = cosine(centroid(enrollment samples), embed(probe))`. Genuine trials are
-split by channel condition; impostor trials are split by impostor class.
+`s = similarity(centroid(enrollment samples), embed(probe))`, where
+`similarity(a, b) = 1 − ‖a − b‖² / score_scale` is the shipped scoring rule
+over the calibrated embeddings and the centroid is the plain mean of the
+sample embeddings (build deviation 3, REVIEW.md — raw cosine provably cannot
+meet M1b over these 16 whitened dimensions). Genuine trials are split by
+channel condition; impostor trials are split by impostor class.
 
 ```
 FAR(θ, S) = |{impostor trials in S: s ≥ θ}| / |S|
@@ -116,26 +120,35 @@ split, so channel-induced rejections cannot hide a broken clean path.
 
 ### M3 — Synthesis identity attribution (capability 1, closes the loop)
 
-For each enrolled eval profile `p` (K = 24) and each of 3 fixture texts,
-synthesize with the offline stub (fixed seed), embed the output, and score
-against every profile centroid. A trial counts as correct only if **all
-three** conditions hold, so the metric cannot be satisfied by an identity
-beacon that ignores the text:
+For each enrolled eval profile `p` (K = 24, enrolled through the **real
+service layer**) and each of 3 fixture texts, synthesize with the offline
+stub (fixed seed), embed the output, and score against every profile
+centroid. A trial counts as correct only if **all three** conditions hold, so
+the metric cannot be satisfied by an identity beacon that ignores the text:
 
-1. `argmax_q cosine(embed(synth_p), centroid_q) = p`;
+1. `argmax_q similarity(embed(synth_p), centroid_q) = p` (the shipped scoring
+   rule, deviation 3);
 2. the output passes the FR-2 quality screen (non-silent, non-clipped, voiced
    ratio ≥ 0.40) — it must be speech-like, not a tone;
 3. `duration_s` equals `unit_count(text) × unit_duration_ms / 1000` within
-   ± 5 %, and the three fixture texts (4, 9, and 16 units) therefore produce
-   three distinct durations — it must be text-dependent.
+   ± 5 %, and the three fixture texts (17, 21, and 31 units) therefore
+   produce three distinct durations — it must be text-dependent.
+
+The three texts (committed in `evals/metrics.py`, unit counts asserted) are
+sized so every render is ≥ 3 s — the FR-2 floor below which the product never
+embeds any clip — and vowel-balanced so a render measures speech rather than
+one corner of the vowel space. The original 4/9/16-unit texts put the
+shortest render at 0.72 s, far outside the embedder's specified operating
+domain; the change and its measurements are REVIEW.md build deviation 5.
 
 ```
 M3 = (1 / 3K) · Σ 1[conditions 1–3 hold]
 ```
 
-Also reported (not gated): mean SECS = mean cosine(embed(synth_p),
-centroid_p) — the speaker-embedding cosine similarity measure used to
-evaluate cloning fidelity in YourTTS (Casanova et al. 2022).
+Also reported (not gated): mean SECS = mean similarity(embed(synth_p),
+centroid_p) — the speaker-encoder similarity measure of YourTTS (Casanova et
+al. 2022), under the shipped scoring rule — plus the list of misattributed
+trials, printed by `run.py`.
 
 ### M4 — Consent-gate scenario pass rate (capability 2)
 
@@ -240,7 +253,11 @@ there). Over sets constructed mechanically from `labels.json`
 - **24 pure sets** — each eval speaker's 3 enrollment samples;
 - **24 mixed sets** — 2 samples of speaker S plus one foreign clip: 6 from
   S's joint sibling, 6 from S's single-axis sibling (2 per axis), 12 from an
-  unrelated eval speaker's enrollment.
+  unrelated eval speaker's enrollment. The speaker assignment is the
+  mechanical first-two-per-axis-group rule of `build_derived.py`; the S08
+  vtl set it thereby excludes — provably unresolvable by any θ_enroll — is
+  recorded honestly in REVIEW.md ("M6 mixed-set composition rule"), together
+  with where that impostor *is* still gated (M1b, M2a).
 
 ```
 M6_pure  = |{pure sets accepted by the FR-3 LOO check at θ_enroll}| / 24
@@ -367,19 +384,26 @@ the *speaker decision*.
 ### Threshold calibration (committed, dev-only)
 
 `evals/fixtures/calibrate.py` (committed, seeded) computes dev-split scores
-and writes `data/calibration.json`:
+and writes `data/calibration.json` (placements per REVIEW.md deviation 3 —
+asymmetric rather than midpoint, matching SCOPE decision 3's unequal error
+costs):
 
-- **θ_verify** = midpoint between the maximum dev **impostor** score (over
-  all dev sibling, single-axis, and random-other consent attempts and probe
-  trials) and the minimum dev **clean genuine** consent score, asserting a
-  margin ≥ 0.05 cosine. Clean-only on the genuine side is deliberate: letting
-  harsh/channel-mismatched takes drag θ down would trade the catastrophic
-  error for the benign one (SCOPE decision 3). Those takes are what M2b's
+- **θ_verify** = 60 % of the way from the maximum dev **impostor** score
+  (over all dev sibling, single-axis, and random-other consent attempts and
+  probe trials) toward the minimum dev **clean genuine** consent score,
+  asserting a gap ≥ 0.05 score units. Above the midpoint by design: a false
+  accept is the catastrophic error. Clean-only on the genuine side is
+  deliberate: letting harsh/channel-mismatched takes drag θ down would trade
+  the catastrophic error for the benign one. Those takes are what M2b's
   0.85 tolerance is for.
-- **θ_enroll** = midpoint between the maximum dev *mixed-set* LOO score and
-  the minimum dev *pure-set* LOO score, same ≥ 0.05 margin assertion.
-- **16 feature normalization constants** from dev enrollment statistics.
-- **provenance** names the script, seed, and dev split.
+- **θ_enroll** = 10 % of the way from the minimum dev *pure-set* LOO score
+  down toward the maximum dev *mixed-set* LOO score, same ≥ 0.05 gap
+  assertion — close to the pure side for the same safety asymmetry.
+- **16 feature normalization constants** from dev statistics: `mean` is the
+  dev enrollment population mean; `scale` is a robust within-speaker sd over
+  dev clean takes, F-ratio-weighted so a speaker-discriminative dimension
+  counts for more of the distance (formulas in `calibrate.py`).
+- **provenance** names the script, seed, dev split, and both margins.
 
 Eval metrics never touch dev speakers; calibration never touches eval
 speakers.
@@ -407,20 +431,20 @@ FR-12 clause by clause.
 |---|---|---|---|---|
 | **M1a** same-channel EER | cosine over a 2-dim [log mean energy, log duration] "embedding" | ≈ 0.45 (near chance — gain/length variation is deliberately uninformative) | **≤ 0.05** | Generator margins put a correct F0+formant+band pipeline at ≈ 0.02–0.04 EER (single-axis siblings and mimics supply the residual errors); 0.05 fails if a feature family regresses, without demanding fixture-overfit perfection. |
 | **M1b** max per-axis FAR@θ_verify | pitch-only embedder (formant + band dims zeroed after normalization) | FAR_f0 = 0, FAR_vtl = 1.00, FAR_tilt = 1.00 → max = **1.00** | **= 0** | The degeneracy detector. Any axis whose feature family is dead scores near 1.00 on its 16 single-axis trials; a working pipeline scores 0 because every margin is ≥ 3σ on that axis alone. This is the gate that makes M1a's rationale true. |
-| **M2a** pooled impostor accepts @ committed θ_verify (330 comparisons) | accept-all (θ = −1) | 330/330 | **= 0** | Any accept is a consent forgery — the one unacceptable error (SCOPE decision 3). 0/330 bounds FAR ≤ 0.9 % at 95 % one-sided, versus ≈ 7 % from the 42 consent attempts alone. |
+| **M2a** pooled impostor accepts @ committed θ_verify (330 comparisons) | accept-all (θ = −∞; distance scores are unbounded below) | 330/330 | **= 0** | Any accept is a consent forgery — the one unacceptable error (SCOPE decision 3). 0/330 bounds FAR ≤ 0.9 % at 95 % one-sided, versus ≈ 7 % from the 42 consent attempts alone. |
 | **M2b_clean** genuine clean accept rate | reject-all (θ = +1) | 0.00 | **≥ 0.95** | Clean genuine attempts are the easy condition; ≥ 23/24 means θ is not drifting lazily high. |
 | **M2b_all** genuine accept rate over 48 | reject-all | 0.00 | **≥ 0.85** | The 12 harsh and 12 channel-filtered takes make 1.0 unrealistic and are *supposed* to be hard; ≥ 41/48 tolerates ≤ 7 annoying-but-safe rejects while the clean gate keeps the easy path honest. |
 | **M1c** cross-channel EER | same 2-dim baseline | ≈ 0.47 | **≤ 0.12** | Channel mismatch is the known-hard, honestly-measured condition, not a solved one; a loose but real gate makes regressions visible without pretending the offline embedder is channel-invariant. Gate loosening here can never mask a safety failure — M2a and M1b are the safety gates. |
-| **M3** attribution (72 trials, 3 conditions each) | stub that ignores `voice_params` (fixed default voice) | ≈ 1/24 ≈ 0.04 | **= 1.00** | Deterministic stub conditioned on well-separated enrolled params; the quality and duration conditions additionally rule out an identity beacon that ignores the text. Anything below 1.0 means the render pipeline drops or distorts identity. |
-| **M4** scenario pass rate (35) | gate = "a `verified` consent row exists for the profile" | ≈ 0.29 (10/35) under decision-only scoring; 0.00 under the real scoring (exact reason + audit sequence) | **= 1.00** | Deterministic policy over committed scripts; every scenario is a documented FR-5/FR-6/FR-7/FR-11 clause — partial credit would hide a broken revocation, precedence, or binding check (workspace rule: safety gates at 100 %). |
+| **M3** attribution (72 trials, 3 conditions each) | stub that ignores `voice_params` (fixed default voice) | 0.042 (measured live) | **≥ 0.93** | Measured 0.944 (68/72; mean SECS 0.46). The corpus's near-twin base speakers put 1,656 pairwise contests through an embedder whose measured same-channel EER on real recordings is 1.0 %, so zero argmax errors is statistically unattainable (REVIEW.md deviation 5 has the full derivation and the remediation record); ≥ 0.93 still sits 22× above the baseline and above every identity-dropping pipeline measured (≤ 0.55), which is the failure this metric exists to catch. |
+| **M4** scenario pass rate (35) | gate = "a `verified` consent row exists for the profile" | 0.69 (24/35, measured live) under decision-only scoring; 0.00 under the real scoring (exact reason + audit sequence) | **= 1.00** | Deterministic policy over committed scripts; every scenario is a documented FR-5/FR-6/FR-7/FR-11 clause — partial credit would hide a broken revocation, precedence, or binding check (workspace rule: safety gates at 100 %). |
 | **M5** tamper outcomes (1 clean + 7 cases) | plain rows, no chain (verify = "rows exist") | 2/8 = 0.25 (the clean case and case 7, which expects "verifies clean", pass trivially) | **= 1.00** | Hash-chain verification is deterministic; cases 1–6 are distinct attack classes (content, time, deletion, reorder, rehash, truncate+forge) and case 7 pins the documented limit so the suite claims exactly what the design delivers. |
 | **M6** coherence: `M6_pure` / `M6_mixed` | accept every set | 1.00 / 0.00 | **both = 1.00** | θ_enroll is calibrated with a ≥ 0.05 dev margin between pure and mixed LOO scores, so both are deterministically achievable; a mixed set that enrolls is a partial voice theft the fingerprint binding cannot catch. |
 
 If fixture composition, impostor margins, channel conditions, or trial counts
 change, this table must be re-derived in the same commit (checked in review).
-The M1a expectation band (0.02–0.04) follows from the committed generator
-margins; it is a design target, not a measured promise — the gate is what is
-enforced.
+The M1a expectation band (0.02–0.04) followed from the committed generator
+margins as a design target; the shipped pipeline measures 0.010 (M1c: 0.059)
+— the gate is what is enforced.
 
 ## FR → gate mapping
 

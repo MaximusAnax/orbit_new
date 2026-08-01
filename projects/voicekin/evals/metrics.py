@@ -25,7 +25,6 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-
 from voicekin.adapters.embedder_spectral import FEATURE_FAMILIES, SpectralStatsEmbedder
 from voicekin.adapters.synth_stub import FormantStubSynthesizer
 from voicekin.engine import audit as audit_engine
@@ -36,7 +35,6 @@ from voicekin.models import (
     Calibration,
     ConsentStatus,
     Context,
-    DeliveryStatus,
     TargetKind,
     UtteranceStatus,
 )
@@ -259,11 +257,14 @@ def compute_m2() -> M2Result:
 
 
 def compute_m2_baselines() -> dict[str, float]:
-    """Live: accept-all (theta = -1) impostor accepts; reject-all genuine rate."""
+    """Live baselines from the same score pass: the accept-all gate (theta =
+    -inf; under the shipped distance similarity scores are unbounded below, so
+    -inf — not cosine's -1 — is the degenerate accept-everything threshold) and
+    the reject-all gate (theta = +inf)."""
     result = compute_m2()
     pooled = result.impostor_consent + [s for s, _ in compute_m1().impostor]
-    accept_all = sum(1 for s in pooled if s >= -1.0)
-    reject_all = sum(1 for s, _ in result.genuine if s >= 1.0) / len(result.genuine)
+    accept_all = sum(1 for s in pooled if s >= float("-inf"))
+    reject_all = sum(1 for s, _ in result.genuine if s >= float("inf")) / len(result.genuine)
     return {"m2a_accept_all": float(accept_all), "m2b_reject_all": reject_all}
 
 
@@ -798,9 +799,9 @@ def m5_session() -> list:
         service.synthesize("p2", "hello from ana", Context.ANNOUNCEMENT, 3, now())  # 24-25
         service.add_samples("p2", [corpus.wav_path("S05/probe/0")], now())      # 26
         service.synthesize("p2", "hello again", Context.ANNOUNCEMENT, 3, now()) # 27
-        drift = [
+        drift = next(
             s for s in service.repository.list_samples("p2") if s.sample_index == 4
-        ][0]
+        )
         service.remove_sample("p2", drift.id, now())                            # 28
         service.purge_profile("p2", now())                                      # 29-30
         records = service.repository.list_audit()
@@ -1072,13 +1073,13 @@ def compute_scorecard() -> list[GateRow]:
 
 __all__ = [
     "GATES",
+    "M3_TEXTS",
     "GateRow",
     "M1Result",
     "M2Result",
     "M3Result",
     "M5Result",
     "M6Result",
-    "M3_TEXTS",
     "ScenarioOutcome",
     "calibration",
     "compute_m1",

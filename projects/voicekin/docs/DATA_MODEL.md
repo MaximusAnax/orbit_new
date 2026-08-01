@@ -70,9 +70,9 @@ Created by `voicekin init`; every service call fails fast if it is missing.
 | `status` | ProfileStatus | `purged` is terminal (invariant: no transition out) |
 | `enabled` | bool | operator kill-switch independent of consent (FR-1) |
 | `embedder_id` | str \| null | adapter version that produced the centroid, e.g. `spectral-v1` |
-| `centroid` | JSON list[float] \| null | L2-normalized mean of accepted-sample embeddings; null until FR-3 minimums met; **derived** — recomputed on any sample mutation |
+| `centroid` | JSON list[float] \| null | mean of accepted-sample embeddings (plain, not L2-normalized — the shipped distance scoring measures against the true center; REVIEW.md deviation 3); null until FR-3 minimums met; **derived** — recomputed on any sample mutation |
 | `enrollment_fingerprint` | str \| null | `sha256(embedder_id ‖ sorted accepted-sample sha256s)`; **derived**; null until enrolled-complete |
-| `voice_params` | JSON \| null | `{f0_base_hz, f0_range_hz, formant_scale, tilt_db_oct}` **derived** from enrollment analysis (FR-3); feeds the stub synthesizer |
+| `voice_params` | JSON \| null | `{f0_base_hz, f0_range_hz, formant_scale, tilt_db_oct, band_gains_db[8]}` **derived** from enrollment analysis (FR-3; the band gains are Klatt-style per-band amplitude controls, REVIEW.md deviation 4); feeds the stub synthesizer |
 | `enrolled_at` | str \| null | ISO ts at which the profile first became enrolled-complete; drives the `awaiting-consent` flag (FR-1) |
 | `next_sample_index` | int | monotonic counter for FR-15 sample id derivation |
 | `next_draft_index` | int | monotonic counter for FR-15 consent id derivation and FR-6 governing-record ordering |
@@ -128,7 +128,7 @@ except for the rejected row and its `sample_rejected` audit record.
 | `statement_text` | str | fully rendered statement the owner read (template + owner name + operator name + scope + expiry + nonce + date) |
 | `audio_path` | str \| null | consent recording; null while draft, nulled on purge |
 | `audio_sha256` | str \| null | of normalized payload |
-| `similarity` | float \| null | cosine(consent embedding, profile centroid) at grant time |
+| `similarity` | float \| null | `1 − ‖embedding − centroid‖²/score_scale` at grant time (the shipped scoring rule, REVIEW.md deviation 3) |
 | `threshold` | float \| null | θ_verify used (copied from calibration — record stays interpretable if calibration changes) |
 | `embedder_id` | str \| null | embedder at grant time |
 | `enrollment_fingerprint` | str \| null | profile fingerprint at grant time — the **binding** (FR-5/6) |
@@ -281,6 +281,7 @@ Date: {date}.
 | `embedder_id` | str | constants are only valid for this embedder (checked at load) |
 | `theta_verify` | float | consent decision threshold (FR-5) |
 | `theta_enroll` | float | leave-one-out coherence threshold (FR-3) |
+| `score_scale` | float | denominator of the shipped distance similarity `s = 1 − ‖a−b‖²/score_scale` (REVIEW.md deviation 3) |
 | `feature_norms` | list[{mean, scale}] | 16 per-dimension affine constants (FR-4) |
 | `screening` | object | FR-2 limits: durations, clipping frac, SNR dB, voiced ratio |
 | `unit_duration_ms` | int | 180; stub synthesis unit length (FR-8), also EVALS M3's duration check |

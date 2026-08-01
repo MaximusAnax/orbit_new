@@ -14,6 +14,8 @@ from voicekin.engine.audio import AudioClip, encode_wav, payload_sha256
 from voicekin.engine.voicebox import Unit
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
+    import numpy as np
+
     from voicekin.engine.voicebox import VoiceboxParams
 
 MAX_TEXT_CHARS = 500
@@ -258,7 +260,7 @@ utterance stops embedding near its own enrollment (EVALS M3). The dither is draw
 from the same seed as the synthesis, so byte determinism is untouched."""
 
 
-def band_eq_centers(n_bands: int | None = None) -> "np.ndarray":
+def band_eq_centers(n_bands: int | None = None) -> np.ndarray:
     """Centre frequencies of the :class:`VoiceParams` band-gain grid (FR-8).
 
     The same mel spacing over the same speech band as the embedder's 8 band
@@ -276,7 +278,7 @@ def band_eq_centers(n_bands: int | None = None) -> "np.ndarray":
     return np.asarray(edges[1:-1], dtype=np.float64)
 
 
-def apply_band_gains(samples: "np.ndarray", gains_db, sample_rate: int) -> "np.ndarray":
+def apply_band_gains(samples: np.ndarray, gains_db, sample_rate: int) -> np.ndarray:
     """Impose the per-band corrective envelope (Klatt-style amplitude controls).
 
     Gains are interpolated over log frequency between the band centres and

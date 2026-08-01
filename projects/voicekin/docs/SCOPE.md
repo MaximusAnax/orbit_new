@@ -180,11 +180,14 @@ Each FR is independently testable; test names reference FR ids.
   sample's embedding must score ≥ θ_enroll (committed) against the centroid
   of the remaining samples, else the mutation is refused with
   `incoherent_enrollment` (catches mixed-speaker sets; measured by EVALS M6).
-  Centroid = L2-normalized mean of sample embeddings. Enrollment fingerprint =
+  Centroid = mean of sample embeddings (plain, not L2-normalized — REVIEW.md
+  build deviation 3). Enrollment fingerprint =
   `sha256(embedder_id ‖ sorted per-sample sha256s)` — any sample add/remove
   or embedder change produces a new fingerprint. Voice parameters for the
-  offline synthesizer (`f0_base`, `f0_range`, `formant_scale`, `tilt`) are
-  derived deterministically from the enrollment analysis and stored.
+  offline synthesizer (`f0_base`, `f0_range`, `formant_scale`, `tilt`, plus
+  eight Klatt-style per-band amplitude gains — REVIEW.md deviation 4) are
+  derived deterministically from the enrollment analysis by damped
+  analysis-by-synthesis inversion and stored.
 - **FR-4 Speaker-embedding adapter.** `SpeakerEmbedder` Protocol:
   `embed(clip: AudioClip) -> Embedding` plus `embedder_id: str` (versioned,
   e.g. `spectral-v1`). Offline default `SpectralStatsEmbedder`, 16-dim,
@@ -194,8 +197,10 @@ Each FR is independently testable; test names reference FR ids.
   mel-spaced band energy ratios; spectral tilt, centroid, rolloff. Embedding
   = [log F0 median, log F0 IQR, voiced ratio, F1 median, F2 median, tilt,
   centroid, rolloff] ⊕ 8 band ratios, each dimension affinely normalized with
-  constants committed in `data/calibration.json`. Scoring is cosine
-  similarity. **No feature family may be dead weight**: EVALS M1b gates each
+  constants committed in `data/calibration.json`. Scoring is the calibrated
+  distance similarity `s = 1 − ‖a−b‖²/score_scale` (build deviation from raw
+  cosine, which provably cannot meet M1b over these whitened dimensions —
+  REVIEW.md deviation 3). **No feature family may be dead weight**: EVALS M1b gates each
   of the pitch, vocal-tract-length, and tilt families independently, so an
   embedder whose formant or band dimensions collapse fails the suite. Live
   adapter `EcapaEmbedder` (SpeechBrain ECAPA-TDNN, 192-dim, extra
@@ -213,8 +218,9 @@ Each FR is independently testable; test names reference FR ids.
   profile no longer enrolled-complete (samples removed since drafting) →
   `rejected`/`not_enrolled`; FR-2 screening fails → `rejected`/`audio_quality`;
   normalized-payload sha256 matches any enrollment sample →
-  `rejected`/`reused_enrollment_audio`; else cosine(consent embedding,
-  centroid) ≥ θ_verify → `verified`, otherwise `rejected`/`speaker_mismatch`.
+  `rejected`/`reused_enrollment_audio`; else similarity(consent embedding,
+  centroid) ≥ θ_verify → `verified`, otherwise `rejected`/`speaker_mismatch`
+  (similarity per FR-4's shipped scoring rule).
   The record stores similarity score, threshold used, embedder id, and the
   profile's fingerprint at verification time — the last two only when a score
   was actually computed (see DATA_MODEL invariant). **Rejected consent
@@ -434,7 +440,7 @@ projects/voicekin/
       voicebox.py           # shared parameterized source-filter synthesis core
                             #   (product stub + eval fixture generator both call it)
       enrollment.py         # FR-3 coherence check, centroid, fingerprint, voice_params
-      verification.py       # cosine scoring; consent decision at committed thresholds
+      verification.py       # similarity scoring; consent decision at committed thresholds
       consent.py            # FR-5 statement rendering; FR-6 authorize() gate + precedence
       synthesis.py          # FR-9 text normalization, unit sequencing, payload hashing
       ids.py                # FR-15 deterministic id + nonce derivation
@@ -550,9 +556,10 @@ read-only `/profiles*` routes; (3) `dsp.py`'s rolloff/centroid dimensions
    never-consented profiles, and the threat model names the residual); and
    erasure cannot reach copies outside VoiceKin's filesystem.
 2. **Verification is a speaker match, done the way ASV systems do it.**
-   Enrollment centroid + cosine scoring against a probe embedding is the
+   Enrollment centroid + similarity scoring against a probe embedding is the
    standard modern recipe (d-vector/GE2E, Wan et al. 2018; x-vector, Snyder
-   et al. 2018; ECAPA-TDNN, Desplanques et al. 2020), with thresholds
+   et al. 2018; ECAPA-TDNN, Desplanques et al. 2020 — cosine there, a
+   calibrated distance here per REVIEW.md deviation 3), with thresholds
    calibrated on a dev speaker set disjoint from the eval set, per NIST
    Speaker Recognition Evaluation practice.
 3. **The operating point is deliberately asymmetric.** A false accept means

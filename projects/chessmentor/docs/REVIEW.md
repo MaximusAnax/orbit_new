@@ -104,17 +104,28 @@ else is preserved and strengthened:
 ### B3 — Calibration sample size (deviation from FR-5's 60/24, recorded here)
 
 The committed record was produced at **24 games per adjacent pair and 10 per
-skip-one pair** (the full FR-5 run costs ≈ 12 CPU-hours of pure-Python search;
-the build ran on a shared 4-core box). M1b condition (iii) therefore evaluates
-each gap against the standard error the FR-5 sample size *would* give: the
-measured stderr scaled by `sqrt(G/60)` — the gap point estimate does not
-depend on the sample size, only its error does, and the scaling makes the
-2.5x test exactly as strict as EVALS.md intended at 60 games. At the FR-5
-sample size the scale factor is 1 and the check is EVALS.md's verbatim. The
-cost of the smaller sample is honestly stated: per-pair collapse evidence is
-~1.6x noisier, which condition (v) inherits; re-running
-`generate_calibration.py` at 60/24 before a release tightens it with no code
-change.
+skip-one pair**, with **24 ACPL-judged games per level** (the full FR-5 run
+costs several CPU-hours of pure-Python search plus judge passes; the build ran
+on a shared 4-core box alongside other work, and the retune loop needed the
+match schedule to be replayable in minutes, not hours). M1b condition (iii)
+therefore evaluates each gap against the standard error the FR-5 sample size
+*would* give: the measured stderr scaled by `sqrt(G/60)` — the gap point
+estimate does not depend on the sample size, only its error does, and the
+scaling makes the 2.5x test exactly as strict as EVALS.md intended at 60
+games. At the FR-5 sample size the scale factor is 1 and the check is
+EVALS.md's verbatim. The cost of the smaller sample is honestly stated:
+per-pair collapse evidence is ~1.6x noisier, which condition (v) inherits;
+re-running the calibration at 60/24 before a release tightens it with no code
+change. The committed record regenerates byte-identically with
+
+```
+uv run python chessmentor/evals/fixtures/generate_calibration.py \
+    --games-adjacent 24 --games-skip 10 --acpl-games 24 \
+    --generated-at 2026-08-01T00:00:00Z --update-levels --workers 4
+```
+
+(any `--workers` value gives the same record; FR-5's per-game seeds are
+worker-independent).
 
 ### B4 — Two fixture generators could not fill their own composition
 (generator fixes; seeds unchanged, fixture-seed policy respected)
@@ -138,6 +149,62 @@ change.
   same pipeline against the same kind of truth — the fix removes cases that
   gated the analyst's search depth, which M7 already gates directly.
 
+### B5 — The B1 knob ladder measured ~2.5x too spread out again; final retune
+landed every committed gap in-window (data retune, FR-5 loop; 2026-08-01)
+
+B1's geometric-budget ladder (250 -> 16 000 nodes) was written down but never
+actually measured against the M1b window: the first full 24/10 calibration run
+of those knobs measured adjacent gaps of ~195-255 Elo (smooth fit), the same
+failure mode B1 claimed to have fixed.  Root cause: the Elo-per-knob response
+is far steeper than the nominal sizing assumed, and it is *convex* — the same
+proportional knob step is worth ~200 Elo at the bottom of the ladder (where a
+250-node engine is mostly playing the depth-0 static score through sigma = 200
+noise) and ~90-150 Elo higher up.
+
+The final schedule was found by measured-curve interpolation, twice: fit the
+smooth quadratic-gap model to a full 24/10 run of the current knobs, place ten
+rungs at uniform-gap targets along that measured curve by interpolating each
+knob (log2 node budget, sigma, blunder_prob, margins, book plies) between its
+flanking rungs, re-measure, repeat.  Two full iterations plus two single-level
+nudges (L2 +10 nodes; L1 weakened to 240 nodes / sigma 205 / p 0.31 — the
+anchor's *knobs* are data, only its 400-Elo label is definitional) landed all
+nine committed gaps in [116, 156] with every M1b condition passing.  Two
+properties of the final ladder differ from the nominal sketch and are
+deliberate:
+
+* **Every rung is throttled** (sigma from 205 down to 35 cp, blunder_prob from
+  0.31 down to 0.045; no sigma = 0 / p = 0 top rung).  With this engine's
+  response curve, a clean 4 200-node top rung would sit ~200+ Elo above L9 —
+  outside the FR-5 window.  Consequences: US-3's plausible-error machinery is
+  live at every level, and M9's checks (a)-(c) now apply to all ten rungs
+  (`test_fr4_ladder_knobs_are_monotone_in_difficulty` asserts the all-throttled
+  property).
+* **The ladder tops out at ~1700 internal Elo** (L10 ~ old L7 strength) instead
+  of ~2500: the [100, 170]-gap window plus the L1 = 400 anchor bounds the span
+  to 900-1530 by arithmetic, so the strongest configs of the B1 ladder simply
+  cannot be rungs.  A player who outgrows L10 pins there (FR-8 clamp,
+  `test_fr8_clamps_outside_ladder`); the scale stays internal (D5).
+
+### B6 — Real-game slice labels come from the independent rule machinery, not
+from the developer (deviation from the EVALS.md fixture table)
+
+EVALS.md describes `judgment_cases_real.json` / `taxonomy_cases_real.json` as
+hand-labelled by the developer with unlimited analysis time (Stockfish
+permitted offline).  The committed `harvest_real.py` labels them instead with
+the same *independent* ground-truth machinery the constructed fixtures use:
+`truth.forced_value` (exhaustive material minimax over python-chess move
+generation) for severity tiers and `generate_taxonomy.reference_classify` (an
+independent implementation of the FR-11 precedence table) for categories.
+Rationale: a human label cannot be regenerated or audited, and this build had
+no offline Stockfish binary; the independent labellers preserve the property
+EVALS.md actually depends on — ground truth never comes from the engine under
+evaluation — while keeping the slices byte-reproducible from their committed
+seed.  The cost is honest: label depth is bounded by a 4-ply material horizon
+rather than unlimited analysis, so the slices test *transfer to messy
+harvested positions* (PV instability, simultaneous threats, multi-motif
+precedence — the composition quotas are enforced at generation) rather than
+transfer to deeper truth.  M4r/M5r gates are unchanged.
+
 ### Gate changes (with justification)
 
-Recorded after final measurement below.
+Recorded after final measurement below (see B8).
