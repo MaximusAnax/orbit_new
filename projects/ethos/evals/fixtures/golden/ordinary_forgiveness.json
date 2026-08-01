@@ -1,0 +1,452 @@
+{
+  "body": {
+    "agreement_map": {
+      "context_dependent": [
+        "judaism",
+        "virtue_ethics"
+      ],
+      "encouraged": [
+        "islam"
+      ],
+      "obligatory": [
+        "christianity",
+        "buddhism"
+      ],
+      "reframed": [
+        "stoicism"
+      ]
+    },
+    "citations": {
+      "C1": {
+        "locator": "Matthew 6:14–15",
+        "passage_id": "kjv-matthew-6-14-15",
+        "source_id": "bible-kjv"
+      },
+      "C10": {
+        "locator": "Meditations II.1",
+        "passage_id": "meditations-2-1",
+        "source_id": "meditations-long"
+      },
+      "C11": {
+        "locator": "NE III.1, 1109b30",
+        "passage_id": "ne-3-1-pardon",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C12": {
+        "locator": "NE IV.5, 1126a20",
+        "passage_id": "ne-4-5-revenge-relieves",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C13": {
+        "locator": "ST II-II, Q.108, art.1",
+        "passage_id": "summa-108-1-vengeance",
+        "source_id": "summa-theologica"
+      },
+      "C14": {
+        "locator": "NE IV.5, 1126a7",
+        "passage_id": "ne-4-5-slavish-endurance",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C2": {
+        "locator": "Romans 12:19",
+        "passage_id": "kjv-romans-12-19",
+        "source_id": "bible-kjv"
+      },
+      "C3": {
+        "locator": "Qur'an 42:40",
+        "passage_id": "quran-42-40",
+        "source_id": "quran-pickthall"
+      },
+      "C4": {
+        "locator": "Qur'an 41:34",
+        "passage_id": "quran-41-34",
+        "source_id": "quran-pickthall"
+      },
+      "C5": {
+        "locator": "Leviticus 19:18",
+        "passage_id": "jps-leviticus-19-18",
+        "source_id": "tanakh-jps"
+      },
+      "C6": {
+        "locator": "Yoma 85b",
+        "passage_id": "yoma-85b-atonement",
+        "source_id": "talmud-bavli-ref"
+      },
+      "C7": {
+        "locator": "Dhp 5",
+        "passage_id": "dhp-5-hatred",
+        "source_id": "dhammapada-mueller"
+      },
+      "C8": {
+        "locator": "Dhp 223",
+        "passage_id": "dhp-223-overcome",
+        "source_id": "dhammapada-mueller"
+      },
+      "C9": {
+        "locator": "Meditations VI.6",
+        "passage_id": "meditations-6-6-revenge",
+        "source_id": "meditations-long"
+      }
+    },
+    "composer_version": "1",
+    "corpus_version": "f6ae43cbb8c18bba46e81c72eb3267152c3a683aee0ee6f82b2ca745f3eb0811",
+    "filtered_out": [],
+    "not_covered": [
+      "hinduism",
+      "confucianism",
+      "kantian_deontology",
+      "utilitarianism"
+    ],
+    "perspectives": [
+      {
+        "further_reading": [
+          {
+            "author": "Paul Hughes and Brandon Warmke",
+            "kind": "sep",
+            "note": null,
+            "title": "Forgiveness",
+            "url": "https://plato.stanford.edu/entries/forgiveness/",
+            "year": 2022
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "forgiveness_and_revenge--christianity",
+        "quotes": [
+          {
+            "context_note": "Attached to the Lord's Prayer: divine forgiveness is bound to the disciple's forgiveness of others, making forgiveness a requirement rather than a counsel.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Matthew 6:14–15",
+            "marker": "C1",
+            "passage_id": "kjv-matthew-6-14-15",
+            "source_line": "The Holy Bible, King James Version, trans. the King James translators (1611)",
+            "text": "For if ye forgive men their trespasses, your heavenly Father will also forgive you: But if ye forgive not men their trespasses, neither will your Father forgive your trespasses."
+          },
+          {
+            "context_note": "Retaliation is surrendered to God's justice; the verse separates renouncing private revenge from denying that wrongs matter.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Romans 12:19",
+            "marker": "C2",
+            "passage_id": "kjv-romans-12-19",
+            "source_line": "The Holy Bible, King James Version, trans. the King James translators (1611)",
+            "text": "Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C1",
+            "text": "The Lord's Prayer binds divine forgiveness to our forgiving, making it a requirement of the praying life."
+          },
+          {
+            "marker": "C2",
+            "text": "Paul relocates vengeance from the wronged hand to God's, ending the cycle of retaliation."
+          }
+        ],
+        "stance": "obligatory",
+        "summary": "Forgiveness is not a counsel of perfection but a condition of the disciple's own pardon: forgive, that you may be forgiven. Private vengeance is renounced and handed to God's justice, which frees the wronged person from the offender without denying the wrong. Reconciliation is sought seventy times seven, though the tradition distinguishes forgiving from excusing or from foregoing lawful protection.",
+        "tradition_id": "christianity",
+        "tradition_name": "Christianity"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Toshihiko Izutsu",
+            "kind": "book",
+            "note": "on hilm and 'afw",
+            "title": "Ethico-Religious Concepts in the Qur'an",
+            "url": null,
+            "year": 1966
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "forgiveness_and_revenge--islam",
+        "quotes": [
+          {
+            "context_note": "Proportionate response is permitted, but pardon joined to setting things right is rewarded by God directly — the Qur'anic pattern of allowing justice while commending mercy.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Qur'an 42:40",
+            "marker": "C3",
+            "passage_id": "quran-42-40",
+            "source_line": "The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)",
+            "text": "The guerdon of an ill-deed is an ill the like thereof. But whosoever pardoneth and amendeth, his wage is the affair of Allah. Lo! He loveth not wrong-doers."
+          },
+          {
+            "context_note": "Answering evil with something better is presented as transformative, turning enemies to friends — the positive case for forgiveness beyond mere restraint.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Qur'an 41:34",
+            "marker": "C4",
+            "passage_id": "quran-41-34",
+            "source_line": "The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)",
+            "text": "The good deed and the evil deed are not alike. Repel the evil deed with one which is better, then lo! he, between whom and thee there was enmity (will become) as though he was a bosom friend."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C3",
+            "text": "Like-for-like response is bounded and pardon joined to amendment is rewarded by God."
+          },
+          {
+            "marker": "C4",
+            "text": "Answering evil with something better transforms enmity itself."
+          }
+        ],
+        "stance": "encouraged",
+        "summary": "Proportionate response to a wrong is permitted — an ill for its like, never more — but the Qur'an consistently sets pardon above it: whoever forgives and sets things right is rewarded by God directly, and repelling evil with what is better turns enemies to friends. Justice is the floor; forgiveness is the summons.",
+        "tradition_id": "islam",
+        "tradition_name": "Islam"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Louis E. Newman",
+            "kind": "book",
+            "note": null,
+            "title": "Repentance: The Meaning and Practice of Teshuvah",
+            "url": null,
+            "year": 2010
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "forgiveness_and_revenge--judaism",
+        "quotes": [
+          {
+            "context_note": "Vengeance and even the silent grudge are forbidden in the same verse that commands neighbor-love; the Talmud illustrates both with homely cases of borrowing and lending.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Leviticus 19:18",
+            "marker": "C5",
+            "passage_id": "jps-leviticus-19-18",
+            "source_line": "The Holy Scriptures According to the Masoretic Text, trans. Jewish Publication Society (1917)",
+            "text": "Thou shalt not take vengeance, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD."
+          },
+          {
+            "context_note": "Repair between people cannot be outsourced to ritual: the offender must seek out the wronged party. Forgiveness is owed to the sincere penitent, but the work of appeasement comes first.",
+            "is_paraphrase": true,
+            "label": "[paraphrase — no public-domain translation quoted]",
+            "locator": "Yoma 85b",
+            "marker": "C6",
+            "passage_id": "yoma-85b-atonement",
+            "source_line": "The Babylonian Talmud — Vilna edition, cited by folio; no public-domain English translation quoted",
+            "text": "The Mishnah teaches: for transgressions between a person and God, the Day of Atonement atones; for transgressions between a person and his fellow, the Day of Atonement does not atone until he has appeased his fellow."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C5",
+            "text": "Leviticus forbids revenge and grudge-bearing in the verse that commands neighbor-love."
+          },
+          {
+            "marker": "C6",
+            "text": "Atonement between people requires appeasement of the injured party first — ritual cannot shortcut repair."
+          }
+        ],
+        "stance": "context_dependent",
+        "summary": "Vengeance and the grudge are forbidden outright — but forgiveness in Judaism runs through repentance. The offender must seek out the person wronged and appease them; the Day of Atonement itself does not cover wrongs between people until that work is done. The wronged party should be gracious to a sincere penitent, yet forgiveness is not owed to the unrepentant, and some wrongs lie beyond any human's right to forgive on another's behalf.",
+        "tradition_id": "judaism",
+        "tradition_name": "Judaism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Sharon Salzberg",
+            "kind": "book",
+            "note": null,
+            "title": "Lovingkindness: The Revolutionary Art of Happiness",
+            "url": null,
+            "year": 1995
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "forgiveness_and_revenge--buddhism",
+        "quotes": [
+          {
+            "context_note": "Among the most cited Buddhist verses: retaliation perpetuates what it answers; only its opposite ends it. The 'old rule' claims this as timeless observation, not new doctrine.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Dhp 5",
+            "marker": "C7",
+            "passage_id": "dhp-5-hatred",
+            "source_line": "The Dhammapada, trans. F. Max Müller (1881)",
+            "text": "For hatred does not cease by hatred at any time: hatred ceases by love, this is an old rule."
+          },
+          {
+            "context_note": "Each vice is met by its counter-virtue: the practical method behind the teaching that hatred cannot end hatred.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Dhp 223",
+            "marker": "C8",
+            "passage_id": "dhp-223-overcome",
+            "source_line": "The Dhammapada, trans. F. Max Müller (1881)",
+            "text": "Let a man overcome anger by love, let him overcome evil by good; let him overcome the greedy by liberality, the liar by truth!"
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C7",
+            "text": "The old rule: hatred ceases only by love, so revenge merely continues the harm into oneself."
+          },
+          {
+            "marker": "C8",
+            "text": "Each vice is overcome by its counter-virtue — the practical method of release."
+          }
+        ],
+        "stance": "obligatory",
+        "summary": "Hatred never ceases by hatred — this is presented not as commandment but as observed law, like fire needing fuel. Resentment held is suffering self-inflicted; the practice is to meet anger with love and the greedy with liberality, dissolving the enmity rather than repaying it. Forgiveness here is less a favor to the offender than the release of one's own burning.",
+        "tradition_id": "buddhism",
+        "tradition_name": "Buddhism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Martha C. Nussbaum",
+            "kind": "book",
+            "note": "a modern engagement with the Stoic line",
+            "title": "Anger and Forgiveness: Resentment, Generosity, Justice",
+            "url": null,
+            "year": 2016
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "forgiveness_and_revenge--stoicism",
+        "quotes": [
+          {
+            "context_note": "Marcus's one-line answer to revenge: the only injury the wrongdoer can really do you is to make you resemble him.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Meditations VI.6",
+            "marker": "C9",
+            "passage_id": "meditations-6-6-revenge",
+            "source_line": "The Meditations of Marcus Aurelius, trans. George Long (1862)",
+            "text": "The best way of avenging thyself is not to become like the wrong-doer."
+          },
+          {
+            "context_note": "The opening of the emperor's morning rehearsal; the passage continues by arguing that the wrongdoer is kin and that we are made for co-operation, so neither anger nor hatred fits.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Meditations II.1",
+            "marker": "C10",
+            "passage_id": "meditations-2-1",
+            "source_line": "The Meditations of Marcus Aurelius, trans. George Long (1862)",
+            "text": "Begin the morning by saying to thyself, I shall meet with the busy-body, the ungrateful, arrogant, deceitful, envious, unsocial. All these things happen to them by reason of their ignorance of what is good and evil."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C9",
+            "text": "The best way of avenging thyself is not to become like the wrong-doer."
+          },
+          {
+            "marker": "C10",
+            "text": "The morning rehearsal: offenders act from ignorance, remain kin, and cannot injure the ruling faculty."
+          }
+        ],
+        "stance": "reframed",
+        "summary": "The Stoic does not exactly forgive — he declines to be injured. Wrongdoers act from ignorance of good and evil and remain kin; no one can fix ugliness on you but yourself, so there is nothing to avenge. The best revenge is not to become like the wrong-doer. What other traditions frame as pardoning an injury, Stoicism reframes as correcting the judgment that an injury occurred.",
+        "tradition_id": "stoicism",
+        "tradition_name": "Stoicism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "David Konstan",
+            "kind": "book",
+            "note": "argues the modern concept is absent from classical ethics",
+            "title": "Before Forgiveness: The Origins of a Moral Idea",
+            "url": null,
+            "year": 2010
+          },
+          {
+            "author": "Martha C. Nussbaum",
+            "kind": "book",
+            "note": null,
+            "title": "Anger and Forgiveness: Resentment, Generosity, Justice",
+            "url": null,
+            "year": 2016
+          }
+        ],
+        "intra_tradition_note": "There is no ancient Greek term that maps onto unconditional forgiveness, and scholars disagree whether that is a gap in the psychology or a considered refusal. The scholastic reworking adds mercy as a virtue while keeping corrective vengeance inside justice, which leaves the tension in place rather than dissolving it.",
+        "position_id": "forgiveness_and_revenge--virtue_ethics",
+        "quotes": [
+          {
+            "context_note": "The opening of Book III, which makes voluntariness the gatekeeper of praise and blame. Pardon here is not a gift bestowed on the guilty but the correct response to an act that was not fully the agent's own.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE III.1, 1109b30",
+            "marker": "C11",
+            "passage_id": "ne-3-1-pardon",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "Since virtue is concerned with passions and actions, and on voluntary passions and actions praise and blame are bestowed, on those that are involuntary pardon, and sometimes also pity, to distinguish the voluntary and the involuntary is presumably necessary for those who are studying the nature of virtue."
+          },
+          {
+            "context_note": "A clinical description of the grudge, listed among the vices of excess. Aristotle explains why revenge feels like resolution while naming the state it resolves as a defect of character.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE IV.5, 1126a20",
+            "marker": "C12",
+            "passage_id": "ne-4-5-revenge-relieves",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "Sulky people are hard to appease, and retain their anger long; for they repress their passion. But it ceases when they retaliate; for revenge relieves them of their anger, producing in them pleasure instead of pain."
+          },
+          {
+            "context_note": "Aquinas treats vindicatio as a potential part of justice, distinguishing corrective punishment aimed at restraining wrongdoing from private hatred. The permission is tightly conditioned on right authority and right intention.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "ST II-II, Q.108, art.1",
+            "marker": "C13",
+            "passage_id": "summa-108-1-vengeance",
+            "source_line": "Summa Theologica, trans. Fathers of the English Dominican Province (1920)",
+            "text": "Vengeance is lawful and virtuous so far as it tends to the prevention of evil."
+          },
+          {
+            "context_note": "Aristotle's hardest line against unconditional patience. He is describing a failure of self-respect and of loyalty, not recommending retaliation, and the following lines still condemn excess.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE IV.5, 1126a7",
+            "marker": "C14",
+            "passage_id": "ne-4-5-slavish-endurance",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "For such a man is thought not to feel things nor to be pained by them, and, since he does not get angry, he is thought unlikely to defend himself; and to endure being insulted and put up with insult to one's friends is slavish."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C11",
+            "text": "Pardon is the fitting response to involuntary wrongdoing, and it is established before any question of generosity arises."
+          },
+          {
+            "marker": "C12",
+            "text": "The sullen grudge is classified as a vice of excess, and revenge is described as its relief rather than its cure."
+          },
+          {
+            "marker": "C13",
+            "text": "Corrective punishment by proper authority counts as a part of justice, and is distinguished from private hatred by what it aims at."
+          },
+          {
+            "marker": "C14",
+            "text": "Absorbing insult to one's friends without protest is named a servile defect, not patience."
+          }
+        ],
+        "stance": "context_dependent",
+        "summary": "Praise and blame attach only to what someone did willingly, so where an act was compelled or done in blameless ignorance, pardon is the accurate response rather than a favour granted. Past that point the question turns on what the injured party's own temper is doing. Nursing a grievance is listed among the faults: sullen people hold their resentment because they cannot discharge it, and retaliation feels like resolution because it swaps pain for pleasure. Yet the opposite counsel is refused too, since someone who never resents an injury done to those he loves has failed them.",
+        "tradition_id": "virtue_ethics",
+        "tradition_name": "Virtue ethics"
+      }
+    ],
+    "routing": {
+      "alternates": [],
+      "confidence": null,
+      "forced": true,
+      "topic_id": "forgiveness_and_revenge"
+    },
+    "safeguards": []
+  },
+  "composer_version": "1",
+  "kind": "answer",
+  "name": "ordinary_forgiveness",
+  "polish_fell_back": false,
+  "question": "[golden ordinary_forgiveness]",
+  "rendered_text": "=== Forgiveness and revenge ===\n\nTopic: Forgiveness and revenge (forgiveness_and_revenge) — forced by request\n\n--- Christianity — obligatory ---\nForgiveness is not a counsel of perfection but a condition of the disciple's own pardon: forgive, that you may be forgiven. Private vengeance is renounced and handed to God's justice, which frees the wronged person from the offender without denying the wrong. Reconciliation is sought seventy times seven, though the tradition distinguishes forgiving from excusing or from foregoing lawful protection.\n  • The Lord's Prayer binds divine forgiveness to our forgiving, making it a requirement of the praying life. [C1]\n      “For if ye forgive men their trespasses, your heavenly Father will also forgive you: But if ye forgive not men their trespasses, neither will your Father forgive your trespasses.”\n      — Matthew 6:14–15 — The Holy Bible, King James Version, trans. the King James translators (1611)\n      Context: Attached to the Lord's Prayer: divine forgiveness is bound to the disciple's forgiveness of others, making forgiveness a requirement rather than a counsel.\n  • Paul relocates vengeance from the wronged hand to God's, ending the cycle of retaliation. [C2]\n      “Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.”\n      — Romans 12:19 — The Holy Bible, King James Version, trans. the King James translators (1611)\n      Context: Retaliation is surrendered to God's justice; the verse separates renouncing private revenge from denying that wrongs matter.\n  Further reading:\n      - Paul Hughes and Brandon Warmke, “Forgiveness” (2022) [sep] https://plato.stanford.edu/entries/forgiveness/\n\n--- Islam — encouraged ---\nProportionate response to a wrong is permitted — an ill for its like, never more — but the Qur'an consistently sets pardon above it: whoever forgives and sets things right is rewarded by God directly, and repelling evil with what is better turns enemies to friends. Justice is the floor; forgiveness is the summons.\n  • Like-for-like response is bounded and pardon joined to amendment is rewarded by God. [C3]\n      “The guerdon of an ill-deed is an ill the like thereof. But whosoever pardoneth and amendeth, his wage is the affair of Allah. Lo! He loveth not wrong-doers.”\n      — Qur'an 42:40 — The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)\n      Context: Proportionate response is permitted, but pardon joined to setting things right is rewarded by God directly — the Qur'anic pattern of allowing justice while commending mercy.\n  • Answering evil with something better transforms enmity itself. [C4]\n      “The good deed and the evil deed are not alike. Repel the evil deed with one which is better, then lo! he, between whom and thee there was enmity (will become) as though he was a bosom friend.”\n      — Qur'an 41:34 — The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)\n      Context: Answering evil with something better is presented as transformative, turning enemies to friends — the positive case for forgiveness beyond mere restraint.\n  Further reading:\n      - Toshihiko Izutsu, “Ethico-Religious Concepts in the Qur'an” (1966) [book]\n\n--- Judaism — context_dependent ---\nVengeance and the grudge are forbidden outright — but forgiveness in Judaism runs through repentance. The offender must seek out the person wronged and appease them; the Day of Atonement itself does not cover wrongs between people until that work is done. The wronged party should be gracious to a sincere penitent, yet forgiveness is not owed to the unrepentant, and some wrongs lie beyond any human's right to forgive on another's behalf.\n  • Leviticus forbids revenge and grudge-bearing in the verse that commands neighbor-love. [C5]\n      “Thou shalt not take vengeance, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD.”\n      — Leviticus 19:18 — The Holy Scriptures According to the Masoretic Text, trans. Jewish Publication Society (1917)\n      Context: Vengeance and even the silent grudge are forbidden in the same verse that commands neighbor-love; the Talmud illustrates both with homely cases of borrowing and lending.\n  • Atonement between people requires appeasement of the injured party first — ritual cannot shortcut repair. [C6]\n      [paraphrase — no public-domain translation quoted]\n      The Mishnah teaches: for transgressions between a person and God, the Day of Atonement atones; for transgressions between a person and his fellow, the Day of Atonement does not atone until he has appeased his fellow.\n      — Yoma 85b — The Babylonian Talmud — Vilna edition, cited by folio; no public-domain English translation quoted\n      Context: Repair between people cannot be outsourced to ritual: the offender must seek out the wronged party. Forgiveness is owed to the sincere penitent, but the work of appeasement comes first.\n  Further reading:\n      - Louis E. Newman, “Repentance: The Meaning and Practice of Teshuvah” (2010) [book]\n\n--- Buddhism — obligatory ---\nHatred never ceases by hatred — this is presented not as commandment but as observed law, like fire needing fuel. Resentment held is suffering self-inflicted; the practice is to meet anger with love and the greedy with liberality, dissolving the enmity rather than repaying it. Forgiveness here is less a favor to the offender than the release of one's own burning.\n  • The old rule: hatred ceases only by love, so revenge merely continues the harm into oneself. [C7]\n      “For hatred does not cease by hatred at any time: hatred ceases by love, this is an old rule.”\n      — Dhp 5 — The Dhammapada, trans. F. Max Müller (1881)\n      Context: Among the most cited Buddhist verses: retaliation perpetuates what it answers; only its opposite ends it. The 'old rule' claims this as timeless observation, not new doctrine.\n  • Each vice is overcome by its counter-virtue — the practical method of release. [C8]\n      “Let a man overcome anger by love, let him overcome evil by good; let him overcome the greedy by liberality, the liar by truth!”\n      — Dhp 223 — The Dhammapada, trans. F. Max Müller (1881)\n      Context: Each vice is met by its counter-virtue: the practical method behind the teaching that hatred cannot end hatred.\n  Further reading:\n      - Sharon Salzberg, “Lovingkindness: The Revolutionary Art of Happiness” (1995) [book]\n\n--- Stoicism — reframed ---\nThe Stoic does not exactly forgive — he declines to be injured. Wrongdoers act from ignorance of good and evil and remain kin; no one can fix ugliness on you but yourself, so there is nothing to avenge. The best revenge is not to become like the wrong-doer. What other traditions frame as pardoning an injury, Stoicism reframes as correcting the judgment that an injury occurred.\n  • The best way of avenging thyself is not to become like the wrong-doer. [C9]\n      “The best way of avenging thyself is not to become like the wrong-doer.”\n      — Meditations VI.6 — The Meditations of Marcus Aurelius, trans. George Long (1862)\n      Context: Marcus's one-line answer to revenge: the only injury the wrongdoer can really do you is to make you resemble him.\n  • The morning rehearsal: offenders act from ignorance, remain kin, and cannot injure the ruling faculty. [C10]\n      “Begin the morning by saying to thyself, I shall meet with the busy-body, the ungrateful, arrogant, deceitful, envious, unsocial. All these things happen to them by reason of their ignorance of what is good and evil.”\n      — Meditations II.1 — The Meditations of Marcus Aurelius, trans. George Long (1862)\n      Context: The opening of the emperor's morning rehearsal; the passage continues by arguing that the wrongdoer is kin and that we are made for co-operation, so neither anger nor hatred fits.\n  Further reading:\n      - Martha C. Nussbaum, “Anger and Forgiveness: Resentment, Generosity, Justice” (2016) [book]\n\n--- Virtue ethics — context_dependent ---\nPraise and blame attach only to what someone did willingly, so where an act was compelled or done in blameless ignorance, pardon is the accurate response rather than a favour granted. Past that point the question turns on what the injured party's own temper is doing. Nursing a grievance is listed among the faults: sullen people hold their resentment because they cannot discharge it, and retaliation feels like resolution because it swaps pain for pleasure. Yet the opposite counsel is refused too, since someone who never resents an injury done to those he loves has failed them.\n  • Pardon is the fitting response to involuntary wrongdoing, and it is established before any question of generosity arises. [C11]\n      “Since virtue is concerned with passions and actions, and on voluntary passions and actions praise and blame are bestowed, on those that are involuntary pardon, and sometimes also pity, to distinguish the voluntary and the involuntary is presumably necessary for those who are studying the nature of virtue.”\n      — NE III.1, 1109b30 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: The opening of Book III, which makes voluntariness the gatekeeper of praise and blame. Pardon here is not a gift bestowed on the guilty but the correct response to an act that was not fully the agent's own.\n  • The sullen grudge is classified as a vice of excess, and revenge is described as its relief rather than its cure. [C12]\n      “Sulky people are hard to appease, and retain their anger long; for they repress their passion. But it ceases when they retaliate; for revenge relieves them of their anger, producing in them pleasure instead of pain.”\n      — NE IV.5, 1126a20 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: A clinical description of the grudge, listed among the vices of excess. Aristotle explains why revenge feels like resolution while naming the state it resolves as a defect of character.\n  • Corrective punishment by proper authority counts as a part of justice, and is distinguished from private hatred by what it aims at. [C13]\n      “Vengeance is lawful and virtuous so far as it tends to the prevention of evil.”\n      — ST II-II, Q.108, art.1 — Summa Theologica, trans. Fathers of the English Dominican Province (1920)\n      Context: Aquinas treats vindicatio as a potential part of justice, distinguishing corrective punishment aimed at restraining wrongdoing from private hatred. The permission is tightly conditioned on right authority and right intention.\n  • Absorbing insult to one's friends without protest is named a servile defect, not patience. [C14]\n      “For such a man is thought not to feel things nor to be pained by them, and, since he does not get angry, he is thought unlikely to defend himself; and to endure being insulted and put up with insult to one's friends is slavish.”\n      — NE IV.5, 1126a7 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: Aristotle's hardest line against unconditional patience. He is describing a failure of self-respect and of loyalty, not recommending retaliation, and the following lines still condemn excess.\n  Note: There is no ancient Greek term that maps onto unconditional forgiveness, and scholars disagree whether that is a gap in the psychology or a considered refusal. The scholastic reworking adds mercy as a virtue while keeping corrective vengeance inside justice, which leaves the tension in place rather than dissolving it.\n  Further reading:\n      - David Konstan, “Before Forgiveness: The Origins of a Moral Idea” (2010) [book]\n      - Martha C. Nussbaum, “Anger and Forgiveness: Resentment, Generosity, Justice” (2016) [book]\n\nWhere traditions agree and differ:\n  obligatory: Christianity, Buddhism\n  encouraged: Islam\n  context_dependent: Judaism, Virtue ethics\n  reframed: Stoicism\nNo curated position on this topic: Hinduism, Confucianism, Kantian deontology, Utilitarianism\n\nCitations:\n  [C1] kjv-matthew-6-14-15 — Matthew 6:14–15 — bible-kjv\n  [C2] kjv-romans-12-19 — Romans 12:19 — bible-kjv\n  [C3] quran-42-40 — Qur'an 42:40 — quran-pickthall\n  [C4] quran-41-34 — Qur'an 41:34 — quran-pickthall\n  [C5] jps-leviticus-19-18 — Leviticus 19:18 — tanakh-jps\n  [C6] yoma-85b-atonement — Yoma 85b — talmud-bavli-ref\n  [C7] dhp-5-hatred — Dhp 5 — dhammapada-mueller\n  [C8] dhp-223-overcome — Dhp 223 — dhammapada-mueller\n  [C9] meditations-6-6-revenge — Meditations VI.6 — meditations-long\n  [C10] meditations-2-1 — Meditations II.1 — meditations-long\n  [C11] ne-3-1-pardon — NE III.1, 1109b30 — aristotle-ne-ross\n  [C12] ne-4-5-revenge-relieves — NE IV.5, 1126a20 — aristotle-ne-ross\n  [C13] summa-108-1-vengeance — ST II-II, Q.108, art.1 — summa-theologica\n  [C14] ne-4-5-slavish-endurance — NE IV.5, 1126a7 — aristotle-ne-ross\n\nCorpus f6ae43cbb8c1 · composer 1\n"
+}

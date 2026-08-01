@@ -1,0 +1,51 @@
+[
+  {
+    "name": "oblique_question_with_title_word",
+    "gate": "C9",
+    "description": "An oblique question that reuses a distinctive token from its own topic's title/description/weight-3 keywords — the leak C9 exists to forbid.",
+    "questions": [
+      {
+        "id": "neg-c9",
+        "text": "Is a white lie to spare her feelings really deception?",
+        "truth_topic": "honesty_and_deception",
+        "tier": "oblique",
+        "rationale": "Deliberately leaky: 'white lie' and 'deception' are weight-3 keywords of the truth topic."
+      }
+    ]
+  },
+  {
+    "name": "oos_set_all_zero_score",
+    "gate": "C20",
+    "description": "An out-of-scope set made of lexically foreign questions, which the null rule `abstain iff s1 = 0` would refuse for free.",
+    "questions": [
+      {"id": "neg-c20-1", "text": "What is quicksort's recurrence relation?", "kind": "technical", "rationale": "no taxonomy vocabulary at all"},
+      {"id": "neg-c20-2", "text": "How do I reflash my router's firmware?", "kind": "technical", "rationale": "no taxonomy vocabulary at all"},
+      {"id": "neg-c20-3", "text": "Which GPU should I buy?", "kind": "consumer", "rationale": "no taxonomy vocabulary at all"}
+    ]
+  },
+  {
+    "name": "stemmer_off_by_one",
+    "gate": "C18",
+    "description": "A deliberately wrong stem in a committed Porter pair.",
+    "pairs": [["agreed", "agreed"], ["alleviated", "allevi"]]
+  },
+  {
+    "name": "answer_with_duplicated_marker",
+    "gate": "M4a",
+    "description": "A polished envelope in which one quote block is duplicated, so a citation-table key owns two quote blocks (FR-8(a)).",
+    "case": {
+      "id": "neg-m4a",
+      "mode": "duplicated_marker",
+      "topic_id": "honesty_and_deception",
+      "traditions": ["christianity"],
+      "expected": "rejected",
+      "ops": [{"op": "duplicate_region", "region": "I:quote:C1"}]
+    }
+  },
+  {
+    "name": "answer_missing_reading",
+    "gate": "M5",
+    "description": "A position stripped of its further reading, so its rendered section is not well-formed.",
+    "ops": [{"op": "set_field", "collection": "positions", "id": "divorce--christianity", "field": "further_reading", "value": []}]
+  }
+]

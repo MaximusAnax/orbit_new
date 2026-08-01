@@ -172,6 +172,14 @@ def _run_determinism(env_extra: dict[str, str]) -> str:
     return proc.stdout
 
 
+def test_gate_d0_goldens_regenerate_fr15() -> None:
+    """D0(b): the nine goldens regenerate byte-identically from the committed corpus,
+    and their embedded composer_version matches the code constant."""
+    from evals.fixtures import regenerate_golden
+
+    assert regenerate_golden.main(["--check"]) == 0
+
+
 def test_gate_d0_hash_seed_and_locale_fr15() -> None:
     """D0(a): identical routing, bodies and renders across hash seeds and locales."""
     base = _run_determinism({"PYTHONHASHSEED": "0", "LC_ALL": "en_US.UTF-8"})

@@ -1,0 +1,22 @@
+{
+  "browse_hint": "Browse what this corpus can answer with `ethos topics`, or force a topic with `ethos ask --topic <id>`.",
+  "kind": "refusal",
+  "name": "refusal",
+  "nearest_topics": [
+    {
+      "score": 26.71150565124961,
+      "topic_id": "killing_and_self_defense"
+    },
+    {
+      "score": 6.892257786345312,
+      "topic_id": "capital_punishment"
+    },
+    {
+      "score": 6.115554488323619,
+      "topic_id": "suicide_and_self_harm"
+    }
+  ],
+  "note": "Two families of moral questions are deliberately outside this corpus: modern technology and bioethics (gene editing, AI training on creative work, data privacy, surveillance, climate duties, organ markets), and contested modern moral-political questions (abortion, sexuality, gambling, immigration). They are refused rather than stretched onto the nearest topic.",
+  "outcome": "refused_out_of_scope",
+  "question": "Is CRISPR editing of an embryo's genome killing an unborn person, murder, or self-defense against inherited disease?"
+}

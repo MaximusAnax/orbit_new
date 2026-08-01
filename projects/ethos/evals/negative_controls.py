@@ -55,6 +55,11 @@ def _apply(raw_tree: dict[str, Any], op: dict[str, Any]) -> None:
                     continue
                 remaining.append(record)
             _replace_group(raw_tree, collection, key, remaining)
+    elif kind == "set_role":
+        for record in records:
+            for ref in record.get("passages", []):
+                if ref["role"] == op["from"]:
+                    ref["role"] = op["to"]
     elif kind == "append":
         key, group = next(iter(_groups(raw_tree, collection)))
         _replace_group(raw_tree, collection, key, [*group, copy.deepcopy(op["record"])])

@@ -1,0 +1,449 @@
+{
+  "body": {
+    "agreement_map": {
+      "context_dependent": [
+        "utilitarianism"
+      ],
+      "forbidden": [
+        "christianity",
+        "islam",
+        "judaism"
+      ],
+      "obligatory": [
+        "hinduism",
+        "confucianism",
+        "kantian_deontology"
+      ]
+    },
+    "citations": {
+      "C1": {
+        "locator": "Matthew 19:6",
+        "passage_id": "kjv-matthew-19-6",
+        "source_id": "bible-kjv"
+      },
+      "C10": {
+        "locator": "Subjection ch.4",
+        "passage_id": "mill-subjection-4-bondage",
+        "source_id": "mill-subjection"
+      },
+      "C11": {
+        "locator": "Utilitarianism ch.2",
+        "passage_id": "mill-util-2-ghp",
+        "source_id": "mill-utilitarianism"
+      },
+      "C12": {
+        "locator": "On Liberty ch.1",
+        "passage_id": "mill-liberty-1-harm",
+        "source_id": "mill-onliberty"
+      },
+      "C13": {
+        "locator": "On Liberty ch.4",
+        "passage_id": "mill-liberty-4-social-return",
+        "source_id": "mill-onliberty"
+      },
+      "C2": {
+        "locator": "Matthew 5:28",
+        "passage_id": "kjv-matthew-5-28",
+        "source_id": "bible-kjv"
+      },
+      "C3": {
+        "locator": "Qur'an 17:32",
+        "passage_id": "quran-17-32",
+        "source_id": "quran-pickthall"
+      },
+      "C4": {
+        "locator": "Qur'an 5:1",
+        "passage_id": "quran-5-1-indentures",
+        "source_id": "quran-pickthall"
+      },
+      "C5": {
+        "locator": "Malachi 2:14",
+        "passage_id": "jps-malachi-2-14",
+        "source_id": "tanakh-jps"
+      },
+      "C6": {
+        "locator": "Manu 9.101",
+        "passage_id": "manu-9-101-fidelity",
+        "source_id": "manu-buhler"
+      },
+      "C7": {
+        "locator": "Mencius V.2",
+        "passage_id": "mencius-5-2-relations",
+        "source_id": "mencius-legge"
+      },
+      "C8": {
+        "locator": "Rechtslehre 6:277",
+        "passage_id": "kant-law-6-277-marriage",
+        "source_id": "kant-law-hastie"
+      },
+      "C9": {
+        "locator": "Groundwork 4:429",
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "source_id": "kant-groundwork-abbott"
+      }
+    },
+    "composer_version": "1",
+    "corpus_version": "f6ae43cbb8c18bba46e81c72eb3267152c3a683aee0ee6f82b2ca745f3eb0811",
+    "filtered_out": [],
+    "not_covered": [
+      "buddhism",
+      "stoicism",
+      "virtue_ethics"
+    ],
+    "perspectives": [
+      {
+        "further_reading": [
+          {
+            "author": "Elizabeth Brake",
+            "kind": "sep",
+            "note": null,
+            "title": "Marriage and Domestic Partnership",
+            "url": "https://plato.stanford.edu/entries/marriage/",
+            "year": 2020
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "marriage_and_fidelity--christianity",
+        "quotes": [
+          {
+            "context_note": "Jesus grounds marriage in creation rather than contract; the one-flesh union is the basis of both the fidelity demand and the divorce teaching.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Matthew 19:6",
+            "marker": "C1",
+            "passage_id": "kjv-matthew-19-6",
+            "source_line": "The Holy Bible, King James Version, trans. the King James translators (1611)",
+            "text": "Wherefore they are no more twain, but one flesh. What therefore God hath joined together, let not man put asunder."
+          },
+          {
+            "context_note": "Fidelity is interiorized: the Sermon on the Mount moves adultery from act to intention, making the guarding of desire part of faithfulness.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Matthew 5:28",
+            "marker": "C2",
+            "passage_id": "kjv-matthew-5-28",
+            "source_line": "The Holy Bible, King James Version, trans. the King James translators (1611)",
+            "text": "But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C1",
+            "text": "Marriage is grounded in creation as a union God joins, beyond private contract."
+          },
+          {
+            "marker": "C2",
+            "text": "The Sermon on the Mount moves adultery from outward act to inward intention, making the guarding of desire part of faithfulness."
+          }
+        ],
+        "stance": "forbidden",
+        "summary": "Adultery is excluded by commandment, and Jesus deepens the demand: the one-flesh union joined by God asks faithfulness of the heart, so that cultivated desire for another is already betrayal. Fidelity is not mere abstention from an act but the positive keeping of a covenant that images God's own faithfulness to a people, which is why the marriage bond is treated as a sign of something larger than the two who make it and why its breach is described as an injury to both.",
+        "tradition_id": "christianity",
+        "tradition_name": "Christianity"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Kecia Ali",
+            "kind": "book",
+            "note": null,
+            "title": "Marriage and Slavery in Early Islam",
+            "url": null,
+            "year": 2010
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "marriage_and_fidelity--islam",
+        "quotes": [
+          {
+            "context_note": "The command bars not only the act but approaching it; the law's protections of marriage begin well before betrayal is consummated.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Qur'an 17:32",
+            "marker": "C3",
+            "passage_id": "quran-17-32",
+            "source_line": "The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)",
+            "text": "And come not near unto adultery. Lo! it is an abomination and an evil way."
+          },
+          {
+            "context_note": "The sura of contracts opens with the command to fulfil undertakings; the same verse states the lawfulness of cattle as food, so it anchors both covenant-keeping and dietary permission.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Qur'an 5:1",
+            "marker": "C4",
+            "passage_id": "quran-5-1-indentures",
+            "source_line": "The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)",
+            "text": "O ye who believe! Fulfil your indentures. The beast of cattle is made lawful unto you (for food) except that which is announced unto you (herein), game being unlawful when ye are on the pilgrimage. Lo! Allah ordaineth that which pleaseth Him."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C3",
+            "text": "The prohibition covers approaching adultery, placing the guard rails well before the act."
+          },
+          {
+            "marker": "C4",
+            "text": "Marriage's contractual seriousness draws on the general command to fulfil undertakings."
+          }
+        ],
+        "stance": "forbidden",
+        "summary": "Marriage in Islam is a solemn covenant (mithaq), and adultery is barred with unusual force: the command is not merely to abstain but not even to come near it. The law protects the marriage bond from both sides — through modesty norms upstream of temptation and through the gravity attached to zina itself.",
+        "tradition_id": "islam",
+        "tradition_name": "Islam"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Michael L. Satlow",
+            "kind": "book",
+            "note": null,
+            "title": "Jewish Marriage in Antiquity",
+            "url": null,
+            "year": 2001
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "marriage_and_fidelity--judaism",
+        "quotes": [
+          {
+            "context_note": "Marriage as covenant with God as witness: infidelity is treachery against companion and covenant at once, not merely a private lapse.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Malachi 2:14",
+            "marker": "C5",
+            "passage_id": "jps-malachi-2-14",
+            "source_line": "The Holy Scriptures According to the Masoretic Text, trans. Jewish Publication Society (1917)",
+            "text": "Because the LORD hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously, though she is thy companion, and the wife of thy covenant."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C5",
+            "text": "Malachi casts infidelity as covenant-treachery witnessed by God, not private failure."
+          }
+        ],
+        "stance": "forbidden",
+        "summary": "Adultery is forbidden from Sinai, and Malachi names the deeper wrong: treachery against the wife of thy youth, thy companion, the wife of thy covenant — with God as witness between them. Marriage in halakhah is effected by contract (the ketubah) yet described as covenant; faithfulness is owed not only as rule-keeping but as loyalty to a partner God has witnessed.",
+        "tradition_id": "judaism",
+        "tradition_name": "Judaism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "P. V. Kane",
+            "kind": "book",
+            "note": "on marriage as samskara",
+            "title": "History of Dharmasastra, vol. II",
+            "url": null,
+            "year": 1941
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "marriage_and_fidelity--hinduism",
+        "quotes": [
+          {
+            "context_note": "Manu's own summary of marriage law: fidelity until death, stated as mutual — the sacramental view of the bond in one sentence.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Manu 9.101",
+            "marker": "C6",
+            "passage_id": "manu-9-101-fidelity",
+            "source_line": "The Laws of Manu, trans. Georg Bühler (1886)",
+            "text": "'Let mutual fidelity continue until death,' this may be considered as the summary of the highest law for husband and wife."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C6",
+            "text": "Manu's one-line summary makes mutual fidelity until death the marriage law's core."
+          }
+        ],
+        "stance": "obligatory",
+        "summary": "Let mutual fidelity continue until death — Manu offers this as the summary of the highest law for husband and wife. Marriage is samskara, a sacrament joining families and generations, within which faithfulness is not a bargain but a vow with cosmic weight; adultery is treated in the lawbooks among the gravest offenses against social order.",
+        "tradition_id": "hinduism",
+        "tradition_name": "Hinduism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Bryan W. Van Norden",
+            "kind": "sep",
+            "note": null,
+            "title": "Mencius",
+            "url": "https://plato.stanford.edu/entries/mencius/",
+            "year": 2019
+          }
+        ],
+        "intra_tradition_note": "Classical texts frame the spousal relation asymmetrically; modern Confucian thinkers rework the role-ethics toward mutuality while keeping the relational frame.",
+        "position_id": "marriage_and_fidelity--confucianism",
+        "quotes": [
+          {
+            "context_note": "Marriage as the greatest of the human relations (Book V, part A, ch. 2 in Legge's edition): the bond from which the five relations' web is woven, carrying duties of harmony and fidelity on both sides.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Mencius V.2",
+            "marker": "C7",
+            "passage_id": "mencius-5-2-relations",
+            "source_line": "The Works of Mencius, trans. James Legge (1895)",
+            "text": "That male and female should dwell together, is the greatest of human relations."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C7",
+            "text": "The dwelling-together of male and female is the greatest of human relations, the web's first thread."
+          }
+        ],
+        "stance": "obligatory",
+        "summary": "Marriage is the greatest of the human relations in Mencius's phrase — the bond from which family, and through family the state, is woven. Its ethics is role-based: distinct duties of husband and wife, ancestral continuity, and the household as the first school of virtue. Fidelity belongs to the relation's proper form; its breach disorders not two people but the web that depends on them.",
+        "tradition_id": "confucianism",
+        "tradition_name": "Confucianism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Barbara Herman",
+            "kind": "book",
+            "note": "'Could it be worth thinking about Kant on marriage?'",
+            "title": "The Practice of Moral Judgment",
+            "url": null,
+            "year": 1993
+          }
+        ],
+        "intra_tradition_note": "Contemporary Kantians (Korsgaard, Herman) reconstruct the argument in terms of mutual self-giving and equal standing, discarding the possession vocabulary while keeping the anti-instrumentalization core.",
+        "position_id": "marriage_and_fidelity--kantian_deontology",
+        "quotes": [
+          {
+            "context_note": "Kant's juridical definition of marriage as a contract of reciprocal possession — much criticized, but load-bearing: only within a union of equal reciprocal right, he argues, can persons share intimacy without using each other merely as means.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Rechtslehre 6:277",
+            "marker": "C8",
+            "passage_id": "kant-law-6-277-marriage",
+            "source_line": "The Philosophy of Law, trans. W. Hastie (1887)",
+            "text": "the union of two persons of different sex for life-long reciprocal possession of their sexual properties."
+          },
+          {
+            "context_note": "The humanity formulation: rational nature — in oneself as much as in others — may never be used merely as a means. The ground of Kantian dignity.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Groundwork 4:429",
+            "marker": "C9",
+            "passage_id": "kant-groundwork-4-429-humanity",
+            "source_line": "Fundamental Principles of the Metaphysic of Morals, trans. Thomas Kingsmill Abbott (1873)",
+            "text": "So act as to treat humanity, whether in thine own person or in that of any other, in every case as an end withal, never as means only."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C8",
+            "text": "Marriage's contractual definition encodes the equality and totality of the reciprocal claim."
+          },
+          {
+            "marker": "C9",
+            "text": "Outside such reciprocity, one person becomes a means to another's inclination — the humanity formula names the wrong."
+          }
+        ],
+        "stance": "obligatory",
+        "summary": "Kant's juridical definition of marriage — lifelong reciprocal possession — is easy to mock and hard to dismiss: his point is that sexual intimacy risks using a person as a thing, and only a union of complete, equal, lifelong reciprocal right transforms use into shared personhood. Fidelity is therefore built into the institution's rational form; adultery reintroduces exactly the one-sided use marriage exists to abolish.",
+        "tradition_id": "kantian_deontology",
+        "tradition_name": "Kantian deontology"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Nancy J. Hirschmann",
+            "kind": "article",
+            "note": null,
+            "title": "Mill, Political Economy, and Women's Work",
+            "url": null,
+            "year": 2008
+          },
+          {
+            "author": "Dale E. Miller",
+            "kind": "book",
+            "note": "chapter on marriage and the family",
+            "title": "John Stuart Mill: Moral, Social and Political Thought",
+            "url": null,
+            "year": 2010
+          }
+        ],
+        "intra_tradition_note": "Act and rule versions come apart here more than almost anywhere: an act-utilitarian can construct a case where an undiscovered infidelity increases happiness, while a rule-utilitarian answers that the general observance of fidelity is what carries the value, and that agents are poor judges of their own exceptions.",
+        "position_id": "marriage_and_fidelity--utilitarianism",
+        "quotes": [
+          {
+            "context_note": "Mill's indictment of Victorian marriage law: where exit is barred and rights unequal, marriage functions as bondage. The reform case for lawful divorce is utilitarian to its core — suffering trapped is suffering multiplied.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Subjection ch.4",
+            "marker": "C10",
+            "passage_id": "mill-subjection-4-bondage",
+            "source_line": "The Subjection of Women, John Stuart Mill (1869)",
+            "text": "Marriage is the only actual bondage known to our law. There remain no legal slaves, except the mistress of every house."
+          },
+          {
+            "context_note": "Mill's canonical statement of the principle, with happiness understood as pleasure and the absence of pain — refined in the same chapter by the doctrine of higher pleasures.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Utilitarianism ch.2",
+            "marker": "C11",
+            "passage_id": "mill-util-2-ghp",
+            "source_line": "Utilitarianism, John Stuart Mill (1863)",
+            "text": "The creed which accepts as the foundation of morals, Utility, or the Greatest Happiness Principle, holds that actions are right in proportion as they tend to promote happiness, wrong as they tend to produce the reverse of happiness."
+          },
+          {
+            "context_note": "The harm principle: self-regarding conduct lies outside legitimate coercion. Mill grounds it not in natural right but in the long-run utility of liberty.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "On Liberty ch.1",
+            "marker": "C12",
+            "passage_id": "mill-liberty-1-harm",
+            "source_line": "On Liberty, John Stuart Mill (1859)",
+            "text": "the only purpose for which power can be rightfully exercised over any member of a civilised community, against his will, is to prevent harm to others."
+          },
+          {
+            "context_note": "The opening of Mill's chapter on the authority of society: the argument that limits interference with self-regarding conduct also grounds genuine civic obligation — bearing one's share of the burdens that protect everyone.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "On Liberty ch.4",
+            "marker": "C13",
+            "passage_id": "mill-liberty-4-social-return",
+            "source_line": "On Liberty, John Stuart Mill (1859)",
+            "text": "Every one who receives the protection of society owes a return for the benefit, and the fact of living in society renders it indispensable that each should be bound to observe a certain line of conduct towards the rest."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C10",
+            "text": "Law that makes a wife the only remaining bondservant is condemned in the same breath as slavery, so the institution is judged by its effects on those living under it."
+          },
+          {
+            "marker": "C11",
+            "text": "Actions are right as they promote happiness, which locates the wrong of betrayal in the injury and the shattered reliance rather than in the act's kind."
+          },
+          {
+            "marker": "C12",
+            "text": "Power may be used against an adult's own will only to prevent harm to others, which is why private conduct that injures no one is left to the parties."
+          }
+        ],
+        "stance": "context_dependent",
+        "summary": "Marriage is assessed by what it does to the people inside it. Faithfulness matters enormously, because a betrayed partner suffers, trust once broken is expensive to rebuild, and a rule of keeping such undertakings supports expectations that everyone benefits from relying on. What is denied is that the wrong lies in the act apart from those effects. On the same reasoning the institution itself is criticised where law makes one partner the other's property: an arrangement resting on legal subjection produces misery and stunts both parties, whatever its formal sanctity.",
+        "tradition_id": "utilitarianism",
+        "tradition_name": "Utilitarianism"
+      }
+    ],
+    "routing": {
+      "alternates": [],
+      "confidence": null,
+      "forced": true,
+      "topic_id": "marriage_and_fidelity"
+    },
+    "safeguards": []
+  },
+  "composer_version": "1",
+  "kind": "answer",
+  "name": "polish_fallback",
+  "polish_fell_back": true,
+  "question": "[golden polish_fallback]",
+  "rendered_text": "=== Marriage and fidelity ===\n\nTopic: Marriage and fidelity (marriage_and_fidelity) — forced by request\n\n--- Christianity — forbidden ---\nAdultery is excluded by commandment, and Jesus deepens the demand: the one-flesh union joined by God asks faithfulness of the heart, so that cultivated desire for another is already betrayal. Fidelity is not mere abstention from an act but the positive keeping of a covenant that images God's own faithfulness to a people, which is why the marriage bond is treated as a sign of something larger than the two who make it and why its breach is described as an injury to both.\n  • Marriage is grounded in creation as a union God joins, beyond private contract. [C1]\n      “Wherefore they are no more twain, but one flesh. What therefore God hath joined together, let not man put asunder.”\n      — Matthew 19:6 — The Holy Bible, King James Version, trans. the King James translators (1611)\n      Context: Jesus grounds marriage in creation rather than contract; the one-flesh union is the basis of both the fidelity demand and the divorce teaching.\n  • The Sermon on the Mount moves adultery from outward act to inward intention, making the guarding of desire part of faithfulness. [C2]\n      “But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.”\n      — Matthew 5:28 — The Holy Bible, King James Version, trans. the King James translators (1611)\n      Context: Fidelity is interiorized: the Sermon on the Mount moves adultery from act to intention, making the guarding of desire part of faithfulness.\n  Further reading:\n      - Elizabeth Brake, “Marriage and Domestic Partnership” (2020) [sep] https://plato.stanford.edu/entries/marriage/\n\n--- Islam — forbidden ---\nMarriage in Islam is a solemn covenant (mithaq), and adultery is barred with unusual force: the command is not merely to abstain but not even to come near it. The law protects the marriage bond from both sides — through modesty norms upstream of temptation and through the gravity attached to zina itself.\n  • The prohibition covers approaching adultery, placing the guard rails well before the act. [C3]\n      “And come not near unto adultery. Lo! it is an abomination and an evil way.”\n      — Qur'an 17:32 — The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)\n      Context: The command bars not only the act but approaching it; the law's protections of marriage begin well before betrayal is consummated.\n  • Marriage's contractual seriousness draws on the general command to fulfil undertakings. [C4]\n      “O ye who believe! Fulfil your indentures. The beast of cattle is made lawful unto you (for food) except that which is announced unto you (herein), game being unlawful when ye are on the pilgrimage. Lo! Allah ordaineth that which pleaseth Him.”\n      — Qur'an 5:1 — The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)\n      Context: The sura of contracts opens with the command to fulfil undertakings; the same verse states the lawfulness of cattle as food, so it anchors both covenant-keeping and dietary permission.\n  Further reading:\n      - Kecia Ali, “Marriage and Slavery in Early Islam” (2010) [book]\n\n--- Judaism — forbidden ---\nAdultery is forbidden from Sinai, and Malachi names the deeper wrong: treachery against the wife of thy youth, thy companion, the wife of thy covenant — with God as witness between them. Marriage in halakhah is effected by contract (the ketubah) yet described as covenant; faithfulness is owed not only as rule-keeping but as loyalty to a partner God has witnessed.\n  • Malachi casts infidelity as covenant-treachery witnessed by God, not private failure. [C5]\n      “Because the LORD hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously, though she is thy companion, and the wife of thy covenant.”\n      — Malachi 2:14 — The Holy Scriptures According to the Masoretic Text, trans. Jewish Publication Society (1917)\n      Context: Marriage as covenant with God as witness: infidelity is treachery against companion and covenant at once, not merely a private lapse.\n  Further reading:\n      - Michael L. Satlow, “Jewish Marriage in Antiquity” (2001) [book]\n\n--- Hinduism — obligatory ---\nLet mutual fidelity continue until death — Manu offers this as the summary of the highest law for husband and wife. Marriage is samskara, a sacrament joining families and generations, within which faithfulness is not a bargain but a vow with cosmic weight; adultery is treated in the lawbooks among the gravest offenses against social order.\n  • Manu's one-line summary makes mutual fidelity until death the marriage law's core. [C6]\n      “'Let mutual fidelity continue until death,' this may be considered as the summary of the highest law for husband and wife.”\n      — Manu 9.101 — The Laws of Manu, trans. Georg Bühler (1886)\n      Context: Manu's own summary of marriage law: fidelity until death, stated as mutual — the sacramental view of the bond in one sentence.\n  Further reading:\n      - P. V. Kane, “History of Dharmasastra, vol. II” (1941) [book]\n\n--- Confucianism — obligatory ---\nMarriage is the greatest of the human relations in Mencius's phrase — the bond from which family, and through family the state, is woven. Its ethics is role-based: distinct duties of husband and wife, ancestral continuity, and the household as the first school of virtue. Fidelity belongs to the relation's proper form; its breach disorders not two people but the web that depends on them.\n  • The dwelling-together of male and female is the greatest of human relations, the web's first thread. [C7]\n      “That male and female should dwell together, is the greatest of human relations.”\n      — Mencius V.2 — The Works of Mencius, trans. James Legge (1895)\n      Context: Marriage as the greatest of the human relations (Book V, part A, ch. 2 in Legge's edition): the bond from which the five relations' web is woven, carrying duties of harmony and fidelity on both sides.\n  Note: Classical texts frame the spousal relation asymmetrically; modern Confucian thinkers rework the role-ethics toward mutuality while keeping the relational frame.\n  Further reading:\n      - Bryan W. Van Norden, “Mencius” (2019) [sep] https://plato.stanford.edu/entries/mencius/\n\n--- Kantian deontology — obligatory ---\nKant's juridical definition of marriage — lifelong reciprocal possession — is easy to mock and hard to dismiss: his point is that sexual intimacy risks using a person as a thing, and only a union of complete, equal, lifelong reciprocal right transforms use into shared personhood. Fidelity is therefore built into the institution's rational form; adultery reintroduces exactly the one-sided use marriage exists to abolish.\n  • Marriage's contractual definition encodes the equality and totality of the reciprocal claim. [C8]\n      “the union of two persons of different sex for life-long reciprocal possession of their sexual properties.”\n      — Rechtslehre 6:277 — The Philosophy of Law, trans. W. Hastie (1887)\n      Context: Kant's juridical definition of marriage as a contract of reciprocal possession — much criticized, but load-bearing: only within a union of equal reciprocal right, he argues, can persons share intimacy without using each other merely as means.\n  • Outside such reciprocity, one person becomes a means to another's inclination — the humanity formula names the wrong. [C9]\n      “So act as to treat humanity, whether in thine own person or in that of any other, in every case as an end withal, never as means only.”\n      — Groundwork 4:429 — Fundamental Principles of the Metaphysic of Morals, trans. Thomas Kingsmill Abbott (1873)\n      Context: The humanity formulation: rational nature — in oneself as much as in others — may never be used merely as a means. The ground of Kantian dignity.\n  Note: Contemporary Kantians (Korsgaard, Herman) reconstruct the argument in terms of mutual self-giving and equal standing, discarding the possession vocabulary while keeping the anti-instrumentalization core.\n  Further reading:\n      - Barbara Herman, “The Practice of Moral Judgment” (1993) [book]\n\n--- Utilitarianism — context_dependent ---\nMarriage is assessed by what it does to the people inside it. Faithfulness matters enormously, because a betrayed partner suffers, trust once broken is expensive to rebuild, and a rule of keeping such undertakings supports expectations that everyone benefits from relying on. What is denied is that the wrong lies in the act apart from those effects. On the same reasoning the institution itself is criticised where law makes one partner the other's property: an arrangement resting on legal subjection produces misery and stunts both parties, whatever its formal sanctity.\n  • Law that makes a wife the only remaining bondservant is condemned in the same breath as slavery, so the institution is judged by its effects on those living under it. [C10]\n      “Marriage is the only actual bondage known to our law. There remain no legal slaves, except the mistress of every house.”\n      — Subjection ch.4 — The Subjection of Women, John Stuart Mill (1869)\n      Context: Mill's indictment of Victorian marriage law: where exit is barred and rights unequal, marriage functions as bondage. The reform case for lawful divorce is utilitarian to its core — suffering trapped is suffering multiplied.\n  • Actions are right as they promote happiness, which locates the wrong of betrayal in the injury and the shattered reliance rather than in the act's kind. [C11]\n      “The creed which accepts as the foundation of morals, Utility, or the Greatest Happiness Principle, holds that actions are right in proportion as they tend to promote happiness, wrong as they tend to produce the reverse of happiness.”\n      — Utilitarianism ch.2 — Utilitarianism, John Stuart Mill (1863)\n      Context: Mill's canonical statement of the principle, with happiness understood as pleasure and the absence of pain — refined in the same chapter by the doctrine of higher pleasures.\n  • Power may be used against an adult's own will only to prevent harm to others, which is why private conduct that injures no one is left to the parties. [C12]\n      “the only purpose for which power can be rightfully exercised over any member of a civilised community, against his will, is to prevent harm to others.”\n      — On Liberty ch.1 — On Liberty, John Stuart Mill (1859)\n      Context: The harm principle: self-regarding conduct lies outside legitimate coercion. Mill grounds it not in natural right but in the long-run utility of liberty.\n  • Also cited. [C13]\n      “Every one who receives the protection of society owes a return for the benefit, and the fact of living in society renders it indispensable that each should be bound to observe a certain line of conduct towards the rest.”\n      — On Liberty ch.4 — On Liberty, John Stuart Mill (1859)\n      Context: The opening of Mill's chapter on the authority of society: the argument that limits interference with self-regarding conduct also grounds genuine civic obligation — bearing one's share of the burdens that protect everyone.\n  Note: Act and rule versions come apart here more than almost anywhere: an act-utilitarian can construct a case where an undiscovered infidelity increases happiness, while a rule-utilitarian answers that the general observance of fidelity is what carries the value, and that agents are poor judges of their own exceptions.\n  Further reading:\n      - Nancy J. Hirschmann, “Mill, Political Economy, and Women's Work” (2008) [article]\n      - Dale E. Miller, “John Stuart Mill: Moral, Social and Political Thought” (2010) [book]\n\nWhere traditions agree and differ:\n  obligatory: Hinduism, Confucianism, Kantian deontology\n  context_dependent: Utilitarianism\n  forbidden: Christianity, Islam, Judaism\nNo curated position on this topic: Buddhism, Stoicism, Virtue ethics\n\nCitations:\n  [C1] kjv-matthew-19-6 — Matthew 19:6 — bible-kjv\n  [C2] kjv-matthew-5-28 — Matthew 5:28 — bible-kjv\n  [C3] quran-17-32 — Qur'an 17:32 — quran-pickthall\n  [C4] quran-5-1-indentures — Qur'an 5:1 — quran-pickthall\n  [C5] jps-malachi-2-14 — Malachi 2:14 — tanakh-jps\n  [C6] manu-9-101-fidelity — Manu 9.101 — manu-buhler\n  [C7] mencius-5-2-relations — Mencius V.2 — mencius-legge\n  [C8] kant-law-6-277-marriage — Rechtslehre 6:277 — kant-law-hastie\n  [C9] kant-groundwork-4-429-humanity — Groundwork 4:429 — kant-groundwork-abbott\n  [C10] mill-subjection-4-bondage — Subjection ch.4 — mill-subjection\n  [C11] mill-util-2-ghp — Utilitarianism ch.2 — mill-utilitarianism\n  [C12] mill-liberty-1-harm — On Liberty ch.1 — mill-onliberty\n  [C13] mill-liberty-4-social-return — On Liberty ch.4 — mill-onliberty\n\nCorpus f6ae43cbb8c1 · composer 1\n"
+}

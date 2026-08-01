@@ -1,0 +1,450 @@
+{
+  "body": {
+    "agreement_map": {
+      "context_dependent": [
+        "virtue_ethics"
+      ],
+      "encouraged": [
+        "islam",
+        "hinduism",
+        "confucianism",
+        "stoicism"
+      ],
+      "reframed": [
+        "buddhism"
+      ]
+    },
+    "citations": {
+      "C1": {
+        "locator": "Qur'an 2:153",
+        "passage_id": "quran-2-153",
+        "source_id": "quran-pickthall"
+      },
+      "C10": {
+        "locator": "Enchiridion 5",
+        "passage_id": "ench-5-opinions",
+        "source_id": "enchiridion-long"
+      },
+      "C11": {
+        "locator": "NE III.7, 1115b17",
+        "passage_id": "ne-3-7-brave-right-things",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C12": {
+        "locator": "NE III.8, 1116a17",
+        "passage_id": "ne-3-8-citizen-courage",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C13": {
+        "locator": "NE III.6, 1115a26",
+        "passage_id": "ne-3-6-death-terrible",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C14": {
+        "locator": "NE III.9, 1117b9",
+        "passage_id": "ne-3-9-brave-man-pained",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C2": {
+        "locator": "Qur'an 3:139",
+        "passage_id": "quran-3-139",
+        "source_id": "quran-pickthall"
+      },
+      "C3": {
+        "locator": "Dhp 103",
+        "passage_id": "dhp-103-conqueror",
+        "source_id": "dhammapada-mueller"
+      },
+      "C4": {
+        "locator": "Snp 149",
+        "passage_id": "snp-149-metta",
+        "source_id": "suttanipata-fausboll"
+      },
+      "C5": {
+        "locator": "Gita 18.43",
+        "passage_id": "gita-18-43-kshatriya",
+        "source_id": "gita-telang"
+      },
+      "C6": {
+        "locator": "Gita 2.47",
+        "passage_id": "gita-2-47-action",
+        "source_id": "gita-telang"
+      },
+      "C7": {
+        "locator": "Analects II.24",
+        "passage_id": "analects-2-24-courage",
+        "source_id": "analects-legge"
+      },
+      "C8": {
+        "locator": "Analects XIV.30",
+        "passage_id": "analects-14-30-bold",
+        "source_id": "analects-legge"
+      },
+      "C9": {
+        "locator": "Letters 13",
+        "passage_id": "seneca-ep-13-imagination",
+        "source_id": "seneca-letters-gummere"
+      }
+    },
+    "composer_version": "1",
+    "corpus_version": "f6ae43cbb8c18bba46e81c72eb3267152c3a683aee0ee6f82b2ca745f3eb0811",
+    "filtered_out": [],
+    "not_covered": [
+      "christianity",
+      "judaism",
+      "kantian_deontology",
+      "utilitarianism"
+    ],
+    "perspectives": [
+      {
+        "further_reading": [
+          {
+            "author": "Majid Fakhry",
+            "kind": "book",
+            "note": null,
+            "title": "Ethical Theories in Islam",
+            "url": null,
+            "year": 1991
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "courage_and_fear--islam",
+        "quotes": [
+          {
+            "context_note": "Sabr — steadfast patience — is the form courage takes in the Qur'an: endurance under trial with God's presence as its support.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Qur'an 2:153",
+            "marker": "C1",
+            "passage_id": "quran-2-153",
+            "source_line": "The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)",
+            "text": "O ye who believe! Seek help in steadfastness and prayer. Lo! Allah is with the steadfast."
+          },
+          {
+            "context_note": "Revealed after the setback at Uhud: courage is commanded as faith's refusal to collapse under defeat.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Qur'an 3:139",
+            "marker": "C2",
+            "passage_id": "quran-3-139",
+            "source_line": "The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)",
+            "text": "Faint not nor grieve, for ye will overcome them if ye are (indeed) believers."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C1",
+            "text": "Help is sought in steadfastness and prayer, and God is with the steadfast."
+          },
+          {
+            "marker": "C2",
+            "text": "After Uhud the command is not to faint nor grieve — morale itself is made a duty."
+          }
+        ],
+        "stance": "encouraged",
+        "summary": "The Qur'an's courage is sabr — steadfastness sought through patience and prayer, with God's company promised to the steadfast. After defeat the believers are told not to faint or grieve; fear of hardship is human, but collapse before it is unbelief's posture. Courage is thus a form of trust, exercised as much in endurance as in daring.",
+        "tradition_id": "islam",
+        "tradition_name": "Islam"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Rupert Gethin",
+            "kind": "book",
+            "note": null,
+            "title": "The Foundations of Buddhism",
+            "url": null,
+            "year": 1998
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "courage_and_fear--buddhism",
+        "quotes": [
+          {
+            "context_note": "Courage is redirected inward: the battlefield hero is outranked by the one who masters his own mind — the Buddhist transvaluation of valor.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Dhp 103",
+            "marker": "C3",
+            "passage_id": "dhp-103-conqueror",
+            "source_line": "The Dhammapada, trans. F. Max Müller (1881)",
+            "text": "If one man conquer in battle a thousand times thousand men, and if another conquer himself, he is the greatest of conquerors."
+          },
+          {
+            "context_note": "From the Metta Sutta: boundless friendliness toward all beings — not humans only — is the cultivated stance from which Buddhist animal ethics flows.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Snp 149",
+            "marker": "C4",
+            "passage_id": "snp-149-metta",
+            "source_line": "The Sutta-Nipata, trans. V. Fausböll (1881)",
+            "text": "As a mother at the risk of her life watches over her own child, her only child, so also let every one cultivate a boundless (friendly) mind towards all beings."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C3",
+            "text": "The greatest conquest is of oneself — valor turned inward."
+          },
+          {
+            "marker": "C4",
+            "text": "The boundless friendly mind is the settled state in which fear has no foothold."
+          }
+        ],
+        "stance": "reframed",
+        "summary": "Buddhism relocates courage: the conqueror of a thousand thousand men is outranked by the one who conquers himself. Fear arises from clinging — to self, possessions, reputation — so fearlessness is not bravado but the fruit of releasing what fear protects. The gift of fearlessness (abhaya-dana), making others safe from oneself, is counted a form of generosity.",
+        "tradition_id": "buddhism",
+        "tradition_name": "Buddhism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Eknath Easwaran",
+            "kind": "primary_translation",
+            "note": null,
+            "title": "The Bhagavad Gita (translation and introduction)",
+            "url": null,
+            "year": 1985
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "courage_and_fear--hinduism",
+        "quotes": [
+          {
+            "context_note": "Courage as svadharma: for the warrior it is constitutive duty, not optional heroism — indexed, like all Gita ethics, to station and situation.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Gita 18.43",
+            "marker": "C5",
+            "passage_id": "gita-18-43-kshatriya",
+            "source_line": "The Bhagavadgita, trans. Kashinath Trimbak Telang (1882)",
+            "text": "Valour, glory, courage, dexterity, not slinking away from battle, gifts, exercise of lordly power, these are the natural duties of a Kshatriya, born of (his) own nature."
+          },
+          {
+            "context_note": "The karma-yoga axiom: act from duty, unattached to outcome — the Gita's answer to both paralysis and ambition, and the inner form of its courage.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Gita 2.47",
+            "marker": "C6",
+            "passage_id": "gita-2-47-action",
+            "source_line": "The Bhagavadgita, trans. Kashinath Trimbak Telang (1882)",
+            "text": "Your business is with action alone; not by any means with fruit. Let not the fruit of action be your motive (to action). Let not your attachment be (fixed) on inaction."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C5",
+            "text": "Valour and steadfastness in battle are the kshatriya's natural duties."
+          },
+          {
+            "marker": "C6",
+            "text": "Acting without attachment to fruits is the inner form of Gita courage, available to every station."
+          }
+        ],
+        "stance": "encouraged",
+        "summary": "Courage in the Gita is svadharma enacted: for the warrior, valour and not slinking from battle are natural duties, and Arjuna's despair is answered not with comfort but with a summons to act. The deeper teaching universalizes it — do your duty without attachment to outcomes — making fearlessness a fruit of surrendered action rather than confidence in results.",
+        "tradition_id": "hinduism",
+        "tradition_name": "Hinduism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Philip J. Ivanhoe",
+            "kind": "book",
+            "note": null,
+            "title": "Confucian Moral Self Cultivation",
+            "url": null,
+            "year": 2000
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "courage_and_fear--confucianism",
+        "quotes": [
+          {
+            "context_note": "Courage is defined morally: the failure is not trembling before danger but seeing the right and leaving it undone.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Analects II.24",
+            "marker": "C7",
+            "passage_id": "analects-2-24-courage",
+            "source_line": "The Analects of Confucius, trans. James Legge (1861)",
+            "text": "To see what is right and not to do it is want of courage."
+          },
+          {
+            "context_note": "Boldness free from fear stands with virtue and wisdom in the exemplary person's threefold way — courage as fruit of cultivation, not temperament.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Analects XIV.30",
+            "marker": "C8",
+            "passage_id": "analects-14-30-bold",
+            "source_line": "The Analects of Confucius, trans. James Legge (1861)",
+            "text": "The Master said, ‘The way of the superior man is threefold, but I am not equal to it. Virtuous, he is free from anxieties; wise, he is free from perplexities; bold, he is free from fear.’"
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C7",
+            "text": "Courage is defined as doing the seen right, making moral failure its true opposite."
+          },
+          {
+            "marker": "C8",
+            "text": "The bold freedom from fear belongs to the threefold way alongside virtue and wisdom."
+          }
+        ],
+        "stance": "encouraged",
+        "summary": "To see what is right and not to do it is want of courage: the Confucian coward is not the man who trembles but the man who knows and shirks. Boldness stands with virtue and wisdom in the exemplary person's threefold way, and it is subordinated to righteousness — daring without it is mere insubordination. Courage is thus cultivated judgment acting, not temperament.",
+        "tradition_id": "confucianism",
+        "tradition_name": "Confucianism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "William O. Stephens",
+            "kind": "book",
+            "note": null,
+            "title": "Stoic Ethics: Epictetus and Happiness as Freedom",
+            "url": null,
+            "year": 2007
+          }
+        ],
+        "intra_tradition_note": null,
+        "position_id": "courage_and_fear--stoicism",
+        "quotes": [
+          {
+            "context_note": "The diagnosis beneath Stoic courage: most fear is anticipatory fiction. Testing the projection against the present fact is the school's first exercise against fear.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Letters 13",
+            "marker": "C9",
+            "passage_id": "seneca-ep-13-imagination",
+            "source_line": "Moral Letters to Lucilius, trans. Richard M. Gummere (1917)",
+            "text": "there are more things, Lucilius, likely to frighten us than there are to crush us; we suffer more often in imagination than in reality."
+          },
+          {
+            "context_note": "Fear is analyzed as judgment: the terror lies in the opinion, not the event. The claim underwrites Stoic courage and the school's composure toward death.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Enchiridion 5",
+            "marker": "C10",
+            "passage_id": "ench-5-opinions",
+            "source_line": "The Enchiridion of Epictetus, trans. George Long (1877)",
+            "text": "Men are disturbed not by the things which happen, but by the opinions about the things: for example, death is nothing terrible, for if it were, it would have seemed so to Socrates; for the opinion about death, that it is terrible, is the terrible thing."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C9",
+            "text": "Fear outruns fact; imagination is where most suffering happens and where the correction applies."
+          },
+          {
+            "marker": "C10",
+            "text": "The terror of death is a judgment about death, revisable like any judgment."
+          }
+        ],
+        "stance": "encouraged",
+        "summary": "We suffer more often in imagination than in reality: most fear is anticipatory fiction, and the Stoic drill is to test the projection against the present fact. Courage is one of the four virtues, but it begins as epistemology — death is not terrible, the opinion is — and matures as practice: premeditation of adversity, voluntary discomfort, and the steady recollection of what is and is not in your power.",
+        "tradition_id": "stoicism",
+        "tradition_name": "Stoicism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Marta Jimenez",
+            "kind": "book",
+            "note": "on how the not-yet-brave are brought towards the genuine article",
+            "title": "Aristotle on Shame and Learning to Be Good",
+            "url": null,
+            "year": 2020
+          },
+          {
+            "author": "Michael Pakaluk",
+            "kind": "book",
+            "note": null,
+            "title": "Aristotle's Nicomachean Ethics: An Introduction",
+            "url": null,
+            "year": 2005
+          }
+        ],
+        "intra_tradition_note": "Courage in the strict sense is confined to death in battle, and readers disagree whether the moral firmness we now call courage — the whistleblower, the patient facing a diagnosis — is an extension the framework licenses or a distinct excellence for which it has no name.",
+        "position_id": "courage_and_fear--virtue_ethics",
+        "quotes": [
+          {
+            "context_note": "The definition of courage as a mean between cowardice and rashness. The five qualifications are not padding: each names a way a display of daring can fail to be brave at all.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE III.7, 1115b17",
+            "marker": "C11",
+            "passage_id": "ne-3-7-brave-right-things",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "The man, then, who faces and who fears the right things and from the right motive, in the right way and at the right time, and who feels confidence under the corresponding conditions, is brave; for the brave man feels and acts according to the merits of the case and in whatever way the rule directs."
+          },
+          {
+            "context_note": "Aristotle catalogues five counterfeits of courage, including action from legal penalty, from experience, from spirit, from optimism and from ignorance. Each resembles bravery in the deed and differs in the motive.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE III.8, 1116a17",
+            "marker": "C12",
+            "passage_id": "ne-3-8-citizen-courage",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "Courage, then, is something of this sort, but the name is also applied to five other kinds. First comes the courage of the citizen-soldier; for this is most like true courage."
+          },
+          {
+            "context_note": "Aristotle refuses to explain fear away. Death really is the worst of the things that can be feared, which is what makes standing firm against it an achievement rather than a correction of a mistaken belief.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE III.6, 1115a26",
+            "marker": "C13",
+            "passage_id": "ne-3-6-death-terrible",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "Now death is the most terrible of all things; for it is the end, and nothing is thought to be any longer either good or bad for the dead."
+          },
+          {
+            "context_note": "A striking reversal: the better a person's life, the harder courage becomes, because more is at stake in losing it. Aristotle uses it to deny that the brave man is insensible or that virtue is always pleasant in the exercise.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE III.9, 1117b9",
+            "marker": "C14",
+            "passage_id": "ne-3-9-brave-man-pained",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "And the more he is possessed of virtue in its entirety and the happier he is, the more he will be pained at the thought of death; for life is best worth living for such a man, and he is knowingly losing the greatest goods, and this is painful."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C11",
+            "text": "The definition fixes bravery by object, motive, manner and occasion together, so the same deed can be brave in one person and rash in another."
+          },
+          {
+            "marker": "C12",
+            "text": "Five counterfeits are catalogued, each resembling the real thing in the deed and differing in what moves it."
+          },
+          {
+            "marker": "C13",
+            "text": "Fear is not explained away: death is granted to be the most terrible thing, since it is the end."
+          },
+          {
+            "marker": "C14",
+            "text": "The better a life is going, the more painful facing its loss becomes — so the excellence is hardest for those who have most nearly succeeded."
+          }
+        ],
+        "stance": "context_dependent",
+        "summary": "Bravery is not fearlessness. Death really is the most frightening of things and the courageous man feels that; what marks him out is facing the right objects, from the right motive, in the right way and at the right moment. Because the specification is that tight, five familiar look-alikes fall outside it — daring produced by legal penalty, by experience, by spirit, by optimism, or by simple ignorance of the danger. The consequence is uncomfortable: this excellence costs the flourishing person more than anyone, because he has the most to lose and knows it.",
+        "tradition_id": "virtue_ethics",
+        "tradition_name": "Virtue ethics"
+      }
+    ],
+    "routing": {
+      "alternates": [],
+      "confidence": null,
+      "forced": true,
+      "topic_id": "courage_and_fear"
+    },
+    "safeguards": []
+  },
+  "composer_version": "1",
+  "kind": "answer",
+  "name": "ordinary_courage",
+  "polish_fell_back": false,
+  "question": "[golden ordinary_courage]",
+  "rendered_text": "=== Courage and fear ===\n\nTopic: Courage and fear (courage_and_fear) — forced by request\n\n--- Islam — encouraged ---\nThe Qur'an's courage is sabr — steadfastness sought through patience and prayer, with God's company promised to the steadfast. After defeat the believers are told not to faint or grieve; fear of hardship is human, but collapse before it is unbelief's posture. Courage is thus a form of trust, exercised as much in endurance as in daring.\n  • Help is sought in steadfastness and prayer, and God is with the steadfast. [C1]\n      “O ye who believe! Seek help in steadfastness and prayer. Lo! Allah is with the steadfast.”\n      — Qur'an 2:153 — The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)\n      Context: Sabr — steadfast patience — is the form courage takes in the Qur'an: endurance under trial with God's presence as its support.\n  • After Uhud the command is not to faint nor grieve — morale itself is made a duty. [C2]\n      “Faint not nor grieve, for ye will overcome them if ye are (indeed) believers.”\n      — Qur'an 3:139 — The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)\n      Context: Revealed after the setback at Uhud: courage is commanded as faith's refusal to collapse under defeat.\n  Further reading:\n      - Majid Fakhry, “Ethical Theories in Islam” (1991) [book]\n\n--- Buddhism — reframed ---\nBuddhism relocates courage: the conqueror of a thousand thousand men is outranked by the one who conquers himself. Fear arises from clinging — to self, possessions, reputation — so fearlessness is not bravado but the fruit of releasing what fear protects. The gift of fearlessness (abhaya-dana), making others safe from oneself, is counted a form of generosity.\n  • The greatest conquest is of oneself — valor turned inward. [C3]\n      “If one man conquer in battle a thousand times thousand men, and if another conquer himself, he is the greatest of conquerors.”\n      — Dhp 103 — The Dhammapada, trans. F. Max Müller (1881)\n      Context: Courage is redirected inward: the battlefield hero is outranked by the one who masters his own mind — the Buddhist transvaluation of valor.\n  • The boundless friendly mind is the settled state in which fear has no foothold. [C4]\n      “As a mother at the risk of her life watches over her own child, her only child, so also let every one cultivate a boundless (friendly) mind towards all beings.”\n      — Snp 149 — The Sutta-Nipata, trans. V. Fausböll (1881)\n      Context: From the Metta Sutta: boundless friendliness toward all beings — not humans only — is the cultivated stance from which Buddhist animal ethics flows.\n  Further reading:\n      - Rupert Gethin, “The Foundations of Buddhism” (1998) [book]\n\n--- Hinduism — encouraged ---\nCourage in the Gita is svadharma enacted: for the warrior, valour and not slinking from battle are natural duties, and Arjuna's despair is answered not with comfort but with a summons to act. The deeper teaching universalizes it — do your duty without attachment to outcomes — making fearlessness a fruit of surrendered action rather than confidence in results.\n  • Valour and steadfastness in battle are the kshatriya's natural duties. [C5]\n      “Valour, glory, courage, dexterity, not slinking away from battle, gifts, exercise of lordly power, these are the natural duties of a Kshatriya, born of (his) own nature.”\n      — Gita 18.43 — The Bhagavadgita, trans. Kashinath Trimbak Telang (1882)\n      Context: Courage as svadharma: for the warrior it is constitutive duty, not optional heroism — indexed, like all Gita ethics, to station and situation.\n  • Acting without attachment to fruits is the inner form of Gita courage, available to every station. [C6]\n      “Your business is with action alone; not by any means with fruit. Let not the fruit of action be your motive (to action). Let not your attachment be (fixed) on inaction.”\n      — Gita 2.47 — The Bhagavadgita, trans. Kashinath Trimbak Telang (1882)\n      Context: The karma-yoga axiom: act from duty, unattached to outcome — the Gita's answer to both paralysis and ambition, and the inner form of its courage.\n  Further reading:\n      - Eknath Easwaran, “The Bhagavad Gita (translation and introduction)” (1985) [primary_translation]\n\n--- Confucianism — encouraged ---\nTo see what is right and not to do it is want of courage: the Confucian coward is not the man who trembles but the man who knows and shirks. Boldness stands with virtue and wisdom in the exemplary person's threefold way, and it is subordinated to righteousness — daring without it is mere insubordination. Courage is thus cultivated judgment acting, not temperament.\n  • Courage is defined as doing the seen right, making moral failure its true opposite. [C7]\n      “To see what is right and not to do it is want of courage.”\n      — Analects II.24 — The Analects of Confucius, trans. James Legge (1861)\n      Context: Courage is defined morally: the failure is not trembling before danger but seeing the right and leaving it undone.\n  • The bold freedom from fear belongs to the threefold way alongside virtue and wisdom. [C8]\n      “The Master said, ‘The way of the superior man is threefold, but I am not equal to it. Virtuous, he is free from anxieties; wise, he is free from perplexities; bold, he is free from fear.’”\n      — Analects XIV.30 — The Analects of Confucius, trans. James Legge (1861)\n      Context: Boldness free from fear stands with virtue and wisdom in the exemplary person's threefold way — courage as fruit of cultivation, not temperament.\n  Further reading:\n      - Philip J. Ivanhoe, “Confucian Moral Self Cultivation” (2000) [book]\n\n--- Stoicism — encouraged ---\nWe suffer more often in imagination than in reality: most fear is anticipatory fiction, and the Stoic drill is to test the projection against the present fact. Courage is one of the four virtues, but it begins as epistemology — death is not terrible, the opinion is — and matures as practice: premeditation of adversity, voluntary discomfort, and the steady recollection of what is and is not in your power.\n  • Fear outruns fact; imagination is where most suffering happens and where the correction applies. [C9]\n      “there are more things, Lucilius, likely to frighten us than there are to crush us; we suffer more often in imagination than in reality.”\n      — Letters 13 — Moral Letters to Lucilius, trans. Richard M. Gummere (1917)\n      Context: The diagnosis beneath Stoic courage: most fear is anticipatory fiction. Testing the projection against the present fact is the school's first exercise against fear.\n  • The terror of death is a judgment about death, revisable like any judgment. [C10]\n      “Men are disturbed not by the things which happen, but by the opinions about the things: for example, death is nothing terrible, for if it were, it would have seemed so to Socrates; for the opinion about death, that it is terrible, is the terrible thing.”\n      — Enchiridion 5 — The Enchiridion of Epictetus, trans. George Long (1877)\n      Context: Fear is analyzed as judgment: the terror lies in the opinion, not the event. The claim underwrites Stoic courage and the school's composure toward death.\n  Further reading:\n      - William O. Stephens, “Stoic Ethics: Epictetus and Happiness as Freedom” (2007) [book]\n\n--- Virtue ethics — context_dependent ---\nBravery is not fearlessness. Death really is the most frightening of things and the courageous man feels that; what marks him out is facing the right objects, from the right motive, in the right way and at the right moment. Because the specification is that tight, five familiar look-alikes fall outside it — daring produced by legal penalty, by experience, by spirit, by optimism, or by simple ignorance of the danger. The consequence is uncomfortable: this excellence costs the flourishing person more than anyone, because he has the most to lose and knows it.\n  • The definition fixes bravery by object, motive, manner and occasion together, so the same deed can be brave in one person and rash in another. [C11]\n      “The man, then, who faces and who fears the right things and from the right motive, in the right way and at the right time, and who feels confidence under the corresponding conditions, is brave; for the brave man feels and acts according to the merits of the case and in whatever way the rule directs.”\n      — NE III.7, 1115b17 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: The definition of courage as a mean between cowardice and rashness. The five qualifications are not padding: each names a way a display of daring can fail to be brave at all.\n  • Five counterfeits are catalogued, each resembling the real thing in the deed and differing in what moves it. [C12]\n      “Courage, then, is something of this sort, but the name is also applied to five other kinds. First comes the courage of the citizen-soldier; for this is most like true courage.”\n      — NE III.8, 1116a17 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: Aristotle catalogues five counterfeits of courage, including action from legal penalty, from experience, from spirit, from optimism and from ignorance. Each resembles bravery in the deed and differs in the motive.\n  • Fear is not explained away: death is granted to be the most terrible thing, since it is the end. [C13]\n      “Now death is the most terrible of all things; for it is the end, and nothing is thought to be any longer either good or bad for the dead.”\n      — NE III.6, 1115a26 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: Aristotle refuses to explain fear away. Death really is the worst of the things that can be feared, which is what makes standing firm against it an achievement rather than a correction of a mistaken belief.\n  • The better a life is going, the more painful facing its loss becomes — so the excellence is hardest for those who have most nearly succeeded. [C14]\n      “And the more he is possessed of virtue in its entirety and the happier he is, the more he will be pained at the thought of death; for life is best worth living for such a man, and he is knowingly losing the greatest goods, and this is painful.”\n      — NE III.9, 1117b9 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: A striking reversal: the better a person's life, the harder courage becomes, because more is at stake in losing it. Aristotle uses it to deny that the brave man is insensible or that virtue is always pleasant in the exercise.\n  Note: Courage in the strict sense is confined to death in battle, and readers disagree whether the moral firmness we now call courage — the whistleblower, the patient facing a diagnosis — is an extension the framework licenses or a distinct excellence for which it has no name.\n  Further reading:\n      - Marta Jimenez, “Aristotle on Shame and Learning to Be Good” (2020) [book]\n      - Michael Pakaluk, “Aristotle's Nicomachean Ethics: An Introduction” (2005) [book]\n\nWhere traditions agree and differ:\n  encouraged: Islam, Hinduism, Confucianism, Stoicism\n  context_dependent: Virtue ethics\n  reframed: Buddhism\nNo curated position on this topic: Christianity, Judaism, Kantian deontology, Utilitarianism\n\nCitations:\n  [C1] quran-2-153 — Qur'an 2:153 — quran-pickthall\n  [C2] quran-3-139 — Qur'an 3:139 — quran-pickthall\n  [C3] dhp-103-conqueror — Dhp 103 — dhammapada-mueller\n  [C4] snp-149-metta — Snp 149 — suttanipata-fausboll\n  [C5] gita-18-43-kshatriya — Gita 18.43 — gita-telang\n  [C6] gita-2-47-action — Gita 2.47 — gita-telang\n  [C7] analects-2-24-courage — Analects II.24 — analects-legge\n  [C8] analects-14-30-bold — Analects XIV.30 — analects-legge\n  [C9] seneca-ep-13-imagination — Letters 13 — seneca-letters-gummere\n  [C10] ench-5-opinions — Enchiridion 5 — enchiridion-long\n  [C11] ne-3-7-brave-right-things — NE III.7, 1115b17 — aristotle-ne-ross\n  [C12] ne-3-8-citizen-courage — NE III.8, 1116a17 — aristotle-ne-ross\n  [C13] ne-3-6-death-terrible — NE III.6, 1115a26 — aristotle-ne-ross\n  [C14] ne-3-9-brave-man-pained — NE III.9, 1117b9 — aristotle-ne-ross\n\nCorpus f6ae43cbb8c1 · composer 1\n"
+}

@@ -3,7 +3,7 @@
     "name": "unresolvable_passage_ref",
     "gate": "C8",
     "description": "A position cites a passage id that no passage file defines.",
-    "ops": [{"op": "set_field", "collection": "positions", "id": "divorce--christianity", "field": "passages", "value": [{"passage_id": "kjv-matthew-99-99", "role": "core"}]}]
+    "ops": [{"op": "set_field", "collection": "positions", "id": "divorce--christianity", "field": "passages", "value": [{"passage_id": "kjv-matthew-99-99", "role": "core", "note": null}]}]
   },
   {
     "name": "quote_95_words",
@@ -54,7 +54,7 @@
     "name": "passage_core_in_9_positions",
     "gate": "C11",
     "description": "One passage made the sole core reference of nine positions.",
-    "ops": [{"op": "set_where", "collection": "positions", "where": {"tradition_id": "christianity"}, "field": "passages", "value": [{"passage_id": "kjv-matthew-5-37", "role": "core"}]}]
+    "ops": [{"op": "set_where", "collection": "positions", "where": {"tradition_id": "christianity"}, "field": "passages", "value": [{"passage_id": "kjv-matthew-5-37", "role": "core", "note": null}]}]
   },
   {
     "name": "all_forbidden_topic",
@@ -74,14 +74,18 @@
   {
     "name": "no_complicating_passages",
     "gate": "C14",
-    "description": "Every complicating passage reference demoted to supporting.",
-    "ops": [{"op": "set_where", "collection": "positions", "where": {"topic_id": "suicide_and_self_harm"}, "field": "passages", "value": [{"passage_id": "kjv-matthew-5-37", "role": "core"}]}]
+    "description": "Every complicating passage reference in the corpus demoted to supporting, so no position cuts against its own summary.",
+    "ops": [{"op": "set_role", "collection": "positions", "from": "complicating", "to": "supporting"}]
   },
   {
     "name": "paraphrase_only_corpus",
     "gate": "C15",
-    "description": "A tradition's positions rewritten to rest entirely on reference_only paraphrases.",
-    "ops": [{"op": "set_where", "collection": "positions", "where": {"tradition_id": "judaism"}, "field": "passages", "value": [{"passage_id": "ketubot-16b-bride", "role": "core"}]}]
+    "description": "The King James source demoted to reference_only and all of its passages turned into curated paraphrases, so the positions resting on them no longer quote anything.",
+    "ops": [
+      {"op": "set_where", "collection": "sources", "where": {"id": "bible-kjv"}, "field": "license", "value": "reference_only"},
+      {"op": "set_where", "collection": "passages", "where": {"source_id": "bible-kjv"}, "field": "paraphrase", "value": "A curated paraphrase standing in for the passage, with no public-domain translation quoted."},
+      {"op": "set_where", "collection": "passages", "where": {"source_id": "bible-kjv"}, "field": "text", "value": null}
+    ]
   },
   {
     "name": "one_reading_per_tradition",
