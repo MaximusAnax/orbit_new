@@ -68,7 +68,7 @@
         "note": null
       }
     ],
-    "intra_tradition_note": null,
+    "intra_tradition_note": "The school divides over how open the door is: Seneca dwells on readiness to depart as proof that life is not clung to, while Epictetus insists one waits for the signal and does not desert the post; later readers take the difference as temperamental emphasis rather than doctrinal disagreement.",
     "further_reading": [
       {
         "author": "James Warren",
@@ -387,7 +387,7 @@
         "note": null
       }
     ],
-    "intra_tradition_note": null,
+    "intra_tradition_note": "Stoic practice ranges from Epictetus, who counsels playing whatever civic role is assigned without agitating for another, to Cato and the senatorial opposition, who read the same cosmopolitan doctrine as requiring costly resistance to a tyrant; Marcus, ruling, occupies a third position.",
     "further_reading": [
       {
         "author": "Malcolm Schofield",
@@ -481,5 +481,135 @@
       }
     ],
     "curator_note": "Drafted from Enchiridion 45 and Meditations VIII.59 (Long)."
+  },
+  {
+    "id": "killing_and_self_defense--stoicism",
+    "topic_id": "killing_and_self_defense",
+    "tradition_id": "stoicism",
+    "stance": "reframed",
+    "summary": "The Stoic does not begin by asking whether a blow may be returned, but what the situation makes of the agent. Body, property and life itself are assigned externals, reclaimed without notice; the only injury that reaches a person is the corruption of his own judgment. Fear of dying therefore cannot license injustice, and an assailant acting from ignorance of good and evil calls for correction rather than hatred. Where defending the shared community is the role one has been given, force may be the fitting act — performed without anger, and without the illusion that survival was ever the thing at stake.",
+    "reasoning": [
+      {
+        "text": "Dying counts as terrible only through an opinion about it, so the terror that would license a desperate act is itself the first thing to examine.",
+        "passage_id": "ench-5-opinions"
+      },
+      {
+        "text": "Body, life and possessions appear on the list of what is not ours, so protecting them is never protecting the self that matters.",
+        "passage_id": "ench-1-power"
+      },
+      {
+        "text": "The aggressor acts from ignorance of what is good, which makes instruction or forbearance the response owed him rather than loathing.",
+        "passage_id": "meditations-2-1"
+      },
+      {
+        "text": "Rational beings share one law and one city, so the common good and not private survival measures which acts are fitting.",
+        "passage_id": "meditations-4-4-state"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ench-5-opinions",
+        "role": "core",
+        "note": "the reframing move in one line"
+      },
+      {
+        "passage_id": "ench-1-power",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "meditations-2-1",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "meditations-4-4-state",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "meditations-8-59-for-one-another",
+        "role": "complicating",
+        "note": "teaching or bearing with, rather than striking, is the default owed to others"
+      }
+    ],
+    "intra_tradition_note": "Roman Stoics held office, commanded armies and served as jurists, so the doctrine of indifferents was never read inside the school as pacifism; the disagreement is about how much the appropriate act depends on one's assigned role, not about whether death is an evil.",
+    "further_reading": [
+      {
+        "author": "Dirk Baltzly",
+        "title": "Stoicism",
+        "year": 2019,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/stoicism/",
+        "note": "sections on indifferents and appropriate action"
+      },
+      {
+        "author": "Brad Inwood",
+        "title": "Ethics and Human Action in Early Stoicism",
+        "year": 1985,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Enchiridion 1 and 5 and Meditations II.1, IV.4, VIII.59 (Long), with Inwood on kathekonta; the stance is recorded as reframed because the school answers a different question than permission."
+  },
+  {
+    "id": "theft_and_property--stoicism",
+    "topic_id": "theft_and_property",
+    "tradition_id": "stoicism",
+    "stance": "reframed",
+    "summary": "The Stoic reply to theft starts with what can actually be taken. Goods are on loan, dealt out by fortune and recalled without warning, so a person robbed has lost an external and kept everything that was properly his. This does not acquit the thief, whose act damages the one faculty that is his own, and it does not dissolve the institutions that assign holdings. It moves the question: not how to recover an object, but how to hold objects loosely enough that losing them cannot make their owner worse than he was.",
+    "reasoning": [
+      {
+        "text": "Possessions stand on the list of things outside our power, so what a thief carries off was never securely the owner's.",
+        "passage_id": "ench-1-power"
+      },
+      {
+        "text": "The banquet sets the measure for acquiring: take a portion decently when it comes to you, and do not grab at what is passing.",
+        "passage_id": "ench-15-banquet"
+      },
+      {
+        "text": "Being richer does not make anyone better, so neither gaining goods nor losing them alters what a person is worth.",
+        "passage_id": "ench-44-cohere"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ench-15-banquet",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ench-1-power",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ench-44-cohere",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Indifference here is technical: property counts among the preferred indifferents, things naturally to be chosen, and Roman Stoics wrote and administered the law of property — so denying that theft harms the victim's character never implied that a city should tolerate it.",
+    "further_reading": [
+      {
+        "author": "A. A. Long",
+        "title": "Epictetus: A Stoic and Socratic Guide to Life",
+        "year": 2002,
+        "kind": "book",
+        "url": null,
+        "note": "on externals and what is our own"
+      },
+      {
+        "author": "Margaret Graver",
+        "title": "Stoicism and Emotion",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Enchiridion 1, 15 and 44 (Long) with Long (2002) on the dichotomy of control; stance recorded as reframed because the school relocates the injury rather than grading the act."
   }
 ]

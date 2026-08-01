@@ -264,7 +264,7 @@
         "note": null
       }
     ],
-    "intra_tradition_note": null,
+    "intra_tradition_note": "Monastic and lay formulations differ sharply in stringency: for the fully ordained, taking what is not given above a trifling value is one of the four offenses entailing permanent expulsion, while for laypeople the same precept is a training rule voluntarily undertaken and weighed by intention, value, and the owner's mind.",
     "further_reading": [
       {
         "author": "Peter Harvey",
@@ -586,5 +586,72 @@
       }
     ],
     "curator_note": "Drafted from Dhp 50 and 133 (Müller)."
+  },
+  {
+    "id": "war_and_peace--buddhism",
+    "topic_id": "war_and_peace",
+    "tradition_id": "buddhism",
+    "stance": "forbidden",
+    "summary": "No exemption is carved out for soldiers or kings: the undertaking not to kill or to cause slaughter is stated without qualification, and the verses redirect the whole vocabulary of conquest inward, where the only victory worth the name is over oneself. Enmity is described as a fuel that combat replenishes, so a war fought to end hostility misunderstands how hostility ends. A ruler who orders killing is judged not just when he loses but when he wins, and the tradition's ideal sovereign rules by equity rather than by force.",
+    "reasoning": [
+      {
+        "text": "Conquering a million men in battle is set below conquering oneself, which relocates victory away from the field entirely.",
+        "passage_id": "dhp-103-conqueror"
+      },
+      {
+        "text": "The precept forbids both killing and causing slaughter, which reaches the one who gives the order as well as the one who strikes.",
+        "passage_id": "dhp-129-130"
+      },
+      {
+        "text": "Hatred is said never to cease by hatred, so a campaign meant to end enmity supplies exactly what keeps it burning.",
+        "passage_id": "dhp-5-hatred"
+      },
+      {
+        "text": "The just man is described as the one who does not carry a matter by violence but leads by law and equity.",
+        "passage_id": "dhp-256-257-just"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "dhp-103-conqueror",
+        "role": "core",
+        "note": "the inward redirection of conquest"
+      },
+      {
+        "passage_id": "dhp-129-130",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-5-hatred",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "dhp-256-257-just",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Buddhist states have nonetheless fought wars and some have blessed them, and a few Mahayana texts contemplate a bodhisattva accepting the karmic cost of killing to spare many; the canonical material offers no doctrine of just war, so the gap between precept and statecraft is acknowledged inside the tradition rather than resolved.",
+    "further_reading": [
+      {
+        "author": "Stephen Jenkins",
+        "title": "Making Merit through Warfare and Torture According to the Arya-Bodhisattva-gocara-upayavisaya-vikurvana-nirdesa Sutra",
+        "year": 2010,
+        "kind": "article",
+        "url": null,
+        "note": "the hard counter-texts, presented in full"
+      },
+      {
+        "author": "Michael Jerryson",
+        "title": "Buddhist Warfare",
+        "year": 2010,
+        "kind": "book",
+        "url": null,
+        "note": "historical practice against the precept"
+      }
+    ],
+    "curator_note": "Drafted from Dhp 103, 129–130, 5 and 256–257 (Müller), with Jerryson and Juergensmeyer on the historical record; the precept is stated without a war exception, so the stance is recorded as forbidden with the practice gap in the note."
   }
 ]

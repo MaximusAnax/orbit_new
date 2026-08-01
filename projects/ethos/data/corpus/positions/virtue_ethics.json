@@ -857,5 +857,189 @@
       }
     ],
     "curator_note": "Drafted from Ross's Nicomachean Ethics III.1, I.3 and II.9 with Summa II-II Q.60 a.4; Meyer on the voluntariness conditions."
+  },
+  {
+    "id": "duties_to_parents--virtue_ethics",
+    "topic_id": "duties_to_parents",
+    "tradition_id": "virtue_ethics",
+    "stance": "context_dependent",
+    "summary": "What children owe their parents is treated as a question of proportion rather than a single command. Existence and rearing came from them, so the debt is presumed large and refusing it is shameful. Yet a father's claims are not the only claims and are not unlimited: the text raises directly whether preference is always owed to him, or whether the doctor and the general have the better title in their own matters. The practically wise adult weighs this parent, this need and this moment against the other people who have claims, and renders to each what is due.",
+    "reasoning": [
+      {
+        "text": "The difficulty is posed as an open question — whether a father should be preferred in everything, or whether competence sometimes outranks the tie.",
+        "passage_id": "ne-9-2-competing-claims"
+      },
+      {
+        "text": "Settling such cases belongs to a reasoned capacity for deciding what is good for a human being, not to a rule applied uniformly.",
+        "passage_id": "ne-6-5-practical-wisdom"
+      },
+      {
+        "text": "Paternal command is contrasted with law precisely because it lacks compulsive force, which locates filial duty in affection and character rather than in authority.",
+        "passage_id": "ne-10-9-law-compulsive"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-9-2-competing-claims",
+        "role": "core",
+        "note": "the locus for unranked competing claims"
+      },
+      {
+        "passage_id": "ne-6-5-practical-wisdom",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-10-9-law-compulsive",
+        "role": "complicating",
+        "note": "the father's word is deliberately denied the standing of law"
+      }
+    ],
+    "intra_tradition_note": "Aristotle also says honour is owed to parents as to the gods, and commentators divide over how to hold that alongside IX.2's refusal to rank the claims — some read a strong presumption that only distinctive expertise can defeat, others a genuinely case-by-case weighing.",
+    "further_reading": [
+      {
+        "author": "John M. Cooper",
+        "title": "Reason and Emotion: Essays on Ancient Moral Psychology and Ethical Theory",
+        "year": 1999,
+        "kind": "book",
+        "url": null,
+        "note": "the essays on Aristotelian friendship and its unequal forms"
+      },
+      {
+        "author": "Richard Kraut",
+        "title": "Aristotle's Ethics",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/aristotle-ethics/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IX.2, VI.5 and X.9 with Cooper (1999) on unequal friendships; stance recorded as context_dependent because the text explicitly declines to rank the claims in advance."
+  },
+  {
+    "id": "honesty_and_deception--virtue_ethics",
+    "topic_id": "honesty_and_deception",
+    "tradition_id": "virtue_ethics",
+    "stance": "reframed",
+    "summary": "Asking whether a particular untruth is allowed puts the question to the wrong tribunal. Truthfulness is a settled trait standing between boasting and mock-modesty, and the person who has it shuns falsehood as something base rather than as something prohibited — which is exactly why he can be relied on when nothing hangs on the matter. Shading the facts is appraised by what it expresses and by what repetition makes of the one who does it. What candour this friend and this hour call for is then decided in the particular case by the person of practical judgment.",
+    "reasoning": [
+      {
+        "text": "The one who loves truth where nothing is at stake is the more truthful where something is, because he shuns falsehood for its own sake.",
+        "passage_id": "ne-4-7-truthful-character"
+      },
+      {
+        "text": "Excellence is a disposition concerned with choosing, lying in a mean fixed as the person of judgment would fix it — not a list of permitted acts.",
+        "passage_id": "ne-2-6-mean-choice"
+      },
+      {
+        "text": "The capacity that fixes the mean is a reasoned state about what is good or bad for a human being, exercised on particulars.",
+        "passage_id": "ne-6-5-practical-wisdom"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-7-truthful-character",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ne-2-6-mean-choice",
+        "role": "core",
+        "note": "the reframing of the whole question"
+      },
+      {
+        "passage_id": "ne-6-5-practical-wisdom",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-6-obsequious-quarrelsome",
+        "role": "complicating",
+        "note": "social life has its own mean, and the flatterer who praises everything is its excess"
+      }
+    ],
+    "intra_tradition_note": "Later Aristotelians split over whether the account has room for an outright ban: Thomist virtue theory folds an exceptionless prohibition of lying into the virtue, while modern neo-Aristotelians read the mean as leaving the hard cases to judgment.",
+    "further_reading": [
+      {
+        "author": "Rosalind Hursthouse",
+        "title": "On Virtue Ethics",
+        "year": 1999,
+        "kind": "book",
+        "url": null,
+        "note": "on why virtue ethics does not issue act-permissions"
+      },
+      {
+        "author": "Christine Swanton",
+        "title": "Virtue Ethics: A Pluralistic View",
+        "year": 2003,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.7, II.6, VI.5 and IV.6, with Hursthouse (1999) on the shape of virtue-ethical answers; stance recorded as reframed."
+  },
+  {
+    "id": "hospitality_and_strangers--virtue_ethics",
+    "topic_id": "hospitality_and_strangers",
+    "tradition_id": "virtue_ethics",
+    "stance": "context_dependent",
+    "summary": "Receiving people one does not know is governed by a mean, not by a standing requirement. One excellence concerns bearing in company — the state between the man who praises everything to please and the man who opposes everything — and it is described as extending to those with whom one has no acquaintance. A second concerns giving, and it aims at the right recipients, the right amounts and the right occasions. Both are spoiled by excess as surely as by stint, so the host who ruins himself on a guest misses the mark no less than the one who shuts his door.",
+    "reasoning": [
+      {
+        "text": "The excellence of social bearing is defined against flattery on one side and contrariness on the other, and it is exercised toward acquaintances and strangers alike.",
+        "passage_id": "ne-4-6-obsequious-quarrelsome"
+      },
+      {
+        "text": "Open-handedness is not measured by how much leaves the giver's hands but by giving to the right people, the right amounts, and at the right times.",
+        "passage_id": "ne-4-1-liberal-giving"
+      },
+      {
+        "text": "Large hospitality is judged like a work of art — fitting to the occasion and the means — so lavishness that misses the occasion is a defect and not a surplus of virtue.",
+        "passage_id": "ne-4-2-magnificent-artist"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-6-obsequious-quarrelsome",
+        "role": "core",
+        "note": "the virtue explicitly covers people one does not know"
+      },
+      {
+        "passage_id": "ne-4-1-liberal-giving",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-2-magnificent-artist",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-1-meanness-incurable",
+        "role": "complicating",
+        "note": "stinginess is judged the worse extreme, which pulls the mean toward the open hand"
+      }
+    ],
+    "intra_tradition_note": "Aristotle writes for a household with means and says little about strangers in need as against guests one chooses; neo-Aristotelian writers divide over whether the virtues of giving can be stretched to cover obligations to distant or destitute people at all.",
+    "further_reading": [
+      {
+        "author": "Nancy Sherman",
+        "title": "The Fabric of Character: Aristotle's Theory of Virtue",
+        "year": 1989,
+        "kind": "book",
+        "url": null,
+        "note": null
+      },
+      {
+        "author": "Julia Annas",
+        "title": "The Morality of Happiness",
+        "year": 1993,
+        "kind": "book",
+        "url": null,
+        "note": "on the scope of ancient other-regarding virtues"
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.6, IV.1 and IV.2 with Annas (1993) on the reach of the ancient virtues; stance recorded as context_dependent because the mean is fixed by occasion and means."
   }
 ]
