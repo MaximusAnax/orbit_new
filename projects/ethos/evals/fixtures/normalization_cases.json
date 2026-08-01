@@ -1,0 +1,12 @@
+[
+  {"id": "nfkc-quran-locator", "text": "Qur’an 17:23–24", "tokens": ["qur", "17", "23", "24"], "note": "Curly apostrophe (U+2019) and en dash (U+2013) as they appear in committed locators; both are tokenizer separators, and neither reaches the corpus text itself (FR-2: normalization applies only to router documents and queries)."},
+  {"id": "nfkc-quran-prose", "text": "The Qur’an on lying", "tokens": ["qur", "ly"], "note": "The same curly apostrophe inside running prose; 'the'/'on' are stopwords and 'lying' stems to 'ly'."},
+  {"id": "nfkc-ligatures", "text": "ﬁdelity and ﬂattery", "tokens": ["fidel", "flatteri"], "note": "U+FB01/U+FB02 ligatures from older public-domain transcriptions decompose under NFKC before stemming."},
+  {"id": "nfkc-fullwidth", "text": "ＦＵＬＬＷＩＤＴＨ Ethics", "tokens": ["fullwidth", "ethic"], "note": "Fullwidth Latin folds to ASCII under NFKC, then casefolds."},
+  {"id": "nfkc-accents", "text": "Café naïve résumé", "tokens": ["caf", "na", "r", "sum"], "note": "NFKC does not strip combining accents, so accented letters split the token at the tokenizer; recorded as the committed behaviour rather than silently 'fixed', because changing it would change every routing score."},
+  {"id": "nfkc-talmud-range", "text": "Ketubot 16b–17a", "tokens": ["ketubot", "16b", "17a"], "note": "En-dashed folio range of a reference_only locator."},
+  {"id": "contraction-fragments", "text": "don’t lie to me", "tokens": ["lie"], "note": "The tokenizer splits contractions; 'don' and 't' are stopwords, so only the content word survives."},
+  {"id": "roman-numeral-locator", "text": "Nicomachean Ethics II.6", "tokens": ["nicomachean", "ethic", "ii", "6"], "note": "Bekker-style locator punctuation."},
+  {"id": "out-of-taxonomy-terms", "text": "ＡＩ and CRISPR", "tokens": ["ai", "crispr"], "note": "Vocabulary the taxonomy has never seen, normalized identically to everything else — this is what the FR-4 coverage signal measures."},
+  {"id": "fullwidth-quran", "text": "Ｑｕｒ’ａｎ", "tokens": ["qur"], "note": "Fullwidth plus curly apostrophe together."}
+]
