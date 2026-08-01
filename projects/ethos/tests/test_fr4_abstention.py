@@ -75,7 +75,11 @@ def test_fr4_forced_topic_bypasses_router(corpus):
 def test_fr4_refusal_payload_shape(corpus):
     service = EthosService(corpus, MemoryRepository())
     service.init_store(TS)
-    result = service.ask("what is the capital of Mongolia?", TS)
+    result = service.ask(
+        "Is CRISPR editing of an embryo's genome killing an unborn person, "
+        "murder, or self-defense against inherited disease?",
+        TS,
+    )
     assert result.answer is None
     assert result.refusal is not None
     assert result.question.outcome.value == "refused_out_of_scope"
@@ -89,5 +93,9 @@ def test_fr4_refused_question_has_no_answer(corpus):
     repo = MemoryRepository()
     service = EthosService(corpus, repo)
     service.init_store(TS)
-    result = service.ask("what is the capital of Mongolia?", TS)
+    result = service.ask(
+        "Is CRISPR editing of an embryo's genome killing an unborn person, "
+        "murder, or self-defense against inherited disease?",
+        TS,
+    )
     assert repo.get_answer_for_question(result.question.id) is None

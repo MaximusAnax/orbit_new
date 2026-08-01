@@ -3509,6 +3509,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -6947,6 +7235,294 @@
       },
       {
         "term": "yes",
+        "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
         "weight": 1
       }
     ],
@@ -10395,6 +10971,310 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "taking a human life",
+        "weight": 2
+      },
+      {
+        "term": "human life",
+        "weight": 2
+      },
+      {
+        "term": "take a human life",
+        "weight": 2
+      },
+      {
+        "term": "homicide of a person",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -13846,6 +14726,310 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "military invasion",
+        "weight": 2
+      },
+      {
+        "term": "invading army",
+        "weight": 2
+      },
+      {
+        "term": "war is just",
+        "weight": 2
+      },
+      {
+        "term": "morally defensible war",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -17225,6 +18409,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -20589,6 +22061,294 @@
       },
       {
         "term": "yes",
+        "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
         "weight": 1
       }
     ],
@@ -23990,6 +25750,294 @@
       },
       {
         "term": "yes",
+        "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
         "weight": 1
       }
     ],
@@ -27409,6 +29457,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -30819,6 +33155,294 @@
       },
       {
         "term": "yes",
+        "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
         "weight": 1
       }
     ],
@@ -34243,6 +36867,322 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "never pays for",
+        "weight": 2
+      },
+      {
+        "term": "pays for nothing",
+        "weight": 2
+      },
+      {
+        "term": "free-rides",
+        "weight": 2
+      },
+      {
+        "term": "takes without paying",
+        "weight": 2
+      },
+      {
+        "term": "watches without paying",
+        "weight": 2
+      },
+      {
+        "term": "never buys a ticket",
+        "weight": 2
+      },
+      {
+        "term": "takes what he has not paid for",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -37640,6 +40580,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -41032,6 +44260,294 @@
       },
       {
         "term": "yes",
+        "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
         "weight": 1
       }
     ],
@@ -44468,6 +47984,314 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "cut me off",
+        "weight": 2
+      },
+      {
+        "term": "road rage incident",
+        "weight": 2
+      },
+      {
+        "term": "shouted in the office",
+        "weight": 2
+      },
+      {
+        "term": "temper at work",
+        "weight": 2
+      },
+      {
+        "term": "still angry hours later",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -47867,6 +51691,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -51262,6 +55374,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -54645,6 +59045,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -58016,6 +62704,310 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "duty of hospitality",
+        "weight": 2
+      },
+      {
+        "term": "courtesy",
+        "weight": 2
+      },
+      {
+        "term": "hospitable",
+        "weight": 2
+      },
+      {
+        "term": "welcome given to a guest",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -61447,6 +66439,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -64850,6 +70130,314 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "stay at the bar",
+        "weight": 2
+      },
+      {
+        "term": "last to leave the pub",
+        "weight": 2
+      },
+      {
+        "term": "cannot remember last night",
+        "weight": 2
+      },
+      {
+        "term": "still drinking at closing time",
+        "weight": 2
+      },
+      {
+        "term": "drinks after work",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -68261,6 +73849,306 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "steer the conversation",
+        "weight": 2
+      },
+      {
+        "term": "bring up my own achievements",
+        "weight": 2
+      },
+      {
+        "term": "want to be noticed",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -71643,6 +77531,294 @@
       },
       {
         "term": "yes",
+        "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
         "weight": 1
       }
     ],
@@ -75087,6 +81263,294 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
       }
     ],
     "related_topics": [
@@ -78480,6 +84944,310 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "expose wrongdoing",
+        "weight": 2
+      },
+      {
+        "term": "blow the whistle on my employer",
+        "weight": 2
+      },
+      {
+        "term": "afraid to speak out",
+        "weight": 2
+      },
+      {
+        "term": "too frightened to act",
+        "weight": 2
       }
     ],
     "related_topics": [
@@ -81907,6 +88675,306 @@
       {
         "term": "yes",
         "weight": 1
+      },
+      {
+        "term": "job",
+        "weight": 1
+      },
+      {
+        "term": "jobs",
+        "weight": 1
+      },
+      {
+        "term": "prettier",
+        "weight": 1
+      },
+      {
+        "term": "prettiest",
+        "weight": 1
+      },
+      {
+        "term": "remind",
+        "weight": 1
+      },
+      {
+        "term": "reminded",
+        "weight": 1
+      },
+      {
+        "term": "reminder",
+        "weight": 1
+      },
+      {
+        "term": "stall",
+        "weight": 1
+      },
+      {
+        "term": "alive",
+        "weight": 1
+      },
+      {
+        "term": "plate",
+        "weight": 1
+      },
+      {
+        "term": "plates",
+        "weight": 1
+      },
+      {
+        "term": "smaller",
+        "weight": 1
+      },
+      {
+        "term": "smallest",
+        "weight": 1
+      },
+      {
+        "term": "solid",
+        "weight": 1
+      },
+      {
+        "term": "delete",
+        "weight": 1
+      },
+      {
+        "term": "deleted",
+        "weight": 1
+      },
+      {
+        "term": "see",
+        "weight": 1
+      },
+      {
+        "term": "seen",
+        "weight": 1
+      },
+      {
+        "term": "signal",
+        "weight": 1
+      },
+      {
+        "term": "referee",
+        "weight": 1
+      },
+      {
+        "term": "umpire",
+        "weight": 1
+      },
+      {
+        "term": "bigger",
+        "weight": 1
+      },
+      {
+        "term": "biggest",
+        "weight": 1
+      },
+      {
+        "term": "larger",
+        "weight": 1
+      },
+      {
+        "term": "weekly",
+        "weight": 1
+      },
+      {
+        "term": "yearly",
+        "weight": 1
+      },
+      {
+        "term": "annual",
+        "weight": 1
+      },
+      {
+        "term": "rarely",
+        "weight": 1
+      },
+      {
+        "term": "seldom",
+        "weight": 1
+      },
+      {
+        "term": "probably",
+        "weight": 1
+      },
+      {
+        "term": "possibly",
+        "weight": 1
+      },
+      {
+        "term": "maybe",
+        "weight": 1
+      },
+      {
+        "term": "certainly",
+        "weight": 1
+      },
+      {
+        "term": "definitely",
+        "weight": 1
+      },
+      {
+        "term": "obviously",
+        "weight": 1
+      },
+      {
+        "term": "clearly",
+        "weight": 1
+      },
+      {
+        "term": "loudly",
+        "weight": 1
+      },
+      {
+        "term": "slowly",
+        "weight": 1
+      },
+      {
+        "term": "quickly",
+        "weight": 1
+      },
+      {
+        "term": "gradually",
+        "weight": 1
+      },
+      {
+        "term": "soon",
+        "weight": 1
+      },
+      {
+        "term": "forever",
+        "weight": 1
+      },
+      {
+        "term": "sad",
+        "weight": 1
+      },
+      {
+        "term": "relaxed",
+        "weight": 1
+      },
+      {
+        "term": "excited",
+        "weight": 1
+      },
+      {
+        "term": "ashamed",
+        "weight": 1
+      },
+      {
+        "term": "embarrassed",
+        "weight": 1
+      },
+      {
+        "term": "guilty",
+        "weight": 1
+      },
+      {
+        "term": "relieved",
+        "weight": 1
+      },
+      {
+        "term": "exhausted",
+        "weight": 1
+      },
+      {
+        "term": "willing",
+        "weight": 1
+      },
+      {
+        "term": "unwilling",
+        "weight": 1
+      },
+      {
+        "term": "unable",
+        "weight": 1
+      },
+      {
+        "term": "capable",
+        "weight": 1
+      },
+      {
+        "term": "unfair",
+        "weight": 1
+      },
+      {
+        "term": "unkind",
+        "weight": 1
+      },
+      {
+        "term": "rough",
+        "weight": 1
+      },
+      {
+        "term": "polite",
+        "weight": 1
+      },
+      {
+        "term": "rude",
+        "weight": 1
+      },
+      {
+        "term": "horrible",
+        "weight": 1
+      },
+      {
+        "term": "splendid",
+        "weight": 1
+      },
+      {
+        "term": "decent",
+        "weight": 1
+      },
+      {
+        "term": "unimportant",
+        "weight": 1
+      },
+      {
+        "term": "silly",
+        "weight": 1
+      },
+      {
+        "term": "stupid",
+        "weight": 1
+      },
+      {
+        "term": "clever",
+        "weight": 1
+      },
+      {
+        "term": "smart",
+        "weight": 1
+      },
+      {
+        "term": "wise",
+        "weight": 1
+      },
+      {
+        "term": "foolish",
+        "weight": 1
+      },
+      {
+        "term": "sensible",
+        "weight": 1
+      },
+      {
+        "term": "complicated",
+        "weight": 1
+      },
+      {
+        "term": "impossible",
+        "weight": 1
+      },
+      {
+        "term": "deserves what is coming",
+        "weight": 2
+      },
+      {
+        "term": "made up our minds about her",
+        "weight": 2
+      },
+      {
+        "term": "decided about someone",
+        "weight": 2
       }
     ],
     "related_topics": [

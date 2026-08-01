@@ -7,7 +7,7 @@
   {"id": "hon-c2", "text": "am I a bad person for fibbing to my boss about why I missed the meeting", "truth_topic": "honesty_and_deception", "tier": "colloquial", "rationale": "Colloquial 'fibbing'; workplace scenario."},
   {"id": "hon-c3", "text": "is it fine to sugarcoat things so people don't feel awful", "truth_topic": "honesty_and_deception", "tier": "colloquial", "rationale": "Colloquial verb for softening the truth."},
   {"id": "hon-o1", "text": "My sister spent all week on a haircut she loves and I gave her a compliment I did not mean.", "truth_topic": "honesty_and_deception", "tier": "oblique", "rationale": "Scenario with no title/description/weight-3 vocabulary; routes on weight-1 'haircut' and 'compliment'."},
-  {"id": "hon-o2", "text": "We are throwing a surprise party and I keep having to make up stories about where we are going.", "truth_topic": "honesty_and_deception", "tier": "oblique", "rationale": "Surprise-party scenario; weight-1 hook only."},
+  {"id": "hon-o2", "text": "My wife asks where I have been every Thursday evening and I give her a different account each time.", "truth_topic": "honesty_and_deception", "tier": "oblique", "rationale": "Ordinary concealment inside a marriage; authored in the held-out tier's style, with no planted lexicon hook."},
   {"id": "hon-o3", "text": "I padded my resume a little to get the interview and now it sits badly with me.", "truth_topic": "honesty_and_deception", "tier": "oblique", "rationale": "Resume padding scenario; weight-1 hook only."},
 
   {"id": "pro-d1", "text": "Am I obliged to keep a promise I made?", "truth_topic": "promise_keeping_and_oaths", "tier": "direct", "rationale": "Canonical framing of promissory obligation."},
@@ -19,7 +19,7 @@
   {"id": "pro-c3", "text": "I gave my word to a friend before I knew what it would cost me, am I stuck", "truth_topic": "promise_keeping_and_oaths", "tier": "colloquial", "rationale": "Colloquial phrasing of the costly-commitment case."},
   {"id": "pro-o1", "text": "I told my grandfather on his deathbed that I would look after the family shop, and I no longer want to.", "truth_topic": "promise_keeping_and_oaths", "tier": "oblique", "rationale": "Deathbed undertaking; scenario vocabulary only."},
   {"id": "pro-o2", "text": "I agreed to be a godparent years ago and I have not done a single thing I said I would.", "truth_topic": "promise_keeping_and_oaths", "tier": "oblique", "rationale": "Godparent scenario; weight-1 hook only."},
-  {"id": "pro-o3", "text": "I said yes to giving the wedding toast and now I want to take a rain check.", "truth_topic": "promise_keeping_and_oaths", "tier": "oblique", "rationale": "Wedding toast / rain check; weight-1 hooks only."},
+  {"id": "pro-o3", "text": "I said I would speak at their wedding and now I am looking for a way out of it.", "truth_topic": "promise_keeping_and_oaths", "tier": "oblique", "rationale": "Undertaking a person wants to escape; authored in the held-out tier's style, no planted hook."},
 
   {"id": "kil-d1", "text": "Is killing another person ever justified?", "truth_topic": "killing_and_self_defense", "tier": "direct", "rationale": "Canonical framing; war and execution have their own topics."},
   {"id": "kil-d2", "text": "Is it wrong to kill an attacker in self-defense?", "truth_topic": "killing_and_self_defense", "tier": "direct", "rationale": "Self-defense is the topic's core case."},
@@ -28,7 +28,7 @@
   {"id": "kil-c1", "text": "if someone attacks me on the street am I allowed to hurt them badly to get away", "truth_topic": "killing_and_self_defense", "tier": "colloquial", "rationale": "Street-attack scenario in ordinary speech."},
   {"id": "kil-c2", "text": "would it be wrong to shoot an intruder who came into my house at night", "truth_topic": "killing_and_self_defense", "tier": "colloquial", "rationale": "Home-defense case; colloquial phrasing."},
   {"id": "kil-c3", "text": "how far can I go to protect my family if someone means them real harm", "truth_topic": "killing_and_self_defense", "tier": "colloquial", "rationale": "Defense of family; hooks the weight-2 scenario phrase."},
-  {"id": "kil-o1", "text": "A man broke into our house at three in the morning and there is a gun in the bedside drawer.", "truth_topic": "killing_and_self_defense", "tier": "oblique", "rationale": "Home-invasion scenario; routes on weight-1/2 terms only."},
+  {"id": "kil-o1", "text": "Someone was moving about downstairs at three in the morning and I went down with the poker from the fireplace.", "truth_topic": "killing_and_self_defense", "tier": "oblique", "rationale": "Home-intrusion scenario in the held-out tier's style; no planted lexicon hook."},
   {"id": "kil-o2", "text": "A mugger came at me with a knife and I fought back until he stopped moving.", "truth_topic": "killing_and_self_defense", "tier": "oblique", "rationale": "Street mugging scenario; no title/description vocabulary."},
   {"id": "kil-o3", "text": "If an intruder stood over my children's beds, could I stop him by any means at hand?", "truth_topic": "killing_and_self_defense", "tier": "oblique", "rationale": "Defense of children; scenario vocabulary only."},
 
@@ -51,7 +51,7 @@
   {"id": "cap-c2", "text": "what if an innocent person gets executed by mistake, does that settle it", "truth_topic": "capital_punishment", "tier": "colloquial", "rationale": "Irreversible-error case in ordinary speech."},
   {"id": "cap-c3", "text": "my cousin says hanging killers is the only real deterrence, is he right", "truth_topic": "capital_punishment", "tier": "colloquial", "rationale": "Deterrence argument reported colloquially."},
   {"id": "cap-o1", "text": "The man who stabbed my cousin has waited eleven years and the lethal injection is finally scheduled.", "truth_topic": "capital_punishment", "tier": "oblique", "rationale": "Death-row scenario; weight-2 hook only."},
-  {"id": "cap-o2", "text": "I sat on a jury and we returned a verdict knowing what sentence would follow.", "truth_topic": "capital_punishment", "tier": "oblique", "rationale": "Juror scenario; weight-1 hooks only."},
+  {"id": "cap-o2", "text": "I sat in the public gallery while they decided whether the man in the dock would live.", "truth_topic": "capital_punishment", "tier": "oblique", "rationale": "Courtroom scenario in the held-out tier's style; no planted hook."},
   {"id": "cap-o3", "text": "A prisoner was cleared by new evidence a week before he was due to be hanged.", "truth_topic": "capital_punishment", "tier": "oblique", "rationale": "Wrongful-conviction scenario; weight-2 hook only."},
 
   {"id": "sui-d1", "text": "What have religious traditions taught about suicide?", "truth_topic": "suicide_and_self_harm", "tier": "direct", "rationale": "Descriptive comparative framing of the topic."},
@@ -63,7 +63,7 @@
   {"id": "sui-c3", "text": "is cutting yourself treated as a sin in these traditions", "truth_topic": "suicide_and_self_harm", "tier": "colloquial", "rationale": "Self-harm framed colloquially; hooks weight-1 'cutting'."},
   {"id": "sui-o1", "text": "My uncle took an overdose last spring and my family still cannot talk about what he did.", "truth_topic": "suicide_and_self_harm", "tier": "oblique", "rationale": "Bereavement scenario; weight-1 hook only."},
   {"id": "sui-o2", "text": "A friend keeps telling me he is a burden to everyone and that nothing would be lost if he were gone.", "truth_topic": "suicide_and_self_harm", "tier": "oblique", "rationale": "Reported speech of a person at risk; weight-1/2 hooks only."},
-  {"id": "sui-o3", "text": "In the old stories a defeated general was expected to perform seppuku rather than be taken alive.", "truth_topic": "suicide_and_self_harm", "tier": "oblique", "rationale": "Honour-death scenario; weight-1 hook only."},
+  {"id": "sui-o3", "text": "In the old stories a beaten commander was expected to fall on his sword rather than be taken alive.", "truth_topic": "suicide_and_self_harm", "tier": "oblique", "rationale": "Honour-death scenario in the held-out tier's style; no planted hook."},
 
   {"id": "eut-d1", "text": "Is euthanasia ever morally permissible?", "truth_topic": "euthanasia_and_end_of_life", "tier": "direct", "rationale": "Canonical framing of the topic."},
   {"id": "eut-d2", "text": "Is it wrong to help a terminally ill person die?", "truth_topic": "euthanasia_and_end_of_life", "tier": "direct", "rationale": "Assisted dying; the topic's core case."},
@@ -85,7 +85,7 @@
   {"id": "ani-c3", "text": "do these traditions care at all about how livestock are treated", "truth_topic": "animals_and_diet", "tier": "colloquial", "rationale": "Welfare framing in ordinary speech."},
   {"id": "ani-o1", "text": "My daughter has gone vegan and stares at me across the table whenever I order a steak.", "truth_topic": "animals_and_diet", "tier": "oblique", "rationale": "Family-table scenario; weight-1/2 hooks only."},
   {"id": "ani-o2", "text": "I watched a video from inside a factory farm and I have not touched chicken since.", "truth_topic": "animals_and_diet", "tier": "oblique", "rationale": "Factory-farm scenario; weight-1/2 hooks only."},
-  {"id": "ani-o3", "text": "My neighbour takes his son hunting every autumn and says it is more honest than the supermarket.", "truth_topic": "animals_and_diet", "tier": "oblique", "rationale": "Hunting scenario; weight-2 hook only."},
+  {"id": "ani-o3", "text": "My neighbour shoots pheasants on the estate every October and says it is cleaner than the supermarket.", "truth_topic": "animals_and_diet", "tier": "oblique", "rationale": "Shooting-for-the-table scenario in the held-out tier's style; no planted hook."},
 
   {"id": "wea-d1", "text": "How much of my income ought I give to charity?", "truth_topic": "wealth_and_generosity", "tier": "direct", "rationale": "Canonical framing of the duty of giving."},
   {"id": "wea-d2", "text": "Is being rich morally dangerous?", "truth_topic": "wealth_and_generosity", "tier": "direct", "rationale": "The dangers of riches; named in the description."},
@@ -106,7 +106,7 @@
   {"id": "the-c2", "text": "is taking pens and paper home from work actually stealing", "truth_topic": "theft_and_property", "tier": "colloquial", "rationale": "Office-supplies case, informally put."},
   {"id": "the-c3", "text": "if my family were starving would it still be wrong to take food", "truth_topic": "theft_and_property", "tier": "colloquial", "rationale": "Necessity case in first person."},
   {"id": "the-o1", "text": "The cashier gave me twenty pounds too much and I had pocketed it before I noticed.", "truth_topic": "theft_and_property", "tier": "oblique", "rationale": "Wrong-change scenario; weight-2 hook only."},
-  {"id": "the-o2", "text": "My flatmate downloads every film he watches from a pirated site and says nobody is hurt.", "truth_topic": "theft_and_property", "tier": "oblique", "rationale": "Piracy scenario; weight-1 hook only."},
+  {"id": "the-o2", "text": "My flatmate never pays for a single film he watches and says nobody is any worse off for it.", "truth_topic": "theft_and_property", "tier": "oblique", "rationale": "Digital free-riding in the held-out tier's style; no planted hook."},
   {"id": "the-o3", "text": "My employer shaved an hour off everyone's timesheet last month and called it rounding.", "truth_topic": "theft_and_property", "tier": "oblique", "rationale": "Wage-theft scenario; weight-1 hook only."},
 
   {"id": "usu-d1", "text": "Is charging interest on a loan wrong?", "truth_topic": "usury_and_lending", "tier": "direct", "rationale": "Canonical framing of usury."},
@@ -117,7 +117,7 @@
   {"id": "usu-c2", "text": "are payday loan shops doing something immoral or just business", "truth_topic": "usury_and_lending", "tier": "colloquial", "rationale": "Payday lending in ordinary speech."},
   {"id": "usu-c3", "text": "is it fine to charge a friend interest if I write it down properly", "truth_topic": "usury_and_lending", "tier": "colloquial", "rationale": "Informal loan with terms."},
   {"id": "usu-o1", "text": "The shop down the road advertises cash today at four hundred percent apr and people queue for it.", "truth_topic": "usury_and_lending", "tier": "oblique", "rationale": "Payday-lender scenario; weight-1 hooks only."},
-  {"id": "usu-o2", "text": "He pawned his mother's ring to make the installments and still fell behind.", "truth_topic": "usury_and_lending", "tier": "oblique", "rationale": "Pawn and installment scenario; weight-1 hooks only."},
+  {"id": "usu-o2", "text": "He handed his mother's ring to a man on the high street and got back half what it was worth.", "truth_topic": "usury_and_lending", "tier": "oblique", "rationale": "Pledging goods against cash, in the held-out tier's style; no planted hook."},
   {"id": "usu-o3", "text": "The bank wants the collateral back and my brother says the mortgage was never fair to begin with.", "truth_topic": "usury_and_lending", "tier": "oblique", "rationale": "Mortgage/collateral scenario; weight-1 hooks only."},
 
   {"id": "for-d1", "text": "Should I forgive someone who wronged me badly?", "truth_topic": "forgiveness_and_revenge", "tier": "direct", "rationale": "Canonical framing of forgiveness."},
@@ -205,7 +205,7 @@
   {"id": "int-c2", "text": "I got completely wasted at the wedding and I'm not sure why I feel bad about it", "truth_topic": "intoxicants_and_sobriety", "tier": "colloquial", "rationale": "Drunkenness episode in ordinary speech."},
   {"id": "int-c3", "text": "should I stop drinking altogether if my faith frowns on it", "truth_topic": "intoxicants_and_sobriety", "tier": "colloquial", "rationale": "Abstention framed colloquially."},
   {"id": "int-o1", "text": "I woke up hungover on a Tuesday again and could not remember how I came home.", "truth_topic": "intoxicants_and_sobriety", "tier": "oblique", "rationale": "Hangover scenario; weight-2 hooks only."},
-  {"id": "int-o2", "text": "Everyone stays for one more round after work and I am always the last one there.", "truth_topic": "intoxicants_and_sobriety", "tier": "oblique", "rationale": "After-work scenario; weight-1 hook only."},
+  {"id": "int-o2", "text": "The others stay at the bar long after I meant to go and I am never the first to leave.", "truth_topic": "intoxicants_and_sobriety", "tier": "oblique", "rationale": "After-work drinking in the held-out tier's style; no planted hook."},
   {"id": "int-o3", "text": "My brother smokes cannabis every evening and says it settles him better than wine ever did.", "truth_topic": "intoxicants_and_sobriety", "tier": "oblique", "rationale": "Cannabis scenario; weight-1/2 hooks only."},
 
   {"id": "pri-d1", "text": "Is pride a vice?", "truth_topic": "pride_and_humility", "tier": "direct", "rationale": "Canonical framing of the topic."},
@@ -215,7 +215,7 @@
   {"id": "pri-c1", "text": "is it ok to feel good about myself for doing something well", "truth_topic": "pride_and_humility", "tier": "colloquial", "rationale": "Proper self-regard, informally put."},
   {"id": "pri-c2", "text": "my friend never stops talking about his own success and it grates on me", "truth_topic": "pride_and_humility", "tier": "colloquial", "rationale": "Boastfulness observed in another."},
   {"id": "pri-c3", "text": "am I being vain if I want people to notice what I did", "truth_topic": "pride_and_humility", "tier": "colloquial", "rationale": "Vanity in ordinary speech."},
-  {"id": "pri-o1", "text": "I rewrote the linkedin post four times to sound like I did not care about the award.", "truth_topic": "pride_and_humility", "tier": "oblique", "rationale": "Humblebrag scenario; weight-1 hooks only."},
+  {"id": "pri-o1", "text": "I rewrote the announcement four times so it would read as if the honour meant nothing to me.", "truth_topic": "pride_and_humility", "tier": "oblique", "rationale": "Performed modesty, in the held-out tier's style; no planted hook."},
   {"id": "pri-o2", "text": "I keep steering conversations back to the promotion so people will mention it.", "truth_topic": "pride_and_humility", "tier": "oblique", "rationale": "Self-promotion scenario; weight-1 hooks only."},
   {"id": "pri-o3", "text": "He cannot let anyone finish a sentence without mentioning what he has done.", "truth_topic": "pride_and_humility", "tier": "oblique", "rationale": "Show-off scenario; weight-1/2 hooks only."},
 
@@ -226,7 +226,7 @@
   {"id": "env-c1", "text": "I can't stand that my friend's life looks better than mine", "truth_topic": "envy_and_contentment", "tier": "colloquial", "rationale": "Comparison with a peer, informally put."},
   {"id": "env-c2", "text": "how do I stop comparing myself to everyone I went to school with", "truth_topic": "envy_and_contentment", "tier": "colloquial", "rationale": "Chronic comparison in ordinary speech."},
   {"id": "env-c3", "text": "is it bad that I was not happy when my colleague got promoted", "truth_topic": "envy_and_contentment", "tier": "colloquial", "rationale": "Resentment at another's success."},
-  {"id": "env-o1", "text": "Every time I open instagram I feel worse about my own ordinary week.", "truth_topic": "envy_and_contentment", "tier": "oblique", "rationale": "Social-media scenario; weight-1 hook only."},
+  {"id": "env-o1", "text": "Every time I look at what my old classmates have been posting I feel worse about my own week.", "truth_topic": "envy_and_contentment", "tier": "oblique", "rationale": "Peer comparison in the held-out tier's style; no planted hook."},
   {"id": "env-o2", "text": "He got the raise I was counting on and I have not been able to look at him since.", "truth_topic": "envy_and_contentment", "tier": "oblique", "rationale": "Workplace rivalry; weight-1/2 hooks only."},
   {"id": "env-o3", "text": "Their house has a garden twice the size of ours and I keep working out how they afford it.", "truth_topic": "envy_and_contentment", "tier": "oblique", "rationale": "Keeping-up scenario; weight-1 hooks only."},
 
@@ -260,6 +260,6 @@
   {"id": "jud-c2", "text": "is it hypocritical to criticize a friend for something I also do", "truth_topic": "judging_others", "tier": "colloquial", "rationale": "Hypocrisy in criticism."},
   {"id": "jud-c3", "text": "should I say something when my colleague's work is clearly sloppy", "truth_topic": "judging_others", "tier": "colloquial", "rationale": "Pointing out another's failings at work."},
   {"id": "jud-o1", "text": "I catch myself giving my sister the side eye over her parenting choices.", "truth_topic": "judging_others", "tier": "oblique", "rationale": "Family scenario; weight-1 hooks only."},
-  {"id": "jud-o2", "text": "My friends want to cancel someone over a post from eight years ago.", "truth_topic": "judging_others", "tier": "oblique", "rationale": "Cancellation scenario; weight-1 hook only."},
+  {"id": "jud-o2", "text": "My friends have decided a woman none of them know deserves everything that is coming to her.", "truth_topic": "judging_others", "tier": "oblique", "rationale": "Collective condemnation of a stranger, in the held-out tier's style; no planted hook."},
   {"id": "jud-o3", "text": "I look down on my cousin's lifestyle and I know that says something about me.", "truth_topic": "judging_others", "tier": "oblique", "rationale": "Contempt scenario; weight-1/2 hooks only."}
 ]
