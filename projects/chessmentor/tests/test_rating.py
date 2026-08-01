@@ -240,8 +240,9 @@ def test_fr7c_lambda_is_inverse_variance_weighting() -> None:
     assert blend_lambda(RD_INIT, 1) == pytest.approx(
         PERF_SIGMA_1**2 / (PERF_SIGMA_1**2 + RD_INIT**2)
     )
-    assert blend_lambda(RD_FLOOR, 5) == pytest.approx(0.6923, abs=1e-3)
-    assert blend_lambda(143.0, 5) == pytest.approx(0.284, abs=1e-3)
+    # Concrete values with the B7-calibrated PERF_SIGMA = 225 (docs/REVIEW.md).
+    assert blend_lambda(RD_FLOOR, 5) == pytest.approx(0.9336, abs=1e-3)
+    assert blend_lambda(143.0, 5) == pytest.approx(0.7123, abs=1e-3)
 
 
 def test_fr7c_lambda_grows_as_rd_shrinks() -> None:
@@ -254,8 +255,13 @@ def test_fr7c_lambda_does_not_depend_on_game_count() -> None:
     assert blend_lambda(120.0, 2) == blend_lambda(120.0, 40)
 
 
-def test_fr7c_cold_start_is_move_quality_dominated(levels) -> None:
-    """US-2: with RD 350 the fast channel carries the estimate."""
+def test_fr7c_cold_start_weights_the_fast_channel(levels) -> None:
+    """US-2: with RD 350 the move-quality channel pulls the cold-start estimate.
+
+    With the B7-calibrated sigmas (PERF_SIGMA_1 = 325, docs/REVIEW.md) the fast
+    channel keeps ~0.37 of the weight after one game — enough to move R_hat
+    hundreds of Elo toward a strong perf signal where results alone move it ~25.
+    """
     state = _state()
     outcome = apply_rated_game(
         state,
@@ -268,8 +274,14 @@ def test_fr7c_cold_start_is_move_quality_dominated(levels) -> None:
         mode=ChallengeMode.BALANCED,
         now=NOW,
     )
-    assert outcome.event.lambda_used < 0.30
-    assert outcome.event.r_hat_after > 1_200.0
+    event = outcome.event
+    assert event.lambda_used == pytest.approx(
+        PERF_SIGMA_1**2 / (PERF_SIGMA_1**2 + event.glicko_rd_after**2), abs=1e-9
+    )
+    # The blend really mixes both channels: strictly between glicko and perf,
+    # and far above what the results channel alone produced.
+    assert event.glicko_r_after < event.r_hat_after < 1_400.0
+    assert event.r_hat_after > 1_000.0
 
 
 def test_fr7c_r_hat_falls_back_to_glicko_before_any_judged_game() -> None:

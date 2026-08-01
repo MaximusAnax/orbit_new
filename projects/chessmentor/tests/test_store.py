@@ -82,7 +82,7 @@ def _finished(game: Game, **overrides) -> Game:
 
 def test_store_materialises_the_committed_ladder(repo, levels) -> None:
     assert [lv.id for lv in repo.list_levels()] == [lv.id for lv in levels]
-    assert repo.get_level(4).elo_internal == 850.0
+    assert repo.get_level(4).elo_internal == levels[3].elo_internal
     with pytest.raises(NotFoundError):
         repo.get_level(99)
 

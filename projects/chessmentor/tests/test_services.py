@@ -10,7 +10,7 @@ from __future__ import annotations
 import chess
 import pytest
 from chessmentor.adapters import InternalAnalyst
-from chessmentor.constants import DEEP_BUDGET, JUDGE_BUDGET
+from chessmentor.constants import DEEP_BUDGET, JUDGE_BUDGET, PERF_SIGMA, RD_INIT
 from chessmentor.models import ChallengeMode, Color, GameStatus, PreferredColor
 from chessmentor.services import (
     ChessMentorService,
@@ -149,7 +149,9 @@ def test_fr7_rating_view_exposes_the_blend_and_the_warning_flag(
 ) -> None:
     view = service.rating()
     assert view.r_hat == pytest.approx(800.0)
-    assert view.lambda_used == pytest.approx(90.0**2 / (90.0**2 + 350.0**2), abs=1e-9)
+    assert view.lambda_used == pytest.approx(
+        PERF_SIGMA**2 / (PERF_SIGMA**2 + RD_INIT**2), abs=1e-9
+    )
     assert view.calibration_warning is False
     assert 0.0 <= view.expected_score_at_current_level <= 1.0
 

@@ -43,9 +43,10 @@ def test_fr8_cold_start_is_fully_determined(levels) -> None:
     for mode in ChallengeMode:
         expected = nearest_level_id(levels, ideal_opponent_elo(R_INIT, mode))
         assert cold_start_level_id(levels, mode) == expected
-    # With the committed ladder these are concrete values.
+    # With the committed ladder (L3 653.7, L4 792.9) all three ideal opponents
+    # (comfort 729.6, balanced 800.0, stretch 856.1) sit closest to L4.
     assert cold_start_level_id(levels, ChallengeMode.BALANCED) == 4
-    assert cold_start_level_id(levels, ChallengeMode.COMFORT) == 3
+    assert cold_start_level_id(levels, ChallengeMode.COMFORT) == 4
     assert cold_start_level_id(levels, ChallengeMode.STRETCH) == 4
 
 
