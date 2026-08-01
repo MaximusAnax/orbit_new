@@ -1,0 +1,137 @@
+[
+  {
+    "id": "ench-1-power",
+    "source_id": "enchiridion-long",
+    "locator": "Enchiridion 1",
+    "text": "Of things some are in our power, and others are not. In our power are opinion, movement towards a thing, desire, aversion; and in a word, whatever are our own acts: not in our power are the body, property, reputation, offices; and in a word, whatever are not our own acts.",
+    "paraphrase": null,
+    "context_note": "The opening sentence of the Enchiridion and the Stoic method in brief: distinguish what is yours — judgment and will — from everything else, and locate the whole moral life in the former.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ench-5-opinions",
+    "source_id": "enchiridion-long",
+    "locator": "Enchiridion 5",
+    "text": "Men are disturbed not by the things which happen, but by the opinions about the things: for example, death is nothing terrible, for if it were, it would have seemed so to Socrates; for the opinion about death, that it is terrible, is the terrible thing.",
+    "paraphrase": null,
+    "context_note": "Fear is analyzed as judgment: the terror lies in the opinion, not the event. The claim underwrites Stoic courage and the school's composure toward death.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ench-15-banquet",
+    "source_id": "enchiridion-long",
+    "locator": "Enchiridion 15",
+    "text": "Remember that thou oughtest to behave in life as thou dost at a banquet. Suppose that something is carried round and is opposite to thee. Stretch out thy hand and take a portion with decency. Suppose that it passes by thee. Do not detain it. Suppose that it is not yet come to thee. Do not send your desire forward to it, but wait till it is opposite to thee.",
+    "paraphrase": null,
+    "context_note": "The banquet image: take with decency what comes to you, detain nothing, reach for nothing — the Stoic discipline of desire that leaves envy without an object.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ench-33-silence",
+    "source_id": "enchiridion-long",
+    "locator": "Enchiridion 33",
+    "text": "Let silence be the general rule, or let only what is necessary be said, and in few words.",
+    "paraphrase": null,
+    "context_note": "From the Enchiridion's rules of conduct, which go on to bar talk 'about men, as blaming them, or praising them, or comparing them' — the Stoic speech discipline gossip fails twice over.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ench-44-cohere",
+    "source_id": "enchiridion-long",
+    "locator": "Enchiridion 44",
+    "text": "These reasonings do not cohere: I am richer than you, therefore I am better than you; I am more eloquent than you, therefore I am better than you. On the contrary these rather cohere, I am richer than you, therefore my possessions are greater than yours: I am more eloquent than you, therefore my speech is superior to yours. But you are neither possession nor speech.",
+    "paraphrase": null,
+    "context_note": "The logic lesson against pride: externals compare externals, never persons. Superiority in goods or gifts licenses no claim of being better.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ench-45-bathes",
+    "source_id": "enchiridion-long",
+    "locator": "Enchiridion 45",
+    "text": "Does a man bathe quickly (early)? do not say that he bathes badly, but that he bathes quickly. Does a man drink much wine? do not say that he does this badly, but say that he drinks much. For before you shall have determined the opinion, how do you know whether he is acting wrong?",
+    "paraphrase": null,
+    "context_note": "Judgment withheld pending knowledge of the agent's reasons: describe the act, not the verdict. The Stoic case for epistemic humility about others.",
+    "transcription_checked": true
+  },
+  {
+    "id": "meditations-2-1",
+    "source_id": "meditations-long",
+    "locator": "Meditations II.1",
+    "text": "Begin the morning by saying to thyself, I shall meet with the busy-body, the ungrateful, arrogant, deceitful, envious, unsocial. All these things happen to them by reason of their ignorance of what is good and evil. But I who have seen the nature of the good that it is beautiful, and of the bad that it is ugly, and the nature of him who does wrong, that it is akin to me, can neither be injured by any of them, for no one can fix on me what is ugly, nor can I be angry with my kinsman, nor hate him. For we are made for co-operation, like feet, like hands, like eyelids, like the rows of the upper and lower teeth.",
+    "paraphrase": null,
+    "context_note": "The emperor's morning rehearsal: wrongdoers act from ignorance and remain kin, so neither anger nor hatred fits — cooperation is what we are made for.",
+    "transcription_checked": true
+  },
+  {
+    "id": "meditations-6-6-revenge",
+    "source_id": "meditations-long",
+    "locator": "Meditations VI.6",
+    "text": "The best way of avenging thyself is not to become like the wrong-doer.",
+    "paraphrase": null,
+    "context_note": "Marcus's one-line answer to revenge: the only injury the wrongdoer can really do you is to make you resemble him.",
+    "transcription_checked": true
+  },
+  {
+    "id": "meditations-4-4-state",
+    "source_id": "meditations-long",
+    "locator": "Meditations IV.4",
+    "text": "If our intellectual part is common, the reason also, in respect of which we are rational beings, is common: if this is so, common also is the reason which commands us what to do, and what not to do; if this is so, there is a common law also; if this is so, we are fellow-citizens; if this is so, we are members of some political community; if this is so, the world is in a manner a state.",
+    "paraphrase": null,
+    "context_note": "The cosmopolis argument: shared reason implies shared law and common citizenship of the world — the Stoic ground for obligations to law and to strangers alike.",
+    "transcription_checked": true
+  },
+  {
+    "id": "meditations-8-59-for-one-another",
+    "source_id": "meditations-long",
+    "locator": "Meditations VIII.59",
+    "text": "Men exist for the sake of one another. Teach them then or bear with them.",
+    "paraphrase": null,
+    "context_note": "Two sentences carrying the whole social ethic: existence is mutual, so the options before any difficult person are instruction or patience — never contempt.",
+    "transcription_checked": true
+  },
+  {
+    "id": "seneca-ep-70-ought",
+    "source_id": "seneca-letters-gummere",
+    "locator": "Letters 70",
+    "text": "the wise man will live as long as he ought, not as long as he can.",
+    "paraphrase": null,
+    "context_note": "Seneca's letter on the timeliness of death: the Stoics held that a rational exit can be permitted when disease or tyranny destroys the possibility of a rational life — a position later traditions rejected, and one bounded even here by duty.",
+    "transcription_checked": true
+  },
+  {
+    "id": "discourses-1-9-signal",
+    "source_id": "discourses-long",
+    "locator": "Discourses I.9",
+    "text": "but wait for God: when he shall give the signal, and release you from this service, then go to him.",
+    "paraphrase": null,
+    "context_note": "Epictetus restrains eager departure from life: remain at the post assigned until the signal is given. The Stoic permission for suicide is disciplined by this counter-weight of service.",
+    "transcription_checked": true
+  },
+  {
+    "id": "seneca-ep-83-madness",
+    "source_id": "seneca-letters-gummere",
+    "locator": "Letters 83",
+    "text": "drunkenness is nothing but voluntary madness.",
+    "paraphrase": null,
+    "context_note": "Seneca's letter on drunkenness: intoxication surrenders the ruling faculty on purpose, and every vice is nearer the surface once it has. Moderation for the Stoics protects judgment, their only good.",
+    "transcription_checked": true
+  },
+  {
+    "id": "seneca-ep-13-imagination",
+    "source_id": "seneca-letters-gummere",
+    "locator": "Letters 13",
+    "text": "there are more things, Lucilius, likely to frighten us than there are to crush us; we suffer more often in imagination than in reality.",
+    "paraphrase": null,
+    "context_note": "The diagnosis beneath Stoic courage: most fear is anticipatory fiction. Testing the projection against the present fact is the school's first exercise against fear.",
+    "transcription_checked": true
+  },
+  {
+    "id": "crito-51b-thrice-wrong",
+    "source_id": "plato-crito-jowett",
+    "locator": "Crito 51b",
+    "text": "And he who disobeys us is, as we maintain, thrice wrong: first, because in disobeying us he is disobeying his parents; secondly, because we are the authors of his education; thirdly, because he has made an agreement with us that he will duly obey our commands;",
+    "paraphrase": null,
+    "context_note": "The Laws of Athens speak in Socrates's refusal to escape: obedience grounded in gratitude and agreement. The Stoics took the imprisoned Socrates as their exemplar of lawful constancy — while he had also refused the Thirty's unjust order, marking the limit.",
+    "transcription_checked": true
+  }
+]

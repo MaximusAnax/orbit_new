@@ -394,5 +394,29 @@
     "license": "public_domain",
     "locator_scheme": "stephanus",
     "url": "https://www.gutenberg.org/ebooks/1657"
+  },
+  {
+    "id": "discourses-long",
+    "title": "The Discourses of Epictetus",
+    "author": "Epictetus (recorded by Arrian)",
+    "composed_era": "c. 108 CE",
+    "translator": "George Long",
+    "translation_year": 1877,
+    "edition_note": "The Discourses of Epictetus, with the Encheiridion and Fragments",
+    "license": "public_domain",
+    "locator_scheme": "book_section",
+    "url": "https://www.gutenberg.org/ebooks/45109"
+  },
+  {
+    "id": "kant-cpr-abbott",
+    "title": "Critique of Practical Reason",
+    "author": "Immanuel Kant",
+    "composed_era": "1788",
+    "translator": "Thomas Kingsmill Abbott",
+    "translation_year": 1873,
+    "edition_note": "in Kant's Critique of Practical Reason and Other Works, cited by Academy pagination",
+    "license": "public_domain",
+    "locator_scheme": "academy_ed",
+    "url": "https://www.gutenberg.org/ebooks/5683"
   }
 ]

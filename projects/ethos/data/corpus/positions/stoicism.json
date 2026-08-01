@@ -1,0 +1,485 @@
+[
+  {
+    "id": "suicide_and_self_harm--stoicism",
+    "topic_id": "suicide_and_self_harm",
+    "tradition_id": "stoicism",
+    "stance": "context_dependent",
+    "summary": "The Stoics are the tradition that did not condemn suicide outright: when tyranny or ruin destroys the possibility of a rational, virtuous life, the wise man may make a reasoned exit — living as long as he ought, not as long as he can. But the same school commands the opposite of despair: remain at your post until the signal is given, for you are in service. The permission belongs to extremity and reason, never to anguish.",
+    "reasoning": [
+      {
+        "text": "Seneca's formula makes the measure of life its moral use, not its length.",
+        "passage_id": "seneca-ep-70-ought"
+      },
+      {
+        "text": "Epictetus restrains eager departure: wait for the signal; the post is not yours to abandon.",
+        "passage_id": "discourses-1-9-signal"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "seneca-ep-70-ought",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "discourses-1-9-signal",
+        "role": "complicating",
+        "note": "the counter-weight of service"
+      }
+    ],
+    "intra_tradition_note": "Roman Stoic practice (Cato's death) and Epictetus's service language sit in real tension; the school's own condition — a fully rational judgment — is exactly what despair removes.",
+    "further_reading": [
+      {
+        "author": "William O. Stephens",
+        "title": "Stoic Ethics: Epictetus and Happiness as Freedom",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Seneca Ep. 70 (Gummere) and Discourses I.9 (Long)."
+  },
+  {
+    "id": "euthanasia_and_end_of_life--stoicism",
+    "topic_id": "euthanasia_and_end_of_life",
+    "tradition_id": "stoicism",
+    "stance": "permitted",
+    "summary": "Death is not terrible — the opinion that it is terrible is the terrible thing — and when incurable disease dismantles the mind's use, the Stoics permitted a reasoned departure. Their concern at the end of life is the quality of the remaining agency: composure, discharge of duties, gratitude without clinging. What they would not permit is terror-driven flight in either direction — from death, or from life.",
+    "reasoning": [
+      {
+        "text": "The wise man weighs when death ought to come, not merely when it can be postponed.",
+        "passage_id": "seneca-ep-70-ought"
+      },
+      {
+        "text": "Death's terror is a judgment, revisable like any other — the ground of Stoic composure at the end.",
+        "passage_id": "ench-5-opinions"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "seneca-ep-70-ought",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ench-5-opinions",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "James Warren",
+        "title": "Facing Death: Epicurus and his Critics",
+        "year": 2004,
+        "kind": "book",
+        "url": null,
+        "note": "the ancient debate Stoicism joins"
+      }
+    ],
+    "curator_note": "Drafted from Seneca Ep. 70 (Gummere) and Enchiridion 5 (Long)."
+  },
+  {
+    "id": "forgiveness_and_revenge--stoicism",
+    "topic_id": "forgiveness_and_revenge",
+    "tradition_id": "stoicism",
+    "stance": "reframed",
+    "summary": "The Stoic does not exactly forgive — he declines to be injured. Wrongdoers act from ignorance of good and evil and remain kin; no one can fix ugliness on you but yourself, so there is nothing to avenge. The best revenge is not to become like the wrong-doer. What other traditions frame as pardoning an injury, Stoicism reframes as correcting the judgment that an injury occurred.",
+    "reasoning": [
+      {
+        "text": "The best way of avenging thyself is not to become like the wrong-doer.",
+        "passage_id": "meditations-6-6-revenge"
+      },
+      {
+        "text": "The morning rehearsal: offenders act from ignorance, remain kin, and cannot injure the ruling faculty.",
+        "passage_id": "meditations-2-1"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "meditations-6-6-revenge",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "meditations-2-1",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Martha C. Nussbaum",
+        "title": "Anger and Forgiveness: Resentment, Generosity, Justice",
+        "year": 2016,
+        "kind": "book",
+        "url": null,
+        "note": "a modern engagement with the Stoic line"
+      }
+    ],
+    "curator_note": "Drafted from Meditations VI.6 and II.1 (Long)."
+  },
+  {
+    "id": "anger_and_hatred--stoicism",
+    "topic_id": "anger_and_hatred",
+    "tradition_id": "stoicism",
+    "stance": "forbidden",
+    "summary": "Anger, for the Stoics, is never useful and never deserved: Seneca devoted three books to calling it a brief madness that outsources your peace to other people's behavior. The remedy is preparation and delay — rehearse at dawn the difficult people you will meet, remember they act from ignorance and remain kin, and let no impression of insult pass unexamined. We are made for cooperation, and anger is the judgment that we are not.",
+    "reasoning": [
+      {
+        "text": "The morning rehearsal preempts anger by re-describing the offender as ignorant kin, incapable of real injury.",
+        "passage_id": "meditations-2-1"
+      },
+      {
+        "text": "Becoming like the wrong-doer is the only defeat; retaliation in kind is that becoming.",
+        "passage_id": "meditations-6-6-revenge"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "meditations-2-1",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "meditations-6-6-revenge",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Seneca's De Ira argues against Aristotle that even moderate anger is a fault — the Stoic hard line against the Peripatetic mean.",
+    "further_reading": [
+      {
+        "author": "Seneca (trans. Aubrey Stewart)",
+        "title": "Of Anger (Minor Dialogues)",
+        "year": 1900,
+        "kind": "primary_translation",
+        "url": "https://en.wikisource.org/wiki/Of_Anger",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Meditations II.1 and VI.6 (Long), with De Ira for the doctrine."
+  },
+  {
+    "id": "hospitality_and_strangers--stoicism",
+    "topic_id": "hospitality_and_strangers",
+    "tradition_id": "stoicism",
+    "stance": "encouraged",
+    "summary": "The Stoic ground for welcoming the stranger is citizenship: shared reason makes the world in a manner a state, so no one arrives foreign. Men exist for the sake of one another — teach them or bear with them — and the circles of concern are to be drawn inward until the outsider stands where kin stood. Hospitality is not sentiment but the practical form of cosmopolitan duty.",
+    "reasoning": [
+      {
+        "text": "Men exist for one another; the only options before any person are instruction or patience.",
+        "passage_id": "meditations-8-59-for-one-another"
+      },
+      {
+        "text": "Shared reason makes a common law and common citizenship — the stranger is already a fellow-citizen.",
+        "passage_id": "meditations-4-4-state"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "meditations-8-59-for-one-another",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "meditations-4-4-state",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Martha C. Nussbaum",
+        "title": "The Cosmopolitan Tradition: A Noble but Flawed Ideal",
+        "year": 2019,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Meditations VIII.59 and IV.4 (Long), with Hierocles' circles in view."
+  },
+  {
+    "id": "speech_and_gossip--stoicism",
+    "topic_id": "speech_and_gossip",
+    "tradition_id": "stoicism",
+    "stance": "discouraged",
+    "summary": "Let silence be the general rule, and when you speak, say only what is necessary and in few words — the Enchiridion's speech code goes on to bar precisely the staples of gossip: talk of persons, blaming, praising, comparing. The discipline is not secrecy but economy: chatter about others feeds the appetite for externals, and every word spent on reputation is attention withdrawn from one's own judgments.",
+    "reasoning": [
+      {
+        "text": "Silence as default and necessity as the license for speech define the Stoic economy of the tongue.",
+        "passage_id": "ench-33-silence"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ench-33-silence",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "A. A. Long",
+        "title": "Epictetus: A Stoic and Socratic Guide to Life",
+        "year": 2002,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Enchiridion 33 (Long)."
+  },
+  {
+    "id": "intoxicants_and_sobriety--stoicism",
+    "topic_id": "intoxicants_and_sobriety",
+    "tradition_id": "stoicism",
+    "stance": "discouraged",
+    "summary": "Drunkenness is voluntary madness: the one good the Stoics recognize is the ruling faculty, and intoxication rents it out on purpose. Seneca's letter observes that wine does not create vices but uncovers and amplifies them, and that habit built on release soon owns its builder. Wine itself is an indifferent; the deliberate surrender of judgment is not.",
+    "reasoning": [
+      {
+        "text": "Naming drunkenness voluntary madness locates the wrong in the chosen surrender of reason.",
+        "passage_id": "seneca-ep-83-madness"
+      },
+      {
+        "text": "The dichotomy of control makes judgment the only true possession — the thing intoxication pawns.",
+        "passage_id": "ench-1-power"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "seneca-ep-83-madness",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ench-1-power",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "A. A. Long",
+        "title": "Epictetus: A Stoic and Socratic Guide to Life",
+        "year": 2002,
+        "kind": "book",
+        "url": null,
+        "note": "on the discipline of assent"
+      }
+    ],
+    "curator_note": "Drafted from Seneca Ep. 83 (Gummere) and Enchiridion 1 (Long)."
+  },
+  {
+    "id": "pride_and_humility--stoicism",
+    "topic_id": "pride_and_humility",
+    "tradition_id": "stoicism",
+    "stance": "reframed",
+    "summary": "Stoicism attacks pride at its logic: I am richer than you, therefore I am better — the reasonings do not cohere, for you are neither possession nor speech. Nothing external can make a person better or worse, so boasting is a category error and servility its mirror image. What replaces both is accuracy: an unanxious estimate of what is yours (your judgments) and what is not (everything else, applause included).",
+    "reasoning": [
+      {
+        "text": "Externals compare externals, never persons — the syllogisms of superiority fail.",
+        "passage_id": "ench-44-cohere"
+      },
+      {
+        "text": "Only opinion, desire, and act are our own; rank and reputation are not.",
+        "passage_id": "ench-1-power"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ench-44-cohere",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ench-1-power",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "William B. Irvine",
+        "title": "A Guide to the Good Life: The Ancient Art of Stoic Joy",
+        "year": 2008,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Enchiridion 44 and 1 (Long)."
+  },
+  {
+    "id": "envy_and_contentment--stoicism",
+    "topic_id": "envy_and_contentment",
+    "tradition_id": "stoicism",
+    "stance": "discouraged",
+    "summary": "Behave in life as at a banquet: take with decency what comes opposite you, detain nothing, and do not send desire ahead to dishes still down the table. Envy is desire dispatched toward what is another's — a double error, craving an external and craving one not even offered to you. Contentment is not resignation but the trained conviction that nothing outside your judgment was ever the good.",
+    "reasoning": [
+      {
+        "text": "The banquet image trains desire to wait and to release — envy has no purchase on such a diner.",
+        "passage_id": "ench-15-banquet"
+      },
+      {
+        "text": "Another's possessions are doubly not in our power; grieving at them is opinion, not perception.",
+        "passage_id": "ench-1-power"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ench-15-banquet",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ench-1-power",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "William B. Irvine",
+        "title": "A Guide to the Good Life: The Ancient Art of Stoic Joy",
+        "year": 2008,
+        "kind": "book",
+        "url": null,
+        "note": "on desire and negative visualization"
+      }
+    ],
+    "curator_note": "Drafted from Enchiridion 15 and 1 (Long)."
+  },
+  {
+    "id": "obedience_and_civil_authority--stoicism",
+    "topic_id": "obedience_and_civil_authority",
+    "tradition_id": "stoicism",
+    "stance": "context_dependent",
+    "summary": "Shared reason makes a common law and the world in a manner a state, so lawfulness is not convention but participation in the cosmic city. Socrates in prison — refusing escape, having earlier refused the Thirty's unjust order — is the school's exemplar: obey the lawful claims of your city, and refuse serenely what would make you unjust. The Stoic obeys everything except commands to vice.",
+    "reasoning": [
+      {
+        "text": "Common reason implies common law and fellow-citizenship — obedience grounded above the magistrate.",
+        "passage_id": "meditations-4-4-state"
+      },
+      {
+        "text": "The Laws' argument from nurture and agreement gives obedience its personal ground; Socrates's own refusals mark its limit.",
+        "passage_id": "crito-51b-thrice-wrong"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "meditations-4-4-state",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "crito-51b-thrice-wrong",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Malcolm Schofield",
+        "title": "The Stoic Idea of the City",
+        "year": 1991,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Meditations IV.4 (Long) and Crito 51b (Jowett)."
+  },
+  {
+    "id": "courage_and_fear--stoicism",
+    "topic_id": "courage_and_fear",
+    "tradition_id": "stoicism",
+    "stance": "encouraged",
+    "summary": "We suffer more often in imagination than in reality: most fear is anticipatory fiction, and the Stoic drill is to test the projection against the present fact. Courage is one of the four virtues, but it begins as epistemology — death is not terrible, the opinion is — and matures as practice: premeditation of adversity, voluntary discomfort, and the steady recollection of what is and is not in your power.",
+    "reasoning": [
+      {
+        "text": "Fear outruns fact; imagination is where most suffering happens and where the correction applies.",
+        "passage_id": "seneca-ep-13-imagination"
+      },
+      {
+        "text": "The terror of death is a judgment about death, revisable like any judgment.",
+        "passage_id": "ench-5-opinions"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "seneca-ep-13-imagination",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ench-5-opinions",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "William O. Stephens",
+        "title": "Stoic Ethics: Epictetus and Happiness as Freedom",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Seneca Ep. 13 (Gummere) and Enchiridion 5 (Long)."
+  },
+  {
+    "id": "judging_others--stoicism",
+    "topic_id": "judging_others",
+    "tradition_id": "stoicism",
+    "stance": "discouraged",
+    "summary": "Does a man bathe quickly? Say that he bathes quickly, not that he bathes badly — until you know the reasons, the verdict outruns the evidence. Stoic practice restricts judgment to what it can actually reach: your own assents. Others' acts are externals; their springs are invisible; and the morning rehearsal has already re-described the difficult as ignorant kin to be taught or borne with.",
+    "reasoning": [
+      {
+        "text": "Describe the act, withhold the verdict: judgment waits on knowledge of the agent's opinion.",
+        "passage_id": "ench-45-bathes"
+      },
+      {
+        "text": "Teach them or bear with them — the two permitted responses to the faulty.",
+        "passage_id": "meditations-8-59-for-one-another"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ench-45-bathes",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "meditations-8-59-for-one-another",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "A. A. Long",
+        "title": "Epictetus: A Stoic and Socratic Guide to Life",
+        "year": 2002,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Enchiridion 45 and Meditations VIII.59 (Long)."
+  }
+]

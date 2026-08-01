@@ -1,0 +1,110 @@
+[
+  {
+    "id": "kant-groundwork-4-421-universal",
+    "source_id": "kant-groundwork-abbott",
+    "locator": "Groundwork 4:421",
+    "text": "Act only on that maxim whereby thou canst at the same time will that it should become a universal law.",
+    "paraphrase": null,
+    "context_note": "The first formulation of the categorical imperative: the universalization test that every maxim of action must pass.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-groundwork-4-429-humanity",
+    "source_id": "kant-groundwork-abbott",
+    "locator": "Groundwork 4:429",
+    "text": "So act as to treat humanity, whether in thine own person or in that of any other, in every case as an end withal, never as means only.",
+    "paraphrase": null,
+    "context_note": "The humanity formulation: rational nature — in oneself as much as in others — may never be used merely as a means. The ground of Kantian dignity.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-groundwork-4-403-false-promise",
+    "source_id": "kant-groundwork-abbott",
+    "locator": "Groundwork 4:403",
+    "text": "while I can will the lie, I can by no means will that lying should be a universal law. For with such a law there would be no promises at all,",
+    "paraphrase": null,
+    "context_note": "The false-promise example worked through the universalization test: a world under a law of lying promises destroys the practice of promising the liar depends on.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-groundwork-4-422-suicide",
+    "source_id": "kant-groundwork-abbott",
+    "locator": "Groundwork 4:422",
+    "text": "a system of nature of which it should be a law to destroy life by means of the very feeling whose special nature it is to impel to the improvement of life would contradict itself, and therefore could not exist as a system of nature;",
+    "paraphrase": null,
+    "context_note": "Kant's suicide example: self-love, whose function is to further life, cannot without contradiction ground a law of self-destruction. The duty of self-preservation is a duty to one's own humanity.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-groundwork-4-423-beneficence",
+    "source_id": "kant-groundwork-abbott",
+    "locator": "Groundwork 4:423",
+    "text": "A fourth, who is in prosperity, while he sees that others have to contend with great wretchedness and that he could help them, thinks: What concern is it of mine? Let everyone be as happy as Heaven pleases, or as he can make himself; I will take nothing from him nor even envy him, only I do not wish to contribute anything to his welfare or to his assistance in distress!",
+    "paraphrase": null,
+    "context_note": "The beneficence example: the prosperous non-helper's maxim can be conceived but not willed universally, since he too will someday need the love and sympathy of others. Beneficence is thus a duty, though a wide one.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-lies-8-427-sacred",
+    "source_id": "kant-lies-abbott",
+    "locator": "Supposed Right 8:427",
+    "text": "To be truthful (honest) in all declarations, therefore, is a sacred and absolutely commanding decree of reason, limited by no expediency.",
+    "paraphrase": null,
+    "context_note": "Kant's notorious late essay against Benjamin Constant: truthfulness admits no exception even to the murderer at the door. The hard edge of the Kantian position, which even sympathetic Kantians have laboured to soften.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-cpr-5-27-deposit",
+    "source_id": "kant-cpr-abbott",
+    "locator": "Practical Reason 5:27",
+    "text": "that everyone may deny a deposit of which no one can produce a proof, and I at once become aware that such a principle, viewed as a law, would annihilate itself, because the result would be that there would be no deposits at all.",
+    "paraphrase": null,
+    "context_note": "The deposit example: a universal law of keeping unprovable deposits for oneself abolishes the institution of deposit — Kant's model for why appropriation of entrusted or another's property self-destructs as law.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-law-6-333-island",
+    "source_id": "kant-law-hastie",
+    "locator": "Rechtslehre 6:333",
+    "text": "Even if a civil society resolved to dissolve itself with the consent of all its members—as might be supposed in the case of a people inhabiting an island resolving to separate and scatter themselves throughout the whole world—the last murderer lying in prison ought to be executed before the resolution was carried out.",
+    "paraphrase": null,
+    "context_note": "The island passage: Kant's strict retributivism makes execution of the murderer a demand of justice itself, owed even by a society about to disband — the strongest philosophical defense of capital punishment on record.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-law-6-277-marriage",
+    "source_id": "kant-law-hastie",
+    "locator": "Rechtslehre 6:277",
+    "text": "the union of two persons of different sex for life-long reciprocal possession of their sexual properties.",
+    "paraphrase": null,
+    "context_note": "Kant's juridical definition of marriage as a contract of reciprocal possession — much criticized, but load-bearing: only within a union of equal reciprocal right, he argues, can persons share intimacy without using each other merely as means.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-law-6-320-bear",
+    "source_id": "kant-law-hastie",
+    "locator": "Rechtslehre 6:320",
+    "text": "it is the duty of the people to bear any abuse of the supreme power, even then when it should be considered unbearable.",
+    "paraphrase": null,
+    "context_note": "Kant's denial of a right of revolution: the juridical condition itself depends on there being no rightful power to overthrow it. He pairs this with the ruler's duty of reform and the citizen's freedom of the pen.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-peace-8-345-armies",
+    "source_id": "kant-peace-smith",
+    "locator": "Perpetual Peace 8:345",
+    "text": "Standing armies (miles perpetuus) shall in time be totally abolished.",
+    "paraphrase": null,
+    "context_note": "The third preliminary article: armies ready for war themselves provoke it, and hiring men to kill treats them as mere machines in the hand of the state — the means/ends test applied to war's apparatus.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kant-peace-8-358-hospitality",
+    "source_id": "kant-peace-smith",
+    "locator": "Perpetual Peace 8:358",
+    "text": "The rights of men, as citizens of the world, shall be limited to the conditions of universal hospitality.",
+    "paraphrase": null,
+    "context_note": "The third definitive article: a stranger arriving on another's territory may not be treated as an enemy — a right of visit grounded in common possession of the earth's surface, and Kant wields it against colonial conquest in the same section.",
+    "transcription_checked": true
+  }
+]
