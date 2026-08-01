@@ -48,11 +48,11 @@ def _fail(message: str, code: int = 1) -> None:
 @app.command()
 def init() -> None:
     """Create the database and load + validate the corpus."""
-    from ethos.validate import validate_corpus
+    from ethos.engine.corpus import validate_corpus
 
     data_dir = default_data_dir()
     corpus = load_corpus(data_dir)
-    results = validate_corpus(data_dir, corpus, _near_unanimous())
+    results = validate_corpus(corpus, _near_unanimous())
     failures = {gate: errs for gate, errs in results.items() if errs}
     if failures:
         for gate, errs in failures.items():
@@ -268,11 +268,11 @@ def corpus_stats() -> None:
 @corpus_app.command("validate")
 def corpus_validate() -> None:
     """Run the corpus gates (C1-C16) against data/."""
-    from ethos.validate import validate_corpus
+    from ethos.engine.corpus import validate_corpus
 
     data_dir = default_data_dir()
     corpus = load_corpus(data_dir)
-    results = validate_corpus(data_dir, corpus, _near_unanimous())
+    results = validate_corpus(corpus, _near_unanimous())
     bad = False
     for gate, errors in results.items():
         status = "PASS" if not errors else "FAIL"
