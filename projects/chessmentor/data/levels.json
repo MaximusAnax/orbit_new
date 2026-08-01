@@ -10,10 +10,10 @@
     "blunder_margin_hi_cp": 900,
     "book_plies": 2,
     "elo_internal": 400.0,
-    "acpl_mean": 210.0,
-    "acpl_std": 55.0,
+    "acpl_mean": 223.7,
+    "acpl_std": 42.1,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -26,11 +26,11 @@
     "blunder_margin_lo_cp": 80,
     "blunder_margin_hi_cp": 875,
     "book_plies": 3,
-    "elo_internal": 550.0,
-    "acpl_mean": 186.0,
-    "acpl_std": 50.0,
+    "elo_internal": 522.2,
+    "acpl_mean": 205.6,
+    "acpl_std": 44.8,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -43,11 +43,11 @@
     "blunder_margin_lo_cp": 80,
     "blunder_margin_hi_cp": 800,
     "book_plies": 3,
-    "elo_internal": 700.0,
-    "acpl_mean": 163.0,
-    "acpl_std": 46.0,
+    "elo_internal": 653.7,
+    "acpl_mean": 185.0,
+    "acpl_std": 46.9,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -60,11 +60,11 @@
     "blunder_margin_lo_cp": 80,
     "blunder_margin_hi_cp": 775,
     "book_plies": 4,
-    "elo_internal": 850.0,
-    "acpl_mean": 142.0,
-    "acpl_std": 42.0,
+    "elo_internal": 792.9,
+    "acpl_mean": 162.7,
+    "acpl_std": 48.0,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -77,11 +77,11 @@
     "blunder_margin_lo_cp": 80,
     "blunder_margin_hi_cp": 725,
     "book_plies": 4,
-    "elo_internal": 1000.0,
-    "acpl_mean": 123.0,
-    "acpl_std": 38.0,
+    "elo_internal": 938.3,
+    "acpl_mean": 139.7,
+    "acpl_std": 47.9,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -94,11 +94,11 @@
     "blunder_margin_lo_cp": 80,
     "blunder_margin_hi_cp": 650,
     "book_plies": 5,
-    "elo_internal": 1150.0,
-    "acpl_mean": 106.0,
-    "acpl_std": 34.0,
+    "elo_internal": 1088.4,
+    "acpl_mean": 117.0,
+    "acpl_std": 46.4,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -111,11 +111,11 @@
     "blunder_margin_lo_cp": 90,
     "blunder_margin_hi_cp": 600,
     "book_plies": 6,
-    "elo_internal": 1300.0,
-    "acpl_mean": 91.0,
-    "acpl_std": 30.0,
+    "elo_internal": 1241.5,
+    "acpl_mean": 95.7,
+    "acpl_std": 43.6,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -128,11 +128,11 @@
     "blunder_margin_lo_cp": 95,
     "blunder_margin_hi_cp": 525,
     "book_plies": 7,
-    "elo_internal": 1450.0,
-    "acpl_mean": 78.0,
-    "acpl_std": 27.0,
+    "elo_internal": 1396.3,
+    "acpl_mean": 76.4,
+    "acpl_std": 39.6,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -145,11 +145,11 @@
     "blunder_margin_lo_cp": 100,
     "blunder_margin_hi_cp": 450,
     "book_plies": 8,
-    "elo_internal": 1600.0,
-    "acpl_mean": 67.0,
-    "acpl_std": 24.0,
+    "elo_internal": 1551.0,
+    "acpl_mean": 59.8,
+    "acpl_std": 34.9,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   },
   {
@@ -162,11 +162,11 @@
     "blunder_margin_lo_cp": 100,
     "blunder_margin_hi_cp": 425,
     "book_plies": 8,
-    "elo_internal": 1750.0,
-    "acpl_mean": 58.0,
-    "acpl_std": 21.0,
+    "elo_internal": 1704.3,
+    "acpl_mean": 45.9,
+    "acpl_std": 29.9,
     "calibration_seed": 20260731,
-    "calibrated_at": "2026-07-31T00:00:00Z",
+    "calibrated_at": "2026-08-01T00:00:00Z",
     "engine_version": "0.1.0"
   }
 ]

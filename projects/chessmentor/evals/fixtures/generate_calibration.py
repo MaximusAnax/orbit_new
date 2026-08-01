@@ -286,6 +286,43 @@ def sha256_of(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def fit_acpl_model(
+    elos: list[float], means: list[float], stds: list[float]
+) -> tuple[list[float], list[float], dict[str, list[float]]]:
+    """Smooth the per-level ACPL anchors: ``log(acpl) = a + b*elo + c*elo^2``.
+
+    The committed anchors drive the FR-7b piecewise-linear ACPL -> Elo
+    inversion, whose local slope is ``gap / (acpl_mean[k] - acpl_mean[k+1])``.
+    A per-level sample mean over ``ACPL_GAMES_PER_LEVEL`` games carries a
+    6-13 cp standard error, and a 2-sigma wobble in one anchor can shrink a
+    true ~15 cp step to ~4 cp — turning the local inversion slope from ~8 into
+    ~35 Elo/cp and injecting that error into every performance rating.  The
+    ladder's ACPL is *designed* to fall smoothly along the one knob schedule
+    that drives it, so — exactly like the committed Elo curve (docs/REVIEW.md
+    B2) — the committed anchors come from a 3-parameter smooth fit and the raw
+    per-level measurements stay in the record (``acpl``) as the audit trail
+    (docs/REVIEW.md B7).  Monotonicity of the committed means is asserted here:
+    a fit that failed it would mean the ladder itself is broken.
+    """
+    design = np.array([[1.0, e, e * e] for e in elos], dtype=float)
+
+    def smooth(values: list[float]) -> tuple[list[float], list[float]]:
+        target = np.log(np.array(values, dtype=float))
+        coeffs, *_ = np.linalg.lstsq(design, target, rcond=None)
+        fitted = [float(v) for v in np.exp(design @ coeffs)]
+        return fitted, [float(c) for c in coeffs]
+
+    mean_fit, mean_coeffs = smooth(means)
+    std_fit, std_coeffs = smooth(stds)
+    for prev, nxt in zip(mean_fit, mean_fit[1:]):
+        if nxt >= prev:
+            raise SystemExit(
+                "smoothed acpl_mean is not strictly decreasing — the ladder's "
+                "ACPL response is broken; retune the knobs (FR-5)"
+            )
+    return mean_fit, std_fit, {"mean_log_quadratic": mean_coeffs, "std_log_quadratic": std_coeffs}
+
+
 def run(
     *,
     calibration_seed: int,
@@ -402,24 +439,38 @@ def run(
     print(f"  judging done in {time.perf_counter() - started:.0f}s", flush=True)
 
     acpl_records = []
-    acpl_by_level: dict[int, tuple[float, float]] = {}
+    raw_means: dict[int, float] = {}
+    raw_stds: dict[int, float] = {}
     for lid in level_ids:
         samples = [j for j in judged if int(j["level_id"]) == lid and int(j["n_moves"]) > 0]
         values = [float(j["acpl"]) for j in samples]
         if not values:  # pragma: no cover - defensive
             continue
-        mean = statistics.fmean(values)
-        std = statistics.stdev(values) if len(values) > 1 else 0.0
-        acpl_by_level[lid] = (mean, std)
+        raw_means[lid] = statistics.fmean(values)
+        raw_stds[lid] = statistics.stdev(values) if len(values) > 1 else 0.0
         acpl_records.append(
             {
                 "level_id": lid,
-                "mean": mean,
-                "std": std,
+                "mean": raw_means[lid],
+                "std": raw_stds[lid],
                 "n_games": len(values),
                 "n_moves": sum(int(j["n_moves"]) for j in samples),
             }
         )
+
+    # Committed anchors = the smooth fit; raw measurements stay in the record.
+    mean_fit, std_fit, acpl_fit_coeffs = fit_acpl_model(
+        [ratings[lid] for lid in level_ids],
+        [raw_means[lid] for lid in level_ids],
+        [max(raw_stds[lid], 1.0) for lid in level_ids],
+    )
+    acpl_by_level = {
+        lid: (mean_fit[k], std_fit[k]) for k, lid in enumerate(level_ids)
+    }
+    acpl_smoothed = [
+        {"level_id": lid, "mean": mean_fit[k], "std": std_fit[k]}
+        for k, lid in enumerate(level_ids)
+    ]
 
     # --- write levels.json (calibrated fields only) ------------------------- #
     levels_path = DATA_DIR / "levels.json"
@@ -447,6 +498,7 @@ def run(
         "games_per_skip_pair": games_skip,
         "acpl_games_per_level": acpl_games,
         "fit_model": "wls-quadratic-gaps (gap_k = a + b*k + c*k^2); see docs/REVIEW.md B2",
+        "acpl_fit_model": "log-quadratic in elo, committed anchors; see docs/REVIEW.md B7",
         "matches": matches,
         "elo_fit": elo_fit,
         "gap_fit": gap_fit,
@@ -454,6 +506,8 @@ def run(
         "gap_model": gap_model,
         "pair_residuals": pair_residuals,
         "acpl": acpl_records,
+        "acpl_smoothed": acpl_smoothed,
+        "acpl_fit_coefficients": acpl_fit_coeffs,
         "levels_sha256": sha256_of(levels_path),
     }
     return record

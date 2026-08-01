@@ -68,25 +68,25 @@ $ uv run chessmentor init --name Owner --challenge balanced --color white
 ChessMentor 0.1.0 initialised at the default database
   datasets: 10 levels, 113 opening lines, 13 advice entries — all validated
   profile:  Owner (balanced)
-  starting level: L4 (internal 850) — cold start for R_hat = 800
+  starting level: L4 (internal 793) — cold start for R_hat = 800
 
 $ uv run chessmentor levels
 internal rating R_hat = 800 | mode balanced (target 0.50)
-    lvl     elo      E depth  nodes  sigma     p   acpl
-    L1      400   0.91     1   1000    200  0.30    210
-    L2      550   0.81     1   1400    170  0.26    186
-    L3      700   0.64     2   2000    145  0.22    163
- -> L4      850   0.43     2   2800    120  0.18    142
-    L5     1000   0.24     3   3800     95  0.14    123
-    L6     1150   0.12     3   5000     72  0.10    106
-    L7     1300   0.05     4   6500     50  0.07     91
-    L8     1450   0.02     4   8500     32  0.04     78
-    L9     1600   0.01     5  11500     16  0.02     67
-    L10    1750   0.00     5  16000      0  0.00     58
+   lvl     elo      E depth  nodes  sigma     p   acpl
+   L1      400   0.91     5    240    205  0.31    224
+   L2      522   0.83     5    345    175  0.26    206
+   L3      654   0.70     5    430    154  0.23    185
+-> L4      793   0.51     5    555    135  0.20    163
+   L5      938   0.31     5    740    116  0.17    140
+   L6     1088   0.16     5   1030     96  0.15    117
+   L7     1242   0.07     5   1515     75  0.12     96
+   L8     1396   0.03     5   2175     56  0.08     76
+   L9     1551   0.01     5   3050     44  0.06     60
+   L10    1704   0.01     5   4200     35  0.04     46
 ```
 
-(The `elo`/`acpl` columns are whatever `data/levels.json` currently holds; they
-are re-derived by the FR-5 calibration run — see `data/README.md`.)
+(The `elo`/`acpl` columns are the FR-5 calibration run's output — see
+`data/README.md` and `evals/fixtures/calibration.json` for provenance.)
 
 `play` renders the board with `chess.Board.unicode()`, accepts SAN or UCI, and
 understands `board`, `moves`, `legal`, `resign` and `quit`. Quitting leaves the
@@ -95,20 +95,31 @@ picks it back up:
 
 ```
 $ chessmentor play --seed 4242 --level 2
-new game #1: you are white against L2 (internal 550)
+new game #1: you are white against L2 (internal 522) [level overridden]
 Enter a move in SAN (Nf3) or UCI (g1f3). Other commands: board, moves, legal, resign, quit.
   -----------------
 8 |♜|♞|♝|♛|♚|♝|♞|♜|
   -----------------
 7 |♟|♟|♟|♟|♟|♟|♟|♟|
   ...
-move> e4
-CPU plays c6 (book)
+move> e2e4
+CPU plays e6 (book)
+move> g1f3
+CPU plays Nf6 (depth 1, 345 nodes)
+move> b1c3
+CPU plays Nd5 (depth 1, 345 nodes)
+move> d2d4
+CPU plays b6 (depth 1, 345 nodes)
+move> a2a3
+CPU plays Nxc3 (depth 0, 345 nodes)
 move> resign
 You lose (resignation)
-judge pass: ACPL 41, accuracy 92.7%, 0 blunders / 0 mistakes / 1 inaccuracies
-internal rating 741 (glicko 786 +/- 247, move-quality 703, lambda 0.22) -> next opponent L3
+judge pass: ACPL 136, accuracy 71.2%, 2 blunders / 0 mistakes / 0 inaccuracies
+internal rating 656 (glicko 427 +/- 280, move-quality 965, lambda 0.57) -> next opponent L3
 ```
+
+(The scripted white moves ignored Black's play; the judge pass flags two of
+them as blunders and the move-quality channel drops accordingly.)
 
 Every command exits non-zero on error, with the message on stderr:
 

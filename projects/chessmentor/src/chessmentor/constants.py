@@ -39,8 +39,14 @@ RD_INFLATE_TO: Final[float] = 150.0
 
 # --- Move-quality channel (FR-7b/c) -----------------------------------------
 EWMA_ALPHA: Final[float] = 0.35
-PERF_SIGMA_1: Final[float] = 130.0
-PERF_SIGMA: Final[float] = 90.0
+#: SCOPE's D7 recipe with *measured* calibration inputs (docs/REVIEW.md B7):
+#: the FR-5 record's smoothed anchors give a per-game performance-rating s.d.
+#: of 325 Elo (mean over levels of acpl_std_k x local Elo-per-cp slope), not
+#: the ~130 the pre-calibration sizing assumed.  PERF_SIGMA_1 is that per-game
+#: s.d.; PERF_SIGMA = 325 * sqrt(EWMA_ALPHA/(2-EWMA_ALPHA)) * 1.5 = 224.5,
+#: exactly D7's steady-state-EWMA-times-1.5 construction, rounded to 225.
+PERF_SIGMA_1: Final[float] = 325.0
+PERF_SIGMA: Final[float] = 225.0
 PERF_CLAMP: Final[tuple[float, float]] = (200.0, 2100.0)
 
 # --- Channel-disagreement warning (FR-7d) -----------------------------------
