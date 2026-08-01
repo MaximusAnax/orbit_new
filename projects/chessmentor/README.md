@@ -174,8 +174,9 @@ The suite is hermetic: committed fixtures, the internal analyst at
 `JUDGE_BUDGET` (6 000 nodes/move), the committed opening book, an in-memory
 store, seeded RNG, no network and no wall-clock dependence. It plays real
 games (M1a: 72 adjudicated engine-vs-engine games; M10: 18 games through the
-production service), so a full pass takes roughly 30–45 minutes on four
-otherwise-idle cores.
+production service). A full pass measures **~15 minutes** on four otherwise-idle
+cores (907 s at the 2026-08-01 hardening pass); budget 30–45 minutes on a busy
+or slower box, which is the ceiling EVALS.md sized the suite against.
 
 | Metric | What it measures |
 |---|---|

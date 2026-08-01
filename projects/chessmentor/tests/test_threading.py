@@ -11,8 +11,10 @@ closed) from a thread that did not create it.  With the stdlib default
     sqlite3.ProgrammingError: SQLite objects created in a thread can only be
     used in that same thread.
 
-Measured before the fix by hammering the production wiring: 48/48 concurrent
-requests failed this way.  These tests run the **real** app against a **real**
+Measured before the fix by hammering the production wiring: 29 of 48 concurrent
+requests failed this way (a *sequential* client sneaks through every time —
+anyio reuses its idle workers LIFO — which is exactly why this hid).  With the
+fix, 48/48 succeed.  These tests run the **real** app against a **real**
 SQLite file — no in-memory repository, no pinned service, no mocks — so they
 fail if anyone reinstates the default, and they also exercise one repository
 shared by several threads (the shape a threaded server or a background worker
@@ -62,7 +64,7 @@ def _hammer(client: TestClient, path: str) -> list[str]:
                 if response.status_code != 200:
                     with lock:
                         failures.append(f"HTTP {response.status_code}: {response.text[:200]}")
-            except Exception as exc:  # noqa: BLE001 - the crash under test
+            except Exception as exc:  # the crash under test
                 with lock:
                     failures.append(f"{type(exc).__name__}: {exc}")
 
@@ -77,7 +79,7 @@ def test_sqlite_is_built_in_serialized_mode() -> None:
 
 
 def test_served_reads_survive_concurrent_threads(served: TestClient) -> None:
-    """Before the fix this produced 48 ``sqlite3.ProgrammingError``s."""
+    """Before the fix this produced 29 ``sqlite3.ProgrammingError``s out of 48."""
     assert _hammer(served, "/levels") == []
 
 
@@ -103,7 +105,7 @@ def test_served_writes_survive_concurrent_threads(served: TestClient) -> None:
                 if response.status_code != 200:
                     with lock:
                         failures.append(f"HTTP {response.status_code}: {response.text[:200]}")
-            except Exception as exc:  # noqa: BLE001 - the crash under test
+            except Exception as exc:  # the crash under test
                 with lock:
                     failures.append(f"{type(exc).__name__}: {exc}")
 
@@ -150,7 +152,7 @@ def test_one_repository_shared_across_threads_reads_and_writes(
                     )
                 )
                 repo.list_games()
-        except Exception as exc:  # noqa: BLE001 - the crash under test
+        except Exception as exc:  # the crash under test
             with lock:
                 failures.append(f"{type(exc).__name__}: {exc}")
 
@@ -206,7 +208,7 @@ def test_single_in_progress_guard_holds_under_concurrent_game_creation(
         except ConflictError:
             with lock:
                 conflicts += 1
-        except Exception as exc:  # noqa: BLE001 - the crash under test
+        except Exception as exc:  # the crash under test
             with lock:
                 other.append(f"{type(exc).__name__}: {exc}")
 

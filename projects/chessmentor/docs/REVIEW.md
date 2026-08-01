@@ -377,7 +377,9 @@ Two observations worth recording:
 
 ### H4 — Suite health snapshot (2026-08-01, after H1/H2)
 
-349 unit/integration tests pass; 16/16 scorecard gates pass; `ruff` clean;
+349 unit/integration tests pass *(corrected in H9: the collected count at that
+commit was 340 unit/integration + 26 gates = 366; "349" was miscounted)*;
+16/16 scorecard gates pass; `ruff` clean;
 `verify_all.py chessmentor` fully green. Determinism: two complete scorecard
 runs (including the 72 M1a games, 18 M10 games and every analyst pass)
 produced **byte-identical** JSON. Every documented CLI command was exercised
@@ -385,3 +387,209 @@ end to end against a real database (init, levels, profile show/set, play —
 including an interactive rated game with judge pass, rating event and
 controller step — games list/show/--pgn, analyze --nodes, import --as auto
 --analyze, rating --history, report --include-imported).
+
+## Hardening pass, part 2 (2026-08-01)
+
+The H1–H4 pass above was cut short by a container restart mid-run. This second
+pass re-ran everything it claimed and then went after the parts it had not
+touched: the *served* path, concurrency, and whether the engine's own telemetry
+is trustworthy. Three real defects came out of it — two production, one an
+eval/test blind spot — plus doc corrections. Nothing about the metrics, the
+gates, the denominators or the fixtures changed.
+
+### H5 — Defect: the served SQLite path crashed under concurrent requests
+
+**Symptom.** `SQLiteRepository.__init__` called `sqlite3.connect(path)` with the
+stdlib default `check_same_thread=True`. FR-14's handlers are sync `def`, so
+Starlette runs them in its thread pool, and FastAPI resolves a sync *generator*
+dependency (`get_service`) as two separate pool submissions — setup and
+teardown. Under concurrency those land on different worker threads, so the
+connection opened during setup is used, and closed, from a thread that did not
+create it.
+
+**Proof, before the fix.** Production wiring (`create_app()` with no pinned
+service, a real file DB, profile initialised), six client threads × eight
+`GET /levels` requests:
+
+```
+total requests: 48
+  ProgrammingError: 29        <- sqlite3.ProgrammingError: SQLite objects created in a
+  ok: 19                         thread can only be used in that same thread.
+```
+
+With the fix, 48/48 ok. The store-level shape was worse: one repository read
+from four threads gave 8/8 `ProgrammingError`. (The 29/48 split is why this hid
+for so long — the anyio pool reuses idle workers LIFO, so a *sequential* client
+sneaks through every time and only concurrency misaligns the workers.)
+
+**Fix.** `check_same_thread=False`, which is sound here because CPython's
+sqlite3 is built in serialized mode — `sqlite3.threadsafety == 3`, asserted by
+`test_sqlite_is_built_in_serialized_mode` so the premise cannot rot silently.
+
+**Why the unit tests missed it.** `tests/test_api.py` pins one in-*memory*
+service into `create_app(service=…)`, so it never exercises `get_service`, never
+opens a file connection, and never crosses a thread. The regression tests added
+here (`tests/test_threading.py`) deliberately use the production wiring instead.
+
+### H6 — Defect: `create_game`'s single-in-progress guard was not atomic
+
+Found while fixing H5, and independent of it. `create_game` reads "is a game
+already in progress?" and then inserts — a read-modify-write with no lock, on a
+connection that (after H5) several threads can now reach. `update_game`,
+`append_move`, `add_analysis` and `append_rating_event` have the same shape, and
+every `with self._connection:` block shares one implicit transaction
+process-wide, so a second thread entering one would have its partial work
+committed or rolled back by the first.
+
+**Proof.** Six threads released from a barrier all calling `create_game`, with
+the lock removed, over three runs:
+
+```
+AssertionError: 5 games created concurrently; the invariant allows exactly one
+AssertionError: 6 games created concurrently; …
+AssertionError: 5 games created concurrently; …
+```
+
+DATA_MODEL.md's single-in-progress invariant — and SCOPE.md decision 16's
+explicit promise that "concurrent creation is a 409, not a silent abandon" —
+simply did not hold. With the lock: exactly 1
+created, 5 `ConflictError`, and one in-progress row in the table, on every run.
+
+**Fix.** A `threading.RLock` on the repository, held across every write batch
+and every read-modify-write composite (re-entrant so the guards' own reads nest
+inside it). Reads that are a single statement stay unlocked; sqlite3's
+serialized mode already protects those.
+
+**Guard.** `tests/test_threading.py` — 6 tests, all against a real SQLite file:
+the production-wired app hammered on two read endpoints and one write endpoint,
+one repository shared across threads, and the `create_game` race. With
+`check_same_thread` reverted, **5 of the 6 fail** (the sixth is the
+`sqlite3.threadsafety == 3` premise check, which is unaffected by design); with
+only the `create_game` lock removed, the race test fails on every run.
+
+### H7 — Defect (eval blind spot): nothing checked that `cpu_meta` told the truth
+
+M9 (throttle fidelity, gate = 1.0) reads `blunder_rolled`, `best_score_cp`,
+`score_cp` and `root_moves` back out of the metadata **the throttle itself
+wrote**, and so did all fifteen of `test_throttle.py`'s FR-4 tests. A throttle
+that skipped the blunder injection but recorded a convincing story would satisfy
+every one of them — which matters, because M9 is the *only* gate that makes a
+budgets-only ladder impossible (H3 showed M1a stays at 0.72 under that
+mutation).
+
+**Proof.** Mutating `choose_cpu_move` to play the best move while still
+reporting `blunder_injected=True` with the blunder's score: the 15 existing
+FR-4 tests all still pass. The new
+`test_fr4_cpu_meta_scores_match_an_independent_search_of_the_same_position`
+fails immediately (`score_cp does not match the independent search's score for
+the played move: -61 != 142`).
+
+**Fix.** That test: it re-runs FR-4's single search at the same budget — legal
+under FR-2's per-call-TT determinism guarantee — and checks `root_moves`,
+`best_score_cp` and the played move's `score_cp` against that independent score
+vector, plus that an "injection" never plays the best move and a clean pick
+always does. M9's telemetry now has an outside witness.
+
+### H8 — Falsifiability, re-run and extended (2026-08-01)
+
+Same method as H3: degrade the engine, re-measure, confirm the gate trips,
+revert, confirm recovery. Every number below was measured in this pass; the two
+new rows are the `perf_channel_is_constant` mutation and the single-class
+taxonomy collapse the H3 table did not cover.
+
+**The difficulty ladder and the rating estimator (M1b / M2):**
+
+| Mutation | M2a (≤150) | M2b (≤150) | M2c (≤120) | M1b |
+|---|---|---|---|---|
+| *baseline (committed)* | 98.6 PASS | 124.2 PASS | 56.8 PASS | PASS |
+| `blend_lambda ≡ 1` — estimator ignores move quality | 136.3 PASS | **174.3 FAIL** | 59.7 PASS | — |
+| `perf_rating_from_acpl ≡ R_INIT` — the channel stops responding to move quality at all | **201.5 FAIL** | **183.5 FAIL** | 109.1 PASS | — |
+| `blend_lambda ≡ 0` — results channel deleted | 120.9 PASS | 105.3 PASS | **298.9 FAIL** | — |
+| L6's `elo_internal` := L5's (collapsed rung pair) | — | — | — | **FAIL**: (i) L6 (938.3) ≤ L5 (938.3); (ii) gap 0.0 outside [100,170]; (iii) 0.0 < 2.5 × stderr 50.5; (ii) gap L6→L7 = 303.2 outside [100,170] |
+| *reverted* | 98.6 PASS | 124.2 PASS | 56.8 PASS | PASS |
+
+Two readings worth keeping. First, no single M2 gate catches every way of
+breaking the estimator — λ≡1 slips past M2a and M2c, λ≡0 slips past M2a and
+M2b — but no mutation survives the *family*, which is what E3 designed it to
+do. Second, the second row is the sharper test of "ignores move quality": the
+channel keeps its precision weight and merely stops carrying information, and
+M2a more than doubles.
+
+**The coaching taxonomy (M5 / M5r), collapsed to a single class:**
+
+| Mutation | M5 (≥0.80) | M5r (≥0.60) |
+|---|---|---|
+| *baseline (committed precedence table)* | 0.827 PASS (52/63) | 0.962 PASS (19/20) |
+| all eight FR-11 rules deleted → everything is `positional_drift` | **0.022 FAIL** (7/63) | **0.029 FAIL** (3/20) |
+| precedence table replaced by one always-firing rule → everything is `hung_piece` | **0.022 FAIL** (7/63) | **0.037 FAIL** (4/20) |
+| *reverted* | 0.827 PASS | 0.962 PASS |
+
+The second collapse is EVALS.md's own named naive model, and it reproduces the
+scorecard's baseline column exactly (M5 0.022, M5r 0.037) — an independent check
+that the baselines printed beside the gates are measured, not asserted.
+
+**Severity tiers (M4 / M5's sibling), re-run against the harvested slice:**
+
+| Mutation | M4 (≥0.90) | M4r (≥0.75) |
+|---|---|---|
+| *baseline* | 0.983 PASS (118/120) | 0.800 PASS (24/30) |
+| `SEV_* = 0.10/0.20/0.30` — the D1 mis-scaling (Lichess winning-chance drops applied to the win-probability scale) | **0.517 FAIL** (62/120) | **0.700 FAIL** (21/30) |
+| *reverted* | 0.983 PASS | 0.800 PASS |
+
+H3 recorded the M4 half of this row before the harvested slice was regenerated;
+M4r is new here, and it confirms the transfer slice fails the same mutation with
+only 6 cases of headroom above its gate — narrower than the constructed set's,
+which is the honest cost B6 priced in.
+
+### H9 — Suite health snapshot (2026-08-01, after H5–H8)
+
+* **373 tests collected and passing** (`uv run pytest chessmentor/ -q`): 347
+  unit/integration tests plus the 26 pytest-enforced gates in
+  `evals/test_gates.py`. That is +7 on the previous commit — six threading
+  regressions (H5/H6) and one telemetry witness (H7). H4's "349" was a
+  miscount; the collected total at that commit was 366.
+* **16/16 scorecard gates** pass; full run 907 s.
+* `ruff check chessmentor/` clean; `verify_all.py chessmentor` fully green.
+* **Determinism:** two complete scorecard runs — 72 M1a games, 18 M10 games,
+  every analyst pass — produced **byte-identical** JSON.
+* **CLI end to end, 44 invocations against one real SQLite database:** init,
+  levels, profile show/set (both challenge modes and a colour change, each
+  moving the recommendation), eight interactive games including session
+  controls (`board`/`moves`/`legal`/`quit`/`resign`), an illegal move, a
+  quit-and-resume, level overrides and controller-chosen levels; games
+  list/--status/show/--pgn, analyze --nodes twice (dedup path), rating,
+  rating --history, report, report --last-games, report --include-imported,
+  import --as auto --analyze (including a `Result = *` unfinished game),
+  import --as white to resolve an ambiguous side; and the error paths —
+  missing game id, missing file, bad `--as`, ambiguous `--as auto`, and an
+  uninitialised database. No crash, no traceback, and the controller visibly
+  adapted L4 → L6 → L7 as the estimate moved.
+* **API end to end against a real uvicorn server** (not `TestClient`), 41 calls
+  over every documented endpoint plus `/openapi.txt`, on a real SQLite file:
+  every status code as specified, no traceback in the server log, and 40
+  concurrent requests across 8 client threads with zero errors.
+
+### H10 — What is still weak, stated rather than hidden
+
+* **A rated game with almost no judged moves is trusted as much as a long
+  one.** `PERF_SIGMA_1`/`PERF_SIGMA` are per-*game* constants: FR-7b's
+  ACPL→perf mapping is applied to a game's mean cp-loss without regard to how
+  many moves entered it. A game that reaches ply 8 (so it is `rated`) and then
+  ends can contribute a perf rating off two or three judged moves at the same
+  weight as a 60-move game. The end-to-end CLI run shows the consequence
+  plainly: a resign-early game moved `R_hat` from 800 to 1163 in one step,
+  because a two-move ACPL sample interpolated to 2100. The zero-judged-move
+  case is handled (the channel is skipped); the one-to-three case is not. This
+  is the formula SCOPE.md specifies, and shrinking σ_p by the judged-move count
+  would change every M2/M10 number, so it is recorded here rather than changed
+  under a hardening pass.
+* **M9 trusts telemetry, now with one outside witness.** H7 added an
+  independent per-position check of `cpu_meta`, but it is a unit test on one
+  position and one level config; M9 itself still scores the throttle's own
+  report over the M1a corpus. A throttle that lied only in configurations the
+  unit test does not visit would still pass.
+* **M2's cohorts are closed-loop.** They simulate ACPL from the same calibrated
+  anchors the estimator inverts (E3/D6 acknowledged this; M10 is the answer,
+  and it is a 175-Elo gate over three levels × six games — real, but coarse).
+* **The M1b record is a 24/10 sample, not FR-5's 60/24** (B3), so per-pair
+  collapse evidence is ~1.6× noisier than the spec intends.

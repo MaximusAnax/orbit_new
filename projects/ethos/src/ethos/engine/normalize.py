@@ -171,7 +171,14 @@ def _step5(w: str) -> str:
 
 
 def porter_stem(word: str) -> str:
-    """Stem one lowercase token exactly per the published Porter (1980) paper."""
+    """Stem one lowercase token exactly per the published Porter (1980) paper.
+
+    Words of two letters or fewer are returned unchanged, as in Porter's own
+    reference implementation ("the algorithm is not applied to words of length
+    <= 2"); without this, `is` -> `i` and `as` -> `a` collide.
+    """
+    if len(word) <= 2:
+        return word
     return _step5(_step4(_step3(_step2(_step1c(_step1b(_step1a(word)))))))
 
 

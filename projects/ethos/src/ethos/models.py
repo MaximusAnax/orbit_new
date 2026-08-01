@@ -1,16 +1,29 @@
 """Pydantic v2 domain models and enums for ethos (docs/DATA_MODEL.md).
 
-Models are strict on *shape* (unknown fields rejected) but permissive on
-*substance*: content floors and invariants are enforced by the corpus gates
-(evals/corpus_gates.py, shared with `ethos corpus validate`), so that
-negative-control corpora can be loaded and then rejected by the right gate.
-String fields are byte-preserving: no validator strips or normalizes them.
+Two kinds of invariant, deliberately split:
+
+* **Model-enforced** — record-local facts that cannot be true of any healthy
+  corpus and that no gate owns: `Passage` carries exactly one of
+  text/paraphrase, `Tradition.order` and `Keyword.weight` are in range,
+  citation markers match ``C[1-9][0-9]*``, ids are non-empty.
+* **Gate-enforced** — everything cross-record or countable (floors, licensing,
+  locator schemes, substance ratios) lives in `engine/corpus.py` as C1-C20, so
+  a deliberately broken negative-control corpus still *loads* and is then
+  rejected by the named gate rather than dying inside Pydantic.
+
+String fields are byte-preserving: no validator strips, folds, or normalizes
+any corpus string (FR-1 layer 2).
 """
 from __future__ import annotations
 
 from enum import StrEnum
+from typing import Annotated
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+_MARKER = r"^C[1-9][0-9]*$"
+Marker = Annotated[str, Field(pattern=_MARKER)]
+Slug = Annotated[str, Field(min_length=1)]
 
 
 class Family(StrEnum):
@@ -87,10 +100,10 @@ class KeyConcept(_Model):
 
 
 class Tradition(_Model):
-    id: str
+    id: Slug
     name: str
     family: Family
-    order: int
+    order: int = Field(ge=1, le=10)
     era: str
     summary: str
     key_concepts: list[KeyConcept]
@@ -98,11 +111,11 @@ class Tradition(_Model):
 
 class Keyword(_Model):
     term: str
-    weight: int
+    weight: int = Field(ge=1, le=3)
 
 
 class Topic(_Model):
-    id: str
+    id: Slug
     title: str
     description: str
     question_forms: list[str]
@@ -132,22 +145,38 @@ class Source(_Model):
 
     @property
     def source_line(self) -> str:
+        """The one printed provenance line (DATA_MODEL § Source, derived).
+
+        Computed identically by the composer, the verifier and the independent
+        M3 checker — a checker that rebuilds it differently is the bug, not
+        this. English originals (Mill, Bentham) have no translator, so their
+        line is `title, author (year)`; the doc gives only the translated form.
+        """
         if self.license == License.reference_only:
             return f"{self.title} — {self.edition_note}"
         if self.translator is None:
-            # English original: provenance is author + edition year (REVIEW.md #30)
             return f"{self.title}, {self.author} ({self.translation_year})"
         return f"{self.title}, trans. {self.translator} ({self.translation_year})"
 
 
 class Passage(_Model):
-    id: str
-    source_id: str
+    id: Slug
+    source_id: Slug
     locator: str
     text: str | None
     paraphrase: str | None
     context_note: str
     transcription_checked: bool
+
+    @model_validator(mode="after")
+    def _exactly_one_body(self) -> Passage:
+        """DATA_MODEL: exactly one of text/paraphrase is non-null. A passage
+        with both would let a render show a quote under a paraphrase label."""
+        if (self.text is None) == (self.paraphrase is None):
+            raise ValueError(
+                f"passage {self.id!r} must carry exactly one of text/paraphrase"
+            )
+        return self
 
 
 class ReasoningPoint(_Model):
@@ -219,8 +248,8 @@ class RoutingEcho(_Model):
 
 
 class Quote(_Model):
-    marker: str
-    passage_id: str
+    marker: Marker
+    passage_id: Slug
     text: str
     is_paraphrase: bool
     label: str | None
@@ -231,7 +260,7 @@ class Quote(_Model):
 
 class RenderedReasoning(_Model):
     text: str
-    marker: str | None
+    marker: Marker | None
 
 
 class Perspective(_Model):
@@ -247,9 +276,9 @@ class Perspective(_Model):
 
 
 class CitationEntry(_Model):
-    passage_id: str
+    passage_id: Slug
     locator: str
-    source_id: str
+    source_id: Slug
 
 
 class AnswerBody(_Model):
