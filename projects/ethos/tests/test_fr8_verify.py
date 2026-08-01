@@ -216,6 +216,23 @@ def test_fr8_independent_reader_catches_print_tampering(corpus, case, mutate, wh
     assert check_render_independently(mutate(rendered), corpus.raw), why
 
 
+def test_fr8_every_topic_and_filter_verifies(corpus, compose):
+    """The whole render matrix passes both instruments: 24 topics x 4 filters.
+    This is the regression net under the corpus itself — a bad edit to any
+    passage, source or position shows up here."""
+    traditions = [t.id for t in corpus.traditions]
+    filters = [None, traditions[:3], [traditions[5]], ["judaism", "islam", "stoicism"]]
+    checked = 0
+    for topic in corpus.topics:
+        for tradition_filter in filters:
+            body, rendered = compose(topic.id, tradition_filter)
+            envelope = env_mod.serialize(body, tradition_filter)
+            failures = verify(body, corpus, rendered, tradition_filter, envelope, None)
+            assert failures == [], f"{topic.id} / {tradition_filter}: {failures}"
+            checked += 1
+    assert checked == len(corpus.topics) * len(filters)
+
+
 def test_fr8_independent_reader_catches_a_missing_citation(corpus, case):
     _body, rendered, _envelope = case
     start = rendered.index("      “")
