@@ -157,6 +157,82 @@ called out in the resolution column.
   bandwidths are ≤ ~110 Hz. Calibration was re-derived in the same commit
   (the staleness tripwire enforces this).
 
+## Hardening pass (2026-08-01)
+
+An independent hardening review re-verified the shipped implementation and
+evals. No gate threshold was changed. Results:
+
+- **Everything runs.** `uv run python verify_all.py voicekin` green at entry
+  (278 tests, 11/11 gates, ruff clean, CLI ok) and again after the hardening
+  additions below (285 tests, 11/11 gates). The documented CLI was exercised
+  end to end on real corpus WAVs — init → profile add → enroll (3 accepts)
+  → consent draft/statement → impostor grant (`speaker_mismatch`, exit 3)
+  → replayed-enrollment grant (`reused_enrollment_audio`, exit 3) → genuine
+  grant (similarity 0.969 ≥ θ 0.800) → `say` + file-sink delivery + manifest
+  → `verify-output` round-trip (and `unknown_output` on a foreign WAV) →
+  revoke → replay-delivery refusal (`consent_revoked`) → enrollment drift
+  (`enrollment_changed`) → disable precedence → sample-remove revert (old
+  consent does **not** resurrect; the re-granted one authorizes) → purge
+  (managed files 7/7 deleted, delivered copies 2/2 deleted, residual warning
+  printed) → post-purge refusal (`profile_purged`) → `audit verify` OK after
+  all of it. The API was also smoke-tested live via
+  `uvicorn --factory voicekin.api:create_app`: 200 render, 403
+  `scope_mismatch` with the refusal persisted, `/audit/verify` OK.
+- **Determinism.** Two consecutive full scorecard runs produced
+  byte-identical output (all 11 metric values, baselines, and the M3
+  misattribution list; only wall time differed). `VOICEKIN_STRICT_FIXTURES=1`
+  manifest check also passes on this machine.
+- **Falsifiability experiments** (mutate engine logic → gate fails → revert
+  → gate recovers; the two hard-part capabilities each demonstrated):
+
+  | Gate (healthy) | Engine mutation | Mutated score | Reverted |
+  |---|---|---|---|
+  | M1b = 0.0000 | dead formant family: `analyze_voice` reports constant F1/F2 (`engine/dsp.py`) | **0.1250** — FAR_vtl 2/16 at the committed θ → FAIL | 0.0000 |
+  | M2a = 0/330 | same mutation | **2/330** impostor accepts (consent forgeries) → FAIL | 0/330 |
+  | M6_mixed = 1.0000 | same mutation | **0.9583** (a mixed set enrolls) → FAIL | 1.0000 |
+  | M4 = 1.0000 (35/35) | `authorize()` step 6 (revocation check) removed (`engine/consent.py`) | **0.9143** (32/35); failures are exactly the revocation scenarios #5, #17, #26 → FAIL | 1.0000 |
+  | M5 = 1.0000 (8/8) | `verify_chain` content re-hash skipped — linkage-only verification (`engine/audit.py`) | **0.6250** (5/8); misses are exactly the content-tamper cases 1, 2, 5 → FAIL | 1.0000 |
+
+  A note on the dead-formant magnitudes: the collapse is partial (FAR_vtl
+  0.125, not 1.00) because a generator-side vtl shift also moves the
+  mel-band-share dimensions, so the surviving tilt/band family still
+  separates most — but not all — Δvtl siblings. The zero-tolerance gates
+  (M1b = 0, M2a = 0) are what make even this partial degradation fail loudly;
+  a fractional gate would have absorbed it. (The fully-dead *normalization*
+  variant — formant dims zeroed after whitening — is the live M1b baseline in
+  `metrics.compute_m1b_baseline`, which measures FAR_vtl = FAR_tilt = 1.00 on
+  every run.)
+- **Baselines are live.** Every naive baseline in the scorecard is computed
+  by baseline code at run time (2-dim energy/duration embedder, pitch-only
+  masked embedder, accept-all/reject-all thresholds over the same score pass,
+  fixed-voice stub, decision-only verified-row gate, no-chain verify) and the
+  system beats all of them by the documented margins.
+- **One latent eval-integrity gap closed.** M1/M2/M6 score cached raw
+  features through `evals/corpus.py`'s own copies of the affine normalization
+  and the distance rule (the cache exists so `calibrate.py` and the metrics
+  share one feature pass; the cache key already covered `dsp.py`/`audio.py`
+  but nothing pinned the two small re-implementations to the shipped
+  `SpectralStatsEmbedder.embed` / `distance_similarity`). New tripwire
+  `test_corpus_scoring_path_matches_the_shipped_embedder_fr4` asserts
+  embedding-level equivalence (atol 1e-12) on clean, channel-filtered and dev
+  takes plus similarity-rule equivalence, so editing the shipped scoring
+  without updating the corpus path now fails the suite instead of letting the
+  evals measure stale math.
+- **One coverage gap closed.** The live `HomeAssistantDeliverer` (FR-11 —
+  it ships, unlike the ECAPA/XTTS stubs) had no tests at all. Added
+  `tests/test_deliver_hass_fr11.py`: 6 hermetic tests over a monkeypatched
+  transport covering env-gating (`from_env` → `None`, constructor raises,
+  trailing-slash normalization), the media copy plus the exact `play_media`
+  POST (URL, bearer token, entity id, `media-source://` content id), receipt
+  mapping for HTTP errors (status preserved), network errors, and an
+  unwritable media dir (no POST attempted), and the foreign-target /
+  foreign-authorization `ValueError`s. A call against a real Home Assistant
+  remains out of hermetic scope. Test count 278 → 285.
+- **FR coverage** is tabulated in `docs/FR_COVERAGE.md`, including the three
+  honest gaps (live ECAPA/XTTS adapters are interface-only by plan; the HA
+  POST is never exercised against a real Home Assistant; real-voice error
+  rates unmeasured until the post-MVP smoke test).
+
 ## Cross-document consistency after the edits
 
 - FR ids are unchanged (FR-1 … FR-15); FR-1 gained the instance record, FR-10

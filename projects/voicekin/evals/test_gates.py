@@ -16,6 +16,7 @@ import json
 import os
 from pathlib import Path
 
+import numpy as np
 import pytest
 
 from evals import corpus, metrics
@@ -141,6 +142,31 @@ def test_calibration_matches_dev_split_fr4():
     ):
         assert derived["mean"] == pytest.approx(stored["mean"], abs=1e-9)
         assert derived["scale"] == pytest.approx(stored["scale"], abs=1e-9)
+
+
+def test_corpus_scoring_path_matches_the_shipped_embedder_fr4():
+    """M1/M2/M6 score cached raw features through ``corpus.normalize_vector`` and
+    ``corpus.similarity`` — small re-implementations of the shipped affine
+    normalization and distance rule (the cache exists so calibrate.py and the
+    metrics share one feature pass). This tripwire pins them to the real
+    ``SpectralStatsEmbedder`` and ``distance_similarity``: edit either shipped
+    function without updating the corpus path and the eval suite fails here
+    instead of silently measuring stale math (hardening pass, 2026-08-01)."""
+    from voicekin.adapters.embedder_spectral import SpectralStatsEmbedder
+    from voicekin.engine.verification import distance_similarity
+
+    cal = metrics.calibration()
+    embedder = SpectralStatsEmbedder(cal)
+    roles = ("S01/enroll/0", "S05/probe/2", "D03/consent/0")
+    for role in roles:
+        via_corpus = np.asarray(corpus.embedding(role, cal))
+        via_embedder = np.asarray(embedder.embed(corpus.clip(role)))
+        assert np.allclose(via_corpus, via_embedder, atol=1e-12), role
+    a = corpus.embedding(roles[0], cal)
+    b = corpus.embedding(roles[1], cal)
+    assert corpus.similarity(a, b, cal) == pytest.approx(
+        distance_similarity(a, b, score_scale=cal.score_scale), abs=1e-12
+    )
 
 
 def test_derived_fixtures_match_their_builder():

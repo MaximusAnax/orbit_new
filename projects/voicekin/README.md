@@ -117,7 +117,7 @@ the clock — FR-15).
 
 ```bash
 cd projects
-uv run pytest voicekin/ -q             # 278 tests: unit, integration, API, CLI + eval gates
+uv run pytest voicekin/ -q             # 285 tests: unit, integration, API, CLI + eval gates
 uv run python voicekin/evals/run.py    # eval scorecard (below)
 uv run ruff check voicekin/            # lint
 uv run python verify_all.py voicekin   # everything CI runs
