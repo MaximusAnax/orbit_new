@@ -26,6 +26,7 @@ anyone
 anything
 anywhere
 are
+aren
 around
 as
 at
@@ -51,10 +52,15 @@ by
 can
 cannot
 could
+couldn
+d
 did
+didn
 do
 does
+doesn
 doing
+don
 done
 down
 during
@@ -83,8 +89,11 @@ four
 from
 further
 had
+hadn
 has
+hasn
 have
+haven
 having
 he
 hence
@@ -108,6 +117,7 @@ in
 indeed
 into
 is
+isn
 it
 its
 itself
@@ -116,6 +126,8 @@ latter
 latterly
 least
 less
+ll
+m
 many
 may
 me
@@ -127,6 +139,7 @@ most
 mostly
 much
 must
+mustn
 my
 myself
 namely
@@ -165,6 +178,8 @@ per
 perhaps
 please
 rather
+re
+s
 same
 seem
 seemed
@@ -173,6 +188,7 @@ seems
 several
 she
 should
+shouldn
 since
 six
 so
@@ -185,6 +201,7 @@ sometimes
 somewhere
 still
 such
+t
 ten
 than
 that
@@ -222,12 +239,15 @@ until
 up
 upon
 us
+ve
 very
 via
 was
+wasn
 we
 well
 were
+weren
 what
 whatever
 when
@@ -254,7 +274,9 @@ will
 with
 within
 without
+won
 would
+wouldn
 yet
 you
 your
