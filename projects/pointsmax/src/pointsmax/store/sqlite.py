@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import threading
 from collections.abc import Iterator
 from contextlib import contextmanager
 from datetime import date
@@ -148,17 +149,27 @@ def _date(value: str | None) -> date | None:
 
 
 class SQLiteRepository(Repository):
-    """Durable repository backed by a SQLite file (or ``:memory:``)."""
+    """Durable repository backed by a SQLite file (or ``:memory:``).
+
+    Thread-safety: FastAPI runs sync endpoints in a threadpool, so the one
+    connection built at startup is used from many threads.  ``check_same_thread``
+    is disabled (CPython's ``sqlite3.threadsafety == 3`` — the C level is
+    serialized) and every write path funnels through :meth:`_batch`, which holds
+    an ``RLock`` from the first read of a read-modify-write composite to the
+    commit, so ledger chains stay intact and one thread's rollback can never
+    discard another's uncommitted rows.
+    """
 
     def __init__(self, path: str | Path = ":memory:") -> None:
         self.path = str(path)
         if self.path != ":memory:":
             Path(self.path).parent.mkdir(parents=True, exist_ok=True)
-        self._conn = sqlite3.connect(self.path)
+        self._conn = sqlite3.connect(self.path, check_same_thread=False)
         self._conn.row_factory = sqlite3.Row
         self._conn.execute("PRAGMA foreign_keys = ON")
         self._conn.executescript(SCHEMA)
         self._depth = 0
+        self._lock = threading.RLock()
         self._conn.commit()
 
     def close(self) -> None:
@@ -174,23 +185,45 @@ class SQLiteRepository(Repository):
 
     @contextmanager
     def _batch(self) -> Iterator[None]:
-        """Group writes into one commit; nested batches join the outermost one."""
-        self._depth += 1
-        try:
-            yield
-        except BaseException:
-            self._depth -= 1
-            if self._depth == 0:
-                self._conn.rollback()
-            raise
-        else:
-            self._depth -= 1
-            if self._depth == 0:
-                self._conn.commit()
+        """Group writes into one commit; nested batches join the outermost one.
+
+        The re-entrant lock is held for the whole batch, serializing writers
+        across threads (see the class docstring).
+        """
+        with self._lock:
+            self._depth += 1
+            try:
+                yield
+            except BaseException:
+                self._depth -= 1
+                if self._depth == 0:
+                    self._conn.rollback()
+                raise
+            else:
+                self._depth -= 1
+                if self._depth == 0:
+                    self._conn.commit()
 
     def _commit(self) -> None:
         if self._depth == 0:
             self._conn.commit()
+
+    def append_entries(self, entries):
+        """Hold the write lock across validate-then-persist (FR-2 chain integrity)."""
+        with self._batch():
+            return super().append_entries(entries)
+
+    def set_balance(self, program_id, points, *, at, note=None):
+        with self._batch():
+            return super().set_balance(program_id, points, at=at, note=note)
+
+    def adjust_balance(self, program_id, delta, *, at, note=None):
+        with self._batch():
+            return super().adjust_balance(program_id, delta, at=at, note=note)
+
+    def set_goal_status(self, goal_id, status):
+        with self._batch():
+            return super().set_goal_status(goal_id, status)
 
     def record_step_execution(self, step_id, entries, *, at):
         """FR-11: the ledger entries and the ``executed_at`` stamp land together."""
@@ -213,22 +246,22 @@ class SQLiteRepository(Repository):
         )
 
     def save_profile(self, profile: Profile) -> Profile:
-        self._conn.execute(
-            "INSERT INTO profile (id, display_name, home_city, default_passengers, "
-            "created_at, updated_at) VALUES (1, ?, ?, ?, ?, ?) "
-            "ON CONFLICT(id) DO UPDATE SET display_name = excluded.display_name, "
-            "home_city = excluded.home_city, "
-            "default_passengers = excluded.default_passengers, "
-            "created_at = excluded.created_at, updated_at = excluded.updated_at",
-            (
-                profile.display_name,
-                profile.home_city,
-                profile.default_passengers,
-                profile.created_at,
-                profile.updated_at,
-            ),
-        )
-        self._commit()
+        with self._batch():
+            self._conn.execute(
+                "INSERT INTO profile (id, display_name, home_city, default_passengers, "
+                "created_at, updated_at) VALUES (1, ?, ?, ?, ?, ?) "
+                "ON CONFLICT(id) DO UPDATE SET display_name = excluded.display_name, "
+                "home_city = excluded.home_city, "
+                "default_passengers = excluded.default_passengers, "
+                "created_at = excluded.created_at, updated_at = excluded.updated_at",
+                (
+                    profile.display_name,
+                    profile.home_city,
+                    profile.default_passengers,
+                    profile.created_at,
+                    profile.updated_at,
+                ),
+            )
         return self.get_profile()
 
     # -- cards -------------------------------------------------------------
@@ -240,22 +273,23 @@ class SQLiteRepository(Repository):
         return [row["card_product_id"] for row in rows]
 
     def add_card(self, card_product_id: str, at: str) -> bool:
-        try:
-            self._conn.execute(
-                "INSERT INTO wallet_card (card_product_id, added_at) VALUES (?, ?)",
-                (card_product_id, at),
-            )
-        except sqlite3.IntegrityError:
-            return False
-        self._commit()
-        return True
+        with self._lock:
+            try:
+                self._conn.execute(
+                    "INSERT INTO wallet_card (card_product_id, added_at) VALUES (?, ?)",
+                    (card_product_id, at),
+                )
+            except sqlite3.IntegrityError:
+                return False
+            self._commit()
+            return True
 
     def remove_card(self, card_product_id: str) -> bool:
-        cursor = self._conn.execute(
-            "DELETE FROM wallet_card WHERE card_product_id = ?", (card_product_id,)
-        )
-        self._commit()
-        return cursor.rowcount > 0
+        with self._batch():
+            cursor = self._conn.execute(
+                "DELETE FROM wallet_card WHERE card_product_id = ?", (card_product_id,)
+            )
+            return cursor.rowcount > 0
 
     # -- ledger ------------------------------------------------------------
 
@@ -315,7 +349,7 @@ class SQLiteRepository(Repository):
 
     # -- goals -------------------------------------------------------------
 
-    def add_goal(self, goal: Goal) -> Goal:
+    def _insert_goal(self, goal: Goal) -> Goal:
         cursor = self._conn.execute(
             "INSERT INTO goal (kind, raw_text, origin_city, dest_city, cabin, round_trip, "
             "passengers, city, nights, travel_window_start, travel_window_end, book_by, "
@@ -344,6 +378,10 @@ class SQLiteRepository(Repository):
         stored = self.get_goal(cursor.lastrowid)
         assert stored is not None
         return stored
+
+    def add_goal(self, goal: Goal) -> Goal:
+        with self._batch():
+            return self._insert_goal(goal)
 
     def _goal_from_row(self, row: sqlite3.Row) -> Goal:
         return Goal(

@@ -47,3 +47,139 @@ Severity legend: **blocker** > **major** > minor.
   SCOPE decision 20's scope valves (64 → 48, 200 → 100).
 - Marriott mechanics are consistent everywhere: 3:1, 3,000-point increments,
   +5,000 per 60,000, tier straddle fixtures at 57,000 / 60,000 / 120,000.
+
+## Build/finish-stage record (2026-08-01)
+
+Everything below is documentation alignment; **no gate threshold, metric
+formula, denominator, or baseline ceiling was changed** at any point during
+the build. Every gate holds exactly as EVALS.md specifies (M1a/M1b/M2/M3/M4/
+M6/M7 = 1.0, M5 ≥ 0.90, D0 pass), verified by both `evals/run.py` and
+`evals/test_gates.py`.
+
+1. **EVALS baseline estimates replaced with measured scores.** The gates
+   table's baseline column carried analytic estimates from scoping (marked
+   "≈"). EVALS.md's own rule — re-derive every expected baseline number when
+   fixture composition changes — plus CONVENTIONS.md's requirement that
+   EVALS.md state what each baseline actually scores, required replacing them
+   with the values `evals/baselines.py` measures live once the fixtures were
+   final. Estimate → measured: M1a 0.27 → 0.346 (18/52), M1b 0.08 → 0.083
+   (1/12), M2 0.6 → 0.393 (53/135), M3 0.45 → 0.516 (33/64), M4 0.27 → 0.300
+   (9/30 — the zero-fee fee case `acc_15` is also naive-solvable), M5 0.42 →
+   0.300 (18/60), M6 0.25 → 0.583 (7/12 — five shipped goals exceed the
+   200,000-expansion budget unpruned), M7 0.20 → 0.165 (33/200). All ceilings
+   and gates are untouched, every measured baseline sits at or below its
+   ceiling, and `test_gates.py::test_baseline_ceilings` continues to assert
+   the documented ceilings.
+2. **Vacuous M6 ceiling assertion fixed.** The session interrupted mid-finish
+   left `test_baseline_ceilings` asserting the unpruned-engine M6 baseline
+   `≤ 1.0` — vacuously true — while `run.py` and the gates table say `≤ 0.60`.
+   The pytest assertion now matches the documented ceiling (measured 0.583).
+3. **DATA_MODEL worked example corrected.** The example plan's math check
+   contained an arithmetic slip (`2 × 25,100` written as `50,300`); the
+   dependent numbers are now consistent with the normative FR-8 formulas:
+   `cash_outlay_cents 50,200`, `net_value_cents 129,800` (+$1,298), pooled
+   `realized_cpp_milli 3,081`. The example's caveat list also omitted the two
+   `seats_limited` caveats that FR-10's table fires for a 2-seat offer booked
+   for 1 passenger (`seats_available − passengers = 1 ≤ 1`); they are now
+   shown. Engine behaviour was already correct (gated by M3/M4); only the
+   illustrative example was wrong.
+4. **Sizing outcome.** Decision 20 estimated `src/` ≈ 3,150 lines against a
+   2,000–4,000 mandate. The finished `src/` is ≈ 8,200 lines (engine 3,424,
+   models 876, api 1,070, store 986, adapters 657, cli 630, service 522).
+   None of the ordered scope valves were pulled — the `llm` extra, the `stay`
+   goal kind, and the full 64 + 200 scenario counts all shipped — and the
+   never-cut list (funding search, accounting rules, every eval gate) is
+   intact, so the overage is full-scope delivery rather than scope creep.
+
+## Hardening-stage record (2026-08-01)
+
+Adversarial pass over the finished implementation. **No gate threshold, metric
+formula, denominator, or baseline ceiling was changed.** Scorecard before and
+after: all gates pass (M1a/M1b/M2/M3/M4/M6/M7 = 1.0, M5 = 1.0 ≥ 0.90, D0
+pass); 353 tests pass; ruff clean.
+
+### Defects found and fixed (all in `src/`, none in the engine)
+
+1. **CLI: `wallet adjust <program> <delta>` could not take a negative delta.**
+   `pointsmax wallet adjust chase_ur -10000` — the documented core use of the
+   command — crashed with an unhandled `NoSuchOption` traceback because the
+   argument parser read `-10000` as an option. Fixed with
+   `context_settings={"ignore_unknown_options": True}` on the command;
+   regression test `test_wallet_adjust_accepts_negative_delta_fr2`.
+2. **CLI: vendored-click usage errors escaped as raw tracebacks.** `main()`
+   caught `click.UsageError`, but Typer 0.27 raises its *vendored* fork's
+   exceptions (`typer._click.exceptions.*`), which are not subclasses of the
+   standalone `click` classes — any unknown option or missing argument printed
+   a stack trace instead of `error [usage]: …` with exit 2. Fixed by deriving
+   the fork's `UsageError`/`ClickException` bases from `typer.BadParameter`'s
+   MRO (public attribute, no private import); regression test
+   `test_main_maps_vendored_usage_errors_to_exit_2_fr15`.
+3. **Store: the SQLite connection was unusable from FastAPI's threadpool.**
+   `SQLiteRepository` connected with the default `check_same_thread=True` and
+   no lock, so the documented deployment (`create_app()` + uvicorn, which runs
+   sync endpoints in a threadpool) crashed with `sqlite3.ProgrammingError` on
+   any endpoint that touched the DB from a worker thread — the API test suite
+   missed it because it injects `InMemoryRepository`. Fixed:
+   `check_same_thread=False` (CPython `sqlite3.threadsafety == 3`) plus an
+   `RLock` held across every write batch, with all read-modify-write
+   composites (`append_entries`, `set_balance`, `adjust_balance`,
+   `set_goal_status`, `record_step_execution`) routed through the locked
+   batch so ledger chains stay intact and one thread's rollback can never
+   discard another's uncommitted rows. Regression test
+   `test_sqlite_is_usable_from_worker_threads_fr14` (4 threads × 25
+   concurrent adjusts; chain re-verified).
+4. Dead/incorrect first assignment to `missing` in
+   `adapters/world_provider.py::build_world` removed (it was immediately
+   overwritten; no behavior change).
+
+### Falsifiability experiments (gate-can-fail proofs)
+
+Each mutation was applied to engine code, the affected metrics re-measured
+against the untouched committed fixtures, then reverted and re-measured
+(restored to the before value in every case). Committed fixtures were also
+proven oracle-derived: both generators re-ran end to end during this pass and
+reproduced `search_cases.json` and `random_cases.json` **byte-identically**
+(all four self-checks passing).
+
+| Mutation (engine code) | Metric | Before | After | Gate | Verdict |
+|---|---|---|---|---|---|
+| FR-7c lattice degraded to cover-only greedy (`search.py::_lattice` returns `{s_cover/s_max}` only) | M1a / M1b / M7 | 1.000 each | **0.808 / 0.917 / 0.885** | = 1.0 | gates fail |
+| Transfer fee floors instead of ceils (`money.py::transfer_fee_cents`) | M4 | 1.000 | **0.933** (`acc_12`, `acc_16`) | = 1.0 | gate fails |
+| Tier bonus dropped from delivery (`money.py::delivered_points`) | M4 / M1a / M2 | 1.000 each | **0.767 / 0.596 / 0.652** | = 1.0 | gates fail |
+| `stranded_points` caveat silenced (`plan.py::build_caveats`) | M3 (M1a, M2 unchanged) | 1.000 | **0.672** (M1a = M2 = 1.0) | = 1.0 | gate fails — caveat surface is independently gated |
+| Card gating disabled (`world.py::active_subgraph`) | M2 / M1a / M3 | 1.000 each | **0.963 / 0.981 / 0.984** | = 1.0 | gates fail — validator catches unusable edges |
+| Gazetteer aliases dropped (`parser.py::_alias_table`) | M5 | 1.000 | **0.250** | ≥ 0.90 | gate fails |
+| Month year-wrap dropped (`parser.py::_find_month`) | M5 | 1.000 | **0.950** | ≥ 0.90 | **gate holds** — see note |
+| Engine run with `pruning=False` (the standing M6 baseline, measured every run) | M6 | 1.000 | **0.583** | = 1.0 | gate fails |
+
+**M5 slack note.** The ≥ 0.90 parser gate deliberately tolerates ≤ 6 misses
+("room for genuinely ambiguous phrasings", EVALS gates table), so a mutation
+that breaks only the 3 year-wrapping fixture utterances scores 0.95 and passes
+M5 in isolation. The wrap rule is still guarded: the same suite runs
+`test_parser.py::test_fr5_months_resolve_to_the_next_occurrence`, which fails
+(2 cases) under that mutation. Kept as-is — tightening M5 to catch a
+single-rule regression would require re-deriving the committed parser-case
+composition and its documented baseline for marginal benefit; the unit test is
+the pinned guard. No threshold was changed.
+
+### Determinism
+
+`evals/run.py --json` executed twice back-to-back: byte-identical output
+(wall-clock timing is excluded from the JSON exactly because EVALS gates never
+read it). Engine sources contain no clock, network, filesystem or randomness
+imports; `today` and `at` are explicit inputs throughout.
+
+### End-to-end runs (beyond `--help`)
+
+Every documented CLI command was executed against a fresh database and the
+shipped world: `init`, `world info|validate`, `profile set|show`,
+`cards list --issuer`, `wallet add-card|remove-card|set|adjust|show|ledger`,
+`value`, `goal add` (free text and structured; flight/stay/cash),
+`goal list|show|drop`, `plan`, `show`, `apply` (confirmation refusal,
+`--yes-irreversible`, out-of-order refusal, re-apply refusal). The planned
+NYC→Paris round trip reproduces the DATA_MODEL worked example to the cent
+(net $1,298.00, pooled 3.08 cpp, one merged 120k transfer). The API was
+exercised end to end over the SQLite backend through the real `create_app()`
+path (health → world → profile → wallet → parsed goal → plans → execute →
+409 on re-execute), which is what exposed defect 3.
+

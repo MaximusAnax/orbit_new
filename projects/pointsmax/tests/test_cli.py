@@ -176,3 +176,34 @@ def test_main_maps_domain_errors_to_exit_codes_fr15(
     assert main() == 1
     monkeypatch.setattr("sys.argv", [*base, "goal", "show", "42"])
     assert main() == 1
+
+
+def test_wallet_adjust_accepts_negative_delta_fr2(stocked: Any) -> None:
+    """The documented ``wallet adjust <program> <delta>`` form with a signed delta."""
+    result = stocked("wallet", "adjust", "bank_a", "-10000", "--reason", "correction")
+    assert result.exit_code == 0, result.output
+    assert "90,000" in result.output
+    ledger = stocked("wallet", "ledger", "--program", "bank_a")
+    assert "adjust" in ledger.output and "-10,000" in ledger.output
+
+
+def test_main_maps_vendored_usage_errors_to_exit_2_fr15(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path, world_dir: Path, capsys: Any
+) -> None:
+    """Unknown options are parsed by Typer's vendored click fork; ``main()`` must
+    turn them into a clean ``error [usage]`` line and exit code 2, never a
+    traceback (regression: ``wallet adjust p --bogus`` crashed)."""
+    from pointsmax.cli.main import main
+
+    db = tmp_path / "pointsmax.db"
+    base = ["pointsmax", "--db", str(db), "--world", str(world_dir)]
+    # NoSuchOption from the vendored parser (previously an unhandled traceback).
+    monkeypatch.setattr("sys.argv", [*base, "wallet", "set", "bank_a", "--bogus"])
+    assert main() == 2
+    err = capsys.readouterr().err
+    assert "error [usage]:" in err and "Traceback" not in err
+    # BadParameter (bad int) still maps to a usage error too.
+    monkeypatch.setattr("sys.argv", [*base, "wallet", "adjust", "bank_a", "not-a-number"])
+    assert main() == 2
+    err = capsys.readouterr().err
+    assert "error [usage]:" in err

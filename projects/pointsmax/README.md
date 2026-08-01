@@ -27,8 +27,7 @@ uv run pointsmax init
 ```
 database: /home/you/.pointsmax/pointsmax.db
 world:    v1.0.0 (as of 2026-07-01), hash 8291a3851bc3
-loaded:   19 programs, 15 cards, 47 transfer edges, 15 cashout options, 19 valuations,
-          45 award offers, 102 reference fares, 14 gazetteer cities
+loaded:   19 programs, 15 cards, 47 transfer edges, 15 cashout options, 19 valuations, 45 award offers, 102 reference fares, 14 gazetteer cities
 world validation: OK
 ```
 
@@ -86,6 +85,7 @@ plan set 1 for goal 1 — verdict: book_with_points
      4. Book Air France-KLM Flying Blue business PAR->NYC (2026-10): 60,000 points plus $251.00 in taxes and fees.
      ! irreversible_transfer: Transferring 70,000 points over amex_mr__aeroplan cannot be undone.
      ! irreversible_transfer: Transferring 60,000 points over amex_mr__flying_blue cannot be undone.
+     ! seats_limited: flying_blue_bus_par_nyc_202610 shows only 2 seat(s) for 1 passenger(s).
 
   estimates from a versioned dataset, not financial advice; verify ratios and pricing with the program before moving points
 ```

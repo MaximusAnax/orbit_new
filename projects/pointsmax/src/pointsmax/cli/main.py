@@ -269,11 +269,13 @@ def wallet_set(
     )
 
 
-@wallet_app.command("adjust")
+# ``ignore_unknown_options`` lets a negative delta (``adjust chase_ur -10000``)
+# reach the argument parser instead of being read as an option named ``-10000``.
+@wallet_app.command("adjust", context_settings={"ignore_unknown_options": True})
 def wallet_adjust(
     ctx: typer.Context,
     program: str,
-    delta: int,
+    delta: int = typer.Argument(..., help="Signed correction, e.g. -10000."),
     reason: str = typer.Option(None, "--reason"),
     at: str = typer.Option(None, "--at"),
 ) -> None:
@@ -595,12 +597,22 @@ def main() -> int:
     """
     import click
 
-    # Typer vendors its own click fork, so both Abort classes must be caught.
+    # Typer vendors its own click fork (``typer._click``), so exceptions raised
+    # by its parser are NOT instances of the standalone ``click`` classes.  The
+    # fork's base classes are recovered from public attributes' MROs rather than
+    # importing the private module: ``typer.BadParameter`` subclasses the fork's
+    # UsageError and ClickException, ``typer.Abort`` is the fork's Abort.
+    fork_bases = tuple(
+        base
+        for base in typer.BadParameter.__mro__
+        if base.__name__ in ("UsageError", "ClickException")
+    )
     aborts: tuple[type[BaseException], ...] = (typer.Abort, click.Abort)
     usage: tuple[type[BaseException], ...] = (
         typer.BadParameter,
         click.UsageError,
         click.ClickException,
+        *fork_bases,
     )
     try:
         app(standalone_mode=False)
@@ -608,17 +620,18 @@ def main() -> int:
         payload = exc.as_dict()
         print(f"error [{payload['code']}]: {payload['message']}", file=sys.stderr)
         return 1
+    except typer.Exit as exc:
+        return int(exc.exit_code)
     except WorldValidationError as exc:
         print(f"error [world_validation_failed]: {exc}", file=sys.stderr)
         return 1
-    except typer.Exit as exc:
-        return int(exc.exit_code)
     except aborts:
         print("error [confirmation_required]: aborted; nothing was written", file=sys.stderr)
         return 1
     except usage as exc:
-        print(f"error [usage]: {exc}", file=sys.stderr)
-        return 2
+        message = exc.format_message() if hasattr(exc, "format_message") else str(exc)
+        print(f"error [usage]: {message}", file=sys.stderr)
+        return int(getattr(exc, "exit_code", 2))
     return 0
 
 

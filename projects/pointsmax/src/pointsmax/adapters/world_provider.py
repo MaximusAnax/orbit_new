@@ -57,7 +57,6 @@ def build_world(raw: dict[str, Any], *, validate: bool = True) -> World:
     ``version.json``.  When ``validate`` is set, the FR-1 invariants — including
     the recomputed content hash — must all hold.
     """
-    missing = sorted(set(WORLD_FILE_MODELS) | {"version.json"} - set(raw))
     missing = [name for name in [*WORLD_FILE_MODELS, "version.json"] if name not in raw]
     if missing:
         raise ValueError(f"world data is missing {', '.join(missing)}")

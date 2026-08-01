@@ -142,7 +142,7 @@ def test_baseline_ceilings(shipped_results: list[metrics.ShippedResult]) -> None
     assert metrics.m4(calculator=baselines.NaiveCalculator) <= 0.45
     assert metrics.m5(parser=baselines.KeywordParser(metrics.eval_world("small_a"))) <= 0.60
     assert metrics.m7(metrics.score_random(runner=baselines.greedy_random_runner)) <= 0.45
-    assert metrics.m6(baselines.unpruned_shipped_results()) <= 1.0
+    assert metrics.m6(baselines.unpruned_shipped_results()) <= 0.60
     _ = shipped_results
 
 

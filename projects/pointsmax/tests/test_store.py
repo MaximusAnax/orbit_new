@@ -343,3 +343,33 @@ def test_backends_agree_on_the_same_script(world):
             )
         )
     assert scripts[0] == scripts[1]
+
+
+def test_sqlite_is_usable_from_worker_threads_fr14(tmp_path):
+    """FastAPI serves sync endpoints from a threadpool, so the connection built at
+    startup is used from other threads (regression: ``check_same_thread`` crash).
+    Concurrent adjustments must also keep the ledger chain intact."""
+    import threading
+
+    repo = SQLiteRepository(tmp_path / "threads.db")
+    repo.set_balance("bank_a", 10000, at=AT)
+    errors: list[BaseException] = []
+
+    def work() -> None:
+        try:
+            for _ in range(25):
+                repo.adjust_balance("bank_a", 7, at=AT)
+        except BaseException as exc:  # surfaced via the assert below
+            errors.append(exc)
+
+    threads = [threading.Thread(target=work) for _ in range(4)]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    assert not errors, f"cross-thread SQLite use failed: {errors[0]!r}"
+    assert repo.balance("bank_a") == 10000 + 4 * 25 * 7
+    running = 0
+    for entry in repo.list_ledger(program_id="bank_a"):
+        running += entry.delta_points
+        assert entry.post_balance == running

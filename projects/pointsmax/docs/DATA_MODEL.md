@@ -475,14 +475,20 @@ holdings before: MR 130,000 @ 2000 mcpp, UR 210,000 @ 2050 mcpp, FB 0 @
 
 ```json
 { "plan_set_id": 5, "rank": 1, "is_comparator": false,
-  "gross_value_cents": 420000, "cash_outlay_cents": 50300,
-  "points_cost_cents": 240000, "net_value_cents": 129700,
-  "cash_received_cents": null, "realized_cpp_milli": 3080,
+  "gross_value_cents": 420000, "cash_outlay_cents": 50200,
+  "points_cost_cents": 240000, "net_value_cents": 129800,
+  "cash_received_cents": null, "realized_cpp_milli": 3081,
   "points_spent": { "amex_mr": 120000 }, "feasible_in_days": 0,
   "signature": "a41f…", "caveats": [
     { "code": "irreversible_transfer",
       "params": { "edge_id": "amex_mr__flying_blue", "points": 120000 },
-      "text": "Transferring 120,000 Membership Rewards to Flying Blue cannot be undone." } ] }
+      "text": "Transferring 120,000 Membership Rewards to Flying Blue cannot be undone." },
+    { "code": "seats_limited",
+      "params": { "offer_id": "fb_biz_nyc_par_oct26", "seats_available": 2, "passengers": 1 },
+      "text": "fb_biz_nyc_par_oct26 shows only 2 seat(s) for 1 passenger(s)." },
+    { "code": "seats_limited",
+      "params": { "offer_id": "fb_biz_par_nyc_oct26", "seats_available": 2, "passengers": 1 },
+      "text": "fb_biz_par_nyc_oct26 shows only 2 seat(s) for 1 passenger(s)." } ] }
 ```
 
 ```json
@@ -518,15 +524,16 @@ outbound leg, `fb_biz_par_nyc_oct26` the return; both one-way fares for the
 goal's month 2026-10 are $2,100).
 
 - `gross = 2 × 210,000 = 420,000`
-- `cash_outlay = 2 × 25,100 = 50,300` (edge fee 0)
+- `cash_outlay = 2 × 25,100 = 50,200` (edge fee 0)
 - `points_cost = V(H0) − V(H1)`; the UR term (210,000 @ 2050) is unchanged
   and cancels, FB ends at 0, so it reduces to
   `(130,000×2000)//1000 − (10,000×2000)//1000 = 260,000 − 20,000 = 240,000`
-- `net = 420,000 − 50,300 − 240,000 = 129,700` = **+$1,297 vs paying cash**
-- pooled `realized_cpp_milli = (420,000 − 50,300) × 1000 // 120,000 = 3,080`
+- `net = 420,000 − 50,200 − 240,000 = 129,800` = **+$1,298 vs paying cash**
+- pooled `realized_cpp_milli = (420,000 − 50,200) × 1000 // 120,000 = 3,081`
   → 3.08¢/pt
 - `feasible_in_days = 0`; no `stranded_points` caveat because the FB balance
-  ends at 0.
+  ends at 0, but each 2-seat offer booked for 1 passenger fires `seats_limited`
+  (`seats_available − passengers = 1 ≤ 1`, FR-10).
 
 `ledger_entry` sequence after executing step 1:
 
