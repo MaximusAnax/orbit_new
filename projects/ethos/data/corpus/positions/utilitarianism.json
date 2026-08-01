@@ -1,0 +1,330 @@
+[
+  {
+    "id": "honesty_and_deception--utilitarianism",
+    "topic_id": "honesty_and_deception",
+    "tradition_id": "utilitarianism",
+    "stance": "context_dependent",
+    "summary": "Lying is judged by consequences — and judged harshly, because the consequences reach further than the lie: each deviation from truth weakens the trustworthiness of human assertion, the principal support of social well-being. Mill therefore treats veracity as a rule of transcendent expediency, breakable only in rare cases (withholding bad news from the dangerously ill, misdirecting a would-be murderer) that should themselves be rule-bound.",
+    "reasoning": [
+      {
+        "text": "The institution of trustworthy assertion is a common inheritance each convenient lie spends down.",
+        "passage_id": "mill-util-2-veracity"
+      },
+      {
+        "text": "The Greatest Happiness Principle supplies the test that both grounds the rule and marks its rare exceptions.",
+        "passage_id": "mill-util-2-ghp"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-util-2-veracity",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "mill-util-2-ghp",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Act utilitarians evaluate each lie directly; rule utilitarians defend near-absolute veracity rules — the classic act/rule divide runs straight through this topic.",
+    "further_reading": [
+      {
+        "author": "Walter Sinnott-Armstrong",
+        "title": "Consequentialism",
+        "year": 2023,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/consequentialism/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Utilitarianism ch.2 (1863 text)."
+  },
+  {
+    "id": "war_and_peace--utilitarianism",
+    "topic_id": "war_and_peace",
+    "tradition_id": "utilitarianism",
+    "stance": "context_dependent",
+    "summary": "War is an ugly thing, but not the ugliest of things — Mill's sentence carries the whole utilitarian position. No war is sacred and none is damned by category: each is an immense sum of suffering to be weighed against the suffering it prevents, with slavery and conquest on the scale. The same arithmetic that justified the Union's war condemns most wars ever fought, and Bentham drafted plans for permanent peace.",
+    "reasoning": [
+      {
+        "text": "Some evils outweigh war's evils — the feeling that nothing is worth war is itself a moral decay.",
+        "passage_id": "mill-contest-war-ugly"
+      },
+      {
+        "text": "Pain and pleasure govern the account: war must purchase more relief than it costs, counted impartially.",
+        "passage_id": "bentham-ipml-1-masters"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-contest-war-ugly",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "bentham-ipml-1-masters",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "William H. Shaw",
+        "title": "Utilitarianism and the Ethics of War",
+        "year": 2016,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from The Contest in America (1862) and IPML ch.1."
+  },
+  {
+    "id": "capital_punishment--utilitarianism",
+    "topic_id": "capital_punishment",
+    "tradition_id": "utilitarianism",
+    "stance": "contested",
+    "summary": "All punishment is mischief, admissible only to exclude greater evil — so the death penalty must prove, in evidence, that it deters beyond life imprisonment and errs rarely enough to be worth irrevocable mistakes. Bentham concluded it fails the audit; Mill, in 1868, defended hanging for aggravated murder as at once the most feared and least cruel penalty. The framework is shared; the empirical verdict divides the school to this day.",
+    "reasoning": [
+      {
+        "text": "Punishment is evil in itself, licensed only by the greater evils it prevents.",
+        "passage_id": "bentham-ipml-13-mischief"
+      },
+      {
+        "text": "The sovereign masters make deterrence and error the whole question — sentiment on either side is not evidence.",
+        "passage_id": "bentham-ipml-1-masters"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "bentham-ipml-13-mischief",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "bentham-ipml-1-masters",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Bentham's late writings urge abolition; Mill's 1868 parliamentary speech defends capital punishment for murder — the tradition's canonical split on this question.",
+    "further_reading": [
+      {
+        "author": "Hugo Adam Bedau",
+        "title": "Bentham's Utilitarian Critique of the Death Penalty",
+        "year": 1983,
+        "kind": "article",
+        "url": null,
+        "note": "Journal of Criminal Law and Criminology 74"
+      }
+    ],
+    "curator_note": "Drafted from IPML ch.13 with Mill's 1868 speech for the dissent."
+  },
+  {
+    "id": "euthanasia_and_end_of_life--utilitarianism",
+    "topic_id": "euthanasia_and_end_of_life",
+    "tradition_id": "utilitarianism",
+    "stance": "permitted",
+    "summary": "Where continued life holds only suffering the sufferer wishes to end, the utilitarian presumption runs toward permission: the harm principle shields a competent person's self-regarding choice, and the suffering itself weighs against prolongation. What the framework demands is safeguards — genuine competence and consent, protection of the vulnerable from pressure — because a practice that erodes trust in medicine could cost more than it spares.",
+    "reasoning": [
+      {
+        "text": "Power over a competent adult's self-regarding choice is illegitimate; the dying person's considered wish governs.",
+        "passage_id": "mill-liberty-1-harm"
+      },
+      {
+        "text": "Pain without compensating prospect is exactly what the two sovereign masters count against forced continuation.",
+        "passage_id": "bentham-ipml-1-masters"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-liberty-1-harm",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "bentham-ipml-1-masters",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Rule-utilitarian caution about slippery slopes and pressure on the vulnerable is the position's own strongest internal objection, argued in the modern literature rather than settled.",
+    "further_reading": [
+      {
+        "author": "Peter Singer",
+        "title": "Practical Ethics",
+        "year": 1979,
+        "kind": "book",
+        "url": null,
+        "note": "chapters on euthanasia"
+      }
+    ],
+    "curator_note": "Drafted from On Liberty ch.1 and IPML ch.1; modern application flagged as such."
+  },
+  {
+    "id": "animals_and_diet--utilitarianism",
+    "topic_id": "animals_and_diet",
+    "tradition_id": "utilitarianism",
+    "stance": "discouraged",
+    "summary": "The question is not, Can they reason? nor, Can they talk? but, Can they suffer? — Bentham's footnote put animal pain on the moral ledger a century before the phrase 'animal rights'. On that ledger, practices inflicting severe suffering for minor human pleasures — factory farming above all — run heavily negative, and the modern school from Singer forward has made vegetarianism the tradition's best-known practical conclusion.",
+    "reasoning": [
+      {
+        "text": "Sentience, not species or reason, fixes the boundary of moral concern.",
+        "passage_id": "bentham-ipml-17-suffer"
+      },
+      {
+        "text": "The masters pain and pleasure count in whatever body they occur; the arithmetic does not stop at the species line.",
+        "passage_id": "bentham-ipml-1-masters"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "bentham-ipml-17-suffer",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "bentham-ipml-1-masters",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Bentham himself ate meat and opposed only cruelty; Singer's argument extends the same premise to modern farming's scale — a live debate about where the ledger settles, not about the ledger.",
+    "further_reading": [
+      {
+        "author": "Peter Singer",
+        "title": "Animal Liberation",
+        "year": 1975,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from IPML ch.17 n., with the modern extension attributed to Singer."
+  },
+  {
+    "id": "usury_and_lending--utilitarianism",
+    "topic_id": "usury_and_lending",
+    "tradition_id": "utilitarianism",
+    "stance": "permitted",
+    "summary": "Bentham's Defence of Usury turned the tradition's guns on the old prohibition: no man of ripe years, sound mind, and open eyes should be hindered from striking the credit bargain he thinks fit. Rate caps do not abolish desperate borrowing; they push it to worse terms in darker corners. The utilitarian brief is for lawful, transparent credit — with the same framework licensing regulation wherever fraud, addiction-like spirals, or monopoly make consent unreal.",
+    "reasoning": [
+      {
+        "text": "Free credit bargains between competent adults are presumptively utility-increasing.",
+        "passage_id": "bentham-usury-1-bargain"
+      },
+      {
+        "text": "The harm principle keeps the state to fraud-prevention and protection of third parties, not price-setting for the prudent.",
+        "passage_id": "mill-liberty-1-harm"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "bentham-usury-1-bargain",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "mill-liberty-1-harm",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Modern welfare economics — utilitarianism's heir — re-admits usury caps where information asymmetry and desperation vitiate consent; the argument stays inside Bentham's own terms.",
+    "further_reading": [
+      {
+        "author": "Jeremy Bentham",
+        "title": "Defence of Usury",
+        "year": 1787,
+        "kind": "primary_translation",
+        "url": "https://oll.libertyfund.org/titles/bentham-defence-of-usury",
+        "note": "the full letters"
+      }
+    ],
+    "curator_note": "Drafted from Defence of Usury, Letter I, and On Liberty ch.1."
+  },
+  {
+    "id": "anger_and_hatred--utilitarianism",
+    "topic_id": "anger_and_hatred",
+    "tradition_id": "utilitarianism",
+    "stance": "context_dependent",
+    "summary": "Anger is an instrument, and instruments are audited: Mill traces the sentiment of justice itself to the retaliatory impulse widened by sympathy to cover all persons. Resentment disciplined into impartial indignation powers reform — it is how wrongs get noticed and fought. Undisciplined, it is pure cost: suffering to its bearer, escalation to its target. The test is never how anger feels but what it does.",
+    "reasoning": [
+      {
+        "text": "The retaliatory desire becomes the sentiment of justice when widened to all persons — anger moralized by impartiality.",
+        "passage_id": "mill-util-5-justice"
+      },
+      {
+        "text": "Anger's pains and the pains it causes enter the same ledger as any other consequence.",
+        "passage_id": "bentham-ipml-1-masters"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-util-5-justice",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "bentham-ipml-1-masters",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Martha C. Nussbaum",
+        "title": "Anger and Forgiveness: Resentment, Generosity, Justice",
+        "year": 2016,
+        "kind": "book",
+        "url": null,
+        "note": "engages Mill's account of resentment"
+      }
+    ],
+    "curator_note": "Drafted from Utilitarianism ch.5 and IPML ch.1."
+  },
+  {
+    "id": "divorce--utilitarianism",
+    "topic_id": "divorce",
+    "tradition_id": "utilitarianism",
+    "stance": "permitted",
+    "summary": "Where marriage law barred exit, Mill saw bondage — and suffering trapped is suffering multiplied. The utilitarian case for lawful divorce is straightforward: two people held in a dead or cruel union generate misery without compensating gain, and their children share it. The same accounting counsels seriousness, not lightness: stability has utility, children's interests weigh heavily, and easy exit changes what marriage can promise.",
+    "reasoning": [
+      {
+        "text": "Marriage without exit and equal rights functions as bondage — the reformer's charge sheet.",
+        "passage_id": "mill-subjection-4-bondage"
+      },
+      {
+        "text": "The Greatest Happiness Principle counts the misery of trapped unions and the interests of all affected, children first.",
+        "passage_id": "mill-util-2-ghp"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "mill-subjection-4-bondage",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "mill-util-2-ghp",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Mill's own On Liberty leaves the divorce question 'undetermined' where children exist — his caution is part of the record, not an embarrassment to it.",
+    "further_reading": [
+      {
+        "author": "John Stuart Mill",
+        "title": "The Subjection of Women",
+        "year": 1869,
+        "kind": "primary_translation",
+        "url": "https://www.gutenberg.org/ebooks/27083",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Subjection ch.4 and Utilitarianism ch.2."
+  }
+]

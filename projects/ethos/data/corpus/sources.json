@@ -418,5 +418,17 @@
     "license": "public_domain",
     "locator_scheme": "academy_ed",
     "url": "https://www.gutenberg.org/ebooks/5683"
+  },
+  {
+    "id": "bentham-usury",
+    "title": "Defence of Usury",
+    "author": "Jeremy Bentham",
+    "composed_era": "1787",
+    "translator": null,
+    "translation_year": 1787,
+    "edition_note": "Letters on usury, London 1787 (English original; no translator); cited by letter number",
+    "license": "public_domain",
+    "locator_scheme": "section",
+    "url": "https://oll.libertyfund.org/titles/bentham-defence-of-usury"
   }
 ]
