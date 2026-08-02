@@ -1,0 +1,360 @@
+# TickerPress — anti-cue lexicon (FR-6 `window_antis`, `doc_antis`).
+#
+# General vocabulary of the NON-company senses that watchlist surfaces collide
+# with: food and agriculture, nature and ecology, medicine, film and the arts,
+# travel documents, mythology and archaeology, computing tutorials, education.
+# Authored BEFORE the eval corpus (SCOPE D19) and hashed into
+# evals/fixtures/lexicon_manifest.json.
+#
+# Entries are matched case-folded on whole tokens; multi-word entries match as a
+# token sequence. Keep entries GENERAL: an entry occurring in exactly one base
+# fixture article fails gate M6_lex (that is the signature of memorizing the
+# corpus). Entries occurring in no fixture article are fine.
+#
+# Lines beginning with '#' and blank lines are ignored.
+
+# --- food, cooking, agriculture
+recipe
+recipes
+cooking
+cook
+baked
+baking
+oven
+dessert
+pie
+tart
+crumble
+sauce
+salad
+teaspoon
+tablespoon
+cup of
+ingredients
+flavor
+flavour
+taste
+sweet
+tart apples
+juice
+cider
+jam
+snack
+calories
+nutrition
+diet
+grocer
+grocery
+produce aisle
+farm
+farms
+farmer
+farmers
+farming
+grower
+growers
+orchard
+orchards
+harvest
+harvested
+crop
+crops
+acre
+acres
+bushel
+bushels
+planting
+pruning
+soil
+seedling
+seedlings
+blossom
+blossoms
+ripe
+ripening
+frost damage
+pesticide
+irrigation
+livestock
+cattle
+herd
+barn
+vineyard
+
+# --- nature, ecology, animals
+rainforest
+forest
+forests
+jungle
+basin
+river
+riverbank
+wetland
+habitat
+habitats
+ecosystem
+ecosystems
+biodiversity
+deforestation
+conservation
+conservationists
+wildlife
+species
+endangered
+mammal
+mammals
+bird
+birds
+insect
+insects
+larva
+larvae
+caterpillar stage
+butterfly
+butterflies
+moth
+cocoon
+chrysalis
+pollinator
+pollination
+tree
+trees
+canopy
+leaf
+leaves
+seashell
+seashells
+shells
+mollusk
+mollusc
+beach
+shoreline
+tide
+tides
+coral
+reef
+naturalist
+biologist
+ecologist
+field study
+zoology
+botany
+
+# --- medicine and health research
+patient
+patients
+clinician
+clinicians
+physician
+physicians
+doctor
+nurse
+hospital
+clinic
+clinical
+clinical trial
+randomized
+randomised
+placebo
+cohort
+dosage
+dose
+milligram
+symptom
+symptoms
+diagnosis
+diagnosed
+treatment
+therapy
+therapies
+medication
+prescription
+side effects
+cholesterol
+blood pressure
+cardiac
+cardiology
+oncology
+tumor
+tumour
+scan
+imaging
+radiology
+mri
+peer reviewed
+journal
+meta analysis
+systematic review
+epidemiology
+public health
+vaccine
+infection
+disease
+
+# --- film, television, books, art
+film
+films
+movie
+movies
+cinema
+screenplay
+director of photography
+actor
+actress
+starring
+starred
+cast
+casting
+sequel
+prequel
+box office
+premiere
+festival
+documentary
+episode
+season finale
+series
+novel
+novelist
+author
+memoir
+poem
+poetry
+painting
+sculpture
+gallery
+exhibit
+exhibition
+museum
+curator
+soundtrack
+album
+band
+concert
+theater
+theatre
+stage play
+review of
+
+# --- travel, immigration, documents
+passport
+passports
+visa application
+visa applications
+visa fees
+visa waiver
+travel document
+travel documents
+tourist
+tourists
+tourism
+embassy
+consulate
+consular
+immigration
+immigrant
+migrants
+border
+customs officer
+itinerary
+airfare
+hotel
+hostel
+sightseeing
+backpacking
+holiday
+vacation
+
+# --- myth, archaeology, history
+myth
+mythology
+mythical
+legend
+legends
+oracle of delphi
+delphi
+temple
+sanctuary
+priestess
+prophecy
+prophecies
+ancient
+antiquity
+archaeology
+archaeologist
+archaeologists
+excavation
+excavated
+ruins
+artifact
+artifacts
+inscription
+manuscript
+historian
+century bc
+bronze age
+tomb
+relic
+
+# --- computing tutorials, everyday tech how-to
+tutorial
+walkthrough
+how to
+step by step
+beginner
+beginners
+shell script
+shell scripts
+scripting
+bash
+terminal window
+command line
+command prompt
+syntax
+snippet
+variable
+variables
+loop
+function call
+directory
+filesystem
+repository clone
+compile
+debugging
+stack trace
+readme
+documentation page
+
+# --- education, language, everyday life
+alphabet song
+letters of the alphabet
+spelling
+phonics
+literacy
+classroom
+teacher
+teachers
+pupil
+pupils
+student
+students
+curriculum
+homework
+kindergarten
+preschool
+textbook
+lesson
+lessons
+quiz
+vocabulary
+grammar
+handwriting
+recess
+playground
+parenting
+toddler
+hobby
+gardening
+knitting
+puzzle
+crossword

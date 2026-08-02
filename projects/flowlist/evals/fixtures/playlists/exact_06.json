@@ -1,0 +1,38 @@
+{
+ "id": "exact_06",
+ "suite": "exact",
+ "n": 14,
+ "seed": 1303288,
+ "clusters": [
+  "house",
+  "indie",
+  "hiphop"
+ ],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:c86c09a2cc5c7179249977e1bdc024c657dd458e",
+  "meta:dad72965f1cc340c22ec9cd6d711e43aa399b652",
+  "meta:5b58198c0984ef586b8086c3ae73e4db0b6c1a4d",
+  "meta:acb67c488c7d9c7da0732655967415f275635bcf",
+  "meta:6e0319be27b93190ec9c8fb27cc8782d21019376",
+  "meta:f22b879bfbf47dc302d0492b64bc50610593bb73",
+  "meta:93091ebd2917e1e49d81030f407f263eee20e1a6",
+  "meta:ef2b6ae36f8727b8c6f9058cf836f7ab6782bace",
+  "meta:98798ea4ca6e7c80591d4b7b8c4251b6564fff06",
+  "meta:505d0ce6c995e14eb4d28552cce56de6f59809bb",
+  "meta:a53c90e86c7b9496fa83716d11a8812f07a6d2a8",
+  "meta:cfd40c7df9152e6aeccc7e1d8a73272ac2087d66",
+  "meta:6f4f656ccb1cdbd625a3cfd70c58430ef80643e3",
+  "meta:636f661fd8f460730d6fe275b0329c9fa5fe7396"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "plain",
+  "search_seed": 1303288,
+  "greedy_bound": 0.950278,
+  "depth_target": 0.951
+ }
+}

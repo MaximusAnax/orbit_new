@@ -1,0 +1,275 @@
+# The 15 day scenarios of EVALS.md §4, as hand-authored parameter blocks.
+#
+# `generate.py` turns each block into a committed 24-row fixture day.  The
+# parameters — shape, amplitude, wind profile, precipitation window and
+# intensity, UV peak, occasion and flags — are the authored artifact; the rows
+# are a deterministic function of them.
+#
+# Shapes:
+#   diurnal    sinusoid with its minimum near sunrise (the ordinary day)
+#   ramp_down  frontal passage: flat, then a linear drop, then flat
+#   dip        rain-cooled midday trough: down to a trough, back up
+#
+# `swing = true` marks the six cases of `S_swing` (M3).  `summer_thunderstorm`
+# is deliberately not among them: its required clo runs 0.28 → 0.00 against a
+# 0.311 floor, so there is nothing to shed and it would contribute ~0 to M3.
+
+[[scenario]]
+id = "01_winter_calm"
+date = "2026-01-12"
+shape = "diurnal"
+low = -6.0
+high = -2.0
+minimum_at = 6
+wind_base = 5.0
+humidity = 72.0
+uv_peak = 0.8
+occasion = "casual"
+swing = false
+description = "-6 to -2 C, near calm."
+designed_to_catch = "ceiling saturation; gloves/hat attachment on a day nothing in the closet can reach"
+
+[[scenario]]
+id = "02_winter_windy"
+date = "2026-01-19"
+shape = "diurnal"
+low = -4.0
+high = 0.0
+minimum_at = 6
+wind_base = 30.0
+wind_peak = 45.0
+wind_window = [9, 18]
+humidity = 65.0
+uv_peak = 1.0
+occasion = "outdoor"
+swing = false
+description = "-4 to 0 C with 30-45 km/h wind."
+designed_to_catch = "wind chill plus the value of a windproof shell; ceiling saturation"
+
+[[scenario]]
+id = "03_winter_snow"
+date = "2026-02-02"
+shape = "diurnal"
+low = -2.0
+high = 1.0
+minimum_at = 6
+wind_base = 12.0
+humidity = 88.0
+uv_peak = 0.6
+precip_window = [8, 20]
+precip_prob = 0.7
+precip_mmh_min = 1.0
+precip_mmh_max = 3.0
+occasion = "work"
+swing = false
+description = "-2 to 1 C, 70% precipitation at 1-3 mm/h liquid equivalent."
+designed_to_catch = "cold and mandatory cover interacting; the intensity class crossing light/moderate"
+
+[[scenario]]
+id = "04_spring_swing"
+date = "2026-04-14"
+shape = "diurnal"
+low = 5.0
+high = 18.0
+minimum_at = 5
+wind_base = 10.0
+humidity = 55.0
+uv_peak = 4.5
+occasion = "work"
+swing = true
+description = "5 to 18 C, dry."
+designed_to_catch = "the canonical shed-layers day"
+
+[[scenario]]
+id = "05_spring_swing_windy_am"
+date = "2026-04-21"
+shape = "diurnal"
+low = 4.0
+high = 16.0
+minimum_at = 5
+wind_base = 8.0
+wind_peak = 25.0
+wind_window = [0, 10]
+humidity = 58.0
+uv_peak = 4.0
+occasion = "work"
+swing = true
+description = "4 to 16 C with 25 km/h before 10:00."
+designed_to_catch = "configuration-dependent feels-like: the windproof choice changes the target"
+
+[[scenario]]
+id = "06_fall_swing_rain_pm"
+date = "2026-10-13"
+shape = "diurnal"
+low = 7.0
+high = 14.0
+minimum_at = 5
+wind_base = 22.0
+humidity = 70.0
+uv_peak = 2.5
+precip_window = [15, 22]
+precip_prob = 0.8
+precip_mmh_min = 3.0
+precip_mmh_max = 3.0
+occasion = "casual"
+swing = true
+description = "7 to 14 C at 22 km/h, 80% rain at 3 mm/h from 15:00."
+designed_to_catch = "a plan that must hold cover late while still shedding warmth mid-day"
+
+[[scenario]]
+id = "07_cold_rain_allday"
+date = "2026-03-10"
+shape = "diurnal"
+low = 4.0
+high = 7.0
+minimum_at = 5
+wind_base = 18.0
+humidity = 92.0
+uv_peak = 1.2
+precip_window = [0, 24]
+precip_prob = 0.9
+precip_mmh_min = 2.0
+precip_mmh_max = 6.0
+occasion = "outdoor"
+swing = false
+description = "4 to 7 C, 90% rain all day at 2-6 mm/h."
+designed_to_catch = "warmth and waterproofness demanded together"
+
+[[scenario]]
+id = "08_mild_drizzle"
+date = "2026-05-05"
+shape = "diurnal"
+low = 12.0
+high = 15.0
+minimum_at = 5
+wind_base = 10.0
+humidity = 82.0
+uv_peak = 3.0
+precip_window = [7, 20]
+precip_prob = 0.45
+precip_mmh_min = 0.5
+precip_mmh_max = 0.5
+occasion = "work"
+swing = false
+description = "12 to 15 C, 45% drizzle at 0.5 mm/h."
+designed_to_catch = "the soft-penalty band: no hard requirement, but a real response (M9)"
+
+[[scenario]]
+id = "09_summer_hot"
+date = "2026-07-21"
+shape = "diurnal"
+low = 24.0
+high = 33.0
+minimum_at = 5
+wind_base = 8.0
+humidity = 55.0
+uv_peak = 8.5
+occasion = "casual"
+swing = false
+description = "24 to 33 C, UV 8."
+designed_to_catch = "floor saturation and UV accessory attachment"
+
+[[scenario]]
+id = "10_summer_thunderstorm"
+date = "2026-07-28"
+shape = "diurnal"
+low = 22.0
+high = 30.0
+minimum_at = 5
+wind_base = 12.0
+humidity = 74.0
+uv_peak = 7.0
+precip_window = [14, 18]
+precip_prob = 0.7
+precip_mmh_min = 12.0
+precip_mmh_max = 12.0
+occasion = "casual"
+swing = false
+description = "22 to 30 C with a 14:00-17:00 downpour at 12 mm/h."
+designed_to_catch = "the warm-rain trap: a waterproof shell, not the parka; the umbrella is insufficient"
+
+[[scenario]]
+id = "11_shoulder_mild_steady"
+date = "2026-09-15"
+shape = "diurnal"
+low = 14.0
+high = 18.0
+minimum_at = 5
+wind_base = 9.0
+humidity = 60.0
+uv_peak = 3.5
+occasion = "formal"
+swing = false
+description = "14 to 18 C, steady."
+designed_to_catch = "an easy day; sanity, and the only formal-occasion case"
+
+[[scenario]]
+id = "12_autumn_windy_mild"
+date = "2026-10-27"
+shape = "diurnal"
+low = 10.0
+high = 15.0
+minimum_at = 5
+wind_base = 35.0
+wind_peak = 38.0
+wind_window = [10, 20]
+humidity = 62.0
+uv_peak = 2.0
+occasion = "sport"
+swing = false
+description = "10 to 15 C at 35 km/h."
+designed_to_catch = "wind protection without cold; the umbrella wind cap (M9)"
+
+[[scenario]]
+id = "13_frontal_drop"
+date = "2026-11-10"
+shape = "ramp_down"
+start_temp = 16.0
+end_temp = 4.0
+ramp_start = 9
+ramp_end = 17
+wind_base = 8.0
+wind_peak = 46.0
+wind_rise = true
+humidity = 66.0
+uv_peak = 1.8
+occasion = "outdoor"
+swing = true
+description = "16 C at 09:00 falling to 4 C by 17:00, wind rising from 8 to 46 km/h."
+designed_to_catch = "the monotone-shed heuristic: layers must be ADDED as the day goes on"
+
+[[scenario]]
+id = "14_midday_dip"
+date = "2026-09-29"
+shape = "dip"
+start_temp = 13.0
+trough_temp = 8.0
+trough_hour = 13
+end_temp = 14.0
+end_hour = 18
+wind_base = 24.0
+humidity = 78.0
+uv_peak = 2.2
+precip_window = [11, 15]
+precip_prob = 0.6
+precip_mmh_min = 2.0
+precip_mmh_max = 2.0
+occasion = "casual"
+swing = true
+description = "13 C down to 8 C at 13:00 under a rain-cooled 24 km/h outflow, back to 14 C by 18:00."
+designed_to_catch = "a requirement that crosses a configuration boundary twice"
+
+[[scenario]]
+id = "15_cold_snap_swing"
+date = "2026-03-03"
+shape = "diurnal"
+low = -1.0
+high = 9.0
+minimum_at = 5
+wind_base = 9.0
+humidity = 68.0
+uv_peak = 2.8
+occasion = "work"
+swing = true
+description = "-1 to 9 C, dry, light wind."
+designed_to_catch = "a swing that starts against the wardrobe ceiling and ends well inside the band"

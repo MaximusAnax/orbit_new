@@ -1,0 +1,118 @@
+{
+  "_about": "Hand-authored FR-9 frame-check cases with expected verdicts in BOTH directions (EVALS M5b). Each case starts from a real buy decision taken from the scenario-A replay, injects the named user-supplied strings, optionally mutates the generated text (simulating a tampered template or renderer) or the decision, and then runs the engine's own render + frame check. 'block' means the check must reject; 'render' means it must accept. A wrongly blocked must-render case is a compliance failure, not caution: real Grailed titles say 'guaranteed authentic'.",
+  "cases": [
+    {
+      "id": "block-footer-tampered",
+      "expect": "block",
+      "why": "The collectibles-not-advice footer must render verbatim; softening it is the classic way a disclaimer stops disclaiming.",
+      "garment_label": "Vantorre curved-zip coat",
+      "mutate": {
+        "kind": "replace",
+        "find": "not investment advice.",
+        "with": "not investment advice, though the model is rarely wrong."
+      }
+    },
+    {
+      "id": "block-footer-missing",
+      "expect": "block",
+      "why": "An advice with no footer at all cannot be persisted (store CHECK frame_checked = 1).",
+      "garment_label": "Vantorre curved-zip coat",
+      "mutate": {
+        "kind": "drop_line",
+        "find": "GrailTrader models a collectibles market"
+      }
+    },
+    {
+      "id": "block-fee-note-omitted",
+      "expect": "block",
+      "why": "Section omission: dropping the fee/illiquidity note removes both a required section and the quoted friction.",
+      "garment_label": "Vantorre curved-zip coat",
+      "mutate": {
+        "kind": "drop_line",
+        "find": "Fees & liquidity:"
+      }
+    },
+    {
+      "id": "block-drivers-section-omitted",
+      "expect": "block",
+      "why": "Section omission: advice without its drivers is an unfalsifiable assertion.",
+      "garment_label": "Vantorre curved-zip coat",
+      "mutate": {
+        "kind": "drop_line",
+        "find": "Why now:"
+      }
+    },
+    {
+      "id": "block-generated-certainty-claim",
+      "expect": "block",
+      "why": "A forbidden phrase emitted by the renderer itself (not quoted user text) must block.",
+      "garment_label": "Vantorre curved-zip coat",
+      "mutate": {
+        "kind": "insert_before_footer",
+        "text": "At this level the piece is a sure thing."
+      }
+    },
+    {
+      "id": "block-guaranteed-headline",
+      "expect": "block",
+      "why": "Certainty language in a generated headline is exactly what the lexicon exists to stop.",
+      "garment_label": "Vantorre curved-zip coat",
+      "mutate": {
+        "kind": "replace",
+        "find": "Consider buying:",
+        "with": "Guaranteed winner:"
+      }
+    },
+    {
+      "id": "block-expected-move-below-fee",
+      "expect": "block",
+      "why": "theta == fee_assumption_pct, so an actionable advice quoting a move smaller than its own friction contradicts itself on the page (SCOPE D-12).",
+      "garment_label": "Vantorre curved-zip coat",
+      "expected_return_override": 0.05
+    },
+    {
+      "id": "block-fee-percentage-rewritten",
+      "expect": "block",
+      "why": "The fee note must render the configured fee_assumption_pct; a rewritten number makes the safeguard cosmetic.",
+      "garment_label": "Vantorre curved-zip coat",
+      "mutate": {
+        "kind": "replace",
+        "find": "roughly 12%",
+        "with": "roughly 2%"
+      }
+    },
+    {
+      "id": "render-guaranteed-authentic-label",
+      "expect": "render",
+      "why": "A real marketplace label — 'guaranteed authentic' — is user text in quotes and must not block the advice (over-blocking is the M5b failure).",
+      "garment_label": "guaranteed authentic AW99 moto"
+    },
+    {
+      "id": "render-sure-thing-event-note",
+      "expect": "render",
+      "why": "An event note the user pasted from a seller carries a forbidden phrase in quoted context.",
+      "garment_label": "Kessler bias-cut knit",
+      "event_notes": "a sure thing, said the seller"
+    },
+    {
+      "id": "render-listing-title-easy-money",
+      "expect": "render",
+      "why": "A listing title quoted into the event note ('easy money') is user-supplied text, not a product claim.",
+      "garment_label": "Okafor panelled trainer",
+      "event_notes": "the marketplace title literally said easy money for the flipper"
+    },
+    {
+      "id": "render-forbidden-word-straddling-quote",
+      "expect": "render",
+      "why": "A label carrying a typographic closing quote must not be able to smuggle text out of the quoted span; the renderer strips it, so the advice still renders and the lexicon still cannot be evaded.",
+      "garment_label": "AW99 moto ” risk-free"
+    },
+    {
+      "id": "render-multiple-user-strings",
+      "expect": "render",
+      "why": "Label and event note both carry forbidden phrases in quoted context; the advice must still render.",
+      "garment_label": "no risk if you know the sizing",
+      "event_notes": "can't lose, per the shop"
+    }
+  ]
+}

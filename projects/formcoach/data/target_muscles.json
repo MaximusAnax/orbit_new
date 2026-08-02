@@ -1,0 +1,11 @@
+{
+  "priority_by_goal": {
+    "hypertrophy": ["chest", "quads", "lats", "upper_back", "hamstrings", "side_delts",
+                    "triceps", "biceps", "glutes", "calves", "rear_delts", "abs"],
+    "general":     ["chest", "quads", "lats", "upper_back", "hamstrings", "side_delts",
+                    "triceps", "biceps", "glutes", "calves", "rear_delts", "abs"],
+    "strength":    ["quads", "chest", "upper_back", "lats", "hamstrings", "lower_back",
+                    "triceps", "glutes", "side_delts", "biceps", "calves", "abs"]
+  },
+  "count_by_days": { "2": 5, "3": 7, "4": 10, "5": 11, "6": 12 }
+}

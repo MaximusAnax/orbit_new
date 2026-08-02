@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Biz Daily</title>
+    <link>https://bizdaily.example.com/</link>
+    <description>TickerPress evaluation fixture feed.</description>
+    <item>
+      <title>Ford issues a recall for 5,000 pickups over a wiring fault</title>
+      <link>https://bizdaily.example.com/ford-wiring-recall</link>
+      <description>Ford said the recall covers trucks built in January and February at one plant.</description>
+      <content:encoded><![CDATA[<p>Dealers will replace a harness clip at no cost to owners.</p><p>The company said no fires had been reported.</p>]]></content:encoded>
+      <pubDate>Sun, 01 Mar 2026 15:40:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Biz Daily | Tesla museum reopens in Belgrade after restoration</title>
+      <link>https://bizdaily.example.com/tesla-museum-belgrade?utm_source=rss&amp;utm_medium=feed&amp;utm_content=variant</link>
+      <description>The museum holds the inventor's notebooks and a working replica of his coil.</description>
+      <content:encoded><![CDATA[<p>The curator said the work took two years.</p><p>Letters between the inventor and Ford are shown in a new gallery from Friday.</p><p>Visitors can see the replica coil on the ground floor.</p><p>An actor reads the letters in the audio guide, and the small cinema shows a short film by a local director.</p><p>A visiting display from the Oracle of Delphi site opens in the same wing in June.</p><p>Corrections appear at the foot of the page.</p>]]></content:encoded>
+      <pubDate>Sun, 01 Mar 2026 13:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Shell companies at the centre of a laundering case</title>
+      <link>https://bizdaily.example.com/shell-companies-laundering</link>
+      <description>Prosecutors said the laundering network moved 400 million euros through firms with no employees.</description>
+      <content:encoded><![CDATA[<p>The case names 40 entities registered in three jurisdictions.</p><p>Two banks have been fined for weak compliance controls.</p>]]></content:encoded>
+      <pubDate>Sat, 28 Feb 2026 08:50:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Wall Street closes lower as investors weigh the rate path</title>
+      <link>https://bizdaily.example.com/market-close-rate-path</link>
+      <description>The benchmark index closed 0.6 percent lower as investors weighed the outlook for interest rates.</description>
+      <content:encoded><![CDATA[<p>Trading volume was light and the session closed without a clear direction in either market.</p><p>Investors weighed inflation data and the options market before the chair speaks, with balance sheet runoff unchanged.</p><p>Among the movers, $AAPL, $AMZN and $TSLA fell, while $V, $F and $TGT edged higher.</p>]]></content:encoded>
+      <pubDate>Fri, 27 Feb 2026 21:05:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Biz Daily | Amazon basin survey finds insects rebounding</title>
+      <link>https://bizdaily.example.com/amazon-basin-survey?utm_source=rss&amp;utm_medium=feed</link>
+      <description>Ecologists said larvae counts in the basin rose for a second season after years of decline.</description>
+      <content:encoded><![CDATA[<p>Caterpillar species tracked by the survey recovered fastest in protected habitat.</p><p>Deforestation in the Amazon basin slowed 8 percent, the survey said.</p><p>Shell fragments of river molluscs were counted along the same riverbank.</p><p>Butterflies and moth larvae were counted along the same transects.</p><p>Corrections appear at the foot of the page.</p>]]></content:encoded>
+      <pubDate>Fri, 27 Feb 2026 15:15:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Shippers report normal service at the port</title>
+      <link>https://bizdaily.example.com/shippers-normal-service</link>
+      <description>Freight forwarders said booking times are back to a two-day window. Two carriers reinstated the sailings they had cancelled, and warehouse space near the docks freed up.</description>
+      <content:encoded><![CDATA[<p>The port authority said in a statement that container traffic returned to normal levels within three weeks of the settlement.</p><p>It said the backlog of vessels waiting at anchor cleared on the ninth of the month.</p><p>A spokesperson said rail connections were the last part of the network to recover.</p><p>Cruise passengers returned in February, though tourists paid higher visa fees at the terminal.</p>]]></content:encoded>
+      <pubDate>Fri, 27 Feb 2026 14:25:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Software, energy and insurance lead the premarket movers</title>
+      <link>https://bizdaily.example.com/premarket-movers-list?utm_source=partner&amp;utm_campaign=syndication</link>
+      <description>Analysts said margins held up better than feared across the sector as freight costs eased again.</description>
+      <content:encoded><![CDATA[<p>Volume in the premarket session was thin and few of the moves held into the open.</p><p>Among the movers, $ORCL, $SHEL and $GOOGL rose, while $META, $CAT and $ALL slipped.</p><p>Corrections appear at the foot of the page.</p>]]></content:encoded>
+      <pubDate>Fri, 27 Feb 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Biz Daily | Across the valley, Apple growers brace for frost</title>
+      <link>https://bizdaily.example.com/apple-growers-frost?utm_source=partner&amp;utm_campaign=syndication</link>
+      <description>Growers said an early frost damaged blossom across the valley and the harvest may fall by a fifth.</description>
+      <content:encoded><![CDATA[<p>Growers said Apple futures on the produce exchange rose 6 percent as buyers weighed a smaller crop.</p><p>Orchard owners have hired fewer seasonal workers than last year.</p><p>Caterpillar damage in the same orchards was lighter than last season.</p><p>Buyers said the fruit suits a pie recipe rather than pressing.</p><p>Corrections appear at the foot of the page.</p>]]></content:encoded>
+      <pubDate>Thu, 26 Feb 2026 18:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Biz Daily | Upgrade cycles for smartphones keep lengthening</title>
+      <link>https://bizdaily.example.com/upgrade-cycles-lengthen?utm_source=partner&amp;utm_campaign=syndication</link>
+      <description>Two carriers said the average replacement cycle has passed four years in their largest markets.</description>
+      <content:encoded><![CDATA[<p>Carriers said Apple has stretched that cycle furthest, trimming quarterly sales of new handsets.</p><p>Analysts at two firms said Apple would offset the slowdown with services revenue.</p><p>One supplier said Apple accounted for a fifth of its shipments last year.</p><p>Rivals have not matched Apple on trade pricing, the carriers said.</p><p>The hardware still sells at a premium in that market.</p><p>Corrections appear at the foot of the page.</p>]]></content:encoded>
+      <pubDate>Thu, 26 Feb 2026 18:20:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Construction starts fell in January</title>
+      <link>https://bizdaily.example.com/construction-starts-january</link>
+      <description>Housing starts fell 3.1 percent in January while non-residential work held steady.</description>
+      <content:encoded><![CDATA[<p>Builders blamed financing costs rather than demand for the decline.</p><p>$CAT said in February that dealer orders remained firm.</p>]]></content:encoded>
+      <pubDate>Thu, 26 Feb 2026 15:10:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Debit routing rules reshape checkout</title>
+      <link>https://bizdaily.example.com/debit-routing-checkout</link>
+      <description>Processors said merchants now choose between two networks on most debit transactions.</description>
+      <content:encoded><![CDATA[<p>Processors said Visa keeps the larger share of routed volume in the market.</p><p>Merchants said Visa had matched rival pricing on small tickets.</p><p>One processor said Visa handles settlement faster on weekends.</p><p>Volume routed away from Visa grew 3 percent last quarter, processors said.</p>]]></content:encoded>
+      <pubDate>Thu, 26 Feb 2026 12:20:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Biz Daily | Incentives on pickups return to the market</title>
+      <link>https://marketminute.example.com/pickup-incentives-return?utm_source=partner&amp;utm_campaign=syndication</link>
+      <description>Average incentives on full-size pickups reached 6 percent of sticker price last month.</description>
+      <content:encoded><![CDATA[<p>Dealers said Ford moved first with cash back on its most popular trims.</p><p>Analysts said Ford would defend share rather than margin this year.</p><p>One dealer said Ford inventory had climbed for a third month.</p><p>Production of the smaller pickup was unaffected, the dealers said.</p><p>Buyers cross-shopping Ford took longer to close, the dealers said.</p><p>Corrections appear at the foot of the page.</p>]]></content:encoded>
+      <pubDate>Wed, 25 Feb 2026 18:50:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Regional bank raises deposit rates</title>
+      <link>https://bizdaily.example.com/regional-bank-deposit-rates</link>
+      <description>The increase is the third since the summer and lifts the headline rate to 4.1 percent.</description>
+      <content:encoded><![CDATA[<p>The bank said in a statement that the new rate applies to balances above 5,000 dollars and takes effect on the first of the month.</p><p>It said branch staffing would not change, and that the decision followed a review of funding costs.</p><p>The chief financial officer said the move should protect the deposit base without hurting margin.</p>]]></content:encoded>
+      <pubDate>Wed, 25 Feb 2026 17:20:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Visa settles interchange suit with a group of merchants</title>
+      <link>https://bizdaily.example.com/visa-interchange-settlement</link>
+      <description>Visa Inc. (NYSE: V) agreed to cap interchange fees for five years under a settlement with a group of retail merchants.</description>
+      <content:encoded><![CDATA[<p>The agreement still needs court approval, and a parallel suit settled last year.</p><p>Cardholders will see no change at checkout, the payments network said.</p>]]></content:encoded>
+      <pubDate>Wed, 25 Feb 2026 16:20:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Apple pie, but make it savoury: a recipe</title>
+      <link>https://bizdaily.example.com/savoury-apple-pie</link>
+      <description>The recipe swaps sugar for thyme and a sharp cheese, and it bakes in under an hour.</description>
+      <content:encoded><![CDATA[<p>Growers said the late harvest left the crop sharper this year, and blossom in the orchard was thin.</p><p>Use firm apples so the slices keep their shape as they bake.</p><p>Bake the pastry Shell for ten minutes before filling.</p><p>A spoon of cider vinegar helps.</p>]]></content:encoded>
+      <pubDate>Wed, 25 Feb 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Ford anchors a slow burning thriller</title>
+      <link>https://bizdaily.example.com/ford-thriller-review?utm_source=rss&amp;utm_medium=feed</link>
+      <description>The actor plays a retired pilot in a film that runs two hours and ten minutes.</description>
+      <content:encoded><![CDATA[<p>The film reunites him with the director of Oracle, a thriller from 2019.</p><p>His previous cinema role was a biopic about the inventor Tesla.</p><p>Ford has not appeared in a cinema release since 2023, critics noted.</p><p>Corrections appear at the foot of the page.</p>]]></content:encoded>
+      <pubDate>Tue, 24 Feb 2026 20:35:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Alphabet cards return to the primary classroom</title>
+      <link>https://bizdaily.example.com/alphabet-cards-classroom</link>
+      <description>Teachers said the cards help before pupils start to read.</description>
+      <content:encoded><![CDATA[<p>The literacy programme runs for eight weeks and comes with a short tutorial for beginners on how to use the cards.</p><p>The cards still start with A for Apple, the classroom teachers said.</p><p>Older students try scripting a short play about an ancient myth.</p><p>Parents were given a plan to use at home.</p>]]></content:encoded>
+      <pubDate>Tue, 24 Feb 2026 17:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Charging networks open up to rival vehicles</title>
+      <link>https://bizdaily.example.com/charging-networks-open</link>
+      <description>Three operators said cross-brand access will be available at most sites by the summer.</description>
+      <content:encoded><![CDATA[<p>Operators said Tesla had opened the largest share of its connectors so far.</p><p>Analysts said Tesla earns a margin on every session sold to other brands.</p><p>One operator said Tesla hardware needed only a firmware change.</p><p>Drivers using Tesla connectors pay a small premium, the operators said.</p>]]></content:encoded>
+      <pubDate>Tue, 24 Feb 2026 15:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Ford Motor lifts full-year guidance on pickup demand</title>
+      <link>https://bizdaily.example.com/ford-guidance-raise</link>
+      <description>Ford Motor Company (NYSE: F) raised its full-year profit guidance, citing steady pickup demand and lower warranty costs.</description>
+      <content:encoded><![CDATA[<p>Shares rose 2 percent after the announcement.</p><p>The Dearborn assembly line will add a shift in June.</p><p>Dealers reported thinner inventory than a year earlier.</p>]]></content:encoded>
+      <pubDate>Tue, 24 Feb 2026 13:05:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

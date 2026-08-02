@@ -1,0 +1,281 @@
+[
+  {
+    "id": "jps-leviticus-19-11",
+    "source_id": "tanakh-jps",
+    "locator": "Leviticus 19:11",
+    "text": "Ye shall not steal; neither shall ye deal falsely, nor lie one to another.",
+    "paraphrase": null,
+    "context_note": "From the Holiness Code: theft, false dealing, and lying are prohibited in one breath, tying honesty to the fabric of communal holiness.",
+    "transcription_checked": true
+  },
+  {
+    "id": "ketubot-16b-bride",
+    "source_id": "talmud-bavli-ref",
+    "locator": "Ketubot 16b–17a",
+    "text": null,
+    "paraphrase": "The schools of Hillel and Shammai debate how to praise a bride: Shammai holds one describes her as she is; Hillel holds one praises every bride as beautiful and graceful. The law follows Hillel — kind speech may bend literal accuracy for the sake of another's joy.",
+    "context_note": "A foundational rabbinic case for permitted benevolent untruth; later halakhic discussion (e.g. Bava Metzia 23b–24a) enumerates narrow categories where deviation from truth is allowed, especially for peace.",
+    "transcription_checked": false
+  },
+  {
+    "id": "jps-numbers-30-3",
+    "source_id": "tanakh-jps",
+    "locator": "Numbers 30:3",
+    "text": "When a man voweth a vow unto the LORD, or sweareth an oath to bind his soul with a bond, he shall not break his word; he shall do according to all that proceedeth out of his mouth.",
+    "paraphrase": null,
+    "context_note": "The Torah's baseline law of vows: the spoken word binds. The rabbinic annulment procedures (hatarat nedarim) exist precisely because the default obligation is so strong.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-genesis-9-6",
+    "source_id": "tanakh-jps",
+    "locator": "Genesis 9:6",
+    "text": "Whoso sheddeth man's blood, by man shall his blood be shed; for in the image of God made He man.",
+    "paraphrase": null,
+    "context_note": "Given to Noah for all humanity: bloodshed violates the divine image itself. The verse grounds both the gravity of murder and, historically, the warrant for its punishment.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-exodus-22-1",
+    "source_id": "tanakh-jps",
+    "locator": "Exodus 22:1",
+    "text": "If a thief be found breaking in, and be smitten so that he dieth, there shall be no bloodguiltiness for him.",
+    "paraphrase": null,
+    "context_note": "The Torah's own self-defense provision for the night burglar; the Talmud generalizes it into the rodef principle — the pursuer may be stopped, by lethal force if necessary.",
+    "transcription_checked": true
+  },
+  {
+    "id": "sanhedrin-72a-rodef",
+    "source_id": "talmud-bavli-ref",
+    "locator": "Sanhedrin 72a",
+    "text": null,
+    "paraphrase": "The Talmud derives from the burglar law the general rule: if one comes to slay you, rise early and slay him first. Yet the pursuer may be stopped with the least force that suffices, and one who could have wounded but killed is liable.",
+    "context_note": "The rodef (pursuer) principle: self-defense and defense of others is obligatory, but calibrated — necessity, not vengeance, sets its limit.",
+    "transcription_checked": false
+  },
+  {
+    "id": "makkot-7a-sanhedrin",
+    "source_id": "talmud-bavli-ref",
+    "locator": "Makkot 7a",
+    "text": null,
+    "paraphrase": "A Sanhedrin that executes once in seven years is called destructive; Rabbi Eleazar ben Azariah says once in seventy years. Rabbis Tarfon and Akiba say: had we sat on the Sanhedrin, no one would ever have been executed. Rabban Simeon ben Gamaliel replies: they would have multiplied shedders of blood in Israel.",
+    "context_note": "The Mishnah's own record of rabbinic discomfort with the death penalty the Torah prescribes — procedural bars made execution nearly impossible, over an explicit dissent.",
+    "transcription_checked": false
+  },
+  {
+    "id": "jps-genesis-9-5",
+    "source_id": "tanakh-jps",
+    "locator": "Genesis 9:5",
+    "text": "And surely your blood of your lives will I require; at the hand of every beast will I require it; and at the hand of man, even at the hand of every man's brother, will I require the life of man.",
+    "paraphrase": null,
+    "context_note": "'Your blood of your lives will I require' is the classical prooftext that one's own life is not one's to take; God holds a claim on each life against its own bearer.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-deuteronomy-30-19",
+    "source_id": "tanakh-jps",
+    "locator": "Deuteronomy 30:19",
+    "text": "I call heaven and earth to witness against you this day, that I have set before thee life and death, the blessing and the curse; therefore choose life, that thou mayest live, thou and thy seed;",
+    "paraphrase": null,
+    "context_note": "'Choose life' became the tradition's summary imperative — the ground of pikuach nefesh, by which saving life overrides nearly every commandment.",
+    "transcription_checked": true
+  },
+  {
+    "id": "avodah-zarah-18a-teradion",
+    "source_id": "talmud-bavli-ref",
+    "locator": "Avodah Zarah 18a",
+    "text": null,
+    "paraphrase": "Burned at the stake, Rabbi Hanina ben Teradion refuses to open his mouth to hasten his death — better that He who gave the soul should take it — yet permits the executioner to remove the wet wool tufts prolonging his agony, and the executioner is promised the world to come. Later authorities derive from this the line between hastening death, which is forbidden, and removing an impediment to dying, which may be permitted.",
+    "context_note": "The classical source for the halakhic distinction governing end-of-life care: active hastening forbidden, removal of artificial hindrances to an ongoing death potentially permitted.",
+    "transcription_checked": false
+  },
+  {
+    "id": "jps-proverbs-12-10",
+    "source_id": "tanakh-jps",
+    "locator": "Proverbs 12:10",
+    "text": "A righteous man regardeth the life of his beast; but the tender mercies of the wicked are cruel.",
+    "paraphrase": null,
+    "context_note": "The proverb makes care for one's animal a mark of righteousness itself; the rabbinic category tza'ar ba'alei chayim — the suffering of living creatures — builds on texts like this.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-deuteronomy-25-4",
+    "source_id": "tanakh-jps",
+    "locator": "Deuteronomy 25:4",
+    "text": "Thou shalt not muzzle the ox when he treadeth out the corn.",
+    "paraphrase": null,
+    "context_note": "Even the working animal may not be prevented from eating as it labors — a small law repeatedly cited as the Torah's paradigm of consideration for animals.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-leviticus-19-13",
+    "source_id": "tanakh-jps",
+    "locator": "Leviticus 19:13",
+    "text": "Thou shalt not oppress thy neighbour, nor rob him; the wages of a hired servant shall not abide with thee all night until the morning.",
+    "paraphrase": null,
+    "context_note": "Robbery and wage-withholding sit in one verse: taking by force and taking by delay are the same wrong. Rabbinic law extends theft to every form of misappropriation, including deception in trade.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-exodus-22-24",
+    "source_id": "tanakh-jps",
+    "locator": "Exodus 22:24",
+    "text": "If thou lend money to any of My people, even to the poor with thee, thou shalt not be to him as a creditor; neither shall ye lay upon him interest.",
+    "paraphrase": null,
+    "context_note": "Lending to the poor is assumed; what is forbidden is the creditor's posture and the charging of interest within the covenant community.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-deuteronomy-23-20-21",
+    "source_id": "tanakh-jps",
+    "locator": "Deuteronomy 23:20–21",
+    "text": "Thou shalt not lend upon interest to thy brother: interest of money, interest of victuals, interest of any thing that is lent upon interest. Unto a foreigner thou mayest lend upon interest; but unto thy brother thou shalt not lend upon interest;",
+    "paraphrase": null,
+    "context_note": "The brother/foreigner distinction confines the interest ban to the covenant community; medieval and modern authorities debated its rationale and devised the heter iska to permit commercial investment.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-leviticus-19-18",
+    "source_id": "tanakh-jps",
+    "locator": "Leviticus 19:18",
+    "text": "Thou shalt not take vengeance, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD.",
+    "paraphrase": null,
+    "context_note": "Vengeance and even the silent grudge are forbidden in the same verse that commands neighbor-love; the Talmud illustrates both with homely cases of borrowing and lending.",
+    "transcription_checked": true
+  },
+  {
+    "id": "yoma-85b-atonement",
+    "source_id": "talmud-bavli-ref",
+    "locator": "Yoma 85b",
+    "text": null,
+    "paraphrase": "The Mishnah teaches: for transgressions between a person and God, the Day of Atonement atones; for transgressions between a person and his fellow, the Day of Atonement does not atone until he has appeased his fellow.",
+    "context_note": "Repair between people cannot be outsourced to ritual: the offender must seek out the wronged party. Forgiveness is owed to the sincere penitent, but the work of appeasement comes first.",
+    "transcription_checked": false
+  },
+  {
+    "id": "jps-leviticus-19-3",
+    "source_id": "tanakh-jps",
+    "locator": "Leviticus 19:3",
+    "text": "Ye shall fear every man his mother, and his father, and ye shall keep My sabbaths: I am the LORD your God.",
+    "paraphrase": null,
+    "context_note": "Reverence for parents opens the Holiness Code, with mother named first; paired with 'honour' in the Decalogue, the rabbis derived distinct duties of respect and of care.",
+    "transcription_checked": true
+  },
+  {
+    "id": "kiddushin-31b-honor",
+    "source_id": "talmud-bavli-ref",
+    "locator": "Kiddushin 31b",
+    "text": null,
+    "paraphrase": "The Talmud defines honor of parents concretely: one gives food and drink, clothes and covers, leads in and out. Reverence means not sitting in the parent's place, not contradicting the parent's words in public, not tipping the scales against them. The gentile Dama son of Netina, who forfeited a fortune rather than wake his father, is held up as the exemplar.",
+    "context_note": "The classical specification of filial duty into maintenance (kibbud) and deference (mora), with its limits — a parent's command to transgress is not obeyed.",
+    "transcription_checked": false
+  },
+  {
+    "id": "jps-malachi-2-14",
+    "source_id": "tanakh-jps",
+    "locator": "Malachi 2:14",
+    "text": "Because the LORD hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously, though she is thy companion, and the wife of thy covenant.",
+    "paraphrase": null,
+    "context_note": "Marriage as covenant with God as witness: infidelity is treachery against companion and covenant at once, not merely a private lapse.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-deuteronomy-24-1",
+    "source_id": "tanakh-jps",
+    "locator": "Deuteronomy 24:1",
+    "text": "When a man taketh a wife, and marrieth her, then it cometh to pass, if she find no favour in his eyes, because he hath found some unseemly thing in her, that he writeth her a bill of divorcement, and giveth it in her hand, and sendeth her out of his house,",
+    "paraphrase": null,
+    "context_note": "The Torah's divorce procedure: the get. What counts as an 'unseemly thing' divided Hillel and Shammai, and the debate frames all later Jewish divorce law.",
+    "transcription_checked": true
+  },
+  {
+    "id": "gittin-90b-altar",
+    "source_id": "talmud-bavli-ref",
+    "locator": "Gittin 90b",
+    "text": null,
+    "paraphrase": "Rabbi Eleazar said: whoever divorces the wife of his youth, even the altar sheds tears for him.",
+    "context_note": "Divorce is lawful and the tractate regulating it is long — yet this closing word marks the tradition's grief at the lawful act.",
+    "transcription_checked": false
+  },
+  {
+    "id": "jps-leviticus-19-34",
+    "source_id": "tanakh-jps",
+    "locator": "Leviticus 19:34",
+    "text": "The stranger that sojourneth with you shall be unto you as the home-born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I am the LORD your God.",
+    "paraphrase": null,
+    "context_note": "Love of the stranger is commanded with Israel's own estrangement in Egypt as its reason; the Talmud counts the Torah's warnings about the stranger at thirty-six.",
+    "transcription_checked": true
+  },
+  {
+    "id": "shabbat-127a-hospitality",
+    "source_id": "talmud-bavli-ref",
+    "locator": "Shabbat 127a",
+    "text": null,
+    "paraphrase": "Rab Judah said in Rab's name: hospitality to wayfarers is greater than welcoming the presence of the Shechinah, for Abraham left God's presence to run toward his three guests.",
+    "context_note": "From Abraham at Mamre the rabbis drew a startling ranking: receiving guests outranks receiving God — hospitality as practical holiness.",
+    "transcription_checked": false
+  },
+  {
+    "id": "jps-leviticus-19-16",
+    "source_id": "tanakh-jps",
+    "locator": "Leviticus 19:16",
+    "text": "Thou shalt not go up and down as a talebearer among thy people; neither shalt thou stand idly by the blood of thy neighbour: I am the LORD.",
+    "paraphrase": null,
+    "context_note": "Talebearing is forbidden even when true; the same verse forbids standing idle at a neighbor's danger — the tongue and the bystander are policed together.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-psalm-34-14",
+    "source_id": "tanakh-jps",
+    "locator": "Psalm 34:14",
+    "text": "Keep thy tongue from evil, and thy lips from speaking guile.",
+    "paraphrase": null,
+    "context_note": "The psalm's recipe for desiring life: guard the tongue. The Chofetz Chaim built the modern laws of speech on this verse.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-micah-6-8",
+    "source_id": "tanakh-jps",
+    "locator": "Micah 6:8",
+    "text": "It hath been told thee, O man, what is good, and what the LORD doth require of thee: only to do justly, and to love mercy, and to walk humbly with thy God.",
+    "paraphrase": null,
+    "context_note": "The prophetic summary of the whole law ends in humility — walking humbly with God is the frame within which justice and mercy are done.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-proverbs-16-5",
+    "source_id": "tanakh-jps",
+    "locator": "Proverbs 16:5",
+    "text": "Every one that is proud in heart is an abomination to the LORD; my hand upon it! he shall not be unpunished.",
+    "paraphrase": null,
+    "context_note": "Pride of heart — before any act — is already abomination; the rabbis compared arrogance to idolatry, the self set up in God's place.",
+    "transcription_checked": true
+  },
+  {
+    "id": "aboth-4-1-rich",
+    "source_id": "avot-taylor",
+    "locator": "Aboth 4:1",
+    "text": "Who is rich? He that is contented with his lot; for it is said, When thou eatest the labour of thine hands, happy art thou, and it shall be well with thee.",
+    "paraphrase": null,
+    "context_note": "Ben Zoma's redefinition of wealth as contentment; the mishnah relocates riches from possession to disposition.",
+    "transcription_checked": true
+  },
+  {
+    "id": "aboth-1-6-merit",
+    "source_id": "avot-taylor",
+    "locator": "Aboth 1:6",
+    "text": "and judge every man in the scale of merit.",
+    "paraphrase": null,
+    "context_note": "Joshua ben Perachiah's maxim: weigh every person toward acquittal. The tradition of dan le-chaf zechut — judging by the scale of merit — begins here.",
+    "transcription_checked": true
+  },
+  {
+    "id": "jps-leviticus-19-15",
+    "source_id": "tanakh-jps",
+    "locator": "Leviticus 19:15",
+    "text": "Ye shall do no unrighteousness in judgment; thou shalt not respect the person of the poor, nor favour the person of the mighty; but in righteousness shalt thou judge thy neighbour.",
+    "paraphrase": null,
+    "context_note": "Judgment itself is commanded — done rightly, without favoritism toward poor or mighty; charitable interpretation and righteous judgment are twin duties, not rivals.",
+    "transcription_checked": true
+  }
+]

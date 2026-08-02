@@ -1,0 +1,68 @@
+{
+  "grades": [
+    {
+      "grade": "new",
+      "multiplier": 1.25,
+      "platform_aliases": [
+        "New",
+        "New with tags",
+        "New/Never Worn",
+        "Never worn with tag",
+        "NWT",
+        "Deadstock",
+        "Brand new with tags",
+        "DS"
+      ]
+    },
+    {
+      "grade": "excellent",
+      "multiplier": 1.0,
+      "platform_aliases": [
+        "Excellent",
+        "Excellent condition",
+        "Gently Used",
+        "Never worn",
+        "Never worn, no tag",
+        "Like new",
+        "Used - Excellent",
+        "VNDS"
+      ]
+    },
+    {
+      "grade": "good",
+      "multiplier": 0.8,
+      "platform_aliases": [
+        "Good",
+        "Good condition",
+        "Very good condition",
+        "Used",
+        "Used - Good",
+        "Gently worn"
+      ]
+    },
+    {
+      "grade": "fair",
+      "multiplier": 0.55,
+      "platform_aliases": [
+        "Fair",
+        "Fair condition",
+        "Very Worn",
+        "Used - Fair",
+        "Well worn",
+        "Worn"
+      ]
+    },
+    {
+      "grade": "poor",
+      "multiplier": 0.35,
+      "platform_aliases": [
+        "Poor",
+        "Poor condition",
+        "Distressed",
+        "Damaged",
+        "For parts or repair",
+        "Beaten"
+      ]
+    }
+  ]
+}

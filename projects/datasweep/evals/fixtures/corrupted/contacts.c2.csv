@@ -1,0 +1,401 @@
+name,email,city,country,zip,signup_date,age,value
+Zoë Lindqvist,zoe.lindqvist0@example.net,Brightwater,Uruguay,78361,2022-07-26,66,282.26
+Théo Moreau,theo.moreau1@example.net,Silver Falls,Canada,61713,2023-06-13,42,8091.09
+Ingrid Novak,ingrid.novak2@example.net,Coldspring,Japan,89359,2023-11-19,46,2667.75
+Tomás Silva,tomas.silva3@example.net,Ironwood,Denmark,37181,2022-04-02,47,2394.54
+Piotr Yilmaz,piotr.yilmaz4@example.net,Málaga,Portugal,91886,2022-03-01,18,2914.57
+Hugo Yilmaz,hugo.yilmaz5@example.net,Brightwater,Uruguay,38583,2023-06-23,78,3151.56
+Noor Haddad,noor.haddad6@example.net,Ironwood,Denmark,25838,2023-09-05,77,9641.19
+Aurora Dupont,aurora.dupont7@example.net,Silver Falls,Uruguay,79570,2022-10-13,65, 2881.58 
+Mikael Marchetti,mikael.marchetti8@example.net,New  Harbor,Canada,13840,2023-02-10,75,7744.81
+Aurora Andersen,aurora.andersen9@example.net,Málaga,Norway,50310,2022-12-20,54,495.55
+ Lucia Weiss ,lucia.weiss10@example.net,New Harbor,Uruguay,22721,2021-03-21,64,2834.89
+Renée Costa,renee.costa11@example.net,Ironwood,Portugal,88966,2021-05-08,76,€457.94
+Tomás Moreau,tomas.moreau12@example.net,Brightwater,Finland,31508,2022-07-16,58,6562.27
+Hugo Haddad,hugo.haddad13@example.net,Quarrytown,Norway,41538,2021-12-23,19,9283.75
+Mikael Fernández,mikael.fernandez14@example.net,Silver Falls,Finland,37359,2023-06-24,68,8189.51
+Amara Delacroix,amara.delacroix15@example.net,Quarrytown,Denmark,72301,2022-08-30,90,4508.33
+Amara Haddad,amara.haddad16@example.net,Silver Falls,Fialand,81976,2021-08-01,18,4164.36
+Óscar Costa,oscar.costa17@example.net,Ironwood,Japan,84007,2023-06-13,26,6113.97
+Chloé Dupont,chloe.dupont18@example.net,Silver Falls,Uruguay,61716,2023-05-15,NA,1580.83
+José Ivanov,jose.ivanov19@example.net,Ironwood,Uruguay,08095,2023-09-06,21,1939.10
+Tomás Ramírez,tomas.ramirez20@example.net,Quarrytown,Norway,91044,2023-07-01,29,8771.63
+Noor Novak,noor.novak21@example.net,Brightwater,Mexico,62505,2021-11-28,56,"8,838.63"
+Björn Okafor,bjorn.okafor22@example.net,New Harbor,MEXICO,76134,2021-10-08,25,3249.30
+Zoë Okafor,zoe.okafor23@example.net,Dunmore,Uruguay,72827,2021-09-17,51,2462.42
+Renée Bergström,renee.bergstrom24@example.net,Coldspring,Finland,96723,2024-03-06,83,1041.87
+Renée Sørensen,renee.sorensen25@example.net,Ironwood,Mexico,08774,2021-07-24,83,1189.96
+Nadia Okafor,nadia.okafor26@example.net,Ironwood,Mexico,00460,2024-04-01,21,
+Ingrid Bergström,ingrid.bergstrom27@example.net,New Harbor,Japan,72582,2023-05-13,72,7527.57
+Selma Marchetti,selma.marchetti28@example.net,Coldspring,Portugal,52160,2022-08-11,62,1669.95
+Chloé Bergström,chloe.bergstrom29@example.net,New  Harbor,Mexico,49891,2021/07/04,59,9505.94
+Zoë Yilmaz,zoe.yilmaz30@example.net,Coldspring,Canada,76977,2023-12-04,49,8328.80
+Mikael Lindqvist,mikael.lindqvist31@example.net,Dunmore,Uruguay,21074,2022-07-17,72,868.83
+Freya Kovács,freya.kovacs32@example.net,New Harbor,Denmark,80046,2022-06-27,NA,7986.97
+Hugo Dupont,hugo.dupont33@example.net,Ironwood,Japan,87767,2024-06-16,78,5410.40
+José Lindqvist,jose.lindqvist34@example.net,Ironwood,Japan,64376,2021-01-26,50,625.10
+Nadia Weiss,nadia.weiss35@example.net,Dunmore,Japan,64766,2023-07-28,86,8968.87
+Chloé Lindqvist,chloe.lindqvist36@example.net,New Harbor,Japan,58370,2021-06-02,60,9212.81
+José Yilmaz,jose.yilmaz37@example.net,New Harbor,Japan,03992,2023-06-22,33,2267.20
+Chloé Andersen,chloe.andersen38@example.net,Málaga,Denmark,72530,2023-06-14,58,3019.05
+Tomás Sørensen,tomas.sorensen39@example.net,New Harbor,Canada,58529,2024-01-26,19,394.48
+Renée Okafor,renee.okafor40@example.net,Málaga,Uruguay,74199,2023-08-12,86,9669.20
+Lucia Bergström,lucia.bergstrom41@example.net,Brightwater,Finland,04666,2023-05-30,37,1249.93
+Freya Marchetti,freya.marchetti42@example.net,Dunmore,Mexico,99260,2021-07-24,89,9247.24
+TomÃ¡s KovÃ¡cs,tomas.kovacs43@example.net,Quarrytown,Portugal,52392,2022/07/09,82,1719.54
+Renée Fernández,renee.fernandez44@example.net,Quarrytown,Japan,78181,2024-06-25,48,8226.88
+Óscar Bergström,oscar.bergstrom45@example.net,Dunmore,Canada,76441,2024-01-04,83,5598.73
+Emil Dupont,emil.dupont46@example.net,Coldspring,Finland,60760,2022-04-26,'25,5006.93
+Hugo Ramírez,hugo.ramirez47@example.net,Brightwater,Japan,08560,2024-01-30,83,4389.12
+Hugo Andersen,hugo.andersen48@example.net,Coldspring,Uruguay,58044,2022-07-25,,1597.85
+José Weiss,jose.weiss49@example.net,Málaga,Uruguay,73544,2023-05-14,19,8917.47
+Amara Costa,amara.costa50@example.net,Coldspring,Japan,66095,2024-03-07,78,3499.06
+Chloé Weiss,chloe.weiss51@example.net,Coldspring,Mexico,22348,2021-04-14,27,6553.63
+Nadia Delacroix,nadia.delacroix52@example.net,Dunmore,Norway,42722,2023-12-03,44,7020.77
+Hugo Nakamura,hugo.nakamura53@example.net,Brightwater,Portugal,75271,2022/06/04,20,285.21
+Óscar Ivanov,oscar.ivanov54@example.net,Ironwood,Portugal,71034,2023-09-21,59,5311.82
+Nadia Nakamura,nadia.nakamura55@example.net,Málaga,Japan,42026,2021-12-09,38,
+Théo Yilmaz,theo.yilmaz56@example.net,New Harbor,Finland,38872,2023-11-23,40,794.21
+Zoë Ivanov,zoe.ivanov57@example.net,Coldspring,Finland,92679,2022-09-02,41,"4168,17"
+Mikael Sørensen,mikael.sorensen58@example.net,New Harbor,Denmark,46731,2024-04-04,28,1859.67
+Emil Andersen,emil.andersen59@example.net,Ironwood,Canada,95360,2023-01-19,89,1090.96
+Mikael Yilmaz,mikael.yilmaz60@example.net,Coldspring,Portugal,87251,2022-04-29,,
+Óscar Nakamura,oscar.nakamura61@example.net,Coldspring,Denmark,48042,2021-01-21,37,"5760,34"
+Mikael Moreau,mikael.moreau62@example.net,Málaga,Denmark,13162,2023/06/23,37,1664.64
+Björn Delacroix,bjorn.delacroix63@example.net,Silver Falls,Canada,07617,2024-06-19,36, 6301.23 
+Amara Lindqvist,amara.lindqvist64@example.net,Brightwater,Denmark,00170,2023-10-07,48,8600.57
+Óscar Marchetti,oscar.marchetti65@example.net,Coldspring,Portugal,01118,2024-02-27,37,8185.59
+Mikael Okafor,mikael.okafor66@example.net,Ironwood,Portugal,66638,2021-01-13,18,2797.60
+Aurora Bergström,aurora.bergstrom67@example.net,New Harbor,Canada,46822,2022-08-08,,6299.15
+Hugo Lindqvist,hugo.lindqvist68@example.net,Dunmore,Finland,36455,2023-12-07,50,'1407.19
+Noor Sørensen,noor.sorensen69@example.net,Silver  Falls,Norway,93063,2024/04/05,81,8957.78
+Emil Nakamura,emil.nakamura70@example.net,Brightwater,Uruguay,02216,2021-08-20,37,
+Selma Fernández,selma.fernandez71@example.net,Málaga,Norway,26774,2021-12-08,32,8654.60
+Noor Kovács,noor.kovacs72@example.net,Dunmore,Uruguay,27715,2021-01-31,71,3760.95
+Mikael Bergström,mikael.bergstrom73@example.net,Dunmore,Portugal,06841,2024-07-22,27,6408.20
+Piotr Kovács,piotr.kovacs74@example.net,Brightwater,Japan,56290,2022-05-21,59,5042.74
+Lucia Dupont,lucia.dupont75@example.net,New  Harbor,Norway,24054,2022-04-13,72,6636.40
+Amara Kovács,amara.kovacs76@example.net,Ironwood,Uruguay,30119,2023/11/29,483,3962.62
+Nadia Dupont,nadia.dupont77@example.net,Ironwood,Mexico,57743,2021-09-21,90,9128.25
+Aurora Okafor,aurora.okafor78@example.net,Dunmore,Finland,97893,2021-12-16,55,5320.31
+Lucia Nakamura,lucia.nakamura79@example.net,Silver Falls,Canada,34134,2021-03-23,38,5922.80
+Óscar Silva,oscar.silva80@example.net,Brightwater,Japan,  09492 ,2022-07-18,61,5108.40
+Lucia Novak,lucia.novak81@example.net,Silver Falls,Mexico,15383,2023-11-16,31,1750.24
+Aurora Silva,aurora.silva82@example.net,DUNMORE,Uruguay,90374,2022-04-22,-345,5810.02
+Hugo Costa,hugo.costa83@example.net,Ironwood,Mexico,68638,2022-08-17,32,1892.12
+Tomás Andersen,tomas.andersen84@example.net,Ironwood,Norway,74252,2022-05-06,38,7714.97
+Freya Weiss,freya.weiss85@example.net​,Quarrytown,Japan,16364, 2024-03-22 ,81,9215.00
+Renée Delacroix,renee.delacroix86@example.net,Dunmore,Denmark,37712,2021-08-14,73,2835.72
+Théo Okafor,theo.okafor87@example.net,Málaga,Mexico,27207,2021-08-05,47,6256.43
+Björn Sørensen,bjorn.sorensen88@example.net,Brightwater,Canada,81594, 2023-06-21 ,39,669.02
+Selma Ramírez,selma.ramirez89@example.net,Dunmore,Finland,82921,2021-07-12,80,1680.71
+Aurora Delacroix,aurora.delacroix90@example.net,Brightwater,Norway,24317,2022-01-30,23,8323.16
+Aurora Nakamura,aurora.nakamura91@example.net,Dunmore,Finland,35976,2022-08-04,31,5683.95
+Óscar Novak,oscar.novak92@example.net,Coldspring,PORTUGAL,14769,2022-09-16,67,3976.58
+Amara Silva,amara.silva93@example.net,Silver Falls,Finland,20061,2021-02-01,58,5374.45
+Selma Andersen,selma.andersen94@example.net,Quarrytown,Japan,35945,2024-05-27,49,509.50
+Lucia Lindqvist,lucia.lindqvist95@example.net,Ironwood,Finland,43195,2022-02-05,27,1245.05
+Selma Kovács,selma.kovacs96@example.net,Ironwood,Canada,13282,2024/04/25,28,3098.86
+Freya Nakamura,freya.nakamura97@example.net,Málaga,Mexico,25645,2022-04-28,69,€9734.07
+Lucia Kovács,lucia.kovacs98@example.net,Málaga,Japan,02693,2023-10-23,26,1151.98
+Nadia Sørensen,nadia.sorensen99@example.net,Dunmore,Mexico,02817,2021-02-27,80,9046.90
+Nadia Haddad,nadia.haddad100@example.net,Silver Falls,Denmark,04510,2021-04-09,77,4372.67
+Nadia Ivanov,nadia.ivanov101@example.net,Quarrytown,Uruguay,76629,2021-09-13,22,5336.04
+Mikael Andersen,mikael.andersen102@example.net,Málaga,Mexico,49646,2022-10-27,73,2508.51
+Chloé Nakamura,chloe.nakamura103@example.net,Málaga,Canada,69320,2023/09/28,89,1205.85
+Hugo Kovács,hugo.kovacs104@example.net,Brightwater,Uruguay,14245,2023-09-23,null,5289.02
+Nadia Costa,nadia.costa105@example.net,New Harbor,Mexico,05335,2023-03-06,54,7366.47
+Hugo Silva,hugo.silva106@example.net,Silver Falls,Japan,34097,2021-08-29,62,6083.84
+José Novak,jose.novak107@example.net,Quarrytown,Norway,85655,2022-11-09,NaN,5497.00
+Théo Costa,theo.costa108@example.net,Quarrytown,Canada,06738,2022-01-30,32,7515.02
+Piotr Okafor,piotr.okafor109@example.net,Quarrytown,Denmark,77679,2023-10-28,75,60062.76
+Björn Fernández,bjorn.fernandez110@example.net,Ironwood,Fibland,27871,2023-03-31,67,1740.47
+Aurora Lindqvist,aurora.lindqvist111@example.net,Dunmore,Canada,57486,2023-07-20,44,336.13
+Björn Nakamura,bjorn.nakamura112@example.net,New Harbor,Canada,84358,2022-09-24,18,3534.99
+José Okafor,jose.okafor113@example.net,New Harbor,Norway,29264,2023-12-05,43,3179.24
+Tomás Bergström,tomas.bergstrom114@example.net,Brightwater,Denmark,08169,2023-12-28,29,2072.27
+Piotr Delacroix,piotr.delacroix115@example.net,MÃ¡laga,Norway,02432,2021-06-24,56,7823.53
+Freya Okafor,freya.okafor116@example.net,Quarrytown,Norway,83872,2023-09-24,85,3003.19
+Björn Lindqvist,bjorn.lindqvist117@example.net,Silver Falls,Canada,07426,2023-09-09,71,6123.64
+Amara Bergström,amara.bergstrom118@example.net,New Harbor,Mexico,93412,2023-05-19,19,7950.07
+Mikael Ivanov,mikael.ivanov119@example.net,Quarrytown,Denmark,99850,2024-01-04,84,1109.87
+Emil Weiss,emil.weiss120@example.net,Coldspring,Portugal,34302,2022-01-03,,147.39
+Ingrid Yilmaz,ingrid.yilmaz121@example.net,Dunmore,Portugal,01574,2024-06-17,47,5996.12
+Nadia Andersen,nadia.andersen122@example.net,Coldspring,Mexico,53146,2023-11-16,82,7071.73
+Björn Andersen,bjorn.andersen123@example.net,Coldspring,Portugal,38018,2023-12-31,57,7946.26
+Hugo Fernández,hugo.fernandez124@example.net,Dunmore,Portugal,18882,2021-09-23,36,3486.59
+Tomás Fernández,tomas.fernandez125@example.net,(Coldspring),Uruguay,80031,2024-04-09,52,8563.39
+Zoë Silva,zoe.silva126@example.net,New  Harbor,Portugal,19529,2024-03-30,44,8034.84
+Óscar Yilmaz,oscar.yilmaz127@example.net,Silver Falls,Norway,08930,2021-09-24,36,9600.97
+Amara Fernández,amara.fernandez128@example.net,Brightwater,Mexico,94418,2023-01-14,55,7782.55
+Amara Ramírez,amara.ramirez129@example.net,Málaga,Finland,04527,2023-05-26,31,2877.87
+Aurora Yilmaz,aurora.yilmaz130@example.net,Silver Falls,Finland,27738,2021-03-02,78,6103.02
+Amara Okafor,amara.okafor131@example.net,Coldspring,Finland,06408,2024-03-30,67,4784.09
+Noor Yilmaz,noor.yilmaz132@example.net,Silver Falls,Uruguay,63060,2022-05-28,23,3418.39
+Théo Andersen,theo.andersen133@example.net,Ironwood,Uruguay,09420,2023-03-25,78,6596.24
+José Andersen,jose.andersen134@example.net,(Ironwood),Japan,16263,2024-02-22,90,4055.51
+Björn Ramírez,bjorn.ramirez135@example.net,Brightwater,Finland,13747,2024-05-30,60,8966.07
+Óscar Weiss,oscar.weiss136@example.net,Coldspring,Portugal,34598,2022-07-19,75,"3,783.87"
+Lucia Ivanov,lucia.ivanov137@example.net,(Silver Falls),Uruguay,11877,2022-03-15,44,
+Théo Lindqvist,theo.lindqvist138@example.net,Coldspring,Uruguay,70381,2021-11-19,66,5649.57
+Lucia Marchetti,lucia.marchetti139@example.net,Silver Falls,Portugal,83114,2021-07-23,81,249.91
+Emil Novak,emil.novak140@example.net​,Silver Falls,Mexico,23215,2022-05-02,35,680.19
+Amara Andersen,amara.andersen141@example.net,Quarrytown,Finland,06466,2024-01-05,74,48665.37
+Zoë Kovács,zoe.kovacs142@example.net,Brightwater,Canada,57639,2021-04-15,61,1280.62
+Ingrid Nakamura,ingrid.nakamura143@example.net,Brightwater,Canada,42908,2023-03-31,24,150.97
+Zoë Sørensen,zoe.sorensen144@example.net,Coldspring,Denmark,32809,2024-07-14,23,1471.97
+Amara Sørensen,amara.sorensen145@example.net,Brightwater,Denmark,41090,2023-06-21,87,€3994.39
+Mikael Kovács,mikael.kovacs146@example.net,Málaga,Canada,76444,2021-12-09,53,7891.05
+Freya Ivanov,freya.ivanov147@example.net,Dunmore,Norway,52932,2023-08-11,42,"4,542.77"
+Lucia Yilmaz,lucia.yilmaz148@example.net,Quarrytown,Uruguay,21423,2021-06-18,NaN,9403.66
+Renée Novak,renee.novak149@example.net,Dunmore,Finland,60670,2022-07-04,59,6814.88
+Nadia Novak,nadia.novak150@example.net,Silver Falls,Portugal,10835,2023-10-04,40,3489.83
+Aurora Weiss,aurora.weiss151@example.net,Ironwood,Uruguay,61970,2023-10-21,39,"8592,09"
+Chloé Fernández,chloe.fernandez152@example.net,Silver Falls,Canada,47376,2021-05-22,32,4269.27
+Björn Novak,bjorn.novak153@example.net,Brightwater,Finland,22520,2022-03-17,43,6458.38
+Nadia Yilmaz,nadia.yilmaz154@example.net,Coldspring,Uruguay,80436,2023-09-20,31,6234.47
+Piotr Weiss,piotr.weiss155@example.net,Málaga,Portugal,37312,2023-12-05,81,
+Chloé Moreau,chloe.moreau156@example.net,New Harbor,Uruguay,43862,2021-04-13,73,9768.66
+Amara Dupont,amara.dupont157@example.net,Silver Falls,Finland,19816,2022-11-08,59,6375.28
+Piotr Haddad,piotr.haddad158@example.net,Coldspring,Norway,19524,2023-12-12,40,6766.59
+Chloé Ramírez,chloe.ramirez159@example.net,Málaga,Portugal,60770,2022-03-02,90,
+Björn Silva,bjorn.silva160@example.net,Duamore,Denmark,18987,2024-01-19,'89,7416.19
+Noor Ramírez,noor.ramirez161@example.net,Quarrytown,Norway,22292,2021-11-24,68,1204.22
+Freya Silva,freya.silva162@example.net,Málaga,Finland,82940,2022-09-19,85,7124.86
+Mikael Ramírez,mikael.ramirez163@example.net,Quarrytown,Mexico,98317,2021/01/11,60,6794.27
+Freya Moreau,freya.moreau164@example.net,Málaga,Denmark,64746,2021-01-21,88,4123.66
+Renée Silva,renee.silva165@example.net,Silver Falls,Japan,05374,2021-09-05,40,557.35
+Piotr Novak,piotr.novak166@example.net,Quarrytown,Denmark,39987,2021-12-07,36,8026.93
+Hugo Okafor,hugo.okafor167@example.net,Silver Falls,Mexico,72909,2021-02-10,,2958.06
+Emil Silva,emil.silva168@example.net,New Harbor,Denmark,67489,2021-08-20,83,523.58
+Zoë Marchetti,zoe.marchetti169@example.net,Brightwater,Mexico,38451,2022-06-12,27,2333.64
+Chloé Okafor,chloe.okafor170@example.net,New Harbor,Finland,49180,2021-11-22,41,2074.97
+Ingrid Andersen,ingrid.andersen171@example.net,Brightwater,Denmark,19042,2022/05/14,38,5701.32
+Tomás Yilmaz,tomas.yilmaz172@example.net,Málaga,Japan,56671,2023-01-09,68,2552.66
+Noor Dupont,noor.dupont173@example.net,Coldspring,Finland,11371,2023-12-07,42,2411.18
+Aurora Moreau,aurora.moreau174@example.net,Coldspring,Japan,06401,2021-08-21,82​,5693.97
+José Costa,jose.costa175@example.net,Ironwood,Uruguay,96469,2021-02-22,50,6346.47
+Renée Kovács,renee.kovacs176@example.net,Dunmore,Denmark,39980,2022-09-13,56,3744.90
+Lucia Silva,lucia.silva177@example.net,New Harbor,Canada,46702,2024-04-11,28,8121.11
+Lucia Moreau,lucia.moreau178@example.net,Brightwater,Finland,29278,2024-03-22,60,1316.06
+Björn Haddad,bjorn.haddad179@example.net,Silver Falls,Canada,76871,2022-04-05,57,7484.79
+Hugo Bergström,hugo.bergstrom180@example.net,New Harbor,(Uruguay),42110,2021-08-07,47,3216.00
+Lucia Costa,lucia.costa181@example.net,Quarrytown,Japan,12651,2023/11/27,28,5134.34
+Hugo Sørensen,hugo.sorensen182@example.net,Coldspring,Norway,52112,2021-08-26,48,8794.18
+Emil Yilmaz,emil.yilmaz183@example.net,Málaga,Denmark,06974,2021-07-06,78,5393.36
+Nadia Ramírez,nadia.ramirez184@example.net,Dunmore,Mexico,33364,2021-12-06,,4244.80
+Freya Haddad,freya.haddad185@example.net,Dunmore,Canada,63555,2024-05-25,51,9113.49
+Théo Weiss,theo.weiss186@example.net,Silver Falls,Japan,38497,2024-06-30,73,1803.75
+José Ramírez,jose.ramirez187@example.net,Silver Falls,Norway,23797,2022-11-20,70,6819.02
+Ingrid Moreau,ingrid.moreau188@example.net,Quarrytown,Canada,51925,2024-02-04,NA,2040.90
+José Marchetti,jose.marchetti189@example.net,Coldspring,Norway,78982,2023/09/13,44,5855.71
+Piotr Andersen,piotr.andersen190@example.net,Brightwater,Portugal,35747,2022-10-23,40,8245.24
+Ingrid Haddad,ingrid.haddad191@example.net,Ironwood,Finland,25097,2023-03-25,49,4152.67
+  Ingrid Fernández ,ingrid.fernandez192@example.net,Brightwater,Japan,11862,2021-01-07,66,2740.35
+Selma Silva,selma.silva193@example.net,New Harbor,Mexico,08898,2022-08-04,72,NA
+Emil Costa,emil.costa194@example.net,Silver  Falls,Portugal,74477,2023-06-05,61,2806.17
+Piotr Fernández,piotr.fernandez195@example.net,Silver Falls,Canada,99434,2023-03-24,23,
+Emil Haddad,emil.haddad196@example.net,Brightwater,Portugal,18176,2022-10-09,72,1796.18
+Amara Yilmaz,amara.yilmaz197@example.net,Málaga,Denmark,43626,2023-06-01,53,856.77
+Aurora Fernández,aurora.fernandez198@example.net,Brightwater,Canada,50164,2023-06-23,20,5511.23
+Ingrid Lindqvist,ingrid.lindqvist199@example.net,Ironwood,Denmark,82707,2022-09-07,44,2841.21
+Ingrid Costa,ingrid.costa200@example.net,Ironwood,Portugal,50453,2022-04-12,45,8567.74
+Chloé Yilmaz,chloe.yilmaz201@example.net,Málaga,Uruguay,43300,2022-03-02,32,9471.11
+Óscar Lindqvist,oscar.lindqvist202@example.net,New Harbor,Norway,19353,2023-04-17,37,8469.17
+Björn Weiss,bjorn.weiss203@example.net,Brightwater,Portugal,79145,2023-04-11,61,7713.99
+Ingrid Kovács,ingrid.kovacs204@example.net,Dunmore,Japan,94873,2022-03-25,50,
+Nadia Andersen,nadia.andersen122@example.net,Coldspring,Mexico,53146,2023-11-16,82,7071.73
+Selma Nakamura,selma.nakamura206@example.net,Ironwood,Mexico,11845,2021-02-14,20,7982.92
+Freya Fernández,freya.fernandez207@example.net,Coldspring,Canada,34618,2023-04-05,N/A,8110.32
+Renée Dupont,renee.dupont208@example.net,Dunmore,Japan,09006,2021-11-06,42,3915.21
+José Moreau,jose.moreau209@example.net,Brightwater,Mexico,93602,2023-12-22,90,6585.84
+Piotr Ramírez,piotr.ramirez210@example.net,Dunmore,Canada,02004,2023-08-31,84,7074.43
+Selma Sørensen,selma.sorensen211@example.net,Brightwater,Portugal,02695,2021/09/23,60,357.82
+Renée Nakamura,renee.nakamura212@example.net,Quarrytown,Uruguay,48789,2021-12-06,41,748.15
+Freya Andersen,freya.andersen213@example.net,Ironwood,Denmark,31803,2021-03-01,45,7565.31
+Piotr Ivanov,piotr.ivanov214@example.net,New Harbor,Japan,72087,2023-04-18,27,3948.49
+Piotr Lindqvist,piotr.lindqvist215@example.net,Quarrytown,Mexico,41869,2021-06-04,84,6449.47
+Mikael Weiss,mikael.weiss216@example.net,Málaga,Denmark,43544,2021-03-29,42,8497.49
+Selma Moreau,selma.moreau217@example.net,Ironwood,Denmark,63633,2022-09-30,88,  8101.86 
+Aurora Ramírez​,aurora.ramirez218@example.net,Dunmore,Denmark,91157,2022-05-14,33,8094.45
+Zoë Dupont,zoe.dupont219@example.net,Coldspring,Uruguay,84762,2023-05-02,23,7651.25
+Chloé Novak,chloe.novak220@example.net,Málaga,Finland,99432,2022-07-23,71,7121.92
+Piotr Nakamura,piotr.nakamura221@example.net,Ironwood,Japan,63893,2023-03-10,45,1869.85
+Freya Dupont,freya.dupont222@example.net,Coldspring,Mexico,04344,2021-08-11,90,6152.78
+Théo Kovács,theo.kovacs223@example.net,Quarrytown,Norway,85797,2021-01-08,82,4095.87
+José Silva,jose.silva224@example.net,Ironwood,(Denmark),17801,2024-05-10,84,"9086,15"
+Noor Bergström,noor.bergstrom225@example.net,Dunmore,Canada,86892,2021-07-21,57,8141.28
+Mikael Novak,mikael.novak226@example.net,Quarrytown,Denmark,45264,2022-12-20,40,4704.34
+Noor Ivanov,noor.ivanov227@example.net,Ironwood,Canada,60277,2022-03-13,25,9005.55
+Björn Ivanov,bjorn.ivanov228@example.net,Dunmore,Canada,76601,2021-05-06,49,3239.98
+Noor Okafor,noor.okafor229@example.net,Ironwood,Norway,61745,2022-08-27,22,3279.92
+Chloé Delacroix,chloe.delacroix230@example.net,New Harbor,Japan,01251,2023-06-02,24,3902.36
+Piotr Marchetti,piotr.marchetti231@example.net,Quarrytown,(Uruguay),05738,2022-08-03,62,2452.75
+ZoÃ« Haddad,zoe.haddad232@example.net,Quarrytown,Japan,98316,2021-09-14,36,
+Freya Yilmaz,freya.yilmaz233@example.net,Silver Falls,Portugal,74138,2022-02-26,78,4435.88
+Chloé Costa,chloe.costa234@example.net,Quarrytown,Norway,80165,2023-01-16,75,660.98
+Aurora Marchetti,aurora.marchetti235@example.net,New Harbor,Portugal,67271,2023-03-12,55,6656.16
+Freya Ramírez,freya.ramirez236@example.net,Brightwater,Denmark,11776,2023-02-19,,2661.39
+Selma Lindqvist,selma.lindqvist237@example.net,Silver Falls,Norway,02884,2022-08-28,66,1437.68
+Tomás Ramírez,tomas.ramirez20@example.net,Quarrytown,Norway,91044,2023-07-01,29,8771.63
+Óscar Kovács,oscar.kovacs239@example.net,Brightwater,Mexico,84051,2023-06-20,80,3563.06
+TomÃ¡s Marchetti,tomas.marchetti240@example.net,Brightwater,Mexico,58340,2024-07-09,,9775.64
+Freya Delacroix,freya.delacroix241@example.net,Brightwater,Denmark,84694,2023-08-30,83,7626.63
+Tomás Haddad,tomas.haddad242@example.net,Dunmore,Portugal,72269,2022-02-11,73,3189.88
+Noor Costa,noor.costa243@example.net,Silver Falls,Mexico,99560,2021-05-30,79,9356.38
+Renée Haddad,renee.haddad244@example.net,Brightwater,Norway,19167,2023-02-21,23,4017.95
+Théo Ramírez,theo.ramirez245@example.net,Coldspring,Finland,90865,2022-06-03,76,5728.60
+Noor Delacroix,noor.delacroix246@example.net,Dunmore,Finland,44901,2023-10-06,59,9087.27
+Renée Ramírez,renee.ramirez247@example.net,Silver Falls,Canada,48770,2021-06-16,47,
+Óscar Fernández,oscar.fernandez248@example.net,Silver Falls,Japan,53685,2021-02-21,33,€2850.86
+Théo Haddad,theo.haddad249@example.net,Dunmore,Norway,66535,2023-06-04,84,7540.41
+Ingrid Delacroix,ingrid.delacroix250@example.net,Ironwood,Portugal,93136,2023-12-23,72,4497.92
+Zoë Nakamura,zoe.nakamura251@example.net,Silver Falls,Norway,70861,2022-02-23,87,1041.36
+Aurora Kovács,aurora.kovacs252@example.net,New Harbor,Denmark,22840,2021-06-25,42,3436.62
+Hugo Novak,hugo.novak253@example.net,Coldspring,Japan,28433,2024-01-28,#N/A,8230.04
+Zoë Bergström,zoe.bergstrom254@example.net,Ironwood,Canada,94705,2023-05-23,79,5347.37
+BjÃ¶rn Marchetti,bjorn.marchetti255@example.net,Málaga,Mexico,99141,2022-09-24,84,8507.15
+Piotr Silva,piotr.silva256@example.net,Dunmore,Denmark,44817,2023-03-28,34,
+Chloé Kovács,chloe.kovacs257@example.net,Málaga,Canada,44357,2021-05-20,74,9357.36
+Mikael Nakamura,mikael.nakamura258@example.net,Málaga,Portugal,23648,2021-06-23,33,626.70
+Zoë Moreau,zoe.moreau259@example.net,Coldspring,Japan,00123,2023-12-15,64,5404.29
+Óscar Okafor,oscar.okafor260@example.net,Dunmore,Finland,79538,2021-08-31,37,238.17
+Freya Sørensen,freya.sorensen261@example.net,Silver Falls,Mexico,01639,2023-10-29,63,709.73
+ThÃ©o FernÃ¡ndez,theo.fernandez262@example.net,Dunmore,Portugal,36273,2021-04-24,31,8535.11
+Ingrid Ivanov,ingrid.ivanov263@example.net,New Harbor,Norway,04525,2022/10/24,57,2939.22
+Mikael Costa,mikael.costa264@example.net,Málaga,Portugal,00382,2023-02-04,77,"1,712.34"
+Ingrid Okafor,ingrid.okafor265@example.net,Ironwood,Denmark,'26990,2024-04-24,55,1470.66
+RenÃ©e Ivanov,renee.ivanov266@example.net,Quarrytown,Portugal,36803,2022-08-29,46,6258.21
+José Yilmaz,jose.yilmaz37@example.net,New Harbor,Japan,03992,2023-06-22,33,2267.20
+Ingrid Silva,ingrid.silva268@example.net,Coldspring,Portugal,07330,2021-08-17,70,3395.03
+Freya Bergström,freya.bergstrom269@example.net,Málaga,Norway,44413,2024-06-17,45,8581.61
+Nadia Silva,nadia.silva270@example.net,Ironwood,Portugal,95866,2021-11-05,47,1367.47
+Renée Fernández,renee.fernandez44@example.net,Quarrytown,Japan,78181,2024-06-25,48,8226.88
+Emil Okafor,emil.okafor272@example.net,Quarrytown,Finland,14486,2021-02-14,50,5216.44
+Hugo Ivanov,hugo.ivanov273@example.net,Brightwater,Mexico,09741,2023-03-01,42,1998.77
+Emil Moreau,emil.moreau274@example.net,Silver Falls,Japan,73445,2023-03-18,66,2611.77
+Amara Weiss,amara.weiss275@example.net,Quarrytown,Canada,80386,2021-12-13,64,4655.65
+Selma Costa,selma.costa276@example.net,New Harbor,Uruguay,23826,2022-11-01,65,7476.65
+Lucia Sørensen,lucia.sorensen277@example.net,Quarrytown,Mexico,04068,2021-07-07,64,2637.49
+Emil Delacroix,emil.delacroix278@example.net,Ironwood,Japan,24750,2021-10-13,64,3233.45
+Noor Lindqvist,noor.lindqvist279@example.net,Málaga,Canada,06302,2023-07-06,88,9578.28
+José Kovács,jose.kovacs280@example.net,Málaga,Norway,86699,2022-05-09,49,9760.86
+Freya Lindqvist,freya.lindqvist281@example.net,Ironwood,Uruguay,03253,2021-07-21,18,7761.69
+Freya Costa,freya.costa282@example.net,Brightwater,MEXICO,65089,2023-03-06,60,624.21
+Théo Nakamura,theo.nakamura283@example.net,Ironwood,Denmark,06851,2023-01-27,88,1550.84
+Selma Delacroix,selma.delacroix284@example.net,Málaga,Norway,31523,2024-03-31,19,4506.24
+Selma Novak,selma.novak285@example.net,Coldspring,Uruguay,03465,2022-12-16,23,8511.15
+Chloé Silva,chloe.silva286@example.net,Quarrytown,Finland,81369,2021-04-06,82,1543.84
+Noor Moreau,noor.moreau287@example.net,New Harbor,Norway,54985,2024-04-09,53,5126.18
+Théo Delacroix,theo.delacroix288@example.net,Dunmore,Canada,03848,2021-09-19,64,3768.61
+Emil Lindqvist,emil.lindqvist289@example.net,Málaga,Finland,08701,2023-08-26,81,597.10
+Selma Yilmaz,selma.yilmaz290@example.net,New Harbor,Japan,06646,2021-06-29,64​,
+José Haddad,jose.haddad291@example.net,Málaga,Portugal,05507,2024-04-17,26,7368.94
+Lucia Andersen,lucia.andersen292@example.net,Coldspring,Finland,56144,2021-02-28,70,893.55
+Lucia Ramírez,lucia.ramirez293@example.net,(Ironwood),Canada,06352,2023-02-01,58,3904.27
+Óscar Ramírez,oscar.ramirez294@example.net,Coldspring,Norway,76639,2021-11-03,19,3681.21
+Björn Costa,bjorn.costa295@example.net,  Dunmore ,Portugal,17887,2021-05-21,84,"1244,20"
+Noor Weiss,noor.weiss296@example.net,Dunmore,Mexico,07818,2023-11-16,593,9209.97
+Emil Kovács,emil.kovacs297@example.net,Dunmore,Mexico,53891,2021-02-12,70,2528.53
+Ingrid Marchetti,ingrid.marchetti298@example.net,Quarrytown,Finland,02824,2024-04-05,42,9233.43
+Tomás Delacroix,tomas.delacroix299@example.net,Quarrytown,Portugal,87235,2021-11-24,63,7179.07
+Renée Marchetti,renee.marchetti300@example.net,Málaga,Finland,73699,2022-12-20,83​,6609.61
+Théo Marchetti,theo.marchetti301@example.net,Brightwater,Japan,90406,2022-08-03,73,5652.76
+Chloé Lindqvist,chloe.lindqvist36@example.net,New Harbor,Japan,58370,2021-06-02,60,9212.81
+José Delacroix,jose.delacroix303@example.net,Ironwood,Portugal,36457,2023-01-10,NaN,4937.81
+José Bergström,jose.bergstrom304@example.net,Ironwood,Uruguay,87096,2022-04-26,76,"3410,83"
+José Sørensen,jose.sorensen305@example.net,Málaga,Denmark,60896,2024-07-17,,3430.94
+Hugo Moreau,hugo.moreau306@example.net,Silver Falls,Canada,99675,2021-12-10,49,NA
+Piotr Moreau,piotr.moreau307@example.net,Dunmore,Denmark,63549,2023-07-12,60,2076.37
+Tomás Costa,tomas.costa308@example.net,Coldspring,Uruguay,15290,2023-08-03,41,8904.72
+Chloé Marchetti,chloe.marchetti309@example.net,Dunmore,Japan,16523,2024-07-03,57,7562.54
+Amara Ivanov,amara.ivanov310@example.net,Silver Falls,Denmark,94332,2022-08-18,63,2909.26
+Piotr Bergström,piotr.bergstrom311@example.net,Quarrytown,Mexico,03771,2024-05-26,22,9373.64
+Emil Ivanov,emil.ivanov312@example.net,Silver Falls,Canada,64218,2021-03-25,70,2937.40
+Selma Bergström,selma.bergstrom313@example.net,Ironwood,Finland,92588,2023-08-18,32,3906.24
+Noor Nakamura,noor.nakamura314@example.net,New Harbor,Cbnada,08784,2021-08-13,58,8059.07
+Zoë Andersen,zoe.andersen315@example.net,Silver Falls,Portugal,30215,2023-07-21,76,5169.25
+Björn Yilmaz,bjorn.yilmaz316@example.net,Silver Falls,Norway,06871,2024-03-06,63,3259.91
+Selma Ivanov,selma.ivanov317@example.net,Silver Falls,Portugal,89920,2023-06-07,,3590.95
+Selma Haddad,selma.haddad318@example.net,Dunmore,Denmark,29207,2022/01/01,30,1981.01
+Ingrid Sørensen,ingrid.sorensen319@example.net,New Harbor,Finland,04717,2024-01-03,28,
+Aurora Novak,aurora.novak320@example.net,Brightwater,Norway,75617,2022-07-30,48,7651.03
+José Dupont,jose.dupont321@example.net,Ironwood,Canada,24548,2022-12-15,85,"9,324.90"
+Tomás Lindqvist,tomas.lindqvist322@example.net,Dunmore,Mexico,74094,2024-03-24,45,2823.21
+Ingrid Weiss,ingrid.weiss323@example.net,Málaga,Canada,47454,2022-01-16,,7887.33
+Selma Weiss,selma.weiss324@example.net,Brightwater,Denmark, 99812 ,2021-04-29,50,5986.10
+Björn Dupont,bjorn.dupont325@example.net,Silver Falls,Norway,07436,2022-12-27,31,6382.42
+Renée Andersen,renee.andersen326@example.net,Málaga,Uruguay,77039,2024-06-23,86,7448.58
+Théo Bergström,theo.bergstrom327@example.net,Naw Harbor,Norway,63115,2024-06-27,46,2558.11
+Chloé Ivanov,chloe.ivanov328@example.net,Quarrytown,Japan,09140,2023-03-25,29,364.58
+Hugo Delacroix,hugo.delacroix329@example.net,Silver Falls,Mexico,27099,2021-08-05,54,3740.96
+Tomás Okafor,tomas.okafor330@example.net,New Harbor,Japan,58722,2022-04-04,47,€8707.04
+ZoÃ« Novak,zoe.novak331@example.net,Brightwater,Canada,88720,2024-06-17,30,2396.52
+Théo Novak,theo.novak332@example.net,Silver Falls,Portugal,89131,2024-02-14,68,714.10
+Renée Moreau,renee.moreau333@example.net,Coldspring,Portugal,34417,2021-07-19,29,
+ChloÃ© SÃ¸rensen,chloe.sorensen334@example.net,Ironwood,Finland,73368,2021-03-10,66,2161.46
+Hugo Marchetti,hugo.marchetti335@example.net,Ironwood,  Uruguay ,88670,2021-01-07,60,3463.59
+Noor Fernández,noor.fernandez336@example.net,Quarrytown,Norway,94395,2023-12-09,30,9527.87
+Aurora Ivanov,aurora.ivanov337@example.net,Dunmore,Denmark,66807,2022-02-19,51,4294.63
+Amara Novak,amara.novak338@example.net,Málaga,Denmark,32611,2023/08/16,,3255.08
+Óscar Delacroix,oscar.delacroix339@example.net,Quarrytown,Canada,68466,2021/12/06,48,1903.81
+Nadia Bergström,nadia.bergstrom340@example.net,Quarrytown,Uruguay,06695,2021-03-18,60,"2,745.32"
+Ingrid Dupont,ingrid.dupont341@example.net,Brightwater,Norway,71245,2021-09-06,79,2226.87
+Ingrid Ramírez,ingrid.ramirez342@example.net,Quarrytown,Norway,40188,2022-11-21,30,6183.81
+Noor Andersen,noor.andersen343@example.net,New Harbor,Mexico,09737,2024-02-04,83,1599.28
+Nadia Fernández,nadia.fernandez344@example.net,Coldspring,Finland,91617,2022-09-06,57,293.80
+Óscar Moreau,oscar.moreau345@example.net,New Harbor,Japan,65579,2023-05-15,60,
+Selma Okafor,selma.okafor346@example.net,Dunmore,Mexico,92701,2021-02-06,52,2077.14
+Emil Sørensen,emil.sorensen347@example.net,Quarrytown,Mexico,37200,2022-08-03,71,NaN
+Nadia Lindqvist,nadia.lindqvist348@example.net,Silver Falls,Finland,46905,2024-03-14,57,8943.93
+Lucia Delacroix,lucia.delacroix349@example.net,Málaga,Norway,18200,2023-05-25,22,6914.72
+Mikael Haddad,mikael.haddad350@example.net,Coldspring,Portugal,20867,2023-06-13,34,4490.02
+Piotr Costa,piotr.costa351@example.net,Málaga,Uruguay,84811,2022-08-09,49,8388.52
+ZoÃ« Weiss,zoe.weiss352@example.net,New Harbor,Denmark,82753,2022-01-03,31,1733.19
+Théo Ivanov,theo.ivanov353@example.net,Brightwater,Mexico,74875,2024-02-25,35,8935.50
+Hugo Weiss,hugo.weiss354@example.net,Brightwater,Mexico,83119,2024-03-10,31,8934.55
+Zoë Ramírez,zoe.ramirez355@example.net,Quarrytown,Uruguay,83206,2021-03-06,18,1811.56
+Chloé Haddad,chloe.haddad356@example.net,Coldspring,Norway,13756,2024-02-12,76,2189.22
+Tomás Ivanov,tomas.ivanov357@example.net,New Harbor,Portugal,87879,2023-06-27,23,
+Björn Bergström,bjorn.bergstrom358@example.net,Coldspring,Mexico,98177,2021-08-12,61,6409.06
+Lucia Lindqvist,lucia.lindqvist95@example.net,Ironwood,Finland,43195,2022-02-05,27,1245.05
+Noor Silva,noor.silva360@example.net,Coldspring,Finland,92177,2022-01-03,78,6222.76
+Lucia Fernández,lucia.fernandez361@example.net,Quarrytown,Denmark,39504,2021-05-12,64,8879.04
+Emil Fernández,emil.fernandez362@example.net,New Harbor,Japan,49841,2023-07-15,31,265.20
+Björn Kovács,bjorn.kovacs363@example.net,New Harbor,Uruguay,55679,2021-08-13,61,2144.62
+Amara Moreau,amara.moreau364@example.net,Málaga,Japan,71867,2021-01-10,19,1494.48
+Tomás Dupont,tomas.dupont365@example.net,Coldspring,Norway,68848,2023-04-10,78,8689.19
+Óscar Dupont,oscar.dupont366@example.net,Brightwatar,Portugal,21594,2024-02-27,25,642.84
+Mikael Silva,mikael.silva367@example.net,Ironwood,Canada,68766,2022-03-15,78,4213.47
+ZoÃ« FernÃ¡ndez,zoe.fernandez368@example.net,Dunmore,Finland,51242,2023-12-11,36,9256.67
+Óscar Andersen,oscar.andersen369@example.net,Brightwater,Canada,08376,2022-01-24,52,8713.38
+Amara Nakamura,amara.nakamura370@example.net,Málaga,Norway,19783,2023-06-23,39,9679.61
+Piotr Sørensen,piotr.sorensen371@example.net,Málaga,Denmark,89311,2021-09-28,90,389.06
+Emil Ramírez,emil.ramirez372@example.net,Silver Falls,Denmark,03393,2023-06-19,34,7967.66
+Óscar Sørensen,oscar.sorensen373@example.net,Quarrytown,Finland,61660,2024-06-19,,1354.36
+Nadia Kovács,nadia.kovacs374@example.net,Silver Falls,Japan,69880,2022-05-25,58,4439.69
+Théo Silva,theo.silva375@example.net,Ironwood,Japan,73689,2024-01-24,67,6314.15
+Piotr Dupont,piotr.dupont376@example.net,Málaga,Mexico,28140,2022-09-02,19,
+Théo Sørensen,theo.sorensen377@example.net,Dunmore,Japan,85500,2022-05-28,34,5208.79
+Amara Marchetti,amara.marchetti378@example.net,Quarrytown,  Mexico ,18654,2021-03-15,71,2544.06
+Mikael Dupont,mikael.dupont379@example.net,Brightwater,Uruguay,80498,2024-07-17,52,
+Aurora Sørensen,aurora.sorensen380@example.net,New Harbor,Uruguay,50614,2023-03-09,,9244.51
+José Fernández,jose.fernandez381@example.net,Coldspring,Canada,05535,2023-05-31,18,7863.74
+Emil Marchetti,emil.marchetti382@example.net,Silver Falls,Uruguay,14436,2024-02-24,44,3123.21
+Lucia Haddad,lucia.haddad383@example.net,Málaga,Uruguay,08240,2021/10/18,37,€8638.28
+Emil Bergström,emil.bergstrom384@example.net,Brightwater,Norway,08576,2023-06-07,49,2052.46
+Tomás Nakamura,tomas.nakamura385@example.net,Ironwood,Finland,57535,2021-05-30,89,3036.65
+Tomás Weiss,tomas.weiss386@example.net,Málaga,Japan,25330,2024-03-23,36,7799.91
+RenÃ©e Weiss,renee.weiss387@example.net,Brightwater,Uruguay,01202,2022-08-17,481,5464.39
+Aurora Costa,  aurora.costa388@example.net ,New Harbor,Norway,08846,2021-06-09,90,5642.03
+Aurora Haddad,aurora.haddad389@example.net,New Harbor,Portugal,03603,2023-06-25,86,529.84
+Nadia Moreau,nadia.moreau390@example.net,Dunmore,Uruguay,39634,2024-05-01,90,9093.77
+Renée Lindqvist,renee.lindqvist391@example.net,Coldspring,Finland,04343,2023-08-28,,8653.34
+Nadia Marchetti,nadia.marchetti392@example.net,New Harbor​,Denmark,'24664,2022-10-12,70,8889.43
+Lucia Okafor,lucia.okafor393@example.net,Quarrytown,Japan,29682,2021-01-17,20,3615.77
+Zoë Delacroix,zoe.delacroix394@example.net,Coldspring,Canada,65849,2023-03-19,50,1019.30
+Mikael Delacroix,mikael.delacroix395@example.net,Quarrytown,Canada,35931,2022-11-10,36,5868.75
+Noor Marchetti,noor.marchetti396@example.net,New  Harbor,Norway,60608,2021-04-28,81, 7285.37 
+Renée Yilmaz,renee.yilmaz397@example.net,New Harbor,Finland,73336,2021-12-30,82,5144.71
+Björn Moreau,bjorn.moreau398@example.net,Coldspring,Denmark,63673,2021-03-05,56,2173.08
+Théo Dupont,theo.dupont399@example.net,QUARRYTOWN,Portugal,08023,2023-01-16,83,5113.30

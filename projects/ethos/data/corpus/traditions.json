@@ -1,0 +1,262 @@
+[
+  {
+    "id": "christianity",
+    "name": "Christianity",
+    "family": "abrahamic",
+    "order": 1,
+    "era": "1st century CE onward",
+    "summary": "A family of traditions centered on the life and teaching of Jesus of Nazareth, read through scripture and centuries of theological reflection. Moral life is framed as a response to divine love: love of God and neighbor ground the commandments, and conscience is formed within a community seeking holiness.",
+    "key_concepts": [
+      {
+        "term": "agape",
+        "gloss": "self-giving love of God and neighbor, the measure of the law"
+      },
+      {
+        "term": "imago Dei",
+        "gloss": "every person bears the image of God and so has inviolable worth"
+      },
+      {
+        "term": "sin and grace",
+        "gloss": "moral failure is real but met by forgiveness and transformation"
+      },
+      {
+        "term": "natural law",
+        "gloss": "in Catholic thought, moral order knowable by reason (Aquinas)"
+      }
+    ]
+  },
+  {
+    "id": "islam",
+    "name": "Islam",
+    "family": "abrahamic",
+    "order": 2,
+    "era": "7th century CE onward",
+    "summary": "Submission to God as revealed in the Qur'an and modeled by the Prophet Muhammad. Ethics is guided by divine command interpreted through jurisprudence, ordering acts from obligatory to forbidden, with mercy, justice, and accountability before God as constant themes.",
+    "key_concepts": [
+      {
+        "term": "taqwa",
+        "gloss": "God-consciousness; mindfulness that one acts before God"
+      },
+      {
+        "term": "halal and haram",
+        "gloss": "the permitted and the forbidden in the five-fold ranking of acts"
+      },
+      {
+        "term": "zakat",
+        "gloss": "obligatory almsgiving as purification of wealth"
+      },
+      {
+        "term": "sabr",
+        "gloss": "patient steadfastness under trial"
+      }
+    ]
+  },
+  {
+    "id": "judaism",
+    "name": "Judaism",
+    "family": "abrahamic",
+    "order": 3,
+    "era": "Biblical era onward; rabbinic period c. 70–500 CE",
+    "summary": "Covenantal life with God expressed in commandments and refined through rabbinic argument. The Torah's obligations are interpreted case by case in the Talmud and codes; ethical seriousness shows in the tradition's willingness to weigh duty against duty in concrete situations.",
+    "key_concepts": [
+      {
+        "term": "mitzvah",
+        "gloss": "a commandment; the unit of obligation in covenantal life"
+      },
+      {
+        "term": "pikuach nefesh",
+        "gloss": "saving a life overrides nearly every other commandment"
+      },
+      {
+        "term": "tzedakah",
+        "gloss": "righteousness enacted as obligatory giving"
+      },
+      {
+        "term": "lashon hara",
+        "gloss": "the evil tongue; derogatory speech even when true"
+      }
+    ]
+  },
+  {
+    "id": "buddhism",
+    "name": "Buddhism",
+    "family": "dharmic",
+    "order": 4,
+    "era": "c. 5th century BCE onward",
+    "summary": "A path out of suffering taught by the Buddha: conduct, meditation, and wisdom support one another. Ethics begins in intention — actions rooted in greed, hatred, or delusion bind, while those rooted in generosity, kindness, and clear seeing free — and non-harm extends to all sentient beings.",
+    "key_concepts": [
+      {
+        "term": "ahimsa",
+        "gloss": "non-harm toward all sentient beings"
+      },
+      {
+        "term": "karma",
+        "gloss": "intentional action shaping future experience"
+      },
+      {
+        "term": "metta",
+        "gloss": "loving-kindness cultivated toward all beings"
+      },
+      {
+        "term": "the five precepts",
+        "gloss": "undertakings against killing, stealing, sexual misconduct, false speech, and intoxicants"
+      }
+    ]
+  },
+  {
+    "id": "hinduism",
+    "name": "Hinduism",
+    "family": "dharmic",
+    "order": 5,
+    "era": "Vedic era onward",
+    "summary": "A vast family of traditions ordered around dharma — the duty proper to one's station, stage of life, and situation — and the pursuit of liberation. Texts from the Upanishads to the Bhagavad Gita weigh ritual duty, non-attachment, and non-harm, often insisting that the same act differs morally with role and intent.",
+    "key_concepts": [
+      {
+        "term": "dharma",
+        "gloss": "duty and right order, indexed to role and circumstance"
+      },
+      {
+        "term": "ahimsa",
+        "gloss": "non-injury, praised as the highest dharma"
+      },
+      {
+        "term": "karma-yoga",
+        "gloss": "acting without attachment to the fruits of action"
+      },
+      {
+        "term": "moksha",
+        "gloss": "liberation, the final aim beyond merit"
+      }
+    ]
+  },
+  {
+    "id": "confucianism",
+    "name": "Confucianism",
+    "family": "east_asian",
+    "order": 6,
+    "era": "c. 551–479 BCE (Confucius) onward",
+    "summary": "A Chinese ethical tradition centered on the cultivation of character within relationships — family, community, state. Moral life is learned through ritual propriety and the practice of humaneness rather than derived from abstract rules.",
+    "key_concepts": [
+      {
+        "term": "ren",
+        "gloss": "humaneness; the cardinal virtue of benevolent regard for others"
+      },
+      {
+        "term": "li",
+        "gloss": "ritual propriety; the forms through which respect is enacted"
+      },
+      {
+        "term": "xin",
+        "gloss": "trustworthiness in word and deed"
+      },
+      {
+        "term": "shu",
+        "gloss": "reciprocity: do not impose on others what you would not wish for yourself"
+      }
+    ]
+  },
+  {
+    "id": "stoicism",
+    "name": "Stoicism",
+    "family": "greco_roman",
+    "order": 7,
+    "era": "c. 300 BCE – 180 CE",
+    "summary": "A Greco-Roman school teaching that virtue is the only true good and that a good life is lived in agreement with nature and reason. What lies outside the will — reputation, wealth, even death — is indifferent; the work of ethics is mastering judgment, desire, and response.",
+    "key_concepts": [
+      {
+        "term": "prohairesis",
+        "gloss": "the faculty of choice; the only thing wholly our own"
+      },
+      {
+        "term": "apatheia",
+        "gloss": "freedom from destructive passion, not from feeling"
+      },
+      {
+        "term": "oikeiosis",
+        "gloss": "widening circles of concern from self to all rational beings"
+      },
+      {
+        "term": "the dichotomy of control",
+        "gloss": "some things are in our power, others are not"
+      }
+    ]
+  },
+  {
+    "id": "kantian_deontology",
+    "name": "Kantian deontology",
+    "family": "modern_western",
+    "order": 8,
+    "era": "18th century CE onward",
+    "summary": "Immanuel Kant's moral philosophy grounds duty in reason itself: act only on maxims you could will as universal law, and treat humanity always as an end, never merely as a means. Moral worth lies in acting from duty, and persons possess a dignity beyond all price.",
+    "key_concepts": [
+      {
+        "term": "categorical imperative",
+        "gloss": "the unconditional command of morality, testable by universalization"
+      },
+      {
+        "term": "humanity as end",
+        "gloss": "never treat rational nature merely as a means"
+      },
+      {
+        "term": "autonomy",
+        "gloss": "self-legislation by practical reason"
+      },
+      {
+        "term": "dignity",
+        "gloss": "worth beyond price, admitting no trade-offs"
+      }
+    ]
+  },
+  {
+    "id": "utilitarianism",
+    "name": "Utilitarianism",
+    "family": "modern_western",
+    "order": 9,
+    "era": "18th century CE onward",
+    "summary": "The tradition of Bentham, Mill, and Sidgwick: actions and institutions are right insofar as they promote the greatest happiness, with each person's welfare counting equally. Its reforming edge comes from asking of every rule and custom what suffering it prevents or produces.",
+    "key_concepts": [
+      {
+        "term": "the greatest happiness principle",
+        "gloss": "right action maximizes happiness, impartially counted"
+      },
+      {
+        "term": "impartiality",
+        "gloss": "everybody to count for one, nobody for more than one"
+      },
+      {
+        "term": "act and rule variants",
+        "gloss": "assess single acts directly, or the rules whose adoption does best"
+      },
+      {
+        "term": "sentience",
+        "gloss": "the capacity to suffer as the boundary of moral concern"
+      }
+    ]
+  },
+  {
+    "id": "virtue_ethics",
+    "name": "Virtue ethics",
+    "family": "modern_western",
+    "order": 10,
+    "era": "4th century BCE (Aristotle); revived 20th century",
+    "summary": "Anchored in Aristotle: the moral question is not first about acts or rules but about character — what habits and traits constitute a flourishing human life. Virtue lies in a mean discovered by practical wisdom, and is learned by practice within a community.",
+    "key_concepts": [
+      {
+        "term": "eudaimonia",
+        "gloss": "flourishing; the final end of human life"
+      },
+      {
+        "term": "phronesis",
+        "gloss": "practical wisdom that discerns the right act in the particular case"
+      },
+      {
+        "term": "the mean",
+        "gloss": "virtue as an intermediate between excess and deficiency"
+      },
+      {
+        "term": "habituation",
+        "gloss": "character formed by repeated action"
+      }
+    ]
+  }
+]

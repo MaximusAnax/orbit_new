@@ -1,0 +1,493 @@
+[
+  {
+    "id": "honesty_and_deception--kantian_deontology",
+    "topic_id": "honesty_and_deception",
+    "tradition_id": "kantian_deontology",
+    "stance": "forbidden",
+    "summary": "Lying is excluded without remainder: truthfulness in declarations is a sacred decree of reason limited by no expediency, because a maxim of lying cannot be universalized without destroying the practice of assertion it exploits, and because the deceived person is used merely as a means. Kant follows the logic to its notorious end — no lie even to the murderer at the door — a conclusion his own school still argues over.",
+    "reasoning": [
+      {
+        "text": "Truthfulness is an unconditional duty of reason, admitting no exception for good ends.",
+        "passage_id": "kant-lies-8-427-sacred"
+      },
+      {
+        "text": "The lie fails the universalization test: willed as law, it abolishes the assertion it depends on.",
+        "passage_id": "kant-groundwork-4-403-false-promise"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-lies-8-427-sacred",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-403-false-promise",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Kantians from Benjamin Constant's day to Korsgaard's have proposed restrictions — deceivers forfeit the claim to truth, or declarations under coercion are not declarations — none canonized.",
+    "further_reading": [
+      {
+        "author": "Robert Johnson and Adam Cureton",
+        "title": "Kant's Moral Philosophy",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/kant-moral/",
+        "note": null
+      },
+      {
+        "author": "Christine M. Korsgaard",
+        "title": "Creating the Kingdom of Ends",
+        "year": 1996,
+        "kind": "book",
+        "url": null,
+        "note": "the right-to-lie essay"
+      }
+    ],
+    "curator_note": "Drafted from the Supposed Right essay and Groundwork I (Abbott)."
+  },
+  {
+    "id": "promise_keeping_and_oaths--kantian_deontology",
+    "topic_id": "promise_keeping_and_oaths",
+    "tradition_id": "kantian_deontology",
+    "stance": "obligatory",
+    "summary": "The false promise is Kant's own showcase: I can will the lie, but I cannot will that lying promises become universal law, for then there would be no promises at all — nobody would believe them. A promise made intending escape uses the promisee as a mere means to my ends. The duty is perfect: hardship does not loosen it, because its ground is not the cost-benefit of keeping but the coherence of promising.",
+    "reasoning": [
+      {
+        "text": "Universalized, the lying promise annihilates the practice of promising itself.",
+        "passage_id": "kant-groundwork-4-403-false-promise"
+      },
+      {
+        "text": "The promisee deceived for my ends is treated as means only, never as end.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-groundwork-4-403-false-promise",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Onora O'Neill",
+        "title": "Constructions of Reason: Explorations of Kant's Practical Philosophy",
+        "year": 1989,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Groundwork 4:403 and 4:429 (Abbott)."
+  },
+  {
+    "id": "killing_and_self_defense--kantian_deontology",
+    "topic_id": "killing_and_self_defense",
+    "tradition_id": "kantian_deontology",
+    "stance": "forbidden",
+    "summary": "Murder annihilates a bearer of dignity — a being of worth beyond price used and discarded as a mere obstacle — and no aggregate of benefits can license it. Self-defense occupies a separate juridical register: right authorizes coercion against wrongful coercion, so stopping an aggressor is not murder; yet Kant treats even the necessity killing of an innocent as unpunishable rather than right. The moral line is intention against innocent rational nature.",
+    "reasoning": [
+      {
+        "text": "Humanity in every person is an end withal, never means only — the murderer's maxim is its flat denial.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      },
+      {
+        "text": "A universal law licensing private killing for advantage cannot be willed without destroying the condition of any rightful order.",
+        "passage_id": "kant-groundwork-4-421-universal"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-421-universal",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "The Rechtslehre's necessity doctrine (the plank of Carneades) declares the desperate killer 'unpunishable though not innocent' — right and ethics pulling apart at the extreme.",
+    "further_reading": [
+      {
+        "author": "Allen W. Wood",
+        "title": "Kantian Ethics",
+        "year": 2008,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Groundwork 4:429 and 4:421 (Abbott), with Rechtslehre 6:235 for necessity."
+  },
+  {
+    "id": "war_and_peace--kantian_deontology",
+    "topic_id": "war_and_peace",
+    "tradition_id": "kantian_deontology",
+    "stance": "discouraged",
+    "summary": "Kant's philosophy of war is a program for its abolition: standing armies are to disappear, for men hired to kill are used as mere machines by the state; republics whose citizens bear war's costs will not vote for it; and a federation of free states is reason's demanded path out of the lawless condition among nations. War may be waged defensively while that condition lasts, but perpetual peace is not a dream — it is a duty.",
+    "reasoning": [
+      {
+        "text": "The preliminary articles begin dismantling war's apparatus: standing armies shall in time be wholly abolished.",
+        "passage_id": "kant-peace-8-345-armies"
+      },
+      {
+        "text": "Soldiers hired as instruments of killing are treated as means only — the ends test applied to armies.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-peace-8-345-armies",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Frederick Rauscher",
+        "title": "Kant's Social and Political Philosophy",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/kant-social-political/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Perpetual Peace (Campbell Smith) and Groundwork 4:429 (Abbott)."
+  },
+  {
+    "id": "capital_punishment--kantian_deontology",
+    "topic_id": "capital_punishment",
+    "tradition_id": "kantian_deontology",
+    "stance": "obligatory",
+    "summary": "For murder, Kant holds, justice does not merely permit execution — it demands it: even a society dissolving itself must first execute the last murderer, so that each receives what his deeds deserve. Punishment respects the criminal as a rational agent by returning his own maxim upon him; to punish for deterrence alone would use him as a means. The argument's premises — strict retribution, equality of crime and penalty — are exactly where later Kantians dissent.",
+    "reasoning": [
+      {
+        "text": "The island passage makes execution of murderers a demand of justice owed independently of any social benefit.",
+        "passage_id": "kant-law-6-333-island"
+      },
+      {
+        "text": "Punishing to deter, rather than because deserved, would treat the criminal as means only.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-law-6-333-island",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Modern Kantians divide sharply: some argue dignity itself forbids execution, turning Kant's own humanity formula against his retributivism.",
+    "further_reading": [
+      {
+        "author": "Frederick Rauscher",
+        "title": "Kant's Social and Political Philosophy",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/kant-social-political/",
+        "note": "section on punishment"
+      }
+    ],
+    "curator_note": "Drafted from Rechtslehre 6:333 (Hastie) and Groundwork 4:429 (Abbott)."
+  },
+  {
+    "id": "suicide_and_self_harm--kantian_deontology",
+    "topic_id": "suicide_and_self_harm",
+    "tradition_id": "kantian_deontology",
+    "stance": "forbidden",
+    "summary": "Kant's first example of the categorical imperative is suicide: a law of nature destroying life through the very self-love that exists to further life contradicts itself. Deeper still, disposing of oneself treats the humanity in one's own person as a mere means to escaping pain — but persons are not property, not even their own. The duty of self-preservation is the humanity formula turned inward.",
+    "reasoning": [
+      {
+        "text": "The maxim of self-destruction from self-love cannot be conceived as a law of nature without contradiction.",
+        "passage_id": "kant-groundwork-4-422-suicide"
+      },
+      {
+        "text": "Humanity in one's own person is as inviolable as in any other's.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-groundwork-4-422-suicide",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Kant's own casuistical questions (the Doctrine of Virtue) probe hard cases — the rabid-bite case, Curtius's sacrifice — showing the position argued at its edges rather than merely asserted.",
+    "further_reading": [
+      {
+        "author": "Michael Cholbi",
+        "title": "Suicide",
+        "year": 2021,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/suicide/",
+        "note": "section on Kant"
+      }
+    ],
+    "curator_note": "Drafted from Groundwork 4:422 and 4:429 (Abbott)."
+  },
+  {
+    "id": "wealth_and_generosity--kantian_deontology",
+    "topic_id": "wealth_and_generosity",
+    "tradition_id": "kantian_deontology",
+    "stance": "obligatory",
+    "summary": "The prosperous man who shrugs 'what concern is it of mine?' fails the test: his maxim can be conceived as universal law but not willed as one, since he too will need others' help. Beneficence is therefore a real duty — imperfect, leaving latitude in whom and how much, but not whether. Kant adds a corrosive honesty: much charity flatters the giver while injustice upstream created the need; duty prefers justice to condescension.",
+    "reasoning": [
+      {
+        "text": "The indifference maxim cannot be willed universally: the non-helper wills away help he will one day need.",
+        "passage_id": "kant-groundwork-4-423-beneficence"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-groundwork-4-423-beneficence",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Barbara Herman",
+        "title": "The Practice of Moral Judgment",
+        "year": 1993,
+        "kind": "book",
+        "url": null,
+        "note": "on beneficence and latitude"
+      }
+    ],
+    "curator_note": "Drafted from Groundwork 4:423 (Abbott), with Doctrine of Virtue 6:453 in view."
+  },
+  {
+    "id": "theft_and_property--kantian_deontology",
+    "topic_id": "theft_and_property",
+    "tradition_id": "kantian_deontology",
+    "stance": "forbidden",
+    "summary": "Property is a system of rightful possession that theft both exploits and denies: the deposit example shows the maxim of keeping what is entrusted annihilating itself as law, since universalized it abolishes deposits. The thief wills the institution for others and its suspension for himself — the structure of every wrong maxim. Restitution and punishment answer the deed; the wrong was complete in the willing.",
+    "reasoning": [
+      {
+        "text": "Universalized appropriation of the entrusted destroys the very institution it presupposes.",
+        "passage_id": "kant-cpr-5-27-deposit"
+      },
+      {
+        "text": "The owner deceived or bypassed is used merely as means to the thief's ends.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-cpr-5-27-deposit",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Kant's own doctrine of property complicates the flat prohibition: acquisition outside a civil condition is merely provisional and becomes conclusive only under a public legal order, so readers divide over how much moral weight holdings carry before the institutions that secure them exist.",
+    "further_reading": [
+      {
+        "author": "Allen W. Wood",
+        "title": "Kantian Ethics",
+        "year": 2008,
+        "kind": "book",
+        "url": null,
+        "note": "on right and property"
+      }
+    ],
+    "curator_note": "Drafted from Critique of Practical Reason 5:27 and Groundwork 4:429 (Abbott)."
+  },
+  {
+    "id": "marriage_and_fidelity--kantian_deontology",
+    "topic_id": "marriage_and_fidelity",
+    "tradition_id": "kantian_deontology",
+    "stance": "obligatory",
+    "summary": "Kant's juridical definition of marriage — lifelong reciprocal possession — is easy to mock and hard to dismiss: his point is that sexual intimacy risks using a person as a thing, and only a union of complete, equal, lifelong reciprocal right transforms use into shared personhood. Fidelity is therefore built into the institution's rational form; adultery reintroduces exactly the one-sided use marriage exists to abolish.",
+    "reasoning": [
+      {
+        "text": "Marriage's contractual definition encodes the equality and totality of the reciprocal claim.",
+        "passage_id": "kant-law-6-277-marriage"
+      },
+      {
+        "text": "Outside such reciprocity, one person becomes a means to another's inclination — the humanity formula names the wrong.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-law-6-277-marriage",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Contemporary Kantians (Korsgaard, Herman) reconstruct the argument in terms of mutual self-giving and equal standing, discarding the possession vocabulary while keeping the anti-instrumentalization core.",
+    "further_reading": [
+      {
+        "author": "Barbara Herman",
+        "title": "The Practice of Moral Judgment",
+        "year": 1993,
+        "kind": "book",
+        "url": null,
+        "note": "'Could it be worth thinking about Kant on marriage?'"
+      }
+    ],
+    "curator_note": "Drafted from Rechtslehre 6:277 (Hastie) and Groundwork 4:429 (Abbott)."
+  },
+  {
+    "id": "divorce--kantian_deontology",
+    "topic_id": "divorce",
+    "tradition_id": "kantian_deontology",
+    "stance": "permitted",
+    "summary": "Because Kant grounds marriage in contract rather than sacrament, its dissolution is juridically thinkable: a union constituted by reciprocal consent can, on his premises, be released where the reciprocity has collapsed — though he himself stresses the contract's lifelong form. What Kantian ethics adds to any separation is its standing test: neither party may be discarded as a used means, and duties of respect survive the union.",
+    "reasoning": [
+      {
+        "text": "The contractual definition, unlike a sacramental one, makes the bond's legal form dissoluble in principle.",
+        "passage_id": "kant-law-6-277-marriage"
+      },
+      {
+        "text": "Treating a former spouse as disposable fails the humanity test that outlives the contract.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-law-6-277-marriage",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Kant nowhere develops a doctrine of divorce; this position reconstructs the implication of his contract theory, as his commentators generally do — the reconstruction is flagged, not hidden.",
+    "further_reading": [
+      {
+        "author": "Elizabeth Brake",
+        "title": "Marriage and Domestic Partnership",
+        "year": 2020,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/marriage/",
+        "note": "section on Kant"
+      }
+    ],
+    "curator_note": "Reconstructed from Rechtslehre 6:277 (Hastie); the intra note records the reconstruction."
+  },
+  {
+    "id": "hospitality_and_strangers--kantian_deontology",
+    "topic_id": "hospitality_and_strangers",
+    "tradition_id": "kantian_deontology",
+    "stance": "obligatory",
+    "summary": "Universal hospitality is the third definitive article of perpetual peace: the stranger arriving on foreign soil may not be treated as an enemy, for the earth's surface is originally possessed in common and no one has more right to a place on it than another. Kant's right of visit is deliberately narrow — visit, not settlement — and he turns it both ways, condemning conquest dressed as commerce as its violation.",
+    "reasoning": [
+      {
+        "text": "World citizenship under conditions of universal hospitality is a matter of right, not philanthropy.",
+        "passage_id": "kant-peace-8-358-hospitality"
+      },
+      {
+        "text": "The stranger refused as if enemy is denied standing as an end in himself.",
+        "passage_id": "kant-groundwork-4-429-humanity"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-peace-8-358-hospitality",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-429-humanity",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Pauline Kleingeld",
+        "title": "Kant and Cosmopolitanism: The Philosophical Ideal of World Citizenship",
+        "year": 2012,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Perpetual Peace, third definitive article (Campbell Smith)."
+  },
+  {
+    "id": "obedience_and_civil_authority--kantian_deontology",
+    "topic_id": "obedience_and_civil_authority",
+    "tradition_id": "kantian_deontology",
+    "stance": "obligatory",
+    "summary": "Kant denies a right of revolution outright: the people must bear even abuses of the supreme power, for a right to overthrow the juridical condition would dissolve the very idea of law. What he grants instead is the freedom of the pen — public argument as the citizen's lawful weapon — and a standing duty of rulers to reform. Obedience is owed to law as such; conscience keeps only the inward refusal to do the unjust deed oneself.",
+    "reasoning": [
+      {
+        "text": "The duty to bear abuse of supreme power follows from the impossibility of a lawful right to destroy lawfulness.",
+        "passage_id": "kant-law-6-320-bear"
+      },
+      {
+        "text": "A universalized maxim of revolt cannot be willed as law without abolishing the condition of right.",
+        "passage_id": "kant-groundwork-4-421-universal"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "kant-law-6-320-bear",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kant-groundwork-4-421-universal",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Kant celebrated the French Revolution's spectators while denying the right to revolt — a tension his interpreters still work at; all agree he permits no obedience in performing an intrinsically immoral act.",
+    "further_reading": [
+      {
+        "author": "Frederick Rauscher",
+        "title": "Kant's Social and Political Philosophy",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/kant-social-political/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Rechtslehre 6:320 (Hastie) and Groundwork 4:421 (Abbott)."
+  }
+]

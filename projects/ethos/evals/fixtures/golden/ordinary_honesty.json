@@ -1,0 +1,522 @@
+{
+  "body": {
+    "agreement_map": {
+      "context_dependent": [
+        "judaism",
+        "confucianism",
+        "utilitarianism"
+      ],
+      "forbidden": [
+        "christianity",
+        "islam",
+        "kantian_deontology"
+      ],
+      "reframed": [
+        "virtue_ethics"
+      ]
+    },
+    "citations": {
+      "C1": {
+        "locator": "Matthew 5:37",
+        "passage_id": "kjv-matthew-5-37",
+        "source_id": "bible-kjv"
+      },
+      "C10": {
+        "locator": "Groundwork 4:403",
+        "passage_id": "kant-groundwork-4-403-false-promise",
+        "source_id": "kant-groundwork-abbott"
+      },
+      "C11": {
+        "locator": "Utilitarianism ch.2",
+        "passage_id": "mill-util-2-veracity",
+        "source_id": "mill-utilitarianism"
+      },
+      "C12": {
+        "locator": "Utilitarianism ch.2",
+        "passage_id": "mill-util-2-ghp",
+        "source_id": "mill-utilitarianism"
+      },
+      "C13": {
+        "locator": "NE IV.7, 1127b4",
+        "passage_id": "ne-4-7-truthful-character",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C14": {
+        "locator": "NE II.6, 1106b36",
+        "passage_id": "ne-2-6-mean-choice",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C15": {
+        "locator": "NE VI.5, 1140b5",
+        "passage_id": "ne-6-5-practical-wisdom",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C16": {
+        "locator": "NE IV.6, 1126b11",
+        "passage_id": "ne-4-6-obsequious-quarrelsome",
+        "source_id": "aristotle-ne-ross"
+      },
+      "C2": {
+        "locator": "Exodus 1:19–20",
+        "passage_id": "kjv-exodus-1-19-20",
+        "source_id": "bible-kjv"
+      },
+      "C3": {
+        "locator": "Qur'an 33:70",
+        "passage_id": "quran-33-70",
+        "source_id": "quran-pickthall"
+      },
+      "C4": {
+        "locator": "Sahih Muslim 2605",
+        "passage_id": "muslim-2605-reconciliation",
+        "source_id": "sahih-muslim-ref"
+      },
+      "C5": {
+        "locator": "Leviticus 19:11",
+        "passage_id": "jps-leviticus-19-11",
+        "source_id": "tanakh-jps"
+      },
+      "C6": {
+        "locator": "Ketubot 16b–17a",
+        "passage_id": "ketubot-16b-bride",
+        "source_id": "talmud-bavli-ref"
+      },
+      "C7": {
+        "locator": "Analects II.22",
+        "passage_id": "analects-2-22",
+        "source_id": "analects-legge"
+      },
+      "C8": {
+        "locator": "Analects XIII.18",
+        "passage_id": "analects-13-18",
+        "source_id": "analects-legge"
+      },
+      "C9": {
+        "locator": "Supposed Right 8:427",
+        "passage_id": "kant-lies-8-427-sacred",
+        "source_id": "kant-lies-abbott"
+      }
+    },
+    "composer_version": "1",
+    "corpus_version": "0eaa5c8420a3da20e0e4aa8eb25c599af7be4f4973536720ee9f5429fc953b2b",
+    "filtered_out": [],
+    "not_covered": [
+      "buddhism",
+      "hinduism",
+      "stoicism"
+    ],
+    "perspectives": [
+      {
+        "further_reading": [
+          {
+            "author": "Sissela Bok",
+            "kind": "book",
+            "note": "the modern classic, engaging Augustine directly",
+            "title": "Lying: Moral Choice in Public and Private Life",
+            "url": null,
+            "year": 1978
+          },
+          {
+            "author": "Paul J. Griffiths",
+            "kind": "book",
+            "note": null,
+            "title": "Lying: An Augustinian Theology of Duplicity",
+            "url": null,
+            "year": 2004
+          }
+        ],
+        "intra_tradition_note": "Augustine and Aquinas prohibit all lying absolutely; many later Christians allow benevolent untruths in extremity, and casuistry developed mental reservation precisely to avoid calling them lies.",
+        "position_id": "honesty_and_deception--christianity",
+        "quotes": [
+          {
+            "context_note": "From the Sermon on the Mount, on oaths: plain, reliable speech is commanded so that truthfulness needs no reinforcement. It grounds the broad Christian presumption against deceit.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Matthew 5:37",
+            "marker": "C1",
+            "passage_id": "kjv-matthew-5-37",
+            "source_line": "The Holy Bible, King James Version, trans. the King James translators (1611)",
+            "text": "But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil."
+          },
+          {
+            "context_note": "The Hebrew midwives deceive Pharaoh to save newborn boys and are blessed. A standing puzzle for absolute prohibitions of lying, discussed since Augustine.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Exodus 1:19–20",
+            "marker": "C2",
+            "passage_id": "kjv-exodus-1-19-20",
+            "source_line": "The Holy Bible, King James Version, trans. the King James translators (1611)",
+            "text": "And the midwives said unto Pharaoh, Because the Hebrew women are not as the Egyptian women; for they are lively, and are delivered ere the midwives come in unto them. Therefore God dealt well with the midwives: and the people multiplied, and waxed very mighty."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C1",
+            "text": "Jesus commands plain, reliable speech that needs no oath to prop it up."
+          },
+          {
+            "marker": "C2",
+            "text": "Scripture itself preserves cases where deceivers of the murderous are blessed, which the tradition reads as praise of their mercy rather than their method."
+          }
+        ],
+        "stance": "forbidden",
+        "summary": "Speech is answerable to the God of truth: a disciple's yes should mean yes, and deliberate deceit belongs to the old self that is being put away. The mainline, sharpened by Augustine and Aquinas, holds every lie disordered, though not every silence or evasion; hard cases like the Hebrew midwives are honored for mercy, not for the falsehood itself.",
+        "tradition_id": "christianity",
+        "tradition_name": "Christianity"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Toshihiko Izutsu",
+            "kind": "book",
+            "note": "chapter on sidq and kidhb",
+            "title": "Ethico-Religious Concepts in the Qur'an",
+            "url": null,
+            "year": 1966
+          }
+        ],
+        "intra_tradition_note": "Scholars dispute whether the three exceptions license actual untruth or only tawriya (deliberate ambiguity); al-Ghazali's discussion is the classical treatment.",
+        "position_id": "honesty_and_deception--islam",
+        "quotes": [
+          {
+            "context_note": "Straight speech is joined to God-consciousness (taqwa): truthfulness is framed as part of piety itself, not mere social convention.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Qur'an 33:70",
+            "marker": "C3",
+            "passage_id": "quran-33-70",
+            "source_line": "The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)",
+            "text": "O ye who believe! Guard your duty to Allah, and speak words straight to the point;"
+          },
+          {
+            "context_note": "The key hadith complicating an absolute reading of Islamic truthfulness; the legal tradition confines it strictly and many scholars read it as permitting ambiguity rather than outright falsehood.",
+            "is_paraphrase": true,
+            "label": "[paraphrase — no public-domain translation quoted]",
+            "locator": "Sahih Muslim 2605",
+            "marker": "C4",
+            "passage_id": "muslim-2605-reconciliation",
+            "source_line": "Sahih Muslim — cited by hadith number; no public-domain English translation quoted",
+            "text": "Umm Kulthum reports that the Prophet permitted untruth in three settings only: to reconcile between people, in war, and between spouses to preserve affection. Jurists treat these as narrow, enumerated exceptions to a general and weighty duty of truthfulness."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C3",
+            "text": "Straight speech is commanded as an expression of taqwa, tying honesty to piety itself."
+          },
+          {
+            "marker": "C4",
+            "text": "The hadith of the three exceptions shows the tradition weighing truthfulness against reconciliation, and confining the exception rather than widening it."
+          }
+        ],
+        "stance": "forbidden",
+        "summary": "Truthfulness (sidq) is bound to God-consciousness: believers are commanded to fear God and speak straight, and lying is counted among the marks of hypocrisy. The tradition preserves a famous, tightly bounded set of exceptions — reconciliation, war, domestic peace — which jurists read narrowly, many allowing only ambiguity rather than falsehood even there.",
+        "tradition_id": "islam",
+        "tradition_name": "Islam"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Joseph Telushkin",
+            "kind": "book",
+            "note": "chapters on truth and permitted exceptions",
+            "title": "A Code of Jewish Ethics, vol. 1: You Shall Be Holy",
+            "url": null,
+            "year": 2006
+          }
+        ],
+        "intra_tradition_note": "Later halakhah (Bava Metzia 23b–24a) permits deviation from truth in named matters — modesty, hospitality's protection, and peace — each read narrowly.",
+        "position_id": "honesty_and_deception--judaism",
+        "quotes": [
+          {
+            "context_note": "From the Holiness Code: theft, false dealing, and lying are prohibited in one breath, tying honesty to the fabric of communal holiness.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Leviticus 19:11",
+            "marker": "C5",
+            "passage_id": "jps-leviticus-19-11",
+            "source_line": "The Holy Scriptures According to the Masoretic Text, trans. Jewish Publication Society (1917)",
+            "text": "Ye shall not steal; neither shall ye deal falsely, nor lie one to another."
+          },
+          {
+            "context_note": "A foundational rabbinic case for permitted benevolent untruth; later halakhic discussion (e.g. Bava Metzia 23b–24a) enumerates narrow categories where deviation from truth is allowed, especially for peace.",
+            "is_paraphrase": true,
+            "label": "[paraphrase — no public-domain translation quoted]",
+            "locator": "Ketubot 16b–17a",
+            "marker": "C6",
+            "passage_id": "ketubot-16b-bride",
+            "source_line": "The Babylonian Talmud — Vilna edition, cited by folio; no public-domain English translation quoted",
+            "text": "The schools of Hillel and Shammai debate how to praise a bride: Shammai holds one describes her as she is; Hillel holds one praises every bride as beautiful and graceful. The law follows Hillel — kind speech may bend literal accuracy for the sake of another's joy."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C5",
+            "text": "The Holiness Code forbids lying and false dealing as breaches of communal holiness."
+          },
+          {
+            "marker": "C6",
+            "text": "The Hillel–Shammai debate over praising the bride fixes the tradition's considered exception: kind speech for another's joy and for peace."
+          }
+        ],
+        "stance": "context_dependent",
+        "summary": "Lying is forbidden by the Holiness Code and truth is called God's own seal — yet the rabbis rule with Hillel that every bride is praised as beautiful, and enumerate narrow settings where speech may bend for the sake of peace. The tradition holds a strong presumption of truthfulness with codified, bounded exceptions serving shalom.",
+        "tradition_id": "judaism",
+        "tradition_name": "Judaism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Mark Csikszentmihalyi",
+            "kind": "sep",
+            "note": "survey with a section on the upright-father case",
+            "title": "Confucius",
+            "url": "https://plato.stanford.edu/entries/confucius/",
+            "year": 2020
+          }
+        ],
+        "intra_tradition_note": "Later Confucians (notably Zhu Xi's school) read XIII.18 narrowly, as protecting the parent-child bond, not licensing deception generally.",
+        "position_id": "honesty_and_deception--confucianism",
+        "quotes": [
+          {
+            "context_note": "Truthfulness (xin) as the linchpin: without it a person simply cannot function in the web of relationships, as a carriage cannot move without its yoke-bar.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Analects II.22",
+            "marker": "C7",
+            "passage_id": "analects-2-22",
+            "source_line": "The Analects of Confucius, trans. James Legge (1861)",
+            "text": "The Master said, ‘I do not know how a man without truthfulness is to get on. How can a large carriage be made to go without the crossbar for yoking the oxen to, or a small carriage without the arrangement for attaching the horses?’"
+          },
+          {
+            "context_note": "Confucius is contrasting mechanical truth-telling with the deeper integrity of sustaining family bonds; the passage is a locus classicus for the tension between honesty and relational duty, not a license for deceit.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Analects XIII.18",
+            "marker": "C8",
+            "passage_id": "analects-13-18",
+            "source_line": "The Analects of Confucius, trans. James Legge (1861)",
+            "text": "The Duke of She informed Confucius, saying, ‘Among us here there are those who may be styled upright in their conduct. If their father have stolen a sheep, they will bear witness to the fact.’ Confucius said, ‘Among us, in our part of the country, those who are upright are different from this. The father conceals the misconduct of the son, and the son conceals the misconduct of the father. Uprightness is to be found in this.’"
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C7",
+            "text": "Without truthfulness a person cannot get on, as a carriage cannot move without its yoke-bar."
+          },
+          {
+            "marker": "C8",
+            "text": "Relational duties can override third-party claims to disclosure, as in the sheep-stealing father."
+          }
+        ],
+        "stance": "context_dependent",
+        "summary": "Trustworthiness (xin) is a cardinal virtue: a person whose word cannot be relied on has no standing, and sincerity is the ground of all relationships. Yet truth-telling is not an isolated rule; it serves the web of relational duties. Where blunt disclosure would betray a deeper obligation — as between father and son — uprightness may require discretion rather than testimony.",
+        "tradition_id": "confucianism",
+        "tradition_name": "Confucianism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Robert Johnson and Adam Cureton",
+            "kind": "sep",
+            "note": null,
+            "title": "Kant's Moral Philosophy",
+            "url": "https://plato.stanford.edu/entries/kant-moral/",
+            "year": 2022
+          },
+          {
+            "author": "Christine M. Korsgaard",
+            "kind": "book",
+            "note": "the right-to-lie essay",
+            "title": "Creating the Kingdom of Ends",
+            "url": null,
+            "year": 1996
+          }
+        ],
+        "intra_tradition_note": "Kantians from Benjamin Constant's day to Korsgaard's have proposed restrictions — deceivers forfeit the claim to truth, or declarations under coercion are not declarations — none canonized.",
+        "position_id": "honesty_and_deception--kantian_deontology",
+        "quotes": [
+          {
+            "context_note": "Kant's notorious late essay against Benjamin Constant: truthfulness admits no exception even to the murderer at the door. The hard edge of the Kantian position, which even sympathetic Kantians have laboured to soften.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Supposed Right 8:427",
+            "marker": "C9",
+            "passage_id": "kant-lies-8-427-sacred",
+            "source_line": "On a Supposed Right to Tell Lies from Benevolent Motives, trans. Thomas Kingsmill Abbott (1873)",
+            "text": "To be truthful (honest) in all declarations, therefore, is a sacred and absolutely commanding decree of reason, limited by no expediency."
+          },
+          {
+            "context_note": "The false-promise example worked through the universalization test: a world under a law of lying promises destroys the practice of promising the liar depends on.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Groundwork 4:403",
+            "marker": "C10",
+            "passage_id": "kant-groundwork-4-403-false-promise",
+            "source_line": "Fundamental Principles of the Metaphysic of Morals, trans. Thomas Kingsmill Abbott (1873)",
+            "text": "while I can will the lie, I can by no means will that lying should be a universal law. For with such a law there would be no promises at all,"
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C9",
+            "text": "Truthfulness is an unconditional duty of reason, admitting no exception for good ends."
+          },
+          {
+            "marker": "C10",
+            "text": "The lie fails the universalization test: willed as law, it abolishes the assertion it depends on."
+          }
+        ],
+        "stance": "forbidden",
+        "summary": "Lying is excluded without remainder: truthfulness in declarations is a sacred decree of reason limited by no expediency, because a maxim of lying cannot be universalized without destroying the practice of assertion it exploits, and because the deceived person is used merely as a means. Kant follows the logic to its notorious end — no lie even to the murderer at the door — a conclusion his own school still argues over.",
+        "tradition_id": "kantian_deontology",
+        "tradition_name": "Kantian deontology"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Walter Sinnott-Armstrong",
+            "kind": "sep",
+            "note": null,
+            "title": "Consequentialism",
+            "url": "https://plato.stanford.edu/entries/consequentialism/",
+            "year": 2023
+          }
+        ],
+        "intra_tradition_note": "Act utilitarians evaluate each lie directly; rule utilitarians defend near-absolute veracity rules — the classic act/rule divide runs straight through this topic.",
+        "position_id": "honesty_and_deception--utilitarianism",
+        "quotes": [
+          {
+            "context_note": "Mill's answer to 'useful lies': the institution of trustworthy assertion is itself among the greatest utilities, so each convenient lie spends a common inheritance. Exceptions exist and should themselves be rule-governed.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Utilitarianism ch.2",
+            "marker": "C11",
+            "passage_id": "mill-util-2-veracity",
+            "source_line": "Utilitarianism, John Stuart Mill (1863)",
+            "text": "But inasmuch as the cultivation in ourselves of a sensitive feeling on the subject of veracity, is one of the most useful, and the enfeeblement of that feeling one of the most hurtful, things to which our conduct can be instrumental; and inasmuch as any, even unintentional, deviation from truth, does that much towards weakening the trustworthiness of human assertion, which is not only the principal support of all present social well-being,"
+          },
+          {
+            "context_note": "Mill's canonical statement of the principle, with happiness understood as pleasure and the absence of pain — refined in the same chapter by the doctrine of higher pleasures.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "Utilitarianism ch.2",
+            "marker": "C12",
+            "passage_id": "mill-util-2-ghp",
+            "source_line": "Utilitarianism, John Stuart Mill (1863)",
+            "text": "The creed which accepts as the foundation of morals, Utility, or the Greatest Happiness Principle, holds that actions are right in proportion as they tend to promote happiness, wrong as they tend to produce the reverse of happiness."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C11",
+            "text": "The institution of trustworthy assertion is a common inheritance each convenient lie spends down."
+          },
+          {
+            "marker": "C12",
+            "text": "The Greatest Happiness Principle supplies the test that both grounds the rule and marks its rare exceptions."
+          }
+        ],
+        "stance": "context_dependent",
+        "summary": "Lying is judged by consequences — and judged harshly, because the consequences reach further than the lie: each deviation from truth weakens the trustworthiness of human assertion, the principal support of social well-being. Mill therefore treats veracity as a rule of transcendent expediency, breakable only in rare cases (withholding bad news from the dangerously ill, misdirecting a would-be murderer) that should themselves be rule-bound.",
+        "tradition_id": "utilitarianism",
+        "tradition_name": "Utilitarianism"
+      },
+      {
+        "further_reading": [
+          {
+            "author": "Rosalind Hursthouse",
+            "kind": "book",
+            "note": "on why virtue ethics does not issue act-permissions",
+            "title": "On Virtue Ethics",
+            "url": null,
+            "year": 1999
+          },
+          {
+            "author": "Christine Swanton",
+            "kind": "book",
+            "note": null,
+            "title": "Virtue Ethics: A Pluralistic View",
+            "url": null,
+            "year": 2003
+          }
+        ],
+        "intra_tradition_note": "Later Aristotelians split over whether the account has room for an outright ban: Thomist virtue theory folds an exceptionless prohibition of lying into the virtue, while modern neo-Aristotelians read the mean as leaving the hard cases to judgment.",
+        "position_id": "honesty_and_deception--virtue_ethics",
+        "quotes": [
+          {
+            "context_note": "Truthfulness here is a trait of character, not a rule about assertions. Aristotle's test is the small unwitnessed case, because reliability under pressure is produced by what a person is already like.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE IV.7, 1127b4",
+            "marker": "C13",
+            "passage_id": "ne-4-7-truthful-character",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "The man who loves truth, and is truthful where nothing is at stake, will be still more truthful where something is at stake; he will avoid falsehood as something base, seeing that he avoided it for its own sake."
+          },
+          {
+            "context_note": "The formal definition of moral virtue, and the hinge of the whole system. Note that the mean is relative to the agent and fixed by the judgment of the practically wise person, not by a formula or an arithmetical midpoint.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE II.6, 1106b36",
+            "marker": "C14",
+            "passage_id": "ne-2-6-mean-choice",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "Virtue, then, is a state of character concerned with choice, lying in a mean, i.e. the mean relative to us, this being determined by a rational principle, and by that principle by which the man of practical wisdom would determine it."
+          },
+          {
+            "context_note": "The definition of phronesis, practical wisdom. It is neither scientific knowledge nor craft skill, and it is what supplies the judgment that the definition of virtue refers to.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE VI.5, 1140b5",
+            "marker": "C15",
+            "passage_id": "ne-6-5-practical-wisdom",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "The remaining alternative, then, is that it is a true and reasoned state of capacity to act with regard to the things that are good or bad for man."
+          },
+          {
+            "context_note": "The start of the unnamed virtue of friendliness in company, a mean between flattery and quarrelsomeness. Aristotle treats ordinary conversation as an arena of character, not a morally neutral zone.",
+            "is_paraphrase": false,
+            "label": null,
+            "locator": "NE IV.6, 1126b11",
+            "marker": "C16",
+            "passage_id": "ne-4-6-obsequious-quarrelsome",
+            "source_line": "The Nicomachean Ethics, trans. W. D. Ross (1925)",
+            "text": "In gatherings of men, in social life and the interchange of words and deeds, some men are thought to be obsequious, namely those who to give pleasure praise everything and never oppose, but think it their duty to give no pain to the people they meet."
+          }
+        ],
+        "reasoning": [
+          {
+            "marker": "C13",
+            "text": "The one who loves truth where nothing is at stake is the more truthful where something is, because he shuns falsehood for its own sake."
+          },
+          {
+            "marker": "C14",
+            "text": "Excellence is a disposition concerned with choosing, lying in a mean fixed as the person of judgment would fix it — not a list of permitted acts."
+          },
+          {
+            "marker": "C15",
+            "text": "The capacity that fixes the mean is a reasoned state about what is good or bad for a human being, exercised on particulars."
+          }
+        ],
+        "stance": "reframed",
+        "summary": "Asking whether a particular untruth is allowed puts the question to the wrong tribunal. Truthfulness is a settled trait standing between boasting and mock-modesty, and the person who has it shuns falsehood as something base rather than as something prohibited — which is exactly why he can be relied on when nothing hangs on the matter. Shading the facts is appraised by what it expresses and by what repetition makes of the one who does it. What candour this friend and this hour call for is then decided in the particular case by the person of practical judgment.",
+        "tradition_id": "virtue_ethics",
+        "tradition_name": "Virtue ethics"
+      }
+    ],
+    "routing": {
+      "alternates": [],
+      "confidence": null,
+      "forced": true,
+      "topic_id": "honesty_and_deception"
+    },
+    "safeguards": []
+  },
+  "composer_version": "1",
+  "kind": "answer",
+  "name": "ordinary_honesty",
+  "polish_fell_back": false,
+  "question": "[golden ordinary_honesty]",
+  "rendered_text": "=== Honesty and deception ===\n\nTopic: Honesty and deception (honesty_and_deception) — forced by request\n\n--- Christianity — forbidden ---\nSpeech is answerable to the God of truth: a disciple's yes should mean yes, and deliberate deceit belongs to the old self that is being put away. The mainline, sharpened by Augustine and Aquinas, holds every lie disordered, though not every silence or evasion; hard cases like the Hebrew midwives are honored for mercy, not for the falsehood itself.\n  • Jesus commands plain, reliable speech that needs no oath to prop it up. [C1]\n      “But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil.”\n      — Matthew 5:37 — The Holy Bible, King James Version, trans. the King James translators (1611)\n      Context: From the Sermon on the Mount, on oaths: plain, reliable speech is commanded so that truthfulness needs no reinforcement. It grounds the broad Christian presumption against deceit.\n  • Scripture itself preserves cases where deceivers of the murderous are blessed, which the tradition reads as praise of their mercy rather than their method. [C2]\n      “And the midwives said unto Pharaoh, Because the Hebrew women are not as the Egyptian women; for they are lively, and are delivered ere the midwives come in unto them. Therefore God dealt well with the midwives: and the people multiplied, and waxed very mighty.”\n      — Exodus 1:19–20 — The Holy Bible, King James Version, trans. the King James translators (1611)\n      Context: The Hebrew midwives deceive Pharaoh to save newborn boys and are blessed. A standing puzzle for absolute prohibitions of lying, discussed since Augustine.\n  Note: Augustine and Aquinas prohibit all lying absolutely; many later Christians allow benevolent untruths in extremity, and casuistry developed mental reservation precisely to avoid calling them lies.\n  Further reading:\n      - Sissela Bok, “Lying: Moral Choice in Public and Private Life” (1978) [book]\n      - Paul J. Griffiths, “Lying: An Augustinian Theology of Duplicity” (2004) [book]\n\n--- Islam — forbidden ---\nTruthfulness (sidq) is bound to God-consciousness: believers are commanded to fear God and speak straight, and lying is counted among the marks of hypocrisy. The tradition preserves a famous, tightly bounded set of exceptions — reconciliation, war, domestic peace — which jurists read narrowly, many allowing only ambiguity rather than falsehood even there.\n  • Straight speech is commanded as an expression of taqwa, tying honesty to piety itself. [C3]\n      “O ye who believe! Guard your duty to Allah, and speak words straight to the point;”\n      — Qur'an 33:70 — The Meaning of the Glorious Koran, trans. Marmaduke Pickthall (1930)\n      Context: Straight speech is joined to God-consciousness (taqwa): truthfulness is framed as part of piety itself, not mere social convention.\n  • The hadith of the three exceptions shows the tradition weighing truthfulness against reconciliation, and confining the exception rather than widening it. [C4]\n      [paraphrase — no public-domain translation quoted]\n      Umm Kulthum reports that the Prophet permitted untruth in three settings only: to reconcile between people, in war, and between spouses to preserve affection. Jurists treat these as narrow, enumerated exceptions to a general and weighty duty of truthfulness.\n      — Sahih Muslim 2605 — Sahih Muslim — cited by hadith number; no public-domain English translation quoted\n      Context: The key hadith complicating an absolute reading of Islamic truthfulness; the legal tradition confines it strictly and many scholars read it as permitting ambiguity rather than outright falsehood.\n  Note: Scholars dispute whether the three exceptions license actual untruth or only tawriya (deliberate ambiguity); al-Ghazali's discussion is the classical treatment.\n  Further reading:\n      - Toshihiko Izutsu, “Ethico-Religious Concepts in the Qur'an” (1966) [book]\n\n--- Judaism — context_dependent ---\nLying is forbidden by the Holiness Code and truth is called God's own seal — yet the rabbis rule with Hillel that every bride is praised as beautiful, and enumerate narrow settings where speech may bend for the sake of peace. The tradition holds a strong presumption of truthfulness with codified, bounded exceptions serving shalom.\n  • The Holiness Code forbids lying and false dealing as breaches of communal holiness. [C5]\n      “Ye shall not steal; neither shall ye deal falsely, nor lie one to another.”\n      — Leviticus 19:11 — The Holy Scriptures According to the Masoretic Text, trans. Jewish Publication Society (1917)\n      Context: From the Holiness Code: theft, false dealing, and lying are prohibited in one breath, tying honesty to the fabric of communal holiness.\n  • The Hillel–Shammai debate over praising the bride fixes the tradition's considered exception: kind speech for another's joy and for peace. [C6]\n      [paraphrase — no public-domain translation quoted]\n      The schools of Hillel and Shammai debate how to praise a bride: Shammai holds one describes her as she is; Hillel holds one praises every bride as beautiful and graceful. The law follows Hillel — kind speech may bend literal accuracy for the sake of another's joy.\n      — Ketubot 16b–17a — The Babylonian Talmud — Vilna edition, cited by folio; no public-domain English translation quoted\n      Context: A foundational rabbinic case for permitted benevolent untruth; later halakhic discussion (e.g. Bava Metzia 23b–24a) enumerates narrow categories where deviation from truth is allowed, especially for peace.\n  Note: Later halakhah (Bava Metzia 23b–24a) permits deviation from truth in named matters — modesty, hospitality's protection, and peace — each read narrowly.\n  Further reading:\n      - Joseph Telushkin, “A Code of Jewish Ethics, vol. 1: You Shall Be Holy” (2006) [book]\n\n--- Confucianism — context_dependent ---\nTrustworthiness (xin) is a cardinal virtue: a person whose word cannot be relied on has no standing, and sincerity is the ground of all relationships. Yet truth-telling is not an isolated rule; it serves the web of relational duties. Where blunt disclosure would betray a deeper obligation — as between father and son — uprightness may require discretion rather than testimony.\n  • Without truthfulness a person cannot get on, as a carriage cannot move without its yoke-bar. [C7]\n      “The Master said, ‘I do not know how a man without truthfulness is to get on. How can a large carriage be made to go without the crossbar for yoking the oxen to, or a small carriage without the arrangement for attaching the horses?’”\n      — Analects II.22 — The Analects of Confucius, trans. James Legge (1861)\n      Context: Truthfulness (xin) as the linchpin: without it a person simply cannot function in the web of relationships, as a carriage cannot move without its yoke-bar.\n  • Relational duties can override third-party claims to disclosure, as in the sheep-stealing father. [C8]\n      “The Duke of She informed Confucius, saying, ‘Among us here there are those who may be styled upright in their conduct. If their father have stolen a sheep, they will bear witness to the fact.’ Confucius said, ‘Among us, in our part of the country, those who are upright are different from this. The father conceals the misconduct of the son, and the son conceals the misconduct of the father. Uprightness is to be found in this.’”\n      — Analects XIII.18 — The Analects of Confucius, trans. James Legge (1861)\n      Context: Confucius is contrasting mechanical truth-telling with the deeper integrity of sustaining family bonds; the passage is a locus classicus for the tension between honesty and relational duty, not a license for deceit.\n  Note: Later Confucians (notably Zhu Xi's school) read XIII.18 narrowly, as protecting the parent-child bond, not licensing deception generally.\n  Further reading:\n      - Mark Csikszentmihalyi, “Confucius” (2020) [sep] https://plato.stanford.edu/entries/confucius/\n\n--- Kantian deontology — forbidden ---\nLying is excluded without remainder: truthfulness in declarations is a sacred decree of reason limited by no expediency, because a maxim of lying cannot be universalized without destroying the practice of assertion it exploits, and because the deceived person is used merely as a means. Kant follows the logic to its notorious end — no lie even to the murderer at the door — a conclusion his own school still argues over.\n  • Truthfulness is an unconditional duty of reason, admitting no exception for good ends. [C9]\n      “To be truthful (honest) in all declarations, therefore, is a sacred and absolutely commanding decree of reason, limited by no expediency.”\n      — Supposed Right 8:427 — On a Supposed Right to Tell Lies from Benevolent Motives, trans. Thomas Kingsmill Abbott (1873)\n      Context: Kant's notorious late essay against Benjamin Constant: truthfulness admits no exception even to the murderer at the door. The hard edge of the Kantian position, which even sympathetic Kantians have laboured to soften.\n  • The lie fails the universalization test: willed as law, it abolishes the assertion it depends on. [C10]\n      “while I can will the lie, I can by no means will that lying should be a universal law. For with such a law there would be no promises at all,”\n      — Groundwork 4:403 — Fundamental Principles of the Metaphysic of Morals, trans. Thomas Kingsmill Abbott (1873)\n      Context: The false-promise example worked through the universalization test: a world under a law of lying promises destroys the practice of promising the liar depends on.\n  Note: Kantians from Benjamin Constant's day to Korsgaard's have proposed restrictions — deceivers forfeit the claim to truth, or declarations under coercion are not declarations — none canonized.\n  Further reading:\n      - Robert Johnson and Adam Cureton, “Kant's Moral Philosophy” (2022) [sep] https://plato.stanford.edu/entries/kant-moral/\n      - Christine M. Korsgaard, “Creating the Kingdom of Ends” (1996) [book]\n\n--- Utilitarianism — context_dependent ---\nLying is judged by consequences — and judged harshly, because the consequences reach further than the lie: each deviation from truth weakens the trustworthiness of human assertion, the principal support of social well-being. Mill therefore treats veracity as a rule of transcendent expediency, breakable only in rare cases (withholding bad news from the dangerously ill, misdirecting a would-be murderer) that should themselves be rule-bound.\n  • The institution of trustworthy assertion is a common inheritance each convenient lie spends down. [C11]\n      “But inasmuch as the cultivation in ourselves of a sensitive feeling on the subject of veracity, is one of the most useful, and the enfeeblement of that feeling one of the most hurtful, things to which our conduct can be instrumental; and inasmuch as any, even unintentional, deviation from truth, does that much towards weakening the trustworthiness of human assertion, which is not only the principal support of all present social well-being,”\n      — Utilitarianism ch.2 — Utilitarianism, John Stuart Mill (1863)\n      Context: Mill's answer to 'useful lies': the institution of trustworthy assertion is itself among the greatest utilities, so each convenient lie spends a common inheritance. Exceptions exist and should themselves be rule-governed.\n  • The Greatest Happiness Principle supplies the test that both grounds the rule and marks its rare exceptions. [C12]\n      “The creed which accepts as the foundation of morals, Utility, or the Greatest Happiness Principle, holds that actions are right in proportion as they tend to promote happiness, wrong as they tend to produce the reverse of happiness.”\n      — Utilitarianism ch.2 — Utilitarianism, John Stuart Mill (1863)\n      Context: Mill's canonical statement of the principle, with happiness understood as pleasure and the absence of pain — refined in the same chapter by the doctrine of higher pleasures.\n  Note: Act utilitarians evaluate each lie directly; rule utilitarians defend near-absolute veracity rules — the classic act/rule divide runs straight through this topic.\n  Further reading:\n      - Walter Sinnott-Armstrong, “Consequentialism” (2023) [sep] https://plato.stanford.edu/entries/consequentialism/\n\n--- Virtue ethics — reframed ---\nAsking whether a particular untruth is allowed puts the question to the wrong tribunal. Truthfulness is a settled trait standing between boasting and mock-modesty, and the person who has it shuns falsehood as something base rather than as something prohibited — which is exactly why he can be relied on when nothing hangs on the matter. Shading the facts is appraised by what it expresses and by what repetition makes of the one who does it. What candour this friend and this hour call for is then decided in the particular case by the person of practical judgment.\n  • The one who loves truth where nothing is at stake is the more truthful where something is, because he shuns falsehood for its own sake. [C13]\n      “The man who loves truth, and is truthful where nothing is at stake, will be still more truthful where something is at stake; he will avoid falsehood as something base, seeing that he avoided it for its own sake.”\n      — NE IV.7, 1127b4 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: Truthfulness here is a trait of character, not a rule about assertions. Aristotle's test is the small unwitnessed case, because reliability under pressure is produced by what a person is already like.\n  • Excellence is a disposition concerned with choosing, lying in a mean fixed as the person of judgment would fix it — not a list of permitted acts. [C14]\n      “Virtue, then, is a state of character concerned with choice, lying in a mean, i.e. the mean relative to us, this being determined by a rational principle, and by that principle by which the man of practical wisdom would determine it.”\n      — NE II.6, 1106b36 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: The formal definition of moral virtue, and the hinge of the whole system. Note that the mean is relative to the agent and fixed by the judgment of the practically wise person, not by a formula or an arithmetical midpoint.\n  • The capacity that fixes the mean is a reasoned state about what is good or bad for a human being, exercised on particulars. [C15]\n      “The remaining alternative, then, is that it is a true and reasoned state of capacity to act with regard to the things that are good or bad for man.”\n      — NE VI.5, 1140b5 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: The definition of phronesis, practical wisdom. It is neither scientific knowledge nor craft skill, and it is what supplies the judgment that the definition of virtue refers to.\n  • Also cited. [C16]\n      “In gatherings of men, in social life and the interchange of words and deeds, some men are thought to be obsequious, namely those who to give pleasure praise everything and never oppose, but think it their duty to give no pain to the people they meet.”\n      — NE IV.6, 1126b11 — The Nicomachean Ethics, trans. W. D. Ross (1925)\n      Context: The start of the unnamed virtue of friendliness in company, a mean between flattery and quarrelsomeness. Aristotle treats ordinary conversation as an arena of character, not a morally neutral zone.\n  Note: Later Aristotelians split over whether the account has room for an outright ban: Thomist virtue theory folds an exceptionless prohibition of lying into the virtue, while modern neo-Aristotelians read the mean as leaving the hard cases to judgment.\n  Further reading:\n      - Rosalind Hursthouse, “On Virtue Ethics” (1999) [book]\n      - Christine Swanton, “Virtue Ethics: A Pluralistic View” (2003) [book]\n\nWhere traditions agree and differ:\n  context_dependent: Judaism, Confucianism, Utilitarianism\n  forbidden: Christianity, Islam, Kantian deontology\n  reframed: Virtue ethics\nNo curated position on this topic: Buddhism, Hinduism, Stoicism\n\nCitations:\n  [C1] kjv-matthew-5-37 — Matthew 5:37 — bible-kjv\n  [C2] kjv-exodus-1-19-20 — Exodus 1:19–20 — bible-kjv\n  [C3] quran-33-70 — Qur'an 33:70 — quran-pickthall\n  [C4] muslim-2605-reconciliation — Sahih Muslim 2605 — sahih-muslim-ref\n  [C5] jps-leviticus-19-11 — Leviticus 19:11 — tanakh-jps\n  [C6] ketubot-16b-bride — Ketubot 16b–17a — talmud-bavli-ref\n  [C7] analects-2-22 — Analects II.22 — analects-legge\n  [C8] analects-13-18 — Analects XIII.18 — analects-legge\n  [C9] kant-lies-8-427-sacred — Supposed Right 8:427 — kant-lies-abbott\n  [C10] kant-groundwork-4-403-false-promise — Groundwork 4:403 — kant-groundwork-abbott\n  [C11] mill-util-2-veracity — Utilitarianism ch.2 — mill-utilitarianism\n  [C12] mill-util-2-ghp — Utilitarianism ch.2 — mill-utilitarianism\n  [C13] ne-4-7-truthful-character — NE IV.7, 1127b4 — aristotle-ne-ross\n  [C14] ne-2-6-mean-choice — NE II.6, 1106b36 — aristotle-ne-ross\n  [C15] ne-6-5-practical-wisdom — NE VI.5, 1140b5 — aristotle-ne-ross\n  [C16] ne-4-6-obsequious-quarrelsome — NE IV.6, 1126b11 — aristotle-ne-ross\n\nCorpus 0eaa5c8420a3 · composer 1\n"
+}

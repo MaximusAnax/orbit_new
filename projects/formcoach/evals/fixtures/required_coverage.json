@@ -1,0 +1,108 @@
+{
+  "note": "Hand-authored from EVALS.md, deliberately NOT derived from data/target_muscles.json. days_4_plus rows are EVALS.md's table verbatim. The days_2 / days_3 rows are the first five / seven entries of the goal's SCOPE.md priority order (all of which appear in the same EVALS row); see docs/REVIEW.md finding R-1 for why the literal 'first five entries of the row' reading is not satisfiable at 2 days a week.",
+  "goals": {
+    "hypertrophy": {
+      "days_4_plus": [
+        "chest",
+        "lats",
+        "upper_back",
+        "side_delts",
+        "biceps",
+        "triceps",
+        "quads",
+        "hamstrings",
+        "glutes",
+        "calves"
+      ],
+      "days_3": [
+        "chest",
+        "quads",
+        "lats",
+        "upper_back",
+        "hamstrings",
+        "side_delts",
+        "triceps"
+      ],
+      "days_2": [
+        "chest",
+        "quads",
+        "lats",
+        "upper_back",
+        "hamstrings"
+      ]
+    },
+    "general": {
+      "days_4_plus": [
+        "chest",
+        "lats",
+        "upper_back",
+        "side_delts",
+        "biceps",
+        "triceps",
+        "quads",
+        "hamstrings"
+      ],
+      "days_3": [
+        "chest",
+        "quads",
+        "lats",
+        "upper_back",
+        "hamstrings",
+        "side_delts",
+        "triceps"
+      ],
+      "days_2": [
+        "chest",
+        "quads",
+        "lats",
+        "upper_back",
+        "hamstrings"
+      ]
+    },
+    "strength": {
+      "days_4_plus": [
+        "quads",
+        "hamstrings",
+        "glutes",
+        "lower_back",
+        "chest",
+        "upper_back",
+        "lats",
+        "triceps"
+      ],
+      "days_3": [
+        "quads",
+        "chest",
+        "upper_back",
+        "lats",
+        "hamstrings",
+        "lower_back",
+        "triceps"
+      ],
+      "days_2": [
+        "quads",
+        "chest",
+        "upper_back",
+        "lats",
+        "hamstrings"
+      ]
+    }
+  },
+  "landmark_mev": {
+    "chest": 8,
+    "front_delts": 0,
+    "side_delts": 8,
+    "rear_delts": 6,
+    "lats": 8,
+    "upper_back": 6,
+    "lower_back": 4,
+    "biceps": 6,
+    "triceps": 6,
+    "forearms": 2,
+    "quads": 8,
+    "hamstrings": 6,
+    "glutes": 4,
+    "calves": 8,
+    "abs": 4
+  }
+}

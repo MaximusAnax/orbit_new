@@ -1,0 +1,1200 @@
+{"ts": "2024-03-01T00:00:00", "device_id": "grenier", "temperature_c": 16.4, "humidity_pct": "71,6", "status": "calibrating"}
+{"ts": "2024-03-01T01:07:13", "device_id": "véranda", "temperature_c": -134.4, "humidity_pct": 63.4, "status": "offline"}
+{"ts": "2024-03-01T02:14:26", "device_id": "vÃ©randa", "temperature_c": 18.9, "humidity_pct": 44.6, "status": "needs  service"}
+{"ts": "2024-03-01T03:21:39", "device_id": "grenier", "temperature_c": 28.5, "humidity_pct": 40.9, "status": "calibrating"}
+{"ts": "2024-03-01T04:28:52", "device_id": "cafÃ©", "temperature_c": 18.2, "humidity_pct": 64.0, "status": "calibrating"}
+{"ts": "2024-03-01T05:35:05", "device_id": "atelier", "temperature_c": 8.8, "humidity_pct": 64.1, "status": "ok"}
+{"ts": "2024-03-01T06:42:18", "device_id": "salon", "temperature_c": 28.0, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-01T07:49:31", "device_id": "réserve", "temperature_c": 24.0, "humidity_pct": 63.8, "status": "ok"}
+{"ts": "2024-03-01T08:56:44", "device_id": "cellier", "temperature_c": 18.1, "humidity_pct": 34.1, "status": "ok"}
+{"ts": "2024-03-01T09:03:57", "device_id": "salon", "temperature_c": 11.0, "humidity_pct": 52.3, "status": "offline"}
+{"ts": "2024-03-01T10:10:10", "device_id": "atelier", "temperature_c": 29.4, "humidity_pct": 64.9, "status": "(needs service)"}
+{"ts": "2024-03-01T11:17:23", "device_id": "réserve", "temperature_c": 23.8, "humidity_pct": 49.3, "status": "calibrating"}
+{"ts": "2024-03-01T12:24:36", "device_id": "grenier", "temperature_c": 19.6, "humidity_pct": 52.0, "status": "OFFLINE"}
+{"ts": "2024-03-01T13:31:49", "device_id": "cuisine", "temperature_c": 17.0, "humidity_pct": 55.5, "status": "ok"}
+{"ts": "2024-03-01T14:38:02", "device_id": "salon", "temperature_c": 13.4, "humidity_pct": 69.8, "status": "offline"}
+{"ts": "2024-03-01T15:45:15", "device_id": "véranda", "temperature_c": 25.1, "humidity_pct": 40.9, "status": "ok"}
+{"ts": "2024-03-01T16:52:28", "device_id": "véranda", "temperature_c": 18.0, "humidity_pct": 43.8, "status": "offline"}
+{"ts": "2024-03-01T17:59:41", "device_id": "cuisine", "temperature_c": 10.7, "humidity_pct": 66.2, "status": "needs service"}
+{"ts": "2024-03-01T18:06:54", "device_id": "cellier", "temperature_c": 12.5, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-03-01T19:13:07", "device_id": "café", "temperature_c": "'16.0", "humidity_pct": 36.8, "status": "calibrating"}
+{"ts": "2024-03-01T20:20:20", "device_id": "grenier", "temperature_c": 21.8, "humidity_pct": 64.6, "status": "needs service"}
+{"ts": "2024-03-01T21:27:33", "device_id": "grenier", "temperature_c": 16.8, "humidity_pct": 37.9, "status": "offline"}
+{"ts": "2024-03-01T22:34:46", "device_id": "cuisine", "temperature_c": 27.7, "humidity_pct": 44.5, "status": "ok"}
+{"ts": "2024-03-01T23:41:59", "device_id": "véranda", "temperature_c": 32.6, "humidity_pct": 60.3, "status": "needs service"}
+{"ts": "2024-03-02T00:48:12", "device_id": "cuisine", "temperature_c": 16.7, "humidity_pct": 34.9, "status": "needs service"}
+{"ts": "2024-03-02T01:55:25", "device_id": "grenier", "temperature_c": 14.7, "humidity_pct": 61.0, "status": "offline"}
+{"ts": "2024-03-02T02:02:38", "device_id": "cellier", "temperature_c": 17.3, "humidity_pct": 60.2, "status": "calibrating"}
+{"ts": "2024-03-02T03:09:51", "device_id": "café", "temperature_c": 13.3, "humidity_pct": 43.8, "status": "ok"}
+{"ts": "2024-03-02 04:16:04", "device_id": "cellier", "temperature_c": 29.4, "humidity_pct": 50.3, "status": "offline"}
+{"ts": "2024-03-02T05:23:17", "device_id": "salon", "temperature_c": 27.9, "humidity_pct": 43.9, "status": "ok"}
+{"ts": "2024-03-02T06:30:30", "device_id": "café", "temperature_c": 8.7, "humidity_pct": 72.1, "status": "needs service"}
+{"ts": "2024-03-02T07:37:43", "device_id": "cellier", "temperature_c": 21.8, "humidity_pct": 65.4, "status": "#N/A"}
+{"ts": "2024-03-02T08:44:56", "device_id": "cuisine", "temperature_c": 15.8, "humidity_pct": 37.9, "status": "calibrating"}
+{"ts": "2024-03-02T09:51:09", "device_id": "salon", "temperature_c": 18.4, "humidity_pct": null, "status": "needs service"}
+{"ts": "2024-03-02T10:58:22", "device_id": "véranda", "temperature_c": 12.9, "humidity_pct": 42.1, "status": "needs service"}
+{"ts": "2024-03-02T11:05:35​", "device_id": "réserve", "temperature_c": 12.1, "humidity_pct": 37.8, "status": "offline"}
+{"ts": "2024-03-02T12:12:48", "device_id": "grenier", "temperature_c": 32.4, "humidity_pct": 47.0, "status": "ok"}
+{"ts": "2024-03-02T13:19:01", "device_id": "caisine", "temperature_c": 15.8, "humidity_pct": 38.1, "status": "needs service"}
+{"ts": "2024-03-02 14:26:14", "device_id": "salon", "temperature_c": 28.2, "humidity_pct": 64.7, "status": "OFFLINE"}
+{"ts": "2024-03-02T15:33:27", "device_id": "réserve", "temperature_c": 29.6, "humidity_pct": 35.6, "status": "needs service"}
+{"ts": "2024-03-02T16:40:40", "device_id": "cellier", "temperature_c": 31.0, "humidity_pct": 65.5, "status": "offline"}
+{"ts": "2024-03-02T17:47:53", "device_id": "café", "temperature_c": 24.8, "humidity_pct": 68.8, "status": "calibrating"}
+{"ts": "2024-03-02T18:54:06", "device_id": "salon", "temperature_c": 25.5, "humidity_pct": 39.3, "status": "offline"}
+{"ts": "2024-03-02T19:01:19", "device_id": "café", "temperature_c": 19.5, "humidity_pct": 28.6, "status": "needs service"}
+{"ts": "2024-03-02T20:08:32", "device_id": "réserve", "temperature_c": 10.3, "humidity_pct": 28.1, "status": "calibrating"}
+{"ts": "2024-03-02T21:15:45", "device_id": "salon", "temperature_c": 12.0, "humidity_pct": 50.6, "status": "needs service"}
+{"ts": "2024-03-02T22:22:58", "device_id": "cellier", "temperature_c": 12.5, "humidity_pct": 42.3, "status": "offline"}
+{"ts": "2024-03-02T23:29:11", "device_id": "(cuisine)", "temperature_c": 23.0, "humidity_pct": 56.8, "status": "offline"}
+{"ts": "2024-03-03T00:36:24", "device_id": "cellier", "temperature_c": 12.2, "humidity_pct": 39.9, "status": "offline"}
+{"ts": "2024-03-03T01:43:37", "device_id": "réserve", "temperature_c": 22.2, "humidity_pct": 49.7, "status": "offline"}
+{"ts": "2024-03-03T02:50:50", "device_id": "café", "temperature_c": 25.1, "humidity_pct": 29.7, "status": "calibrating"}
+{"ts": "2024-03-03T03:57:03", "device_id": "salon", "temperature_c": 32.4, "humidity_pct": 41.4, "status": "calibrating"}
+{"ts": "2024-03-03T04:04:16", "device_id": "café", "temperature_c": 32.9, "humidity_pct": 55.2, "status": "ok"}
+{"ts": "2024-03-03T05:11:29", "device_id": "cellier", "temperature_c": 11.5, "humidity_pct": 54.5, "status": "calibrating"}
+{"ts": "2024-03-03T06:18:42", "device_id": "grenier", "temperature_c": 29.9, "humidity_pct": 29.5, "status": "needs service"}
+{"ts": "2024-03-03T07:25:55", "device_id": "café", "temperature_c": 16.2, "humidity_pct": 35.1, "status": "calibrating"}
+{"ts": "2024-03-03T08:32:08", "device_id": "grenier", "temperature_c": 10.4, "humidity_pct": 48.8, "status": "calibrating"}
+{"ts": "2024-03-03T09:39:21", "device_id": "grenier", "temperature_c": 31.9, "humidity_pct": 64.7, "status": "offline"}
+{"ts": "2024-03-03T10:46:34", "device_id": "vÃ©randa", "temperature_c": 33.6, "humidity_pct": 32.1, "status": "offline"}
+{"ts": "2024-03-03T11:53:47", "device_id": "salon", "temperature_c": 9.3, "humidity_pct": 51.7, "status": "offline"}
+{"ts": "2024-03-03 12:00:00", "device_id": "grenier", "temperature_c": 20.3, "humidity_pct": 52.7, "status": "#N/A"}
+{"ts": "2024-03-03T13:07:13", "device_id": "salon", "temperature_c": 14.5, "humidity_pct": "N/A", "status": "ok"}
+{"ts": "2024-03-03T14:14:26", "device_id": "cellier", "temperature_c": 18.0, "humidity_pct": 35.9, "status": "needs service"}
+{"ts": "2024-03-03T15:21:39", "device_id": "réserve", "temperature_c": 13.3, "humidity_pct": 73.8, "status": null}
+{"ts": "2024-03-03T16:28:52", "device_id": "réserve", "temperature_c": 14.6, "humidity_pct": 54.0, "status": "needs service"}
+{"ts": "2024-03-03T17:35:05", "device_id": "atelier", "temperature_c": 33.8, "humidity_pct": 66.8, "status": "offline"}
+{"ts": "2024-03-03T18:42:18", "device_id": "grenier", "temperature_c": 27.5, "humidity_pct": "63.4​", "status": "ok"}
+{"ts": "2024-03-03T19:49:31", "device_id": "grenier", "temperature_c": 12.7, "humidity_pct": "N/A", "status": "ok"}
+{"ts": "2024-03-03T20:56:44", "device_id": "réserve", "temperature_c": 17.6, "humidity_pct": 58.7, "status": "offline"}
+{"ts": "2024-03-03T21:03:57", "device_id": "cellier", "temperature_c": 26.8, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-03T22:10:10", "device_id": "réserve", "temperature_c": 8.2, "humidity_pct": "74.8​", "status": "offline"}
+{"ts": "2024-03-03T23:17:23", "device_id": "atelier", "temperature_c": 9.1, "humidity_pct": 37.1, "status": "offline"}
+{"ts": "2024-03-04T00:24:36", "device_id": "cellier", "temperature_c": 11.3, "humidity_pct": 60.5, "status": "ok"}
+{"ts": "2024-03-04T01:31:49", "device_id": "cuisine", "temperature_c": 25.4, "humidity_pct": 41.5, "status": "calibratiag"}
+{"ts": "2024-03-04T02:38:02", "device_id": "cellier", "temperature_c": 14.6, "humidity_pct": 68.3, "status": "offline"}
+{"ts": "2024-03-04T03:45:15", "device_id": "véranda", "temperature_c": 33.6, "humidity_pct": 71.1, "status": "calibrating"}
+{"ts": "2024-03-04T04:52:28", "device_id": "grenier", "temperature_c": 10.5, "humidity_pct": 32.8, "status": "needs service"}
+{"ts": "2024-03-04T05:59:41", "device_id": "atelier", "temperature_c": 28.4, "humidity_pct": 50.4, "status": "offline"}
+{"ts": "2024-03-04T06:06:54", "device_id": "cellier", "temperature_c": 24.9, "humidity_pct": 59.6, "status": null}
+{"ts": "2024-03-04T07:13:07", "device_id": "cuisine", "temperature_c": 9.1, "humidity_pct": 69.4, "status": "needs service"}
+{"ts": "2024-03-04T08:20:20", "device_id": "salon", "temperature_c": 31.1, "humidity_pct": 70.4, "status": "offline"}
+{"ts": "2024-03-04T09:27:33", "device_id": "cellier", "temperature_c": 11.8, "humidity_pct": 63.3, "status": "calibrating"}
+{"ts": "2024-03-04T10:34:46", "device_id": "salon", "temperature_c": 26.3, "humidity_pct": 44.4, "status": "needs service"}
+{"ts": "2024-03-04T11:41:59", "device_id": "véranda", "temperature_c": 21.8, "humidity_pct": 58.4, "status": "needs service"}
+{"ts": "2024-03-04T12:48:12", "device_id": "salon", "temperature_c": 9.0, "humidity_pct": 57.8, "status": "offline"}
+{"ts": "2024-03-04T13:55:25", "device_id": "réserve", "temperature_c": 11.9, "humidity_pct": 56.2, "status": "calibrating"}
+{"ts": "2024-03-04T14:02:38", "device_id": "cuisine", "temperature_c": 32.9, "humidity_pct": 70.8, "status": "calibrating"}
+{"ts": "2024-03-04T15:09:51", "device_id": "cellier", "temperature_c": 28.3, "humidity_pct": 49.0, "status": "offline"}
+{"ts": "2024-03-04T16:16:04", "device_id": "atelier", "temperature_c": 16.6, "humidity_pct": 53.7, "status": "calibrating"}
+{"ts": "2024-03-04T17:23:17", "device_id": "réserve", "temperature_c": 16.5, "humidity_pct": " 73.4 ", "status": "(ok)"}
+{"ts": "2024-03-04T18:30:30", "device_id": "cuisine", "temperature_c": 33.3, "humidity_pct": "'65.4", "status": null}
+{"ts": "2024-03-04T19:37:43", "device_id": "cellier", "temperature_c": 8.8, "humidity_pct": 40.6, "status": "offline"}
+{"ts": "2024-03-04T20:44:56", "device_id": "SALON", "temperature_c": 27.6, "humidity_pct": 48.6, "status": "ok"}
+{"ts": "2024-03-04T21:51:09", "device_id": "véranda", "temperature_c": 8.9, "humidity_pct": 69.8, "status": "calibrating"}
+{"ts": "2024-03-04T22:58:22", "device_id": "véranda", "temperature_c": 24.9, "humidity_pct": 31.4, "status": "needs service"}
+{"ts": "2024-03-04T23:05:35", "device_id": "atelier", "temperature_c": 30.6, "humidity_pct": 57.2, "status": null}
+{"ts": "2024-03-05T00:12:48", "device_id": "cellier", "temperature_c": 8.6, "humidity_pct": "'31.1", "status": " needs service "}
+{"ts": "2024-03-05T01:19:01​", "device_id": "atelier", "temperature_c": 24.9, "humidity_pct": 44.8, "status": "offline"}
+{"ts": "2024-03-05T02:26:14", "device_id": "véranda", "temperature_c": 16.5, "humidity_pct": 55.0, "status": "ok"}
+{"ts": "2024-03-05T03:33:27", "device_id": "café", "temperature_c": 10.6, "humidity_pct": 48.3, "status": "offline"}
+{"ts": "2024-03-05T04:40:40", "device_id": "réserve", "temperature_c": 25.4, "humidity_pct": null, "status": "needs service"}
+{"ts": "2024-03-05T05:47:53", "device_id": "réserve", "temperature_c": 13.3, "humidity_pct": 45.3, "status": "needs service"}
+{"ts": "2024-03-05T06:54:06", "device_id": "cellier", "temperature_c": 25.7, "humidity_pct": 66.6, "status": "ok"}
+{"ts": "2024-03-05T07:01:19", "device_id": "cuisine", "temperature_c": 17.6, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-05 08:08:32", "device_id": "grenier", "temperature_c": " 30.1 ", "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-05T09:15:45", "device_id": "cuisine", "temperature_c": 23.3, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-05T10:22:58", "device_id": "café", "temperature_c": 11.5, "humidity_pct": 31.2, "status": "calibrating"}
+{"ts": "2024-03-05T11:29:11", "device_id": "atelier", "temperature_c": 31.6, "humidity_pct": 46.2, "status": "calibrating"}
+{"ts": "2024-03-05T12:36:24", "device_id": "cuisine", "temperature_c": 17.4, "humidity_pct": 41.7, "status": "calibrating"}
+{"ts": "2024-03-05T13:43:37", "device_id": "salon", "temperature_c": 13.5, "humidity_pct": 47.7, "status": "needs service"}
+{"ts": "2024-03-05T14:50:50", "device_id": "café", "temperature_c": 30.1, "humidity_pct": 62.9, "status": "needs service"}
+{"ts": "2024-03-05T15:57:03", "device_id": "atelier", "temperature_c": 18.1, "humidity_pct": 42.6, "status": null}
+{"ts": "2024-03-05T16:04:16", "device_id": "salon", "temperature_c": 17.7, "humidity_pct": 30.4, "status": "ok"}
+{"ts": "2024-03-05 17:11:29", "device_id": "atelier", "temperature_c": 18.2, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-05T18:18:42", "device_id": "véranda", "temperature_c": 22.9, "humidity_pct": 66.1, "status": "offline"}
+{"ts": "2024-03-05T19:25:55", "device_id": "véranda", "temperature_c": 16.0, "humidity_pct": 73.4, "status": "calibrating"}
+{"ts": "2024-03-05T20:32:08", "device_id": "atelier", "temperature_c": 16.7, "humidity_pct": 62.2, "status": "calibrating"}
+{"ts": "2024-03-05T21:39:21", "device_id": "salon", "temperature_c": 31.2, "humidity_pct": 32.6, "status": null}
+{"ts": "2024-03-05T22:46:34", "device_id": "véranda", "temperature_c": 21.4, "humidity_pct": 66.2, "status": "offline"}
+{"ts": "2024-03-05T23:53:47", "device_id": "atelier", "temperature_c": 31.6, "humidity_pct": 40.3, "status": "calibrating"}
+{"ts": "2024-03-06T00:00:00", "device_id": "grenier", "temperature_c": 17.3, "humidity_pct": 40.1, "status": "calibrating"}
+{"ts": "2024-03-06T01:07:13", "device_id": "café", "temperature_c": 24.5, "humidity_pct": 50.9, "status": "needs service"}
+{"ts": "2024-03-06T02:14:26", "device_id": "véranda", "temperature_c": 8.4, "humidity_pct": 44.1, "status": "NaN"}
+{"ts": "2024-03-06T03:21:39", "device_id": "salon", "temperature_c": 19.7, "humidity_pct": 39.9, "status": "ok"}
+{"ts": "2024-03-06T04:28:52", "device_id": "réserve", "temperature_c": 20.5, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-06T05:35:05", "device_id": "réserve", "temperature_c": 24.1, "humidity_pct": 66.0, "status": "calibrating"}
+{"ts": "2024-03-06T06:42:18", "device_id": "réserve", "temperature_c": 13.0, "humidity_pct": 28.7, "status": "ok"}
+{"ts": "2024-03-06T07:49:31", "device_id": "véranda", "temperature_c": 27.3, "humidity_pct": 67.5, "status": "ok"}
+{"ts": "2024-03-06T08:56:44", "device_id": "café", "temperature_c": 30.8, "humidity_pct": 63.4, "status": "ok"}
+{"ts": "2024-03-06T09:03:57", "device_id": "cellier", "temperature_c": 32.2, "humidity_pct": 70.8, "status": "ok"}
+{"ts": "2024-03-06 10:10:10", "device_id": "café", "temperature_c": 12.8, "humidity_pct": 48.0, "status": "needs service"}
+{"ts": "2024-03-06T11:17:23", "device_id": "véranda", "temperature_c": 8.2, "humidity_pct": 60.7, "status": "ok"}
+{"ts": "2024-03-06T12:24:36", "device_id": "réserve", "temperature_c": 14.7, "humidity_pct": 69.3, "status": "calibrating"}
+{"ts": "2024-03-06T13:31:49", "device_id": "cellier", "temperature_c": 13.3, "humidity_pct": 62.5, "status": "calibrating"}
+{"ts": "2024-03-06T14:38:02", "device_id": "cuisine", "temperature_c": 23.0, "humidity_pct": 65.4, "status": "ok"}
+{"ts": "2024-03-06T15:45:15", "device_id": "(réserve)", "temperature_c": 17.1, "humidity_pct": 56.2, "status": "offline"}
+{"ts": "2024-03-06T16:52:28", "device_id": "atelier", "temperature_c": 28.1, "humidity_pct": 68.5, "status": "ok"}
+{"ts": "2024-03-06T17:59:41", "device_id": "cuisine", "temperature_c": 10.0, "humidity_pct": 39.1, "status": "offline"}
+{"ts": "2024-03-06T18:06:54", "device_id": "réserve", "temperature_c": 10.8, "humidity_pct": 55.0, "status": "ok"}
+{"ts": "2024-03-06T19:13:07", "device_id": "grenier", "temperature_c": 26.1, "humidity_pct": 53.0, "status": "ok"}
+{"ts": "2024-03-06T20:20:20", "device_id": "cellier", "temperature_c": 11.1, "humidity_pct": 31.1, "status": "offline"}
+{"ts": "2024-03-06T21:27:33", "device_id": "salon", "temperature_c": 18.0, "humidity_pct": 41.9, "status": "ok"}
+{"ts": "2024-03-06T22:34:46", "device_id": "salon", "temperature_c": 28.1, "humidity_pct": 49.8, "status": "ok"}
+{"ts": "2024-03-06T23:41:59", "device_id": "salon", "temperature_c": 27.9, "humidity_pct": 64.1, "status": "needs service"}
+{"ts": "2024-03-07T00:48:12", "device_id": "salon", "temperature_c": 28.0, "humidity_pct": 60.8, "status": "needs service"}
+{"ts": "2024-03-07T01:55:25", "device_id": "grenier", "temperature_c": 12.4, "humidity_pct": 64.5, "status": "ok"}
+{"ts": "2024-03-07T02:02:38", "device_id": "véranda", "temperature_c": 31.9, "humidity_pct": 37.4, "status": "offline"}
+{"ts": "2024-03-07 03:09:51", "device_id": "véranda", "temperature_c": 15.9, "humidity_pct": 64.6, "status": "calibrating"}
+{"ts": "2024-03-07T04:16:04", "device_id": "café", "temperature_c": 22.9, "humidity_pct": 61.8, "status": "calibrating"}
+{"ts": "2024-03-07T05:23:17", "device_id": "café", "temperature_c": 27.2, "humidity_pct": 39.2, "status": "needs service"}
+{"ts": "2024-03-07 06:30:30", "device_id": "véranda", "temperature_c": 11.0, "humidity_pct": 67.8, "status": "calibrating"}
+{"ts": "2024-03-07T07:37:43", "device_id": "cuisine", "temperature_c": 9.8, "humidity_pct": 68.3, "status": "needs  service"}
+{"ts": "2024-03-07T08:44:56", "device_id": "grenier", "temperature_c": 17.7, "humidity_pct": 47.3, "status": "needs service"}
+{"ts": "2024-03-07T09:51:09", "device_id": "salon", "temperature_c": 9.9, "humidity_pct": 62.2, "status": null}
+{"ts": "2024-03-07T10:58:22", "device_id": "salon", "temperature_c": 16.6, "humidity_pct": 39.7, "status": "calibrating"}
+{"ts": "2024-03-07T11:05:35", "device_id": "cuisine", "temperature_c": 9.3, "humidity_pct": 71.7, "status": "calibrating"}
+{"ts": "2024-03-07T12:12:48", "device_id": "véranda", "temperature_c": 31.5, "humidity_pct": 58.6, "status": "offline"}
+{"ts": "2024-03-07 13:19:01", "device_id": "grenier", "temperature_c": 18.8, "humidity_pct": 33.7, "status": "null"}
+{"ts": "2024-03-07T14:26:14", "device_id": "cellier", "temperature_c": 12.5, "humidity_pct": 74.6, "status": "calibrating"}
+{"ts": "2024-03-07T15:33:27", "device_id": "atelier", "temperature_c": 19.5, "humidity_pct": 28.4, "status": "ok"}
+{"ts": "2024-03-07T16:40:40", "device_id": "véranda", "temperature_c": 17.2, "humidity_pct": "46,0", "status": "calibrating"}
+{"ts": "2024-03-07T17:47:53", "device_id": "salon", "temperature_c": 17.7, "humidity_pct": 47.6, "status": "needs service"}
+{"ts": "2024-03-07T18:54:06", "device_id": "cellier", "temperature_c": 27.0, "humidity_pct": 30.3, "status": null}
+{"ts": "2024-03-07T19:01:19", "device_id": "atelier", "temperature_c": 27.9, "humidity_pct": 36.1, "status": "ok"}
+{"ts": "2024-03-07T20:08:32", "device_id": "café", "temperature_c": 26.2, "humidity_pct": "68,6", "status": "offline"}
+{"ts": "2024-03-07T21:15:45", "device_id": "cuisine", "temperature_c": 23.6, "humidity_pct": 50.1, "status": null}
+{"ts": "2024-03-07T22:22:58", "device_id": "cellier", "temperature_c": 32.8, "humidity_pct": 70.8, "status": "offline"}
+{"ts": "2024-03-07T23:29:11", "device_id": "atelier", "temperature_c": 26.1, "humidity_pct": 63.8, "status": "calibrating"}
+{"ts": "2024-03-08T00:36:24", "device_id": "salon", "temperature_c": 10.0, "humidity_pct": 31.2, "status": "ok"}
+{"ts": "2024-03-08T01:43:37", "device_id": "salon", "temperature_c": 22.1, "humidity_pct": 59.3, "status": "offline"}
+{"ts": "2024-03-08T02:50:50", "device_id": "atelier", "temperature_c": 26.7, "humidity_pct": 70.4, "status": "offline"}
+{"ts": "2024-03-08T03:57:03", "device_id": "réserve", "temperature_c": 29.9, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-08T04:04:16", "device_id": "café", "temperature_c": 19.3, "humidity_pct": 71.7, "status": "ok"}
+{"ts": "2024-03-08T05:11:29", "device_id": "grenier", "temperature_c": 25.3, "humidity_pct": "NA", "status": "needs service"}
+{"ts": "2024-03-08T06:18:42", "device_id": "atelier", "temperature_c": 24.9, "humidity_pct": 29.5, "status": "needs service"}
+{"ts": "2024-03-08T07:25:55", "device_id": "réserve", "temperature_c": 9.2, "humidity_pct": 69.5, "status": "offline"}
+{"ts": "2024-03-08T08:32:08", "device_id": "réserve", "temperature_c": 26.2, "humidity_pct": 35.2, "status": "offline"}
+{"ts": "2024-03-08T09:39:21", "device_id": "atelier", "temperature_c": 21.0, "humidity_pct": 29.1, "status": "offline"}
+{"ts": "2024-03-08T10:46:34", "device_id": "réserve", "temperature_c": 28.2, "humidity_pct": 45.0, "status": "ok"}
+{"ts": "2024-03-08T11:53:47", "device_id": "cellier", "temperature_c": 17.9, "humidity_pct": 61.1, "status": "offline"}
+{"ts": "2024-03-08T12:00:00", "device_id": "cuisine", "temperature_c": 9.0, "humidity_pct": 41.7, "status": "ok"}
+{"ts": "2024-03-08T13:07:13", "device_id": "grenier", "temperature_c": 15.6, "humidity_pct": 51.0, "status": "needs service"}
+{"ts": "2024-03-08T14:14:26", "device_id": "réserve", "temperature_c": 33.8, "humidity_pct": 72.0, "status": "offline"}
+{"ts": "2024-03-08T15:21:39", "device_id": "salon", "temperature_c": 15.7, "humidity_pct": 28.1, "status": "(needs service)"}
+{"ts": "2024-03-08T16:28:52", "device_id": "cellier", "temperature_c": 21.7, "humidity_pct": 66.5, "status": "calibrating"}
+{"ts": "2024-03-08T17:35:05", "device_id": "grenier", "temperature_c": 28.7, "humidity_pct": 71.1, "status": "calibrating"}
+{"ts": "2024-03-08T18:42:18", "device_id": "cuisine", "temperature_c": 14.2, "humidity_pct": 49.5, "status": "needs service"}
+{"ts": "2024-03-08T19:49:31", "device_id": "réserve", "temperature_c": 8.8, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-03-08 20:56:44", "device_id": "réserve", "temperature_c": 31.0, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-03-08T21:03:57", "device_id": "véranda", "temperature_c": 15.8, "humidity_pct": 52.6, "status": "ok"}
+{"ts": "2024-03-08T22:10:10", "device_id": "café", "temperature_c": 21.4, "humidity_pct": 42.5, "status": "calibrating"}
+{"ts": "2024-03-08T23:17:23", "device_id": "salon", "temperature_c": 31.9, "humidity_pct": 59.6, "status": "needs service"}
+{"ts": "2024-03-09T00:24:36", "device_id": "atelier", "temperature_c": 10.1, "humidity_pct": 292.3, "status": "calibrating"}
+{"ts": "2024-03-09T01:31:49", "device_id": "atelier", "temperature_c": 18.7, "humidity_pct": 30.7, "status": "ok"}
+{"ts": "2024-03-09T02:38:02", "device_id": "café", "temperature_c": 24.0, "humidity_pct": 75.5, "status": "offline"}
+{"ts": "2024-03-09T03:45:15", "device_id": "salon", "temperature_c": 8.1, "humidity_pct": 70.7, "status": "ok"}
+{"ts": "2024-03-09T04:52:28", "device_id": "véranda", "temperature_c": 16.9, "humidity_pct": 67.6, "status": "calibrating"}
+{"ts": "2024-03-09T05:59:41", "device_id": "salon", "temperature_c": 27.1, "humidity_pct": 67.5, "status": "needs service"}
+{"ts": "2024-03-09T06:06:54", "device_id": "cellier", "temperature_c": 20.4, "humidity_pct": 30.0, "status": "calibrating"}
+{"ts": "2024-03-09T07:13:07", "device_id": "cuisine", "temperature_c": 16.7, "humidity_pct": 54.9, "status": "calibrating"}
+{"ts": "2024-03-09T08:20:20", "device_id": "salon", "temperature_c": 40.8, "humidity_pct": 72.3, "status": "calibrating"}
+{"ts": "2024-03-09 09:27:33", "device_id": "réserve", "temperature_c": 14.5, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-09T10:34:46", "device_id": "grenier", "temperature_c": 24.6, "humidity_pct": 56.4, "status": "offline"}
+{"ts": "2024-03-09T11:41:59", "device_id": "grenier", "temperature_c": 30.2, "humidity_pct": 29.8, "status": "ok"}
+{"ts": "2024-03-09T12:48:12", "device_id": "cellier", "temperature_c": 20.1, "humidity_pct": 41.6, "status": "calibrating"}
+{"ts": "2024-03-09T13:55:25", "device_id": "cellier", "temperature_c": 14.1, "humidity_pct": 49.8, "status": "needs service"}
+{"ts": "2024-03-09T14:02:38", "device_id": "salon", "temperature_c": 33.2, "humidity_pct": 38.8, "status": "needs service"}
+{"ts": "2024-03-09T15:09:51", "device_id": "cafÃ©", "temperature_c": 19.4, "humidity_pct": "59,7", "status": "needs service"}
+{"ts": "2024-03-09T16:16:04", "device_id": "grenier", "temperature_c": 12.7, "humidity_pct": 50.0, "status": "ok"}
+{"ts": "2024-03-09T17:23:17", "device_id": "cellier", "temperature_c": 27.8, "humidity_pct": 47.6, "status": "needs service"}
+{"ts": "2024-03-09T18:30:30", "device_id": "atelier", "temperature_c": 25.8, "humidity_pct": 44.7, "status": "calibrating"}
+{"ts": "2024-03-09T19:37:43", "device_id": "cuisine", "temperature_c": 34.0, "humidity_pct": 71.3, "status": "calibrating"}
+{"ts": "2024-03-09T20:44:56", "device_id": "grenier", "temperature_c": 12.7, "humidity_pct": 69.2, "status": "ok"}
+{"ts": "2024-03-09T21:51:09", "device_id": "réserve", "temperature_c": 30.8, "humidity_pct": 70.2, "status": "needs service"}
+{"ts": "2024-03-09T22:58:22", "device_id": "atelier", "temperature_c": 27.6, "humidity_pct": 73.0, "status": "ok"}
+{"ts": "2024-03-09T23:05:35", "device_id": "cellier", "temperature_c": 27.4, "humidity_pct": 40.1, "status": "offline"}
+{"ts": "2024-03-10T00:12:48", "device_id": "cellier", "temperature_c": 31.8, "humidity_pct": "NaN", "status": "ok"}
+{"ts": "2024-03-10T01:19:01", "device_id": "grenier", "temperature_c": 9.4, "humidity_pct": 73.6, "status": "ok"}
+{"ts": "2024-03-10T02:26:14", "device_id": "cellier", "temperature_c": 9.8, "humidity_pct": 42.3, "status": "offline"}
+{"ts": "2024-03-10T03:33:27", "device_id": "véranda", "temperature_c": 17.4, "humidity_pct": 51.4, "status": "offline"}
+{"ts": "2024-03-10T04:40:40", "device_id": "cellier", "temperature_c": 17.8, "humidity_pct": 56.1, "status": "needs service"}
+{"ts": "2024-03-10T05:47:53", "device_id": "atelier", "temperature_c": 17.2, "humidity_pct": 33.5, "status": "ok"}
+{"ts": "2024-03-10T06:54:06", "device_id": "véranda", "temperature_c": 15.3, "humidity_pct": 50.1, "status": "needs service"}
+{"ts": "2024-03-10T07:01:19", "device_id": "grenier", "temperature_c": 24.2, "humidity_pct": 29.3, "status": "needs service"}
+{"ts": "2024-03-10T08:08:32", "device_id": "véranda", "temperature_c": 32.3, "humidity_pct": 64.3, "status": "ok"}
+{"ts": "2024-03-10 09:15:45", "device_id": "atelier", "temperature_c": 9.7, "humidity_pct": 51.6, "status": "offline"}
+{"ts": "2024-03-10 10:22:58", "device_id": "salon", "temperature_c": 8.4, "humidity_pct": 29.3, "status": "offline"}
+{"ts": "2024-03-10T11:29:11", "device_id": "cuisine", "temperature_c": 9.4, "humidity_pct": 42.7, "status": "  ok "}
+{"ts": "2024-03-10T12:36:24", "device_id": "cellier", "temperature_c": 29.8, "humidity_pct": 40.5, "status": "needs service"}
+{"ts": "2024-03-10T13:43:37", "device_id": "rÃ©serve", "temperature_c": 18.7, "humidity_pct": 60.7, "status": "calibrating"}
+{"ts": "2024-03-10T14:50:50", "device_id": "café", "temperature_c": 32.5, "humidity_pct": 38.7, "status": "ok"}
+{"ts": "2024-03-10T15:57:03", "device_id": "réserve", "temperature_c": 17.0, "humidity_pct": 45.4, "status": "ok"}
+{"ts": "2024-03-10T16:04:16", "device_id": "atelier", "temperature_c": 26.2, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-10T17:11:29", "device_id": "réserve", "temperature_c": "9,0", "humidity_pct": 51.4, "status": "needs service"}
+{"ts": "2024-03-10T18:18:42", "device_id": "grenier", "temperature_c": 30.8, "humidity_pct": 66.8, "status": "needs service"}
+{"ts": "2024-03-10T19:25:55", "device_id": "cuisine", "temperature_c": 33.5, "humidity_pct": 42.0, "status": "needs service"}
+{"ts": "2024-03-10T20:32:08", "device_id": "atelier", "temperature_c": 33.2, "humidity_pct": 66.5, "status": "ok"}
+{"ts": "2024-03-10T21:39:21", "device_id": "véranda", "temperature_c": 24.3, "humidity_pct": 48.6, "status": "ok"}
+{"ts": "2024-03-10T22:46:34", "device_id": "véranda", "temperature_c": 22.2, "humidity_pct": 40.8, "status": "offline"}
+{"ts": "2024-03-10T23:53:47", "device_id": "atelier", "temperature_c": 31.1, "humidity_pct": 48.9, "status": "ok"}
+{"ts": "2024-03-11T00:00:00", "device_id": "cbfé", "temperature_c": 18.7, "humidity_pct": 66.5, "status": "needs service"}
+{"ts": "2024-03-11T01:07:13", "device_id": "cellier", "temperature_c": 24.2, "humidity_pct": 37.3, "status": "ok"}
+{"ts": "2024-03-11T02:14:26", "device_id": "grenier", "temperature_c": 30.7, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-03-11T03:21:39", "device_id": "café", "temperature_c": 26.9, "humidity_pct": 55.3, "status": null}
+{"ts": "2024-03-11T04:28:52", "device_id": "cellier", "temperature_c": 18.0, "humidity_pct": 47.8, "status": "offline"}
+{"ts": "2024-03-11T05:35:05", "device_id": "salon", "temperature_c": 11.7, "humidity_pct": 53.6, "status": "ok"}
+{"ts": "2024-03-11T06:42:18", "device_id": "salon", "temperature_c": 31.9, "humidity_pct": 36.4, "status": "calibrating"}
+{"ts": "2024-03-11T07:49:31", "device_id": "grenier", "temperature_c": 22.7, "humidity_pct": 49.0, "status": "ok"}
+{"ts": "2024-03-11T08:56:44", "device_id": "réserve", "temperature_c": 17.8, "humidity_pct": 63.8, "status": "offline"}
+{"ts": "2024-03-11T09:03:57", "device_id": "salon", "temperature_c": 26.5, "humidity_pct": 49.3, "status": "needs service"}
+{"ts": "2024-03-11T10:10:10", "device_id": "véranda", "temperature_c": 28.9, "humidity_pct": 33.6, "status": "ok"}
+{"ts": "2024-03-11T11:17:23", "device_id": "salon", "temperature_c": 27.5, "humidity_pct": 52.9, "status": "calibratang"}
+{"ts": "2024-03-11T12:24:36", "device_id": "cellier", "temperature_c": 33.2, "humidity_pct": 53.3, "status": "calibrating"}
+{"ts": "2024-03-11T13:31:49", "device_id": "véranda", "temperature_c": 22.1, "humidity_pct": 33.0, "status": "ok"}
+{"ts": "2024-03-11T14:38:02", "device_id": "cellier", "temperature_c": 26.0, "humidity_pct": 37.0, "status": "needs service"}
+{"ts": "2024-03-11T15:45:15", "device_id": "atelier", "temperature_c": 13.4, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-11T16:52:28", "device_id": "grenier", "temperature_c": 27.8, "humidity_pct": 28.9, "status": "ok"}
+{"ts": "2024-03-11T17:59:41", "device_id": "véranda", "temperature_c": 21.0, "humidity_pct": 39.9, "status": "calibrating"}
+{"ts": "2024-03-11T18:06:54", "device_id": "atelier", "temperature_c": 16.8, "humidity_pct": 58.2, "status": null}
+{"ts": "2024-03-11T19:13:07", "device_id": "cafÃ©", "temperature_c": 23.1, "humidity_pct": 45.8, "status": "calibrating"}
+{"ts": "2024-03-11 20:20:20", "device_id": "grenier", "temperature_c": "22.9​", "humidity_pct": 62.3, "status": "offline"}
+{"ts": "2024-03-11T21:27:33", "device_id": "atelier", "temperature_c": 27.7, "humidity_pct": 58.2, "status": "offline"}
+{"ts": "2024-03-11T22:34:46", "device_id": "SALON", "temperature_c": 20.7, "humidity_pct": 51.1, "status": "offline​"}
+{"ts": "2024-03-11T23:41:59", "device_id": "cellier", "temperature_c": 15.8, "humidity_pct": 37.7, "status": "calibrating"}
+{"ts": "2024-03-12T00:48:12", "device_id": "cellier", "temperature_c": 27.4, "humidity_pct": 56.2, "status": "ok"}
+{"ts": "2024-03-12T01:55:25", "device_id": "cellier", "temperature_c": 17.6, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-12T02:02:38", "device_id": "atelier", "temperature_c": 8.5, "humidity_pct": 43.4, "status": "needs service"}
+{"ts": "2024-03-12T03:09:51", "device_id": "réserve", "temperature_c": 26.7, "humidity_pct": 41.5, "status": "calibrating"}
+{"ts": "2024-03-12T04:16:04", "device_id": "cellier", "temperature_c": 33.5, "humidity_pct": 43.3, "status": "offline"}
+{"ts": "2024-03-12T05:23:17", "device_id": "salon", "temperature_c": 24.2, "humidity_pct": 54.5, "status": "offline"}
+{"ts": "2024-03-12T06:30:30", "device_id": "grenier", "temperature_c": 27.4, "humidity_pct": 40.9, "status": "offline"}
+{"ts": "2024-03-12T07:37:43", "device_id": "cuisine", "temperature_c": 13.9, "humidity_pct": 68.7, "status": "ok"}
+{"ts": "2024-03-12T08:44:56", "device_id": "café", "temperature_c": 15.3, "humidity_pct": 73.1, "status": null}
+{"ts": "2024-03-12T09:51:09", "device_id": "cuisine", "temperature_c": 8.5, "humidity_pct": 58.1, "status": "calibrating"}
+{"ts": "2024-03-12T10:58:22", "device_id": "grenier", "temperature_c": 17.2, "humidity_pct": 33.6, "status": "calibrating"}
+{"ts": "2024-03-12T11:05:35", "device_id": "réserve​", "temperature_c": 10.9, "humidity_pct": 55.3, "status": "ok"}
+{"ts": "2024-03-12T12:12:48", "device_id": "salon", "temperature_c": 20.9, "humidity_pct": 58.6, "status": "ok"}
+{"ts": "2024-03-12T13:19:01", "device_id": "cellier", "temperature_c": 15.9, "humidity_pct": 67.8, "status": "calibrating"}
+{"ts": "2024-03-12T14:26:14", "device_id": "atelier", "temperature_c": 8.8, "humidity_pct": 46.3, "status": null}
+{"ts": "2024-03-12T15:33:27", "device_id": "salon", "temperature_c": 32.1, "humidity_pct": 60.0, "status": "needs service"}
+{"ts": "2024-03-12T16:40:40", "device_id": "cellier", "temperature_c": 21.8, "humidity_pct": 35.6, "status": null}
+{"ts": "2024-03-12 17:47:53", "device_id": "grenier", "temperature_c": 23.4, "humidity_pct": 57.1, "status": "offline"}
+{"ts": "2024-03-12T18:54:06", "device_id": "grenier", "temperature_c": 30.8, "humidity_pct": 63.1, "status": "calibrating"}
+{"ts": "2024-03-12T19:01:19", "device_id": "véranda", "temperature_c": 13.7, "humidity_pct": 31.3, "status": "ok"}
+{"ts": "2024-03-12T20:08:32", "device_id": "cuisine", "temperature_c": 33.3, "humidity_pct": 56.2, "status": "calibrating"}
+{"ts": "2024-03-12T21:15:45", "device_id": "cellier", "temperature_c": 28.2, "humidity_pct": 75.8, "status": "ok"}
+{"ts": "2024-03-12T22:22:58", "device_id": "grenier", "temperature_c": 14.7, "humidity_pct": 72.2, "status": "offline"}
+{"ts": "2024-03-12T23:29:11", "device_id": "cafÃ©", "temperature_c": 32.6, "humidity_pct": 64.7, "status": "needs service"}
+{"ts": "2024-03-13T00:36:24", "device_id": "salon", "temperature_c": 30.3, "humidity_pct": "'47.0", "status": "ok"}
+{"ts": "2024-03-13T01:43:37", "device_id": "cellier", "temperature_c": 12.3, "humidity_pct": 50.3, "status": "offline"}
+{"ts": "2024-03-13T02:50:50", "device_id": "cellier", "temperature_c": 14.6, "humidity_pct": 57.3, "status": "ok"}
+{"ts": "2024-03-13T03:57:03", "device_id": "atelier", "temperature_c": 28.3, "humidity_pct": 392.0, "status": "calibrating"}
+{"ts": "2024-03-13T04:04:16", "device_id": "café", "temperature_c": 27.0, "humidity_pct": "'66.5", "status": "needs service"}
+{"ts": "2024-03-13T05:11:29", "device_id": "grenier", "temperature_c": 33.6, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-13T06:18:42", "device_id": "atelier", "temperature_c": 29.4, "humidity_pct": 35.2, "status": "calibrating"}
+{"ts": "2024-03-13T07:25:55", "device_id": "atelier", "temperature_c": 21.5, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-03-13T08:32:08", "device_id": "réserve", "temperature_c": 29.4, "humidity_pct": 56.2, "status": "offline"}
+{"ts": "2024-03-13T09:39:21", "device_id": "café", "temperature_c": 15.8, "humidity_pct": 42.6, "status": "calibrating"}
+{"ts": "2024-03-13T10:46:34", "device_id": "grenier", "temperature_c": 31.5, "humidity_pct": 32.2, "status": "calibrating"}
+{"ts": "2024-03-13T11:53:47", "device_id": "grenier", "temperature_c": 27.7, "humidity_pct": 54.4, "status": "needs  service"}
+{"ts": "2024-03-13T12:00:00", "device_id": "salon", "temperature_c": 27.1, "humidity_pct": "63,3", "status": "NA"}
+{"ts": "2024-03-13T13:07:13", "device_id": "véranda", "temperature_c": 27.9, "humidity_pct": 58.9, "status": "needs service"}
+{"ts": "2024-03-13T14:14:26", "device_id": "atelier", "temperature_c": 14.0, "humidity_pct": 46.2, "status": "calibrating"}
+{"ts": "2024-03-13T15:21:39", "device_id": "salon", "temperature_c": 14.4, "humidity_pct": 37.2, "status": null}
+{"ts": "2024-03-13T16:28:52", "device_id": "rÃ©serve", "temperature_c": 26.4, "humidity_pct": 39.8, "status": "needs service"}
+{"ts": "2024-03-13T17:35:05", "device_id": "salon", "temperature_c": 26.8, "humidity_pct": 48.4, "status": "(needs service)"}
+{"ts": "  2024-03-13T18:42:18 ", "device_id": "véranda", "temperature_c": 29.8, "humidity_pct": 35.7, "status": "needs service"}
+{"ts": "2024-03-13T19:49:31", "device_id": "café", "temperature_c": 15.6, "humidity_pct": 44.2, "status": "needs service"}
+{"ts": "2024-03-13T20:56:44", "device_id": "atelier", "temperature_c": 25.0, "humidity_pct": 45.7, "status": "ok"}
+{"ts": "2024-03-13T21:03:57", "device_id": "réserve", "temperature_c": 20.6, "humidity_pct": 36.7, "status": null}
+{"ts": "2024-03-13T22:10:10", "device_id": "café", "temperature_c": 29.6, "humidity_pct": 56.6, "status": "needs service"}
+{"ts": "2024-03-13T23:17:23", "device_id": "salon", "temperature_c": 33.5, "humidity_pct": 29.1, "status": "needs service"}
+{"ts": "2024-03-14T00:24:36", "device_id": "réserve", "temperature_c": 33.1, "humidity_pct": 35.8, "status": "needs  service"}
+{"ts": "2024-03-14T01:31:49", "device_id": "cellier", "temperature_c": 12.5, "humidity_pct": 57.5, "status": "offline"}
+{"ts": "2024-03-14T02:38:02", "device_id": "grenier", "temperature_c": 12.1, "humidity_pct": 66.9, "status": "ok"}
+{"ts": "2024-03-14 03:45:15", "device_id": "véranda", "temperature_c": 9.0, "humidity_pct": 52.1, "status": "calibrating"}
+{"ts": "2024-03-14T04:52:28", "device_id": "grenier", "temperature_c": 17.4, "humidity_pct": " 32.3 ", "status": "ok"}
+{"ts": "2024-03-14T05:59:41", "device_id": "atelier", "temperature_c": 24.2, "humidity_pct": 51.2, "status": "needs service"}
+{"ts": "2024-03-14T06:06:54", "device_id": "grenier", "temperature_c": 8.8, "humidity_pct": "36,0", "status": "offline"}
+{"ts": "2024-03-14T07:13:07", "device_id": "véranda", "temperature_c": 16.4, "humidity_pct": "'58.9", "status": "offline"}
+{"ts": "2024-03-14T08:20:20", "device_id": "cuisine", "temperature_c": 19.7, "humidity_pct": 39.4, "status": "needs service"}
+{"ts": "2024-03-14T09:27:33", "device_id": "salon", "temperature_c": " 8.1 ", "humidity_pct": 34.0, "status": "offline"}
+{"ts": "2024-03-14T10:34:46", "device_id": "salon", "temperature_c": 25.4, "humidity_pct": 29.6, "status": null}
+{"ts": "2024-03-14T11:41:59", "device_id": "véranda", "temperature_c": 9.6, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-03-14T12:48:12", "device_id": "atelier", "temperature_c": 15.2, "humidity_pct": 54.1, "status": "calibrating"}
+{"ts": "2024-03-14T13:55:25", "device_id": "café", "temperature_c": 18.9, "humidity_pct": 28.1, "status": "calibrating"}
+{"ts": "2024-03-14T14:02:38", "device_id": "réserve", "temperature_c": 18.1, "humidity_pct": 68.4, "status": "offline"}
+{"ts": "2024-03-14T15:09:51", "device_id": "grenier", "temperature_c": 17.3, "humidity_pct": 52.4, "status": "ok"}
+{"ts": "2024-03-14T16:16:04", "device_id": "café", "temperature_c": 9.0, "humidity_pct": 44.6, "status": "needs service"}
+{"ts": "2024-03-14T17:23:17", "device_id": "grenier", "temperature_c": 32.1, "humidity_pct": 65.2, "status": "needs  service"}
+{"ts": "2024-03-14T18:30:30", "device_id": "réserve", "temperature_c": 16.5, "humidity_pct": 45.0, "status": "offline"}
+{"ts": "2024-03-14T19:37:43", "device_id": "atelier", "temperature_c": 23.2, "humidity_pct": 59.2, "status": "offline"}
+{"ts": "2024-03-14T20:44:56", "device_id": "café", "temperature_c": 25.6, "humidity_pct": 55.6, "status": "calibrating"}
+{"ts": "2024-03-14T21:51:09", "device_id": "cellier", "temperature_c": 22.1, "humidity_pct": 74.8, "status": "calibrating"}
+{"ts": "2024-03-14T22:58:22", "device_id": "atelier", "temperature_c": 30.6, "humidity_pct": 45.5, "status": "ok"}
+{"ts": "2024-03-14T23:05:35", "device_id": "cuisine", "temperature_c": 21.2, "humidity_pct": 50.3, "status": "calibrating"}
+{"ts": "2024-03-15T00:12:48", "device_id": "cuisine", "temperature_c": 15.5, "humidity_pct": 72.3, "status": "offline"}
+{"ts": "2024-03-15 01:19:01", "device_id": "salon", "temperature_c": 41.1, "humidity_pct": 71.5, "status": null}
+{"ts": "2024-03-15T02:26:14", "device_id": "salon", "temperature_c": 10.4, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-03-15T03:33:27", "device_id": "atelier​", "temperature_c": 13.1, "humidity_pct": 66.4, "status": "offline"}
+{"ts": "2024-03-15T04:40:40", "device_id": "atelier", "temperature_c": 13.3, "humidity_pct": 33.1, "status": "needs service"}
+{"ts": "  2024-03-15T05:47:53 ", "device_id": "cuisine", "temperature_c": 8.9, "humidity_pct": 39.9, "status": "needs service"}
+{"ts": "2024-03-15T06:54:06", "device_id": "salon", "temperature_c": 27.3, "humidity_pct": 76.0, "status": "needs service"}
+{"ts": "2024-03-15T07:01:19", "device_id": "cuisine", "temperature_c": 20.7, "humidity_pct": 50.2, "status": "calibrating"}
+{"ts": "2024-03-15T08:08:32", "device_id": "véranda", "temperature_c": 23.8, "humidity_pct": 53.1, "status": "ok"}
+{"ts": "2024-03-15T09:15:45", "device_id": "réserve", "temperature_c": 33.6, "humidity_pct": 29.5, "status": "ok"}
+{"ts": "2024-03-15T10:22:58", "device_id": "cellier", "temperature_c": 19.6, "humidity_pct": 55.1, "status": "calibrating"}
+{"ts": "2024-03-15T11:29:11", "device_id": "véranda", "temperature_c": 10.6, "humidity_pct": 48.5, "status": "needs service"}
+{"ts": "2024-03-15T12:36:24", "device_id": "cafÃ©", "temperature_c": 20.6, "humidity_pct": 71.3, "status": "needs  service"}
+{"ts": "2024-03-15T13:43:37", "device_id": "café", "temperature_c": 9.4, "humidity_pct": 36.1, "status": "needs service"}
+{"ts": "2024-03-15T14:50:50", "device_id": "cuisine", "temperature_c": 27.7, "humidity_pct": "56,6", "status": "ok"}
+{"ts": "2024-03-15T15:57:03", "device_id": "cuisine", "temperature_c": 19.1, "humidity_pct": 31.5, "status": "needs service"}
+{"ts": "2024-03-15T16:04:16", "device_id": "réserve", "temperature_c": 11.1, "humidity_pct": 57.8, "status": "needs service"}
+{"ts": "2024-03-15T17:11:29", "device_id": "cuisine", "temperature_c": 27.2, "humidity_pct": 75.0, "status": "needs service"}
+{"ts": "2024-03-15T18:18:42", "device_id": "café", "temperature_c": 10.8, "humidity_pct": 68.4, "status": "offline"}
+{"ts": "2024-03-15T19:25:55", "device_id": "café", "temperature_c": 29.8, "humidity_pct": 67.0, "status": "offline"}
+{"ts": "2024-03-15T20:32:08", "device_id": "atelier", "temperature_c": 18.0, "humidity_pct": 69.2, "status": "calibrating"}
+{"ts": "2024-03-15T21:39:21", "device_id": "grenier", "temperature_c": 14.5, "humidity_pct": 43.2, "status": "calibrating"}
+{"ts": "2024-03-15T22:46:34", "device_id": "cellier", "temperature_c": 14.8, "humidity_pct": 31.1, "status": "calibrating"}
+{"ts": "2024-03-15T23:53:47", "device_id": "café", "temperature_c": 13.0, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-16T00:00:00", "device_id": "cuisine", "temperature_c": 11.7, "humidity_pct": 74.0, "status": "calibrating"}
+{"ts": "2024-03-16T01:07:13", "device_id": "réserve", "temperature_c": 20.8, "humidity_pct": 71.8, "status": "ok"}
+{"ts": "2024-03-16T02:14:26", "device_id": "atelier", "temperature_c": 21.9, "humidity_pct": 52.9, "status": "offline"}
+{"ts": "2024-03-16T03:21:39", "device_id": "véranda", "temperature_c": 20.1, "humidity_pct": 53.5, "status": "needs service"}
+{"ts": "2024-03-16T04:28:52", "device_id": "cuisine", "temperature_c": 20.8, "humidity_pct": 48.3, "status": "needs service"}
+{"ts": "2024-03-16T05:35:05", "device_id": "grenier", "temperature_c": 26.5, "humidity_pct": 70.3, "status": "calibrating"}
+{"ts": "2024-03-16T06:42:18", "device_id": "salon", "temperature_c": 16.7, "humidity_pct": 49.0, "status": "ok"}
+{"ts": "2024-03-16T07:49:31", "device_id": "atelier", "temperature_c": 31.6, "humidity_pct": 65.9, "status": "offline"}
+{"ts": "2024-03-16T08:56:44", "device_id": "véranda", "temperature_c": "'33.1", "humidity_pct": 39.8, "status": "ok"}
+{"ts": "2024-03-16T09:03:57", "device_id": "réserve", "temperature_c": "'30.5", "humidity_pct": 72.2, "status": null}
+{"ts": "2024-03-16T10:10:10", "device_id": "cellier", "temperature_c": 33.2, "humidity_pct": 41.4, "status": "needs service"}
+{"ts": "2024-03-16T11:17:23", "device_id": "cuisine", "temperature_c": 10.4, "humidity_pct": "47.9​", "status": "calibrating"}
+{"ts": "2024-03-16T12:24:36", "device_id": "grenier", "temperature_c": 9.3, "humidity_pct": 28.1, "status": "calibrating"}
+{"ts": "2024-03-16T13:31:49", "device_id": "véranda", "temperature_c": 10.6, "humidity_pct": 44.3, "status": "offline"}
+{"ts": "2024-03-16T14:38:02", "device_id": "cuisine", "temperature_c": 11.9, "humidity_pct": 60.9, "status": "calibrating"}
+{"ts": "2024-03-16T15:45:15", "device_id": "atelier", "temperature_c": 24.6, "humidity_pct": "null", "status": "ok"}
+{"ts": "2024-03-16T16:52:28", "device_id": "cuisine", "temperature_c": 24.5, "humidity_pct": 48.1, "status": "calibrating"}
+{"ts": "2024-03-16T17:59:41", "device_id": "cuisine", "temperature_c": 31.7, "humidity_pct": 28.7, "status": "offline"}
+{"ts": "2024-03-16T18:06:54", "device_id": "cellier", "temperature_c": 30.0, "humidity_pct": "NaN", "status": "ok"}
+{"ts": "2024-03-16T19:13:07", "device_id": "(véranda)", "temperature_c": 18.3, "humidity_pct": 67.4, "status": "ok"}
+{"ts": "2024-03-16T20:20:20", "device_id": "salon", "temperature_c": 27.1, "humidity_pct": 70.1, "status": "calibrating"}
+{"ts": "2024-03-16T21:27:33", "device_id": "réserve", "temperature_c": 8.5, "humidity_pct": 73.1, "status": "calibrating"}
+{"ts": "2024-03-16T22:34:46", "device_id": "salon", "temperature_c": 15.9, "humidity_pct": 66.2, "status": "offline"}
+{"ts": "2024-03-16T23:41:59", "device_id": "réserve", "temperature_c": 33.4, "humidity_pct": 32.1, "status": "ok"}
+{"ts": "2024-03-17T00:48:12", "device_id": "cellier", "temperature_c": 23.3, "humidity_pct": "42,0", "status": "offline"}
+{"ts": "2024-03-17 01:55:25", "device_id": "ATELIER", "temperature_c": 8.7, "humidity_pct": 74.3, "status": "offline"}
+{"ts": "2024-03-17T02:02:38", "device_id": "cellier", "temperature_c": 8.6, "humidity_pct": 72.8, "status": "ok"}
+{"ts": "2024-03-17T03:09:51", "device_id": "réserve", "temperature_c": 19.8, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-17T04:16:04", "device_id": "grenier", "temperature_c": 16.7, "humidity_pct": 33.5, "status": "ok"}
+{"ts": "2024-03-17T05:23:17", "device_id": "cellier", "temperature_c": 32.1, "humidity_pct": 70.0, "status": "offaine"}
+{"ts": "2024-03-17T06:30:30", "device_id": "véranda", "temperature_c": 20.1, "humidity_pct": 48.0, "status": "calibrating"}
+{"ts": "2024-03-17T07:37:43", "device_id": "véranda", "temperature_c": 12.1, "humidity_pct": 52.7, "status": "offline"}
+{"ts": "2024-03-17T08:44:56", "device_id": "atelier", "temperature_c": 22.2, "humidity_pct": 49.1, "status": "offline"}
+{"ts": "2024-03-17T09:51:09", "device_id": "salon", "temperature_c": 9.8, "humidity_pct": 40.5, "status": "ok"}
+{"ts": "2024-03-17T10:58:22", "device_id": "cellier​", "temperature_c": 18.6, "humidity_pct": "'63.1", "status": "calibrating"}
+{"ts": "2024-03-17T11:05:35", "device_id": "cellier", "temperature_c": 31.2, "humidity_pct": 73.1, "status": "calibrating"}
+{"ts": "2024-03-17T12:12:48", "device_id": "véranda", "temperature_c": 22.1, "humidity_pct": 63.8, "status": "offline"}
+{"ts": "2024-03-17T13:19:01", "device_id": "cuisine", "temperature_c": 29.1, "humidity_pct": 49.4, "status": "calibrating"}
+{"ts": "2024-03-17T14:26:14", "device_id": "grenier", "temperature_c": 13.2, "humidity_pct": 65.7, "status": "offline"}
+{"ts": "2024-03-17T15:33:27", "device_id": "cuisine", "temperature_c": 15.8, "humidity_pct": 44.1, "status": "calibrating"}
+{"ts": "2024-03-17T16:40:40", "device_id": "grenier", "temperature_c": 13.5, "humidity_pct": 53.2, "status": "calibrating"}
+{"ts": "2024-03-17T17:47:53", "device_id": "salon", "temperature_c": 22.7, "humidity_pct": 34.3, "status": "needs service"}
+{"ts": "2024-03-17T18:54:06", "device_id": "salon", "temperature_c": 29.0, "humidity_pct": 64.3, "status": "calibrating"}
+{"ts": "2024-03-17T19:01:19", "device_id": "réserve", "temperature_c": 27.5, "humidity_pct": 30.5, "status": "needs service"}
+{"ts": "2024-03-17T20:08:32", "device_id": "salon", "temperature_c": 22.7, "humidity_pct": 36.3, "status": "ok"}
+{"ts": "2024-03-17T21:15:45", "device_id": "cellier", "temperature_c": 25.9, "humidity_pct": "'67.2", "status": "ok"}
+{"ts": "2024-03-17 22:22:58", "device_id": "réserve", "temperature_c": 20.8, "humidity_pct": 58.6, "status": "needs service"}
+{"ts": "2024-03-17T23:29:11", "device_id": "café", "temperature_c": 14.3, "humidity_pct": 36.9, "status": "offline"}
+{"ts": "2024-03-18T00:36:24", "device_id": "cuisine", "temperature_c": 31.6, "humidity_pct": 70.1, "status": "needs service"}
+{"ts": "2024-03-18T01:43:37", "device_id": "grenier", "temperature_c": 24.3, "humidity_pct": 54.3, "status": "needs service"}
+{"ts": "2024-03-18T02:50:50", "device_id": "atelier", "temperature_c": 14.8, "humidity_pct": 40.9, "status": null}
+{"ts": "2024-03-18T03:57:03", "device_id": "réserae", "temperature_c": 19.1, "humidity_pct": 44.0, "status": "offline"}
+{"ts": "2024-03-18T04:04:16", "device_id": "atelier", "temperature_c": 18.8, "humidity_pct": 57.9, "status": "needs service"}
+{"ts": "2024-03-18T05:11:29", "device_id": "cellier", "temperature_c": 19.1, "humidity_pct": 64.7, "status": "calibrating"}
+{"ts": "2024-03-18T06:18:42", "device_id": "véranda", "temperature_c": 13.1, "humidity_pct": 31.2, "status": null}
+{"ts": "2024-03-18T07:25:55", "device_id": "cuisine", "temperature_c": "26,3", "humidity_pct": 55.7, "status": "ok"}
+{"ts": "2024-03-18T08:32:08", "device_id": "cuisine", "temperature_c": 15.0, "humidity_pct": 46.0, "status": "needs service"}
+{"ts": "2024-03-18T09:39:21", "device_id": "salon", "temperature_c": 9.1, "humidity_pct": 33.5, "status": "ok"}
+{"ts": "2024-03-18T10:46:34", "device_id": "cuisine", "temperature_c": 8.3, "humidity_pct": 62.4, "status": "offline"}
+{"ts": "2024-03-18T11:53:47", "device_id": "véranda", "temperature_c": 17.6, "humidity_pct": 32.5, "status": "OFFLINE"}
+{"ts": "2024-03-18T12:00:00", "device_id": "véranda", "temperature_c": 14.6, "humidity_pct": 29.5, "status": "calibrating"}
+{"ts": "2024-03-18T13:07:13", "device_id": "rÃ©serve", "temperature_c": 16.7, "humidity_pct": 72.5, "status": "offline"}
+{"ts": "2024-03-18T14:14:26", "device_id": "cellier", "temperature_c": 25.9, "humidity_pct": 48.5, "status": "offline"}
+{"ts": "2024-03-18T15:21:39", "device_id": "grenier", "temperature_c": 22.2, "humidity_pct": 45.4, "status": "needs service"}
+{"ts": "2024-03-18T16:28:52", "device_id": "atelier", "temperature_c": 19.2, "humidity_pct": 29.3, "status": "ok"}
+{"ts": "2024-03-18T17:35:05", "device_id": "atelier", "temperature_c": 21.8, "humidity_pct": 62.2, "status": "calibrating"}
+{"ts": "2024-03-18 18:42:18", "device_id": "salon", "temperature_c": 26.6, "humidity_pct": 74.3, "status": "needs service"}
+{"ts": "2024-03-18T19:49:31", "device_id": "cellier", "temperature_c": 15.9, "humidity_pct": 50.7, "status": "offline"}
+{"ts": "2024-03-18T20:56:44", "device_id": "café", "temperature_c": 21.1, "humidity_pct": 63.0, "status": "needs service"}
+{"ts": "2024-03-18T21:03:57", "device_id": "atelier", "temperature_c": 24.7, "humidity_pct": 44.0, "status": "NaN"}
+{"ts": "2024-03-18T22:10:10", "device_id": "café", "temperature_c": 9.1, "humidity_pct": 32.0, "status": "ok"}
+{"ts": "2024-03-18T23:17:23", "device_id": "cuisine", "temperature_c": 18.5, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-19T00:24:36", "device_id": "salon", "temperature_c": 22.3, "humidity_pct": 60.7, "status": "needs service"}
+{"ts": "2024-03-19T01:31:49", "device_id": "grenier", "temperature_c": 32.4, "humidity_pct": 43.2, "status": "needs service"}
+{"ts": "2024-03-19T02:38:02", "device_id": "cellier", "temperature_c": 33.3, "humidity_pct": 40.1, "status": "calibrating"}
+{"ts": "2024-03-19T03:45:15", "device_id": "grenier", "temperature_c": 23.7, "humidity_pct": 51.0, "status": "offline"}
+{"ts": "2024-03-19T04:52:28", "device_id": "grenier", "temperature_c": 27.0, "humidity_pct": 65.8, "status": "calibrating"}
+{"ts": "2024-03-19T05:59:41", "device_id": "cuisine", "temperature_c": 16.8, "humidity_pct": 30.8, "status": "offline"}
+{"ts": "2024-03-19T06:06:54", "device_id": "réserve", "temperature_c": 23.1, "humidity_pct": 42.7, "status": "needs service"}
+{"ts": "2024-03-19T07:13:07", "device_id": "atelier", "temperature_c": 19.1, "humidity_pct": 39.2, "status": null}
+{"ts": "2024-03-19T08:20:20", "device_id": "cellier", "temperature_c": "24,5", "humidity_pct": 32.4, "status": "offline"}
+{"ts": "2024-03-19T09:27:33", "device_id": "grenier", "temperature_c": 26.2, "humidity_pct": 52.1, "status": null}
+{"ts": "2024-03-19T10:34:46", "device_id": "atelier", "temperature_c": 29.9, "humidity_pct": 75.4, "status": "ok"}
+{"ts": "2024-03-19T11:41:59", "device_id": "cuisine", "temperature_c": 16.5, "humidity_pct": 73.1, "status": "offline"}
+{"ts": "2024-03-19T12:48:12", "device_id": "grenier", "temperature_c": 19.1, "humidity_pct": 30.6, "status": "offline"}
+{"ts": "2024-03-19T13:55:25", "device_id": "réserve", "temperature_c": 26.9, "humidity_pct": -191.9, "status": "needs service"}
+{"ts": "2024-03-19T14:02:38", "device_id": "salon", "temperature_c": 19.6, "humidity_pct": 41.2, "status": "offline"}
+{"ts": "2024-03-19 15:09:51", "device_id": "cafÃ©", "temperature_c": 21.9, "humidity_pct": 47.0, "status": "ok"}
+{"ts": "2024-03-19T16:16:04", "device_id": "atelier", "temperature_c": 28.0, "humidity_pct": 37.8, "status": "calibrating"}
+{"ts": "2024-03-19T17:23:17", "device_id": "café", "temperature_c": 14.3, "humidity_pct": 28.0, "status": "ok"}
+{"ts": "2024-03-19T18:30:30", "device_id": "cuisine", "temperature_c": 28.7, "humidity_pct": 60.7, "status": "needs service"}
+{"ts": "2024-03-19T19:37:43", "device_id": "réserve", "temperature_c": 31.1, "humidity_pct": "N/A", "status": "needs service"}
+{"ts": "2024-03-19T20:44:56", "device_id": "(café)", "temperature_c": 16.4, "humidity_pct": 53.1, "status": "needs  service"}
+{"ts": "2024-03-19T21:51:09", "device_id": "salon", "temperature_c": 30.3, "humidity_pct": 62.0, "status": "ok"}
+{"ts": "2024-03-19T22:58:22", "device_id": "cuisine", "temperature_c": 18.2, "humidity_pct": 49.1, "status": "ok"}
+{"ts": "2024-03-19T23:05:35", "device_id": "véranda", "temperature_c": 22.2, "humidity_pct": 42.7, "status": "needs service"}
+{"ts": "2024-03-20T00:12:48", "device_id": "cellier", "temperature_c": 9.3, "humidity_pct": 48.1, "status": "needs service"}
+{"ts": "2024-03-20T01:19:01", "device_id": "café", "temperature_c": 10.9, "humidity_pct": 75.2, "status": "calibrating"}
+{"ts": "2024-03-20T02:26:14", "device_id": "réserve", "temperature_c": 16.4, "humidity_pct": 50.4, "status": "OFFLINE"}
+{"ts": "2024-03-20T03:33:27", "device_id": "atelier", "temperature_c": 30.0, "humidity_pct": 33.6, "status": "calibrating"}
+{"ts": "2024-03-20T04:40:40", "device_id": "salon", "temperature_c": 14.7, "humidity_pct": 33.2, "status": "offline"}
+{"ts": "2024-03-20T05:47:53", "device_id": "réserve", "temperature_c": 33.0, "humidity_pct": null, "status": null}
+{"ts": "2024-03-20T06:54:06", "device_id": "véranda", "temperature_c": 24.7, "humidity_pct": 55.2, "status": "ok"}
+{"ts": "2024-03-20T07:01:19", "device_id": "cuisine", "temperature_c": 11.5, "humidity_pct": 69.3, "status": "needs service"}
+{"ts": "2024-03-20 08:08:32", "device_id": "réserve", "temperature_c": 14.2, "humidity_pct": 69.6, "status": "calibrating"}
+{"ts": "2024-03-20T09:15:45", "device_id": "réserve", "temperature_c": 14.7, "humidity_pct": 42.3, "status": "ok"}
+{"ts": "2024-03-20T10:22:58", "device_id": "cuisine", "temperature_c": 20.9, "humidity_pct": 31.4, "status": "ok"}
+{"ts": "2024-03-20T11:29:11", "device_id": "salan", "temperature_c": 32.8, "humidity_pct": 44.3, "status": "needs service"}
+{"ts": "2024-03-20T12:36:24", "device_id": "véranda", "temperature_c": 12.4, "humidity_pct": 67.9, "status": "ok"}
+{"ts": "2024-03-20T13:43:37", "device_id": "cuisine", "temperature_c": 11.0, "humidity_pct": 70.2, "status": "offline"}
+{"ts": "2024-03-20T14:50:50", "device_id": "réserve", "temperature_c": 33.8, "humidity_pct": 58.5, "status": "needs service"}
+{"ts": "2024-03-20T15:57:03", "device_id": "cuisine", "temperature_c": 32.6, "humidity_pct": 58.6, "status": "needs service"}
+{"ts": "2024-03-20T16:04:16", "device_id": "véranda", "temperature_c": 17.8, "humidity_pct": 65.8, "status": "ok"}
+{"ts": "2024-03-20T17:11:29", "device_id": "véranda", "temperature_c": 12.1, "humidity_pct": 70.8, "status": "ok"}
+{"ts": "2024-03-20T18:18:42", "device_id": "atelier", "temperature_c": 41.4, "humidity_pct": 29.5, "status": "needs service"}
+{"ts": "2024-03-20T19:25:55", "device_id": "grenier", "temperature_c": "  33.9 ", "humidity_pct": 68.4, "status": "calibrating"}
+{"ts": "2024-03-20T20:32:08", "device_id": "café", "temperature_c": 16.3, "humidity_pct": 59.8, "status": "(ok)"}
+{"ts": "2024-03-20T21:39:21", "device_id": "cellier", "temperature_c": 20.4, "humidity_pct": 45.2, "status": "ok"}
+{"ts": "2024-03-20T22:46:34", "device_id": "atelier", "temperature_c": 17.7, "humidity_pct": 73.3, "status": "calibrating"}
+{"ts": "2024-03-20T23:53:47", "device_id": "cellier", "temperature_c": 8.0, "humidity_pct": 34.0, "status": "calibrating"}
+{"ts": "2024-03-21T00:00:00", "device_id": "réserve", "temperature_c": 24.3, "humidity_pct": 45.2, "status": "needs service"}
+{"ts": "2024-03-21T01:07:13", "device_id": "cellier", "temperature_c": 13.0, "humidity_pct": 36.5, "status": "ok"}
+{"ts": "2024-03-21T02:14:26", "device_id": "véranda", "temperature_c": 8.4, "humidity_pct": 71.9, "status": "needs service"}
+{"ts": "2024-03-21T03:21:39", "device_id": "réserve", "temperature_c": 20.4, "humidity_pct": 60.1, "status": "OFFLINE"}
+{"ts": "2024-03-21T04:28:52", "device_id": "cuisine", "temperature_c": 18.0, "humidity_pct": 29.0, "status": "NaN"}
+{"ts": "2024-03-21T05:35:05", "device_id": "atelier", "temperature_c": 14.3, "humidity_pct": 34.3, "status": "offline"}
+{"ts": "2024-03-21T06:42:18", "device_id": "cellier", "temperature_c": 12.1, "humidity_pct": 42.7, "status": "calibrating"}
+{"ts": "2024-03-21T07:49:31", "device_id": "café", "temperature_c": 19.3, "humidity_pct": 36.0, "status": null}
+{"ts": "2024-03-21T08:56:44", "device_id": "café", "temperature_c": 26.3, "humidity_pct": 51.6, "status": "needs service"}
+{"ts": "2024-03-21T09:03:57", "device_id": "cuisine", "temperature_c": 27.3, "humidity_pct": 69.9, "status": "offline"}
+{"ts": "2024-03-21T10:10:10", "device_id": "véranda", "temperature_c": 29.1, "humidity_pct": 35.7, "status": "ok"}
+{"ts": "2024-03-21T11:17:23", "device_id": "salon", "temperature_c": 25.8, "humidity_pct": "  75.8 ", "status": "offline"}
+{"ts": "2024-03-21T12:24:36", "device_id": "grenier", "temperature_c": 12.2, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-21T13:31:49", "device_id": "cuisine", "temperature_c": 27.5, "humidity_pct": 57.7, "status": "needs service"}
+{"ts": "2024-03-21T14:38:02", "device_id": "café", "temperature_c": 18.6, "humidity_pct": 50.3, "status": "ok"}
+{"ts": "2024-03-21T15:45:15", "device_id": "cellier", "temperature_c": 16.3, "humidity_pct": 29.7, "status": "offline"}
+{"ts": "2024-03-21T16:52:28", "device_id": "véranda", "temperature_c": 21.5, "humidity_pct": 52.4, "status": "needs service"}
+{"ts": "2024-03-21T17:59:41", "device_id": "réserve", "temperature_c": 22.4, "humidity_pct": 42.0, "status": "offline"}
+{"ts": "2024-03-21T18:06:54", "device_id": "atelier", "temperature_c": 8.2, "humidity_pct": 47.7, "status": "calibrating"}
+{"ts": "2024-03-21T19:13:07", "device_id": "réserve", "temperature_c": 18.4, "humidity_pct": 57.4, "status": "calibrating"}
+{"ts": "2024-03-21T20:20:20", "device_id": "salon", "temperature_c": 28.3, "humidity_pct": 62.3, "status": "offline"}
+{"ts": "2024-03-21T21:27:33", "device_id": "grenier", "temperature_c": 28.4, "humidity_pct": 51.0, "status": "needs  service"}
+{"ts": "2024-03-21T22:34:46", "device_id": "atelier", "temperature_c": 8.2, "humidity_pct": "'28.3", "status": "ok"}
+{"ts": "2024-03-21T23:41:59", "device_id": "cellier", "temperature_c": 26.0, "humidity_pct": 54.9, "status": "calibrating"}
+{"ts": "2024-03-22T00:48:12", "device_id": "cuisine", "temperature_c": 10.9, "humidity_pct": 40.3, "status": "calibrating"}
+{"ts": "2024-03-22T01:55:25", "device_id": "réserve", "temperature_c": 31.5, "humidity_pct": 70.6, "status": "calibrating"}
+{"ts": "2024-03-22T02:02:38", "device_id": "cuisine", "temperature_c": 30.4, "humidity_pct": 55.1, "status": "ok"}
+{"ts": "2024-03-22T03:09:51", "device_id": "réserve", "temperature_c": 22.0, "humidity_pct": 49.7, "status": "ok"}
+{"ts": "2024-03-22T04:16:04", "device_id": "(cuisine)", "temperature_c": 14.5, "humidity_pct": null, "status": "needs service"}
+{"ts": "2024-03-22T05:23:17", "device_id": "cuisine", "temperature_c": 26.7, "humidity_pct": 68.6, "status": "ok"}
+{"ts": "2024-03-22T06:30:30", "device_id": "atelier", "temperature_c": 16.9, "humidity_pct": 53.7, "status": "needs service"}
+{"ts": "2024-03-22T07:37:43", "device_id": "grenier", "temperature_c": 10.2, "humidity_pct": 60.9, "status": "ok"}
+{"ts": "2024-03-22T08:44:56", "device_id": "(véranda)", "temperature_c": 25.3, "humidity_pct": 58.4, "status": "offline"}
+{"ts": "2024-03-22T09:51:09", "device_id": "atelier", "temperature_c": 22.8, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-22T10:58:22", "device_id": "véranda", "temperature_c": 14.5, "humidity_pct": 63.1, "status": "calibrating"}
+{"ts": "2024-03-22T11:05:35", "device_id": "café", "temperature_c": 11.1, "humidity_pct": 48.5, "status": "ok"}
+{"ts": "2024-03-22T12:12:48", "device_id": "grenier", "temperature_c": 8.6, "humidity_pct": 36.8, "status": "offline"}
+{"ts": "2024-03-22T13:19:01", "device_id": "véranda", "temperature_c": 21.1, "humidity_pct": 49.2, "status": "calibrating"}
+{"ts": "2024-03-22T14:26:14", "device_id": "grenier", "temperature_c": "'26.8", "humidity_pct": 73.5, "status": "needs service"}
+{"ts": "2024-03-22T15:33:27", "device_id": "grenier", "temperature_c": 13.4, "humidity_pct": 29.6, "status": "calibrating"}
+{"ts": "  2024-03-22T16:40:40 ", "device_id": "café", "temperature_c": 13.3, "humidity_pct": 62.3, "status": "offline"}
+{"ts": "2024-03-22T17:47:53", "device_id": "réserve", "temperature_c": 29.4, "humidity_pct": 49.9, "status": "offline"}
+{"ts": "2024-03-22T18:54:06", "device_id": "grenier", "temperature_c": 31.5, "humidity_pct": 42.0, "status": "ok"}
+{"ts": "2024-03-22T19:01:19", "device_id": "cuisine", "temperature_c": 21.6, "humidity_pct": 56.3, "status": "ok"}
+{"ts": "2024-03-22T20:08:32", "device_id": "atelier", "temperature_c": 18.0, "humidity_pct": 44.6, "status": "offline"}
+{"ts": "2024-03-22T21:15:45", "device_id": "atelier", "temperature_c": 12.4, "humidity_pct": 48.1, "status": "needs service"}
+{"ts": "2024-03-22T22:22:58", "device_id": "véranda", "temperature_c": 19.5, "humidity_pct": 28.1, "status": "needs service"}
+{"ts": "2024-03-22T23:29:11", "device_id": "atelier", "temperature_c": 19.3, "humidity_pct": 73.1, "status": "calibrating"}
+{"ts": "2024-03-23T00:36:24", "device_id": "grenier", "temperature_c": 15.2, "humidity_pct": 34.5, "status": "offline"}
+{"ts": "2024-03-23T01:43:37", "device_id": "réserve", "temperature_c": 11.5, "humidity_pct": null, "status": "needs service"}
+{"ts": "2024-03-23T02:50:50", "device_id": "cuisine", "temperature_c": 15.0, "humidity_pct": 67.2, "status": "needs service"}
+{"ts": "2024-03-23T03:57:03", "device_id": "cuisine", "temperature_c": 21.7, "humidity_pct": 42.2, "status": "calibrating"}
+{"ts": "2024-03-23T04:04:16", "device_id": "grenier", "temperature_c": 28.4, "humidity_pct": 70.9, "status": "needs service"}
+{"ts": "2024-03-23T05:11:29", "device_id": "grenier", "temperature_c": 18.4, "humidity_pct": 47.8, "status": "calibrating"}
+{"ts": "2024-03-23T06:18:42", "device_id": "café", "temperature_c": 19.4, "humidity_pct": 43.7, "status": "offline"}
+{"ts": "2024-03-23T07:25:55", "device_id": "véranda", "temperature_c": 29.9, "humidity_pct": 72.6, "status": "offline"}
+{"ts": "2024-03-23T08:32:08", "device_id": "cuisine", "temperature_c": 11.6, "humidity_pct": 46.8, "status": "offline"}
+{"ts": "2024-03-23T09:39:21", "device_id": "véranda", "temperature_c": 10.5, "humidity_pct": 29.8, "status": "needs service"}
+{"ts": "2024-03-23T10:46:34", "device_id": "(café)", "temperature_c": "17,5", "humidity_pct": 36.9, "status": "needs  service"}
+{"ts": "2024-03-23T11:53:47", "device_id": "rÃ©serve", "temperature_c": 17.9, "humidity_pct": 43.5, "status": "calibrating"}
+{"ts": "2024-03-23T12:00:00", "device_id": "atelier", "temperature_c": 12.8, "humidity_pct": null, "status": null}
+{"ts": "2024-03-23 13:07:13", "device_id": "atelier", "temperature_c": 16.9, "humidity_pct": 43.9, "status": "ok"}
+{"ts": "2024-03-23T14:14:26", "device_id": "cuisine", "temperature_c": "22,1", "humidity_pct": 39.5, "status": "calibrating"}
+{"ts": "2024-03-23T15:21:39", "device_id": "cellier", "temperature_c": 21.4, "humidity_pct": 28.2, "status": "calibrating"}
+{"ts": "2024-03-23T16:28:52", "device_id": "grenier", "temperature_c": 10.1, "humidity_pct": 70.5, "status": "offline"}
+{"ts": "2024-03-23T17:35:05", "device_id": "cellier", "temperature_c": 33.8, "humidity_pct": "'64.2", "status": "offline"}
+{"ts": "2024-03-23T18:42:18", "device_id": "véranda", "temperature_c": 21.7, "humidity_pct": 65.9, "status": "offline"}
+{"ts": "2024-03-23T19:49:31", "device_id": "grenier", "temperature_c": 33.2, "humidity_pct": 28.1, "status": "offline"}
+{"ts": "2024-03-23 20:56:44", "device_id": "rÃ©serve", "temperature_c": 9.5, "humidity_pct": 62.8, "status": "calibrating"}
+{"ts": "2024-03-23T21:03:57", "device_id": "café", "temperature_c": 16.5, "humidity_pct": 32.8, "status": "ok"}
+{"ts": "2024-03-23 22:10:10", "device_id": "véranda", "temperature_c": 21.1, "humidity_pct": 328.5, "status": "ok"}
+{"ts": "2024-03-23T23:17:23", "device_id": "réserve", "temperature_c": 31.2, "humidity_pct": 49.7, "status": "needs service"}
+{"ts": "2024-03-24T00:24:36", "device_id": "véranda", "temperature_c": 12.6, "humidity_pct": 34.1, "status": "offline"}
+{"ts": "2024-03-24T01:31:49", "device_id": "salon", "temperature_c": 15.4, "humidity_pct": 52.0, "status": "calibrating"}
+{"ts": "2024-03-24T02:38:02", "device_id": "café", "temperature_c": 9.1, "humidity_pct": 50.5, "status": "offline"}
+{"ts": "2024-03-24T03:45:15", "device_id": "cellier", "temperature_c": 21.4, "humidity_pct": 51.6, "status": "needs service"}
+{"ts": "2024-03-24T04:52:28", "device_id": "cellier", "temperature_c": 14.4, "humidity_pct": 36.0, "status": "ok"}
+{"ts": "2024-03-24T05:59:41", "device_id": "réserve", "temperature_c": 15.3, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-24T06:06:54", "device_id": "vÃ©randa", "temperature_c": 25.9, "humidity_pct": 31.8, "status": "offline"}
+{"ts": "2024-03-24T07:13:07", "device_id": "  cellier ", "temperature_c": 24.1, "humidity_pct": "75,6", "status": "needs service"}
+{"ts": "2024-03-24T08:20:20", "device_id": "véranda", "temperature_c": 30.1, "humidity_pct": 48.0, "status": "ok"}
+{"ts": " 2024-03-24T09:27:33 ", "device_id": "grenier", "temperature_c": 13.4, "humidity_pct": 39.3, "status": "offline"}
+{"ts": "2024-03-24T10:34:46", "device_id": "atelier", "temperature_c": 12.0, "humidity_pct": 35.8, "status": "calibrating"}
+{"ts": "2024-03-24T11:41:59", "device_id": "grenier", "temperature_c": 30.7, "humidity_pct": 38.9, "status": "ok"}
+{"ts": "2024-03-24T12:48:12", "device_id": " véranda ", "temperature_c": 26.2, "humidity_pct": 42.5, "status": "needs service"}
+{"ts": "2024-03-24T13:55:25", "device_id": "cuisine", "temperature_c": 24.1, "humidity_pct": 72.1, "status": "needs service"}
+{"ts": "2024-03-24T14:02:38", "device_id": "salon", "temperature_c": 31.5, "humidity_pct": 47.8, "status": null}
+{"ts": "2024-03-24T15:09:51", "device_id": "CELLIER", "temperature_c": 22.4, "humidity_pct": 44.6, "status": "offline"}
+{"ts": "2024-03-24T16:16:04", "device_id": "grenier", "temperature_c": 16.5, "humidity_pct": 52.4, "status": "offline"}
+{"ts": "2024-03-24T17:23:17", "device_id": "atelier", "temperature_c": " 32.5 ", "humidity_pct": 66.0, "status": null}
+{"ts": "2024-03-24T18:30:30", "device_id": "cuisine", "temperature_c": 17.8, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-24T19:37:43", "device_id": "grenier", "temperature_c": 29.3, "humidity_pct": 44.2, "status": "offline"}
+{"ts": "2024-03-24T20:44:56", "device_id": "véranda", "temperature_c": 30.5, "humidity_pct": 59.0, "status": "needs service"}
+{"ts": "2024-03-24T21:51:09", "device_id": "rÃ©serve", "temperature_c": 19.3, "humidity_pct": 40.1, "status": "calibrating"}
+{"ts": "2024-03-24T22:58:22", "device_id": "café", "temperature_c": 23.1, "humidity_pct": 39.4, "status": "ok"}
+{"ts": "2024-03-24T23:05:35", "device_id": "atelier", "temperature_c": 15.9, "humidity_pct": 46.4, "status": "needs  service"}
+{"ts": "2024-03-25T00:12:48", "device_id": "véranda", "temperature_c": 33.1, "humidity_pct": 53.7, "status": "needs service"}
+{"ts": "2024-03-25T01:19:01", "device_id": "grenier", "temperature_c": 33.9, "humidity_pct": 57.1, "status": "ok"}
+{"ts": "2024-03-25T02:26:14", "device_id": "salon", "temperature_c": 25.8, "humidity_pct": 62.0, "status": "offline"}
+{"ts": "2024-03-25T03:33:27", "device_id": "atelier", "temperature_c": 9.3, "humidity_pct": 41.8, "status": "needs  service"}
+{"ts": "2024-03-25T04:40:40", "device_id": "salon", "temperature_c": 9.2, "humidity_pct": 61.9, "status": "needs service"}
+{"ts": "2024-03-25T05:47:53", "device_id": "café", "temperature_c": 27.9, "humidity_pct": 67.3, "status": "calibrating"}
+{"ts": "2024-03-25T06:54:06", "device_id": "véranda", "temperature_c": 30.4, "humidity_pct": 72.8, "status": "needs service"}
+{"ts": "2024-03-25T07:01:19", "device_id": "cuisine", "temperature_c": 15.8, "humidity_pct": "'29.0", "status": "ok"}
+{"ts": "2024-03-25T08:08:32", "device_id": "cuisine", "temperature_c": 24.2, "humidity_pct": 59.9, "status": "ok"}
+{"ts": "2024-03-25T09:15:45", "device_id": "café", "temperature_c": 14.2, "humidity_pct": 39.4, "status": "offline"}
+{"ts": "2024-03-25T10:22:58", "device_id": "cellier", "temperature_c": 25.9, "humidity_pct": 47.8, "status": "calibrating"}
+{"ts": "2024-03-25T11:29:11", "device_id": "café", "temperature_c": 15.4, "humidity_pct": 52.7, "status": "ok"}
+{"ts": "2024-03-25 12:36:24", "device_id": "salon", "temperature_c": 25.1, "humidity_pct": 72.6, "status": "ok"}
+{"ts": "2024-03-25T13:43:37", "device_id": "réserve", "temperature_c": 17.3, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-25T14:50:50", "device_id": "café", "temperature_c": 17.7, "humidity_pct": 38.2, "status": "calibrating"}
+{"ts": "2024-03-25T15:57:03", "device_id": "rÃ©serve", "temperature_c": 8.6, "humidity_pct": null, "status": "needs service"}
+{"ts": "2024-03-25T16:04:16", "device_id": "véranda", "temperature_c": 14.6, "humidity_pct": 36.4, "status": "ok"}
+{"ts": "2024-03-25T17:11:29", "device_id": "réserve", "temperature_c": 20.2, "humidity_pct": 58.7, "status": "calibrating"}
+{"ts": "2024-03-25T18:18:42", "device_id": "café", "temperature_c": "15,7", "humidity_pct": 74.8, "status": "offline"}
+{"ts": "2024-03-25T19:25:55", "device_id": "réserve", "temperature_c": 29.5, "humidity_pct": 46.3, "status": "calibrating"}
+{"ts": "2024-03-25T20:32:08", "device_id": "grenier", "temperature_c": 17.2, "humidity_pct": 60.7, "status": "calibrating"}
+{"ts": "2024-03-25T21:39:21", "device_id": "salon", "temperature_c": 27.3, "humidity_pct": 48.1, "status": "needs service"}
+{"ts": "2024-03-25T22:46:34", "device_id": "cuisine", "temperature_c": 24.1, "humidity_pct": 67.9, "status": "calibrating"}
+{"ts": "2024-03-25 23:53:47", "device_id": "cellier", "temperature_c": 22.7, "humidity_pct": 62.0, "status": "calibrating"}
+{"ts": "2024-03-26T00:00:00", "device_id": "café", "temperature_c": 22.7, "humidity_pct": 73.2, "status": "calibrating"}
+{"ts": "2024-03-26T01:07:13", "device_id": "atelier", "temperature_c": 13.5, "humidity_pct": 75.5, "status": "needs service"}
+{"ts": "2024-03-26T02:14:26", "device_id": "véranda", "temperature_c": 28.6, "humidity_pct": 71.8, "status": "offline"}
+{"ts": "2024-03-26T03:21:39", "device_id": "cuisine", "temperature_c": 29.4, "humidity_pct": 60.2, "status": "needs service"}
+{"ts": "2024-03-26T04:28:52", "device_id": "salon", "temperature_c": 10.0, "humidity_pct": 49.9, "status": "ok"}
+{"ts": "2024-03-26T05:35:05", "device_id": "café", "temperature_c": 26.1, "humidity_pct": 46.6, "status": "ok"}
+{"ts": "2024-03-26T06:42:18", "device_id": "cuisine", "temperature_c": "19,0", "humidity_pct": "45,6", "status": "offline"}
+{"ts": "2024-03-26T07:49:31", "device_id": "café", "temperature_c": 24.3, "humidity_pct": 51.4, "status": "needs service"}
+{"ts": "2024-03-26T08:56:44", "device_id": "atelier", "temperature_c": "'26.4", "humidity_pct": 71.9, "status": "calibrating"}
+{"ts": "2024-03-26T09:03:57", "device_id": "atelier", "temperature_c": 13.7, "humidity_pct": 34.8, "status": "offline"}
+{"ts": "2024-03-26T10:10:10", "device_id": "café", "temperature_c": 12.1, "humidity_pct": 56.4, "status": "ok"}
+{"ts": "2024-03-26T11:17:23", "device_id": "salon", "temperature_c": 41.6, "humidity_pct": 56.7, "status": "ok"}
+{"ts": "2024-03-26T12:24:36", "device_id": "café", "temperature_c": 22.3, "humidity_pct": 67.2, "status": "calibrating"}
+{"ts": "2024-03-26T13:31:49", "device_id": "grenier", "temperature_c": 33.5, "humidity_pct": 69.5, "status": "offline"}
+{"ts": "2024-03-26T14:38:02", "device_id": "salon", "temperature_c": 22.1, "humidity_pct": 64.9, "status": "needs service"}
+{"ts": "2024-03-26T15:45:15", "device_id": "véranda", "temperature_c": 29.8, "humidity_pct": 369.2, "status": "calibrating"}
+{"ts": "2024-03-26T16:52:28", "device_id": "salon", "temperature_c": 22.1, "humidity_pct": 28.2, "status": "offline"}
+{"ts": "2024-03-26T17:59:41", "device_id": "cellier", "temperature_c": 18.3, "humidity_pct": 47.1, "status": "needs service"}
+{"ts": "2024-03-26T18:06:54", "device_id": "atelier", "temperature_c": 12.5, "humidity_pct": 31.2, "status": "ok"}
+{"ts": "2024-03-26T19:13:07", "device_id": "cuisine", "temperature_c": "32,4", "humidity_pct": 46.7, "status": "offline"}
+{"ts": "2024-03-26T20:20:20", "device_id": "grenier", "temperature_c": 21.9, "humidity_pct": 66.2, "status": null}
+{"ts": "2024-03-26T21:27:33", "device_id": "cuisine", "temperature_c": 17.2, "humidity_pct": 37.9, "status": "needs service"}
+{"ts": "2024-03-26T22:34:46", "device_id": "grenier", "temperature_c": 12.8, "humidity_pct": null, "status": "null"}
+{"ts": "2024-03-26T23:41:59", "device_id": "réserve", "temperature_c": 22.2, "humidity_pct": 46.9, "status": "ok"}
+{"ts": "2024-03-27T00:48:12", "device_id": "cuisine", "temperature_c": 16.0, "humidity_pct": 38.1, "status": "calibrating"}
+{"ts": "2024-03-27T01:55:25", "device_id": "atelier", "temperature_c": 23.1, "humidity_pct": 34.9, "status": "ok"}
+{"ts": "2024-03-27T02:02:38", "device_id": "véranda", "temperature_c": 19.7, "humidity_pct": 30.5, "status": "ok"}
+{"ts": "2024-03-27T03:09:51", "device_id": "grenier", "temperature_c": 18.5, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-03-27T04:16:04", "device_id": "cuisine", "temperature_c": 22.0, "humidity_pct": 42.2, "status": "needs service"}
+{"ts": "2024-03-27T05:23:17", "device_id": "cellier", "temperature_c": 28.8, "humidity_pct": 33.5, "status": "ok"}
+{"ts": "2024-03-27T06:30:30", "device_id": "cellier", "temperature_c": 22.2, "humidity_pct": 65.4, "status": "needs service"}
+{"ts": "2024-03-27T07:37:43", "device_id": "grenier", "temperature_c": 19.3, "humidity_pct": 69.6, "status": "ok"}
+{"ts": "2024-03-27T08:44:56", "device_id": "atelier", "temperature_c": 16.2, "humidity_pct": 47.6, "status": "  offline "}
+{"ts": "2024-03-27T09:51:09", "device_id": "cuisine", "temperature_c": 29.2, "humidity_pct": 44.1, "status": "needs service"}
+{"ts": "2024-03-27T10:58:22", "device_id": "café", "temperature_c": 11.9, "humidity_pct": 55.3, "status": "needs service"}
+{"ts": "2024-03-27T11:05:35", "device_id": "cuisine", "temperature_c": 27.1, "humidity_pct": 66.4, "status": "offline"}
+{"ts": "2024-03-27T12:12:48", "device_id": "cuisine", "temperature_c": 29.0, "humidity_pct": 64.2, "status": "ok"}
+{"ts": "2024-03-27T13:19:01", "device_id": "cellier", "temperature_c": 24.5, "humidity_pct": 67.7, "status": "offline"}
+{"ts": "2024-03-27T14:26:14", "device_id": "véranda", "temperature_c": 20.9, "humidity_pct": 41.7, "status": "ok"}
+{"ts": "2024-03-27T15:33:27", "device_id": "cafa", "temperature_c": 31.4, "humidity_pct": 37.3, "status": "offline"}
+{"ts": "2024-03-27T16:40:40", "device_id": "cuisine", "temperature_c": 21.3, "humidity_pct": 31.8, "status": "offline"}
+{"ts": "2024-03-27T17:47:53", "device_id": "réserve", "temperature_c": 17.3, "humidity_pct": 32.8, "status": "needs service"}
+{"ts": "2024-03-27T18:54:06", "device_id": "  grenier ", "temperature_c": 20.8, "humidity_pct": 42.3, "status": "offline"}
+{"ts": "2024-03-27T19:01:19", "device_id": "véranda", "temperature_c": 20.2, "humidity_pct": 50.3, "status": "ok"}
+{"ts": "2024-03-27T20:08:32", "device_id": "grenier", "temperature_c": 24.4, "humidity_pct": 59.0, "status": "ok"}
+{"ts": "2024-03-27T21:15:45", "device_id": "grenier", "temperature_c": 15.2, "humidity_pct": 41.2, "status": null}
+{"ts": "2024-03-27T22:22:58", "device_id": "cellier", "temperature_c": 34.0, "humidity_pct": 44.4, "status": "ok"}
+{"ts": "2024-03-27T23:29:11", "device_id": "café", "temperature_c": 29.2, "humidity_pct": 61.5, "status": "needs service"}
+{"ts": "2024-03-28T00:36:24", "device_id": "cellier", "temperature_c": 33.8, "humidity_pct": 68.6, "status": "ok"}
+{"ts": "2024-03-28T01:43:37", "device_id": "atelier", "temperature_c": 16.3, "humidity_pct": 33.4, "status": "needs service"}
+{"ts": "2024-03-28T02:50:50", "device_id": "café", "temperature_c": 16.4, "humidity_pct": 32.4, "status": "needs service"}
+{"ts": "2024-03-28T03:57:03", "device_id": "café", "temperature_c": 145.7, "humidity_pct": 49.0, "status": "calibrating"}
+{"ts": "2024-03-28T04:04:16", "device_id": "atelier", "temperature_c": 29.7, "humidity_pct": 40.2, "status": "offline"}
+{"ts": "2024-03-28T05:11:29", "device_id": "réserve", "temperature_c": 18.6, "humidity_pct": 43.0, "status": "ok"}
+{"ts": "2024-03-18T12:00:00", "device_id": "véranda", "temperature_c": 14.6, "humidity_pct": 29.5, "status": "calibrating"}
+{"ts": "2024-03-28T07:25:55", "device_id": "café", "temperature_c": 15.2, "humidity_pct": 51.7, "status": "needs service"}
+{"ts": "2024-03-28T08:32:08", "device_id": "café", "temperature_c": 14.4, "humidity_pct": 42.6, "status": "calibrating"}
+{"ts": "2024-03-28T09:39:21", "device_id": "cuisine", "temperature_c": 15.5, "humidity_pct": 48.5, "status": "calibrating"}
+{"ts": "2024-03-28T10:46:34", "device_id": "cellier", "temperature_c": 22.9, "humidity_pct": 43.8, "status": "needs service"}
+{"ts": "2024-03-28T11:53:47", "device_id": "réserve", "temperature_c": 32.1, "humidity_pct": 56.0, "status": "  needs service "}
+{"ts": "2024-03-28T12:00:00", "device_id": "café", "temperature_c": 24.3, "humidity_pct": 74.9, "status": "offline"}
+{"ts": "2024-03-28T13:07:13", "device_id": "cellier", "temperature_c": 28.9, "humidity_pct": 63.1, "status": "ok"}
+{"ts": "2024-03-28T14:14:26", "device_id": "cuisine", "temperature_c": 23.8, "humidity_pct": 73.8, "status": "cblibrating"}
+{"ts": "2024-03-28T15:21:39", "device_id": "atelier", "temperature_c": 10.3, "humidity_pct": 60.2, "status": "needs service"}
+{"ts": "2024-03-28T16:28:52", "device_id": "véranda", "temperature_c": 16.3, "humidity_pct": 74.1, "status": "needs service"}
+{"ts": "2024-03-28T17:35:05", "device_id": "salon", "temperature_c": 18.3, "humidity_pct": 39.5, "status": "ok"}
+{"ts": "2024-03-28T18:42:18", "device_id": "grenier", "temperature_c": 19.0, "humidity_pct": 73.9, "status": "calibrating"}
+{"ts": "2024-03-28 19:49:31", "device_id": "grenier", "temperature_c": 26.3, "humidity_pct": 41.7, "status": "calibrating"}
+{"ts": "2024-03-28T20:56:44", "device_id": "salon", "temperature_c": 11.7, "humidity_pct": 39.5, "status": "ok"}
+{"ts": "2024-03-28T21:03:57", "device_id": "grenier", "temperature_c": "'9.5", "humidity_pct": 46.4, "status": "ok"}
+{"ts": "2024-03-28 22:10:10", "device_id": "café", "temperature_c": 16.9, "humidity_pct": 65.4, "status": "needs service"}
+{"ts": "2024-03-28T23:17:23", "device_id": "atelier", "temperature_c": 24.7, "humidity_pct": 72.1, "status": "calibrating"}
+{"ts": "2024-03-05T13:43:37", "device_id": "salon", "temperature_c": 13.5, "humidity_pct": 47.7, "status": "needs service"}
+{"ts": "2024-03-29T01:31:49", "device_id": "véranda", "temperature_c": 21.7, "humidity_pct": 38.4, "status": "ok"}
+{"ts": "2024-03-29T02:38:02", "device_id": "café", "temperature_c": 31.5, "humidity_pct": 37.9, "status": "ok"}
+{"ts": "2024-03-29T03:45:15", "device_id": "salon", "temperature_c": 20.9, "humidity_pct": 30.7, "status": "ok"}
+{"ts": "2024-03-29T04:52:28", "device_id": "réserve", "temperature_c": 14.5, "humidity_pct": 75.0, "status": "offline"}
+{"ts": "2024-03-29T05:59:41", "device_id": "salon", "temperature_c": 24.7, "humidity_pct": 32.9, "status": "needs service"}
+{"ts": "2024-03-29 06:06:54", "device_id": "cuisine", "temperature_c": 31.6, "humidity_pct": 34.5, "status": "offline"}
+{"ts": "2024-03-29T07:13:07", "device_id": "réserve", "temperature_c": 9.5, "humidity_pct": 75.3, "status": "needs service"}
+{"ts": "2024-03-29T08:20:20", "device_id": "café", "temperature_c": 22.9, "humidity_pct": 54.4, "status": "needs service"}
+{"ts": "2024-03-29T09:27:33", "device_id": "réserve", "temperature_c": 14.7, "humidity_pct": 57.3, "status": "ok"}
+{"ts": "2024-03-29T10:34:46", "device_id": "greniea", "temperature_c": 32.3, "humidity_pct": 51.8, "status": "calibrating"}
+{"ts": "2024-03-29T11:41:59", "device_id": "réserve", "temperature_c": 10.7, "humidity_pct": 61.3, "status": "needs service"}
+{"ts": "2024-03-29T12:48:12", "device_id": "cellier", "temperature_c": 11.1, "humidity_pct": 41.3, "status": "offline"}
+{"ts": "2024-03-29T13:55:25", "device_id": "grenier", "temperature_c": 18.1, "humidity_pct": 44.9, "status": "calibrating"}
+{"ts": "2024-03-29T14:02:38", "device_id": "grenier", "temperature_c": 26.5, "humidity_pct": 48.4, "status": "needs service"}
+{"ts": "2024-03-29T15:09:51", "device_id": "salon", "temperature_c": 33.8, "humidity_pct": 69.6, "status": "offline"}
+{"ts": "2024-03-29T16:16:04", "device_id": "grenier", "temperature_c": 19.7, "humidity_pct": 48.7, "status": "needs service"}
+{"ts": " 2024-03-29T17:23:17 ", "device_id": "réserve", "temperature_c": 30.9, "humidity_pct": 34.3, "status": "calibrating"}
+{"ts": "2024-03-29T18:30:30", "device_id": "café", "temperature_c": 30.3, "humidity_pct": 55.1, "status": "offline"}
+{"ts": "2024-03-29T19:37:43", "device_id": "salon", "temperature_c": 20.4, "humidity_pct": "44.8​", "status": "calibrating"}
+{"ts": "2024-03-29T20:44:56", "device_id": "cuisine", "temperature_c": 25.7, "humidity_pct": 43.8, "status": "offline"}
+{"ts": "2024-03-29T21:51:09", "device_id": "réserve", "temperature_c": 28.8, "humidity_pct": 63.2, "status": "ok"}
+{"ts": "2024-03-29T22:58:22", "device_id": "grenier", "temperature_c": 17.7, "humidity_pct": 75.6, "status": "ok"}
+{"ts": "2024-03-29T23:05:35", "device_id": "réserve", "temperature_c": 28.6, "humidity_pct": 41.6, "status": "calibrating"}
+{"ts": "2024-03-23T18:42:18", "device_id": "véranda", "temperature_c": 21.7, "humidity_pct": 65.9, "status": "offline"}
+{"ts": "2024-03-30T01:19:01", "device_id": "véranda", "temperature_c": 24.9, "humidity_pct": 36.3, "status": "offline"}
+{"ts": "  2024-03-30T02:26:14 ", "device_id": "véranda", "temperature_c": 17.2, "humidity_pct": 45.1, "status": "offline"}
+{"ts": "2024-03-30T03:33:27", "device_id": "véranda", "temperature_c": 21.4, "humidity_pct": 69.5, "status": "needs service"}
+{"ts": "2024-03-30T04:40:40", "device_id": "café", "temperature_c": 29.6, "humidity_pct": 56.8, "status": "ok"}
+{"ts": "2024-03-30T05:47:53", "device_id": "  atelier ", "temperature_c": 19.6, "humidity_pct": 42.5, "status": "offline"}
+{"ts": "2024-03-30T06:54:06", "device_id": "ATELIER", "temperature_c": 14.5, "humidity_pct": 60.3, "status": "ok"}
+{"ts": "2024-03-30T07:01:19", "device_id": "réserve", "temperature_c": 17.4, "humidity_pct": 73.5, "status": "needs service"}
+{"ts": "2024-03-30T08:08:32", "device_id": "atelier", "temperature_c": 13.9, "humidity_pct": 35.2, "status": "offline"}
+{"ts": "2024-03-30T09:15:45", "device_id": "réserve", "temperature_c": 29.9, "humidity_pct": 44.0, "status": "calibrating"}
+{"ts": "2024-03-30T10:22:58", "device_id": "véranda", "temperature_c": 30.6, "humidity_pct": 57.7, "status": "ok"}
+{"ts": "2024-03-30T11:29:11", "device_id": "café", "temperature_c": 16.3, "humidity_pct": "NaN", "status": "ok"}
+{"ts": "2024-03-30T12:36:24", "device_id": "salon", "temperature_c": 20.8, "humidity_pct": 40.1, "status": "needs service"}
+{"ts": "2024-03-30T13:43:37", "device_id": "salon", "temperature_c": 29.4, "humidity_pct": 71.3, "status": "ob"}
+{"ts": "2024-03-30T14:50:50", "device_id": "véranda", "temperature_c": 16.9, "humidity_pct": 34.0, "status": "ok"}
+{"ts": "2024-03-30T15:57:03", "device_id": "cellier", "temperature_c": 33.7, "humidity_pct": 52.4, "status": "ok"}
+{"ts": "2024-03-30T16:04:16", "device_id": "salon", "temperature_c": 31.6, "humidity_pct": 59.5, "status": "needs service"}
+{"ts": "2024-03-30T17:11:29", "device_id": "salon", "temperature_c": 25.0, "humidity_pct": 62.7, "status": "needs service"}
+{"ts": "2024-03-30T18:18:42", "device_id": "cellier", "temperature_c": 20.3, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-03-30T19:25:55", "device_id": "grenier", "temperature_c": 12.4, "humidity_pct": 60.8, "status": "needs service"}
+{"ts": "2024-03-30T20:32:08", "device_id": "grenier", "temperature_c": 18.5, "humidity_pct": 33.1, "status": "offline"}
+{"ts": "2024-03-30T21:39:21", "device_id": "salon", "temperature_c": 20.7, "humidity_pct": 75.9, "status": "needs service"}
+{"ts": "2024-03-30T22:46:34", "device_id": "réserve", "temperature_c": 26.3, "humidity_pct": 32.0, "status": "offline"}
+{"ts": "2024-03-30 23:53:47", "device_id": "cuisine", "temperature_c": "22.0​", "humidity_pct": 74.4, "status": "needs service"}
+{"ts": "2024-03-31T00:00:00", "device_id": "réserve", "temperature_c": 9.6, "humidity_pct": 58.2, "status": "needs service"}
+{"ts": "2024-03-31T01:07:13", "device_id": "café", "temperature_c": 16.9, "humidity_pct": 49.5, "status": "offline"}
+{"ts": "2024-03-31T02:14:26", "device_id": "café", "temperature_c": 16.7, "humidity_pct": 39.6, "status": "ok"}
+{"ts": "2024-03-07T04:16:04", "device_id": "café", "temperature_c": 22.9, "humidity_pct": 61.8, "status": "calibrating"}
+{"ts": "2024-03-31T04:28:52", "device_id": "cellier", "temperature_c": 33.1, "humidity_pct": 63.2, "status": "offline"}
+{"ts": "2024-03-31T05:35:05", "device_id": "atelier", "temperature_c": 8.1, "humidity_pct": 29.6, "status": "offline"}
+{"ts": "2024-03-31T06:42:18", "device_id": "réserve", "temperature_c": 22.8, "humidity_pct": 38.8, "status": "needs service"}
+{"ts": "2024-03-31T07:49:31", "device_id": "grenier", "temperature_c": 8.7, "humidity_pct": 61.6, "status": "calibrating"}
+{"ts": "2024-03-31T08:56:44", "device_id": "atelier", "temperature_c": 18.3, "humidity_pct": 39.4, "status": "calibrating"}
+{"ts": "2024-03-31T09:03:57", "device_id": "cellier", "temperature_c": 27.3, "humidity_pct": 39.3, "status": "needs service"}
+{"ts": "2024-03-31T10:10:10", "device_id": "salon", "temperature_c": 15.7, "humidity_pct": 30.8, "status": "calibrating"}
+{"ts": "2024-03-31T11:17:23", "device_id": "réserve", "temperature_c": 22.7, "humidity_pct": 71.7, "status": "needs service"}
+{"ts": " 2024-03-31T12:24:36 ", "device_id": "atelier", "temperature_c": 25.6, "humidity_pct": 28.1, "status": "calibrating"}
+{"ts": "2024-03-31T13:31:49", "device_id": "salon", "temperature_c": 33.8, "humidity_pct": 61.9, "status": "calibrating"}
+{"ts": "2024-03-31T14:38:02", "device_id": "cuisine", "temperature_c": 28.1, "humidity_pct": 71.1, "status": "offline"}
+{"ts": "2024-03-31T15:45:15", "device_id": "café", "temperature_c": 31.9, "humidity_pct": 67.5, "status": "offline"}
+{"ts": "2024-03-31T16:52:28", "device_id": "cuisine", "temperature_c": 9.6, "humidity_pct": 31.3, "status": "ok"}
+{"ts": "2024-03-31T17:59:41", "device_id": "réserve", "temperature_c": 28.5, "humidity_pct": 60.1, "status": "calibrating"}
+{"ts": "2024-03-31T18:06:54", "device_id": "cellier", "temperature_c": 10.8, "humidity_pct": 62.5, "status": "needs service"}
+{"ts": "2024-03-31T19:13:07", "device_id": "café", "temperature_c": 20.4, "humidity_pct": 61.4, "status": "offline"}
+{"ts": "2024-03-31T20:20:20", "device_id": "café", "temperature_c": 28.1, "humidity_pct": 45.6, "status": "ok"}
+{"ts": "2024-03-31T21:27:33", "device_id": "grenier", "temperature_c": "10,5", "humidity_pct": 67.8, "status": null}
+{"ts": "2024-03-31T22:34:46", "device_id": "salon", "temperature_c": 27.3, "humidity_pct": 35.0, "status": "ok"}
+{"ts": "2024-03-31T23:41:59", "device_id": "grenier", "temperature_c": 11.9, "humidity_pct": 58.4, "status": "needs service"}
+{"ts": "2024-04-01T00:48:12", "device_id": "café", "temperature_c": 15.1, "humidity_pct": 71.7, "status": "calibrating"}
+{"ts": "2024-04-01T01:55:25", "device_id": "grenier", "temperature_c": 15.0, "humidity_pct": 33.8, "status": "needs  service"}
+{"ts": "2024-04-01T02:02:38", "device_id": "cellier", "temperature_c": 16.5, "humidity_pct": 38.5, "status": "needs service"}
+{"ts": "2024-04-01T03:09:51", "device_id": "véranda", "temperature_c": 25.5, "humidity_pct": 37.9, "status": "calibrating"}
+{"ts": "2024-04-01T04:16:04", "device_id": "rÃ©serve", "temperature_c": 26.0, "humidity_pct": 28.1, "status": "needs service"}
+{"ts": "2024-04-01T05:23:17", "device_id": "atelier", "temperature_c": 28.2, "humidity_pct": 43.6, "status": "ok"}
+{"ts": "2024-04-01T06:30:30", "device_id": "véranda", "temperature_c": 22.2, "humidity_pct": 41.9, "status": "ok"}
+{"ts": "2024-03-01T16:52:28", "device_id": "véranda", "temperature_c": 18.0, "humidity_pct": 43.8, "status": "offline"}
+{"ts": "2024-04-01T08:44:56", "device_id": "réserve", "temperature_c": 16.9, "humidity_pct": 28.1, "status": "ok"}
+{"ts": "2024-04-01T09:51:09", "device_id": "cellier", "temperature_c": 12.9, "humidity_pct": 60.9, "status": "calibrating"}
+{"ts": "2024-04-01T10:58:22", "device_id": "cuisine", "temperature_c": 17.0, "humidity_pct": 75.0, "status": "ok"}
+{"ts": "2024-04-01T11:05:35", "device_id": "salon", "temperature_c": 29.3, "humidity_pct": 40.3, "status": "calibrating"}
+{"ts": "2024-04-01T12:12:48", "device_id": "réserve", "temperature_c": 24.8, "humidity_pct": 41.8, "status": "needs service"}
+{"ts": "2024-04-01T13:19:01", "device_id": "cuisine", "temperature_c": 9.1, "humidity_pct": 49.9, "status": "needs service"}
+{"ts": "2024-04-01T14:26:14", "device_id": "atelier", "temperature_c": 21.4, "humidity_pct": 67.9, "status": "offline"}
+{"ts": "2024-04-01T15:33:27", "device_id": "réserve", "temperature_c": 14.5, "humidity_pct": 30.3, "status": "calibrating"}
+{"ts": "2024-04-01T16:40:40", "device_id": "cellier", "temperature_c": 26.2, "humidity_pct": 39.6, "status": "calibrating"}
+{"ts": "2024-04-01T17:47:53", "device_id": "salon", "temperature_c": 33.7, "humidity_pct": 67.3, "status": "offline"}
+{"ts": "2024-04-01T18:54:06", "device_id": "salon", "temperature_c": 30.6, "humidity_pct": 61.8, "status": "offline"}
+{"ts": "2024-04-01T19:01:19", "device_id": "salon", "temperature_c": 33.8, "humidity_pct": 58.7, "status": "needs service"}
+{"ts": "2024-04-01T20:08:32", "device_id": "véranda", "temperature_c": 18.3, "humidity_pct": 50.5, "status": "offline"}
+{"ts": "2024-04-01T21:15:45", "device_id": "véranda", "temperature_c": 28.9, "humidity_pct": 74.1, "status": "ok"}
+{"ts": "2024-04-01T22:22:58", "device_id": "cellier", "temperature_c": 21.9, "humidity_pct": 36.1, "status": "ok"}
+{"ts": "2024-04-01T23:29:11", "device_id": "grenier", "temperature_c": 33.2, "humidity_pct": 48.9, "status": "needs service"}
+{"ts": "2024-04-02T00:36:24", "device_id": "cuisine", "temperature_c": 175.8, "humidity_pct": 43.2, "status": "offline"}
+{"ts": "2024-04-02T01:43:37", "device_id": "salon", "temperature_c": 12.5, "humidity_pct": 68.9, "status": "calibrating"}
+{"ts": "2024-04-02T02:50:50", "device_id": "cellier", "temperature_c": 17.5, "humidity_pct": 49.5, "status": "calibrating"}
+{"ts": "2024-04-02T03:57:03", "device_id": "cuisine", "temperature_c": 26.3, "humidity_pct": 32.1, "status": "needs service"}
+{"ts": "2024-04-02 04:04:16", "device_id": "atelier", "temperature_c": 32.2, "humidity_pct": 31.8, "status": "ok"}
+{"ts": "2024-04-02T05:11:29", "device_id": "réserve", "temperature_c": 15.8, "humidity_pct": 55.7, "status": "ok"}
+{"ts": "2024-04-02T06:18:42", "device_id": "cellier", "temperature_c": "  16.2 ", "humidity_pct": 45.9, "status": "calibrating"}
+{"ts": "2024-04-02T07:25:55", "device_id": "véranda", "temperature_c": 8.9, "humidity_pct": 39.1, "status": "needs service"}
+{"ts": "2024-04-02T08:32:08", "device_id": "grenier", "temperature_c": 17.8, "humidity_pct": 58.4, "status": "calibrating"}
+{"ts": "2024-04-02T09:39:21", "device_id": "cellier", "temperature_c": 20.2, "humidity_pct": 44.7, "status": "ok"}
+{"ts": "2024-04-02T10:46:34", "device_id": "réserve", "temperature_c": "'25.6", "humidity_pct": 381.7, "status": "needs service"}
+{"ts": "2024-04-02T11:53:47", "device_id": "grenier", "temperature_c": 21.2, "humidity_pct": 71.2, "status": "offline"}
+{"ts": "2024-04-02T12:00:00", "device_id": "café​", "temperature_c": 8.0, "humidity_pct": 76.0, "status": "calibrating"}
+{"ts": "2024-04-02T13:07:13", "device_id": "café", "temperature_c": 12.0, "humidity_pct": 70.5, "status": "needs service"}
+{"ts": "2024-04-02T14:14:26", "device_id": "atelier", "temperature_c": 19.9, "humidity_pct": 66.3, "status": "offline"}
+{"ts": "2024-03-05T20:32:08", "device_id": "atelier", "temperature_c": 16.7, "humidity_pct": 62.2, "status": "calibrating"}
+{"ts": "2024-04-02T16:28:52", "device_id": "salon", "temperature_c": 14.6, "humidity_pct": 56.6, "status": "needs service"}
+{"ts": "2024-04-02T17:35:05", "device_id": "grenier", "temperature_c": 30.3, "humidity_pct": 54.8, "status": "ok"}
+{"ts": "2024-04-02T18:42:18", "device_id": "cellier", "temperature_c": 19.9, "humidity_pct": 62.4, "status": "calibrating"}
+{"ts": "2024-04-02T19:49:31", "device_id": "grenier", "temperature_c": 29.8, "humidity_pct": 65.3, "status": "ok"}
+{"ts": "2024-04-02T20:56:44", "device_id": "grenier", "temperature_c": "'14.4", "humidity_pct": 75.2, "status": "calibrating"}
+{"ts": "2024-04-02T21:03:57", "device_id": "atelier", "temperature_c": 21.2, "humidity_pct": 66.5, "status": "needs service"}
+{"ts": "2024-04-02T22:10:10", "device_id": "café", "temperature_c": 16.3, "humidity_pct": 55.6, "status": null}
+{"ts": "2024-04-02T23:17:23", "device_id": "café", "temperature_c": 11.6, "humidity_pct": 37.6, "status": "ok"}
+{"ts": "2024-04-03T00:24:36", "device_id": "grenier", "temperature_c": 25.5, "humidity_pct": 61.5, "status": "ok"}
+{"ts": "2024-04-03T01:31:49", "device_id": "cellier", "temperature_c": 18.8, "humidity_pct": 49.0, "status": "ok"}
+{"ts": "2024-04-03T02:38:02", "device_id": "cellier", "temperature_c": 28.0, "humidity_pct": 71.4, "status": null}
+{"ts": "2024-04-03T03:45:15", "device_id": "cuisine", "temperature_c": 8.2, "humidity_pct": 59.0, "status": "offline"}
+{"ts": "2024-04-03T04:52:28", "device_id": "atelier", "temperature_c": 31.4, "humidity_pct": 46.0, "status": "needs service"}
+{"ts": "2024-04-03T05:59:41", "device_id": "cuisine", "temperature_c": 25.3, "humidity_pct": 66.7, "status": "ok"}
+{"ts": "2024-04-03T06:06:54", "device_id": "café", "temperature_c": 15.2, "humidity_pct": 67.0, "status": "offline"}
+{"ts": "2024-04-03 07:13:07", "device_id": "café", "temperature_c": 15.7, "humidity_pct": "null", "status": null}
+{"ts": "2024-04-03T08:20:20", "device_id": "cellier", "temperature_c": 31.3, "humidity_pct": 40.2, "status": "calibrating"}
+{"ts": "2024-04-03T09:27:33", "device_id": "cellier", "temperature_c": 23.4, "humidity_pct": 51.9, "status": "calibrating"}
+{"ts": "2024-04-03T10:34:46", "device_id": "cellier", "temperature_c": 18.4, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-04-03T11:41:59", "device_id": "grenier", "temperature_c": 30.7, "humidity_pct": 59.2, "status": "calibrating"}
+{"ts": "2024-04-03T12:48:12", "device_id": "atelier", "temperature_c": 27.3, "humidity_pct": null, "status": null}
+{"ts": "2024-04-03T13:55:25", "device_id": "salon", "temperature_c": 29.9, "humidity_pct": 54.8, "status": "calibrating"}
+{"ts": "2024-04-03T14:02:38", "device_id": "grenier", "temperature_c": 27.1, "humidity_pct": 59.0, "status": "ok"}
+{"ts": "2024-04-03T15:09:51", "device_id": "réserve", "temperature_c": 25.2, "humidity_pct": 48.3, "status": "calibrating"}
+{"ts": "2024-04-03T16:16:04", "device_id": "café", "temperature_c": 33.5, "humidity_pct": "#N/A", "status": "calibrating"}
+{"ts": "2024-04-03T17:23:17", "device_id": "salon", "temperature_c": 24.3, "humidity_pct": 49.7, "status": "needs service"}
+{"ts": "2024-04-03T18:30:30", "device_id": "atelier", "temperature_c": 29.8, "humidity_pct": 52.7, "status": null}
+{"ts": "2024-04-03T19:37:43", "device_id": "cellier", "temperature_c": 13.6, "humidity_pct": 48.4, "status": "offline"}
+{"ts": "2024-04-03T20:44:56", "device_id": "cuisine", "temperature_c": 18.0, "humidity_pct": 57.4, "status": "ok"}
+{"ts": "2024-04-03T21:51:09", "device_id": "cellier", "temperature_c": 10.0, "humidity_pct": 68.0, "status": "calibrating"}
+{"ts": "2024-04-03T22:58:22", "device_id": "cellier", "temperature_c": 27.4, "humidity_pct": 29.3, "status": "calibrating"}
+{"ts": "2024-04-03T23:05:35", "device_id": "atelier", "temperature_c": 27.0, "humidity_pct": 35.8, "status": "calibrating"}
+{"ts": "2024-04-04T00:12:48", "device_id": "cuisine", "temperature_c": 24.2, "humidity_pct": 39.1, "status": "needs service"}
+{"ts": "2024-04-04T01:19:01", "device_id": "cuisine", "temperature_c": 22.8, "humidity_pct": 73.0, "status": "(needs service)"}
+{"ts": "2024-04-04T02:26:14", "device_id": "cellier", "temperature_c": 16.2, "humidity_pct": 38.9, "status": "offline"}
+{"ts": "2024-04-04T03:33:27", "device_id": "cuisine", "temperature_c": "11,5", "humidity_pct": 46.6, "status": null}
+{"ts": "2024-04-04T04:40:40", "device_id": "véranda", "temperature_c": 8.9, "humidity_pct": "32,4", "status": "ok"}
+{"ts": "2024-04-04T05:47:53", "device_id": "cuisine", "temperature_c": 18.1, "humidity_pct": 47.5, "status": "ok"}
+{"ts": "2024-04-04T06:54:06", "device_id": "salon", "temperature_c": 18.4, "humidity_pct": 48.1, "status": "calibrating"}
+{"ts": "2024-04-04T07:01:19", "device_id": "véranda", "temperature_c": 30.3, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-04-04T08:08:32", "device_id": "réserve", "temperature_c": 31.7, "humidity_pct": 69.3, "status": "null"}
+{"ts": "2024-04-04 09:15:45", "device_id": "café", "temperature_c": 19.3, "humidity_pct": 33.4, "status": null}
+{"ts": "2024-04-04T10:22:58", "device_id": "réserve", "temperature_c": 26.1, "humidity_pct": 29.0, "status": "ok"}
+{"ts": "2024-04-04T11:29:11", "device_id": "véranda", "temperature_c": 16.1, "humidity_pct": 48.8, "status": null}
+{"ts": "2024-04-04T12:36:24", "device_id": "cellier", "temperature_c": 11.5, "humidity_pct": 34.0, "status": null}
+{"ts": "2024-04-04 13:43:37", "device_id": "véranda", "temperature_c": 30.1, "humidity_pct": 72.6, "status": "needs service"}
+{"ts": "2024-04-04T14:50:50", "device_id": "salon", "temperature_c": 25.0, "humidity_pct": 74.4, "status": "offline"}
+{"ts": "2024-04-04T15:57:03", "device_id": "réserve", "temperature_c": 13.1, "humidity_pct": 35.9, "status": "offline"}
+{"ts": "2024-04-04T16:04:16", "device_id": "salon", "temperature_c": 24.3, "humidity_pct": 55.7, "status": "calibrating"}
+{"ts": "2024-04-04T17:11:29", "device_id": "véranda", "temperature_c": 13.9, "humidity_pct": 49.9, "status": "calibrating"}
+{"ts": "2024-04-04T18:18:42", "device_id": "SALON", "temperature_c": 18.3, "humidity_pct": 70.6, "status": "needs  service"}
+{"ts": "2024-04-04T19:25:55", "device_id": "cuisine", "temperature_c": 9.6, "humidity_pct": 72.2, "status": "calibrating"}
+{"ts": "2024-04-04T20:32:08", "device_id": "café", "temperature_c": 17.0, "humidity_pct": 52.6, "status": "calibrating"}
+{"ts": "2024-04-04T21:39:21", "device_id": "cuisine", "temperature_c": 10.9, "humidity_pct": 72.0, "status": "offline"}
+{"ts": "2024-04-04T22:46:34", "device_id": "atelier", "temperature_c": 17.9, "humidity_pct": 51.0, "status": "ok"}
+{"ts": "2024-04-04T23:53:47", "device_id": "cuisine", "temperature_c": 28.1, "humidity_pct": 54.3, "status": "ok"}
+{"ts": "2024-04-05T00:00:00", "device_id": "salon", "temperature_c": 31.8, "humidity_pct": "N/A", "status": "offline"}
+{"ts": "2024-04-05T01:07:13", "device_id": "café", "temperature_c": 8.5, "humidity_pct": 56.5, "status": "ok"}
+{"ts": "2024-04-05T02:14:26", "device_id": "atelier", "temperature_c": 26.1, "humidity_pct": 65.6, "status": "offline"}
+{"ts": "2024-04-05T03:21:39​", "device_id": "  réserve ", "temperature_c": 17.3, "humidity_pct": 58.0, "status": "needs service"}
+{"ts": "2024-04-05T04:28:52", "device_id": "véranda", "temperature_c": 19.8, "humidity_pct": 75.3, "status": "ok"}
+{"ts": "2024-04-05T05:35:05", "device_id": "cellier", "temperature_c": 25.5, "humidity_pct": 37.6, "status": "N/A"}
+{"ts": "2024-04-05T06:42:18", "device_id": "salon", "temperature_c": 32.0, "humidity_pct": 51.6, "status": "offline"}
+{"ts": "2024-04-05T07:49:31", "device_id": "cuisine", "temperature_c": 15.8, "humidity_pct": 58.8, "status": "ok"}
+{"ts": "2024-04-05 08:56:44", "device_id": "grenier", "temperature_c": 30.0, "humidity_pct": 72.1, "status": "calibrating"}
+{"ts": "2024-04-05T09:03:57", "device_id": "atelier", "temperature_c": 10.7, "humidity_pct": 61.5, "status": "calibrating"}
+{"ts": "2024-04-05T10:10:10", "device_id": "véranda", "temperature_c": 21.8, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-04-05T11:17:23", "device_id": "cuisine", "temperature_c": 29.5, "humidity_pct": 58.5, "status": "offline"}
+{"ts": "2024-04-05T12:24:36", "device_id": "salon", "temperature_c": 31.7, "humidity_pct": 56.6, "status": "needs  service"}
+{"ts": "2024-04-05T13:31:49", "device_id": "véranda", "temperature_c": 12.9, "humidity_pct": 58.0, "status": "offline"}
+{"ts": "2024-04-05T14:38:02", "device_id": "salon", "temperature_c": 19.4, "humidity_pct": 38.3, "status": "needs service"}
+{"ts": "2024-04-05T15:45:15", "device_id": "véranda", "temperature_c": 22.7, "humidity_pct": 60.8, "status": "needs service"}
+{"ts": "2024-04-05T16:52:28", "device_id": "véranda", "temperature_c": 21.9, "humidity_pct": 28.9, "status": "ok"}
+{"ts": "2024-04-05T17:59:41", "device_id": "café", "temperature_c": 29.3, "humidity_pct": 40.3, "status": "offline"}
+{"ts": "2024-04-05T18:06:54", "device_id": "atelier", "temperature_c": 11.1, "humidity_pct": 75.2, "status": "ok"}
+{"ts": "2024-04-05T19:13:07", "device_id": "réserve", "temperature_c": 30.9, "humidity_pct": 73.2, "status": "needs service"}
+{"ts": "2024-04-05T20:20:20", "device_id": "grenier", "temperature_c": 8.0, "humidity_pct": 40.6, "status": "calibrating"}
+{"ts": "2024-04-05T21:27:33", "device_id": "cellier", "temperature_c": 25.1, "humidity_pct": 61.5, "status": "ok"}
+{"ts": "2024-04-05T22:34:46", "device_id": "réserve", "temperature_c": 22.6, "humidity_pct": 67.3, "status": "ok"}
+{"ts": "2024-04-05T23:41:59", "device_id": "atelier", "temperature_c": 22.2, "humidity_pct": 52.5, "status": "calibrating"}
+{"ts": "2024-04-06T00:48:12", "device_id": "cellier", "temperature_c": "'8.9", "humidity_pct": 55.9, "status": "calibrating"}
+{"ts": "2024-04-06T01:55:25", "device_id": "atelier", "temperature_c": 17.0, "humidity_pct": 45.0, "status": "needs service"}
+{"ts": "2024-04-06T02:02:38", "device_id": "salon", "temperature_c": 19.1, "humidity_pct": 52.5, "status": "calibrating"}
+{"ts": "2024-04-06T03:09:51", "device_id": "atelier", "temperature_c": 29.3, "humidity_pct": 31.7, "status": "calibrating"}
+{"ts": "2024-04-06T04:16:04", "device_id": "réserve", "temperature_c": 19.9, "humidity_pct": 36.1, "status": "offline"}
+{"ts": "2024-04-06T05:23:17", "device_id": "véranda", "temperature_c": 11.0, "humidity_pct": -212.1, "status": "ok"}
+{"ts": "2024-04-06T06:30:30", "device_id": "café", "temperature_c": 31.1, "humidity_pct": 29.5, "status": "ok"}
+{"ts": "2024-04-06T07:37:43", "device_id": "cafÃ©", "temperature_c": 21.2, "humidity_pct": 33.2, "status": "N/A"}
+{"ts": "2024-04-06T08:44:56", "device_id": "grenier", "temperature_c": 17.9, "humidity_pct": 46.7, "status": "offline"}
+{"ts": "2024-04-06T09:51:09", "device_id": "véranda", "temperature_c": 18.6, "humidity_pct": 75.5, "status": "calibrating"}
+{"ts": "2024-04-06T10:58:22", "device_id": "cuisine", "temperature_c": 10.3, "humidity_pct": 39.8, "status": "offline"}
+{"ts": "2024-04-06T11:05:35", "device_id": "grenier", "temperature_c": 17.0, "humidity_pct": "'54.6", "status": "calibrating"}
+{"ts": "2024-04-06T12:12:48", "device_id": "salon", "temperature_c": 31.8, "humidity_pct": 55.3, "status": "calibrating"}
+{"ts": "2024-04-06T13:19:01", "device_id": "cellier", "temperature_c": 34.0, "humidity_pct": 55.8, "status": "ok"}
+{"ts": "2024-04-06T14:26:14", "device_id": "  réserve ", "temperature_c": 9.3, "humidity_pct": 72.8, "status": "calibrating"}
+{"ts": "2024-04-06T15:33:27", "device_id": "atelier", "temperature_c": 25.6, "humidity_pct": 75.1, "status": "calibrating"}
+{"ts": "2024-04-06T16:40:40", "device_id": "véranda", "temperature_c": 19.8, "humidity_pct": 62.3, "status": "needs service"}
+{"ts": "2024-04-06T17:47:53", "device_id": "grenier", "temperature_c": 23.7, "humidity_pct": 67.3, "status": "needs service"}
+{"ts": "2024-04-06T18:54:06", "device_id": "cellier", "temperature_c": 23.7, "humidity_pct": "#N/A", "status": "offline"}
+{"ts": "2024-04-06T19:01:19", "device_id": "salon", "temperature_c": 23.0, "humidity_pct": 49.2, "status": "needs  service"}
+{"ts": "2024-04-06T20:08:32", "device_id": "grenier", "temperature_c": 14.8, "humidity_pct": 47.5, "status": "ok"}
+{"ts": "2024-04-06T21:15:45", "device_id": "salon", "temperature_c": 17.7, "humidity_pct": 63.6, "status": "offline"}
+{"ts": "2024-04-06T22:22:58", "device_id": "salon", "temperature_c": 13.5, "humidity_pct": 71.7, "status": "#N/A"}
+{"ts": "2024-04-06T23:29:11", "device_id": "atelier", "temperature_c": 26.9, "humidity_pct": 37.6, "status": "needs service"}
+{"ts": "2024-04-07T00:36:24", "device_id": "salon", "temperature_c": 22.3, "humidity_pct": 72.7, "status": "offline"}
+{"ts": "2024-04-07T01:43:37", "device_id": "cellier", "temperature_c": 13.6, "humidity_pct": 65.8, "status": "needs service"}
+{"ts": "2024-04-07T02:50:50", "device_id": "café", "temperature_c": 13.3, "humidity_pct": 48.0, "status": "offline"}
+{"ts": "2024-04-07T03:57:03", "device_id": "cuisine", "temperature_c": 30.2, "humidity_pct": 65.4, "status": "ok"}
+{"ts": "2024-04-07T04:04:16", "device_id": "salon", "temperature_c": 24.7, "humidity_pct": 42.2, "status": "needs service"}
+{"ts": "2024-04-07T05:11:29", "device_id": "atelier", "temperature_c": 24.8, "humidity_pct": 53.6, "status": "ok"}
+{"ts": "2024-04-07T06:18:42", "device_id": "vÃ©randa", "temperature_c": 9.1, "humidity_pct": 60.3, "status": "ok"}
+{"ts": "2024-04-07T07:25:55", "device_id": "café", "temperature_c": 11.4, "humidity_pct": 52.9, "status": "ok"}
+{"ts": "2024-04-07T08:32:08", "device_id": "salon", "temperature_c": 31.9, "humidity_pct": 29.6, "status": "needs service"}
+{"ts": "2024-04-07T09:39:21", "device_id": "salon", "temperature_c": 17.6, "humidity_pct": 41.9, "status": "offline"}
+{"ts": "2024-04-07T10:46:34", "device_id": "réserve", "temperature_c": 176.3, "humidity_pct": 65.2, "status": " needs service "}
+{"ts": "2024-04-07T11:53:47", "device_id": "véranda", "temperature_c": 23.5, "humidity_pct": 67.5, "status": "calibrating"}
+{"ts": "2024-04-07T12:00:00", "device_id": "cuisine", "temperature_c": 25.7, "humidity_pct": 65.1, "status": "calibrating"}
+{"ts": "2024-04-07T13:07:13", "device_id": "cellier", "temperature_c": 25.7, "humidity_pct": 67.1, "status": "needs service"}
+{"ts": "2024-04-07T14:14:26", "device_id": "cellier", "temperature_c": "9.3​", "humidity_pct": 36.3, "status": "offline"}
+{"ts": "2024-04-07T15:21:39", "device_id": "véranda", "temperature_c": 9.3, "humidity_pct": 73.5, "status": "ok"}
+{"ts": "2024-04-07T16:28:52", "device_id": "atelier", "temperature_c": 32.5, "humidity_pct": 28.6, "status": "offline"}
+{"ts": "2024-04-07T17:35:05", "device_id": "véranda", "temperature_c": 26.4, "humidity_pct": 55.2, "status": "ok"}
+{"ts": "2024-03-11T10:10:10", "device_id": "véranda", "temperature_c": 28.9, "humidity_pct": 33.6, "status": "ok"}
+{"ts": "2024-04-07T19:49:31", "device_id": "véranda", "temperature_c": 33.3, "humidity_pct": 43.7, "status": "ok"}
+{"ts": "2024-04-07T20:56:44", "device_id": "café", "temperature_c": 24.7, "humidity_pct": 42.9, "status": "ok"}
+{"ts": "2024-04-07T21:03:57", "device_id": "réserve", "temperature_c": 27.0, "humidity_pct": 46.1, "status": "offline"}
+{"ts": "2024-04-07T22:10:10", "device_id": "véranda", "temperature_c": 32.5, "humidity_pct": 64.1, "status": "offline"}
+{"ts": "2024-04-07T23:17:23", "device_id": "véranda", "temperature_c": 20.3, "humidity_pct": 67.1, "status": "ok"}
+{"ts": "2024-04-08T00:24:36", "device_id": "atelier", "temperature_c": 14.0, "humidity_pct": 45.8, "status": null}
+{"ts": "2024-04-08T01:31:49", "device_id": "cuisine", "temperature_c": "'9.3", "humidity_pct": 36.7, "status": "ok"}
+{"ts": "2024-04-08 02:38:02", "device_id": "réserve", "temperature_c": 29.7, "humidity_pct": 35.3, "status": "offline"}
+{"ts": "2024-04-08T03:45:15", "device_id": "grenier", "temperature_c": 22.5, "humidity_pct": 43.4, "status": "offline"}
+{"ts": "2024-04-08T04:52:28", "device_id": "cellier", "temperature_c": 17.2, "humidity_pct": 34.0, "status": "ok"}
+{"ts": "2024-04-08T05:59:41", "device_id": "cellier", "temperature_c": 22.4, "humidity_pct": 34.1, "status": "needs service"}
+{"ts": "2024-04-08T06:06:54", "device_id": "atelier", "temperature_c": 24.2, "humidity_pct": 45.3, "status": "ok"}
+{"ts": "2024-04-08T07:13:07", "device_id": "cuisine", "temperature_c": 22.4, "humidity_pct": 30.5, "status": "calibrating"}
+{"ts": "2024-04-08T08:20:20", "device_id": "salon", "temperature_c": 17.3, "humidity_pct": 48.6, "status": null}
+{"ts": "2024-04-08T09:27:33", "device_id": "réserve", "temperature_c": 16.6, "humidity_pct": 71.2, "status": "offline"}
+{"ts": "2024-04-08T10:34:46", "device_id": "grenier", "temperature_c": 20.4, "humidity_pct": 66.2, "status": "NA"}
+{"ts": "2024-04-08T11:41:59", "device_id": "véranda", "temperature_c": 27.7, "humidity_pct": 28.6, "status": "offline"}
+{"ts": "2024-04-08T12:48:12", "device_id": "réserve", "temperature_c": 31.5, "humidity_pct": 29.9, "status": "offline"}
+{"ts": "2024-04-08T13:55:25", "device_id": "café", "temperature_c": 33.2, "humidity_pct": 57.8, "status": "calibrating"}
+{"ts": "2024-04-08T14:02:38", "device_id": "réserve", "temperature_c": 25.0, "humidity_pct": 67.6, "status": "ok"}
+{"ts": "2024-04-08T15:09:51", "device_id": "cuisine", "temperature_c": 31.8, "humidity_pct": 55.8, "status": "ok"}
+{"ts": "2024-04-08T16:16:04", "device_id": "atelier", "temperature_c": 18.5, "humidity_pct": 31.6, "status": "ok"}
+{"ts": "2024-04-08T17:23:17", "device_id": "cuisine", "temperature_c": 26.0, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-04-08T18:30:30", "device_id": "salon", "temperature_c": 32.3, "humidity_pct": 39.2, "status": "ok"}
+{"ts": "2024-04-08T19:37:43", "device_id": "réserve", "temperature_c": 21.8, "humidity_pct": 63.8, "status": "needs service"}
+{"ts": "2024-03-07T05:23:17", "device_id": "café", "temperature_c": 27.2, "humidity_pct": 39.2, "status": "needs service"}
+{"ts": "2024-04-08T21:51:09", "device_id": "cellier", "temperature_c": 29.1, "humidity_pct": 64.9, "status": "needs service"}
+{"ts": "2024-04-08T22:58:22", "device_id": "atelier", "temperature_c": 15.7, "humidity_pct": 61.5, "status": "ok"}
+{"ts": "2024-04-08T23:05:35", "device_id": "véranda", "temperature_c": 18.4, "humidity_pct": null, "status": "needs service"}
+{"ts": " 2024-04-09T00:12:48 ", "device_id": "atelier", "temperature_c": 15.0, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-04-09T01:19:01", "device_id": "grenier", "temperature_c": -143.1, "humidity_pct": 74.6, "status": "offline"}
+{"ts": "2024-04-09T02:26:14", "device_id": "atelier", "temperature_c": 14.4, "humidity_pct": 46.5, "status": "calibrating"}
+{"ts": "2024-04-09T03:33:27", "device_id": "atelier", "temperature_c": "29,5", "humidity_pct": 57.8, "status": "offline"}
+{"ts": "2024-04-09T04:40:40", "device_id": "salon", "temperature_c": 27.1, "humidity_pct": 45.6, "status": "calibrating"}
+{"ts": "2024-04-09T05:47:53", "device_id": "atelier", "temperature_c": 32.0, "humidity_pct": 46.7, "status": "calibrating"}
+{"ts": "2024-04-09T06:54:06", "device_id": "grenier", "temperature_c": 29.1, "humidity_pct": 67.0, "status": "offline"}
+{"ts": "2024-04-09T07:01:19", "device_id": "vÃ©randa", "temperature_c": 20.7, "humidity_pct": 64.0, "status": "calibrating"}
+{"ts": "2024-04-09T08:08:32", "device_id": "véranda", "temperature_c": 9.7, "humidity_pct": 73.1, "status": "calibrating"}
+{"ts": "2024-04-09T09:15:45", "device_id": "cellier", "temperature_c": 20.3, "humidity_pct": 48.5, "status": "needs service"}
+{"ts": "2024-04-09T10:22:58", "device_id": "atelier", "temperature_c": 30.1, "humidity_pct": 30.5, "status": "ok"}
+{"ts": "2024-04-09T11:29:11", "device_id": "réserve", "temperature_c": 16.2, "humidity_pct": 66.2, "status": null}
+{"ts": "2024-04-09 12:36:24", "device_id": "café", "temperature_c": 19.8, "humidity_pct": 41.5, "status": "ok"}
+{"ts": "2024-04-09T13:43:37", "device_id": "cuisine", "temperature_c": 22.2, "humidity_pct": 63.4, "status": "ok"}
+{"ts": "2024-04-09T14:50:50", "device_id": "atelier", "temperature_c": 22.8, "humidity_pct": 49.0, "status": "ok"}
+{"ts": "2024-04-09T15:57:03", "device_id": "café", "temperature_c": 10.3, "humidity_pct": 28.6, "status": "oa"}
+{"ts": "2024-04-09T16:04:16", "device_id": "atelier", "temperature_c": 13.6, "humidity_pct": 42.4, "status": "ok"}
+{"ts": "2024-04-09T17:11:29", "device_id": "grenier", "temperature_c": 22.8, "humidity_pct": 52.8, "status": "needs service"}
+{"ts": "2024-04-09T18:18:42", "device_id": "grenier", "temperature_c": 32.2, "humidity_pct": 61.0, "status": "needs service"}
+{"ts": "2024-04-09T19:25:55", "device_id": "salon", "temperature_c": 18.1, "humidity_pct": 69.3, "status": "OFFLINE"}
+{"ts": "2024-04-09T20:32:08", "device_id": "véranda", "temperature_c": 13.2, "humidity_pct": 74.9, "status": "needs service"}
+{"ts": "2024-04-09T21:39:21", "device_id": "café", "temperature_c": 20.0, "humidity_pct": 68.4, "status": "ok"}
+{"ts": "2024-04-09T22:46:34", "device_id": "grenier", "temperature_c": 26.2, "humidity_pct": 71.3, "status": "offline"}
+{"ts": "2024-04-09T23:53:47", "device_id": "réserve", "temperature_c": 29.4, "humidity_pct": 69.6, "status": "  needs service "}
+{"ts": "2024-04-10T00:00:00", "device_id": "cuisine", "temperature_c": 12.6, "humidity_pct": 35.1, "status": null}
+{"ts": "2024-04-10 01:07:13", "device_id": "grenier", "temperature_c": 31.8, "humidity_pct": 34.1, "status": "ok"}
+{"ts": "2024-04-10T02:14:26", "device_id": "cuisine", "temperature_c": 21.3, "humidity_pct": 61.6, "status": "calibrating"}
+{"ts": "2024-04-10T03:21:39", "device_id": "atelier", "temperature_c": 15.3, "humidity_pct": 40.3, "status": "calibrating"}
+{"ts": "2024-04-10T04:28:52", "device_id": "café", "temperature_c": 23.5, "humidity_pct": 49.0, "status": "calibrating"}
+{"ts": "2024-04-10T05:35:05", "device_id": "café", "temperature_c": 15.3, "humidity_pct": 46.4, "status": "needs service"}
+{"ts": "2024-04-10T06:42:18", "device_id": "réserve", "temperature_c": 24.5, "humidity_pct": 50.2, "status": "ok"}
+{"ts": "2024-04-10T07:49:31", "device_id": "CELLIER", "temperature_c": 21.1, "humidity_pct": 35.7, "status": "needs service"}
+{"ts": "2024-04-10T08:56:44", "device_id": "réserve", "temperature_c": 31.7, "humidity_pct": 64.9, "status": "calibrating"}
+{"ts": "2024-04-10T09:03:57", "device_id": "cealier", "temperature_c": 14.4, "humidity_pct": 70.6, "status": "offline"}
+{"ts": "2024-04-10T10:10:10", "device_id": "cellier", "temperature_c": 19.7, "humidity_pct": 64.2, "status": "needs service"}
+{"ts": "2024-04-10 11:17:23", "device_id": "cellier", "temperature_c": 32.4, "humidity_pct": 53.4, "status": "offline"}
+{"ts": "2024-04-10T12:24:36", "device_id": "vÃ©randa", "temperature_c": 13.5, "humidity_pct": 33.2, "status": "needs service"}
+{"ts": "2024-04-10T13:31:49", "device_id": "café", "temperature_c": 29.3, "humidity_pct": 37.1, "status": null}
+{"ts": "2024-04-10 14:38:02", "device_id": "cafÃ©", "temperature_c": 11.7, "humidity_pct": 72.3, "status": "ok"}
+{"ts": "2024-04-10T15:45:15", "device_id": "atelier", "temperature_c": 17.4, "humidity_pct": 46.3, "status": "needs service"}
+{"ts": "2024-04-10T16:52:28", "device_id": "véranda", "temperature_c": 29.1, "humidity_pct": 52.2, "status": "offline"}
+{"ts": "2024-04-10T17:59:41", "device_id": "véranda", "temperature_c": 21.4, "humidity_pct": 63.1, "status": "calibrating"}
+{"ts": "2024-04-10T18:06:54", "device_id": "véranda", "temperature_c": 27.2, "humidity_pct": 70.2, "status": "calibrating"}
+{"ts": "2024-04-10T19:13:07", "device_id": "café", "temperature_c": 21.8, "humidity_pct": 58.7, "status": "needs service"}
+{"ts": "2024-04-10T20:20:20", "device_id": "véranda", "temperature_c": 28.0, "humidity_pct": 61.6, "status": "calibrating"}
+{"ts": "2024-04-10T21:27:33", "device_id": "café", "temperature_c": 33.6, "humidity_pct": "38.2​", "status": "calibrating"}
+{"ts": "2024-04-10T22:34:46", "device_id": "réserve", "temperature_c": 29.1, "humidity_pct": null, "status": null}
+{"ts": "2024-04-10T23:41:59", "device_id": "véranda", "temperature_c": 10.7, "humidity_pct": 69.5, "status": "ok"}
+{"ts": "2024-04-11T00:48:12", "device_id": "atelier", "temperature_c": 8.1, "humidity_pct": 68.4, "status": "offline"}
+{"ts": "2024-04-11T01:55:25", "device_id": "véranda", "temperature_c": 20.6, "humidity_pct": 47.1, "status": "calibrating"}
+{"ts": "2024-04-11T02:02:38", "device_id": "salon", "temperature_c": 27.1, "humidity_pct": 58.7, "status": "ok"}
+{"ts": "2024-04-11T03:09:51", "device_id": "réserve", "temperature_c": "17,9", "humidity_pct": 28.7, "status": "ok"}
+{"ts": "2024-04-11T04:16:04", "device_id": "grenier", "temperature_c": 30.1, "humidity_pct": 63.7, "status": "N/A"}
+{"ts": "2024-04-11T05:23:17", "device_id": "grenier", "temperature_c": 19.2, "humidity_pct": 56.4, "status": "ok"}
+{"ts": "2024-04-11T06:30:30", "device_id": "salon", "temperature_c": 13.0, "humidity_pct": 34.6, "status": "offline"}
+{"ts": "2024-04-11T07:37:43", "device_id": "cuisine", "temperature_c": 24.7, "humidity_pct": 58.1, "status": "calibrating"}
+{"ts": "2024-04-11T08:44:56", "device_id": "véranda", "temperature_c": 29.5, "humidity_pct": 62.4, "status": "calibrating"}
+{"ts": "2024-04-11 09:51:09", "device_id": "cuisine", "temperature_c": 24.6, "humidity_pct": 67.6, "status": "calibrating"}
+{"ts": "2024-04-11T10:58:22", "device_id": "grenier", "temperature_c": 29.9, "humidity_pct": 44.1, "status": "calibrating"}
+{"ts": "2024-04-11T11:05:35", "device_id": "café", "temperature_c": 30.3, "humidity_pct": 60.2, "status": "calibrating"}
+{"ts": "2024-04-11T12:12:48", "device_id": "salon", "temperature_c": " 26.7 ", "humidity_pct": 71.9, "status": null}
+{"ts": "2024-04-11T13:19:01", "device_id": "véranda", "temperature_c": 14.6, "humidity_pct": 70.4, "status": "needs service"}
+{"ts": "2024-04-11T14:26:14", "device_id": "réserve", "temperature_c": 30.3, "humidity_pct": 350.9, "status": "offline"}
+{"ts": "2024-04-11T15:33:27", "device_id": "salon", "temperature_c": 10.0, "humidity_pct": 60.6, "status": "ok"}
+{"ts": "2024-04-11T16:40:40", "device_id": "café", "temperature_c": 31.9, "humidity_pct": 29.8, "status": "calibrating"}
+{"ts": "2024-04-11T17:47:53", "device_id": "cuisine", "temperature_c": 17.1, "humidity_pct": 73.6, "status": "calibrating"}
+{"ts": "2024-04-11T18:54:06", "device_id": "salon​", "temperature_c": 27.8, "humidity_pct": 43.4, "status": "offline"}
+{"ts": "2024-04-11T19:01:19", "device_id": "cellier", "temperature_c": 14.0, "humidity_pct": 46.3, "status": "needs service"}
+{"ts": "2024-04-11T20:08:32", "device_id": "cuisine", "temperature_c": 33.1, "humidity_pct": 37.4, "status": "ok"}
+{"ts": "2024-04-11T21:15:45", "device_id": "cuisine", "temperature_c": "'31.9", "humidity_pct": 53.9, "status": "calibrating"}
+{"ts": "2024-04-11T22:22:58", "device_id": "cellier", "temperature_c": 18.7, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-04-11T23:29:11", "device_id": "réserve", "temperature_c": 8.4, "humidity_pct": 41.9, "status": "calibrating"}
+{"ts": "2024-04-12T00:36:24", "device_id": "atelier", "temperature_c": 33.0, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-04-12T01:43:37", "device_id": "véranda", "temperature_c": 26.3, "humidity_pct": 61.4, "status": "ok"}
+{"ts": "2024-04-12T02:50:50", "device_id": "réserve", "temperature_c": 10.3, "humidity_pct": 35.6, "status": "calibrating"}
+{"ts": "2024-03-05T18:18:42", "device_id": "véranda", "temperature_c": 22.9, "humidity_pct": 66.1, "status": "offline"}
+{"ts": "2024-04-12T04:04:16", "device_id": "grenier", "temperature_c": 22.0, "humidity_pct": 68.6, "status": "(needs service)"}
+{"ts": "2024-04-12T05:11:29", "device_id": "cellier", "temperature_c": 31.8, "humidity_pct": 58.9, "status": "ok"}
+{"ts": "2024-04-12T06:18:42", "device_id": "atelier", "temperature_c": 19.1, "humidity_pct": 73.7, "status": "calibrating"}
+{"ts": "2024-04-12T07:25:55", "device_id": "café", "temperature_c": 29.5, "humidity_pct": 51.2, "status": "offline"}
+{"ts": "2024-04-12T08:32:08", "device_id": "atelier", "temperature_c": 15.8, "humidity_pct": 34.2, "status": "offline"}
+{"ts": "2024-04-12T09:39:21", "device_id": "véranda", "temperature_c": 14.5, "humidity_pct": 48.0, "status": "(needs service)"}
+{"ts": "2024-04-12T10:46:34", "device_id": "cuisine", "temperature_c": 29.3, "humidity_pct": 49.0, "status": null}
+{"ts": "2024-04-12T11:53:47", "device_id": "cuisine", "temperature_c": 28.2, "humidity_pct": 40.7, "status": "calibrating"}
+{"ts": "2024-04-12T12:00:00", "device_id": "salon", "temperature_c": 25.7, "humidity_pct": 56.0, "status": "ok"}
+{"ts": "2024-04-12T13:07:13", "device_id": "cellier", "temperature_c": " 17.6 ", "humidity_pct": 33.8, "status": "offline"}
+{"ts": "2024-04-12T14:14:26", "device_id": "café", "temperature_c": 12.8, "humidity_pct": 30.2, "status": "ok"}
+{"ts": "2024-04-12T15:21:39", "device_id": "salon", "temperature_c": 9.2, "humidity_pct": 74.8, "status": "ok"}
+{"ts": "2024-04-12T16:28:52", "device_id": "véranda", "temperature_c": 19.2, "humidity_pct": 67.9, "status": "offline"}
+{"ts": "2024-04-12T17:35:05", "device_id": "véranda", "temperature_c": 31.7, "humidity_pct": 60.2, "status": "N/A"}
+{"ts": "2024-04-12T18:42:18", "device_id": "atelier", "temperature_c": "30,1", "humidity_pct": 68.5, "status": "needs service"}
+{"ts": "2024-04-12T19:49:31", "device_id": "café", "temperature_c": 13.3, "humidity_pct": 35.2, "status": "offline"}
+{"ts": "2024-04-12T20:56:44", "device_id": "grenier", "temperature_c": 26.7, "humidity_pct": 66.1, "status": null}
+{"ts": "2024-04-12T21:03:57", "device_id": "café", "temperature_c": 31.9, "humidity_pct": 55.0, "status": "calibrating"}
+{"ts": "2024-04-12T22:10:10", "device_id": "véranda", "temperature_c": 32.1, "humidity_pct": 59.0, "status": "ok"}
+{"ts": "2024-04-12T23:17:23", "device_id": "cellier", "temperature_c": 21.1, "humidity_pct": 44.5, "status": "offline"}
+{"ts": "2024-04-13T00:24:36", "device_id": "cuisine", "temperature_c": 11.8, "humidity_pct": 52.0, "status": "offline"}
+{"ts": "2024-04-13T01:31:49", "device_id": "salon", "temperature_c": 28.9, "humidity_pct": 50.9, "status": "needs service"}
+{"ts": "2024-04-13T02:38:02", "device_id": "atelier", "temperature_c": 9.8, "humidity_pct": 69.3, "status": "offline"}
+{"ts": "2024-04-13T03:45:15", "device_id": "véranda", "temperature_c": 18.5, "humidity_pct": 49.9, "status": "calibrating"}
+{"ts": "2024-04-13T04:52:28", "device_id": "cuisine", "temperature_c": 11.3, "humidity_pct": 64.9, "status": "ok"}
+{"ts": "2024-04-13T05:59:41", "device_id": "grenier", "temperature_c": 25.2, "humidity_pct": 38.4, "status": "calibrating"}
+{"ts": "2024-04-13T06:06:54", "device_id": "rÃ©serve", "temperature_c": 8.7, "humidity_pct": 38.2, "status": "calibrating"}
+{"ts": "2024-04-13T07:13:07", "device_id": "grenier", "temperature_c": 18.4, "humidity_pct": 63.5, "status": "calibrating"}
+{"ts": "2024-04-13T08:20:20", "device_id": "cuisine", "temperature_c": 22.0, "humidity_pct": 56.7, "status": "offline"}
+{"ts": "2024-04-13T09:27:33", "device_id": "réserve", "temperature_c": 11.2, "humidity_pct": 33.2, "status": "offline"}
+{"ts": "2024-04-13T10:34:46", "device_id": "café", "temperature_c": 19.1, "humidity_pct": 41.6, "status": "offline"}
+{"ts": "2024-04-13T11:41:59", "device_id": "salon", "temperature_c": 31.9, "humidity_pct": 51.8, "status": "needs service"}
+{"ts": "2024-04-13T12:48:12", "device_id": "véranda", "temperature_c": 30.2, "humidity_pct": 70.9, "status": "ok"}
+{"ts": "2024-04-13T13:55:25", "device_id": "café", "temperature_c": 11.9, "humidity_pct": 28.6, "status": "ok"}
+{"ts": "2024-04-13T14:02:38", "device_id": "réserve", "temperature_c": 17.4, "humidity_pct": 69.9, "status": "needs service"}
+{"ts": "2024-04-13T15:09:51", "device_id": "salon", "temperature_c": 15.4, "humidity_pct": 71.8, "status": "ok"}
+{"ts": "2024-04-13T16:16:04", "device_id": "véranda", "temperature_c": 13.3, "humidity_pct": 61.8, "status": "ok"}
+{"ts": "2024-04-13T17:23:17", "device_id": "café", "temperature_c": 15.0, "humidity_pct": 43.7, "status": "calibrating"}
+{"ts": "2024-04-13T18:30:30", "device_id": "café", "temperature_c": 33.5, "humidity_pct": 66.7, "status": "calibrating"}
+{"ts": "2024-04-13T19:37:43", "device_id": "véranda", "temperature_c": 13.8, "humidity_pct": 53.0, "status": "needs service"}
+{"ts": "2024-04-13T20:44:56", "device_id": "atelier", "temperature_c": 21.0, "humidity_pct": 60.9, "status": null}
+{"ts": "2024-04-13T21:51:09", "device_id": "réserve", "temperature_c": 18.0, "humidity_pct": 44.2, "status": "ok"}
+{"ts": "2024-04-13T22:58:22", "device_id": "cellier", "temperature_c": 29.2, "humidity_pct": 57.9, "status": "calibrating"}
+{"ts": "2024-04-13 23:05:35", "device_id": "salon", "temperature_c": 18.7, "humidity_pct": 31.8, "status": "calibrating"}
+{"ts": "2024-04-14T00:12:48", "device_id": "cuisine", "temperature_c": 29.0, "humidity_pct": 72.4, "status": "offline"}
+{"ts": "2024-04-14T01:19:01", "device_id": "atelier", "temperature_c": 22.0, "humidity_pct": "null", "status": "needs service"}
+{"ts": "2024-04-14T02:26:14", "device_id": "cuisine", "temperature_c": 22.0, "humidity_pct": 73.6, "status": "ok"}
+{"ts": "2024-04-14T03:33:27", "device_id": "café", "temperature_c": 11.5, "humidity_pct": 41.7, "status": "needs  service"}
+{"ts": "2024-04-14T04:40:40", "device_id": "cuisine", "temperature_c": 14.7, "humidity_pct": 71.9, "status": "needs service"}
+{"ts": "2024-04-14T05:47:53", "device_id": "salon", "temperature_c": 26.8, "humidity_pct": 34.4, "status": "calibrating"}
+{"ts": "2024-03-10T06:54:06", "device_id": "véranda", "temperature_c": 15.3, "humidity_pct": 50.1, "status": "needs service"}
+{"ts": "2024-04-14T07:01:19", "device_id": "cafÃ©", "temperature_c": 27.5, "humidity_pct": 47.2, "status": "oafline"}
+{"ts": "2024-04-14T08:08:32", "device_id": "atelier", "temperature_c": 24.5, "humidity_pct": 30.8, "status": "needs service"}
+{"ts": "2024-04-14T09:15:45", "device_id": "cuisine", "temperature_c": 9.4, "humidity_pct": 59.4, "status": "needs service"}
+{"ts": "2024-04-14T10:22:58", "device_id": "grenier", "temperature_c": 12.4, "humidity_pct": 29.5, "status": "ok"}
+{"ts": "2024-04-14T11:29:11", "device_id": "salon", "temperature_c": 13.6, "humidity_pct": 44.0, "status": "needs service"}
+{"ts": "2024-04-14T12:36:24", "device_id": "réserve", "temperature_c": 21.7, "humidity_pct": 65.6, "status": "needs service"}
+{"ts": "2024-04-14T13:43:37", "device_id": "cafÃ©", "temperature_c": 28.3, "humidity_pct": 55.6, "status": "ok"}
+{"ts": "2024-04-14T14:50:50", "device_id": "grenier", "temperature_c": 25.2, "humidity_pct": 36.9, "status": "offline"}
+{"ts": "2024-04-14T15:57:03", "device_id": "café", "temperature_c": 16.2, "humidity_pct": 37.7, "status": "needs service"}
+{"ts": "2024-04-14T16:04:16", "device_id": "grenier", "temperature_c": 33.8, "humidity_pct": 61.5, "status": "calibrating"}
+{"ts": "2024-04-14T17:11:29", "device_id": "réserve", "temperature_c": 11.4, "humidity_pct": 60.7, "status": "ok"}
+{"ts": "2024-03-17T02:02:38", "device_id": "cellier", "temperature_c": 8.6, "humidity_pct": 72.8, "status": "ok"}
+{"ts": "2024-04-14T19:25:55", "device_id": "atelier", "temperature_c": 14.5, "humidity_pct": 72.6, "status": "calibrating"}
+{"ts": "2024-04-14T20:32:08", "device_id": "salon", "temperature_c": 33.6, "humidity_pct": 44.7, "status": "calibrating"}
+{"ts": "2024-04-14T21:39:21", "device_id": "grenier", "temperature_c": 17.2, "humidity_pct": 46.6, "status": "ok"}
+{"ts": "2024-04-14T22:46:34", "device_id": "réserve", "temperature_c": 20.4, "humidity_pct": 53.4, "status": "offline"}
+{"ts": "2024-04-14T23:53:47", "device_id": "cellier", "temperature_c": 23.4, "humidity_pct": "N/A", "status": "offline"}
+{"ts": "2024-04-15 00:00:00", "device_id": "CELLIER", "temperature_c": 12.0, "humidity_pct": 70.4, "status": "calibrating"}
+{"ts": "2024-04-15T01:07:13", "device_id": "cuisine", "temperature_c": 128.2, "humidity_pct": 37.8, "status": "needs service"}
+{"ts": "2024-04-15T02:14:26", "device_id": "réserve", "temperature_c": 23.9, "humidity_pct": 70.1, "status": "calibrating"}
+{"ts": " 2024-04-15T03:21:39 ", "device_id": "réserve", "temperature_c": 25.0, "humidity_pct": 52.3, "status": "needs service"}
+{"ts": "2024-04-15T04:28:52", "device_id": "réserve", "temperature_c": 31.5, "humidity_pct": 40.5, "status": "offline"}
+{"ts": "2024-04-15T05:35:05", "device_id": "véranda", "temperature_c": 19.0, "humidity_pct": 40.8, "status": "calibrating"}
+{"ts": "2024-04-15T06:42:18", "device_id": "salon", "temperature_c": "'13.5", "humidity_pct": 41.5, "status": "calibrating"}
+{"ts": "2024-04-15T07:49:31", "device_id": "café", "temperature_c": 18.0, "humidity_pct": 42.7, "status": "needs service"}
+{"ts": "2024-04-15T08:56:44", "device_id": "cellier", "temperature_c": 18.5, "humidity_pct": 61.4, "status": "needs service"}
+{"ts": "2024-04-15T09:03:57", "device_id": "réserve", "temperature_c": 27.6, "humidity_pct": 32.6, "status": "calibrating"}
+{"ts": "2024-04-15T10:10:10", "device_id": "réserve", "temperature_c": 20.2, "humidity_pct": 71.5, "status": "  ok "}
+{"ts": "2024-04-15 11:17:23", "device_id": "cuisine", "temperature_c": 22.0, "humidity_pct": 48.3, "status": "offline"}
+{"ts": "2024-04-15 12:24:36", "device_id": "grenier", "temperature_c": 19.0, "humidity_pct": 64.0, "status": " offline "}
+{"ts": "2024-04-15T13:31:49", "device_id": "grenier", "temperature_c": 25.5, "humidity_pct": 60.3, "status": "offline"}
+{"ts": "2024-04-15T14:38:02", "device_id": "atelier", "temperature_c": 31.3, "humidity_pct": 31.3, "status": "needs  service"}
+{"ts": "2024-04-15T15:45:15", "device_id": "salon", "temperature_c": 22.7, "humidity_pct": 44.9, "status": "calibrating"}
+{"ts": "2024-03-02T22:22:58", "device_id": "cellier", "temperature_c": 12.5, "humidity_pct": 42.3, "status": "offline"}
+{"ts": "2024-04-15T17:59:41", "device_id": "grenier", "temperature_c": 10.6, "humidity_pct": 68.8, "status": "offline"}
+{"ts": "2024-03-08T06:18:42", "device_id": "atelier", "temperature_c": 24.9, "humidity_pct": 29.5, "status": "needs service"}
+{"ts": "2024-04-15T19:13:07", "device_id": "réserve", "temperature_c": 30.8, "humidity_pct": 39.0, "status": "calibrating"}
+{"ts": "2024-04-15T20:20:20", "device_id": "grenier", "temperature_c": 21.7, "humidity_pct": 67.8, "status": "needs service"}
+{"ts": "2024-04-15T21:27:33", "device_id": "salon", "temperature_c": 32.4, "humidity_pct": 69.3, "status": "ok"}
+{"ts": "2024-04-15T22:34:46", "device_id": "atelier", "temperature_c": 25.7, "humidity_pct": 34.9, "status": "offline"}
+{"ts": "2024-04-15T23:41:59", "device_id": "atelier", "temperature_c": 32.6, "humidity_pct": null, "status": "needs service"}
+{"ts": "2024-04-16T00:48:12", "device_id": "réserve", "temperature_c": 22.4, "humidity_pct": 43.8, "status": "needs service"}
+{"ts": "2024-04-16T01:55:25", "device_id": "atelier", "temperature_c": 18.6, "humidity_pct": 58.8, "status": "calibrating"}
+{"ts": "2024-04-16 02:02:38", "device_id": "atelier", "temperature_c": 13.9, "humidity_pct": 43.4, "status": "calibrating"}
+{"ts": "2024-04-16T03:09:51", "device_id": "atelier", "temperature_c": 9.7, "humidity_pct": 42.0, "status": "ok"}
+{"ts": "2024-04-16T04:16:04", "device_id": "salon", "temperature_c": 18.9, "humidity_pct": 52.5, "status": "offline"}
+{"ts": "2024-04-16T05:23:17", "device_id": "café", "temperature_c": 29.7, "humidity_pct": 38.5, "status": "offline"}
+{"ts": "2024-04-16T06:30:30", "device_id": "cellier", "temperature_c": 15.6, "humidity_pct": 33.9, "status": "needs service"}
+{"ts": "2024-04-16T07:37:43", "device_id": "atelier", "temperature_c": 33.3, "humidity_pct": 48.8, "status": "ok"}
+{"ts": "2024-04-16T08:44:56", "device_id": "salon", "temperature_c": 24.3, "humidity_pct": 65.2, "status": "ok"}
+{"ts": "2024-04-16T09:51:09", "device_id": "réserve", "temperature_c": 30.0, "humidity_pct": 63.1, "status": "offline"}
+{"ts": "2024-04-16T10:58:22", "device_id": "rÃ©serve", "temperature_c": 8.8, "humidity_pct": 64.5, "status": "ok"}
+{"ts": "2024-04-16T11:05:35", "device_id": "café", "temperature_c": 14.2, "humidity_pct": 37.0, "status": " calibrating "}
+{"ts": "2024-04-16T12:12:48", "device_id": "cellier", "temperature_c": 30.1, "humidity_pct": 46.2, "status": "offline"}
+{"ts": "2024-04-16T13:19:01", "device_id": "cuisine", "temperature_c": 20.0, "humidity_pct": 63.9, "status": "calibrating"}
+{"ts": "2024-04-16T14:26:14", "device_id": "cuisine", "temperature_c": 18.3, "humidity_pct": 53.3, "status": "calibrating"}
+{"ts": "2024-04-16T15:33:27", "device_id": "véranda", "temperature_c": 11.3, "humidity_pct": 66.2, "status": "needs service"}
+{"ts": "2024-04-16T16:40:40", "device_id": "grenier", "temperature_c": 32.6, "humidity_pct": 32.0, "status": "calibrating"}
+{"ts": "2024-04-16T17:47:53", "device_id": "réserve", "temperature_c": 33.6, "humidity_pct": "NaN", "status": "ok"}
+{"ts": "2024-04-16T18:54:06", "device_id": "cuisine", "temperature_c": 15.3, "humidity_pct": 75.8, "status": "calibrating"}
+{"ts": "2024-04-16T19:01:19", "device_id": "cellier", "temperature_c": 24.0, "humidity_pct": 57.8, "status": "offline"}
+{"ts": "2024-04-16T20:08:32", "device_id": "véranda", "temperature_c": "17,0", "humidity_pct": 64.2, "status": "offline"}
+{"ts": "2024-04-16T21:15:45", "device_id": "grenier", "temperature_c": "23,1", "humidity_pct": 59.8, "status": "needs service"}
+{"ts": "2024-04-16T22:22:58", "device_id": "atelier", "temperature_c": 30.4, "humidity_pct": 42.7, "status": "ok"}
+{"ts": "2024-04-16T23:29:11", "device_id": "grenier", "temperature_c": 33.5, "humidity_pct": 59.0, "status": "offline"}
+{"ts": "2024-04-17T00:36:24", "device_id": "salon", "temperature_c": 19.2, "humidity_pct": 32.7, "status": "needs service"}
+{"ts": "2024-04-17T01:43:37", "device_id": "grenier", "temperature_c": 27.6, "humidity_pct": 48.9, "status": "needs service"}
+{"ts": "2024-04-17T02:50:50", "device_id": "véranda", "temperature_c": 14.2, "humidity_pct": 43.8, "status": "NA"}
+{"ts": "2024-04-17T03:57:03", "device_id": "grenier", "temperature_c": 32.3, "humidity_pct": 55.9, "status": "NaN"}
+{"ts": "2024-04-17T04:04:16", "device_id": "cellier", "temperature_c": 9.6, "humidity_pct": 44.1, "status": "needs service"}
+{"ts": "2024-04-17T05:11:29", "device_id": "cuisine", "temperature_c": "'8.5", "humidity_pct": 53.5, "status": "calibrating"}
+{"ts": "2024-04-17T06:18:42", "device_id": "cuisine", "temperature_c": "'13.1", "humidity_pct": 36.3, "status": "needs service"}
+{"ts": "2024-04-17T07:25:55", "device_id": "réaerve", "temperature_c": 15.1, "humidity_pct": 41.6, "status": "needs service"}
+{"ts": "2024-04-17T08:32:08", "device_id": "véranda", "temperature_c": 8.6, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-04-17T09:39:21", "device_id": "réserve", "temperature_c": 11.3, "humidity_pct": "61,0", "status": "calibrating"}
+{"ts": "2024-04-17T10:46:34", "device_id": "cellier", "temperature_c": 26.9, "humidity_pct": 35.0, "status": "ok"}
+{"ts": "2024-04-17T11:53:47", "device_id": "cafÃ©", "temperature_c": 24.0, "humidity_pct": 56.1, "status": "ok"}
+{"ts": "2024-04-17T12:00:00", "device_id": "café", "temperature_c": 28.1, "humidity_pct": 64.6, "status": "calibrating"}
+{"ts": "2024-04-17T13:07:13", "device_id": "salon", "temperature_c": 29.7, "humidity_pct": 38.7, "status": "offline"}
+{"ts": "2024-04-17T14:14:26", "device_id": "véranda", "temperature_c": 22.7, "humidity_pct": 70.6, "status": "offline"}
+{"ts": "2024-04-17T15:21:39", "device_id": "café", "temperature_c": 29.7, "humidity_pct": 75.3, "status": "(needs service)"}
+{"ts": "2024-04-17T16:28:52", "device_id": "cellier", "temperature_c": 28.9, "humidity_pct": 51.3, "status": "calibrating"}
+{"ts": "2024-04-17T17:35:05", "device_id": "cellier", "temperature_c": 26.7, "humidity_pct": 50.3, "status": "ok"}
+{"ts": "2024-04-17T18:42:18", "device_id": "cafÃ©", "temperature_c": 26.4, "humidity_pct": 66.3, "status": "needs service"}
+{"ts": "2024-04-17T19:49:31", "device_id": "salon", "temperature_c": 31.5, "humidity_pct": 48.0, "status": "needs service"}
+{"ts": "2024-04-17T20:56:44", "device_id": "salon", "temperature_c": 20.4, "humidity_pct": 32.0, "status": "needs service"}
+{"ts": "2024-03-24T02:38:02", "device_id": "café", "temperature_c": 9.1, "humidity_pct": 50.5, "status": "offline"}
+{"ts": "2024-04-17T22:10:10", "device_id": "cafÃ©", "temperature_c": 8.7, "humidity_pct": null, "status": "calibrating"}
+{"ts": "2024-04-17T23:17:23", "device_id": "café", "temperature_c": 24.6, "humidity_pct": "'71.7", "status": "ok"}
+{"ts": "2024-04-18T00:24:36", "device_id": "cellier", "temperature_c": 13.7, "humidity_pct": 61.5, "status": "calibrating"}
+{"ts": "2024-04-18T01:31:49", "device_id": "cellier", "temperature_c": 30.9, "humidity_pct": 49.7, "status": "ok"}
+{"ts": "2024-04-18T02:38:02", "device_id": "cuisine", "temperature_c": 24.2, "humidity_pct": 30.6, "status": "ok"}
+{"ts": "2024-04-18T03:45:15", "device_id": "cellier", "temperature_c": 10.9, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-04-18T04:52:28", "device_id": "café", "temperature_c": 8.4, "humidity_pct": 28.8, "status": "calibrating"}
+{"ts": "2024-04-18T05:59:41", "device_id": "café", "temperature_c": 26.1, "humidity_pct": 54.4, "status": "needs service"}
+{"ts": "2024-04-18T06:06:54", "device_id": "réserve", "temperature_c": 16.7, "humidity_pct": null, "status": "ok"}
+{"ts": "2024-04-18T07:13:07", "device_id": "café", "temperature_c": 30.9, "humidity_pct": 57.2, "status": "offline"}
+{"ts": "2024-03-12T02:02:38", "device_id": "atelier", "temperature_c": 8.5, "humidity_pct": 43.4, "status": "needs service"}
+{"ts": "2024-04-18T09:27:33", "device_id": "atelier", "temperature_c": 28.1, "humidity_pct": 48.0, "status": "calibrating"}
+{"ts": "2024-04-18T10:34:46", "device_id": "cellier", "temperature_c": 12.0, "humidity_pct": 36.5, "status": "needs service"}
+{"ts": "2024-04-18T11:41:59", "device_id": "cuisine", "temperature_c": 14.4, "humidity_pct": 34.4, "status": "offline"}
+{"ts": "2024-04-18T12:48:12", "device_id": "cellier", "temperature_c": 14.7, "humidity_pct": "'61.0", "status": "calibrating"}
+{"ts": "2024-04-18T13:55:25", "device_id": "atelier", "temperature_c": "  10.5 ", "humidity_pct": 36.3, "status": "needs service"}
+{"ts": "2024-04-18T14:02:38", "device_id": "café", "temperature_c": "'17.7", "humidity_pct": 53.1, "status": "needs service"}
+{"ts": "2024-04-18T15:09:51", "device_id": "salon", "temperature_c": 12.9, "humidity_pct": 41.4, "status": "ok"}
+{"ts": "2024-04-18T16:16:04", "device_id": "(véranda)", "temperature_c": 27.7, "humidity_pct": 74.6, "status": "needs service"}
+{"ts": "2024-04-18T17:23:17", "device_id": "café", "temperature_c": 12.8, "humidity_pct": 50.2, "status": "calibrating"}
+{"ts": "2024-04-18T18:30:30", "device_id": "grenier", "temperature_c": 18.1, "humidity_pct": 60.5, "status": "offline"}
+{"ts": "2024-04-18T19:37:43", "device_id": "réserve", "temperature_c": 20.7, "humidity_pct": 63.3, "status": "ok"}
+{"ts": "2024-04-18T20:44:56", "device_id": "cuisine", "temperature_c": 16.7, "humidity_pct": 53.9, "status": "needs service"}
+{"ts": "2024-04-18T21:51:09", "device_id": "salon", "temperature_c": 27.4, "humidity_pct": 67.7, "status": "offline"}
+{"ts": "2024-04-18T22:58:22", "device_id": "cafÃ©", "temperature_c": 9.7, "humidity_pct": 64.7, "status": "needs service"}
+{"ts": "2024-04-18T23:05:35", "device_id": "grenier", "temperature_c": 16.6, "humidity_pct": "74,3", "status": "calibrating"}
+{"ts": "2024-04-19T00:12:48", "device_id": "véranda", "temperature_c": 29.7, "humidity_pct": 65.2, "status": "ok"}
+{"ts": "2024-04-19T01:19:01", "device_id": "cuisine", "temperature_c": 11.4, "humidity_pct": 31.8, "status": "ok"}
+{"ts": "2024-04-19T02:26:14", "device_id": "café", "temperature_c": 30.4, "humidity_pct": 50.9, "status": "ok"}
+{"ts": "2024-04-19T03:33:27", "device_id": "café", "temperature_c": 28.1, "humidity_pct": 31.4, "status": "needs service"}
+{"ts": "2024-04-19T04:40:40", "device_id": "cuisine", "temperature_c": 18.8, "humidity_pct": 46.8, "status": "offline"}
+{"ts": "2024-04-19T05:47:53", "device_id": "cuisine", "temperature_c": 33.1, "humidity_pct": 53.0, "status": "ok"}
+{"ts": "2024-04-19T06:54:06", "device_id": "véranda", "temperature_c": 23.1, "humidity_pct": 30.7, "status": "needs service"}
+{"ts": "2024-04-19T07:01:19", "device_id": "cafÃ©", "temperature_c": 10.1, "humidity_pct": 32.4, "status": "offline"}
+{"ts": " 2024-04-19T08:08:32 ", "device_id": "atelier", "temperature_c": 31.2, "humidity_pct": 32.4, "status": "(needs service)"}
+{"ts": "2024-04-19T09:15:45", "device_id": "cuisine", "temperature_c": 24.3, "humidity_pct": 47.2, "status": null}
+{"ts": "2024-04-19T10:22:58", "device_id": "vÃ©randa", "temperature_c": 22.3, "humidity_pct": 50.0, "status": "calibrating"}
+{"ts": "2024-04-19T11:29:11", "device_id": "véranda", "temperature_c": 32.0, "humidity_pct": 281.1, "status": "needs service"}
+{"ts": "2024-04-19T12:36:24", "device_id": "véranda", "temperature_c": 20.1, "humidity_pct": 56.8, "status": "calibrating"}
+{"ts": "2024-04-19T13:43:37", "device_id": "véranda", "temperature_c": 11.7, "humidity_pct": 32.5, "status": "needs service"}
+{"ts": "2024-04-19T14:50:50", "device_id": "grenier", "temperature_c": 20.4, "humidity_pct": 44.8, "status": "calibrating"}
+{"ts": "2024-04-19T15:57:03", "device_id": "grenier", "temperature_c": 23.8, "humidity_pct": 46.4, "status": "calibrating"}
+{"ts": "2024-04-19T16:04:16", "device_id": "réserve", "temperature_c": 30.4, "humidity_pct": 63.4, "status": null}
+{"ts": "2024-04-19T17:11:29", "device_id": "atelier", "temperature_c": "19,7", "humidity_pct": 71.0, "status": "needs service"}
+{"ts": "2024-04-19T18:18:42", "device_id": "cuisine", "temperature_c": 22.7, "humidity_pct": null, "status": "offline"}
+{"ts": "2024-04-19T19:25:55", "device_id": "salon", "temperature_c": 14.7, "humidity_pct": 63.2, "status": "ok"}
+{"ts": "2024-04-19 20:32:08", "device_id": "salon", "temperature_c": 30.0, "humidity_pct": 62.4, "status": null}
+{"ts": "2024-04-19T21:39:21", "device_id": "grenier", "temperature_c": 17.4, "humidity_pct": 41.3, "status": "calibrating"}
+{"ts": "2024-04-19T22:46:34", "device_id": "salon", "temperature_c": 23.7, "humidity_pct": "'47.9", "status": "calibrating"}
+{"ts": "2024-04-19T23:53:47", "device_id": "atelier", "temperature_c": 12.6, "humidity_pct": 40.0, "status": "offline"}

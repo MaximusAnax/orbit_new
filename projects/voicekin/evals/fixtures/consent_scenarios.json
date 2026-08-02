@@ -1,0 +1,5203 @@
+[
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_authorized",
+    "keys": [
+     "context",
+     "enrollment_fingerprint",
+     "scope"
+    ],
+    "match": {
+     "context": "announcement"
+    }
+   },
+   {
+    "event": "utterance_rendered",
+    "keys": [
+     "duration_s",
+     "output_sha256",
+     "seed",
+     "synth_id"
+    ],
+    "match": {
+     "seed": 7,
+     "synth_id": "stub-v1"
+    }
+   }
+  ],
+  "id": 1,
+  "name": "grant then synthesize -> authorized",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "authorized"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "no_consent"
+    }
+   }
+  ],
+  "id": 2,
+  "name": "no consent record -> no_consent",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "no_consent"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "no_consent"
+    }
+   }
+  ],
+  "id": 3,
+  "name": "draft only, never granted -> no_consent",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "no_consent"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_rejected",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "reason",
+     "similarity",
+     "threshold"
+    ],
+    "match": {
+     "reason": "speaker_mismatch"
+    }
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "consent_rejected"
+    }
+   }
+  ],
+  "id": 4,
+  "name": "rejected consent -> consent_rejected",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "reject_reason": "speaker_mismatch",
+     "status": "rejected"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03-sib-joint/consent/0"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "consent_rejected"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ],
+    "match": {
+     "reason": "changed my mind"
+    }
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "consent_revoked"
+    }
+   }
+  ],
+  "id": 5,
+  "name": "grant, revoke, synthesize -> consent_revoked",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "status": "revoked"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "revoke",
+    "profile": "partner",
+    "reason": "changed my mind"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "consent_revoked"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ],
+    "match": {
+     "reason": "first"
+    }
+   }
+  ],
+  "id": 6,
+  "name": "revoking twice is a no-op with one audit record",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "status": "revoked"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "revoke",
+    "profile": "partner",
+    "reason": "first"
+   },
+   {
+    "expect": {
+     "noop": true,
+     "status": "revoked"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "revoke",
+    "profile": "partner",
+    "reason": "second"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_authorized",
+    "keys": [
+     "context",
+     "enrollment_fingerprint",
+     "scope"
+    ]
+   },
+   {
+    "event": "utterance_rendered",
+    "keys": [
+     "duration_s",
+     "output_sha256",
+     "seed",
+     "synth_id"
+    ]
+   }
+  ],
+  "id": 7,
+  "name": "unexpired consent -> authorized",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": "2027-06-30T00:00:00Z",
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "authorized"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "consent_expired"
+    }
+   }
+  ],
+  "id": 8,
+  "name": "now == expires_at -> consent_expired (boundary refuses)",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": "2026-07-01T10:30:00Z",
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "consent_expired"
+    },
+    "now": "2026-07-01T10:30:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "consent_expired"
+    }
+   }
+  ],
+  "id": 9,
+  "name": "now past expiry -> consent_expired",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": "2026-07-01T10:30:00Z",
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "consent_expired"
+    },
+    "now": "2026-07-01T10:45:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "enrollment_changed"
+    }
+   }
+  ],
+  "id": 10,
+  "name": "grant, add sample -> enrollment_changed",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "accepted": 1,
+     "fingerprint_changed": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/probe/0"
+    ]
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "enrollment_changed"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "sample_removed",
+    "keys": [
+     "enrollment_fingerprint",
+     "sample_sha256"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "enrollment_changed"
+    }
+   }
+  ],
+  "id": 11,
+  "name": "grant, remove sample -> enrollment_changed",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 4,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2",
+     "S03/probe/0"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "enrolled": true,
+     "fingerprint_changed": true
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "remove_sample",
+    "profile": "partner",
+    "sample_index": 3
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "enrollment_changed"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "enrollment_changed"
+    }
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_authorized",
+    "keys": [
+     "context",
+     "enrollment_fingerprint",
+     "scope"
+    ]
+   },
+   {
+    "event": "utterance_rendered",
+    "keys": [
+     "duration_s",
+     "output_sha256",
+     "seed",
+     "synth_id"
+    ]
+   }
+  ],
+  "id": 12,
+  "name": "re-grant after enrollment change -> authorized",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "accepted": 1,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/probe/0"
+    ]
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "enrollment_changed"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 90210,
+    "now": "2026-07-01T10:07:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:08:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/1"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "authorized"
+    },
+    "now": "2026-07-01T10:09:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "context": "doorbell",
+     "reason": "scope_mismatch"
+    }
+   }
+  ],
+  "id": 13,
+  "name": "context outside scope -> scope_mismatch",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "context": "doorbell",
+    "expect": {
+     "decision": "refused",
+     "reason": "scope_mismatch"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_authorized",
+    "keys": [
+     "context",
+     "enrollment_fingerprint",
+     "scope"
+    ],
+    "match": {
+     "context": "reminder"
+    }
+   },
+   {
+    "event": "utterance_rendered",
+    "keys": [
+     "duration_s",
+     "output_sha256",
+     "seed",
+     "synth_id"
+    ]
+   }
+  ],
+  "id": 14,
+  "name": "context inside scope -> authorized",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "context": "reminder",
+    "expect": {
+     "decision": "authorized"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "profile_disabled",
+    "keys": []
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "profile_disabled"
+    }
+   }
+  ],
+  "id": 15,
+  "name": "disabled profile with valid consent -> profile_disabled",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "enabled": false,
+    "now": "2026-07-01T10:05:00Z",
+    "op": "set_enabled",
+    "profile": "partner"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "profile_disabled"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_authorized",
+    "keys": [
+     "context",
+     "enrollment_fingerprint",
+     "scope"
+    ]
+   },
+   {
+    "event": "utterance_rendered",
+    "keys": [
+     "duration_s",
+     "output_sha256",
+     "seed",
+     "synth_id"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ],
+    "match": {
+     "reason": "profile purged"
+    }
+   },
+   {
+    "event": "profile_purged",
+    "keys": [
+     "delivered_deleted",
+     "delivered_failed",
+     "delivered_missing",
+     "enrollment_fingerprint",
+     "files_deleted",
+     "files_failed",
+     "files_missing"
+    ],
+    "match": {
+     "delivered_deleted": 0,
+     "files_deleted": 5
+    }
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "profile_purged"
+    }
+   }
+  ],
+  "id": 16,
+  "name": "purge then synthesize -> profile_purged; files gone, hashes kept",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "authorized"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "save_as": "u1",
+    "seed": 7,
+    "text": "dinner is ready"
+   },
+   {
+    "expect": {
+     "delivered_deleted": 0,
+     "delivered_failed": 0,
+     "delivered_missing": 0,
+     "files_deleted": 5,
+     "files_failed": 0,
+     "files_missing": 0
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "purge",
+    "profile": "partner"
+   },
+   {
+    "op": "check_purged",
+    "profile": "partner"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "profile_purged"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_authorized",
+    "keys": [
+     "context",
+     "enrollment_fingerprint",
+     "scope"
+    ]
+   },
+   {
+    "event": "utterance_rendered",
+    "keys": [
+     "duration_s",
+     "output_sha256",
+     "seed",
+     "synth_id"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ]
+   },
+   {
+    "event": "delivery_refused",
+    "keys": [
+     "output_sha256",
+     "reason",
+     "status",
+     "target_id",
+     "target_kind"
+    ],
+    "match": {
+     "reason": "consent_revoked"
+    }
+   }
+  ],
+  "id": 17,
+  "name": "render, revoke, deliver -> delivery refused consent_revoked",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "kind": "file_sink",
+    "now": "2026-07-01T10:05:00Z",
+    "op": "add_target",
+    "target": "sink"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "authorized"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "save_as": "u1",
+    "seed": 7,
+    "text": "dinner is ready"
+   },
+   {
+    "expect": {
+     "status": "revoked"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "revoke",
+    "profile": "partner",
+    "reason": null
+   },
+   {
+    "expect": {
+     "reason": "consent_revoked",
+     "status": "refused"
+    },
+    "now": "2026-07-01T10:08:00Z",
+    "op": "deliver",
+    "target": "sink",
+    "utterance": "$u1"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_authorized",
+    "keys": [
+     "context",
+     "enrollment_fingerprint",
+     "scope"
+    ]
+   },
+   {
+    "event": "utterance_rendered",
+    "keys": [
+     "duration_s",
+     "output_sha256",
+     "seed",
+     "synth_id"
+    ]
+   },
+   {
+    "event": "delivery_succeeded",
+    "keys": [
+     "output_sha256",
+     "status",
+     "target_id",
+     "target_kind"
+    ],
+    "match": {
+     "target_id": "sink",
+     "target_kind": "file_sink"
+    }
+   }
+  ],
+  "id": 18,
+  "name": "render then deliver -> succeeded, receipt and manifest written",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "kind": "file_sink",
+    "now": "2026-07-01T10:05:00Z",
+    "op": "add_target",
+    "target": "sink"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "authorized"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "save_as": "u1",
+    "seed": 7,
+    "text": "dinner is ready"
+   },
+   {
+    "expect": {
+     "files_exist": true,
+     "status": "succeeded"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "deliver",
+    "save_as": "d1",
+    "target": "sink",
+    "utterance": "$u1"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_rejected",
+    "keys": [
+     "audio_sha256",
+     "reason"
+    ],
+    "match": {
+     "reason": "reused_enrollment_audio"
+    }
+   }
+  ],
+  "id": 19,
+  "name": "consent audio identical to an enrollment sample -> reused_enrollment_audio",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "reject_reason": "reused_enrollment_audio",
+     "score_fields_null": true,
+     "status": "rejected"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/enroll/0"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_rejected",
+    "keys": [
+     "audio_sha256",
+     "reason"
+    ],
+    "match": {
+     "reason": "audio_quality"
+    }
+   }
+  ],
+  "id": 20,
+  "name": "consent audio fails screening -> audio_quality",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "reject_reason": "audio_quality",
+     "score_fields_null": true,
+     "status": "rejected"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S01/support/0"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_rejected",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "reason",
+     "similarity",
+     "threshold"
+    ],
+    "match": {
+     "reason": "speaker_mismatch"
+    }
+   }
+  ],
+  "id": 21,
+  "name": "joint-sibling impostor consent -> speaker_mismatch",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "reject_reason": "speaker_mismatch",
+     "score_fields_null": false,
+     "status": "rejected"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03-sib-joint/consent/0"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "no_enrollment"
+    }
+   }
+  ],
+  "id": 22,
+  "name": "zero-sample profile -> no_enrollment",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "no_enrollment"
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   }
+  ],
+  "id": 23,
+  "name": "second draft while a consent is effective -> error, no row",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "consent_rows": 1,
+     "error": "precondition"
+    },
+    "expires_at": null,
+    "nonce_seed": 777,
+    "now": "2026-07-01T10:05:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "no_consent"
+    }
+   }
+  ],
+  "id": 24,
+  "name": "refusal persisted as an utterance row",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "no_consent"
+    },
+    "now": "2026-07-01T10:03:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "save_as": "u1",
+    "seed": 7,
+    "text": "dinner is ready"
+   },
+   {
+    "expect": {
+     "consent_id": null,
+     "refusal_reason": "no_consent",
+     "status": "refused"
+    },
+    "op": "check_utterance",
+    "utterance": "$u1"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ]
+   },
+   {
+    "event": "profile_disabled",
+    "keys": []
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "profile_disabled"
+    }
+   }
+  ],
+  "id": 25,
+  "name": "precedence: disabled beats revoked",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "status": "revoked"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "revoke",
+    "profile": "partner",
+    "reason": null
+   },
+   {
+    "enabled": false,
+    "now": "2026-07-01T10:06:00Z",
+    "op": "set_enabled",
+    "profile": "partner"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "profile_disabled"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_rejected",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "reason",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "consent_revoked"
+    }
+   }
+  ],
+  "id": 26,
+  "name": "history: older rejected + newer revoked -> consent_revoked",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "reject_reason": "speaker_mismatch",
+     "status": "rejected"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03-sib-joint/consent/0"
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 90210,
+    "now": "2026-07-01T10:05:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "status": "revoked"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "revoke",
+    "profile": "partner",
+    "reason": null
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "consent_revoked"
+    },
+    "now": "2026-07-01T10:08:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "consent_expired"
+    }
+   }
+  ],
+  "id": 27,
+  "name": "history: older revoked + newer expired -> consent_expired",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "status": "revoked"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "revoke",
+    "profile": "partner",
+    "reason": null
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": "2026-07-01T10:30:00Z",
+    "nonce_seed": 90210,
+    "now": "2026-07-01T10:06:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/1"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "consent_expired"
+    },
+    "now": "2026-07-01T10:45:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_rejected",
+    "keys": [
+     "loo_similarity",
+     "reason",
+     "sample_sha256",
+     "theta_enroll"
+    ],
+    "match": {
+     "reason": "incoherent_enrollment"
+    }
+   }
+  ],
+  "id": 28,
+  "name": "enroll 2xS + 1x S's sibling -> incoherent_enrollment, rolled back",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 2,
+     "centroid_unchanged": true,
+     "enrolled": false,
+     "reject_reasons": [
+      "incoherent_enrollment"
+     ],
+     "rejected": 1
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03-sib-f0/probe/0"
+    ]
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_rejected",
+    "keys": [
+     "loo_similarity",
+     "reason",
+     "sample_sha256",
+     "theta_enroll"
+    ],
+    "match": {
+     "reason": "incoherent_enrollment"
+    }
+   }
+  ],
+  "id": 29,
+  "name": "enroll 2xS + 1x unrelated speaker -> incoherent_enrollment",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 2,
+     "centroid_unchanged": true,
+     "enrolled": false,
+     "reject_reasons": [
+      "incoherent_enrollment"
+     ],
+     "rejected": 1
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S05/enroll/0"
+    ]
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "sample_removed",
+    "keys": [
+     "enrollment_fingerprint",
+     "sample_sha256"
+    ]
+   },
+   {
+    "event": "consent_rejected",
+    "keys": [
+     "audio_sha256",
+     "reason"
+    ],
+    "match": {
+     "reason": "not_enrolled"
+    }
+   }
+  ],
+  "id": 30,
+  "name": "draft, drop below the FR-3 minimum, grant -> not_enrolled",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "enrolled": false
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "remove_sample",
+    "profile": "partner",
+    "sample_index": 2
+   },
+   {
+    "expect": {
+     "audio_sha256_null": true,
+     "reject_reason": "not_enrolled",
+     "score_fields_null": true,
+     "status": "rejected"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "consent_expired"
+    }
+   }
+  ],
+  "id": 31,
+  "name": "precedence: expired beats enrollment_changed",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": "2026-07-01T10:30:00Z",
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "accepted": 1,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/probe/0"
+    ]
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "consent_expired"
+    },
+    "now": "2026-07-01T10:45:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ]
+   },
+   {
+    "event": "profile_purged",
+    "keys": [
+     "delivered_deleted",
+     "delivered_failed",
+     "delivered_missing",
+     "enrollment_fingerprint",
+     "files_deleted",
+     "files_failed",
+     "files_missing"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "profile_purged"
+    }
+   }
+  ],
+  "id": 32,
+  "name": "precedence: purged beats revoked",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "status": "revoked"
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "revoke",
+    "profile": "partner",
+    "reason": null
+   },
+   {
+    "expect": {
+     "files_deleted": 4
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "purge",
+    "profile": "partner"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "profile_purged"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "enrollment_changed"
+    }
+   }
+  ],
+  "id": 33,
+  "name": "precedence: enrollment_changed beats scope_mismatch",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "accepted": 1,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/probe/0"
+    ]
+   },
+   {
+    "context": "doorbell",
+    "expect": {
+     "decision": "refused",
+     "reason": "enrollment_changed"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "synthesis_authorized",
+    "keys": [
+     "context",
+     "enrollment_fingerprint",
+     "scope"
+    ]
+   },
+   {
+    "event": "utterance_rendered",
+    "keys": [
+     "duration_s",
+     "output_sha256",
+     "seed",
+     "synth_id"
+    ]
+   },
+   {
+    "event": "delivery_succeeded",
+    "keys": [
+     "output_sha256",
+     "status",
+     "target_id",
+     "target_kind"
+    ]
+   },
+   {
+    "event": "consent_revoked",
+    "keys": [
+     "reason"
+    ],
+    "match": {
+     "reason": "profile purged"
+    }
+   },
+   {
+    "event": "profile_purged",
+    "keys": [
+     "delivered_deleted",
+     "delivered_failed",
+     "delivered_missing",
+     "enrollment_fingerprint",
+     "files_deleted",
+     "files_failed",
+     "files_missing"
+    ],
+    "match": {
+     "delivered_deleted": 2,
+     "files_deleted": 5
+    }
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "profile_purged"
+    }
+   }
+  ],
+  "id": 34,
+  "name": "deliver then purge: delivered copies erased, receipts de-pathed",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "kind": "file_sink",
+    "now": "2026-07-01T10:05:00Z",
+    "op": "add_target",
+    "target": "sink"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "authorized"
+    },
+    "now": "2026-07-01T10:06:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "save_as": "u1",
+    "seed": 7,
+    "text": "dinner is ready"
+   },
+   {
+    "expect": {
+     "files_exist": true,
+     "status": "succeeded"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "deliver",
+    "save_as": "d1",
+    "target": "sink",
+    "utterance": "$u1"
+   },
+   {
+    "expect": {
+     "delivered_deleted": 2,
+     "delivered_failed": 0,
+     "delivered_missing": 0,
+     "files_deleted": 5
+    },
+    "now": "2026-07-01T10:08:00Z",
+    "op": "purge",
+    "profile": "partner"
+   },
+   {
+    "delivery": "$d1",
+    "expect": {
+     "delivered_files_exist": false,
+     "path_gone": true,
+     "path_sha256_present": true
+    },
+    "op": "check_delivery"
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "profile_purged"
+    },
+    "now": "2026-07-01T10:09:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ },
+ {
+  "audit": [
+   {
+    "event": "profile_created",
+    "keys": [
+     "display_name",
+     "relationship"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "sample_added",
+    "keys": [
+     "duration_s",
+     "enrollment_fingerprint",
+     "sample_sha256",
+     "snr_db",
+     "voiced_ratio"
+    ]
+   },
+   {
+    "event": "consent_drafted",
+    "keys": [
+     "expires_at",
+     "nonce",
+     "nonce_seed",
+     "scope",
+     "statement_sha256"
+    ]
+   },
+   {
+    "event": "consent_verified",
+    "keys": [
+     "audio_sha256",
+     "embedder_id",
+     "enrollment_fingerprint",
+     "similarity",
+     "threshold"
+    ]
+   },
+   {
+    "event": "sample_removed",
+    "keys": [
+     "enrollment_fingerprint",
+     "sample_sha256"
+    ]
+   },
+   {
+    "event": "synthesis_refused",
+    "keys": [
+     "context",
+     "reason"
+    ],
+    "match": {
+     "reason": "enrollment_changed"
+    }
+   }
+  ],
+  "id": 35,
+  "name": "enrollment revert does not resurrect the superseded consent",
+  "ops": [
+   {
+    "now": "2026-07-01T10:00:00Z",
+    "op": "init",
+    "operator": "Abdoul"
+   },
+   {
+    "display_name": "Amina",
+    "now": "2026-07-01T10:01:00Z",
+    "op": "create_profile",
+    "profile": "partner",
+    "relationship": "partner"
+   },
+   {
+    "expect": {
+     "accepted": 3,
+     "enrolled": true,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:02:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/enroll/0",
+     "S03/enroll/1",
+     "S03/enroll/2"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 4815162342,
+    "now": "2026-07-01T10:03:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:04:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/0"
+   },
+   {
+    "expect": {
+     "accepted": 1,
+     "rejected": 0
+    },
+    "now": "2026-07-01T10:05:00Z",
+    "op": "enroll",
+    "profile": "partner",
+    "takes": [
+     "S03/probe/0"
+    ]
+   },
+   {
+    "expect": {
+     "status": "draft"
+    },
+    "expires_at": null,
+    "nonce_seed": 90210,
+    "now": "2026-07-01T10:06:00Z",
+    "op": "draft",
+    "profile": "partner",
+    "scope": [
+     "announcement",
+     "reminder"
+    ]
+   },
+   {
+    "expect": {
+     "status": "verified"
+    },
+    "now": "2026-07-01T10:07:00Z",
+    "op": "grant",
+    "profile": "partner",
+    "take": "S03/consent/1"
+   },
+   {
+    "expect": {
+     "enrolled": true,
+     "fingerprint_changed": true
+    },
+    "now": "2026-07-01T10:08:00Z",
+    "op": "remove_sample",
+    "profile": "partner",
+    "sample_index": 3
+   },
+   {
+    "context": "announcement",
+    "expect": {
+     "decision": "refused",
+     "reason": "enrollment_changed"
+    },
+    "now": "2026-07-01T10:09:00Z",
+    "op": "synthesize",
+    "profile": "partner",
+    "seed": 7,
+    "text": "dinner is ready"
+   }
+  ]
+ }
+]

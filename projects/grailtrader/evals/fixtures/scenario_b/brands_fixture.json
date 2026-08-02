@@ -1,0 +1,134 @@
+{
+ "brands": [
+  {
+   "id": "brack-holt",
+   "name": "Brack Holt",
+   "aliases": [
+    "Brack"
+   ],
+   "notes": "Archive outerwear house.",
+   "eras": [
+    {
+     "id": "brack-holt:brack",
+     "designer": "Ines Brack",
+     "label": "Ines Brack era",
+     "start": "1997-01",
+     "end": "2022-03",
+     "notes": ""
+    },
+    {
+     "id": "brack-holt:holt",
+     "designer": "Sam Holt",
+     "label": "Sam Holt era",
+     "start": "2022-04",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "delacroix-cie",
+   "name": "Delacroix & Cie",
+   "aliases": [
+    "Delacroix"
+   ],
+   "notes": "Tailoring house.",
+   "eras": [
+    {
+     "id": "delacroix-cie:delacroix",
+     "designer": "Remi Delacroix",
+     "label": "Remi Delacroix era",
+     "start": "1990-01",
+     "end": "2021-12",
+     "notes": ""
+    },
+    {
+     "id": "delacroix-cie:noor",
+     "designer": "Yara Noor",
+     "label": "Yara Noor era",
+     "start": "2022-01",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "quarry-lane",
+   "name": "Quarry Lane",
+   "aliases": [
+    "Quarry"
+   ],
+   "notes": "Streetwear label, collab-driven.",
+   "eras": [
+    {
+     "id": "quarry-lane:quarry",
+     "designer": "Obi Quarry",
+     "label": "Obi Quarry era",
+     "start": "2012-01",
+     "end": "2023-06",
+     "notes": ""
+    },
+    {
+     "id": "quarry-lane:lane",
+     "designer": "Tess Lane",
+     "label": "Tess Lane era",
+     "start": "2023-07",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "meridian-forge",
+   "name": "Meridian Forge",
+   "aliases": [
+    "Meridian"
+   ],
+   "notes": "Heritage knitwear.",
+   "eras": [
+    {
+     "id": "meridian-forge:meridian",
+     "designer": "Kata Meridian",
+     "label": "Kata Meridian era",
+     "start": "2001-01",
+     "end": "2023-02",
+     "notes": ""
+    },
+    {
+     "id": "meridian-forge:forge",
+     "designer": "Ivo Forge",
+     "label": "Ivo Forge era",
+     "start": "2023-03",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "solveig-mark",
+   "name": "Solveig Mark",
+   "aliases": [
+    "Solveig"
+   ],
+   "notes": "Quiet brand, few events.",
+   "eras": [
+    {
+     "id": "solveig-mark:solveig",
+     "designer": "Ann Solveig",
+     "label": "Ann Solveig era",
+     "start": "2006-01",
+     "end": "2022-09",
+     "notes": ""
+    },
+    {
+     "id": "solveig-mark:mark",
+     "designer": "Petra Mark",
+     "label": "Petra Mark era",
+     "start": "2022-10",
+     "end": null,
+     "notes": ""
+    }
+   ]
+  }
+ ]
+}

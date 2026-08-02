@@ -1,0 +1,2430 @@
+{
+ "class_shares": {
+  "CAT_AUTO": 0.098976,
+  "CAT_TYPO": 0.047782,
+  "DATE": 0.150171,
+  "DUP": 0.047782,
+  "ENC": 0.102389,
+  "MISS": 0.102389,
+  "OUT": 0.047782,
+  "TYPE": 0.180887,
+  "WS": 0.221843
+ },
+ "column_truth": {
+  "amount": {
+   "agree": 0.989167,
+   "decisive": {
+    "COMMA": 13,
+    "DOT": 1187
+   },
+   "mixed_conventions": false,
+   "number_convention": "DOT"
+  },
+  "date": {
+   "date_order": "provable",
+   "format": "%d.%m.%Y",
+   "proof_row": null
+  }
+ },
+ "columns": [
+  "txn_id",
+  "date",
+  "amount",
+  "currency",
+  "merchant",
+  "category",
+  "status",
+  "code"
+ ],
+ "file": "transactions.c2.csv",
+ "golden": "transactions.csv",
+ "kinds": [
+  "integer",
+  "date",
+  "float",
+  "categorical",
+  "categorical",
+  "categorical",
+  "categorical",
+  "integer"
+ ],
+ "n_ops": 293,
+ "nullable_columns": [
+  "code",
+  "category"
+ ],
+ "op_rate": 0.0305,
+ "ops": [
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1171,
+   "source_row": 302
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 704,
+   "source_row": 375
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 710,
+   "source_row": 72
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 877,
+   "source_row": 12
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1140,
+   "source_row": 441
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 621,
+   "source_row": 337
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 842,
+   "source_row": 178
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1076,
+   "source_row": 223
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 751,
+   "source_row": 530
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1199,
+   "source_row": 248
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1104,
+   "source_row": 559
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 650,
+   "source_row": 23
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1096,
+   "source_row": 192
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1090,
+   "source_row": 202
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 33
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 35
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 68
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 75
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 86
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 237
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 252
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 319
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 341
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 346
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 357
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 405
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 429
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 523
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 547
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 549
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 566
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 589
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 605
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 672
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 676
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 682
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 807
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 826
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 878
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 982
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1012
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1061
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1129
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1176
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 28
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 58
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 65
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 73
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 121
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 177
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 219
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 243
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 343
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 387
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 392
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 430
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 470
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 488
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 494
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 503
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 560
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 571
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 572
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 579
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 675
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 681
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 814
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 909
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1010
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1015
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1022
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1162
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1182
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1192
+  },
+  {
+   "after": "  EUR ",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 75
+  },
+  {
+   "after": "  101981 ",
+   "before": "101981",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 111
+  },
+  {
+   "after": "  2024-03-07 ",
+   "before": "2024-03-07",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 127
+  },
+  {
+   "after": "  2023-10-04 ",
+   "before": "2023-10-04",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 198
+  },
+  {
+   "after": "  Delta Pharmacy ",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 284
+  },
+  {
+   "after": "  258739 ",
+   "before": "258739",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 313
+  },
+  {
+   "after": "  73 ",
+   "before": "73",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 432
+  },
+  {
+   "after": "  apparel ",
+   "before": "apparel",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 437
+  },
+  {
+   "after": "  82 ",
+   "before": "82",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 447
+  },
+  {
+   "after": "  2023-06-07 ",
+   "before": "2023-06-07",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 526
+  },
+  {
+   "after": "  Statler Hardware ",
+   "before": "Statler Hardware",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 544
+  },
+  {
+   "after": "  8 ",
+   "before": "8",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 593
+  },
+  {
+   "after": "  GBP ",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 703
+  },
+  {
+   "after": "  pending ",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "pad_whitespace",
+   "row": 730
+  },
+  {
+   "after": "  2023-07-04 ",
+   "before": "2023-07-04",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 781
+  },
+  {
+   "after": "  2631.58 ",
+   "before": "2631.58",
+   "class": "WS",
+   "col": 2,
+   "op": "pad_whitespace",
+   "row": 849
+  },
+  {
+   "after": "  dining ",
+   "before": "dining",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 1106
+  },
+  {
+   "after": " chargeback ",
+   "before": "chargeback",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 109
+  },
+  {
+   "after": " 2636.68 ",
+   "before": "2636.68",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 163
+  },
+  {
+   "after": " 43 ",
+   "before": "43",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_nbsp",
+   "row": 282
+  },
+  {
+   "after": " Kestrel Outfitters ",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 289
+  },
+  {
+   "after": " 2023-06-06 ",
+   "before": "2023-06-06",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 347
+  },
+  {
+   "after": " Petit Marché ",
+   "before": "Petit Marché",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 457
+  },
+  {
+   "after": " GBP ",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 644
+  },
+  {
+   "after": " 2023-05-04 ",
+   "before": "2023-05-04",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 667
+  },
+  {
+   "after": " 11 ",
+   "before": "11",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_nbsp",
+   "row": 670
+  },
+  {
+   "after": " fuel ",
+   "before": "fuel",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 684
+  },
+  {
+   "after": " 2024-01-11 ",
+   "before": "2024-01-11",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 703
+  },
+  {
+   "after": " hardware ",
+   "before": "hardware",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 715
+  },
+  {
+   "after": " 1280.14 ",
+   "before": "1280.14",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 738
+  },
+  {
+   "after": " 767362 ",
+   "before": "767362",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 919
+  },
+  {
+   "after": " chargeback ",
+   "before": "chargeback",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 1102
+  },
+  {
+   "after": " 989438 ",
+   "before": "989438",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 1187
+  },
+  {
+   "after": "Vela Cycles​",
+   "before": "Vela Cycles",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 27
+  },
+  {
+   "after": "4357.88​",
+   "before": "4357.88",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 41
+  },
+  {
+   "after": "2023-04-13​",
+   "before": "2023-04-13",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 66
+  },
+  {
+   "after": "apparel​",
+   "before": "apparel",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_zero_width",
+   "row": 135
+  },
+  {
+   "after": "apparel​",
+   "before": "apparel",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_zero_width",
+   "row": 240
+  },
+  {
+   "after": "Fjord Interiors​",
+   "before": "Fjord Interiors",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 397
+  },
+  {
+   "after": "47​",
+   "before": "47",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_zero_width",
+   "row": 429
+  },
+  {
+   "after": "travel​",
+   "before": "travel",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_zero_width",
+   "row": 692
+  },
+  {
+   "after": "fuel​",
+   "before": "fuel",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_zero_width",
+   "row": 806
+  },
+  {
+   "after": "2176.79​",
+   "before": "2176.79",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 914
+  },
+  {
+   "after": "53​",
+   "before": "53",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_zero_width",
+   "row": 915
+  },
+  {
+   "after": "dining​",
+   "before": "dining",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_zero_width",
+   "row": 952
+  },
+  {
+   "after": "Orchard and Vine​",
+   "before": "Orchard and Vine",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 1001
+  },
+  {
+   "after": "Delta Pharmacy​",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 1018
+  },
+  {
+   "after": "Orchard and Vine​",
+   "before": "Orchard and Vine",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 1048
+  },
+  {
+   "after": "2024-05-04​",
+   "before": "2024-05-04",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 1116
+  },
+  {
+   "after": "Blue  Harbor Goods",
+   "before": "Blue Harbor Goods",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 13
+  },
+  {
+   "after": "Delta  Pharmacy",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 69
+  },
+  {
+   "after": "Petit  Marché",
+   "before": "Petit Marché",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 81
+  },
+  {
+   "after": "Fjord  Interiors",
+   "before": "Fjord Interiors",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 287
+  },
+  {
+   "after": "Petit  Marché",
+   "before": "Petit Marché",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 317
+  },
+  {
+   "after": "Kestrel  Outfitters",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 415
+  },
+  {
+   "after": "Northwind  Supply",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 481
+  },
+  {
+   "after": "Blue  Harbor Goods",
+   "before": "Blue Harbor Goods",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 486
+  },
+  {
+   "after": "Café  Norte",
+   "before": "Café Norte",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 553
+  },
+  {
+   "after": "Orchard  and Vine",
+   "before": "Orchard and Vine",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 656
+  },
+  {
+   "after": "Northwind  Supply",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 706
+  },
+  {
+   "after": "Fjord  Interiors",
+   "before": "Fjord Interiors",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 772
+  },
+  {
+   "after": "Trailhead  Sports",
+   "before": "Trailhead Sports",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 900
+  },
+  {
+   "after": "Kestrel  Outfitters",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 973
+  },
+  {
+   "after": "Northwind  Supply",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1000
+  },
+  {
+   "after": "Trailhead  Sports",
+   "before": "Trailhead Sports",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1064
+  },
+  {
+   "after": "4,381.38",
+   "before": "4381.38",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 296
+  },
+  {
+   "after": "3,660.67",
+   "before": "3660.67",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 320
+  },
+  {
+   "after": "4,160.25",
+   "before": "4160.25",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 351
+  },
+  {
+   "after": "1,083.62",
+   "before": "1083.62",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 419
+  },
+  {
+   "after": "4,360.00",
+   "before": "4360.00",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 446
+  },
+  {
+   "after": "2,980.09",
+   "before": "2980.09",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 492
+  },
+  {
+   "after": "2,925.80",
+   "before": "2925.80",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 532
+  },
+  {
+   "after": "2,734.37",
+   "before": "2734.37",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 548
+  },
+  {
+   "after": "4,473.67",
+   "before": "4473.67",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 620
+  },
+  {
+   "after": "1,060.83",
+   "before": "1060.83",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 718
+  },
+  {
+   "after": "1,642.79",
+   "before": "1642.79",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 775
+  },
+  {
+   "after": "1,252.63",
+   "before": "1252.63",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1025
+  },
+  {
+   "after": "2,920.32",
+   "before": "2920.32",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1034
+  },
+  {
+   "after": "3,391.82",
+   "before": "3391.82",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1074
+  },
+  {
+   "after": "1044,07",
+   "before": "1044.07",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 26
+  },
+  {
+   "after": "2190,97",
+   "before": "2190.97",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 305
+  },
+  {
+   "after": "4330,99",
+   "before": "4330.99",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 326
+  },
+  {
+   "after": "2365,74",
+   "before": "2365.74",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 339
+  },
+  {
+   "after": "748,17",
+   "before": "748.17",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 354
+  },
+  {
+   "after": "826,14",
+   "before": "826.14",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 681
+  },
+  {
+   "after": "814,32",
+   "before": "814.32",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 699
+  },
+  {
+   "after": "3369,59",
+   "before": "3369.59",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 733
+  },
+  {
+   "after": "1392,59",
+   "before": "1392.59",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 937
+  },
+  {
+   "after": "4388,18",
+   "before": "4388.18",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 1032
+  },
+  {
+   "after": "793,76",
+   "before": "793.76",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 1087
+  },
+  {
+   "after": "3520,48",
+   "before": "3520.48",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 1110
+  },
+  {
+   "after": "527,78",
+   "before": "527.78",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 1182
+  },
+  {
+   "after": "€1146.71",
+   "before": "1146.71",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 96
+  },
+  {
+   "after": "€4045.42",
+   "before": "4045.42",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 152
+  },
+  {
+   "after": "€2459.97",
+   "before": "2459.97",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 428
+  },
+  {
+   "after": "€121.51",
+   "before": "121.51",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 429
+  },
+  {
+   "after": "€2164.04",
+   "before": "2164.04",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 479
+  },
+  {
+   "after": "€4690.73",
+   "before": "4690.73",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 585
+  },
+  {
+   "after": "€4283.67",
+   "before": "4283.67",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 610
+  },
+  {
+   "after": "€4640.23",
+   "before": "4640.23",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 717
+  },
+  {
+   "after": "€2267.38",
+   "before": "2267.38",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 773
+  },
+  {
+   "after": "€780.04",
+   "before": "780.04",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 861
+  },
+  {
+   "after": "€2865.01",
+   "before": "2865.01",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1009
+  },
+  {
+   "after": "€1981.56",
+   "before": "1981.56",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1037
+  },
+  {
+   "after": "€437.57",
+   "before": "437.57",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1143
+  },
+  {
+   "after": "'82",
+   "before": "82",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 57
+  },
+  {
+   "after": "'131697",
+   "before": "131697",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 154
+  },
+  {
+   "after": "'183029",
+   "before": "183029",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 212
+  },
+  {
+   "after": "'26",
+   "before": "26",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 321
+  },
+  {
+   "after": "'83",
+   "before": "83",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 543
+  },
+  {
+   "after": "'42",
+   "before": "42",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 657
+  },
+  {
+   "after": "'15",
+   "before": "15",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 680
+  },
+  {
+   "after": "'7",
+   "before": "7",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 814
+  },
+  {
+   "after": "'3747.89",
+   "before": "3747.89",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 926
+  },
+  {
+   "after": "'20",
+   "before": "20",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 982
+  },
+  {
+   "after": "'853494",
+   "before": "853494",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 1009
+  },
+  {
+   "after": "'925545",
+   "before": "925545",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 1113
+  },
+  {
+   "after": "'939088",
+   "before": "939088",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 1130
+  },
+  {
+   "after": "31.07.2023",
+   "before": "2023-07-31",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 10
+  },
+  {
+   "after": "23.03.2023",
+   "before": "2023-03-23",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 20
+  },
+  {
+   "after": "13.02.2024",
+   "before": "2024-02-13",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 28
+  },
+  {
+   "after": "07.06.2023",
+   "before": "2023-06-07",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 84
+  },
+  {
+   "after": "12.01.2023",
+   "before": "2023-01-12",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 153
+  },
+  {
+   "after": "08.01.2024",
+   "before": "2024-01-08",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 203
+  },
+  {
+   "after": "25.11.2023",
+   "before": "2023-11-25",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 210
+  },
+  {
+   "after": "08.03.2024",
+   "before": "2024-03-08",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 216
+  },
+  {
+   "after": "07.07.2024",
+   "before": "2024-07-07",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 253
+  },
+  {
+   "after": "28.09.2024",
+   "before": "2024-09-28",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 262
+  },
+  {
+   "after": "26.01.2023",
+   "before": "2023-01-26",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 382
+  },
+  {
+   "after": "26.02.2024",
+   "before": "2024-02-26",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 411
+  },
+  {
+   "after": "18.06.2024",
+   "before": "2024-06-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 415
+  },
+  {
+   "after": "30.04.2024",
+   "before": "2024-04-30",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 507
+  },
+  {
+   "after": "24.10.2023",
+   "before": "2023-10-24",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 524
+  },
+  {
+   "after": "22.10.2023",
+   "before": "2023-10-22",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 541
+  },
+  {
+   "after": "18.01.2023",
+   "before": "2023-01-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 576
+  },
+  {
+   "after": "09.12.2023",
+   "before": "2023-12-09",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 578
+  },
+  {
+   "after": "10.09.2024",
+   "before": "2024-09-10",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 587
+  },
+  {
+   "after": "16.06.2023",
+   "before": "2023-06-16",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 597
+  },
+  {
+   "after": "29.08.2023",
+   "before": "2023-08-29",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 615
+  },
+  {
+   "after": "02.04.2023",
+   "before": "2023-04-02",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 626
+  },
+  {
+   "after": "28.05.2023",
+   "before": "2023-05-28",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 636
+  },
+  {
+   "after": "10.07.2024",
+   "before": "2024-07-10",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 685
+  },
+  {
+   "after": "15.09.2023",
+   "before": "2023-09-15",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 687
+  },
+  {
+   "after": "17.11.2023",
+   "before": "2023-11-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 698
+  },
+  {
+   "after": "04.05.2024",
+   "before": "2024-05-04",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 717
+  },
+  {
+   "after": "08.01.2023",
+   "before": "2023-01-08",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 735
+  },
+  {
+   "after": "18.07.2024",
+   "before": "2024-07-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 738
+  },
+  {
+   "after": "19.07.2024",
+   "before": "2024-07-19",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 746
+  },
+  {
+   "after": "18.01.2023",
+   "before": "2023-01-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 773
+  },
+  {
+   "after": "16.09.2023",
+   "before": "2023-09-16",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 787
+  },
+  {
+   "after": "16.09.2023",
+   "before": "2023-09-16",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 798
+  },
+  {
+   "after": "17.06.2024",
+   "before": "2024-06-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 812
+  },
+  {
+   "after": "08.03.2024",
+   "before": "2024-03-08",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 815
+  },
+  {
+   "after": "06.01.2024",
+   "before": "2024-01-06",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 891
+  },
+  {
+   "after": "06.06.2023",
+   "before": "2023-06-06",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 929
+  },
+  {
+   "after": "01.09.2023",
+   "before": "2023-09-01",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 953
+  },
+  {
+   "after": "04.11.2024",
+   "before": "2024-11-04",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1002
+  },
+  {
+   "after": "24.01.2023",
+   "before": "2023-01-24",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1016
+  },
+  {
+   "after": "04.09.2024",
+   "before": "2024-09-04",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1025
+  },
+  {
+   "after": "02.03.2023",
+   "before": "2023-03-02",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1028
+  },
+  {
+   "after": "20.09.2023",
+   "before": "2023-09-20",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1061
+  },
+  {
+   "after": "26.06.2023",
+   "before": "2023-06-26",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1172
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 561
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 416
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 860
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 1097
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 1058
+  },
+  {
+   "after": "usd",
+   "before": "USD",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 1127
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 17
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 98
+  },
+  {
+   "after": "NORTHWIND SUPPLY",
+   "before": "Northwind Supply",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 691
+  },
+  {
+   "after": "NORTHWIND SUPPLY",
+   "before": "Northwind Supply",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 165
+  },
+  {
+   "after": "DELTA PHARMACY",
+   "before": "Delta Pharmacy",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 433
+  },
+  {
+   "after": "(Nordic Fjäll)",
+   "before": "Nordic Fjäll",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 1016
+  },
+  {
+   "after": "(Fjord Interiors)",
+   "before": "Fjord Interiors",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 626
+  },
+  {
+   "after": "KESTREL OUTFITTERS",
+   "before": "Kestrel Outfitters",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 191
+  },
+  {
+   "after": "(Vela Cycles)",
+   "before": "Vela Cycles",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 1050
+  },
+  {
+   "after": "APPAREL",
+   "before": "apparel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 786
+  },
+  {
+   "after": "HARDWARE",
+   "before": "hardware",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 533
+  },
+  {
+   "after": "(grocery)",
+   "before": "grocery",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 38
+  },
+  {
+   "after": "(travel)",
+   "before": "travel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 706
+  },
+  {
+   "after": "(dining)",
+   "before": "dining",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 266
+  },
+  {
+   "after": "FUEL",
+   "before": "fuel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 814
+  },
+  {
+   "after": "HARDWARE",
+   "before": "hardware",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 1101
+  },
+  {
+   "after": "PENDING",
+   "before": "pending",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 475
+  },
+  {
+   "after": "(paid)",
+   "before": "paid",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 261
+  },
+  {
+   "after": "CHARGEBACK",
+   "before": "chargeback",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 868
+  },
+  {
+   "after": "PENDING",
+   "before": "pending",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 946
+  },
+  {
+   "after": "(paid)",
+   "before": "paid",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 541
+  },
+  {
+   "after": "CHARGEBACK",
+   "before": "chargeback",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 855
+  },
+  {
+   "after": "PENDING",
+   "before": "pending",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 1042
+  },
+  {
+   "after": "GaP",
+   "before": "GBP",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 491
+  },
+  {
+   "after": "GBa",
+   "before": "GBP",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 874
+  },
+  {
+   "after": "UaD",
+   "before": "USD",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 616
+  },
+  {
+   "after": "USa",
+   "before": "USD",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 1009
+  },
+  {
+   "after": "Orchbrd and Vine",
+   "before": "Orchard and Vine",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 41
+  },
+  {
+   "after": "Delta Pharaacy",
+   "before": "Delta Pharmacy",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 954
+  },
+  {
+   "after": "Statlea Hardware",
+   "before": "Statler Hardware",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 724
+  },
+  {
+   "after": "Northwind aupply",
+   "before": "Northwind Supply",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 997
+  },
+  {
+   "after": "aaparel",
+   "before": "apparel",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 154
+  },
+  {
+   "after": "haraware",
+   "before": "hardware",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 244
+  },
+  {
+   "after": "grocary",
+   "before": "grocery",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 944
+  },
+  {
+   "after": "refundea",
+   "before": "refunded",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 847
+  },
+  {
+   "after": "rafunded",
+   "before": "refunded",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 1168
+  },
+  {
+   "after": "reaunded",
+   "before": "refunded",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 975
+  },
+  {
+   "after": "24273.50",
+   "before": "3565.73",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 80
+  },
+  {
+   "after": "768",
+   "before": "57",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 109
+  },
+  {
+   "after": "-362",
+   "before": "79",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 164
+  },
+  {
+   "after": "28722.64",
+   "before": "884.97",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 247
+  },
+  {
+   "after": "-17988.78",
+   "before": "2355.42",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 310
+  },
+  {
+   "after": "-24487.79",
+   "before": "136.94",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 403
+  },
+  {
+   "after": "-351",
+   "before": "98",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 409
+  },
+  {
+   "after": "26537.96",
+   "before": "4182.50",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 690
+  },
+  {
+   "after": "36059.21",
+   "before": "4291.74",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 719
+  },
+  {
+   "after": "-410",
+   "before": "77",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 840
+  },
+  {
+   "after": "735",
+   "before": "72",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 884
+  },
+  {
+   "after": "-630",
+   "before": "45",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 1016
+  },
+  {
+   "after": "-590",
+   "before": "34",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 1027
+  },
+  {
+   "after": "-560",
+   "before": "13",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 1154
+  }
+ ],
+ "seed": 1337,
+ "targets": {
+  "CAT_AUTO": 29,
+  "CAT_TYPO": 14,
+  "DATE": 44,
+  "DUP": 14,
+  "ENC": 30,
+  "MISS": 30,
+  "OUT": 14,
+  "TYPE": 53,
+  "WS": 65
+ },
+ "variant": 2
+}

@@ -1,0 +1,2342 @@
+[
+ {
+  "id": "courage",
+  "name": "Courage",
+  "description": "Acting well while afraid, and refusing to be governed by fear.",
+  "lexicon": [
+   {
+    "term": "courage",
+    "weight": 2.0
+   },
+   {
+    "term": "courageous",
+    "weight": 2.0
+   },
+   {
+    "term": "brave",
+    "weight": 2.0
+   },
+   {
+    "term": "bravery",
+    "weight": 2.0
+   },
+   {
+    "term": "valour",
+    "weight": 2.0
+   },
+   {
+    "term": "valor",
+    "weight": 2.0
+   },
+   {
+    "term": "boldness",
+    "weight": 2.0
+   },
+   {
+    "term": "coward",
+    "weight": 2.0
+   },
+   {
+    "term": "cowardice",
+    "weight": 2.0
+   },
+   {
+    "term": "fearless",
+    "weight": 2.0
+   },
+   {
+    "term": "intrepid",
+    "weight": 2.0
+   },
+   {
+    "term": "audacity",
+    "weight": 2.0
+   },
+   {
+    "term": "bold",
+    "weight": 1.5
+   },
+   {
+    "term": "dare",
+    "weight": 1.5
+   },
+   {
+    "term": "daring",
+    "weight": 1.5
+   },
+   {
+    "term": "fear",
+    "weight": 1.5
+   },
+   {
+    "term": "afraid",
+    "weight": 1.5
+   },
+   {
+    "term": "dread",
+    "weight": 1.5
+   },
+   {
+    "term": "terror",
+    "weight": 1.5
+   },
+   {
+    "term": "nerve",
+    "weight": 1.5
+   },
+   {
+    "term": "heroic",
+    "weight": 1.5
+   },
+   {
+    "term": "danger",
+    "weight": 1.0
+   },
+   {
+    "term": "risk",
+    "weight": 1.0
+   },
+   {
+    "term": "tremble",
+    "weight": 1.0
+   },
+   {
+    "term": "flinch",
+    "weight": 1.0
+   },
+   {
+    "term": "confront",
+    "weight": 1.0
+   },
+   {
+    "term": "hero",
+    "weight": 1.0
+   },
+   {
+    "term": "gallant",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "discipline_and_habit",
+  "name": "Discipline & Habit",
+  "description": "The small repeated act that becomes character.",
+  "lexicon": [
+   {
+    "term": "little by little",
+    "weight": 2.5
+   },
+   {
+    "term": "every day",
+    "weight": 2.5
+   },
+   {
+    "term": "discipline",
+    "weight": 2.0
+   },
+   {
+    "term": "disciplined",
+    "weight": 2.0
+   },
+   {
+    "term": "habit",
+    "weight": 2.0
+   },
+   {
+    "term": "habits",
+    "weight": 2.0
+   },
+   {
+    "term": "routine",
+    "weight": 2.0
+   },
+   {
+    "term": "practice",
+    "weight": 2.0
+   },
+   {
+    "term": "perseverance",
+    "weight": 2.0
+   },
+   {
+    "term": "persevere",
+    "weight": 2.0
+   },
+   {
+    "term": "persist",
+    "weight": 2.0
+   },
+   {
+    "term": "diligence",
+    "weight": 2.0
+   },
+   {
+    "term": "diligent",
+    "weight": 2.0
+   },
+   {
+    "term": "repeatedly",
+    "weight": 2.0
+   },
+   {
+    "term": "self-discipline",
+    "weight": 2.0
+   },
+   {
+    "term": "custom",
+    "weight": 1.5
+   },
+   {
+    "term": "drill",
+    "weight": 1.5
+   },
+   {
+    "term": "train",
+    "weight": 1.5
+   },
+   {
+    "term": "training",
+    "weight": 1.5
+   },
+   {
+    "term": "exercise",
+    "weight": 1.5
+   },
+   {
+    "term": "repeat",
+    "weight": 1.5
+   },
+   {
+    "term": "daily",
+    "weight": 1.5
+   },
+   {
+    "term": "regular",
+    "weight": 1.5
+   },
+   {
+    "term": "consistent",
+    "weight": 1.5
+   },
+   {
+    "term": "steady",
+    "weight": 1.5
+   },
+   {
+    "term": "steadfast",
+    "weight": 1.5
+   },
+   {
+    "term": "idleness",
+    "weight": 1.5
+   },
+   {
+    "term": "sloth",
+    "weight": 1.5
+   },
+   {
+    "term": "industrious",
+    "weight": 1.5
+   },
+   {
+    "term": "effort",
+    "weight": 1.0
+   },
+   {
+    "term": "labour",
+    "weight": 1.0
+   },
+   {
+    "term": "labor",
+    "weight": 1.0
+   },
+   {
+    "term": "toil",
+    "weight": 1.0
+   },
+   {
+    "term": "idle",
+    "weight": 1.0
+   },
+   {
+    "term": "lazy",
+    "weight": 1.0
+   },
+   {
+    "term": "method",
+    "weight": 1.0
+   },
+   {
+    "term": "order",
+    "weight": 1.0
+   },
+   {
+    "term": "stroke",
+    "weight": 1.0
+   },
+   {
+    "term": "chain",
+    "weight": 1.0
+   },
+   {
+    "term": "thread",
+    "weight": 1.0
+   },
+   {
+    "term": "constancy",
+    "weight": 1.0
+   },
+   {
+    "term": "practise",
+    "weight": 1.0
+   },
+   {
+    "term": "plan",
+    "weight": 0.5
+   },
+   {
+    "term": "system",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "mortality_and_time",
+  "name": "Mortality & Time",
+  "description": "Finitude, urgency, and spending attention like the currency it is.",
+  "lexicon": [
+   {
+    "term": "memento mori",
+    "weight": 2.5
+   },
+   {
+    "term": "waste of life",
+    "weight": 2.5
+   },
+   {
+    "term": "death",
+    "weight": 2.0
+   },
+   {
+    "term": "die",
+    "weight": 2.0
+   },
+   {
+    "term": "dying",
+    "weight": 2.0
+   },
+   {
+    "term": "dead",
+    "weight": 2.0
+   },
+   {
+    "term": "mortal",
+    "weight": 2.0
+   },
+   {
+    "term": "mortality",
+    "weight": 2.0
+   },
+   {
+    "term": "grave",
+    "weight": 2.0
+   },
+   {
+    "term": "tomb",
+    "weight": 2.0
+   },
+   {
+    "term": "eternity",
+    "weight": 2.0
+   },
+   {
+    "term": "perish",
+    "weight": 2.0
+   },
+   {
+    "term": "funeral",
+    "weight": 2.0
+   },
+   {
+    "term": "time",
+    "weight": 1.5
+   },
+   {
+    "term": "brief",
+    "weight": 1.5
+   },
+   {
+    "term": "fleeting",
+    "weight": 1.5
+   },
+   {
+    "term": "transient",
+    "weight": 1.5
+   },
+   {
+    "term": "ephemeral",
+    "weight": 1.5
+   },
+   {
+    "term": "lifetime",
+    "weight": 1.5
+   },
+   {
+    "term": "old age",
+    "weight": 1.5
+   },
+   {
+    "term": "swift",
+    "weight": 1.5
+   },
+   {
+    "term": "span",
+    "weight": 1.5
+   },
+   {
+    "term": "hour",
+    "weight": 1.0
+   },
+   {
+    "term": "clock",
+    "weight": 1.0
+   },
+   {
+    "term": "age",
+    "weight": 1.0
+   },
+   {
+    "term": "youth",
+    "weight": 1.0
+   },
+   {
+    "term": "past",
+    "weight": 1.0
+   },
+   {
+    "term": "future",
+    "weight": 1.0
+   },
+   {
+    "term": "forever",
+    "weight": 1.0
+   },
+   {
+    "term": "years",
+    "weight": 1.0
+   },
+   {
+    "term": "life",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "gratitude",
+  "name": "Gratitude",
+  "description": "Noticing what is already given rather than what is missing.",
+  "lexicon": [
+   {
+    "term": "gratitude",
+    "weight": 2.0
+   },
+   {
+    "term": "grateful",
+    "weight": 2.0
+   },
+   {
+    "term": "thankful",
+    "weight": 2.0
+   },
+   {
+    "term": "thankfulness",
+    "weight": 2.0
+   },
+   {
+    "term": "thanks",
+    "weight": 2.0
+   },
+   {
+    "term": "thank",
+    "weight": 2.0
+   },
+   {
+    "term": "blessing",
+    "weight": 2.0
+   },
+   {
+    "term": "blessed",
+    "weight": 2.0
+   },
+   {
+    "term": "contentment",
+    "weight": 2.0
+   },
+   {
+    "term": "contented",
+    "weight": 2.0
+   },
+   {
+    "term": "bless",
+    "weight": 1.5
+   },
+   {
+    "term": "content",
+    "weight": 1.5
+   },
+   {
+    "term": "enough",
+    "weight": 1.5
+   },
+   {
+    "term": "appreciate",
+    "weight": 1.5
+   },
+   {
+    "term": "appreciation",
+    "weight": 1.5
+   },
+   {
+    "term": "rejoice",
+    "weight": 1.5
+   },
+   {
+    "term": "fortunate",
+    "weight": 1.5
+   },
+   {
+    "term": "satisfied",
+    "weight": 1.5
+   },
+   {
+    "term": "gift",
+    "weight": 1.0
+   },
+   {
+    "term": "abundance",
+    "weight": 1.0
+   },
+   {
+    "term": "plenty",
+    "weight": 1.0
+   },
+   {
+    "term": "happy",
+    "weight": 1.0
+   },
+   {
+    "term": "joy",
+    "weight": 1.0
+   },
+   {
+    "term": "cheerful",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "honesty_and_integrity",
+  "name": "Honesty & Integrity",
+  "description": "Saying the true thing, and being the same person unobserved.",
+  "lexicon": [
+   {
+    "term": "honest",
+    "weight": 2.0
+   },
+   {
+    "term": "honesty",
+    "weight": 2.0
+   },
+   {
+    "term": "truth",
+    "weight": 2.0
+   },
+   {
+    "term": "truthful",
+    "weight": 2.0
+   },
+   {
+    "term": "lie",
+    "weight": 2.0
+   },
+   {
+    "term": "lies",
+    "weight": 2.0
+   },
+   {
+    "term": "lying",
+    "weight": 2.0
+   },
+   {
+    "term": "liar",
+    "weight": 2.0
+   },
+   {
+    "term": "deceive",
+    "weight": 2.0
+   },
+   {
+    "term": "deceit",
+    "weight": 2.0
+   },
+   {
+    "term": "deception",
+    "weight": 2.0
+   },
+   {
+    "term": "falsehood",
+    "weight": 2.0
+   },
+   {
+    "term": "sincere",
+    "weight": 2.0
+   },
+   {
+    "term": "sincerity",
+    "weight": 2.0
+   },
+   {
+    "term": "integrity",
+    "weight": 2.0
+   },
+   {
+    "term": "candour",
+    "weight": 2.0
+   },
+   {
+    "term": "candid",
+    "weight": 2.0
+   },
+   {
+    "term": "hypocrisy",
+    "weight": 2.0
+   },
+   {
+    "term": "hypocrite",
+    "weight": 2.0
+   },
+   {
+    "term": "true",
+    "weight": 1.5
+   },
+   {
+    "term": "false",
+    "weight": 1.5
+   },
+   {
+    "term": "upright",
+    "weight": 1.5
+   },
+   {
+    "term": "principle",
+    "weight": 1.5
+   },
+   {
+    "term": "fraud",
+    "weight": 1.5
+   },
+   {
+    "term": "cheat",
+    "weight": 1.5
+   },
+   {
+    "term": "conscience",
+    "weight": 1.5
+   },
+   {
+    "term": "frank",
+    "weight": 1.5
+   },
+   {
+    "term": "trustworthy",
+    "weight": 1.5
+   },
+   {
+    "term": "pretend",
+    "weight": 1.5
+   },
+   {
+    "term": "pretence",
+    "weight": 1.5
+   },
+   {
+    "term": "fidelity",
+    "weight": 1.5
+   },
+   {
+    "term": "scandal",
+    "weight": 1.0
+   },
+   {
+    "term": "legacy",
+    "weight": 1.0
+   },
+   {
+    "term": "noble",
+    "weight": 1.0
+   },
+   {
+    "term": "promise",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "attention_and_presence",
+  "name": "Attention & Presence",
+  "description": "Where the mind actually is, versus where it says it is.",
+  "lexicon": [
+   {
+    "term": "here and now",
+    "weight": 2.5
+   },
+   {
+    "term": "this day",
+    "weight": 2.5
+   },
+   {
+    "term": "pay attention",
+    "weight": 2.5
+   },
+   {
+    "term": "attention",
+    "weight": 2.0
+   },
+   {
+    "term": "attentive",
+    "weight": 2.0
+   },
+   {
+    "term": "presence",
+    "weight": 2.0
+   },
+   {
+    "term": "mindful",
+    "weight": 2.0
+   },
+   {
+    "term": "distraction",
+    "weight": 2.0
+   },
+   {
+    "term": "distract",
+    "weight": 2.0
+   },
+   {
+    "term": "stillness",
+    "weight": 2.0
+   },
+   {
+    "term": "concentrate",
+    "weight": 2.0
+   },
+   {
+    "term": "contemplate",
+    "weight": 2.0
+   },
+   {
+    "term": "attend",
+    "weight": 1.5
+   },
+   {
+    "term": "present",
+    "weight": 1.5
+   },
+   {
+    "term": "notice",
+    "weight": 1.5
+   },
+   {
+    "term": "observe",
+    "weight": 1.5
+   },
+   {
+    "term": "aware",
+    "weight": 1.5
+   },
+   {
+    "term": "awareness",
+    "weight": 1.5
+   },
+   {
+    "term": "busy",
+    "weight": 1.5
+   },
+   {
+    "term": "hurry",
+    "weight": 1.5
+   },
+   {
+    "term": "haste",
+    "weight": 1.5
+   },
+   {
+    "term": "scatter",
+    "weight": 1.5
+   },
+   {
+    "term": "wander",
+    "weight": 1.5
+   },
+   {
+    "term": "absent",
+    "weight": 1.5
+   },
+   {
+    "term": "focus",
+    "weight": 1.5
+   },
+   {
+    "term": "silence",
+    "weight": 1.5
+   },
+   {
+    "term": "quiet",
+    "weight": 1.5
+   },
+   {
+    "term": "nowhere",
+    "weight": 1.5
+   },
+   {
+    "term": "everywhere",
+    "weight": 1.5
+   },
+   {
+    "term": "still",
+    "weight": 1.0
+   },
+   {
+    "term": "gaze",
+    "weight": 1.0
+   },
+   {
+    "term": "moment",
+    "weight": 1.0
+   },
+   {
+    "term": "look",
+    "weight": 1.0
+   },
+   {
+    "term": "listen",
+    "weight": 1.0
+   },
+   {
+    "term": "watch",
+    "weight": 1.0
+   },
+   {
+    "term": "today",
+    "weight": 1.0
+   },
+   {
+    "term": "thought",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "relationships",
+  "name": "Relationships",
+  "description": "Friendship, love, family, and the work of being known.",
+  "lexicon": [
+   {
+    "term": "friend",
+    "weight": 2.0
+   },
+   {
+    "term": "friends",
+    "weight": 2.0
+   },
+   {
+    "term": "friendship",
+    "weight": 2.0
+   },
+   {
+    "term": "love",
+    "weight": 2.0
+   },
+   {
+    "term": "beloved",
+    "weight": 2.0
+   },
+   {
+    "term": "neighbour",
+    "weight": 2.0
+   },
+   {
+    "term": "neighbor",
+    "weight": 2.0
+   },
+   {
+    "term": "companion",
+    "weight": 2.0
+   },
+   {
+    "term": "marriage",
+    "weight": 2.0
+   },
+   {
+    "term": "loneliness",
+    "weight": 2.0
+   },
+   {
+    "term": "affection",
+    "weight": 2.0
+   },
+   {
+    "term": "comrade",
+    "weight": 2.0
+   },
+   {
+    "term": "family",
+    "weight": 1.5
+   },
+   {
+    "term": "brother",
+    "weight": 1.5
+   },
+   {
+    "term": "sister",
+    "weight": 1.5
+   },
+   {
+    "term": "father",
+    "weight": 1.5
+   },
+   {
+    "term": "mother",
+    "weight": 1.5
+   },
+   {
+    "term": "company",
+    "weight": 1.5
+   },
+   {
+    "term": "marry",
+    "weight": 1.5
+   },
+   {
+    "term": "wife",
+    "weight": 1.5
+   },
+   {
+    "term": "husband",
+    "weight": 1.5
+   },
+   {
+    "term": "loyal",
+    "weight": 1.5
+   },
+   {
+    "term": "loyalty",
+    "weight": 1.5
+   },
+   {
+    "term": "stranger",
+    "weight": 1.5
+   },
+   {
+    "term": "enemy",
+    "weight": 1.5
+   },
+   {
+    "term": "quarrel",
+    "weight": 1.5
+   },
+   {
+    "term": "trust",
+    "weight": 1.0
+   },
+   {
+    "term": "share",
+    "weight": 1.0
+   },
+   {
+    "term": "alone",
+    "weight": 1.0
+   },
+   {
+    "term": "people",
+    "weight": 1.0
+   },
+   {
+    "term": "another",
+    "weight": 1.0
+   },
+   {
+    "term": "intimacy",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "adversity_and_resilience",
+  "name": "Adversity & Resilience",
+  "description": "What hardship reveals, and how to stand back up.",
+  "lexicon": [
+   {
+    "term": "adversity",
+    "weight": 2.0
+   },
+   {
+    "term": "hardship",
+    "weight": 2.0
+   },
+   {
+    "term": "suffering",
+    "weight": 2.0
+   },
+   {
+    "term": "suffer",
+    "weight": 2.0
+   },
+   {
+    "term": "endure",
+    "weight": 2.0
+   },
+   {
+    "term": "endurance",
+    "weight": 2.0
+   },
+   {
+    "term": "obstacle",
+    "weight": 2.0
+   },
+   {
+    "term": "misfortune",
+    "weight": 2.0
+   },
+   {
+    "term": "resilience",
+    "weight": 2.0
+   },
+   {
+    "term": "impediment",
+    "weight": 2.0
+   },
+   {
+    "term": "calamity",
+    "weight": 2.0
+   },
+   {
+    "term": "affliction",
+    "weight": 2.0
+   },
+   {
+    "term": "struggle",
+    "weight": 1.5
+   },
+   {
+    "term": "difficulty",
+    "weight": 1.5
+   },
+   {
+    "term": "defeat",
+    "weight": 1.5
+   },
+   {
+    "term": "failure",
+    "weight": 1.5
+   },
+   {
+    "term": "setback",
+    "weight": 1.5
+   },
+   {
+    "term": "stumble",
+    "weight": 1.5
+   },
+   {
+    "term": "recover",
+    "weight": 1.5
+   },
+   {
+    "term": "storm",
+    "weight": 1.5
+   },
+   {
+    "term": "tempest",
+    "weight": 1.5
+   },
+   {
+    "term": "sailor",
+    "weight": 1.5
+   },
+   {
+    "term": "stronger",
+    "weight": 1.5
+   },
+   {
+    "term": "strengthen",
+    "weight": 1.5
+   },
+   {
+    "term": "tested",
+    "weight": 1.5
+   },
+   {
+    "term": "broken",
+    "weight": 1.5
+   },
+   {
+    "term": "survive",
+    "weight": 1.5
+   },
+   {
+    "term": "difficult",
+    "weight": 1.0
+   },
+   {
+    "term": "pain",
+    "weight": 1.0
+   },
+   {
+    "term": "fail",
+    "weight": 1.0
+   },
+   {
+    "term": "fall",
+    "weight": 1.0
+   },
+   {
+    "term": "rise",
+    "weight": 1.0
+   },
+   {
+    "term": "sea",
+    "weight": 1.0
+   },
+   {
+    "term": "fire",
+    "weight": 1.0
+   },
+   {
+    "term": "gold",
+    "weight": 1.0
+   },
+   {
+    "term": "test",
+    "weight": 1.0
+   },
+   {
+    "term": "strong",
+    "weight": 1.0
+   },
+   {
+    "term": "strength",
+    "weight": 1.0
+   },
+   {
+    "term": "ruin",
+    "weight": 1.0
+   },
+   {
+    "term": "break",
+    "weight": 1.0
+   },
+   {
+    "term": "bear",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "creativity_and_craft",
+  "name": "Creativity & Craft",
+  "description": "Making things, and the patience the making demands.",
+  "lexicon": [
+   {
+    "term": "craft",
+    "weight": 2.0
+   },
+   {
+    "term": "craftsman",
+    "weight": 2.0
+   },
+   {
+    "term": "create",
+    "weight": 2.0
+   },
+   {
+    "term": "creation",
+    "weight": 2.0
+   },
+   {
+    "term": "creative",
+    "weight": 2.0
+   },
+   {
+    "term": "artist",
+    "weight": 2.0
+   },
+   {
+    "term": "artistic",
+    "weight": 2.0
+   },
+   {
+    "term": "poem",
+    "weight": 2.0
+   },
+   {
+    "term": "poetry",
+    "weight": 2.0
+   },
+   {
+    "term": "painter",
+    "weight": 2.0
+   },
+   {
+    "term": "sculptor",
+    "weight": 2.0
+   },
+   {
+    "term": "imagination",
+    "weight": 2.0
+   },
+   {
+    "term": "genius",
+    "weight": 2.0
+   },
+   {
+    "term": "inspiration",
+    "weight": 2.0
+   },
+   {
+    "term": "perspiration",
+    "weight": 2.0
+   },
+   {
+    "term": "originality",
+    "weight": 2.0
+   },
+   {
+    "term": "masterpiece",
+    "weight": 2.0
+   },
+   {
+    "term": "workman",
+    "weight": 2.0
+   },
+   {
+    "term": "amateur",
+    "weight": 2.0
+   },
+   {
+    "term": "invention",
+    "weight": 2.0
+   },
+   {
+    "term": "art",
+    "weight": 1.5
+   },
+   {
+    "term": "write",
+    "weight": 1.5
+   },
+   {
+    "term": "writing",
+    "weight": 1.5
+   },
+   {
+    "term": "writer",
+    "weight": 1.5
+   },
+   {
+    "term": "paint",
+    "weight": 1.5
+   },
+   {
+    "term": "music",
+    "weight": 1.5
+   },
+   {
+    "term": "compose",
+    "weight": 1.5
+   },
+   {
+    "term": "invent",
+    "weight": 1.5
+   },
+   {
+    "term": "imagine",
+    "weight": 1.5
+   },
+   {
+    "term": "original",
+    "weight": 1.5
+   },
+   {
+    "term": "apprentice",
+    "weight": 1.5
+   },
+   {
+    "term": "style",
+    "weight": 1.5
+   },
+   {
+    "term": "maker",
+    "weight": 1.5
+   },
+   {
+    "term": "design",
+    "weight": 1.5
+   },
+   {
+    "term": "muse",
+    "weight": 1.5
+   },
+   {
+    "term": "draft",
+    "weight": 1.5
+   },
+   {
+    "term": "make",
+    "weight": 1.0
+   },
+   {
+    "term": "build",
+    "weight": 1.0
+   },
+   {
+    "term": "work",
+    "weight": 1.0
+   },
+   {
+    "term": "beauty",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "humility",
+  "name": "Humility",
+  "description": "Right-sizing yourself: knowing what you do not know.",
+  "lexicon": [
+   {
+    "term": "know nothing",
+    "weight": 2.5
+   },
+   {
+    "term": "humble",
+    "weight": 2.0
+   },
+   {
+    "term": "humility",
+    "weight": 2.0
+   },
+   {
+    "term": "pride",
+    "weight": 2.0
+   },
+   {
+    "term": "vanity",
+    "weight": 2.0
+   },
+   {
+    "term": "arrogant",
+    "weight": 2.0
+   },
+   {
+    "term": "arrogance",
+    "weight": 2.0
+   },
+   {
+    "term": "boast",
+    "weight": 2.0
+   },
+   {
+    "term": "boastful",
+    "weight": 2.0
+   },
+   {
+    "term": "modesty",
+    "weight": 2.0
+   },
+   {
+    "term": "modest",
+    "weight": 2.0
+   },
+   {
+    "term": "haughty",
+    "weight": 2.0
+   },
+   {
+    "term": "meek",
+    "weight": 2.0
+   },
+   {
+    "term": "presumption",
+    "weight": 2.0
+   },
+   {
+    "term": "proud",
+    "weight": 1.5
+   },
+   {
+    "term": "vain",
+    "weight": 1.5
+   },
+   {
+    "term": "lowly",
+    "weight": 1.5
+   },
+   {
+    "term": "lowliness",
+    "weight": 1.5
+   },
+   {
+    "term": "ego",
+    "weight": 1.5
+   },
+   {
+    "term": "teachable",
+    "weight": 1.5
+   },
+   {
+    "term": "superior",
+    "weight": 1.5
+   },
+   {
+    "term": "flattery",
+    "weight": 1.5
+   },
+   {
+    "term": "humbly",
+    "weight": 1.5
+   },
+   {
+    "term": "unassuming",
+    "weight": 1.5
+   },
+   {
+    "term": "self-importance",
+    "weight": 1.5
+   },
+   {
+    "term": "vainglory",
+    "weight": 1.5
+   },
+   {
+    "term": "small",
+    "weight": 1.0
+   },
+   {
+    "term": "bow",
+    "weight": 1.0
+   },
+   {
+    "term": "submit",
+    "weight": 1.0
+   },
+   {
+    "term": "admit",
+    "weight": 1.0
+   },
+   {
+    "term": "prejudice",
+    "weight": 1.0
+   },
+   {
+    "term": "enlightened",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "purpose_and_ambition",
+  "name": "Purpose & Ambition",
+  "description": "What the work is for, and whether the ladder leans anywhere.",
+  "lexicon": [
+   {
+    "term": "purpose",
+    "weight": 2.0
+   },
+   {
+    "term": "ambition",
+    "weight": 2.0
+   },
+   {
+    "term": "goal",
+    "weight": 2.0
+   },
+   {
+    "term": "calling",
+    "weight": 2.0
+   },
+   {
+    "term": "vocation",
+    "weight": 2.0
+   },
+   {
+    "term": "mission",
+    "weight": 2.0
+   },
+   {
+    "term": "destiny",
+    "weight": 2.0
+   },
+   {
+    "term": "destined",
+    "weight": 2.0
+   },
+   {
+    "term": "aspiration",
+    "weight": 2.0
+   },
+   {
+    "term": "aspire",
+    "weight": 2.0
+   },
+   {
+    "term": "striving",
+    "weight": 2.0
+   },
+   {
+    "term": "strive",
+    "weight": 2.0
+   },
+   {
+    "term": "harbour",
+    "weight": 2.0
+   },
+   {
+    "term": "harbor",
+    "weight": 2.0
+   },
+   {
+    "term": "rudder",
+    "weight": 2.0
+   },
+   {
+    "term": "aim",
+    "weight": 1.5
+   },
+   {
+    "term": "achieve",
+    "weight": 1.5
+   },
+   {
+    "term": "achievement",
+    "weight": 1.5
+   },
+   {
+    "term": "accomplish",
+    "weight": 1.5
+   },
+   {
+    "term": "pursue",
+    "weight": 1.5
+   },
+   {
+    "term": "pursuit",
+    "weight": 1.5
+   },
+   {
+    "term": "meaning",
+    "weight": 1.5
+   },
+   {
+    "term": "direction",
+    "weight": 1.5
+   },
+   {
+    "term": "star",
+    "weight": 1.5
+   },
+   {
+    "term": "stars",
+    "weight": 1.5
+   },
+   {
+    "term": "greatness",
+    "weight": 1.5
+   },
+   {
+    "term": "enthusiasm",
+    "weight": 1.5
+   },
+   {
+    "term": "dream",
+    "weight": 1.5
+   },
+   {
+    "term": "vision",
+    "weight": 1.5
+   },
+   {
+    "term": "success",
+    "weight": 1.0
+   },
+   {
+    "term": "succeed",
+    "weight": 1.0
+   },
+   {
+    "term": "world",
+    "weight": 1.0
+   },
+   {
+    "term": "honour",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "simplicity_and_frugality",
+  "name": "Simplicity & Frugality",
+  "description": "Wanting less on purpose, and the freedom it buys.",
+  "lexicon": [
+   {
+    "term": "simplicity",
+    "weight": 2.0
+   },
+   {
+    "term": "simplify",
+    "weight": 2.0
+   },
+   {
+    "term": "frugal",
+    "weight": 2.0
+   },
+   {
+    "term": "frugality",
+    "weight": 2.0
+   },
+   {
+    "term": "thrift",
+    "weight": 2.0
+   },
+   {
+    "term": "thrifty",
+    "weight": 2.0
+   },
+   {
+    "term": "economy",
+    "weight": 2.0
+   },
+   {
+    "term": "extravagance",
+    "weight": 2.0
+   },
+   {
+    "term": "superfluous",
+    "weight": 2.0
+   },
+   {
+    "term": "luxury",
+    "weight": 2.0
+   },
+   {
+    "term": "plainness",
+    "weight": 2.0
+   },
+   {
+    "term": "simple",
+    "weight": 1.5
+   },
+   {
+    "term": "plain",
+    "weight": 1.5
+   },
+   {
+    "term": "spare",
+    "weight": 1.5
+   },
+   {
+    "term": "save",
+    "weight": 1.5
+   },
+   {
+    "term": "waste",
+    "weight": 1.5
+   },
+   {
+    "term": "wasteful",
+    "weight": 1.5
+   },
+   {
+    "term": "expense",
+    "weight": 1.5
+   },
+   {
+    "term": "cheap",
+    "weight": 1.5
+   },
+   {
+    "term": "poverty",
+    "weight": 1.5
+   },
+   {
+    "term": "riches",
+    "weight": 1.5
+   },
+   {
+    "term": "wealth",
+    "weight": 1.5
+   },
+   {
+    "term": "greed",
+    "weight": 1.5
+   },
+   {
+    "term": "greedy",
+    "weight": 1.5
+   },
+   {
+    "term": "crave",
+    "weight": 1.5
+   },
+   {
+    "term": "possessions",
+    "weight": 1.5
+   },
+   {
+    "term": "unnecessary",
+    "weight": 1.5
+   },
+   {
+    "term": "poor",
+    "weight": 1.0
+   },
+   {
+    "term": "rich",
+    "weight": 1.0
+   },
+   {
+    "term": "richest",
+    "weight": 1.0
+   },
+   {
+    "term": "money",
+    "weight": 1.0
+   },
+   {
+    "term": "cost",
+    "weight": 1.0
+   },
+   {
+    "term": "little",
+    "weight": 1.0
+   },
+   {
+    "term": "less",
+    "weight": 1.0
+   },
+   {
+    "term": "detail",
+    "weight": 1.0
+   },
+   {
+    "term": "own",
+    "weight": 1.0
+   },
+   {
+    "term": "need",
+    "weight": 1.0
+   },
+   {
+    "term": "cheapest",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "equanimity_and_anger",
+  "name": "Equanimity & Anger",
+  "description": "Keeping your temper, and the gap between event and reaction.",
+  "lexicon": [
+   {
+    "term": "anger",
+    "weight": 2.0
+   },
+   {
+    "term": "angry",
+    "weight": 2.0
+   },
+   {
+    "term": "temper",
+    "weight": 2.0
+   },
+   {
+    "term": "rage",
+    "weight": 2.0
+   },
+   {
+    "term": "fury",
+    "weight": 2.0
+   },
+   {
+    "term": "furious",
+    "weight": 2.0
+   },
+   {
+    "term": "wrath",
+    "weight": 2.0
+   },
+   {
+    "term": "equanimity",
+    "weight": 2.0
+   },
+   {
+    "term": "serenity",
+    "weight": 2.0
+   },
+   {
+    "term": "serene",
+    "weight": 2.0
+   },
+   {
+    "term": "tranquil",
+    "weight": 2.0
+   },
+   {
+    "term": "tranquillity",
+    "weight": 2.0
+   },
+   {
+    "term": "composure",
+    "weight": 2.0
+   },
+   {
+    "term": "resentment",
+    "weight": 2.0
+   },
+   {
+    "term": "revenge",
+    "weight": 2.0
+   },
+   {
+    "term": "grudge",
+    "weight": 2.0
+   },
+   {
+    "term": "calm",
+    "weight": 1.5
+   },
+   {
+    "term": "calmness",
+    "weight": 1.5
+   },
+   {
+    "term": "peace",
+    "weight": 1.5
+   },
+   {
+    "term": "peaceful",
+    "weight": 1.5
+   },
+   {
+    "term": "patience",
+    "weight": 1.5
+   },
+   {
+    "term": "impatient",
+    "weight": 1.5
+   },
+   {
+    "term": "irritation",
+    "weight": 1.5
+   },
+   {
+    "term": "annoy",
+    "weight": 1.5
+   },
+   {
+    "term": "resent",
+    "weight": 1.5
+   },
+   {
+    "term": "forgive",
+    "weight": 1.5
+   },
+   {
+    "term": "provoke",
+    "weight": 1.5
+   },
+   {
+    "term": "offend",
+    "weight": 1.5
+   },
+   {
+    "term": "self-control",
+    "weight": 1.5
+   },
+   {
+    "term": "restraint",
+    "weight": 1.5
+   },
+   {
+    "term": "vex",
+    "weight": 1.5
+   },
+   {
+    "term": "madness",
+    "weight": 1.0
+   },
+   {
+    "term": "disturbed",
+    "weight": 1.0
+   },
+   {
+    "term": "upset",
+    "weight": 1.0
+   },
+   {
+    "term": "shame",
+    "weight": 1.0
+   },
+   {
+    "term": "delay",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "generosity_and_service",
+  "name": "Generosity & Service",
+  "description": "Giving without accounting, and being useful to someone.",
+  "lexicon": [
+   {
+    "term": "generous",
+    "weight": 2.0
+   },
+   {
+    "term": "generosity",
+    "weight": 2.0
+   },
+   {
+    "term": "charity",
+    "weight": 2.0
+   },
+   {
+    "term": "charitable",
+    "weight": 2.0
+   },
+   {
+    "term": "benevolence",
+    "weight": 2.0
+   },
+   {
+    "term": "philanthropy",
+    "weight": 2.0
+   },
+   {
+    "term": "alms",
+    "weight": 2.0
+   },
+   {
+    "term": "selfless",
+    "weight": 2.0
+   },
+   {
+    "term": "altruism",
+    "weight": 2.0
+   },
+   {
+    "term": "benefactor",
+    "weight": 2.0
+   },
+   {
+    "term": "bestow",
+    "weight": 2.0
+   },
+   {
+    "term": "compassion",
+    "weight": 2.0
+   },
+   {
+    "term": "give",
+    "weight": 1.5
+   },
+   {
+    "term": "giving",
+    "weight": 1.5
+   },
+   {
+    "term": "serve",
+    "weight": 1.5
+   },
+   {
+    "term": "service",
+    "weight": 1.5
+   },
+   {
+    "term": "servant",
+    "weight": 1.5
+   },
+   {
+    "term": "help",
+    "weight": 1.5
+   },
+   {
+    "term": "helping",
+    "weight": 1.5
+   },
+   {
+    "term": "aid",
+    "weight": 1.5
+   },
+   {
+    "term": "mercy",
+    "weight": 1.5
+   },
+   {
+    "term": "sacrifice",
+    "weight": 1.5
+   },
+   {
+    "term": "contribute",
+    "weight": 1.5
+   },
+   {
+    "term": "lend",
+    "weight": 1.5
+   },
+   {
+    "term": "gives",
+    "weight": 1.5
+   },
+   {
+    "term": "giver",
+    "weight": 1.5
+   },
+   {
+    "term": "gift",
+    "weight": 1.0
+   },
+   {
+    "term": "others",
+    "weight": 1.0
+   },
+   {
+    "term": "useful",
+    "weight": 1.0
+   },
+   {
+    "term": "useless",
+    "weight": 1.0
+   },
+   {
+    "term": "receive",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "learning_and_growth",
+  "name": "Learning & Growth",
+  "description": "Reading, study, and changing your mind on purpose.",
+  "lexicon": [
+   {
+    "term": "learn",
+    "weight": 2.0
+   },
+   {
+    "term": "learning",
+    "weight": 2.0
+   },
+   {
+    "term": "study",
+    "weight": 2.0
+   },
+   {
+    "term": "student",
+    "weight": 2.0
+   },
+   {
+    "term": "reading",
+    "weight": 2.0
+   },
+   {
+    "term": "teach",
+    "weight": 2.0
+   },
+   {
+    "term": "teacher",
+    "weight": 2.0
+   },
+   {
+    "term": "teaching",
+    "weight": 2.0
+   },
+   {
+    "term": "education",
+    "weight": 2.0
+   },
+   {
+    "term": "educate",
+    "weight": 2.0
+   },
+   {
+    "term": "knowledge",
+    "weight": 2.0
+   },
+   {
+    "term": "curiosity",
+    "weight": 2.0
+   },
+   {
+    "term": "curious",
+    "weight": 2.0
+   },
+   {
+    "term": "mastery",
+    "weight": 2.0
+   },
+   {
+    "term": "ignorance",
+    "weight": 2.0
+   },
+   {
+    "term": "scholar",
+    "weight": 2.0
+   },
+   {
+    "term": "read",
+    "weight": 1.5
+   },
+   {
+    "term": "book",
+    "weight": 1.5
+   },
+   {
+    "term": "books",
+    "weight": 1.5
+   },
+   {
+    "term": "taught",
+    "weight": 1.5
+   },
+   {
+    "term": "wisdom",
+    "weight": 1.5
+   },
+   {
+    "term": "wise",
+    "weight": 1.5
+   },
+   {
+    "term": "understand",
+    "weight": 1.5
+   },
+   {
+    "term": "understanding",
+    "weight": 1.5
+   },
+   {
+    "term": "master",
+    "weight": 1.5
+   },
+   {
+    "term": "ignorant",
+    "weight": 1.5
+   },
+   {
+    "term": "inquire",
+    "weight": 1.5
+   },
+   {
+    "term": "experience",
+    "weight": 1.5
+   },
+   {
+    "term": "growth",
+    "weight": 1.5
+   },
+   {
+    "term": "improve",
+    "weight": 1.5
+   },
+   {
+    "term": "progress",
+    "weight": 1.5
+   },
+   {
+    "term": "lesson",
+    "weight": 1.5
+   },
+   {
+    "term": "beginner",
+    "weight": 1.5
+   },
+   {
+    "term": "know",
+    "weight": 1.0
+   },
+   {
+    "term": "question",
+    "weight": 1.0
+   },
+   {
+    "term": "grow",
+    "weight": 1.0
+   },
+   {
+    "term": "mistake",
+    "weight": 1.0
+   },
+   {
+    "term": "error",
+    "weight": 1.0
+   },
+   {
+    "term": "memory",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "decision_and_action",
+  "name": "Decision & Action",
+  "description": "Choosing, then moving — the cure for deliberation without end.",
+  "lexicon": [
+   {
+    "term": "decide",
+    "weight": 2.0
+   },
+   {
+    "term": "decision",
+    "weight": 2.0
+   },
+   {
+    "term": "decisive",
+    "weight": 2.0
+   },
+   {
+    "term": "choose",
+    "weight": 2.0
+   },
+   {
+    "term": "choice",
+    "weight": 2.0
+   },
+   {
+    "term": "indecision",
+    "weight": 2.0
+   },
+   {
+    "term": "procrastinate",
+    "weight": 2.0
+   },
+   {
+    "term": "postpone",
+    "weight": 2.0
+   },
+   {
+    "term": "hesitate",
+    "weight": 2.0
+   },
+   {
+    "term": "hesitation",
+    "weight": 2.0
+   },
+   {
+    "term": "deliberate",
+    "weight": 2.0
+   },
+   {
+    "term": "resolve",
+    "weight": 2.0
+   },
+   {
+    "term": "resolution",
+    "weight": 2.0
+   },
+   {
+    "term": "commitment",
+    "weight": 2.0
+   },
+   {
+    "term": "act",
+    "weight": 1.5
+   },
+   {
+    "term": "action",
+    "weight": 1.5
+   },
+   {
+    "term": "deed",
+    "weight": 1.5
+   },
+   {
+    "term": "deeds",
+    "weight": 1.5
+   },
+   {
+    "term": "execute",
+    "weight": 1.5
+   },
+   {
+    "term": "begin",
+    "weight": 1.5
+   },
+   {
+    "term": "beginning",
+    "weight": 1.5
+   },
+   {
+    "term": "start",
+    "weight": 1.5
+   },
+   {
+    "term": "commit",
+    "weight": 1.5
+   },
+   {
+    "term": "apply",
+    "weight": 1.5
+   },
+   {
+    "term": "waver",
+    "weight": 1.5
+   },
+   {
+    "term": "doubt",
+    "weight": 1.5
+   },
+   {
+    "term": "intention",
+    "weight": 1.5
+   },
+   {
+    "term": "intend",
+    "weight": 1.5
+   },
+   {
+    "term": "dither",
+    "weight": 1.5
+   },
+   {
+    "term": "do",
+    "weight": 0.5
+   },
+   {
+    "term": "doing",
+    "weight": 0.5
+   },
+   {
+    "term": "done",
+    "weight": 0.5
+   },
+   {
+    "term": "move",
+    "weight": 0.5
+   },
+   {
+    "term": "step",
+    "weight": 0.5
+   },
+   {
+    "term": "will",
+    "weight": 0.5
+   },
+   {
+    "term": "willing",
+    "weight": 0.5
+   }
+  ]
+ }
+]

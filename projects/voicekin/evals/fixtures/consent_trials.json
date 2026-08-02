@@ -1,0 +1,458 @@
+{
+ "genuine": [
+  {
+   "condition": "clean",
+   "recording": "S01/consent/0",
+   "target": "S01"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S01/consent/1",
+   "target": "S01"
+  },
+  {
+   "condition": "clean",
+   "recording": "S02/consent/0",
+   "target": "S02"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S02/consent/1",
+   "target": "S02"
+  },
+  {
+   "condition": "clean",
+   "recording": "S03/consent/0",
+   "target": "S03"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S03/consent/1",
+   "target": "S03"
+  },
+  {
+   "condition": "clean",
+   "recording": "S04/consent/0",
+   "target": "S04"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S04/consent/1",
+   "target": "S04"
+  },
+  {
+   "condition": "clean",
+   "recording": "S05/consent/0",
+   "target": "S05"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S05/consent/1",
+   "target": "S05"
+  },
+  {
+   "condition": "clean",
+   "recording": "S06/consent/0",
+   "target": "S06"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S06/consent/1",
+   "target": "S06"
+  },
+  {
+   "condition": "clean",
+   "recording": "S07/consent/0",
+   "target": "S07"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S07/consent/1",
+   "target": "S07"
+  },
+  {
+   "condition": "clean",
+   "recording": "S08/consent/0",
+   "target": "S08"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S08/consent/1",
+   "target": "S08"
+  },
+  {
+   "condition": "clean",
+   "recording": "S09/consent/0",
+   "target": "S09"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S09/consent/1",
+   "target": "S09"
+  },
+  {
+   "condition": "clean",
+   "recording": "S10/consent/0",
+   "target": "S10"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S10/consent/1",
+   "target": "S10"
+  },
+  {
+   "condition": "clean",
+   "recording": "S11/consent/0",
+   "target": "S11"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S11/consent/1",
+   "target": "S11"
+  },
+  {
+   "condition": "clean",
+   "recording": "S12/consent/0",
+   "target": "S12"
+  },
+  {
+   "condition": "harsh",
+   "recording": "S12/consent/1",
+   "target": "S12"
+  },
+  {
+   "condition": "clean",
+   "recording": "S13/consent/0",
+   "target": "S13"
+  },
+  {
+   "condition": "channel",
+   "recording": "S13/consent/1",
+   "target": "S13"
+  },
+  {
+   "condition": "clean",
+   "recording": "S14/consent/0",
+   "target": "S14"
+  },
+  {
+   "condition": "channel",
+   "recording": "S14/consent/1",
+   "target": "S14"
+  },
+  {
+   "condition": "clean",
+   "recording": "S15/consent/0",
+   "target": "S15"
+  },
+  {
+   "condition": "channel",
+   "recording": "S15/consent/1",
+   "target": "S15"
+  },
+  {
+   "condition": "clean",
+   "recording": "S16/consent/0",
+   "target": "S16"
+  },
+  {
+   "condition": "channel",
+   "recording": "S16/consent/1",
+   "target": "S16"
+  },
+  {
+   "condition": "clean",
+   "recording": "S17/consent/0",
+   "target": "S17"
+  },
+  {
+   "condition": "channel",
+   "recording": "S17/consent/1",
+   "target": "S17"
+  },
+  {
+   "condition": "clean",
+   "recording": "S18/consent/0",
+   "target": "S18"
+  },
+  {
+   "condition": "channel",
+   "recording": "S18/consent/1",
+   "target": "S18"
+  },
+  {
+   "condition": "clean",
+   "recording": "S19/consent/0",
+   "target": "S19"
+  },
+  {
+   "condition": "channel",
+   "recording": "S19/consent/1",
+   "target": "S19"
+  },
+  {
+   "condition": "clean",
+   "recording": "S20/consent/0",
+   "target": "S20"
+  },
+  {
+   "condition": "channel",
+   "recording": "S20/consent/1",
+   "target": "S20"
+  },
+  {
+   "condition": "clean",
+   "recording": "S21/consent/0",
+   "target": "S21"
+  },
+  {
+   "condition": "channel",
+   "recording": "S21/consent/1",
+   "target": "S21"
+  },
+  {
+   "condition": "clean",
+   "recording": "S22/consent/0",
+   "target": "S22"
+  },
+  {
+   "condition": "channel",
+   "recording": "S22/consent/1",
+   "target": "S22"
+  },
+  {
+   "condition": "clean",
+   "recording": "S23/consent/0",
+   "target": "S23"
+  },
+  {
+   "condition": "channel",
+   "recording": "S23/consent/1",
+   "target": "S23"
+  },
+  {
+   "condition": "clean",
+   "recording": "S24/consent/0",
+   "target": "S24"
+  },
+  {
+   "condition": "channel",
+   "recording": "S24/consent/1",
+   "target": "S24"
+  }
+ ],
+ "impostor": [
+  {
+   "class": "joint",
+   "recording": "S01-sib-joint/consent/0",
+   "target": "S01"
+  },
+  {
+   "class": "joint",
+   "recording": "S02-sib-joint/consent/0",
+   "target": "S02"
+  },
+  {
+   "class": "joint",
+   "recording": "S03-sib-joint/consent/0",
+   "target": "S03"
+  },
+  {
+   "class": "joint",
+   "recording": "S04-sib-joint/consent/0",
+   "target": "S04"
+  },
+  {
+   "class": "joint",
+   "recording": "S05-sib-joint/consent/0",
+   "target": "S05"
+  },
+  {
+   "class": "joint",
+   "recording": "S06-sib-joint/consent/0",
+   "target": "S06"
+  },
+  {
+   "class": "joint",
+   "recording": "S07-sib-joint/consent/0",
+   "target": "S07"
+  },
+  {
+   "class": "joint",
+   "recording": "S08-sib-joint/consent/0",
+   "target": "S08"
+  },
+  {
+   "class": "joint",
+   "recording": "S09-sib-joint/consent/0",
+   "target": "S09"
+  },
+  {
+   "class": "joint",
+   "recording": "S10-sib-joint/consent/0",
+   "target": "S10"
+  },
+  {
+   "class": "joint",
+   "recording": "S11-sib-joint/consent/0",
+   "target": "S11"
+  },
+  {
+   "class": "joint",
+   "recording": "S12-sib-joint/consent/0",
+   "target": "S12"
+  },
+  {
+   "class": "single_f0",
+   "recording": "S01-sib-f0/consent/0",
+   "target": "S01"
+  },
+  {
+   "class": "single_f0",
+   "recording": "S02-sib-f0/consent/0",
+   "target": "S02"
+  },
+  {
+   "class": "single_f0",
+   "recording": "S03-sib-f0/consent/0",
+   "target": "S03"
+  },
+  {
+   "class": "single_f0",
+   "recording": "S04-sib-f0/consent/0",
+   "target": "S04"
+  },
+  {
+   "class": "single_vtl",
+   "recording": "S05-sib-vtl/consent/0",
+   "target": "S05"
+  },
+  {
+   "class": "single_vtl",
+   "recording": "S06-sib-vtl/consent/0",
+   "target": "S06"
+  },
+  {
+   "class": "single_vtl",
+   "recording": "S07-sib-vtl/consent/0",
+   "target": "S07"
+  },
+  {
+   "class": "single_vtl",
+   "recording": "S08-sib-vtl/consent/0",
+   "target": "S08"
+  },
+  {
+   "class": "single_tilt",
+   "recording": "S09-sib-tilt/consent/0",
+   "target": "S09"
+  },
+  {
+   "class": "single_tilt",
+   "recording": "S10-sib-tilt/consent/0",
+   "target": "S10"
+  },
+  {
+   "class": "single_tilt",
+   "recording": "S11-sib-tilt/consent/0",
+   "target": "S11"
+  },
+  {
+   "class": "single_tilt",
+   "recording": "S12-sib-tilt/consent/0",
+   "target": "S12"
+  },
+  {
+   "class": "mimic",
+   "recording": "S13-mimic/consent/0",
+   "target": "S13"
+  },
+  {
+   "class": "mimic",
+   "recording": "S14-mimic/consent/0",
+   "target": "S14"
+  },
+  {
+   "class": "mimic",
+   "recording": "S15-mimic/consent/0",
+   "target": "S15"
+  },
+  {
+   "class": "mimic",
+   "recording": "S16-mimic/consent/0",
+   "target": "S16"
+  },
+  {
+   "class": "mimic",
+   "recording": "S17-mimic/consent/0",
+   "target": "S17"
+  },
+  {
+   "class": "mimic",
+   "recording": "S18-mimic/consent/0",
+   "target": "S18"
+  },
+  {
+   "class": "random_other",
+   "recording": "S01/consent/0",
+   "target": "S11"
+  },
+  {
+   "class": "random_other",
+   "recording": "S02/consent/0",
+   "target": "S20"
+  },
+  {
+   "class": "random_other",
+   "recording": "S03/consent/0",
+   "target": "S24"
+  },
+  {
+   "class": "random_other",
+   "recording": "S04/consent/0",
+   "target": "S05"
+  },
+  {
+   "class": "random_other",
+   "recording": "S05/consent/0",
+   "target": "S14"
+  },
+  {
+   "class": "random_other",
+   "recording": "S06/consent/0",
+   "target": "S02"
+  },
+  {
+   "class": "random_other",
+   "recording": "S07/consent/0",
+   "target": "S10"
+  },
+  {
+   "class": "random_other",
+   "recording": "S08/consent/0",
+   "target": "S15"
+  },
+  {
+   "class": "random_other",
+   "recording": "S09/consent/0",
+   "target": "S11"
+  },
+  {
+   "class": "random_other",
+   "recording": "S10/consent/0",
+   "target": "S22"
+  },
+  {
+   "class": "random_other",
+   "recording": "S11/consent/0",
+   "target": "S08"
+  },
+  {
+   "class": "random_other",
+   "recording": "S12/consent/0",
+   "target": "S01"
+  }
+ ],
+ "seed": 20260732,
+ "source": "labels.json via build_derived.py"
+}

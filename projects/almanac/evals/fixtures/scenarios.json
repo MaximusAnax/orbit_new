@@ -1,0 +1,3451 @@
+{
+ "generator_seed": 42,
+ "start": "2026-01-01",
+ "scenarios": [
+  {
+   "id": "S1",
+   "name": "steady",
+   "purpose": "the daily user; primary for M2a/M3/M4/M5/M6",
+   "days": 365,
+   "batch_k": 1,
+   "p_reflect": 0.8,
+   "archive_probability": 0.5,
+   "draw_probability": 0.06,
+   "entries": [
+    {
+     "ref": "s1-000",
+     "text": "Answer the hardest message before the easy ones.",
+     "themes": [
+      "courage"
+     ],
+     "captured_day": -12,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-001",
+     "text": "Refuse the untried route slowly, on purpose.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": -11,
+     "quality": "decent",
+     "pinned": true
+    },
+    {
+     "ref": "s1-002",
+     "text": "Walk to the crowded shelf and let that be enough.",
+     "themes": [],
+     "captured_day": -10,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-003",
+     "text": "Cut the smallest promise before the day opens.",
+     "themes": [
+      "purpose_and_ambition"
+     ],
+     "captured_day": -9,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-004",
+     "text": "Write down the difficult paragraph while the kettle boils.",
+     "themes": [
+      "simplicity_and_frugality",
+      "purpose_and_ambition"
+     ],
+     "captured_day": -8,
+     "quality": "dud",
+     "pinned": true
+    },
+    {
+     "ref": "s1-005",
+     "text": "Close the half-read book then put it down.",
+     "themes": [
+      "decision_and_action",
+      "relationships"
+     ],
+     "captured_day": -7,
+     "quality": "gem",
+     "pinned": true
+    },
+    {
+     "ref": "s1-006",
+     "text": "Return to the early alarm before anyone asks.",
+     "themes": [
+      "adversity_and_resilience"
+     ],
+     "captured_day": -6,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-007",
+     "text": "Finish the standing meeting with the door shut.",
+     "themes": [
+      "mortality_and_time",
+      "adversity_and_resilience"
+     ],
+     "captured_day": -5,
+     "quality": "dud",
+     "pinned": true
+    },
+    {
+     "ref": "s1-008",
+     "text": "Measure the missing apology and then stop.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": -4,
+     "quality": "decent",
+     "pinned": true
+    },
+    {
+     "ref": "s1-009",
+     "text": "Sit with the plain meal and tell one person.",
+     "themes": [
+      "relationships",
+      "attention_and_presence"
+     ],
+     "captured_day": -3,
+     "quality": "decent",
+     "pinned": true
+    },
+    {
+     "ref": "s1-010",
+     "text": "Keep the unopened letter at the same hour tomorrow.",
+     "themes": [
+      "generosity_and_service",
+      "gratitude"
+     ],
+     "captured_day": -2,
+     "quality": "dud",
+     "pinned": true
+    },
+    {
+     "ref": "s1-011",
+     "text": "Put away the parked decision on paper, not on screen.",
+     "themes": [
+      "humility"
+     ],
+     "captured_day": -1,
+     "quality": "gem",
+     "pinned": true
+    },
+    {
+     "ref": "s1-012",
+     "text": "Start the loudest worry without checking anything else.",
+     "themes": [
+      "decision_and_action",
+      "courage"
+     ],
+     "captured_day": 1,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-013",
+     "text": "Ask about the untouched notebook without apologising.",
+     "themes": [
+      "attention_and_presence",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 6,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-014",
+     "text": "Name the unpaid favour and say why.",
+     "themes": [
+      "humility",
+      "honesty_and_integrity"
+     ],
+     "captured_day": 10,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-015",
+     "text": "Rehearse the unfinished list out loud, once.",
+     "themes": [
+      "humility",
+      "honesty_and_integrity"
+     ],
+     "captured_day": 15,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-016",
+     "text": "Answer the second draft in one sitting.",
+     "themes": [],
+     "captured_day": 20,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-017",
+     "text": "Refuse the quiet colleague before the easy ones.",
+     "themes": [
+      "purpose_and_ambition"
+     ],
+     "captured_day": 24,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-018",
+     "text": "Walk to the long walk slowly, on purpose.",
+     "themes": [
+      "purpose_and_ambition"
+     ],
+     "captured_day": 29,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-019",
+     "text": "Cut the oldest grudge and let that be enough.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 34,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-020",
+     "text": "Write down the unreturned call before the day opens.",
+     "themes": [
+      "adversity_and_resilience",
+      "relationships"
+     ],
+     "captured_day": 38,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-021",
+     "text": "Close the borrowed excuse while the kettle boils.",
+     "themes": [],
+     "captured_day": 43,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-022",
+     "text": "Return to the empty calendar block then put it down.",
+     "themes": [
+      "equanimity_and_anger"
+     ],
+     "captured_day": 48,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-023",
+     "text": "Finish the open tab before anyone asks.",
+     "themes": [
+      "equanimity_and_anger"
+     ],
+     "captured_day": 52,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-024",
+     "text": "Measure the extra chair with the door shut.",
+     "themes": [
+      "generosity_and_service",
+      "humility"
+     ],
+     "captured_day": 57,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-025",
+     "text": "Sit with the hardest message and then stop.",
+     "themes": [
+      "adversity_and_resilience"
+     ],
+     "captured_day": 62,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-026",
+     "text": "Keep the untried route and tell one person.",
+     "themes": [
+      "adversity_and_resilience"
+     ],
+     "captured_day": 66,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-027",
+     "text": "Put away the crowded shelf at the same hour tomorrow.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 71,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-028",
+     "text": "Start the smallest promise on paper, not on screen.",
+     "themes": [
+      "adversity_and_resilience",
+      "courage"
+     ],
+     "captured_day": 76,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-029",
+     "text": "Ask about the difficult paragraph without checking anything else.",
+     "themes": [
+      "equanimity_and_anger",
+      "decision_and_action"
+     ],
+     "captured_day": 80,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-030",
+     "text": "Name the half-read book without apologising.",
+     "themes": [
+      "creativity_and_craft",
+      "discipline_and_habit"
+     ],
+     "captured_day": 85,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-031",
+     "text": "Rehearse the early alarm and say why.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 90,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-032",
+     "text": "Answer the standing meeting out loud, once.",
+     "themes": [
+      "relationships"
+     ],
+     "captured_day": 94,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-033",
+     "text": "Refuse the missing apology in one sitting.",
+     "themes": [
+      "gratitude",
+      "learning_and_growth"
+     ],
+     "captured_day": 99,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-034",
+     "text": "Walk to the plain meal before the easy ones.",
+     "themes": [
+      "honesty_and_integrity"
+     ],
+     "captured_day": 104,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-035",
+     "text": "Cut the unopened letter slowly, on purpose.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 108,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-036",
+     "text": "Write down the parked decision and let that be enough.",
+     "themes": [
+      "generosity_and_service",
+      "gratitude"
+     ],
+     "captured_day": 113,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-037",
+     "text": "Close the loudest worry before the day opens.",
+     "themes": [
+      "relationships"
+     ],
+     "captured_day": 118,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-038",
+     "text": "Return to the untouched notebook while the kettle boils.",
+     "themes": [],
+     "captured_day": 122,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-039",
+     "text": "Finish the unpaid favour then put it down.",
+     "themes": [
+      "discipline_and_habit",
+      "attention_and_presence"
+     ],
+     "captured_day": 127,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-040",
+     "text": "Measure the unfinished list before anyone asks.",
+     "themes": [
+      "attention_and_presence"
+     ],
+     "captured_day": 132,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-041",
+     "text": "Sit with the second draft with the door shut.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 136,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-042",
+     "text": "Keep the quiet colleague and then stop.",
+     "themes": [
+      "honesty_and_integrity"
+     ],
+     "captured_day": 141,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-043",
+     "text": "Put away the long walk and tell one person.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 146,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-044",
+     "text": "Start the oldest grudge at the same hour tomorrow.",
+     "themes": [
+      "gratitude"
+     ],
+     "captured_day": 150,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-045",
+     "text": "Ask about the unreturned call on paper, not on screen.",
+     "themes": [
+      "mortality_and_time",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 155,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-046",
+     "text": "Name the borrowed excuse without checking anything else.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": 160,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-047",
+     "text": "Rehearse the empty calendar block without apologising.",
+     "themes": [
+      "courage",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 164,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-048",
+     "text": "Answer the open tab and say why.",
+     "themes": [
+      "mortality_and_time"
+     ],
+     "captured_day": 169,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-049",
+     "text": "Refuse the extra chair out loud, once.",
+     "themes": [
+      "generosity_and_service"
+     ],
+     "captured_day": 174,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-050",
+     "text": "Walk to the hardest message in one sitting.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": 178,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-051",
+     "text": "Cut the untried route before the easy ones.",
+     "themes": [
+      "creativity_and_craft",
+      "generosity_and_service"
+     ],
+     "captured_day": 183,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-052",
+     "text": "Write down the crowded shelf slowly, on purpose.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 188,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-053",
+     "text": "Close the smallest promise and let that be enough.",
+     "themes": [
+      "equanimity_and_anger",
+      "purpose_and_ambition"
+     ],
+     "captured_day": 192,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-054",
+     "text": "Return to the difficult paragraph before the day opens.",
+     "themes": [
+      "purpose_and_ambition"
+     ],
+     "captured_day": 197,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-055",
+     "text": "Finish the half-read book while the kettle boils.",
+     "themes": [
+      "discipline_and_habit",
+      "humility"
+     ],
+     "captured_day": 202,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-056",
+     "text": "Measure the early alarm then put it down.",
+     "themes": [
+      "mortality_and_time",
+      "discipline_and_habit"
+     ],
+     "captured_day": 206,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-057",
+     "text": "Sit with the standing meeting before anyone asks.",
+     "themes": [
+      "equanimity_and_anger"
+     ],
+     "captured_day": 211,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-058",
+     "text": "Keep the missing apology with the door shut.",
+     "themes": [
+      "adversity_and_resilience",
+      "honesty_and_integrity"
+     ],
+     "captured_day": 216,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-059",
+     "text": "Put away the plain meal and then stop.",
+     "themes": [
+      "gratitude"
+     ],
+     "captured_day": 220,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-060",
+     "text": "Start the unopened letter and tell one person.",
+     "themes": [
+      "learning_and_growth",
+      "creativity_and_craft"
+     ],
+     "captured_day": 225,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-061",
+     "text": "Ask about the parked decision at the same hour tomorrow.",
+     "themes": [
+      "decision_and_action",
+      "generosity_and_service"
+     ],
+     "captured_day": 230,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-062",
+     "text": "Name the loudest worry on paper, not on screen.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 234,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-063",
+     "text": "Rehearse the untouched notebook without checking anything else.",
+     "themes": [
+      "simplicity_and_frugality",
+      "attention_and_presence"
+     ],
+     "captured_day": 239,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-064",
+     "text": "Answer the unpaid favour without apologising.",
+     "themes": [
+      "humility",
+      "decision_and_action"
+     ],
+     "captured_day": 244,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-065",
+     "text": "Refuse the unfinished list and say why.",
+     "themes": [
+      "honesty_and_integrity",
+      "learning_and_growth"
+     ],
+     "captured_day": 248,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-066",
+     "text": "Walk to the second draft out loud, once.",
+     "themes": [],
+     "captured_day": 253,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-067",
+     "text": "Cut the quiet colleague in one sitting.",
+     "themes": [
+      "relationships",
+      "decision_and_action"
+     ],
+     "captured_day": 258,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-068",
+     "text": "Write down the long walk before the easy ones.",
+     "themes": [
+      "humility",
+      "mortality_and_time"
+     ],
+     "captured_day": 262,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-069",
+     "text": "Close the oldest grudge slowly, on purpose.",
+     "themes": [
+      "discipline_and_habit",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 267,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-070",
+     "text": "Return to the unreturned call and let that be enough.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 272,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-071",
+     "text": "Finish the borrowed excuse before the day opens.",
+     "themes": [
+      "humility"
+     ],
+     "captured_day": 276,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-072",
+     "text": "Measure the empty calendar block while the kettle boils.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 281,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-073",
+     "text": "Sit with the open tab then put it down.",
+     "themes": [
+      "adversity_and_resilience"
+     ],
+     "captured_day": 286,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-074",
+     "text": "Keep the extra chair before anyone asks.",
+     "themes": [
+      "equanimity_and_anger"
+     ],
+     "captured_day": 290,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-075",
+     "text": "Put away the hardest message with the door shut.",
+     "themes": [
+      "courage",
+      "learning_and_growth"
+     ],
+     "captured_day": 295,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-076",
+     "text": "Start the untried route and then stop.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 300,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s1-077",
+     "text": "Ask about the crowded shelf and tell one person.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 304,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-078",
+     "text": "Name the smallest promise at the same hour tomorrow.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 309,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-079",
+     "text": "Rehearse the difficult paragraph on paper, not on screen.",
+     "themes": [
+      "mortality_and_time",
+      "decision_and_action"
+     ],
+     "captured_day": 314,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-080",
+     "text": "Answer the half-read book without checking anything else.",
+     "themes": [
+      "simplicity_and_frugality",
+      "decision_and_action"
+     ],
+     "captured_day": 318,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-081",
+     "text": "Refuse the early alarm without apologising.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 323,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-082",
+     "text": "Walk to the standing meeting and say why.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 328,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-083",
+     "text": "Cut the missing apology out loud, once.",
+     "themes": [
+      "gratitude"
+     ],
+     "captured_day": 332,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-084",
+     "text": "Write down the plain meal in one sitting.",
+     "themes": [
+      "purpose_and_ambition",
+      "gratitude"
+     ],
+     "captured_day": 337,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-085",
+     "text": "Close the unopened letter before the easy ones.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": 342,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-086",
+     "text": "Return to the parked decision slowly, on purpose.",
+     "themes": [
+      "gratitude",
+      "decision_and_action"
+     ],
+     "captured_day": 346,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-087",
+     "text": "Finish the loudest worry and let that be enough.",
+     "themes": [
+      "mortality_and_time"
+     ],
+     "captured_day": 351,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s1-088",
+     "text": "Measure the untouched notebook before the day opens.",
+     "themes": [],
+     "captured_day": 356,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s1-089",
+     "text": "Sit with the unpaid favour while the kettle boils.",
+     "themes": [
+      "honesty_and_integrity",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 360,
+     "quality": "decent",
+     "pinned": false
+    }
+   ],
+   "curation": [
+    {
+     "day": 120,
+     "action": "pin",
+     "ref": "s1-012"
+    },
+    {
+     "day": 120,
+     "action": "pin",
+     "ref": "s1-013"
+    },
+    {
+     "day": 120,
+     "action": "pin",
+     "ref": "s1-014"
+    },
+    {
+     "day": 200,
+     "action": "unpin",
+     "ref": "s1-010"
+    },
+    {
+     "day": 200,
+     "action": "unpin",
+     "ref": "s1-009"
+    }
+   ],
+   "collections": [
+    {
+     "name": "Mornings",
+     "entry_refs": [
+      "s1-000",
+      "s1-001",
+      "s1-002",
+      "s1-003",
+      "s1-004",
+      "s1-005",
+      "s1-006",
+      "s1-007"
+     ],
+     "create_day": 15
+    },
+    {
+     "name": "Hard conversations",
+     "entry_refs": [
+      "s1-008",
+      "s1-009",
+      "s1-010",
+      "s1-011",
+      "s1-012",
+      "s1-013",
+      "s1-014",
+      "s1-015"
+     ],
+     "create_day": 15
+    }
+   ],
+   "calendar": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364
+   ]
+  },
+  {
+   "id": "S2",
+   "name": "burst",
+   "purpose": "bulk import drain; M2b, M3, M6",
+   "days": 365,
+   "batch_k": 1,
+   "p_reflect": 0.8,
+   "archive_probability": 0.5,
+   "draw_probability": 0.0,
+   "entries": [
+    {
+     "ref": "s2-000",
+     "text": "Write down the hardest message with the door shut.",
+     "themes": [
+      "honesty_and_integrity",
+      "attention_and_presence"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-001",
+     "text": "Close the untried route and then stop.",
+     "themes": [
+      "honesty_and_integrity"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-002",
+     "text": "Return to the crowded shelf and tell one person.",
+     "themes": [
+      "mortality_and_time"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-003",
+     "text": "Finish the smallest promise at the same hour tomorrow.",
+     "themes": [
+      "purpose_and_ambition",
+      "learning_and_growth"
+     ],
+     "captured_day": 0,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-004",
+     "text": "Measure the difficult paragraph on paper, not on screen.",
+     "themes": [
+      "creativity_and_craft",
+      "relationships"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-005",
+     "text": "Sit with the half-read book without checking anything else.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-006",
+     "text": "Keep the early alarm without apologising.",
+     "themes": [
+      "gratitude",
+      "generosity_and_service"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-007",
+     "text": "Put away the standing meeting and say why.",
+     "themes": [],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-008",
+     "text": "Start the missing apology out loud, once.",
+     "themes": [
+      "relationships"
+     ],
+     "captured_day": 0,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-009",
+     "text": "Ask about the plain meal in one sitting.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": true
+    },
+    {
+     "ref": "s2-010",
+     "text": "Name the unopened letter before the easy ones.",
+     "themes": [
+      "relationships",
+      "courage"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-011",
+     "text": "Rehearse the parked decision slowly, on purpose.",
+     "themes": [
+      "generosity_and_service",
+      "humility"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-012",
+     "text": "Answer the loudest worry and let that be enough.",
+     "themes": [
+      "courage"
+     ],
+     "captured_day": 0,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-013",
+     "text": "Refuse the untouched notebook before the day opens.",
+     "themes": [
+      "relationships",
+      "discipline_and_habit"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-014",
+     "text": "Walk to the unpaid favour while the kettle boils.",
+     "themes": [
+      "attention_and_presence",
+      "gratitude"
+     ],
+     "captured_day": 0,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-015",
+     "text": "Cut the unfinished list then put it down.",
+     "themes": [
+      "adversity_and_resilience",
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-016",
+     "text": "Write down the second draft before anyone asks.",
+     "themes": [],
+     "captured_day": 0,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-017",
+     "text": "Close the quiet colleague with the door shut.",
+     "themes": [
+      "attention_and_presence",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-018",
+     "text": "Return to the long walk and then stop.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-019",
+     "text": "Finish the oldest grudge and tell one person.",
+     "themes": [
+      "mortality_and_time"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": true
+    },
+    {
+     "ref": "s2-020",
+     "text": "Measure the unreturned call at the same hour tomorrow.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-021",
+     "text": "Sit with the borrowed excuse on paper, not on screen.",
+     "themes": [
+      "mortality_and_time"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-022",
+     "text": "Keep the empty calendar block without checking anything else.",
+     "themes": [
+      "equanimity_and_anger",
+      "honesty_and_integrity"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-023",
+     "text": "Put away the open tab without apologising.",
+     "themes": [
+      "equanimity_and_anger"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-024",
+     "text": "Start the extra chair and say why.",
+     "themes": [
+      "humility"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-025",
+     "text": "Ask about the hardest message out loud, once.",
+     "themes": [
+      "simplicity_and_frugality",
+      "equanimity_and_anger"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-026",
+     "text": "Name the untried route in one sitting.",
+     "themes": [
+      "discipline_and_habit",
+      "generosity_and_service"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-027",
+     "text": "Rehearse the crowded shelf before the easy ones.",
+     "themes": [
+      "decision_and_action",
+      "relationships"
+     ],
+     "captured_day": 0,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-028",
+     "text": "Answer the smallest promise slowly, on purpose.",
+     "themes": [
+      "attention_and_presence",
+      "honesty_and_integrity"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": true
+    },
+    {
+     "ref": "s2-029",
+     "text": "Refuse the difficult paragraph and let that be enough.",
+     "themes": [
+      "adversity_and_resilience",
+      "generosity_and_service"
+     ],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-030",
+     "text": "Walk to the half-read book before the day opens.",
+     "themes": [
+      "attention_and_presence"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-031",
+     "text": "Cut the early alarm while the kettle boils.",
+     "themes": [
+      "humility"
+     ],
+     "captured_day": 0,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-032",
+     "text": "Write down the standing meeting then put it down.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-033",
+     "text": "Close the missing apology before anyone asks.",
+     "themes": [
+      "generosity_and_service",
+      "courage"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-034",
+     "text": "Return to the plain meal with the door shut.",
+     "themes": [
+      "simplicity_and_frugality",
+      "humility"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-035",
+     "text": "Finish the unopened letter and then stop.",
+     "themes": [
+      "gratitude"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": true
+    },
+    {
+     "ref": "s2-036",
+     "text": "Measure the parked decision and tell one person.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-037",
+     "text": "Sit with the loudest worry at the same hour tomorrow.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-038",
+     "text": "Keep the untouched notebook on paper, not on screen.",
+     "themes": [
+      "gratitude",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-039",
+     "text": "Put away the unpaid favour without checking anything else.",
+     "themes": [
+      "equanimity_and_anger",
+      "purpose_and_ambition"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-040",
+     "text": "Start the unfinished list without apologising.",
+     "themes": [
+      "courage"
+     ],
+     "captured_day": 3,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-041",
+     "text": "Ask about the second draft and say why.",
+     "themes": [
+      "decision_and_action",
+      "discipline_and_habit"
+     ],
+     "captured_day": 10,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-042",
+     "text": "Name the quiet colleague out loud, once.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 17,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-043",
+     "text": "Rehearse the long walk in one sitting.",
+     "themes": [
+      "honesty_and_integrity"
+     ],
+     "captured_day": 24,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-044",
+     "text": "Answer the oldest grudge before the easy ones.",
+     "themes": [
+      "humility"
+     ],
+     "captured_day": 31,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-045",
+     "text": "Refuse the unreturned call slowly, on purpose.",
+     "themes": [
+      "humility"
+     ],
+     "captured_day": 38,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-046",
+     "text": "Walk to the borrowed excuse and let that be enough.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 45,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-047",
+     "text": "Cut the empty calendar block before the day opens.",
+     "themes": [
+      "purpose_and_ambition"
+     ],
+     "captured_day": 52,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-048",
+     "text": "Write down the open tab while the kettle boils.",
+     "themes": [
+      "creativity_and_craft",
+      "discipline_and_habit"
+     ],
+     "captured_day": 59,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-049",
+     "text": "Close the extra chair then put it down.",
+     "themes": [
+      "learning_and_growth",
+      "gratitude"
+     ],
+     "captured_day": 66,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-050",
+     "text": "Return to the hardest message before anyone asks.",
+     "themes": [
+      "humility",
+      "attention_and_presence"
+     ],
+     "captured_day": 73,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-051",
+     "text": "Finish the untried route with the door shut.",
+     "themes": [
+      "attention_and_presence",
+      "humility"
+     ],
+     "captured_day": 80,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-052",
+     "text": "Measure the crowded shelf and then stop.",
+     "themes": [
+      "purpose_and_ambition"
+     ],
+     "captured_day": 87,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-053",
+     "text": "Sit with the smallest promise and tell one person.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": 94,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-054",
+     "text": "Keep the difficult paragraph at the same hour tomorrow.",
+     "themes": [
+      "equanimity_and_anger",
+      "gratitude"
+     ],
+     "captured_day": 101,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-055",
+     "text": "Put away the half-read book on paper, not on screen.",
+     "themes": [
+      "generosity_and_service"
+     ],
+     "captured_day": 108,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-056",
+     "text": "Start the early alarm without checking anything else.",
+     "themes": [],
+     "captured_day": 115,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-057",
+     "text": "Ask about the standing meeting without apologising.",
+     "themes": [
+      "discipline_and_habit",
+      "mortality_and_time"
+     ],
+     "captured_day": 122,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-058",
+     "text": "Name the missing apology and say why.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 129,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-059",
+     "text": "Rehearse the plain meal out loud, once.",
+     "themes": [
+      "purpose_and_ambition",
+      "relationships"
+     ],
+     "captured_day": 136,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-060",
+     "text": "Answer the unopened letter in one sitting.",
+     "themes": [
+      "gratitude"
+     ],
+     "captured_day": 143,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-061",
+     "text": "Refuse the parked decision before the easy ones.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 150,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-062",
+     "text": "Walk to the loudest worry slowly, on purpose.",
+     "themes": [
+      "relationships",
+      "mortality_and_time"
+     ],
+     "captured_day": 157,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-063",
+     "text": "Cut the untouched notebook and let that be enough.",
+     "themes": [
+      "purpose_and_ambition"
+     ],
+     "captured_day": 164,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-064",
+     "text": "Write down the unpaid favour before the day opens.",
+     "themes": [
+      "purpose_and_ambition",
+      "relationships"
+     ],
+     "captured_day": 171,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-065",
+     "text": "Close the unfinished list while the kettle boils.",
+     "themes": [
+      "simplicity_and_frugality",
+      "purpose_and_ambition"
+     ],
+     "captured_day": 178,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-066",
+     "text": "Return to the second draft then put it down.",
+     "themes": [
+      "courage",
+      "gratitude"
+     ],
+     "captured_day": 185,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-067",
+     "text": "Finish the quiet colleague before anyone asks.",
+     "themes": [
+      "mortality_and_time",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 192,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-068",
+     "text": "Measure the long walk with the door shut.",
+     "themes": [
+      "creativity_and_craft",
+      "gratitude"
+     ],
+     "captured_day": 199,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-069",
+     "text": "Sit with the oldest grudge and then stop.",
+     "themes": [
+      "honesty_and_integrity",
+      "gratitude"
+     ],
+     "captured_day": 206,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-070",
+     "text": "Keep the unreturned call and tell one person.",
+     "themes": [
+      "courage",
+      "humility"
+     ],
+     "captured_day": 213,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-071",
+     "text": "Put away the borrowed excuse at the same hour tomorrow.",
+     "themes": [
+      "creativity_and_craft",
+      "equanimity_and_anger"
+     ],
+     "captured_day": 220,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-072",
+     "text": "Start the empty calendar block on paper, not on screen.",
+     "themes": [
+      "mortality_and_time",
+      "relationships"
+     ],
+     "captured_day": 227,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-073",
+     "text": "Ask about the open tab without checking anything else.",
+     "themes": [
+      "relationships"
+     ],
+     "captured_day": 234,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-074",
+     "text": "Name the extra chair without apologising.",
+     "themes": [],
+     "captured_day": 241,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s2-075",
+     "text": "Rehearse the hardest message and say why.",
+     "themes": [
+      "honesty_and_integrity"
+     ],
+     "captured_day": 248,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-076",
+     "text": "Answer the untried route out loud, once.",
+     "themes": [
+      "attention_and_presence"
+     ],
+     "captured_day": 255,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-077",
+     "text": "Refuse the crowded shelf in one sitting.",
+     "themes": [
+      "equanimity_and_anger",
+      "generosity_and_service"
+     ],
+     "captured_day": 262,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-078",
+     "text": "Walk to the smallest promise before the easy ones.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 269,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-079",
+     "text": "Cut the difficult paragraph slowly, on purpose.",
+     "themes": [
+      "learning_and_growth"
+     ],
+     "captured_day": 276,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-080",
+     "text": "Write down the half-read book and let that be enough.",
+     "themes": [
+      "creativity_and_craft",
+      "mortality_and_time"
+     ],
+     "captured_day": 283,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-081",
+     "text": "Close the early alarm before the day opens.",
+     "themes": [
+      "mortality_and_time",
+      "discipline_and_habit"
+     ],
+     "captured_day": 290,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-082",
+     "text": "Return to the standing meeting while the kettle boils.",
+     "themes": [
+      "equanimity_and_anger",
+      "relationships"
+     ],
+     "captured_day": 297,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-083",
+     "text": "Finish the missing apology then put it down.",
+     "themes": [],
+     "captured_day": 304,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-084",
+     "text": "Measure the plain meal before anyone asks.",
+     "themes": [
+      "courage"
+     ],
+     "captured_day": 311,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-085",
+     "text": "Sit with the unopened letter with the door shut.",
+     "themes": [
+      "relationships",
+      "adversity_and_resilience"
+     ],
+     "captured_day": 318,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-086",
+     "text": "Keep the parked decision and then stop.",
+     "themes": [
+      "generosity_and_service"
+     ],
+     "captured_day": 325,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-087",
+     "text": "Put away the loudest worry and tell one person.",
+     "themes": [
+      "equanimity_and_anger",
+      "decision_and_action"
+     ],
+     "captured_day": 332,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-088",
+     "text": "Start the untouched notebook at the same hour tomorrow.",
+     "themes": [
+      "humility"
+     ],
+     "captured_day": 339,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-089",
+     "text": "Ask about the unpaid favour on paper, not on screen.",
+     "themes": [
+      "gratitude"
+     ],
+     "captured_day": 346,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s2-090",
+     "text": "Name the unfinished list without checking anything else.",
+     "themes": [],
+     "captured_day": 353,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s2-091",
+     "text": "Rehearse the second draft without apologising.",
+     "themes": [],
+     "captured_day": 360,
+     "quality": "dud",
+     "pinned": false
+    }
+   ],
+   "curation": [],
+   "collections": [],
+   "calendar": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364
+   ]
+  },
+  {
+   "id": "S3",
+   "name": "tiny",
+   "purpose": "relaxed-cooldown fallback",
+   "days": 60,
+   "batch_k": 1,
+   "p_reflect": 0.8,
+   "archive_probability": 0.5,
+   "draw_probability": 0.0,
+   "entries": [
+    {
+     "ref": "s3-000",
+     "text": "Measure the hardest message and say why.",
+     "themes": [],
+     "captured_day": 0,
+     "quality": "gem",
+     "pinned": true
+    },
+    {
+     "ref": "s3-001",
+     "text": "Sit with the untried route out loud, once.",
+     "themes": [],
+     "captured_day": 0,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s3-002",
+     "text": "Keep the crowded shelf in one sitting.",
+     "themes": [
+      "creativity_and_craft",
+      "relationships"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s3-003",
+     "text": "Put away the smallest promise before the easy ones.",
+     "themes": [
+      "adversity_and_resilience",
+      "discipline_and_habit"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s3-004",
+     "text": "Start the difficult paragraph slowly, on purpose.",
+     "themes": [
+      "equanimity_and_anger"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s3-005",
+     "text": "Ask about the half-read book and let that be enough.",
+     "themes": [
+      "honesty_and_integrity"
+     ],
+     "captured_day": 0,
+     "quality": "decent",
+     "pinned": false
+    }
+   ],
+   "curation": [],
+   "collections": [],
+   "calendar": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59
+   ]
+  },
+  {
+   "id": "S4",
+   "name": "sporadic",
+   "purpose": "sporadic calendar; M4, M5",
+   "days": 365,
+   "batch_k": 1,
+   "p_reflect": 0.4,
+   "archive_probability": 0.5,
+   "draw_probability": 0.0,
+   "entries": [
+    {
+     "ref": "s4-000",
+     "text": "Answer the hardest message at the same hour tomorrow.",
+     "themes": [
+      "creativity_and_craft",
+      "honesty_and_integrity"
+     ],
+     "captured_day": -12,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s4-001",
+     "text": "Refuse the untried route on paper, not on screen.",
+     "themes": [
+      "equanimity_and_anger",
+      "decision_and_action"
+     ],
+     "captured_day": -11,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s4-002",
+     "text": "Walk to the crowded shelf without checking anything else.",
+     "themes": [
+      "gratitude",
+      "relationships"
+     ],
+     "captured_day": -10,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s4-003",
+     "text": "Cut the smallest promise without apologising.",
+     "themes": [
+      "learning_and_growth"
+     ],
+     "captured_day": -9,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-004",
+     "text": "Write down the difficult paragraph and say why.",
+     "themes": [
+      "humility",
+      "courage"
+     ],
+     "captured_day": -8,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-005",
+     "text": "Close the half-read book out loud, once.",
+     "themes": [
+      "simplicity_and_frugality",
+      "equanimity_and_anger"
+     ],
+     "captured_day": -7,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-006",
+     "text": "Return to the early alarm in one sitting.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": -6,
+     "quality": "decent",
+     "pinned": true
+    },
+    {
+     "ref": "s4-007",
+     "text": "Finish the standing meeting before the easy ones.",
+     "themes": [
+      "courage"
+     ],
+     "captured_day": -5,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-008",
+     "text": "Measure the missing apology slowly, on purpose.",
+     "themes": [
+      "mortality_and_time"
+     ],
+     "captured_day": -4,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s4-009",
+     "text": "Sit with the plain meal and let that be enough.",
+     "themes": [
+      "relationships",
+      "discipline_and_habit"
+     ],
+     "captured_day": -3,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-010",
+     "text": "Keep the unopened letter before the day opens.",
+     "themes": [
+      "humility",
+      "equanimity_and_anger"
+     ],
+     "captured_day": -2,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s4-011",
+     "text": "Put away the parked decision while the kettle boils.",
+     "themes": [
+      "simplicity_and_frugality",
+      "generosity_and_service"
+     ],
+     "captured_day": -1,
+     "quality": "decent",
+     "pinned": true
+    },
+    {
+     "ref": "s4-012",
+     "text": "Start the loudest worry then put it down.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 4,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-013",
+     "text": "Ask about the untouched notebook before anyone asks.",
+     "themes": [
+      "gratitude"
+     ],
+     "captured_day": 15,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s4-014",
+     "text": "Name the unpaid favour with the door shut.",
+     "themes": [
+      "gratitude",
+      "relationships"
+     ],
+     "captured_day": 27,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s4-015",
+     "text": "Rehearse the unfinished list and then stop.",
+     "themes": [],
+     "captured_day": 39,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-016",
+     "text": "Answer the second draft and tell one person.",
+     "themes": [],
+     "captured_day": 50,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s4-017",
+     "text": "Refuse the quiet colleague at the same hour tomorrow.",
+     "themes": [
+      "learning_and_growth"
+     ],
+     "captured_day": 62,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s4-018",
+     "text": "Walk to the long walk on paper, not on screen.",
+     "themes": [
+      "learning_and_growth",
+      "purpose_and_ambition"
+     ],
+     "captured_day": 74,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-019",
+     "text": "Cut the oldest grudge without checking anything else.",
+     "themes": [
+      "courage"
+     ],
+     "captured_day": 85,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-020",
+     "text": "Write down the unreturned call without apologising.",
+     "themes": [
+      "adversity_and_resilience"
+     ],
+     "captured_day": 97,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-021",
+     "text": "Close the borrowed excuse and say why.",
+     "themes": [
+      "relationships",
+      "discipline_and_habit"
+     ],
+     "captured_day": 109,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-022",
+     "text": "Return to the empty calendar block out loud, once.",
+     "themes": [
+      "generosity_and_service",
+      "attention_and_presence"
+     ],
+     "captured_day": 120,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-023",
+     "text": "Finish the open tab in one sitting.",
+     "themes": [
+      "equanimity_and_anger",
+      "honesty_and_integrity"
+     ],
+     "captured_day": 132,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-024",
+     "text": "Measure the extra chair before the easy ones.",
+     "themes": [
+      "adversity_and_resilience",
+      "equanimity_and_anger"
+     ],
+     "captured_day": 144,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-025",
+     "text": "Sit with the hardest message slowly, on purpose.",
+     "themes": [
+      "learning_and_growth"
+     ],
+     "captured_day": 155,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-026",
+     "text": "Keep the untried route and let that be enough.",
+     "themes": [
+      "creativity_and_craft"
+     ],
+     "captured_day": 167,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-027",
+     "text": "Put away the crowded shelf before the day opens.",
+     "themes": [
+      "relationships"
+     ],
+     "captured_day": 179,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-028",
+     "text": "Start the smallest promise while the kettle boils.",
+     "themes": [
+      "adversity_and_resilience",
+      "relationships"
+     ],
+     "captured_day": 190,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-029",
+     "text": "Ask about the difficult paragraph then put it down.",
+     "themes": [
+      "decision_and_action"
+     ],
+     "captured_day": 202,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s4-030",
+     "text": "Name the half-read book before anyone asks.",
+     "themes": [
+      "mortality_and_time"
+     ],
+     "captured_day": 214,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-031",
+     "text": "Rehearse the early alarm with the door shut.",
+     "themes": [
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 225,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-032",
+     "text": "Answer the standing meeting and then stop.",
+     "themes": [
+      "adversity_and_resilience",
+      "courage"
+     ],
+     "captured_day": 237,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-033",
+     "text": "Refuse the missing apology and tell one person.",
+     "themes": [
+      "mortality_and_time"
+     ],
+     "captured_day": 249,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-034",
+     "text": "Walk to the plain meal at the same hour tomorrow.",
+     "themes": [
+      "attention_and_presence"
+     ],
+     "captured_day": 260,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s4-035",
+     "text": "Cut the unopened letter on paper, not on screen.",
+     "themes": [
+      "generosity_and_service"
+     ],
+     "captured_day": 272,
+     "quality": "gem",
+     "pinned": false
+    },
+    {
+     "ref": "s4-036",
+     "text": "Write down the parked decision without checking anything else.",
+     "themes": [
+      "relationships",
+      "generosity_and_service"
+     ],
+     "captured_day": 284,
+     "quality": "dud",
+     "pinned": false
+    },
+    {
+     "ref": "s4-037",
+     "text": "Close the loudest worry without apologising.",
+     "themes": [
+      "purpose_and_ambition",
+      "equanimity_and_anger"
+     ],
+     "captured_day": 295,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-038",
+     "text": "Return to the untouched notebook and say why.",
+     "themes": [],
+     "captured_day": 307,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-039",
+     "text": "Finish the unpaid favour out loud, once.",
+     "themes": [
+      "relationships",
+      "simplicity_and_frugality"
+     ],
+     "captured_day": 319,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-040",
+     "text": "Measure the unfinished list in one sitting.",
+     "themes": [
+      "honesty_and_integrity"
+     ],
+     "captured_day": 330,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-041",
+     "text": "Sit with the second draft before the easy ones.",
+     "themes": [
+      "gratitude"
+     ],
+     "captured_day": 342,
+     "quality": "decent",
+     "pinned": false
+    },
+    {
+     "ref": "s4-042",
+     "text": "Keep the quiet colleague slowly, on purpose.",
+     "themes": [
+      "discipline_and_habit"
+     ],
+     "captured_day": 354,
+     "quality": "decent",
+     "pinned": false
+    }
+   ],
+   "curation": [
+    {
+     "day": 100,
+     "action": "pin",
+     "ref": "s4-012"
+    }
+   ],
+   "collections": [],
+   "calendar": [
+    2,
+    4,
+    6,
+    9,
+    11,
+    13,
+    16,
+    18,
+    20,
+    23,
+    25,
+    27,
+    30,
+    32,
+    34,
+    37,
+    39,
+    41,
+    44,
+    46,
+    48,
+    51,
+    53,
+    55,
+    58,
+    60,
+    62,
+    65,
+    67,
+    69,
+    72,
+    74,
+    76,
+    79,
+    81,
+    83,
+    86,
+    90,
+    93,
+    95,
+    97,
+    100,
+    102,
+    104,
+    107,
+    109,
+    111,
+    114,
+    116,
+    118,
+    121,
+    123,
+    125,
+    128,
+    130,
+    132,
+    135,
+    137,
+    139,
+    142,
+    144,
+    146,
+    149,
+    151,
+    153,
+    156,
+    158,
+    160,
+    163,
+    165,
+    167,
+    170,
+    172,
+    174,
+    177,
+    179,
+    181,
+    184,
+    186,
+    188,
+    191,
+    193,
+    195,
+    198,
+    200,
+    202,
+    205,
+    207,
+    209,
+    212,
+    214,
+    216,
+    219,
+    223,
+    226,
+    228,
+    230,
+    233,
+    237,
+    240,
+    242,
+    244,
+    247,
+    249,
+    251,
+    254,
+    256,
+    258,
+    261,
+    263,
+    265,
+    268,
+    270,
+    272,
+    275,
+    277,
+    279,
+    282,
+    284,
+    286,
+    289,
+    291,
+    293,
+    296,
+    298,
+    300,
+    303,
+    305,
+    307,
+    310,
+    312,
+    314,
+    317,
+    319,
+    321,
+    324,
+    326,
+    328,
+    331,
+    333,
+    335,
+    338,
+    340,
+    342,
+    345,
+    347,
+    349,
+    352,
+    354,
+    356,
+    359,
+    361,
+    363
+   ]
+  }
+ ]
+}

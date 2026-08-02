@@ -1,0 +1,94 @@
+{
+  "name": "c",
+  "wardrobe": "medium",
+  "weather_dir": "rollout_c",
+  "history": "rollout_c_history.json",
+  "start_date": "2026-01-05",
+  "description": "14 consecutive days: recommend k=3, wear rank 1, apply the FR-3 side effects; wash everything dirty on days 7 and 14. There is deliberately no eligible_rollout key \u2014 M6 computes E by rule (EVALS.md \u00a73 M6).",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-01-05",
+      "occasion": "casual",
+      "laundry": false
+    },
+    {
+      "day": 2,
+      "date": "2026-01-06",
+      "occasion": "work",
+      "laundry": false
+    },
+    {
+      "day": 3,
+      "date": "2026-01-07",
+      "occasion": "work",
+      "laundry": false
+    },
+    {
+      "day": 4,
+      "date": "2026-01-08",
+      "occasion": "outdoor",
+      "laundry": false
+    },
+    {
+      "day": 5,
+      "date": "2026-01-09",
+      "occasion": "work",
+      "laundry": false
+    },
+    {
+      "day": 6,
+      "date": "2026-01-10",
+      "occasion": "casual",
+      "laundry": false
+    },
+    {
+      "day": 7,
+      "date": "2026-01-11",
+      "occasion": "casual",
+      "laundry": true
+    },
+    {
+      "day": 8,
+      "date": "2026-01-12",
+      "occasion": "work",
+      "laundry": false
+    },
+    {
+      "day": 9,
+      "date": "2026-01-13",
+      "occasion": "work",
+      "laundry": false
+    },
+    {
+      "day": 10,
+      "date": "2026-01-14",
+      "occasion": "work",
+      "laundry": false
+    },
+    {
+      "day": 11,
+      "date": "2026-01-15",
+      "occasion": "work",
+      "laundry": false
+    },
+    {
+      "day": 12,
+      "date": "2026-01-16",
+      "occasion": "outdoor",
+      "laundry": false
+    },
+    {
+      "day": 13,
+      "date": "2026-01-17",
+      "occasion": "casual",
+      "laundry": false
+    },
+    {
+      "day": 14,
+      "date": "2026-01-18",
+      "occasion": "casual",
+      "laundry": true
+    }
+  ]
+}

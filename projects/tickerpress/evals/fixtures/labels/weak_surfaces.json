@@ -1,0 +1,27 @@
+{
+  "_comment": [
+    "FROZEN weak-surface inventory (EVALS §3, M1_amb; REVIEW finding E2).",
+    "Snapshotted at fixture-authoring time: every weak alias of the eval",
+    "watchlist plus every ticker whose lower-cased form was in",
+    "data/common_words.txt when the fixtures were written (META, CAT, ALL).",
+    "U_amb = {(a,c) : article a contains >=1 of weak_surfaces[c], matched by a",
+    "plain case-sensitive whole-token regex scan}. This file is deliberately",
+    "NOT derived from data/: editing common_words.txt changes engine behaviour",
+    "but must not be able to move a trap out of the hard subset. run.py prints",
+    "a report-only diff between this inventory and the live lexicon."
+  ],
+  "weak_surfaces": {
+    "AAPL": ["Apple"],
+    "AMZN": ["Amazon", "Amazon.com"],
+    "META": ["Meta", "Meta Platforms", "META"],
+    "TSLA": ["Tesla"],
+    "F": ["Ford", "Ford Motor"],
+    "V": ["Visa"],
+    "TGT": ["Target"],
+    "ORCL": ["Oracle"],
+    "SHEL": ["Shell"],
+    "CAT": ["Caterpillar", "CAT"],
+    "ALL": ["Allstate", "ALL"],
+    "GOOGL": ["Alphabet"]
+  }
+}

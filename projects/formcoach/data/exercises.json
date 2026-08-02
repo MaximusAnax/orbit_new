@@ -1,0 +1,2175 @@
+[
+  {
+    "id": "barbell-back-squat",
+    "name": "Barbell Back Squat",
+    "aliases": [
+      "back squat",
+      "squat"
+    ],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "lower_back",
+      "abs"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "squat",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 210,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the bar across your upper traps and pull your elbows down into it.",
+      "Unrack, step back, and place your feet a little wider than shoulder width.",
+      "Take a big breath, brace your midsection, and sit down between your hips.",
+      "Drive the floor away and stand tall to finish the rep."
+    ],
+    "cues": [
+      "big breath and brace",
+      "knees track over toes",
+      "hip crease below the knee"
+    ],
+    "form_profile_id": "squat_v1"
+  },
+  {
+    "id": "barbell-front-squat",
+    "name": "Barbell Front Squat",
+    "aliases": [
+      "front squat"
+    ],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "upper_back",
+      "abs"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "squat",
+    "mechanics": "compound",
+    "difficulty": 3,
+    "rest_s": 210,
+    "harder_variant_id": null,
+    "instructions": [
+      "Rack the bar across your front delts with your elbows high.",
+      "Brace, then sit straight down keeping your torso as upright as you can.",
+      "Drive up while keeping the elbows lifted."
+    ],
+    "cues": [
+      "elbows up",
+      "stay upright",
+      "push the floor away"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "goblet-squat",
+    "name": "Goblet Squat",
+    "aliases": [
+      "goblet"
+    ],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "abs",
+      "upper_back"
+    ],
+    "equipment": [
+      "dumbbell",
+      "kettlebell"
+    ],
+    "pattern": "squat",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold one bell at chest height with both hands.",
+      "Sit down between your hips, letting your elbows travel inside your knees.",
+      "Stand back up without letting the weight drift forward."
+    ],
+    "cues": [
+      "chest tall",
+      "sit between the hips",
+      "elbows inside the knees"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "hack-squat-machine",
+    "name": "Machine Hack Squat",
+    "aliases": [
+      "hack squat"
+    ],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "pattern": "squat",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set your shoulders under the pads and your feet mid-platform.",
+      "Release the safeties, then lower under control until your thighs pass parallel.",
+      "Press back up without locking out hard."
+    ],
+    "cues": [
+      "control the descent",
+      "full range",
+      "keep your heels down"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "leg-press",
+    "name": "Leg Press",
+    "aliases": [],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "pattern": "squat",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Sit with your back flat against the pad and feet shoulder width on the platform.",
+      "Lower until your knees reach about 90 degrees, keeping your lower back down.",
+      "Press the platform away without snapping your knees straight."
+    ],
+    "cues": [
+      "lower back stays on the pad",
+      "knees track over toes",
+      "smooth turnaround"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-squat",
+    "name": "Dumbbell Squat",
+    "aliases": [],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "squat",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold a dumbbell in each hand at your sides.",
+      "Brace and sit down between your hips until your thighs are at least parallel.",
+      "Stand up and squeeze your glutes at the top."
+    ],
+    "cues": [
+      "chest up",
+      "weight through the mid-foot",
+      "full depth"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "bodyweight-squat",
+    "name": "Bodyweight Squat",
+    "aliases": [
+      "air squat"
+    ],
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "squat",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Stand with feet about shoulder width, toes slightly out.",
+      "Sit down between your hips with your arms reaching forward for balance.",
+      "Stand back up under control."
+    ],
+    "cues": [
+      "slow down, fast up",
+      "knees out",
+      "full depth every rep"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "barbell-deadlift",
+    "name": "Barbell Deadlift",
+    "aliases": [
+      "deadlift",
+      "conventional deadlift"
+    ],
+    "primary_muscles": [
+      "hamstrings",
+      "glutes",
+      "lower_back"
+    ],
+    "secondary_muscles": [
+      "upper_back",
+      "lats",
+      "quads",
+      "forearms"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "hinge",
+    "mechanics": "compound",
+    "difficulty": 3,
+    "rest_s": 240,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the bar over your mid-foot and take a shoulder-width grip.",
+      "Drop your hips until your shins touch the bar and pull your chest up.",
+      "Take the slack out of the bar, then push the floor away.",
+      "Stand tall, then return the bar along the same path."
+    ],
+    "cues": [
+      "chest and hips rise together",
+      "bar shaves the legs",
+      "squeeze the glutes at the top"
+    ],
+    "form_profile_id": "deadlift_v1"
+  },
+  {
+    "id": "barbell-romanian-deadlift",
+    "name": "Barbell Romanian Deadlift",
+    "aliases": [
+      "rdl"
+    ],
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "lower_back",
+      "forearms"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "hinge",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Start standing with the bar at your hips.",
+      "Push your hips back and let the bar slide down your thighs with soft knees.",
+      "Stop when your hamstrings will not lengthen further, then drive your hips forward."
+    ],
+    "cues": [
+      "hips back, not down",
+      "long spine",
+      "bar stays on the legs"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-romanian-deadlift",
+    "name": "Dumbbell Romanian Deadlift",
+    "aliases": [
+      "dumbbell rdl"
+    ],
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "lower_back",
+      "forearms"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "hinge",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold a dumbbell in each hand in front of your thighs.",
+      "Push your hips back, keeping the weights close to your legs.",
+      "Stand up by driving your hips forward."
+    ],
+    "cues": [
+      "soft knees",
+      "hips travel back",
+      "feel the hamstrings lengthen"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "kettlebell-swing",
+    "name": "Kettlebell Swing",
+    "aliases": [
+      "swing"
+    ],
+    "primary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary_muscles": [
+      "lower_back",
+      "abs"
+    ],
+    "equipment": [
+      "kettlebell"
+    ],
+    "pattern": "hinge",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 120,
+    "harder_variant_id": null,
+    "instructions": [
+      "Stand with the bell a forearm's length in front of you.",
+      "Hike it back between your legs, then snap your hips forward.",
+      "Let the bell float to chest height and guide it back down."
+    ],
+    "cues": [
+      "hips do the work",
+      "arms stay relaxed",
+      "stand tall at the top"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "barbell-hip-thrust",
+    "name": "Barbell Hip Thrust",
+    "aliases": [
+      "hip thrust"
+    ],
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "hinge",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Sit with your upper back against a bench and the bar across your hips.",
+      "Drive through your heels until your torso and thighs form a straight line.",
+      "Lower under control without resting the bar down."
+    ],
+    "cues": [
+      "tuck the ribs",
+      "squeeze at the top",
+      "chin stays down"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "glute-bridge",
+    "name": "Glute Bridge",
+    "aliases": [],
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "hinge",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": "barbell-hip-thrust",
+    "instructions": [
+      "Lie on your back with your knees bent and heels close to your hips.",
+      "Push through your heels and lift your hips until you are in a straight line.",
+      "Lower slowly and repeat."
+    ],
+    "cues": [
+      "ribs down",
+      "squeeze the glutes",
+      "no arching"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "seated-leg-curl",
+    "name": "Seated Leg Curl",
+    "aliases": [
+      "leg curl"
+    ],
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [
+      "calves"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the pad just above your ankles and the knee joint at the machine's pivot.",
+      "Curl your heels underneath you as far as the machine allows.",
+      "Return slowly, resisting the whole way."
+    ],
+    "cues": [
+      "slow negative",
+      "full range",
+      "hips stay planted"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "nordic-curl",
+    "name": "Nordic Hamstring Curl",
+    "aliases": [],
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "hinge",
+    "mechanics": "compound",
+    "difficulty": 3,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Anchor your ankles and kneel on a soft surface.",
+      "Keeping a straight line from knee to shoulder, lower yourself forward slowly.",
+      "Catch yourself with your hands and push back to the start."
+    ],
+    "cues": [
+      "hips stay extended",
+      "resist as long as you can",
+      "small range is fine at first"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "back-extension",
+    "name": "Back Extension",
+    "aliases": [
+      "hyperextension"
+    ],
+    "primary_muscles": [
+      "lower_back"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "equipment": [
+      "bodyweight",
+      "machine"
+    ],
+    "pattern": "hinge",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the pad just below your hip bones.",
+      "Fold forward at the hips with a long spine.",
+      "Lift back up until your body is in a straight line and stop there."
+    ],
+    "cues": [
+      "stop at straight",
+      "long spine",
+      "squeeze the glutes"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "barbell-bench-press",
+    "name": "Barbell Bench Press",
+    "aliases": [
+      "bench press",
+      "bench"
+    ],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "horizontal_push",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 210,
+    "harder_variant_id": null,
+    "instructions": [
+      "Lie back with your eyes under the bar and set your shoulder blades down and back.",
+      "Unrack and bring the bar over your lower chest.",
+      "Lower it to touch your chest, then press it back over your shoulders."
+    ],
+    "cues": [
+      "shoulder blades tucked",
+      "bar over the elbows",
+      "push yourself away from the bar"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-bench-press",
+    "name": "Dumbbell Bench Press",
+    "aliases": [],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "horizontal_push",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Lie back with a dumbbell in each hand over your shoulders.",
+      "Lower until your upper arms are just past your torso.",
+      "Press back up and stop just short of the bells touching."
+    ],
+    "cues": [
+      "shoulder blades set",
+      "elbows about 45 degrees",
+      "control the bottom"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "incline-dumbbell-press",
+    "name": "Incline Dumbbell Press",
+    "aliases": [],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "front_delts",
+      "triceps"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "horizontal_push",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the bench to about 30 degrees and take the bells to your shoulders.",
+      "Press up and slightly back over your upper chest.",
+      "Lower under control to the same depth every rep."
+    ],
+    "cues": [
+      "30 degrees is plenty",
+      "keep the ribs down",
+      "same depth every rep"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "machine-chest-press",
+    "name": "Machine Chest Press",
+    "aliases": [],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "pattern": "horizontal_push",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the seat so the handles line up with your mid chest.",
+      "Press out until your elbows are almost straight.",
+      "Return until you feel a stretch across your chest."
+    ],
+    "cues": [
+      "handles at mid chest",
+      "full stretch",
+      "no bouncing"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "push-up",
+    "name": "Push-Up",
+    "aliases": [
+      "pushup",
+      "press-up"
+    ],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts",
+      "abs"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "horizontal_push",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": "decline-push-up",
+    "instructions": [
+      "Set your hands slightly wider than your shoulders and your body in one line.",
+      "Lower until your chest is a fist's height from the floor.",
+      "Push the floor away and lock your elbows at the top."
+    ],
+    "cues": [
+      "squeeze the glutes",
+      "elbows about 45 degrees",
+      "one line from head to heels"
+    ],
+    "form_profile_id": "pushup_v1"
+  },
+  {
+    "id": "knee-push-up",
+    "name": "Knee Push-Up",
+    "aliases": [],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "horizontal_push",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": "push-up",
+    "instructions": [
+      "Kneel with your hands slightly wider than your shoulders.",
+      "Keep a straight line from knees to shoulders and lower your chest to the floor.",
+      "Push back up to straight arms."
+    ],
+    "cues": [
+      "hips stay forward",
+      "full range",
+      "elbows tucked to 45 degrees"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "decline-push-up",
+    "name": "Decline Push-Up",
+    "aliases": [],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps",
+      "front_delts",
+      "abs"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "horizontal_push",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Put your feet on a bench and your hands on the floor.",
+      "Keep one line from heels to head and lower your chest to the floor.",
+      "Press back to straight arms."
+    ],
+    "cues": [
+      "brace hard",
+      "no sagging hips",
+      "control the descent"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "close-grip-bench-press",
+    "name": "Close-Grip Bench Press",
+    "aliases": [],
+    "primary_muscles": [
+      "triceps",
+      "chest"
+    ],
+    "secondary_muscles": [
+      "front_delts"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "horizontal_push",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Take a shoulder-width grip on the bar.",
+      "Lower it to your lower chest keeping your elbows close to your sides.",
+      "Press back up and squeeze your triceps at the top."
+    ],
+    "cues": [
+      "elbows in",
+      "wrists stacked",
+      "touch the same spot every rep"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "cable-chest-fly",
+    "name": "Cable Chest Fly",
+    "aliases": [
+      "cable fly"
+    ],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "front_delts"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set both pulleys at chest height and take a staggered stance.",
+      "With a soft elbow angle, bring your hands together in front of your sternum.",
+      "Let your arms travel back until you feel a stretch across the chest."
+    ],
+    "cues": [
+      "fixed elbow angle",
+      "hands meet in front",
+      "slow stretch"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-chest-fly",
+    "name": "Dumbbell Chest Fly",
+    "aliases": [],
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "front_delts"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Lie back holding the bells over your chest with soft elbows.",
+      "Open your arms until you feel a stretch across the chest.",
+      "Bring them back together without pressing."
+    ],
+    "cues": [
+      "soft elbows",
+      "wide arc",
+      "no pressing"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "barbell-row",
+    "name": "Barbell Row",
+    "aliases": [
+      "bent over row"
+    ],
+    "primary_muscles": [
+      "upper_back",
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "rear_delts",
+      "lower_back"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "horizontal_pull",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hinge forward to about 45 degrees with the bar hanging at arm's length.",
+      "Pull the bar to your lower ribs, leading with your elbows.",
+      "Lower under control without letting your torso rise."
+    ],
+    "cues": [
+      "torso angle stays fixed",
+      "pull to the lower ribs",
+      "squeeze the shoulder blades"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-row",
+    "name": "Dumbbell Row",
+    "aliases": [
+      "one arm row"
+    ],
+    "primary_muscles": [
+      "upper_back",
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "horizontal_pull",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Brace one hand on a bench and let the dumbbell hang.",
+      "Pull it to your hip, keeping your shoulders square.",
+      "Lower all the way to a full stretch."
+    ],
+    "cues": [
+      "shoulders stay square",
+      "pull to the hip",
+      "full stretch at the bottom"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "seated-cable-row",
+    "name": "Seated Cable Row",
+    "aliases": [
+      "cable row"
+    ],
+    "primary_muscles": [
+      "upper_back",
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "pattern": "horizontal_pull",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Sit tall with a slight forward lean at the start.",
+      "Pull the handle to your navel and squeeze your shoulder blades together.",
+      "Let the handle travel back until you feel a stretch."
+    ],
+    "cues": [
+      "chest tall",
+      "elbows past the ribs",
+      "controlled stretch"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "inverted-row",
+    "name": "Inverted Row",
+    "aliases": [
+      "body row"
+    ],
+    "primary_muscles": [
+      "upper_back",
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "horizontal_pull",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 120,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set a bar at hip height and hang underneath it with straight arms.",
+      "Keep one line from heels to head and pull your chest to the bar.",
+      "Lower slowly to straight arms."
+    ],
+    "cues": [
+      "body stays rigid",
+      "chest to the bar",
+      "no hip sag"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "chest-supported-dumbbell-row",
+    "name": "Chest-Supported Dumbbell Row",
+    "aliases": [],
+    "primary_muscles": [
+      "upper_back"
+    ],
+    "secondary_muscles": [
+      "lats",
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "horizontal_pull",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Lie chest-down on an inclined bench with a dumbbell in each hand.",
+      "Row the bells to your ribs with your elbows at about 45 degrees.",
+      "Lower to a full stretch each rep."
+    ],
+    "cues": [
+      "chest stays on the pad",
+      "elbows to the ribs",
+      "full stretch"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "band-row",
+    "name": "Band Row",
+    "aliases": [],
+    "primary_muscles": [
+      "upper_back",
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "rear_delts"
+    ],
+    "equipment": [
+      "band"
+    ],
+    "pattern": "horizontal_pull",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 120,
+    "harder_variant_id": null,
+    "instructions": [
+      "Anchor a band at chest height and step back until it is taut.",
+      "Pull the handles to your ribs, squeezing your shoulder blades.",
+      "Return slowly against the band's pull."
+    ],
+    "cues": [
+      "stay tall",
+      "pull to the ribs",
+      "resist the return"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "pull-up",
+    "name": "Pull-Up",
+    "aliases": [
+      "pullup"
+    ],
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "upper_back",
+      "forearms"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "vertical_pull",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hang from a bar with an overhand grip a little wider than your shoulders.",
+      "Pull your elbows down to your ribs until your chin clears the bar.",
+      "Lower all the way to straight arms."
+    ],
+    "cues": [
+      "start from a dead hang",
+      "elbows down and back",
+      "no kipping"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "chin-up",
+    "name": "Chin-Up",
+    "aliases": [
+      "chinup"
+    ],
+    "primary_muscles": [
+      "lats",
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "upper_back",
+      "forearms"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "vertical_pull",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hang with an underhand shoulder-width grip.",
+      "Pull until your chin passes the bar and your chest touches it.",
+      "Lower under control to full extension."
+    ],
+    "cues": [
+      "chest to the bar",
+      "control the lowering",
+      "full hang each rep"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Lat Pulldown",
+    "aliases": [
+      "pulldown"
+    ],
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "upper_back"
+    ],
+    "equipment": [
+      "cable",
+      "machine"
+    ],
+    "pattern": "vertical_pull",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the thigh pad so you stay seated and take a wide overhand grip.",
+      "Pull the bar to your collarbone with a slight backward lean.",
+      "Let the bar rise until your lats are fully stretched."
+    ],
+    "cues": [
+      "lead with the elbows",
+      "no swinging",
+      "full stretch at the top"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "band-lat-pulldown",
+    "name": "Band Lat Pulldown",
+    "aliases": [],
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "upper_back"
+    ],
+    "equipment": [
+      "band"
+    ],
+    "pattern": "vertical_pull",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 120,
+    "harder_variant_id": null,
+    "instructions": [
+      "Anchor a band overhead and kneel underneath it.",
+      "Pull the handles down and out to your shoulders.",
+      "Return slowly to a full overhead stretch."
+    ],
+    "cues": [
+      "elbows down and out",
+      "stay tall",
+      "resist the return"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "barbell-overhead-press",
+    "name": "Barbell Overhead Press",
+    "aliases": [
+      "ohp",
+      "overhead press"
+    ],
+    "primary_muscles": [
+      "front_delts"
+    ],
+    "secondary_muscles": [
+      "side_delts",
+      "triceps",
+      "abs"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "vertical_push",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 180,
+    "harder_variant_id": null,
+    "instructions": [
+      "Take the bar at collarbone height with your forearms vertical.",
+      "Brace your midsection and squeeze your glutes.",
+      "Press the bar overhead and move your head through at the top."
+    ],
+    "cues": [
+      "glutes and abs tight",
+      "bar over the mid-foot",
+      "head through at lockout"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-shoulder-press",
+    "name": "Dumbbell Shoulder Press",
+    "aliases": [],
+    "primary_muscles": [
+      "front_delts"
+    ],
+    "secondary_muscles": [
+      "side_delts",
+      "triceps"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "vertical_push",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Sit or stand with the bells at shoulder height, palms forward.",
+      "Press overhead until your elbows are almost straight.",
+      "Lower to ear height under control."
+    ],
+    "cues": [
+      "ribs down",
+      "press slightly back",
+      "same depth every rep"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "machine-shoulder-press",
+    "name": "Machine Shoulder Press",
+    "aliases": [],
+    "primary_muscles": [
+      "front_delts"
+    ],
+    "secondary_muscles": [
+      "side_delts",
+      "triceps"
+    ],
+    "equipment": [
+      "machine"
+    ],
+    "pattern": "vertical_push",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the seat so the handles start at shoulder height.",
+      "Press overhead without shrugging.",
+      "Return until you feel a stretch in the front of the shoulder."
+    ],
+    "cues": [
+      "no shrugging",
+      "full range",
+      "smooth turnaround"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "pike-push-up",
+    "name": "Pike Push-Up",
+    "aliases": [],
+    "primary_muscles": [
+      "front_delts"
+    ],
+    "secondary_muscles": [
+      "side_delts",
+      "triceps"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "vertical_push",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 120,
+    "harder_variant_id": null,
+    "instructions": [
+      "Start in a downward-dog position with your hips high.",
+      "Lower the crown of your head toward the floor between your hands.",
+      "Press back up to straight arms."
+    ],
+    "cues": [
+      "hips stay high",
+      "elbows forward",
+      "full lockout"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dip",
+    "name": "Dip",
+    "aliases": [
+      "parallel bar dip"
+    ],
+    "primary_muscles": [
+      "chest",
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "front_delts"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "vertical_push",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Support yourself on parallel bars with your arms straight.",
+      "Lean forward slightly and lower until your upper arms are parallel to the floor.",
+      "Press back up to straight arms."
+    ],
+    "cues": [
+      "slight forward lean",
+      "shoulders stay packed",
+      "controlled depth"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-walking-lunge",
+    "name": "Dumbbell Walking Lunge",
+    "aliases": [
+      "walking lunge"
+    ],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "lunge",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 120,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold a dumbbell in each hand at your sides.",
+      "Step forward and lower until your back knee is just off the floor.",
+      "Drive through the front foot into the next step."
+    ],
+    "cues": [
+      "long step",
+      "torso tall",
+      "back knee kisses the floor"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "bulgarian-split-squat",
+    "name": "Bulgarian Split Squat",
+    "aliases": [
+      "rear foot elevated split squat"
+    ],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "equipment": [
+      "dumbbell",
+      "bodyweight"
+    ],
+    "pattern": "lunge",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Put your back foot on a bench and your front foot a stride ahead.",
+      "Lower straight down until your back knee is just off the floor.",
+      "Drive through the front heel to stand."
+    ],
+    "cues": [
+      "weight in the front foot",
+      "straight down, not forward",
+      "square hips"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "barbell-lunge",
+    "name": "Barbell Lunge",
+    "aliases": [],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "lunge",
+    "mechanics": "compound",
+    "difficulty": 2,
+    "rest_s": 150,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the bar on your upper traps as for a back squat.",
+      "Step forward and lower until your back knee nearly touches the floor.",
+      "Push back to the start with the front leg."
+    ],
+    "cues": [
+      "torso stays tall",
+      "controlled step",
+      "front heel drives"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "step-up",
+    "name": "Step-Up",
+    "aliases": [],
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "hamstrings",
+      "calves"
+    ],
+    "equipment": [
+      "dumbbell",
+      "bodyweight"
+    ],
+    "pattern": "lunge",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 120,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set a box at about knee height.",
+      "Place one whole foot on the box and stand up without pushing off the back leg.",
+      "Lower under control to the floor."
+    ],
+    "cues": [
+      "no push off the back foot",
+      "whole foot on the box",
+      "slow down"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-lateral-raise",
+    "name": "Dumbbell Lateral Raise",
+    "aliases": [
+      "lateral raise"
+    ],
+    "primary_muscles": [
+      "side_delts"
+    ],
+    "secondary_muscles": [
+      "rear_delts"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Stand with a dumbbell in each hand at your sides.",
+      "Raise them out to shoulder height with a slight bend in the elbow.",
+      "Lower slowly all the way down."
+    ],
+    "cues": [
+      "lead with the elbows",
+      "no swinging",
+      "stop at shoulder height"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "cable-lateral-raise",
+    "name": "Cable Lateral Raise",
+    "aliases": [],
+    "primary_muscles": [
+      "side_delts"
+    ],
+    "secondary_muscles": [
+      "rear_delts"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the pulley low and stand side-on with the handle in the far hand.",
+      "Raise the handle out to shoulder height.",
+      "Lower under constant tension."
+    ],
+    "cues": [
+      "constant tension",
+      "slight elbow bend",
+      "no body english"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "band-lateral-raise",
+    "name": "Band Lateral Raise",
+    "aliases": [],
+    "primary_muscles": [
+      "side_delts"
+    ],
+    "secondary_muscles": [
+      "rear_delts"
+    ],
+    "equipment": [
+      "band"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 2,
+    "rest_s": 60,
+    "harder_variant_id": null,
+    "instructions": [
+      "Stand on the middle of a band with a handle in each hand.",
+      "Raise your arms out to shoulder height.",
+      "Lower slowly against the band."
+    ],
+    "cues": [
+      "slow return",
+      "elbows lead",
+      "shoulders stay down"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-rear-delt-fly",
+    "name": "Dumbbell Rear Delt Fly",
+    "aliases": [
+      "reverse fly"
+    ],
+    "primary_muscles": [
+      "rear_delts"
+    ],
+    "secondary_muscles": [
+      "upper_back"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hinge forward until your torso is nearly parallel to the floor.",
+      "With soft elbows, sweep the bells out to the sides.",
+      "Lower under control."
+    ],
+    "cues": [
+      "thumbs down",
+      "sweep wide",
+      "no momentum"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "cable-face-pull",
+    "name": "Cable Face Pull",
+    "aliases": [
+      "face pull"
+    ],
+    "primary_muscles": [
+      "rear_delts"
+    ],
+    "secondary_muscles": [
+      "upper_back"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the pulley just above head height with a rope.",
+      "Pull the rope toward your forehead, splitting your hands apart.",
+      "Return under control."
+    ],
+    "cues": [
+      "elbows high",
+      "split the rope",
+      "pause at the back"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-front-raise",
+    "name": "Dumbbell Front Raise",
+    "aliases": [],
+    "primary_muscles": [
+      "front_delts"
+    ],
+    "secondary_muscles": [
+      "side_delts"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold the bells in front of your thighs.",
+      "Raise one or both to shoulder height with straight-ish arms.",
+      "Lower slowly."
+    ],
+    "cues": [
+      "no leaning back",
+      "stop at shoulder height",
+      "slow lowering"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-biceps-curl",
+    "name": "Dumbbell Biceps Curl",
+    "aliases": [
+      "curl",
+      "biceps curl"
+    ],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Stand with the bells at your sides, palms forward.",
+      "Curl to shoulder height without moving your elbows.",
+      "Lower all the way to straight arms."
+    ],
+    "cues": [
+      "elbows pinned",
+      "full extension",
+      "no swinging"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "barbell-curl",
+    "name": "Barbell Curl",
+    "aliases": [],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold the bar at shoulder width with an underhand grip.",
+      "Curl it to your chest keeping your elbows at your sides.",
+      "Lower under control to straight arms."
+    ],
+    "cues": [
+      "elbows still",
+      "no hip drive",
+      "full range"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "cable-curl",
+    "name": "Cable Curl",
+    "aliases": [],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "equipment": [
+      "cable"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the pulley low and take the bar with an underhand grip.",
+      "Curl up while keeping your elbows at your sides.",
+      "Resist on the way down."
+    ],
+    "cues": [
+      "constant tension",
+      "elbows pinned",
+      "slow negative"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "band-curl",
+    "name": "Band Curl",
+    "aliases": [],
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "equipment": [
+      "band"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 2,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Stand on the band with a handle in each hand.",
+      "Curl to your shoulders keeping your elbows still.",
+      "Lower slowly against the band."
+    ],
+    "cues": [
+      "elbows pinned",
+      "squeeze at the top",
+      "resist the return"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-triceps-extension",
+    "name": "Dumbbell Overhead Triceps Extension",
+    "aliases": [
+      "overhead extension"
+    ],
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold one bell overhead with both hands.",
+      "Lower it behind your head by bending only your elbows.",
+      "Press back to straight arms."
+    ],
+    "cues": [
+      "elbows point forward",
+      "deep stretch",
+      "lock out at the top"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "cable-triceps-pushdown",
+    "name": "Cable Triceps Pushdown",
+    "aliases": [
+      "pushdown"
+    ],
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [],
+    "equipment": [
+      "cable"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the pulley high and take the bar or rope at chest height.",
+      "Push down to straight arms keeping your elbows at your sides.",
+      "Let the handle rise until your forearms pass parallel."
+    ],
+    "cues": [
+      "elbows glued to the ribs",
+      "full lockout",
+      "slow return"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "bench-dip",
+    "name": "Bench Dip",
+    "aliases": [],
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "chest",
+      "front_delts"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Sit on the edge of a bench and slide your hips off with hands beside you.",
+      "Lower until your upper arms are about parallel to the floor.",
+      "Press back to straight arms."
+    ],
+    "cues": [
+      "stay close to the bench",
+      "shoulders down",
+      "controlled depth"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "standing-calf-raise",
+    "name": "Standing Calf Raise",
+    "aliases": [
+      "calf raise"
+    ],
+    "primary_muscles": [
+      "calves"
+    ],
+    "secondary_muscles": [],
+    "equipment": [
+      "machine",
+      "bodyweight"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Stand with the balls of your feet on a step.",
+      "Let your heels drop below the step for a full stretch.",
+      "Press up as high as you can and pause."
+    ],
+    "cues": [
+      "full stretch at the bottom",
+      "pause at the top",
+      "no bouncing"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-calf-raise",
+    "name": "Dumbbell Calf Raise",
+    "aliases": [],
+    "primary_muscles": [
+      "calves"
+    ],
+    "secondary_muscles": [],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold a dumbbell in each hand and stand on a step.",
+      "Drop your heels for a stretch, then rise onto your toes.",
+      "Pause at the top before lowering."
+    ],
+    "cues": [
+      "slow and long",
+      "pause at the top",
+      "stay balanced"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "seated-calf-raise",
+    "name": "Seated Calf Raise",
+    "aliases": [],
+    "primary_muscles": [
+      "calves"
+    ],
+    "secondary_muscles": [],
+    "equipment": [
+      "machine"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Set the pad across your lower thighs with the balls of your feet on the platform.",
+      "Let your heels sink, then press up as high as you can.",
+      "Pause and lower slowly."
+    ],
+    "cues": [
+      "big stretch",
+      "pause at the top",
+      "no rushing"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "crunch",
+    "name": "Crunch",
+    "aliases": [
+      "ab crunch"
+    ],
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "core",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 60,
+    "harder_variant_id": null,
+    "instructions": [
+      "Lie on your back with your knees bent and hands by your temples.",
+      "Curl your ribs toward your hips and lift your shoulder blades off the floor.",
+      "Lower slowly."
+    ],
+    "cues": [
+      "curl, do not yank the neck",
+      "exhale at the top",
+      "slow lowering"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "hanging-knee-raise",
+    "name": "Hanging Knee Raise",
+    "aliases": [],
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "equipment": [
+      "bodyweight"
+    ],
+    "pattern": "core",
+    "mechanics": "isolation",
+    "difficulty": 2,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hang from a bar with straight arms.",
+      "Curl your knees up toward your chest, tilting your pelvis at the top.",
+      "Lower slowly without swinging."
+    ],
+    "cues": [
+      "no swinging",
+      "tilt the pelvis",
+      "control the descent"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "cable-crunch",
+    "name": "Cable Crunch",
+    "aliases": [],
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [],
+    "equipment": [
+      "cable"
+    ],
+    "pattern": "core",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 75,
+    "harder_variant_id": null,
+    "instructions": [
+      "Kneel below a high pulley holding a rope beside your head.",
+      "Crunch your ribs toward your hips, rounding your upper back.",
+      "Return under control."
+    ],
+    "cues": [
+      "hips stay still",
+      "round the upper back",
+      "squeeze at the bottom"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "barbell-shrug",
+    "name": "Barbell Shrug",
+    "aliases": [],
+    "primary_muscles": [
+      "upper_back"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "equipment": [
+      "barbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold the bar at arm's length in front of your thighs.",
+      "Shrug your shoulders straight up toward your ears.",
+      "Pause and lower under control."
+    ],
+    "cues": [
+      "straight up, not rolling",
+      "pause at the top",
+      "full lowering"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-shrug",
+    "name": "Dumbbell Shrug",
+    "aliases": [],
+    "primary_muscles": [
+      "upper_back"
+    ],
+    "secondary_muscles": [
+      "forearms"
+    ],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Hold a dumbbell in each hand at your sides.",
+      "Shrug straight up and hold for a beat.",
+      "Lower all the way down."
+    ],
+    "cues": [
+      "shrug straight up",
+      "hold the top",
+      "full range"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "dumbbell-wrist-curl",
+    "name": "Dumbbell Wrist Curl",
+    "aliases": [],
+    "primary_muscles": [
+      "forearms"
+    ],
+    "secondary_muscles": [],
+    "equipment": [
+      "dumbbell"
+    ],
+    "pattern": "isolation",
+    "mechanics": "isolation",
+    "difficulty": 1,
+    "rest_s": 60,
+    "harder_variant_id": null,
+    "instructions": [
+      "Rest your forearms on your thighs with your palms up.",
+      "Let the bells roll to your fingertips, then curl your wrists up.",
+      "Lower slowly."
+    ],
+    "cues": [
+      "forearms stay down",
+      "full range",
+      "slow tempo"
+    ],
+    "form_profile_id": null
+  },
+  {
+    "id": "farmer-carry",
+    "name": "Farmer's Carry",
+    "aliases": [
+      "farmers walk"
+    ],
+    "primary_muscles": [
+      "forearms"
+    ],
+    "secondary_muscles": [
+      "upper_back",
+      "abs"
+    ],
+    "equipment": [
+      "dumbbell",
+      "kettlebell"
+    ],
+    "pattern": "carry",
+    "mechanics": "compound",
+    "difficulty": 1,
+    "rest_s": 90,
+    "harder_variant_id": null,
+    "instructions": [
+      "Pick up a heavy weight in each hand.",
+      "Stand tall with your shoulders back and walk a set distance.",
+      "Set the weights down under control."
+    ],
+    "cues": [
+      "chest tall",
+      "shoulders packed",
+      "short quick steps"
+    ],
+    "form_profile_id": null
+  }
+]

@@ -1,0 +1,32 @@
+{
+ "id": "exact_08",
+ "suite": "exact",
+ "n": 12,
+ "seed": 1302603,
+ "clusters": [],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:5caaed1f33bad159974f79071d3c6db928658e45",
+  "meta:f38738bd9abbac62997a9a781003d793dd0d3da0",
+  "meta:dcc5d1bf8ae509c320049a97dcc9d5dff6d136a4",
+  "meta:835fa31e82613df3a606d1dbbaee21d0a5fcce7b",
+  "meta:2a87cce45c6566d052df04e6ae2dd90020a13848",
+  "meta:3dd93698d3d6091981bfbeac2bb44ab99fa5328f",
+  "meta:abafef0e2924c5ea5b1a3fca7a2c96bd1166df35",
+  "meta:9ba96cc77f306c8d12142f1fc6f36fcf10a64ef4",
+  "meta:f6bafd5b364c444219c384c6bc1567f913ac68a4",
+  "meta:226c509cf425f2742c759d793dad7d29a6be811b",
+  "meta:6efbd4d8b2a0897084df3169226e346f2a8e9729",
+  "meta:18fa1f7182c1f78c3b617c8e6ca6ba40603e880f"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "trap",
+  "search_seed": 1302603,
+  "greedy_bound": 0.95348,
+  "depth_target": 0.954
+ }
+}

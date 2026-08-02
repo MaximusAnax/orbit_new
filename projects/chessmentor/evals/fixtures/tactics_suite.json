@@ -1,0 +1,792 @@
+{
+  "seed": 20260731,
+  "attempts": 3290,
+  "positions": [
+    {
+      "id": "tac-001",
+      "kind": "mate_in_1",
+      "fen": "6n1/3Rp3/8/4k1K1/8/8/7R/8 w - - 0 1",
+      "correct_uci": [
+        "h2e2"
+      ],
+      "correct_san": [
+        "Re2#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-002",
+      "kind": "mate_in_1",
+      "fen": "3R4/8/8/8/5K1p/7k/8/1Q6 w - - 0 1",
+      "correct_uci": [
+        "b1h1"
+      ],
+      "correct_san": [
+        "Qh1#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-003",
+      "kind": "mate_in_1",
+      "fen": "8/8/8/8/3N4/RK3N2/8/3k4 w - - 0 1",
+      "correct_uci": [
+        "a3a1"
+      ],
+      "correct_san": [
+        "Ra1#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-004",
+      "kind": "mate_in_1",
+      "fen": "8/3Q4/2N5/8/8/8/5K1k/8 w - - 0 1",
+      "correct_uci": [
+        "d7h7"
+      ],
+      "correct_san": [
+        "Qh7#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-005",
+      "kind": "mate_in_1",
+      "fen": "8/3K4/8/8/1R3p2/1R6/4p3/k7 w - - 0 1",
+      "correct_uci": [
+        "b3a3",
+        "b4a4"
+      ],
+      "correct_san": [
+        "Ra3#",
+        "Ra4#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-006",
+      "kind": "mate_in_1",
+      "fen": "1Q5K/8/8/4R3/8/k7/8/8 w - - 0 1",
+      "correct_uci": [
+        "e5a5"
+      ],
+      "correct_san": [
+        "Ra5#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-007",
+      "kind": "mate_in_1",
+      "fen": "k7/6R1/8/8/8/3K3p/1p6/4R3 w - - 0 1",
+      "correct_uci": [
+        "e1e8"
+      ],
+      "correct_san": [
+        "Re8#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-008",
+      "kind": "mate_in_1",
+      "fen": "8/R7/qk6/8/1K3Q2/8/8/8 w - - 0 1",
+      "correct_uci": [
+        "f4c7"
+      ],
+      "correct_san": [
+        "Qc7#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-009",
+      "kind": "mate_in_1",
+      "fen": "8/8/8/8/8/3Q4/k2N4/2K5 w - - 0 1",
+      "correct_uci": [
+        "d3a6"
+      ],
+      "correct_san": [
+        "Qa6#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-010",
+      "kind": "mate_in_1",
+      "fen": "8/7k/8/8/7b/2QK4/8/6R1 w - - 0 1",
+      "correct_uci": [
+        "c3g7"
+      ],
+      "correct_san": [
+        "Qg7#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-011",
+      "kind": "mate_in_1",
+      "fen": "8/5K1k/1R6/8/p5R1/8/8/8 w - - 0 1",
+      "correct_uci": [
+        "g4h4"
+      ],
+      "correct_san": [
+        "Rh4#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-012",
+      "kind": "mate_in_1",
+      "fen": "8/8/4n3/8/8/4K3/2Q5/4k1N1 w - - 0 1",
+      "correct_uci": [
+        "c2b1",
+        "c2c1",
+        "c2e2"
+      ],
+      "correct_san": [
+        "Qb1#",
+        "Qc1#",
+        "Qe2#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-013",
+      "kind": "mate_in_1",
+      "fen": "k7/N1P5/1b6/8/8/8/R7/5K2 w - - 0 1",
+      "correct_uci": [
+        "c7c8q"
+      ],
+      "correct_san": [
+        "c8=Q#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-014",
+      "kind": "mate_in_1",
+      "fen": "8/5N2/3R4/8/5K1k/4p3/2r5/1N6 w - - 0 1",
+      "correct_uci": [
+        "d6h6"
+      ],
+      "correct_san": [
+        "Rh6#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-015",
+      "kind": "mate_in_1",
+      "fen": "1Q2n2k/1p1R4/8/8/8/K7/8/8 w - - 0 1",
+      "correct_uci": [
+        "b8e8"
+      ],
+      "correct_san": [
+        "Qxe8#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-016",
+      "kind": "mate_in_1",
+      "fen": "4k3/7Q/5B2/8/8/K7/8/6r1 w - - 0 1",
+      "correct_uci": [
+        "h7e7"
+      ],
+      "correct_san": [
+        "Qe7#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-017",
+      "kind": "mate_in_1",
+      "fen": "8/R6K/8/3p4/8/8/4R3/6kn w - - 0 1",
+      "correct_uci": [
+        "a7a1"
+      ],
+      "correct_san": [
+        "Ra1#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-018",
+      "kind": "mate_in_1",
+      "fen": "8/8/4R3/8/6Q1/8/4K3/7k w - - 0 1",
+      "correct_uci": [
+        "e6h6"
+      ],
+      "correct_san": [
+        "Rh6#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-019",
+      "kind": "mate_in_1",
+      "fen": "8/6Q1/8/6B1/8/4K2n/8/4k3 w - - 0 1",
+      "correct_uci": [
+        "g7a1"
+      ],
+      "correct_san": [
+        "Qa1#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-020",
+      "kind": "mate_in_1",
+      "fen": "8/P7/6N1/8/8/K6R/8/k7 w - - 0 1",
+      "correct_uci": [
+        "h3h1"
+      ],
+      "correct_san": [
+        "Rh1#"
+      ],
+      "rationale": "checkmate in one; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-021",
+      "kind": "mate_in_2",
+      "fen": "4N3/8/8/1N6/8/4K3/5R2/4k3 w - - 0 1",
+      "correct_uci": [
+        "b5a3",
+        "b5d4"
+      ],
+      "correct_san": [
+        "Na3",
+        "Nd4"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-022",
+      "kind": "mate_in_2",
+      "fen": "8/6P1/R7/8/8/3K2N1/8/4k3 w - - 0 1",
+      "correct_uci": [
+        "a6a2",
+        "a6f6"
+      ],
+      "correct_san": [
+        "Ra2",
+        "Rf6"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-023",
+      "kind": "mate_in_2",
+      "fen": "4K1k1/1n6/8/8/5Q2/5B2/8/8 w - - 0 1",
+      "correct_uci": [
+        "f4f8"
+      ],
+      "correct_san": [
+        "Qf8+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-024",
+      "kind": "mate_in_2",
+      "fen": "8/2K5/7R/3R4/8/8/8/2k5 w - - 0 1",
+      "correct_uci": [
+        "h6h2"
+      ],
+      "correct_san": [
+        "Rh2"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-025",
+      "kind": "mate_in_2",
+      "fen": "8/2r5/5Q2/3B4/4p3/4K3/8/6k1 w - - 0 1",
+      "correct_uci": [
+        "f6f2"
+      ],
+      "correct_san": [
+        "Qf2+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-026",
+      "kind": "mate_in_2",
+      "fen": "8/8/8/5Q2/1kB5/8/3K4/8 w - - 0 1",
+      "correct_uci": [
+        "f5b5"
+      ],
+      "correct_san": [
+        "Qb5+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-027",
+      "kind": "mate_in_2",
+      "fen": "k7/3K4/5r2/2R5/8/8/1R6/8 w - - 0 1",
+      "correct_uci": [
+        "c5a5"
+      ],
+      "correct_san": [
+        "Ra5+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-028",
+      "kind": "mate_in_2",
+      "fen": "3k2K1/1Q6/8/6b1/8/8/4B3/8 w - - 0 1",
+      "correct_uci": [
+        "e2b5",
+        "e2g4"
+      ],
+      "correct_san": [
+        "Bb5",
+        "Bg4"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-029",
+      "kind": "mate_in_2",
+      "fen": "8/6k1/2R4p/8/K7/1n6/3Q4/8 w - - 0 1",
+      "correct_uci": [
+        "d2d7"
+      ],
+      "correct_san": [
+        "Qd7+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-030",
+      "kind": "mate_in_2",
+      "fen": "8/2Q1q3/7N/8/8/1K6/8/1k6 w - - 0 1",
+      "correct_uci": [
+        "c7c2",
+        "c7e7"
+      ],
+      "correct_san": [
+        "Qc2+",
+        "Qxe7"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-031",
+      "kind": "mate_in_2",
+      "fen": "7R/k7/4R3/8/7K/8/8/8 w - - 0 1",
+      "correct_uci": [
+        "h8h7"
+      ],
+      "correct_san": [
+        "Rh7+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-032",
+      "kind": "mate_in_2",
+      "fen": "6k1/3P4/3P1p2/8/3K4/8/4R3/8 w - - 0 1",
+      "correct_uci": [
+        "e2e7"
+      ],
+      "correct_san": [
+        "Re7"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-033",
+      "kind": "mate_in_2",
+      "fen": "8/3K4/8/3Q4/8/7k/8/7B w - - 0 1",
+      "correct_uci": [
+        "d5g5"
+      ],
+      "correct_san": [
+        "Qg5"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-034",
+      "kind": "mate_in_2",
+      "fen": "2k5/8/3K4/8/8/1B6/8/1Q6 w - - 0 1",
+      "correct_uci": [
+        "b3a2",
+        "b3a4",
+        "b3c2",
+        "b3c4",
+        "b3d1",
+        "b3d5",
+        "b3e6",
+        "b3f7",
+        "b3g8"
+      ],
+      "correct_san": [
+        "Ba2",
+        "Ba4",
+        "Bc2",
+        "Bc4",
+        "Bd1",
+        "Bd5",
+        "Be6+",
+        "Bf7",
+        "Bg8"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-035",
+      "kind": "mate_in_2",
+      "fen": "K6k/1Q6/8/8/7N/8/8/8 w - - 0 1",
+      "correct_uci": [
+        "h4f5"
+      ],
+      "correct_san": [
+        "Nf5"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-036",
+      "kind": "mate_in_2",
+      "fen": "8/8/7R/4R3/2K5/8/k7/8 w - - 0 1",
+      "correct_uci": [
+        "e5b5",
+        "e5e2",
+        "h6b6",
+        "h6h2"
+      ],
+      "correct_san": [
+        "Rb5",
+        "Rb6",
+        "Re2+",
+        "Rh2+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-037",
+      "kind": "mate_in_2",
+      "fen": "8/8/4Q3/1R3K2/8/8/q7/3k4 w - - 0 1",
+      "correct_uci": [
+        "e6a2"
+      ],
+      "correct_san": [
+        "Qxa2"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-038",
+      "kind": "mate_in_2",
+      "fen": "6K1/8/2Q5/8/8/3B4/8/k7 w - - 0 1",
+      "correct_uci": [
+        "c6c1"
+      ],
+      "correct_san": [
+        "Qc1+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-039",
+      "kind": "mate_in_2",
+      "fen": "3K4/k7/8/8/2R5/8/8/3R4 w - - 0 1",
+      "correct_uci": [
+        "c4b4",
+        "d1b1"
+      ],
+      "correct_san": [
+        "Rb1",
+        "Rb4"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-040",
+      "kind": "mate_in_2",
+      "fen": "8/1Q6/8/5p2/7b/8/8/3k1KB1 w - - 0 1",
+      "correct_uci": [
+        "b7b3"
+      ],
+      "correct_san": [
+        "Qb3+"
+      ],
+      "rationale": "forced mate in two; verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-041",
+      "kind": "forced_material",
+      "fen": "8/P5P1/R7/8/5K2/5n2/8/6k1 w - - 0 1",
+      "correct_uci": [
+        "a7a8q",
+        "g7g8q"
+      ],
+      "correct_san": [
+        "a8=Q",
+        "g8=Q+"
+      ],
+      "rationale": "forced material 380 -> 1980 cp within 4 plies (gain 1600); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-042",
+      "kind": "forced_material",
+      "fen": "8/R7/1B4K1/8/8/r6k/3p4/8 w - - 0 1",
+      "correct_uci": [
+        "a7a3"
+      ],
+      "correct_san": [
+        "Rxa3+"
+      ],
+      "rationale": "forced material 230 -> 730 cp within 4 plies (gain 500); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-043",
+      "kind": "forced_material",
+      "fen": "3N4/8/4r3/N7/3K3k/8/2R5/8 w - - 0 1",
+      "correct_uci": [
+        "d8e6"
+      ],
+      "correct_san": [
+        "Nxe6"
+      ],
+      "rationale": "forced material 640 -> 1140 cp within 4 plies (gain 500); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-044",
+      "kind": "forced_material",
+      "fen": "8/8/8/K7/4k1nP/8/8/6Q1 w - - 0 1",
+      "correct_uci": [
+        "g1g4"
+      ],
+      "correct_san": [
+        "Qxg4+"
+      ],
+      "rationale": "forced material 680 -> 1000 cp within 4 plies (gain 320); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-045",
+      "kind": "forced_material",
+      "fen": "1r5R/4Q3/8/8/8/K7/8/3k4 b - - 0 1",
+      "correct_uci": [
+        "b8h8"
+      ],
+      "correct_san": [
+        "Rxh8"
+      ],
+      "rationale": "forced material -900 -> -400 cp within 4 plies (gain 500); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-046",
+      "kind": "forced_material",
+      "fen": "8/8/B7/8/3K1k2/8/Q6r/8 w - - 0 1",
+      "correct_uci": [
+        "a2h2"
+      ],
+      "correct_san": [
+        "Qxh2+"
+      ],
+      "rationale": "forced material 730 -> 1230 cp within 4 plies (gain 500); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-047",
+      "kind": "forced_material",
+      "fen": "8/2k5/1N4K1/4p3/8/8/1Pp1R3/8 b - - 0 1",
+      "correct_uci": [
+        "c2c1q"
+      ],
+      "correct_san": [
+        "c1=Q"
+      ],
+      "rationale": "forced material -720 -> -20 cp within 4 plies (gain 700); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-048",
+      "kind": "forced_material",
+      "fen": "8/2P5/8/6n1/6k1/8/1P5R/3K4 w - - 0 1",
+      "correct_uci": [
+        "c7c8q",
+        "h2c2",
+        "h2d2",
+        "h2e2",
+        "h2h1",
+        "h2h6",
+        "h2h8"
+      ],
+      "correct_san": [
+        "Rc2",
+        "Rd2",
+        "Re2",
+        "Rh1",
+        "Rh6",
+        "Rh8",
+        "c8=Q+"
+      ],
+      "rationale": "forced material 380 -> 1180 cp within 4 plies (gain 800); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-049",
+      "kind": "forced_material",
+      "fen": "6K1/8/8/6k1/8/8/Q7/3q2N1 b - - 0 1",
+      "correct_uci": [
+        "d1g1"
+      ],
+      "correct_san": [
+        "Qxg1"
+      ],
+      "rationale": "forced material -320 -> 0 cp within 4 plies (gain 320); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-050",
+      "kind": "forced_material",
+      "fen": "8/8/7p/8/1B4nK/4k3/1P2B3/8 w - - 0 1",
+      "correct_uci": [
+        "e2g4"
+      ],
+      "correct_san": [
+        "Bxg4"
+      ],
+      "rationale": "forced material 340 -> 660 cp within 4 plies (gain 320); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-051",
+      "kind": "forced_material",
+      "fen": "3k4/8/5R2/8/5K2/8/8/2Rq4 w - - 0 1",
+      "correct_uci": [
+        "c1d1"
+      ],
+      "correct_san": [
+        "Rxd1+"
+      ],
+      "rationale": "forced material 100 -> 1000 cp within 4 plies (gain 900); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-052",
+      "kind": "forced_material",
+      "fen": "r6k/1K6/8/8/8/6N1/8/3Q4 w - - 0 1",
+      "correct_uci": [
+        "b7a8",
+        "d1d4",
+        "d1h1",
+        "d1h5"
+      ],
+      "correct_san": [
+        "Kxa8",
+        "Qd4+",
+        "Qh1+",
+        "Qh5+"
+      ],
+      "rationale": "forced material 720 -> 1220 cp within 4 plies (gain 500); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-053",
+      "kind": "forced_material",
+      "fen": "r7/8/1p6/2R5/8/7K/8/k1B5 b - - 0 1",
+      "correct_uci": [
+        "a8h8",
+        "b6c5"
+      ],
+      "correct_san": [
+        "Rh8+",
+        "bxc5"
+      ],
+      "rationale": "forced material -230 -> 270 cp within 4 plies (gain 500); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-054",
+      "kind": "forced_material",
+      "fen": "8/1R6/2N4P/r2p4/5K2/8/8/3k4 w - - 0 1",
+      "correct_uci": [
+        "c6a5"
+      ],
+      "correct_san": [
+        "Nxa5"
+      ],
+      "rationale": "forced material 320 -> 820 cp within 4 plies (gain 500); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-055",
+      "kind": "forced_material",
+      "fen": "8/1K2k3/4B3/8/Q1n5/8/8/8 b - - 0 1",
+      "correct_uci": [
+        "c4d6"
+      ],
+      "correct_san": [
+        "Nd6+"
+      ],
+      "rationale": "forced material -910 -> -580 cp within 4 plies (gain 330); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-056",
+      "kind": "forced_material",
+      "fen": "8/5b2/8/8/5K2/B6P/8/6kB b - - 0 1",
+      "correct_uci": [
+        "g1h1"
+      ],
+      "correct_san": [
+        "Kxh1"
+      ],
+      "rationale": "forced material -430 -> -100 cp within 4 plies (gain 330); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-057",
+      "kind": "forced_material",
+      "fen": "8/4n1K1/8/p3k1B1/7Q/8/8/8 w - - 0 1",
+      "correct_uci": [
+        "g5e7",
+        "g5f6",
+        "h4e1"
+      ],
+      "correct_san": [
+        "Bf6+",
+        "Bxe7",
+        "Qe1+"
+      ],
+      "rationale": "forced material 810 -> 1130 cp within 4 plies (gain 320); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-058",
+      "kind": "forced_material",
+      "fen": "8/1p6/3k4/8/8/3B2K1/2p2Q2/8 b - - 0 1",
+      "correct_uci": [
+        "c2c1q"
+      ],
+      "correct_san": [
+        "c1=Q"
+      ],
+      "rationale": "forced material -1030 -> -330 cp within 4 plies (gain 700); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-059",
+      "kind": "forced_material",
+      "fen": "7K/8/1k6/7R/2R3r1/8/8/8 b - - 0 1",
+      "correct_uci": [
+        "g4c4"
+      ],
+      "correct_san": [
+        "Rxc4"
+      ],
+      "rationale": "forced material -500 -> 0 cp within 4 plies (gain 500); verified by exhaustive enumeration with python-chess"
+    },
+    {
+      "id": "tac-060",
+      "kind": "forced_material",
+      "fen": "1k6/7b/8/8/2Q5/2p5/7K/7B w - - 0 1",
+      "correct_uci": [
+        "c4c6",
+        "c4f7"
+      ],
+      "correct_san": [
+        "Qc6",
+        "Qf7"
+      ],
+      "rationale": "forced material 800 -> 1130 cp within 4 plies (gain 330); verified by exhaustive enumeration with python-chess"
+    }
+  ]
+}

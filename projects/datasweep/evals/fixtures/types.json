@@ -1,0 +1,55 @@
+{
+ "_comment": [
+  "Hand-authored semantic type per golden column (EVALS.md M1 / §4.4).",
+  "Authored once against SCOPE.md FR-5's vocabulary and inherited by every",
+  "corruption of that golden: corruption never changes a column's intended type.",
+  "Three anti-overfit properties are deliberate: `value` and `field3` are",
+  "semantically opaque; `code` is `integer` in transactions.csv and `digits` in",
+  "inventory.xlsx; `satisfaction` is a 1-5 integer a header-driven guesser would",
+  "call categorical. A name->type dictionary therefore cannot score 1.0."
+ ],
+ "contacts.csv": {
+  "name": "text",
+  "email": "text",
+  "city": "categorical",
+  "country": "categorical",
+  "zip": "digits",
+  "signup_date": "date",
+  "age": "integer",
+  "value": "float"
+ },
+ "transactions.csv": {
+  "txn_id": "integer",
+  "date": "date",
+  "amount": "float",
+  "currency": "categorical",
+  "merchant": "categorical",
+  "category": "categorical",
+  "status": "categorical",
+  "code": "integer"
+ },
+ "sensors.jsonl": {
+  "ts": "datetime",
+  "device_id": "categorical",
+  "temperature_c": "float",
+  "humidity_pct": "float",
+  "status": "categorical"
+ },
+ "inventory.xlsx": {
+  "sku": "digits",
+  "product": "text",
+  "qty": "integer",
+  "unit_price": "float",
+  "restock_date": "date",
+  "code": "digits"
+ },
+ "survey.tsv": {
+  "respondent_id": "integer",
+  "gender": "categorical",
+  "satisfaction": "integer",
+  "comment": "text",
+  "submitted": "date",
+  "income": "float",
+  "field3": "categorical"
+ }
+}

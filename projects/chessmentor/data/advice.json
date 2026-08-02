@@ -1,0 +1,119 @@
+[
+  {
+    "id": "hung-piece-board-vision",
+    "category": "hung_piece",
+    "phase": null,
+    "title": "Stop dropping pieces: check your opponent's replies",
+    "body": "Before committing a move, name every check, capture and threat your opponent has in reply, and count attackers vs defenders on the piece you just touched. Most lost games at club level are decided by one unanswered capture, not by strategy.",
+    "drill": "For one week, write down your opponent's best reply before playing each move of a daily game.",
+    "source_note": "Heisman, Novice Nook: counting / checks-captures-threats discipline"
+  },
+  {
+    "id": "hung-piece-endgame-loose-pieces",
+    "category": "hung_piece",
+    "phase": "endgame",
+    "title": "In the endgame, every piece is loose",
+    "body": "With few pieces left there is nothing to hide behind: a knight on the rim or a rook on an open file is often defended by nothing at all. Before each endgame move, list your undefended pieces and check whether the opponent's king or rook can reach them.",
+    "drill": "Set up three rook-and-pawn endings and, on every move, say aloud which of your pieces are undefended before choosing.",
+    "source_note": "Heisman, Novice Nook: counting; Silman, Complete Endgame Course (2007), rating-tiered endgame study"
+  },
+  {
+    "id": "missed-tactic-pattern-repetition",
+    "category": "missed_tactic",
+    "phase": null,
+    "title": "Train tactical pattern recognition by repetition",
+    "body": "You are reaching positions where a concrete win of material exists and playing something quiet instead. Tactics at amateur level are recognition, not calculation: the fork, the pin and the loose piece have to jump out at you before you start thinking.",
+    "drill": "Work the same set of 50 tactics puzzles daily until you solve all of them at sight, then swap in a new set.",
+    "source_note": "Teichmann, on the primacy of tactics; Smith & Tikkanen, The Woodpecker Method (2018), repetition drilling"
+  },
+  {
+    "id": "allowed-tactic-opponent-threats",
+    "category": "allowed_tactic",
+    "phase": null,
+    "title": "Ask what your opponent's move threatens",
+    "body": "You are walking into forks, pins and skewers rather than missing your own. The fix is the same discipline in the other direction: after every opponent move, before you think about your plan, work out what that move newly attacks and which of your pieces now share a line or a knight's reach.",
+    "drill": "Play a game where you write the opponent's threat after each of their moves before choosing your reply.",
+    "source_note": "Heisman, Novice Nook: checks-captures-threats applied to the opponent's last move"
+  },
+  {
+    "id": "bad-trade-count-the-exchange",
+    "category": "bad_trade",
+    "phase": null,
+    "title": "Count the whole exchange before you capture",
+    "body": "You started an exchange that loses material once it is played out. A capture is only good if the full sequence of recaptures ends in your favour: count every attacker and every defender on the square, in order from cheapest to dearest, before taking.",
+    "drill": "From ten middlegame positions, list every capture available and compute the full exchange value of each before checking with an engine.",
+    "source_note": "Heisman, Novice Nook: counting attackers and defenders (static exchange)"
+  },
+  {
+    "id": "missed-mate-look-for-forcing-moves",
+    "category": "missed_mate",
+    "phase": null,
+    "title": "Look for the forcing move first",
+    "body": "You had a forced mate and played something else. Whenever the opponent's king is exposed, start your search with checks — every check, in order — before you consider quiet moves. Mate is the cheapest way to win a game and the easiest to miss when you are busy improving a piece.",
+    "drill": "Solve twenty mate-in-two puzzles a day for two weeks, calling out every check in the position before choosing.",
+    "source_note": "Heisman, Novice Nook: checks-captures-threats; classical mating-net training"
+  },
+  {
+    "id": "allowed-mate-king-safety",
+    "category": "allowed_mate",
+    "phase": null,
+    "title": "Guard the king before you grab material",
+    "body": "Your move allowed a forced mate. When the opponent has two or more attackers near your king, king safety outranks material and outranks activity: count the attackers around your king, count the defenders, and if the attackers win the count, defend or run before doing anything else.",
+    "drill": "Replay three of your losses and stop at the last move where your king still had enough defenders; write down what you should have played there.",
+    "source_note": "Classical attack/defence balance; Heisman, Novice Nook on king safety counting"
+  },
+  {
+    "id": "endgame-technique-convert-the-win",
+    "category": "endgame_technique",
+    "phase": null,
+    "title": "Learn the endgames your rating actually reaches",
+    "body": "You are losing points after the queens come off. Study endgames in the order they appear in your games: king and pawn opposition, rook behind the passed pawn, then the basic rook endings. Technique here is knowledge, not calculation — the positions repeat.",
+    "drill": "Practise king-and-pawn versus king from three starting squares until you win it every time without thinking.",
+    "source_note": "Silman, Complete Endgame Course (2007): rating-tiered endgame study"
+  },
+  {
+    "id": "endgame-technique-endgame-phase",
+    "category": "endgame_technique",
+    "phase": "endgame",
+    "title": "Slow down when the position simplifies",
+    "body": "Simplified positions feel easy and that is exactly why they get spoiled. With few pieces each move carries more weight: activate your king, put rooks behind passed pawns, and calculate pawn races to the end rather than by feel.",
+    "drill": "Take five of your own endings and re-play them against the engine from the move where the evaluation dropped.",
+    "source_note": "Silman, Complete Endgame Course (2007); classical endgame principles (active king, rook behind the pawn)"
+  },
+  {
+    "id": "opening-principle-develop-and-castle",
+    "category": "opening_principle",
+    "phase": null,
+    "title": "Develop every piece once, then castle",
+    "body": "Your opening losses come from breaking the classical rules rather than from theory: move each piece once until all your minors are out, fight for the centre with pawns, bring the queen out late, and castle early. Openings are not memorised at your level — they are obeyed.",
+    "drill": "Play five games where you must develop all four minor pieces and castle before moving any piece twice, and note where it hurt.",
+    "source_note": "Classical opening principles: development, centre, early castling, late queen"
+  },
+  {
+    "id": "opening-principle-opening-phase",
+    "category": "opening_principle",
+    "phase": "opening",
+    "title": "Finish development before you start an attack",
+    "body": "You are launching operations with pieces still at home. Count your developed pieces against your opponent's before every committal move in the opening: if you are behind, the move you want almost certainly loses time you cannot afford.",
+    "drill": "In your next three games, write the developed-piece count for both sides at move 10 and compare it with the result.",
+    "source_note": "Classical opening principles: development count and time"
+  },
+  {
+    "id": "positional-drift-make-a-plan",
+    "category": "positional_drift",
+    "phase": null,
+    "title": "Give every move a reason",
+    "body": "Nothing tactical went wrong — you drifted. Before moving, name your worst-placed piece and your opponent's, and pick a move that improves yours or restrains theirs. A move without a reason is how a comfortable position turns into a bad one.",
+    "drill": "For one game, write a one-line reason for every move before you play it, then review the moves whose reason you could not write.",
+    "source_note": "Classical positional method: improve your worst piece; plan from imbalances"
+  },
+  {
+    "id": "positional-drift-middlegame",
+    "category": "positional_drift",
+    "phase": "middlegame",
+    "title": "Play from the imbalances, not from move to move",
+    "body": "In the middlegame the position tells you what to do: pawn structure decides which files and squares matter, and which side of the board you should be playing on. Identify the structure, name the plan it implies, then choose moves that serve it.",
+    "drill": "Take five of your middlegames, write the pawn structure and the plan it implies, and compare with the moves you actually played.",
+    "source_note": "Classical positional method: pawn structure as the source of plans"
+  }
+]

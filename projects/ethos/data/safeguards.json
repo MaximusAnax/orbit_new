@@ -1,0 +1,17 @@
+[
+  {
+    "id": "crisis_resources",
+    "kind": "crisis_resources",
+    "text": "If you are thinking about suicide or self-harm, please reach out now: call or text 988 (Suicide & Crisis Lifeline, US), or find local helplines at befrienders.org (Befrienders Worldwide) or findahelpline.com. What follows are scholarly summaries of how traditions have discussed this topic - it is not counseling, and it is no substitute for talking to someone."
+  },
+  {
+    "id": "not_medical_advice",
+    "kind": "not_medical_advice",
+    "text": "This material summarizes how religious and philosophical traditions have discussed end-of-life questions. It is not medical advice. Decisions about care belong with you, your family, and qualified clinicians."
+  },
+  {
+    "id": "not_legal_advice",
+    "kind": "not_legal_advice",
+    "text": "This material describes moral teachings, not the law of any jurisdiction. It is not legal advice; for legal questions consult a qualified professional."
+  }
+]

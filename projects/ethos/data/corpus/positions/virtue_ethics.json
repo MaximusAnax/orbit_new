@@ -1,0 +1,1045 @@
+[
+  {
+    "id": "promise_keeping_and_oaths--virtue_ethics",
+    "topic_id": "promise_keeping_and_oaths",
+    "tradition_id": "virtue_ethics",
+    "stance": "reframed",
+    "summary": "A promise is not a free-standing obligation bolted onto an otherwise indifferent act; it is an occasion on which the settled trait of truthfulness shows itself. The truthful person keeps faith in small unwitnessed matters, and that is why he can be relied on when keeping faith costs him something. Whether a particular undertaking still binds is not read off the words but discerned in the case, weighing what was undertaken against competing claims of kinship, gratitude and need. Oaths add solemnity; they do not manufacture the reliability, which comes from character formed by habit.",
+    "reasoning": [
+      {
+        "text": "Reliability is a trait before it is a rule: whoever will not shade the truth when nothing turns on it is the one who holds when something does.",
+        "passage_id": "ne-4-7-truthful-character"
+      },
+      {
+        "text": "Whether a commitment still binds is a judgment about this case, which is the work of practical wisdom rather than of a general formula.",
+        "passage_id": "ne-6-5-practical-wisdom"
+      },
+      {
+        "text": "Conflicts among prior claims — father, benefactor, comrade — are left deliberately unresolved, because precision here would falsify the material.",
+        "passage_id": "ne-9-2-competing-claims"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-7-truthful-character",
+        "role": "core",
+        "note": "truthfulness as a state of character, tested in the small case"
+      },
+      {
+        "passage_id": "ne-6-5-practical-wisdom",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-9-2-competing-claims",
+        "role": "complicating",
+        "note": "obligations that no rule ranks"
+      }
+    ],
+    "intra_tradition_note": "There is no treatise on promising in the Nicomachean Ethics; the scholastic development supplies one, filing fidelity and vows under justice and religion and admitting dispensation. Twentieth-century revivals divide over whether a character-first ethics can yield determinate verdicts on broken commitments at all, or must borrow them.",
+    "further_reading": [
+      {
+        "author": "Rosalind Hursthouse and Glen Pettigrove",
+        "title": "Virtue Ethics",
+        "year": 2023,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/ethics-virtue/",
+        "note": "includes the standard objection that virtue ethics lacks action-guidance"
+      },
+      {
+        "author": "Sarah Broadie",
+        "title": "Ethics with Aristotle",
+        "year": 1991,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.7, VI.5 and IX.2; Broadie on the irreducibility of the particular case."
+  },
+  {
+    "id": "animals_and_diet--virtue_ethics",
+    "topic_id": "animals_and_diet",
+    "tradition_id": "virtue_ethics",
+    "stance": "permitted",
+    "summary": "Nature makes nothing in vain, and on the teleological reading that carries this argument the plant exists for the animal and the animal for human use, so eating meat needs no special defence. Because beasts lack reason they are not partners in justice or friendship, and no debt is owed to them directly. What does come under scrutiny is the eater. Gluttony is a failure of temperance, and cruelty deforms whoever practises it — which is the ground on which the later development forbids wanton harm to animals, lest habitual cruelty carry over into how people are treated.",
+    "reasoning": [
+      {
+        "text": "The teleological ordering of nature places animals among the resources of human life, which settles the permission at the outset.",
+        "passage_id": "pol-1-8-animals-for-man"
+      },
+      {
+        "text": "Moral community is constituted by shared reason, so justice and friendship do not extend to creatures that lack it.",
+        "passage_id": "ne-1-7-rational-function"
+      },
+      {
+        "text": "Diet is still governed by temperance: the fault lies in craving badly, not in eating flesh.",
+        "passage_id": "ne-3-11-temperate-craving"
+      },
+      {
+        "text": "Cruelty is prohibited through its effect on character, an indirect route that nonetheless concedes the deforming power of the practice.",
+        "passage_id": "summa-102-6-animal-cruelty"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "pol-1-8-animals-for-man",
+        "role": "core",
+        "note": "the teleological argument for human use"
+      },
+      {
+        "passage_id": "ne-1-7-rational-function",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-3-11-temperate-craving",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "summa-102-6-animal-cruelty",
+        "role": "complicating",
+        "note": "cruelty forbidden, but for the sake of the agent"
+      }
+    ],
+    "intra_tradition_note": "The purposive biology that carries the permission is the part of the ancient system least retained by later readers. Contemporary neo-Aristotelians who keep the character framework while dropping the natural hierarchy have argued the other way, treating industrial slaughter as a school of cruelty and intemperance.",
+    "further_reading": [
+      {
+        "author": "Richard Kraut",
+        "title": "Aristotle's Ethics",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/aristotle-ethics/",
+        "note": null
+      },
+      {
+        "author": "Judith Barad",
+        "title": "Aquinas on the Nature and Treatment of Animals",
+        "year": 1995,
+        "kind": "book",
+        "url": null,
+        "note": "argues the indirect-duty reading understates Aquinas"
+      },
+      {
+        "author": "Rosalind Hursthouse",
+        "title": "Ethics, Humans and Other Animals: An Introduction with Readings",
+        "year": 2000,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Jowett's Politics I.8, Ross's Nicomachean Ethics I.7 and III.11, and Summa I-II Q.102 a.6; Hursthouse for the modern reversal."
+  },
+  {
+    "id": "wealth_and_generosity--virtue_ethics",
+    "topic_id": "wealth_and_generosity",
+    "tradition_id": "virtue_ethics",
+    "stance": "encouraged",
+    "summary": "Giving well is an excellence with its own name, liberality, and it is measured against the giver's means rather than the size of the sum. The liberal person gives to the right people, in the right amount, at the right moment and for the sake of what is fine, so a lavish gift made to impress misses the mark while a modest one may hit it. Both extremes are faults, but stinginess is judged the worse and the more entrenched, since most people are keener on getting than on parting with anything.",
+    "reasoning": [
+      {
+        "text": "Right giving is fixed by recipient, amount, occasion and motive together; the sum by itself settles nothing.",
+        "passage_id": "ne-4-1-liberal-giving"
+      },
+      {
+        "text": "The two extremes are not symmetrical — meanness is commoner and harder to cure than extravagance.",
+        "passage_id": "ne-4-1-meanness-incurable"
+      },
+      {
+        "text": "Spending on a large scale is a further excellence of perception, and one available only to those who already have resources.",
+        "passage_id": "ne-4-2-magnificent-artist"
+      },
+      {
+        "text": "Flourishing itself needs equipment, so possessions cannot be treated as morally weightless.",
+        "passage_id": "ne-1-8-equipment"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-1-liberal-giving",
+        "role": "core",
+        "note": "the specification of right giving"
+      },
+      {
+        "passage_id": "ne-4-1-meanness-incurable",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-2-magnificent-artist",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-1-8-equipment",
+        "role": "complicating",
+        "note": "external goods as a condition of noble action"
+      }
+    ],
+    "intra_tradition_note": "The account is frankly addressed to a propertied audience: magnificence presupposes wealth, and a poor person can exhibit liberality only in miniature. Readers divide over whether that is an incidental feature of the original audience or a structural limit on an ethics built from the excellences of a leisured class.",
+    "further_reading": [
+      {
+        "author": "Julia Annas",
+        "title": "Intelligent Virtue",
+        "year": 2011,
+        "kind": "book",
+        "url": null,
+        "note": null
+      },
+      {
+        "author": "Howard J. Curzer",
+        "title": "Aristotle and the Virtues",
+        "year": 2012,
+        "kind": "book",
+        "url": null,
+        "note": "chapter-length treatment of liberality and magnificence"
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.1, IV.2 and I.8; Curzer on the asymmetry of the extremes."
+  },
+  {
+    "id": "usury_and_lending--virtue_ethics",
+    "topic_id": "usury_and_lending",
+    "tradition_id": "virtue_ethics",
+    "stance": "discouraged",
+    "summary": "Money exists for exchange, and making it breed more of itself inverts the purpose of the instrument; the resulting trade is called the most justly hated kind of acquisition. The deeper complaint is about the person doing it. Household provision has a natural limit set by what a good life requires, whereas lending at interest belongs to a pursuit of gain that recognises no stopping point, and it is that limitless appetite which is diagnosed as the vice. Extending credit is itself an act of liberality; what corrupts it is charging for the use of a thing consumed in using it.",
+    "reasoning": [
+      {
+        "text": "Interest treats a medium of exchange as though it bore offspring, reversing what money is for.",
+        "passage_id": "pol-1-10-money-begets"
+      },
+      {
+        "text": "The scholastic development hardened this into a prohibition grounded in equality in exchange: charging for what is consumed in use sells nothing.",
+        "passage_id": "summa-78-1-usury"
+      },
+      {
+        "text": "Elsewhere money is called a creature of convention rather than nature, which weakens the appeal to its natural function.",
+        "passage_id": "ne-5-5-money-by-law"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "pol-1-10-money-begets",
+        "role": "core",
+        "note": "money begetting money"
+      },
+      {
+        "passage_id": "summa-78-1-usury",
+        "role": "supporting",
+        "note": "the medieval hardening into prohibition"
+      },
+      {
+        "passage_id": "ne-5-5-money-by-law",
+        "role": "complicating",
+        "note": "money as convention undercuts the naturalness argument"
+      }
+    ],
+    "intra_tradition_note": "The tradition contradicts itself here. The naturalness argument in the Politics sits badly with the Ethics' claim that money exists by law and can be changed at will, and the same jurists who took the prohibition most seriously built the extrinsic titles — compensation for loss, and for opportunity forgone — that eventually made commercial lending licit.",
+    "further_reading": [
+      {
+        "author": "John T. Noonan Jr.",
+        "title": "The Scholastic Analysis of Usury",
+        "year": 1957,
+        "kind": "book",
+        "url": null,
+        "note": null
+      },
+      {
+        "author": "Odd Langholm",
+        "title": "The Legacy of Scholasticism in Economic Thought: Antecedents of Choice and Power",
+        "year": 1998,
+        "kind": "book",
+        "url": null,
+        "note": null
+      },
+      {
+        "author": "Fred D. Miller Jr.",
+        "title": "Aristotle's Political Theory",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/aristotle-politics/",
+        "note": "section on the critique of unlimited acquisition"
+      }
+    ],
+    "curator_note": "Drafted from Jowett's Politics I.10, Ross's Nicomachean Ethics V.5, and Summa II-II Q.78 a.1; Noonan and Langholm for the extrinsic titles."
+  },
+  {
+    "id": "forgiveness_and_revenge--virtue_ethics",
+    "topic_id": "forgiveness_and_revenge",
+    "tradition_id": "virtue_ethics",
+    "stance": "context_dependent",
+    "summary": "Praise and blame attach only to what someone did willingly, so where an act was compelled or done in blameless ignorance, pardon is the accurate response rather than a favour granted. Past that point the question turns on what the injured party's own temper is doing. Nursing a grievance is listed among the faults: sullen people hold their resentment because they cannot discharge it, and retaliation feels like resolution because it swaps pain for pleasure. Yet the opposite counsel is refused too, since someone who never resents an injury done to those he loves has failed them.",
+    "reasoning": [
+      {
+        "text": "Pardon is the fitting response to involuntary wrongdoing, and it is established before any question of generosity arises.",
+        "passage_id": "ne-3-1-pardon"
+      },
+      {
+        "text": "The sullen grudge is classified as a vice of excess, and revenge is described as its relief rather than its cure.",
+        "passage_id": "ne-4-5-revenge-relieves"
+      },
+      {
+        "text": "Corrective punishment by proper authority counts as a part of justice, and is distinguished from private hatred by what it aims at.",
+        "passage_id": "summa-108-1-vengeance"
+      },
+      {
+        "text": "Absorbing insult to one's friends without protest is named a servile defect, not patience.",
+        "passage_id": "ne-4-5-slavish-endurance"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-3-1-pardon",
+        "role": "core",
+        "note": "pardon tracks involuntariness"
+      },
+      {
+        "passage_id": "ne-4-5-revenge-relieves",
+        "role": "core",
+        "note": "the anatomy of the grudge"
+      },
+      {
+        "passage_id": "summa-108-1-vengeance",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-5-slavish-endurance",
+        "role": "complicating",
+        "note": "the limit on unresisting endurance"
+      }
+    ],
+    "intra_tradition_note": "There is no ancient Greek term that maps onto unconditional forgiveness, and scholars disagree whether that is a gap in the psychology or a considered refusal. The scholastic reworking adds mercy as a virtue while keeping corrective vengeance inside justice, which leaves the tension in place rather than dissolving it.",
+    "further_reading": [
+      {
+        "author": "David Konstan",
+        "title": "Before Forgiveness: The Origins of a Moral Idea",
+        "year": 2010,
+        "kind": "book",
+        "url": null,
+        "note": "argues the modern concept is absent from classical ethics"
+      },
+      {
+        "author": "Martha C. Nussbaum",
+        "title": "Anger and Forgiveness: Resentment, Generosity, Justice",
+        "year": 2016,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics III.1 and IV.5, with Summa II-II Q.108 a.1; Konstan on the absence of a forgiveness concept."
+  },
+  {
+    "id": "anger_and_hatred--virtue_ethics",
+    "topic_id": "anger_and_hatred",
+    "tradition_id": "virtue_ethics",
+    "stance": "context_dependent",
+    "summary": "There is no excellence of never being angry. Good temper is the trained middle of a passion that has a proper object, and someone earns praise for being angry at what merits it, with whoever merits it, in the manner, at the moment and for the length of time the case warrants. Miss any of those and the anger is a fault; lose the passion altogether and you are called a fool, unable to stand up for yourself or for your friends. Hatred is a different thing, since it wants its object destroyed rather than corrected, and admits no middle at all.",
+    "reasoning": [
+      {
+        "text": "Good temper sits as a mean with respect to anger, leaning towards the calmer side without collapsing into it.",
+        "passage_id": "ne-4-5-good-temper"
+      },
+      {
+        "text": "The passion is assessed on five dimensions at once — object, target, manner, occasion, duration — so a warranted feeling badly timed is still a failure.",
+        "passage_id": "ne-4-5-angry-rightly"
+      },
+      {
+        "text": "The deficiency is blamed outright: those unmoved by what warrants indignation are called foolish, not gentle.",
+        "passage_id": "ne-4-5-inirascible-blamed"
+      },
+      {
+        "text": "Some passions carry badness in their very names and permit no middle amount, which is where spite and malice belong.",
+        "passage_id": "ne-2-6-no-mean-envy"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-5-good-temper",
+        "role": "core",
+        "note": "praotes as the mean"
+      },
+      {
+        "passage_id": "ne-4-5-angry-rightly",
+        "role": "core",
+        "note": "the five-fold specification"
+      },
+      {
+        "passage_id": "ne-2-6-no-mean-envy",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-5-inirascible-blamed",
+        "role": "complicating",
+        "note": "the deficiency is a vice too"
+      }
+    ],
+    "intra_tradition_note": "How much of anger's value survives once the ancient setting of honour and requital falls away is actively disputed. Some contemporary neo-Aristotelians defend a purified indignation aimed at injustice; others hold that the wish for the offender to suffer, which is built into the passion as described, is exactly what the doctrine of the mean cannot moderate.",
+    "further_reading": [
+      {
+        "author": "Kristján Kristjánsson",
+        "title": "Virtuous Emotions",
+        "year": 2018,
+        "kind": "book",
+        "url": null,
+        "note": "defends a reconstructed Aristotelian anger"
+      },
+      {
+        "author": "Nancy Sherman",
+        "title": "The Fabric of Character: Aristotle's Theory of Virtue",
+        "year": 1989,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.5 and II.6; Kristjánsson and Sherman for the modern debate on whether anger can be a virtuous emotion."
+  },
+  {
+    "id": "speech_and_gossip--virtue_ethics",
+    "topic_id": "speech_and_gossip",
+    "tradition_id": "virtue_ethics",
+    "stance": "context_dependent",
+    "summary": "Conversation is one of the arenas in which character shows and forms, and it has excellences of its own: friendliness between flattery and quarrelsomeness, wit between buffoonery and boorishness, candour between boasting and mock self-effacement. So the wrong in discussing an absent person does not lie in whether the report is accurate. It lies in what the speaker is doing — hunting a laugh at someone's expense, or trading in reputation for the pleasure of the exchange. No code can list what is fitting to say, which is why the standard is the judgment of a well-formed speaker.",
+    "reasoning": [
+      {
+        "text": "Company has its own virtues and vices, so ordinary talk is morally assessable rather than a neutral zone.",
+        "passage_id": "ne-4-6-obsequious-quarrelsome"
+      },
+      {
+        "text": "Humour turns vicious when raising a laugh outweighs the pain caused to the person it is raised against.",
+        "passage_id": "ne-4-8-buffoon"
+      },
+      {
+        "text": "No rulebook for talk is offered; the refined speaker is made a law to himself instead.",
+        "passage_id": "ne-4-8-well-bred-law"
+      },
+      {
+        "text": "The scholastic treatment grades detraction by the damage actually done to a good name, making it grave in genus and slight in some instances.",
+        "passage_id": "summa-73-2-backbiting"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-8-well-bred-law",
+        "role": "core",
+        "note": "no code, only trained judgment"
+      },
+      {
+        "passage_id": "ne-4-6-obsequious-quarrelsome",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-8-buffoon",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "summa-73-2-backbiting",
+        "role": "complicating",
+        "note": "a stricter, harm-graded rule against detraction"
+      }
+    ],
+    "intra_tradition_note": "The account assumes a small society of social equals where reputation circulates face to face and can be repaired the same way. Whether these same excellences transfer to anonymous, permanent, mass-scale speech is the main pressure later readers apply, and the scholastic rule against detraction is often preferred precisely because it is more determinate.",
+    "further_reading": [
+      {
+        "author": "Karen Stohr",
+        "title": "On Manners",
+        "year": 2011,
+        "kind": "book",
+        "url": null,
+        "note": "argues small-scale social conduct is genuine moral terrain"
+      },
+      {
+        "author": "Paula Gottlieb",
+        "title": "The Virtue of Aristotle's Ethics",
+        "year": 2009,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.6 and IV.8 with Summa II-II Q.73 a.2; Stohr for the modern application to everyday talk."
+  },
+  {
+    "id": "intoxicants_and_sobriety--virtue_ethics",
+    "topic_id": "intoxicants_and_sobriety",
+    "tradition_id": "virtue_ethics",
+    "stance": "permitted",
+    "summary": "Wine is nowhere on the list of things ruled out. Temperance is a mean concerning bodily pleasure, and whoever craves what he ought, as he ought and when he ought, has a trained appetite rather than a suppressed one; the deficiency, taking less delight in such things than a human being should, is itself named a defect, if a rare one. Drunkenness is condemned for what it does to reason and to conduct, and the harder line is taken that impairment chosen in advance aggravates rather than excuses whatever follows from it.",
+    "reasoning": [
+      {
+        "text": "Temperance is defined positively, by craving rightly, not by abstaining.",
+        "passage_id": "ne-3-11-temperate-craving"
+      },
+      {
+        "text": "Insensibility to bodily pleasure is listed as a vice of deficiency, blocking any reading of the virtue as renunciation.",
+        "passage_id": "ne-3-11-insensibility"
+      },
+      {
+        "text": "Choosing impairment leaves the agent answerable for what follows; the doubling of penalties for offences committed drunk is cited approvingly.",
+        "passage_id": "ne-3-5-drunkenness"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-3-11-temperate-craving",
+        "role": "core",
+        "note": "sophrosyne as trained appetite"
+      },
+      {
+        "passage_id": "ne-3-11-insensibility",
+        "role": "supporting",
+        "note": "the deficiency that rules out abstinence as the ideal"
+      },
+      {
+        "passage_id": "ne-3-5-drunkenness",
+        "role": "complicating",
+        "note": "self-incurred ignorance aggravates"
+      }
+    ],
+    "intra_tradition_note": "The treatment of weakness of will leaves it unsettled whether the drinker who knows better is genuinely ignorant at the moment of acting or is merely reciting knowledge he does not possess. The answer decides how much blame the habitual drinker carries, and the text supports both readings.",
+    "further_reading": [
+      {
+        "author": "Hendrik Lorenz",
+        "title": "The Brute Within: Appetitive Desire in Plato and Aristotle",
+        "year": 2006,
+        "kind": "book",
+        "url": null,
+        "note": null
+      },
+      {
+        "author": "Christopher Bobonich and Pierre Destrée (eds.)",
+        "title": "Akrasia in Greek Philosophy",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": "collects the competing readings of the weakness-of-will chapters"
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics III.11 and III.5; Lorenz and the Bobonich/Destrée volume for the akrasia dispute."
+  },
+  {
+    "id": "pride_and_humility--virtue_ethics",
+    "topic_id": "pride_and_humility",
+    "tradition_id": "virtue_ethics",
+    "stance": "reframed",
+    "summary": "The question is not whether to think well of yourself but whether you estimate yourself correctly. Greatness of soul means claiming what you are in fact worth, and it can fail in two directions: the vain claim more than their deserts, while those who sell themselves short rob themselves of what they have earned and, worse, do not know themselves. Properly understood the trait presupposes the other excellences instead of rivalling them. Boasting is a separate fault altogether, a failure of candour about oneself rather than an overdose of self-regard.",
+    "reasoning": [
+      {
+        "text": "The trait is defined as thinking oneself worthy of great things and being worthy of them, so accuracy is the whole of it.",
+        "passage_id": "ne-4-3-proud-worthy"
+      },
+      {
+        "text": "Greatness of soul is called a crown of the excellences, magnifying them and impossible without them.",
+        "passage_id": "ne-4-3-crown-of-virtues"
+      },
+      {
+        "text": "Undue self-abasement is diagnosed as a vice, and specifically as a failure of self-knowledge.",
+        "passage_id": "ne-4-3-unduly-humble"
+      },
+      {
+        "text": "The scholastic revision installs humility alongside magnanimity, letting a person esteem gifts received while thinking little of what is his own.",
+        "passage_id": "summa-161-1-humility"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-3-proud-worthy",
+        "role": "core",
+        "note": "megalopsychia as accurate self-estimate"
+      },
+      {
+        "passage_id": "ne-4-3-crown-of-virtues",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-3-unduly-humble",
+        "role": "supporting",
+        "note": "self-deprecation as a vice"
+      },
+      {
+        "passage_id": "summa-161-1-humility",
+        "role": "complicating",
+        "note": "humility added to the catalogue"
+      }
+    ],
+    "intra_tradition_note": "This is the sharpest internal fault line in the tradition. Aquinas retains magnanimity but ranks humility beside it, arguing the two attend to different objects — gifts received against one's own deficiency — and readers have disagreed ever since over whether that is a synthesis or a quiet substitution.",
+    "further_reading": [
+      {
+        "author": "Roger Crisp",
+        "title": "Aristotle on Greatness of Soul",
+        "year": 2006,
+        "kind": "article",
+        "url": null,
+        "note": "in The Blackwell Guide to Aristotle's Nicomachean Ethics"
+      },
+      {
+        "author": "Eleonore Stump",
+        "title": "Aquinas",
+        "year": 2003,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.3 and Summa II-II Q.161 a.1; Crisp on the interpretive difficulties of megalopsychia."
+  },
+  {
+    "id": "envy_and_contentment--virtue_ethics",
+    "topic_id": "envy_and_contentment",
+    "tradition_id": "virtue_ethics",
+    "stance": "reframed",
+    "summary": "Envy is not an overdose of ordinary wanting. It belongs to the small class of passions that cannot be felt in the right amount at all, because it is pain at another's good taken simply as another's. What stands in its place is not serenity or gratitude but a calibrated sense of desert: distress when fortune lands on those who have not earned it, gladness when it lands on those who have. The two ways that sense can fail are envy, which grieves at good fortune of any kind, and malice, which is cheered by disaster.",
+    "reasoning": [
+      {
+        "text": "The mean here is righteous indignation, with envy below it and delight in misfortune above.",
+        "passage_id": "ne-2-7-nemesis"
+      },
+      {
+        "text": "The scholastic analysis narrows the vice to sorrow at another's good precisely because it exceeds one's own, separating it from fear of harm and from grief that the unworthy prosper.",
+        "passage_id": "summa-36-1-envy"
+      },
+      {
+        "text": "Certain passions carry badness in their names and admit no middle amount; envy is the standing example.",
+        "passage_id": "ne-2-6-no-mean-envy"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-2-7-nemesis",
+        "role": "core",
+        "note": "nemesis as the mean"
+      },
+      {
+        "passage_id": "summa-36-1-envy",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-2-6-no-mean-envy",
+        "role": "complicating",
+        "note": "a passion the doctrine of the mean cannot cover"
+      }
+    ],
+    "intra_tradition_note": "Aristotle is himself unsure whether righteous indignation belongs among the virtues proper — he tabulates it in Book II and never returns to it — and the state he describes, distress at the undeserving prospering, sits uncomfortably close to the vice it is meant to correct.",
+    "further_reading": [
+      {
+        "author": "Sara Protasi",
+        "title": "The Philosophy of Envy",
+        "year": 2021,
+        "kind": "book",
+        "url": null,
+        "note": "distinguishes several kinds of envy, only some of them vicious"
+      },
+      {
+        "author": "Rebecca Konyndyk DeYoung",
+        "title": "Glittering Vices: A New Look at the Seven Deadly Sins and Their Remedies",
+        "year": 2009,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics II.7 and II.6 with Summa II-II Q.36 a.1; Protasi for the modern taxonomy."
+  },
+  {
+    "id": "obedience_and_civil_authority--virtue_ethics",
+    "topic_id": "obedience_and_civil_authority",
+    "tradition_id": "virtue_ethics",
+    "stance": "encouraged",
+    "summary": "Law is not bare coercion. It is a rule issuing from a kind of practical reason, and it is the ordinary instrument by which citizens are habituated into decent conduct in the first place; that educative work is what grounds the presumption in favour of complying with it. The presumption is not absolute. Since every general rule fails in some case its framers never foresaw, the equitable person corrects the letter in the direction the lawgiver would himself have gone. And because civic excellence is relative to the constitution, a good subject of a bad regime need not be a good person.",
+    "reasoning": [
+      {
+        "text": "Law carries compulsive power and is at the same time a rule of practical wisdom, which is why growing up under decent laws is the normal route to virtue.",
+        "passage_id": "ne-10-9-law-compulsive"
+      },
+      {
+        "text": "Equity corrects the statute where generality has made it misfire, reasoning from what the legislator would have said had the case been before him.",
+        "passage_id": "ne-5-10-equity"
+      },
+      {
+        "text": "Civic excellence tracks the constitution, so being a good citizen and being a good human being can come apart.",
+        "passage_id": "pol-3-4-good-man-citizen"
+      },
+      {
+        "text": "The scholastic development holds that a statute contrary to the human good is an act of violence rather than a law and does not bind conscience, while still counselling compliance where refusal would cause greater disorder.",
+        "passage_id": "summa-96-4-unjust-law"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-10-9-law-compulsive",
+        "role": "core",
+        "note": "law as educator, not merely enforcer"
+      },
+      {
+        "passage_id": "ne-5-10-equity",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "pol-3-4-good-man-citizen",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "summa-96-4-unjust-law",
+        "role": "complicating",
+        "note": "the limit of the duty to obey"
+      }
+    ],
+    "intra_tradition_note": "The confidence in law as a teacher assumes a city whose constitution is at least tolerably ordered. Little guidance is offered to the citizen of a regime that habituates badly, and equity as described is a remedy in the hands of a judge rather than a warrant for a subject to disobey.",
+    "further_reading": [
+      {
+        "author": "Fred D. Miller Jr.",
+        "title": "Aristotle's Political Theory",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/aristotle-politics/",
+        "note": null
+      },
+      {
+        "author": "John Finnis",
+        "title": "Aquinas: Moral, Political, and Legal Theory",
+        "year": 1998,
+        "kind": "book",
+        "url": null,
+        "note": "on what unjust laws do and do not oblige"
+      },
+      {
+        "author": "Richard Kraut",
+        "title": "Aristotle: Political Philosophy",
+        "year": 2002,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics X.9 and V.10, Jowett's Politics III.4, and Summa I-II Q.96 a.4; Finnis for the conscience question."
+  },
+  {
+    "id": "courage_and_fear--virtue_ethics",
+    "topic_id": "courage_and_fear",
+    "tradition_id": "virtue_ethics",
+    "stance": "context_dependent",
+    "summary": "Bravery is not fearlessness. Death really is the most frightening of things and the courageous man feels that; what marks him out is facing the right objects, from the right motive, in the right way and at the right moment. Because the specification is that tight, five familiar look-alikes fall outside it — daring produced by legal penalty, by experience, by spirit, by optimism, or by simple ignorance of the danger. The consequence is uncomfortable: this excellence costs the flourishing person more than anyone, because he has the most to lose and knows it.",
+    "reasoning": [
+      {
+        "text": "The definition fixes bravery by object, motive, manner and occasion together, so the same deed can be brave in one person and rash in another.",
+        "passage_id": "ne-3-7-brave-right-things"
+      },
+      {
+        "text": "Five counterfeits are catalogued, each resembling the real thing in the deed and differing in what moves it.",
+        "passage_id": "ne-3-8-citizen-courage"
+      },
+      {
+        "text": "Fear is not explained away: death is granted to be the most terrible thing, since it is the end.",
+        "passage_id": "ne-3-6-death-terrible"
+      },
+      {
+        "text": "The better a life is going, the more painful facing its loss becomes — so the excellence is hardest for those who have most nearly succeeded.",
+        "passage_id": "ne-3-9-brave-man-pained"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-3-7-brave-right-things",
+        "role": "core",
+        "note": "andreia as the mean between rashness and cowardice"
+      },
+      {
+        "passage_id": "ne-3-8-citizen-courage",
+        "role": "supporting",
+        "note": "the five counterfeits"
+      },
+      {
+        "passage_id": "ne-3-6-death-terrible",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-3-9-brave-man-pained",
+        "role": "complicating",
+        "note": "virtue is not always pleasant in the exercise"
+      }
+    ],
+    "intra_tradition_note": "Courage in the strict sense is confined to death in battle, and readers disagree whether the moral firmness we now call courage — the whistleblower, the patient facing a diagnosis — is an extension the framework licenses or a distinct excellence for which it has no name.",
+    "further_reading": [
+      {
+        "author": "Marta Jimenez",
+        "title": "Aristotle on Shame and Learning to Be Good",
+        "year": 2020,
+        "kind": "book",
+        "url": null,
+        "note": "on how the not-yet-brave are brought towards the genuine article"
+      },
+      {
+        "author": "Michael Pakaluk",
+        "title": "Aristotle's Nicomachean Ethics: An Introduction",
+        "year": 2005,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics III.6 through III.9; Pakaluk on why the counterfeits matter to the definition."
+  },
+  {
+    "id": "judging_others--virtue_ethics",
+    "topic_id": "judging_others",
+    "tradition_id": "virtue_ethics",
+    "stance": "permitted",
+    "summary": "Appraising character is not optional in an ethics built out of praise and blame; refusing it would leave nothing to say. What gets restricted is who may appraise, and on what basis. Blame attaches only to what was voluntary, so conduct produced by compulsion or by non-culpable ignorance calls for pardon instead. Competence to assess conduct is earned through experience of life, not through cleverness, which is why the inexperienced are turned away at the door. And where the facts are genuinely uncertain, the favourable reading is argued for on the ground that wronging a decent person is the costlier mistake.",
+    "reasoning": [
+      {
+        "text": "Praise and blame track the voluntary; involuntary action calls for pardon and sometimes for pity.",
+        "passage_id": "ne-3-1-pardon"
+      },
+      {
+        "text": "The inexperienced are barred from ethical inquiry because its subject matter is the actions of a life already lived.",
+        "passage_id": "ne-1-3-young-hearer"
+      },
+      {
+        "text": "In doubtful matters the scholastic rule favours the charitable reading, argued from the asymmetry of the two possible errors rather than from optimism about people.",
+        "passage_id": "summa-60-4-interpret-best"
+      },
+      {
+        "text": "Hitting the mean is acknowledged to be hard for anyone, which is itself a reason for patience with those who miss it.",
+        "passage_id": "ne-2-9-hard-to-hit"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "summa-60-4-interpret-best",
+        "role": "core",
+        "note": "the rule of charitable interpretation"
+      },
+      {
+        "passage_id": "ne-3-1-pardon",
+        "role": "core",
+        "note": "blame limited to the voluntary"
+      },
+      {
+        "passage_id": "ne-1-3-young-hearer",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-2-9-hard-to-hit",
+        "role": "complicating",
+        "note": "the standard is hard for the judge too"
+      }
+    ],
+    "intra_tradition_note": "Real authority is assigned to the verdict of the person of practical wisdom, which invites the objection that the framework licenses the self-assured to rank everyone else. Defenders answer that phronesis includes knowing how little of another's circumstances one can actually see, but the text does not settle who counts as wise.",
+    "further_reading": [
+      {
+        "author": "Susan Sauvé Meyer",
+        "title": "Aristotle on Moral Responsibility: Character and Cause",
+        "year": 1993,
+        "kind": "book",
+        "url": null,
+        "note": null
+      },
+      {
+        "author": "Nafsika Athanassoulis",
+        "title": "Virtue Ethics",
+        "year": null,
+        "kind": "iep",
+        "url": "https://iep.utm.edu/virtue/",
+        "note": "survey including the self-centredness and elitism objections"
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics III.1, I.3 and II.9 with Summa II-II Q.60 a.4; Meyer on the voluntariness conditions."
+  },
+  {
+    "id": "duties_to_parents--virtue_ethics",
+    "topic_id": "duties_to_parents",
+    "tradition_id": "virtue_ethics",
+    "stance": "context_dependent",
+    "summary": "What children owe their parents is treated as a question of proportion rather than a single command. Existence and rearing came from them, so the debt is presumed large and refusing it is shameful. Yet a father's claims are not the only claims and are not unlimited: the text raises directly whether preference is always owed to him, or whether the doctor and the general have the better title in their own matters. The practically wise adult weighs this parent, this need and this moment against the other people who have claims, and renders to each what is due.",
+    "reasoning": [
+      {
+        "text": "The difficulty is posed as an open question — whether a father should be preferred in everything, or whether competence sometimes outranks the tie.",
+        "passage_id": "ne-9-2-competing-claims"
+      },
+      {
+        "text": "Settling such cases belongs to a reasoned capacity for deciding what is good for a human being, not to a rule applied uniformly.",
+        "passage_id": "ne-6-5-practical-wisdom"
+      },
+      {
+        "text": "Paternal command is contrasted with law precisely because it lacks compulsive force, which locates filial duty in affection and character rather than in authority.",
+        "passage_id": "ne-10-9-law-compulsive"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-9-2-competing-claims",
+        "role": "core",
+        "note": "the locus for unranked competing claims"
+      },
+      {
+        "passage_id": "ne-6-5-practical-wisdom",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-10-9-law-compulsive",
+        "role": "complicating",
+        "note": "the father's word is deliberately denied the standing of law"
+      }
+    ],
+    "intra_tradition_note": "Aristotle also says honour is owed to parents as to the gods, and commentators divide over how to hold that alongside IX.2's refusal to rank the claims — some read a strong presumption that only distinctive expertise can defeat, others a genuinely case-by-case weighing.",
+    "further_reading": [
+      {
+        "author": "John M. Cooper",
+        "title": "Reason and Emotion: Essays on Ancient Moral Psychology and Ethical Theory",
+        "year": 1999,
+        "kind": "book",
+        "url": null,
+        "note": "the essays on Aristotelian friendship and its unequal forms"
+      },
+      {
+        "author": "Richard Kraut",
+        "title": "Aristotle's Ethics",
+        "year": 2022,
+        "kind": "sep",
+        "url": "https://plato.stanford.edu/entries/aristotle-ethics/",
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IX.2, VI.5 and X.9 with Cooper (1999) on unequal friendships; stance recorded as context_dependent because the text explicitly declines to rank the claims in advance."
+  },
+  {
+    "id": "honesty_and_deception--virtue_ethics",
+    "topic_id": "honesty_and_deception",
+    "tradition_id": "virtue_ethics",
+    "stance": "reframed",
+    "summary": "Asking whether a particular untruth is allowed puts the question to the wrong tribunal. Truthfulness is a settled trait standing between boasting and mock-modesty, and the person who has it shuns falsehood as something base rather than as something prohibited — which is exactly why he can be relied on when nothing hangs on the matter. Shading the facts is appraised by what it expresses and by what repetition makes of the one who does it. What candour this friend and this hour call for is then decided in the particular case by the person of practical judgment.",
+    "reasoning": [
+      {
+        "text": "The one who loves truth where nothing is at stake is the more truthful where something is, because he shuns falsehood for its own sake.",
+        "passage_id": "ne-4-7-truthful-character"
+      },
+      {
+        "text": "Excellence is a disposition concerned with choosing, lying in a mean fixed as the person of judgment would fix it — not a list of permitted acts.",
+        "passage_id": "ne-2-6-mean-choice"
+      },
+      {
+        "text": "The capacity that fixes the mean is a reasoned state about what is good or bad for a human being, exercised on particulars.",
+        "passage_id": "ne-6-5-practical-wisdom"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-7-truthful-character",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ne-2-6-mean-choice",
+        "role": "core",
+        "note": "the reframing of the whole question"
+      },
+      {
+        "passage_id": "ne-6-5-practical-wisdom",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-6-obsequious-quarrelsome",
+        "role": "complicating",
+        "note": "social life has its own mean, and the flatterer who praises everything is its excess"
+      }
+    ],
+    "intra_tradition_note": "Later Aristotelians split over whether the account has room for an outright ban: Thomist virtue theory folds an exceptionless prohibition of lying into the virtue, while modern neo-Aristotelians read the mean as leaving the hard cases to judgment.",
+    "further_reading": [
+      {
+        "author": "Rosalind Hursthouse",
+        "title": "On Virtue Ethics",
+        "year": 1999,
+        "kind": "book",
+        "url": null,
+        "note": "on why virtue ethics does not issue act-permissions"
+      },
+      {
+        "author": "Christine Swanton",
+        "title": "Virtue Ethics: A Pluralistic View",
+        "year": 2003,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.7, II.6, VI.5 and IV.6, with Hursthouse (1999) on the shape of virtue-ethical answers; stance recorded as reframed."
+  },
+  {
+    "id": "hospitality_and_strangers--virtue_ethics",
+    "topic_id": "hospitality_and_strangers",
+    "tradition_id": "virtue_ethics",
+    "stance": "context_dependent",
+    "summary": "Receiving people one does not know is governed by a mean, not by a standing requirement. One excellence concerns bearing in company — the state between the man who praises everything to please and the man who opposes everything — and it is described as extending to those with whom one has no acquaintance. A second concerns giving, and it aims at the right recipients, the right amounts and the right occasions. Both are spoiled by excess as surely as by stint, so the host who ruins himself on a guest misses the mark no less than the one who shuts his door.",
+    "reasoning": [
+      {
+        "text": "The excellence of social bearing is defined against flattery on one side and contrariness on the other, and it is exercised toward acquaintances and strangers alike.",
+        "passage_id": "ne-4-6-obsequious-quarrelsome"
+      },
+      {
+        "text": "Open-handedness is not measured by how much leaves the giver's hands but by giving to the right people, the right amounts, and at the right times.",
+        "passage_id": "ne-4-1-liberal-giving"
+      },
+      {
+        "text": "Large hospitality is judged like a work of art — fitting to the occasion and the means — so lavishness that misses the occasion is a defect and not a surplus of virtue.",
+        "passage_id": "ne-4-2-magnificent-artist"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "ne-4-6-obsequious-quarrelsome",
+        "role": "core",
+        "note": "the virtue explicitly covers people one does not know"
+      },
+      {
+        "passage_id": "ne-4-1-liberal-giving",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-2-magnificent-artist",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "ne-4-1-meanness-incurable",
+        "role": "complicating",
+        "note": "stinginess is judged the worse extreme, which pulls the mean toward the open hand"
+      }
+    ],
+    "intra_tradition_note": "Aristotle writes for a household with means and says little about strangers in need as against guests one chooses; neo-Aristotelian writers divide over whether the virtues of giving can be stretched to cover obligations to distant or destitute people at all.",
+    "further_reading": [
+      {
+        "author": "Nancy Sherman",
+        "title": "The Fabric of Character: Aristotle's Theory of Virtue",
+        "year": 1989,
+        "kind": "book",
+        "url": null,
+        "note": null
+      },
+      {
+        "author": "Julia Annas",
+        "title": "The Morality of Happiness",
+        "year": 1993,
+        "kind": "book",
+        "url": null,
+        "note": "on the scope of ancient other-regarding virtues"
+      }
+    ],
+    "curator_note": "Drafted from Ross's Nicomachean Ethics IV.6, IV.1 and IV.2 with Annas (1993) on the reach of the ancient virtues; stance recorded as context_dependent because the mean is fixed by occasion and means."
+  }
+]

@@ -1,0 +1,2729 @@
+{
+ "assets": [
+  {
+   "id": "eq:AAPL",
+   "kind": "equity",
+   "symbol": "AAPL",
+   "name": "Apple Inc.",
+   "aliases": [
+    "Apple"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "iPhone",
+    "Cupertino",
+    "Inc",
+    "shares",
+    "Nasdaq",
+    "earnings"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MSFT",
+   "kind": "equity",
+   "symbol": "MSFT",
+   "name": "Microsoft Corporation",
+   "aliases": [
+    "Microsoft"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:NVDA",
+   "kind": "equity",
+   "symbol": "NVDA",
+   "name": "NVIDIA Corporation",
+   "aliases": [
+    "Nvidia",
+    "NVIDIA"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:AMZN",
+   "kind": "equity",
+   "symbol": "AMZN",
+   "name": "Amazon.com, Inc.",
+   "aliases": [
+    "Amazon"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:GOOGL",
+   "kind": "equity",
+   "symbol": "GOOGL",
+   "name": "Alphabet Inc.",
+   "aliases": [
+    "Alphabet",
+    "Google"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:META",
+   "kind": "equity",
+   "symbol": "META",
+   "name": "Meta Platforms, Inc.",
+   "aliases": [
+    "Meta Platforms",
+    "Meta"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "Facebook",
+    "Instagram",
+    "Zuckerberg",
+    "Menlo Park",
+    "shares",
+    "Inc",
+    "WhatsApp"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TSLA",
+   "kind": "equity",
+   "symbol": "TSLA",
+   "name": "Tesla, Inc.",
+   "aliases": [
+    "Tesla"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BRK.B",
+   "kind": "equity",
+   "symbol": "BRK.B",
+   "name": "Berkshire Hathaway Inc.",
+   "aliases": [
+    "Berkshire Hathaway",
+    "Berkshire"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:LLY",
+   "kind": "equity",
+   "symbol": "LLY",
+   "name": "Eli Lilly and Company",
+   "aliases": [
+    "Eli Lilly"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:AVGO",
+   "kind": "equity",
+   "symbol": "AVGO",
+   "name": "Broadcom Inc.",
+   "aliases": [
+    "Broadcom"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:JPM",
+   "kind": "equity",
+   "symbol": "JPM",
+   "name": "JPMorgan Chase & Co.",
+   "aliases": [
+    "JPMorgan Chase",
+    "JPMorgan"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:XOM",
+   "kind": "equity",
+   "symbol": "XOM",
+   "name": "Exxon Mobil Corporation",
+   "aliases": [
+    "Exxon Mobil",
+    "ExxonMobil",
+    "Exxon"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:UNH",
+   "kind": "equity",
+   "symbol": "UNH",
+   "name": "UnitedHealth Group Incorporated",
+   "aliases": [
+    "UnitedHealth Group",
+    "UnitedHealth"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:V",
+   "kind": "equity",
+   "symbol": "V",
+   "name": "Visa Inc.",
+   "aliases": [
+    "Visa"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "payments",
+    "card",
+    "network",
+    "Inc",
+    "shares",
+    "issuer"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MA",
+   "kind": "equity",
+   "symbol": "MA",
+   "name": "Mastercard Incorporated",
+   "aliases": [
+    "Mastercard"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PG",
+   "kind": "equity",
+   "symbol": "PG",
+   "name": "The Procter & Gamble Company",
+   "aliases": [
+    "Procter & Gamble"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:JNJ",
+   "kind": "equity",
+   "symbol": "JNJ",
+   "name": "Johnson & Johnson",
+   "aliases": [
+    "Johnson & Johnson"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:HD",
+   "kind": "equity",
+   "symbol": "HD",
+   "name": "The Home Depot, Inc.",
+   "aliases": [
+    "Home Depot"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:COST",
+   "kind": "equity",
+   "symbol": "COST",
+   "name": "Costco Wholesale Corporation",
+   "aliases": [
+    "Costco"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MRK",
+   "kind": "equity",
+   "symbol": "MRK",
+   "name": "Merck & Co., Inc.",
+   "aliases": [
+    "Merck"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ABBV",
+   "kind": "equity",
+   "symbol": "ABBV",
+   "name": "AbbVie Inc.",
+   "aliases": [
+    "AbbVie"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CVX",
+   "kind": "equity",
+   "symbol": "CVX",
+   "name": "Chevron Corporation",
+   "aliases": [
+    "Chevron"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PEP",
+   "kind": "equity",
+   "symbol": "PEP",
+   "name": "PepsiCo, Inc.",
+   "aliases": [
+    "PepsiCo",
+    "Pepsi"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:KO",
+   "kind": "equity",
+   "symbol": "KO",
+   "name": "The Coca-Cola Company",
+   "aliases": [
+    "Coca-Cola"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ADBE",
+   "kind": "equity",
+   "symbol": "ADBE",
+   "name": "Adobe Inc.",
+   "aliases": [
+    "Adobe"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:WMT",
+   "kind": "equity",
+   "symbol": "WMT",
+   "name": "Walmart Inc.",
+   "aliases": [
+    "Walmart"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CRM",
+   "kind": "equity",
+   "symbol": "CRM",
+   "name": "Salesforce, Inc.",
+   "aliases": [
+    "Salesforce"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BAC",
+   "kind": "equity",
+   "symbol": "BAC",
+   "name": "Bank of America Corporation",
+   "aliases": [
+    "Bank of America"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:NFLX",
+   "kind": "equity",
+   "symbol": "NFLX",
+   "name": "Netflix, Inc.",
+   "aliases": [
+    "Netflix"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:AMD",
+   "kind": "equity",
+   "symbol": "AMD",
+   "name": "Advanced Micro Devices, Inc.",
+   "aliases": [
+    "Advanced Micro Devices"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TMO",
+   "kind": "equity",
+   "symbol": "TMO",
+   "name": "Thermo Fisher Scientific Inc.",
+   "aliases": [
+    "Thermo Fisher"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ACN",
+   "kind": "equity",
+   "symbol": "ACN",
+   "name": "Accenture plc",
+   "aliases": [
+    "Accenture"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:LIN",
+   "kind": "equity",
+   "symbol": "LIN",
+   "name": "Linde plc",
+   "aliases": [
+    "Linde"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MCD",
+   "kind": "equity",
+   "symbol": "MCD",
+   "name": "McDonald's Corporation",
+   "aliases": [
+    "McDonald's"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CSCO",
+   "kind": "equity",
+   "symbol": "CSCO",
+   "name": "Cisco Systems, Inc.",
+   "aliases": [
+    "Cisco"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ABT",
+   "kind": "equity",
+   "symbol": "ABT",
+   "name": "Abbott Laboratories",
+   "aliases": [
+    "Abbott"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ORCL",
+   "kind": "equity",
+   "symbol": "ORCL",
+   "name": "Oracle Corporation",
+   "aliases": [
+    "Oracle Corp",
+    "Oracle"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "database",
+    "cloud",
+    "Redwood",
+    "Inc",
+    "shares",
+    "Ellison",
+    "software"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:DHR",
+   "kind": "equity",
+   "symbol": "DHR",
+   "name": "Danaher Corporation",
+   "aliases": [
+    "Danaher"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:WFC",
+   "kind": "equity",
+   "symbol": "WFC",
+   "name": "Wells Fargo & Company",
+   "aliases": [
+    "Wells Fargo"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TXN",
+   "kind": "equity",
+   "symbol": "TXN",
+   "name": "Texas Instruments Incorporated",
+   "aliases": [
+    "Texas Instruments"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:VZ",
+   "kind": "equity",
+   "symbol": "VZ",
+   "name": "Verizon Communications Inc.",
+   "aliases": [
+    "Verizon"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PM",
+   "kind": "equity",
+   "symbol": "PM",
+   "name": "Philip Morris International Inc.",
+   "aliases": [
+    "Philip Morris"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:INTU",
+   "kind": "equity",
+   "symbol": "INTU",
+   "name": "Intuit Inc.",
+   "aliases": [
+    "Intuit"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:AMGN",
+   "kind": "equity",
+   "symbol": "AMGN",
+   "name": "Amgen Inc.",
+   "aliases": [
+    "Amgen"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:IBM",
+   "kind": "equity",
+   "symbol": "IBM",
+   "name": "International Business Machines Corporation",
+   "aliases": [
+    "IBM"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:QCOM",
+   "kind": "equity",
+   "symbol": "QCOM",
+   "name": "QUALCOMM Incorporated",
+   "aliases": [
+    "Qualcomm"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CAT",
+   "kind": "equity",
+   "symbol": "CAT",
+   "name": "Caterpillar Inc.",
+   "aliases": [
+    "Caterpillar"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "machinery",
+    "Inc",
+    "shares",
+    "equipment",
+    "Peoria"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:NOW",
+   "kind": "equity",
+   "symbol": "NOW",
+   "name": "ServiceNow, Inc.",
+   "aliases": [
+    "ServiceNow"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:GE",
+   "kind": "equity",
+   "symbol": "GE",
+   "name": "General Electric Company",
+   "aliases": [
+    "General Electric"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SPGI",
+   "kind": "equity",
+   "symbol": "SPGI",
+   "name": "S&P Global Inc.",
+   "aliases": [
+    "S&P Global"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:NEE",
+   "kind": "equity",
+   "symbol": "NEE",
+   "name": "NextEra Energy, Inc.",
+   "aliases": [
+    "NextEra Energy",
+    "NextEra"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:RTX",
+   "kind": "equity",
+   "symbol": "RTX",
+   "name": "RTX Corporation",
+   "aliases": [
+    "Raytheon"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:UBER",
+   "kind": "equity",
+   "symbol": "UBER",
+   "name": "Uber Technologies, Inc.",
+   "aliases": [
+    "Uber"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:HON",
+   "kind": "equity",
+   "symbol": "HON",
+   "name": "Honeywell International Inc.",
+   "aliases": [
+    "Honeywell"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BKNG",
+   "kind": "equity",
+   "symbol": "BKNG",
+   "name": "Booking Holdings Inc.",
+   "aliases": [
+    "Booking Holdings"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:AMAT",
+   "kind": "equity",
+   "symbol": "AMAT",
+   "name": "Applied Materials, Inc.",
+   "aliases": [
+    "Applied Materials"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PFE",
+   "kind": "equity",
+   "symbol": "PFE",
+   "name": "Pfizer Inc.",
+   "aliases": [
+    "Pfizer"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:GS",
+   "kind": "equity",
+   "symbol": "GS",
+   "name": "The Goldman Sachs Group, Inc.",
+   "aliases": [
+    "Goldman Sachs"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BLK",
+   "kind": "equity",
+   "symbol": "BLK",
+   "name": "BlackRock, Inc.",
+   "aliases": [
+    "BlackRock"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SYK",
+   "kind": "equity",
+   "symbol": "SYK",
+   "name": "Stryker Corporation",
+   "aliases": [
+    "Stryker"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:LOW",
+   "kind": "equity",
+   "symbol": "LOW",
+   "name": "Lowe's Companies, Inc.",
+   "aliases": [
+    "Lowe's"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TJX",
+   "kind": "equity",
+   "symbol": "TJX",
+   "name": "The TJX Companies, Inc.",
+   "aliases": [
+    "TJX"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ELV",
+   "kind": "equity",
+   "symbol": "ELV",
+   "name": "Elevance Health, Inc.",
+   "aliases": [
+    "Elevance Health"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PLD",
+   "kind": "equity",
+   "symbol": "PLD",
+   "name": "Prologis, Inc.",
+   "aliases": [
+    "Prologis"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:VRTX",
+   "kind": "equity",
+   "symbol": "VRTX",
+   "name": "Vertex Pharmaceuticals Incorporated",
+   "aliases": [
+    "Vertex Pharmaceuticals"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BSX",
+   "kind": "equity",
+   "symbol": "BSX",
+   "name": "Boston Scientific Corporation",
+   "aliases": [
+    "Boston Scientific"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PANW",
+   "kind": "equity",
+   "symbol": "PANW",
+   "name": "Palo Alto Networks, Inc.",
+   "aliases": [
+    "Palo Alto Networks"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:REGN",
+   "kind": "equity",
+   "symbol": "REGN",
+   "name": "Regeneron Pharmaceuticals, Inc.",
+   "aliases": [
+    "Regeneron"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ADP",
+   "kind": "equity",
+   "symbol": "ADP",
+   "name": "Automatic Data Processing, Inc.",
+   "aliases": [
+    "Automatic Data Processing"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MDT",
+   "kind": "equity",
+   "symbol": "MDT",
+   "name": "Medtronic plc",
+   "aliases": [
+    "Medtronic"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SBUX",
+   "kind": "equity",
+   "symbol": "SBUX",
+   "name": "Starbucks Corporation",
+   "aliases": [
+    "Starbucks"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MU",
+   "kind": "equity",
+   "symbol": "MU",
+   "name": "Micron Technology, Inc.",
+   "aliases": [
+    "Micron"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:LRCX",
+   "kind": "equity",
+   "symbol": "LRCX",
+   "name": "Lam Research Corporation",
+   "aliases": [
+    "Lam Research"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:INTC",
+   "kind": "equity",
+   "symbol": "INTC",
+   "name": "Intel Corporation",
+   "aliases": [
+    "Intel"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SCHW",
+   "kind": "equity",
+   "symbol": "SCHW",
+   "name": "The Charles Schwab Corporation",
+   "aliases": [
+    "Charles Schwab"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:KLAC",
+   "kind": "equity",
+   "symbol": "KLAC",
+   "name": "KLA Corporation",
+   "aliases": [
+    "KLA"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CI",
+   "kind": "equity",
+   "symbol": "CI",
+   "name": "The Cigna Group",
+   "aliases": [
+    "Cigna"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CB",
+   "kind": "equity",
+   "symbol": "CB",
+   "name": "Chubb Limited",
+   "aliases": [
+    "Chubb"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MMC",
+   "kind": "equity",
+   "symbol": "MMC",
+   "name": "Marsh & McLennan Companies, Inc.",
+   "aliases": [
+    "Marsh & McLennan"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:DE",
+   "kind": "equity",
+   "symbol": "DE",
+   "name": "Deere & Company",
+   "aliases": [
+    "Deere"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:UPS",
+   "kind": "equity",
+   "symbol": "UPS",
+   "name": "United Parcel Service, Inc.",
+   "aliases": [
+    "United Parcel Service",
+    "UPS"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BA",
+   "kind": "equity",
+   "symbol": "BA",
+   "name": "The Boeing Company",
+   "aliases": [
+    "Boeing"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SO",
+   "kind": "equity",
+   "symbol": "SO",
+   "name": "The Southern Company",
+   "aliases": [
+    "Southern Company"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "utility",
+    "power",
+    "shares",
+    "Atlanta",
+    "electric"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:DUK",
+   "kind": "equity",
+   "symbol": "DUK",
+   "name": "Duke Energy Corporation",
+   "aliases": [
+    "Duke Energy"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ZTS",
+   "kind": "equity",
+   "symbol": "ZTS",
+   "name": "Zoetis Inc.",
+   "aliases": [
+    "Zoetis"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MDLZ",
+   "kind": "equity",
+   "symbol": "MDLZ",
+   "name": "Mondelez International, Inc.",
+   "aliases": [
+    "Mondelez"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:GILD",
+   "kind": "equity",
+   "symbol": "GILD",
+   "name": "Gilead Sciences, Inc.",
+   "aliases": [
+    "Gilead"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ADI",
+   "kind": "equity",
+   "symbol": "ADI",
+   "name": "Analog Devices, Inc.",
+   "aliases": [
+    "Analog Devices"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ISRG",
+   "kind": "equity",
+   "symbol": "ISRG",
+   "name": "Intuitive Surgical, Inc.",
+   "aliases": [
+    "Intuitive Surgical"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CVS",
+   "kind": "equity",
+   "symbol": "CVS",
+   "name": "CVS Health Corporation",
+   "aliases": [
+    "CVS Health",
+    "CVS"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SNPS",
+   "kind": "equity",
+   "symbol": "SNPS",
+   "name": "Synopsys, Inc.",
+   "aliases": [
+    "Synopsys"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CDNS",
+   "kind": "equity",
+   "symbol": "CDNS",
+   "name": "Cadence Design Systems, Inc.",
+   "aliases": [
+    "Cadence Design Systems"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:EQIX",
+   "kind": "equity",
+   "symbol": "EQIX",
+   "name": "Equinix, Inc.",
+   "aliases": [
+    "Equinix"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SLB",
+   "kind": "equity",
+   "symbol": "SLB",
+   "name": "SLB",
+   "aliases": [
+    "Schlumberger"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ITW",
+   "kind": "equity",
+   "symbol": "ITW",
+   "name": "Illinois Tool Works Inc.",
+   "aliases": [
+    "Illinois Tool Works"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:APD",
+   "kind": "equity",
+   "symbol": "APD",
+   "name": "Air Products and Chemicals, Inc.",
+   "aliases": [
+    "Air Products"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PGR",
+   "kind": "equity",
+   "symbol": "PGR",
+   "name": "The Progressive Corporation",
+   "aliases": [
+    "Progressive Corporation"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MO",
+   "kind": "equity",
+   "symbol": "MO",
+   "name": "Altria Group, Inc.",
+   "aliases": [
+    "Altria"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TGT",
+   "kind": "equity",
+   "symbol": "TGT",
+   "name": "Target Corporation",
+   "aliases": [
+    "Target Corporation"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:FI",
+   "kind": "equity",
+   "symbol": "FI",
+   "name": "Fiserv, Inc.",
+   "aliases": [
+    "Fiserv"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:NKE",
+   "kind": "equity",
+   "symbol": "NKE",
+   "name": "NIKE, Inc.",
+   "aliases": [
+    "Nike"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:EOG",
+   "kind": "equity",
+   "symbol": "EOG",
+   "name": "EOG Resources, Inc.",
+   "aliases": [
+    "EOG Resources"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MCK",
+   "kind": "equity",
+   "symbol": "MCK",
+   "name": "McKesson Corporation",
+   "aliases": [
+    "McKesson"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PYPL",
+   "kind": "equity",
+   "symbol": "PYPL",
+   "name": "PayPal Holdings, Inc.",
+   "aliases": [
+    "PayPal"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:AON",
+   "kind": "equity",
+   "symbol": "AON",
+   "name": "Aon plc",
+   "aliases": [
+    "Aon"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CME",
+   "kind": "equity",
+   "symbol": "CME",
+   "name": "CME Group Inc.",
+   "aliases": [
+    "CME Group"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ICE",
+   "kind": "equity",
+   "symbol": "ICE",
+   "name": "Intercontinental Exchange, Inc.",
+   "aliases": [
+    "Intercontinental Exchange"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:NDAQ",
+   "kind": "equity",
+   "symbol": "NDAQ",
+   "name": "Nasdaq, Inc.",
+   "aliases": [
+    "Nasdaq, Inc."
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CBOE",
+   "kind": "equity",
+   "symbol": "CBOE",
+   "name": "Cboe Global Markets, Inc.",
+   "aliases": [
+    "Cboe Global Markets"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:COIN",
+   "kind": "equity",
+   "symbol": "COIN",
+   "name": "Coinbase Global, Inc.",
+   "aliases": [
+    "Coinbase Global",
+    "Coinbase"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "exchange",
+    "Nasdaq",
+    "shares",
+    "crypto",
+    "Inc",
+    "brokerage"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:HOOD",
+   "kind": "equity",
+   "symbol": "HOOD",
+   "name": "Robinhood Markets, Inc.",
+   "aliases": [
+    "Robinhood"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MSTR",
+   "kind": "equity",
+   "symbol": "MSTR",
+   "name": "MicroStrategy Incorporated",
+   "aliases": [
+    "MicroStrategy"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SQ",
+   "kind": "equity",
+   "symbol": "SQ",
+   "name": "Block, Inc.",
+   "aliases": [
+    "Block, Inc."
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SHOP",
+   "kind": "equity",
+   "symbol": "SHOP",
+   "name": "Shopify Inc.",
+   "aliases": [
+    "Shopify"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SNOW",
+   "kind": "equity",
+   "symbol": "SNOW",
+   "name": "Snowflake Inc.",
+   "aliases": [
+    "Snowflake"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:DDOG",
+   "kind": "equity",
+   "symbol": "DDOG",
+   "name": "Datadog, Inc.",
+   "aliases": [
+    "Datadog"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:NET",
+   "kind": "equity",
+   "symbol": "NET",
+   "name": "Cloudflare, Inc.",
+   "aliases": [
+    "Cloudflare"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CRWD",
+   "kind": "equity",
+   "symbol": "CRWD",
+   "name": "CrowdStrike Holdings, Inc.",
+   "aliases": [
+    "CrowdStrike"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ZS",
+   "kind": "equity",
+   "symbol": "ZS",
+   "name": "Zscaler, Inc.",
+   "aliases": [
+    "Zscaler"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:OKTA",
+   "kind": "equity",
+   "symbol": "OKTA",
+   "name": "Okta, Inc.",
+   "aliases": [
+    "Okta"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TEAM",
+   "kind": "equity",
+   "symbol": "TEAM",
+   "name": "Atlassian Corporation",
+   "aliases": [
+    "Atlassian"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:WDAY",
+   "kind": "equity",
+   "symbol": "WDAY",
+   "name": "Workday, Inc.",
+   "aliases": [
+    "Workday"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ABNB",
+   "kind": "equity",
+   "symbol": "ABNB",
+   "name": "Airbnb, Inc.",
+   "aliases": [
+    "Airbnb"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:DASH",
+   "kind": "equity",
+   "symbol": "DASH",
+   "name": "DoorDash, Inc.",
+   "aliases": [
+    "DoorDash"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:LYFT",
+   "kind": "equity",
+   "symbol": "LYFT",
+   "name": "Lyft, Inc.",
+   "aliases": [
+    "Lyft"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:RIVN",
+   "kind": "equity",
+   "symbol": "RIVN",
+   "name": "Rivian Automotive, Inc.",
+   "aliases": [
+    "Rivian"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:LCID",
+   "kind": "equity",
+   "symbol": "LCID",
+   "name": "Lucid Group, Inc.",
+   "aliases": [
+    "Lucid Group"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:F",
+   "kind": "equity",
+   "symbol": "F",
+   "name": "Ford Motor Company",
+   "aliases": [
+    "Ford Motor",
+    "Ford"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:GM",
+   "kind": "equity",
+   "symbol": "GM",
+   "name": "General Motors Company",
+   "aliases": [
+    "General Motors"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:DAL",
+   "kind": "equity",
+   "symbol": "DAL",
+   "name": "Delta Air Lines, Inc.",
+   "aliases": [
+    "Delta Air Lines"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:UAL",
+   "kind": "equity",
+   "symbol": "UAL",
+   "name": "United Airlines Holdings, Inc.",
+   "aliases": [
+    "United Airlines"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MAR",
+   "kind": "equity",
+   "symbol": "MAR",
+   "name": "Marriott International, Inc.",
+   "aliases": [
+    "Marriott"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:HLT",
+   "kind": "equity",
+   "symbol": "HLT",
+   "name": "Hilton Worldwide Holdings Inc.",
+   "aliases": [
+    "Hilton"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:DIS",
+   "kind": "equity",
+   "symbol": "DIS",
+   "name": "The Walt Disney Company",
+   "aliases": [
+    "Walt Disney",
+    "Disney"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CMCSA",
+   "kind": "equity",
+   "symbol": "CMCSA",
+   "name": "Comcast Corporation",
+   "aliases": [
+    "Comcast"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:T",
+   "kind": "equity",
+   "symbol": "T",
+   "name": "AT&T Inc.",
+   "aliases": [
+    "AT&T"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TMUS",
+   "kind": "equity",
+   "symbol": "TMUS",
+   "name": "T-Mobile US, Inc.",
+   "aliases": [
+    "T-Mobile"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:CHTR",
+   "kind": "equity",
+   "symbol": "CHTR",
+   "name": "Charter Communications, Inc.",
+   "aliases": [
+    "Charter Communications"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:WBD",
+   "kind": "equity",
+   "symbol": "WBD",
+   "name": "Warner Bros. Discovery, Inc.",
+   "aliases": [
+    "Warner Bros. Discovery"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PARA",
+   "kind": "equity",
+   "symbol": "PARA",
+   "name": "Paramount Global",
+   "aliases": [
+    "Paramount Global"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SPOT",
+   "kind": "equity",
+   "symbol": "SPOT",
+   "name": "Spotify Technology S.A.",
+   "aliases": [
+    "Spotify"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:RBLX",
+   "kind": "equity",
+   "symbol": "RBLX",
+   "name": "Roblox Corporation",
+   "aliases": [
+    "Roblox"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:EA",
+   "kind": "equity",
+   "symbol": "EA",
+   "name": "Electronic Arts Inc.",
+   "aliases": [
+    "Electronic Arts"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TTWO",
+   "kind": "equity",
+   "symbol": "TTWO",
+   "name": "Take-Two Interactive Software, Inc.",
+   "aliases": [
+    "Take-Two Interactive"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:MRNA",
+   "kind": "equity",
+   "symbol": "MRNA",
+   "name": "Moderna, Inc.",
+   "aliases": [
+    "Moderna"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BNTX",
+   "kind": "equity",
+   "symbol": "BNTX",
+   "name": "BioNTech SE",
+   "aliases": [
+    "BioNTech"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BMY",
+   "kind": "equity",
+   "symbol": "BMY",
+   "name": "Bristol-Myers Squibb Company",
+   "aliases": [
+    "Bristol-Myers Squibb"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ALL",
+   "kind": "equity",
+   "symbol": "ALL",
+   "name": "The Allstate Corporation",
+   "aliases": [
+    "Allstate"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "insurer",
+    "insurance",
+    "shares",
+    "Northbrook",
+    "claims"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:KEY",
+   "kind": "equity",
+   "symbol": "KEY",
+   "name": "KeyCorp",
+   "aliases": [
+    "KeyCorp"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "bank",
+    "lender",
+    "shares",
+    "Cleveland",
+    "deposits"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ON",
+   "kind": "equity",
+   "symbol": "ON",
+   "name": "ON Semiconductor Corporation",
+   "aliases": [
+    "ON Semiconductor",
+    "onsemi"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "semiconductor",
+    "chipmaker",
+    "shares",
+    "Phoenix",
+    "wafer"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SHEL",
+   "kind": "equity",
+   "symbol": "SHEL",
+   "name": "Shell plc",
+   "aliases": [
+    "Shell plc",
+    "Shell"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "oil",
+    "energy",
+    "plc",
+    "refinery",
+    "shares",
+    "barrel"
+   ],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:BP",
+   "kind": "equity",
+   "symbol": "BP",
+   "name": "BP p.l.c.",
+   "aliases": [
+    "BP"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:TSM",
+   "kind": "equity",
+   "symbol": "TSM",
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "aliases": [
+    "Taiwan Semiconductor",
+    "TSMC"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ASML",
+   "kind": "equity",
+   "symbol": "ASML",
+   "name": "ASML Holding N.V.",
+   "aliases": [
+    "ASML"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SAP",
+   "kind": "equity",
+   "symbol": "SAP",
+   "name": "SAP SE",
+   "aliases": [
+    "SAP"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:ARM",
+   "kind": "equity",
+   "symbol": "ARM",
+   "name": "Arm Holdings plc",
+   "aliases": [
+    "Arm Holdings"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:PLTR",
+   "kind": "equity",
+   "symbol": "PLTR",
+   "name": "Palantir Technologies Inc.",
+   "aliases": [
+    "Palantir"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:SMCI",
+   "kind": "equity",
+   "symbol": "SMCI",
+   "name": "Super Micro Computer, Inc.",
+   "aliases": [
+    "Super Micro Computer",
+    "Supermicro"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:DELL",
+   "kind": "equity",
+   "symbol": "DELL",
+   "name": "Dell Technologies Inc.",
+   "aliases": [
+    "Dell Technologies",
+    "Dell"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "eq:HPQ",
+   "kind": "equity",
+   "symbol": "HPQ",
+   "name": "HP Inc.",
+   "aliases": [
+    "HP Inc."
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:US"
+  },
+  {
+   "id": "cx:BTC",
+   "kind": "crypto",
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "aliases": [
+    "Bitcoin"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:ETH",
+   "kind": "crypto",
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "aliases": [
+    "Ethereum",
+    "Ether"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:USDT",
+   "kind": "crypto",
+   "symbol": "USDT",
+   "name": "Tether",
+   "aliases": [
+    "Tether"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:BNB",
+   "kind": "crypto",
+   "symbol": "BNB",
+   "name": "BNB",
+   "aliases": [
+    "Binance Coin"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:SOL",
+   "kind": "crypto",
+   "symbol": "SOL",
+   "name": "Solana",
+   "aliases": [
+    "Solana"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:XRP",
+   "kind": "crypto",
+   "symbol": "XRP",
+   "name": "XRP",
+   "aliases": [
+    "Ripple"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:USDC",
+   "kind": "crypto",
+   "symbol": "USDC",
+   "name": "USD Coin",
+   "aliases": [
+    "USD Coin"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:ADA",
+   "kind": "crypto",
+   "symbol": "ADA",
+   "name": "Cardano",
+   "aliases": [
+    "Cardano"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:DOGE",
+   "kind": "crypto",
+   "symbol": "DOGE",
+   "name": "Dogecoin",
+   "aliases": [
+    "Dogecoin"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:TRX",
+   "kind": "crypto",
+   "symbol": "TRX",
+   "name": "TRON",
+   "aliases": [
+    "TRON"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:TON",
+   "kind": "crypto",
+   "symbol": "TON",
+   "name": "Toncoin",
+   "aliases": [
+    "Toncoin",
+    "The Open Network"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:AVAX",
+   "kind": "crypto",
+   "symbol": "AVAX",
+   "name": "Avalanche",
+   "aliases": [
+    "Avalanche"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:LINK",
+   "kind": "crypto",
+   "symbol": "LINK",
+   "name": "Chainlink",
+   "aliases": [
+    "Chainlink"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:DOT",
+   "kind": "crypto",
+   "symbol": "DOT",
+   "name": "Polkadot",
+   "aliases": [
+    "Polkadot"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:MATIC",
+   "kind": "crypto",
+   "symbol": "MATIC",
+   "name": "Polygon",
+   "aliases": [
+    "Polygon"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:SHIB",
+   "kind": "crypto",
+   "symbol": "SHIB",
+   "name": "Shiba Inu",
+   "aliases": [
+    "Shiba Inu"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:LTC",
+   "kind": "crypto",
+   "symbol": "LTC",
+   "name": "Litecoin",
+   "aliases": [
+    "Litecoin"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:BCH",
+   "kind": "crypto",
+   "symbol": "BCH",
+   "name": "Bitcoin Cash",
+   "aliases": [
+    "Bitcoin Cash"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:UNI",
+   "kind": "crypto",
+   "symbol": "UNI",
+   "name": "Uniswap",
+   "aliases": [
+    "Uniswap"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:ATOM",
+   "kind": "crypto",
+   "symbol": "ATOM",
+   "name": "Cosmos",
+   "aliases": [
+    "Cosmos"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:XLM",
+   "kind": "crypto",
+   "symbol": "XLM",
+   "name": "Stellar",
+   "aliases": [
+    "Stellar"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:XMR",
+   "kind": "crypto",
+   "symbol": "XMR",
+   "name": "Monero",
+   "aliases": [
+    "Monero"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:ETC",
+   "kind": "crypto",
+   "symbol": "ETC",
+   "name": "Ethereum Classic",
+   "aliases": [
+    "Ethereum Classic"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:HBAR",
+   "kind": "crypto",
+   "symbol": "HBAR",
+   "name": "Hedera",
+   "aliases": [
+    "Hedera"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:FIL",
+   "kind": "crypto",
+   "symbol": "FIL",
+   "name": "Filecoin",
+   "aliases": [
+    "Filecoin"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:ICP",
+   "kind": "crypto",
+   "symbol": "ICP",
+   "name": "Internet Computer",
+   "aliases": [
+    "Internet Computer",
+    "ICP"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "protocol",
+    "blockchain",
+    "token",
+    "crypto",
+    "DFINITY",
+    "canister"
+   ],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:APT",
+   "kind": "crypto",
+   "symbol": "APT",
+   "name": "Aptos",
+   "aliases": [
+    "Aptos"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:ARB",
+   "kind": "crypto",
+   "symbol": "ARB",
+   "name": "Arbitrum",
+   "aliases": [
+    "Arbitrum"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:OP",
+   "kind": "crypto",
+   "symbol": "OP",
+   "name": "Optimism",
+   "aliases": [
+    "Optimism"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "protocol",
+    "blockchain",
+    "token",
+    "crypto",
+    "rollup",
+    "layer-2"
+   ],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:NEAR",
+   "kind": "crypto",
+   "symbol": "NEAR",
+   "name": "NEAR Protocol",
+   "aliases": [
+    "NEAR Protocol",
+    "NEAR"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "protocol",
+    "blockchain",
+    "token",
+    "crypto",
+    "layer-1",
+    "staking",
+    "validator"
+   ],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:VET",
+   "kind": "crypto",
+   "symbol": "VET",
+   "name": "VeChain",
+   "aliases": [
+    "VeChain"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:AAVE",
+   "kind": "crypto",
+   "symbol": "AAVE",
+   "name": "Aave",
+   "aliases": [
+    "Aave"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:GRT",
+   "kind": "crypto",
+   "symbol": "GRT",
+   "name": "The Graph",
+   "aliases": [
+    "The Graph"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:ALGO",
+   "kind": "crypto",
+   "symbol": "ALGO",
+   "name": "Algorand",
+   "aliases": [
+    "Algorand"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:QNT",
+   "kind": "crypto",
+   "symbol": "QNT",
+   "name": "Quant",
+   "aliases": [
+    "Quant Network"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:EGLD",
+   "kind": "crypto",
+   "symbol": "EGLD",
+   "name": "MultiversX",
+   "aliases": [
+    "MultiversX"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:FTM",
+   "kind": "crypto",
+   "symbol": "FTM",
+   "name": "Fantom",
+   "aliases": [
+    "Fantom"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:SAND",
+   "kind": "crypto",
+   "symbol": "SAND",
+   "name": "The Sandbox",
+   "aliases": [
+    "The Sandbox"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:MANA",
+   "kind": "crypto",
+   "symbol": "MANA",
+   "name": "Decentraland",
+   "aliases": [
+    "Decentraland"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:AXS",
+   "kind": "crypto",
+   "symbol": "AXS",
+   "name": "Axie Infinity",
+   "aliases": [
+    "Axie Infinity"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:THETA",
+   "kind": "crypto",
+   "symbol": "THETA",
+   "name": "Theta Network",
+   "aliases": [
+    "Theta Network"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:XTZ",
+   "kind": "crypto",
+   "symbol": "XTZ",
+   "name": "Tezos",
+   "aliases": [
+    "Tezos"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:EOS",
+   "kind": "crypto",
+   "symbol": "EOS",
+   "name": "EOS",
+   "aliases": [
+    "EOS Network"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:FLOW",
+   "kind": "crypto",
+   "symbol": "FLOW",
+   "name": "Flow",
+   "aliases": [
+    "Flow blockchain"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:CHZ",
+   "kind": "crypto",
+   "symbol": "CHZ",
+   "name": "Chiliz",
+   "aliases": [
+    "Chiliz"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:APE",
+   "kind": "crypto",
+   "symbol": "APE",
+   "name": "ApeCoin",
+   "aliases": [
+    "ApeCoin",
+    "APE"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "token",
+    "crypto",
+    "DAO",
+    "blockchain",
+    "governance"
+   ],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:CRV",
+   "kind": "crypto",
+   "symbol": "CRV",
+   "name": "Curve DAO",
+   "aliases": [
+    "Curve DAO",
+    "Curve Finance"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:MKR",
+   "kind": "crypto",
+   "symbol": "MKR",
+   "name": "Maker",
+   "aliases": [
+    "MakerDAO"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:RUNE",
+   "kind": "crypto",
+   "symbol": "RUNE",
+   "name": "THORChain",
+   "aliases": [
+    "THORChain"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:INJ",
+   "kind": "crypto",
+   "symbol": "INJ",
+   "name": "Injective",
+   "aliases": [
+    "Injective"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:SUI",
+   "kind": "crypto",
+   "symbol": "SUI",
+   "name": "Sui",
+   "aliases": [
+    "Sui network"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:SEI",
+   "kind": "crypto",
+   "symbol": "SEI",
+   "name": "Sei",
+   "aliases": [
+    "Sei network"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:PEPE",
+   "kind": "crypto",
+   "symbol": "PEPE",
+   "name": "Pepe",
+   "aliases": [
+    "Pepe coin"
+   ],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "cx:ONE",
+   "kind": "crypto",
+   "symbol": "ONE",
+   "name": "Harmony",
+   "aliases": [
+    "Harmony",
+    "ONE"
+   ],
+   "ambiguous": true,
+   "context_keywords": [
+    "protocol",
+    "blockchain",
+    "token",
+    "crypto",
+    "shard",
+    "validator"
+   ],
+   "benchmark_id": "idx:CX"
+  },
+  {
+   "id": "idx:US",
+   "kind": "index",
+   "symbol": "US",
+   "name": "NewsAlpha US equity benchmark",
+   "aliases": [],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": null
+  },
+  {
+   "id": "idx:CX",
+   "kind": "index",
+   "symbol": "CX",
+   "name": "NewsAlpha crypto benchmark",
+   "aliases": [],
+   "ambiguous": false,
+   "context_keywords": [],
+   "benchmark_id": null
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "id": "exact_07",
+ "suite": "exact",
+ "n": 11,
+ "seed": 1303382,
+ "clusters": [],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:88f3c5ba848245e448d45627af62818d2bdc6408",
+  "meta:4efcc0bc93d3e776974571bba8a0e3eccf0bffc4",
+  "meta:11b97a6a6755f3217f8054c638eebb28b7baa154",
+  "meta:b9248c5eda34c011022cc5dceccede7d722c49e3",
+  "meta:c499d37534e1134c93dfca3a851f423bbe07bf8e",
+  "meta:b9f550f9e82b7470c3ec25a94ff615e2b5ac2fd3",
+  "meta:d07fcca6cf6adf2a34be11b2659ca0da0695fe35",
+  "meta:dceba4201ea1c71ddfbc593b6dd9243ad08869a9",
+  "meta:913daaae346e3e588346179ba2d90c4b1906bc36",
+  "meta:034259e9b71dfedd362425c28a625b421ce94fd5",
+  "meta:58a2e76d35dd9f6343b134422b9f2d7677d546c6"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "trap",
+  "search_seed": 1303382,
+  "greedy_bound": 0.962311,
+  "depth_target": 0.963
+ }
+}

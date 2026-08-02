@@ -23,3 +23,6 @@ orbit-backend/data/
 
 # Xcode user state
 **/xcuserdata/
+
+# verification harness output
+projects/verify_report.json

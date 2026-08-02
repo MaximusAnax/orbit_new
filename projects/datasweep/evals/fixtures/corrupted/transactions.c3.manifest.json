@@ -1,0 +1,2921 @@
+{
+ "class_shares": {
+  "CAT_AUTO": 0.09887,
+  "CAT_TYPO": 0.048023,
+  "DATE": 0.152542,
+  "DUP": 0.048023,
+  "ENC": 0.101695,
+  "MISS": 0.101695,
+  "OUT": 0.048023,
+  "TYPE": 0.180791,
+  "WS": 0.220339
+ },
+ "column_truth": {
+  "amount": {
+   "agree": 0.986667,
+   "decisive": {
+    "COMMA": 16,
+    "DOT": 1184
+   },
+   "mixed_conventions": false,
+   "number_convention": "DOT"
+  },
+  "date": {
+   "date_order": "provable",
+   "format": "%b %d, %Y",
+   "proof_row": null
+  }
+ },
+ "columns": [
+  "txn_id",
+  "date",
+  "amount",
+  "currency",
+  "merchant",
+  "category",
+  "status",
+  "code"
+ ],
+ "file": "transactions.c3.csv",
+ "golden": "transactions.csv",
+ "kinds": [
+  "integer",
+  "date",
+  "float",
+  "categorical",
+  "categorical",
+  "categorical",
+  "categorical",
+  "integer"
+ ],
+ "n_ops": 354,
+ "nullable_columns": [
+  "code",
+  "category"
+ ],
+ "op_rate": 0.0369,
+ "ops": [
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 600,
+   "source_row": 335
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 951,
+   "source_row": 583
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1058,
+   "source_row": 125
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1045,
+   "source_row": 50
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 995,
+   "source_row": 225
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1094,
+   "source_row": 223
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 857,
+   "source_row": 98
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1009,
+   "source_row": 574
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 740,
+   "source_row": 88
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 858,
+   "source_row": 277
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1175,
+   "source_row": 11
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 755,
+   "source_row": 560
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 717,
+   "source_row": 411
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 878,
+   "source_row": 505
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 985,
+   "source_row": 61
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 916,
+   "source_row": 178
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 1199,
+   "source_row": 585
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 19
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 84
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 135
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 182
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 213
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 237
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 287
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 288
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 311
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 324
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 360
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 394
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 405
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 416
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 429
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 462
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 568
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 616
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 624
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 738
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 763
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 809
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 826
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 862
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 979
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 982
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1030
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1054
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1054
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1055
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1061
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1108
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1129
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1133
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 5,
+   "op": "sentinel_missing",
+   "row": 1172
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 1176
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 68
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 87
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 137
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 152
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 164
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 175
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 314
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 337
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 361
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 417
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 447
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 457
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 511
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 553
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 660
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 678
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 712
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 721
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 767
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 775
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 795
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 809
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 876
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 944
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 947
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 963
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 970
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 971
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1016
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1027
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1039
+  },
+  {
+   "after": "Petit MarchÃ©",
+   "before": "Petit Marché",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1043
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1066
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1091
+  },
+  {
+   "after": "CafÃ© Norte",
+   "before": "Café Norte",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1138
+  },
+  {
+   "after": "Nordic FjÃ¤ll",
+   "before": "Nordic Fjäll",
+   "class": "ENC",
+   "col": 4,
+   "op": "mojibake_encode",
+   "row": 1142
+  },
+  {
+   "after": "  USD ",
+   "before": "USD",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 1
+  },
+  {
+   "after": "  244157 ",
+   "before": "244157",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 293
+  },
+  {
+   "after": "  Nordic Fjäll ",
+   "before": "Nordic Fjäll",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 293
+  },
+  {
+   "after": "  EUR ",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 332
+  },
+  {
+   "after": "  70 ",
+   "before": "70",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 369
+  },
+  {
+   "after": "  EUR ",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 453
+  },
+  {
+   "after": "  37 ",
+   "before": "37",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 544
+  },
+  {
+   "after": "  517708 ",
+   "before": "517708",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 624
+  },
+  {
+   "after": "  USD ",
+   "before": "USD",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 783
+  },
+  {
+   "after": "  Blue Harbor Goods ",
+   "before": "Blue Harbor Goods",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 820
+  },
+  {
+   "after": "  travel ",
+   "before": "travel",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 824
+  },
+  {
+   "after": "  2023-06-19 ",
+   "before": "2023-06-19",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 885
+  },
+  {
+   "after": "  767362 ",
+   "before": "767362",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 919
+  },
+  {
+   "after": "  2735.17 ",
+   "before": "2735.17",
+   "class": "WS",
+   "col": 2,
+   "op": "pad_whitespace",
+   "row": 946
+  },
+  {
+   "after": "  Delta Pharmacy ",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 956
+  },
+  {
+   "after": "  2023-11-08 ",
+   "before": "2023-11-08",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 961
+  },
+  {
+   "after": "  USD ",
+   "before": "USD",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 1032
+  },
+  {
+   "after": "  pending ",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "pad_whitespace",
+   "row": 1042
+  },
+  {
+   "after": "  2023-05-30 ",
+   "before": "2023-05-30",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 1062
+  },
+  {
+   "after": "  dining ",
+   "before": "dining",
+   "class": "WS",
+   "col": 5,
+   "op": "pad_whitespace",
+   "row": 1191
+  },
+  {
+   "after": " 36020 ",
+   "before": "36020",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 41
+  },
+  {
+   "after": " 84290 ",
+   "before": "84290",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 92
+  },
+  {
+   "after": " Northwind Supply ",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 196
+  },
+  {
+   "after": " pending ",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 233
+  },
+  {
+   "after": " USD ",
+   "before": "USD",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 276
+  },
+  {
+   "after": " 28 ",
+   "before": "28",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_nbsp",
+   "row": 391
+  },
+  {
+   "after": " paid ",
+   "before": "paid",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 448
+  },
+  {
+   "after": " EUR ",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 467
+  },
+  {
+   "after": " pending ",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 487
+  },
+  {
+   "after": " GBP ",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 614
+  },
+  {
+   "after": " 4643.21 ",
+   "before": "4643.21",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 706
+  },
+  {
+   "after": " chargeback ",
+   "before": "chargeback",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 706
+  },
+  {
+   "after": " 2978.70 ",
+   "before": "2978.70",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 731
+  },
+  {
+   "after": " 2024-01-09 ",
+   "before": "2024-01-09",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_nbsp",
+   "row": 784
+  },
+  {
+   "after": " GBP ",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 800
+  },
+  {
+   "after": " 721645 ",
+   "before": "721645",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 869
+  },
+  {
+   "after": " pending ",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_nbsp",
+   "row": 963
+  },
+  {
+   "after": " Petit Marché ",
+   "before": "Petit Marché",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 1061
+  },
+  {
+   "after": " EUR ",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_nbsp",
+   "row": 1085
+  },
+  {
+   "after": " 965.60 ",
+   "before": "965.60",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_nbsp",
+   "row": 1150
+  },
+  {
+   "after": "3463.46​",
+   "before": "3463.46",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 48
+  },
+  {
+   "after": "Northwind Supply​",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 48
+  },
+  {
+   "after": "226995​",
+   "before": "226995",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 265
+  },
+  {
+   "after": "GBP​",
+   "before": "GBP",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 383
+  },
+  {
+   "after": "365093​",
+   "before": "365093",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 425
+  },
+  {
+   "after": "400574​",
+   "before": "400574",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 479
+  },
+  {
+   "after": "paid​",
+   "before": "paid",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_zero_width",
+   "row": 641
+  },
+  {
+   "after": "3730.05​",
+   "before": "3730.05",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 644
+  },
+  {
+   "after": "2024-02-24​",
+   "before": "2024-02-24",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 713
+  },
+  {
+   "after": "Kestrel Outfitters​",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 792
+  },
+  {
+   "after": "USD​",
+   "before": "USD",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 831
+  },
+  {
+   "after": "EUR​",
+   "before": "EUR",
+   "class": "WS",
+   "col": 3,
+   "op": "insert_zero_width",
+   "row": 889
+  },
+  {
+   "after": "4440.83​",
+   "before": "4440.83",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 898
+  },
+  {
+   "after": "2023-11-19​",
+   "before": "2023-11-19",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 900
+  },
+  {
+   "after": "pending​",
+   "before": "pending",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_zero_width",
+   "row": 964
+  },
+  {
+   "after": "217.09​",
+   "before": "217.09",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 971
+  },
+  {
+   "after": "839180​",
+   "before": "839180",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 996
+  },
+  {
+   "after": "Orchard and Vine​",
+   "before": "Orchard and Vine",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_zero_width",
+   "row": 1046
+  },
+  {
+   "after": "3143.53​",
+   "before": "3143.53",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 1169
+  },
+  {
+   "after": "Kestrel  Outfitters",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 101
+  },
+  {
+   "after": "Café  Norte",
+   "before": "Café Norte",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 172
+  },
+  {
+   "after": "Kestrel  Outfitters",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 241
+  },
+  {
+   "after": "Kestrel  Outfitters",
+   "before": "Kestrel Outfitters",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 285
+  },
+  {
+   "after": "Statler  Hardware",
+   "before": "Statler Hardware",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 305
+  },
+  {
+   "after": "Statler  Hardware",
+   "before": "Statler Hardware",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 311
+  },
+  {
+   "after": "Delta  Pharmacy",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 358
+  },
+  {
+   "after": "Orchard  and Vine",
+   "before": "Orchard and Vine",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 395
+  },
+  {
+   "after": "Orchard  and Vine",
+   "before": "Orchard and Vine",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 432
+  },
+  {
+   "after": "Delta  Pharmacy",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 539
+  },
+  {
+   "after": "Nordic  Fjäll",
+   "before": "Nordic Fjäll",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 552
+  },
+  {
+   "after": "Delta  Pharmacy",
+   "before": "Delta Pharmacy",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 594
+  },
+  {
+   "after": "Northwind  Supply",
+   "before": "Northwind Supply",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 667
+  },
+  {
+   "after": "Statler  Hardware",
+   "before": "Statler Hardware",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 728
+  },
+  {
+   "after": "Orchard  and Vine",
+   "before": "Orchard and Vine",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 979
+  },
+  {
+   "after": "Trailhead  Sports",
+   "before": "Trailhead Sports",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1032
+  },
+  {
+   "after": "Fjord  Interiors",
+   "before": "Fjord Interiors",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1076
+  },
+  {
+   "after": "Orchard  and Vine",
+   "before": "Orchard and Vine",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1124
+  },
+  {
+   "after": "Blue  Harbor Goods",
+   "before": "Blue Harbor Goods",
+   "class": "WS",
+   "col": 4,
+   "op": "double_internal_space",
+   "row": 1197
+  },
+  {
+   "after": "2,625.28",
+   "before": "2625.28",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 5
+  },
+  {
+   "after": "2,106.83",
+   "before": "2106.83",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 115
+  },
+  {
+   "after": "4,568.63",
+   "before": "4568.63",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 245
+  },
+  {
+   "after": "1,254.87",
+   "before": "1254.87",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 282
+  },
+  {
+   "after": "1,538.72",
+   "before": "1538.72",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 409
+  },
+  {
+   "after": "4,281.01",
+   "before": "4281.01",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 473
+  },
+  {
+   "after": "2,781.86",
+   "before": "2781.86",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 542
+  },
+  {
+   "after": "3,260.22",
+   "before": "3260.22",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 753
+  },
+  {
+   "after": "2,804.69",
+   "before": "2804.69",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 801
+  },
+  {
+   "after": "3,501.70",
+   "before": "3501.70",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 819
+  },
+  {
+   "after": "2,380.50",
+   "before": "2380.50",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 910
+  },
+  {
+   "after": "1,213.75",
+   "before": "1213.75",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 933
+  },
+  {
+   "after": "4,459.24",
+   "before": "4459.24",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 954
+  },
+  {
+   "after": "1,981.56",
+   "before": "1981.56",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1037
+  },
+  {
+   "after": "3,593.21",
+   "before": "3593.21",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1052
+  },
+  {
+   "after": "3,225.63",
+   "before": "3225.63",
+   "class": "TYPE",
+   "col": 2,
+   "op": "thousands_sep",
+   "row": 1083
+  },
+  {
+   "after": "3139,55",
+   "before": "3139.55",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 119
+  },
+  {
+   "after": "67,55",
+   "before": "67.55",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 136
+  },
+  {
+   "after": "2831,17",
+   "before": "2831.17",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 142
+  },
+  {
+   "after": "2010,23",
+   "before": "2010.23",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 162
+  },
+  {
+   "after": "694,84",
+   "before": "694.84",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 219
+  },
+  {
+   "after": "1139,92",
+   "before": "1139.92",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 259
+  },
+  {
+   "after": "4132,03",
+   "before": "4132.03",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 286
+  },
+  {
+   "after": "271,68",
+   "before": "271.68",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 292
+  },
+  {
+   "after": "2190,97",
+   "before": "2190.97",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 305
+  },
+  {
+   "after": "1641,14",
+   "before": "1641.14",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 528
+  },
+  {
+   "after": "246,97",
+   "before": "246.97",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 572
+  },
+  {
+   "after": "4352,45",
+   "before": "4352.45",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 780
+  },
+  {
+   "after": "2793,87",
+   "before": "2793.87",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 863
+  },
+  {
+   "after": "4228,95",
+   "before": "4228.95",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 927
+  },
+  {
+   "after": "4244,11",
+   "before": "4244.11",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 976
+  },
+  {
+   "after": "1005,68",
+   "before": "1005.68",
+   "class": "TYPE",
+   "col": 2,
+   "op": "decimal_comma",
+   "row": 1142
+  },
+  {
+   "after": "€4357.88",
+   "before": "4357.88",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 41
+  },
+  {
+   "after": "€4365.63",
+   "before": "4365.63",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 104
+  },
+  {
+   "after": "€4478.26",
+   "before": "4478.26",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 120
+  },
+  {
+   "after": "€4293.35",
+   "before": "4293.35",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 168
+  },
+  {
+   "after": "€1329.79",
+   "before": "1329.79",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 183
+  },
+  {
+   "after": "€2763.55",
+   "before": "2763.55",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 238
+  },
+  {
+   "after": "€3947.32",
+   "before": "3947.32",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 500
+  },
+  {
+   "after": "€1093.92",
+   "before": "1093.92",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 609
+  },
+  {
+   "after": "€2132.12",
+   "before": "2132.12",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 637
+  },
+  {
+   "after": "€4071.87",
+   "before": "4071.87",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 795
+  },
+  {
+   "after": "€2270.24",
+   "before": "2270.24",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 936
+  },
+  {
+   "after": "€1519.35",
+   "before": "1519.35",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 943
+  },
+  {
+   "after": "€1969.95",
+   "before": "1969.95",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 993
+  },
+  {
+   "after": "€2127.49",
+   "before": "2127.49",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1132
+  },
+  {
+   "after": "€3778.81",
+   "before": "3778.81",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1133
+  },
+  {
+   "after": "€1933.32",
+   "before": "1933.32",
+   "class": "TYPE",
+   "col": 2,
+   "op": "currency_prefix",
+   "row": 1194
+  },
+  {
+   "after": "'22495",
+   "before": "22495",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 25
+  },
+  {
+   "after": "'58391",
+   "before": "58391",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 64
+  },
+  {
+   "after": "'71443",
+   "before": "71443",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 75
+  },
+  {
+   "after": "'3335.53",
+   "before": "3335.53",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 269
+  },
+  {
+   "after": "'3977.45",
+   "before": "3977.45",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 275
+  },
+  {
+   "after": "'294084",
+   "before": "294084",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 358
+  },
+  {
+   "after": "'217.80",
+   "before": "217.80",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 454
+  },
+  {
+   "after": "'3029.92",
+   "before": "3029.92",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 510
+  },
+  {
+   "after": "'454015",
+   "before": "454015",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 544
+  },
+  {
+   "after": "'507829",
+   "before": "507829",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 610
+  },
+  {
+   "after": "'548922",
+   "before": "548922",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 650
+  },
+  {
+   "after": "'55",
+   "before": "55",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 817
+  },
+  {
+   "after": "'720557",
+   "before": "720557",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 865
+  },
+  {
+   "after": "'767738",
+   "before": "767738",
+   "class": "TYPE",
+   "col": 0,
+   "op": "leading_apostrophe",
+   "row": 920
+  },
+  {
+   "after": "'2296.57",
+   "before": "2296.57",
+   "class": "TYPE",
+   "col": 2,
+   "op": "leading_apostrophe",
+   "row": 1006
+  },
+  {
+   "after": "'93",
+   "before": "93",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 1122
+  },
+  {
+   "after": "Feb 17, 2023",
+   "before": "2023-02-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 21
+  },
+  {
+   "after": "Feb 13, 2024",
+   "before": "2024-02-13",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 28
+  },
+  {
+   "after": "Jan 04, 2024",
+   "before": "2024-01-04",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 46
+  },
+  {
+   "after": "Feb 21, 2023",
+   "before": "2023-02-21",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 55
+  },
+  {
+   "after": "Jul 18, 2023",
+   "before": "2023-07-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 72
+  },
+  {
+   "after": "Aug 16, 2024",
+   "before": "2024-08-16",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 77
+  },
+  {
+   "after": "Feb 19, 2023",
+   "before": "2023-02-19",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 111
+  },
+  {
+   "after": "Jan 10, 2024",
+   "before": "2024-01-10",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 129
+  },
+  {
+   "after": "Jul 07, 2023",
+   "before": "2023-07-07",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 130
+  },
+  {
+   "after": "Jun 27, 2023",
+   "before": "2023-06-27",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 159
+  },
+  {
+   "after": "May 03, 2024",
+   "before": "2024-05-03",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 175
+  },
+  {
+   "after": "Feb 17, 2024",
+   "before": "2024-02-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 208
+  },
+  {
+   "after": "Feb 16, 2023",
+   "before": "2023-02-16",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 276
+  },
+  {
+   "after": "Jan 20, 2024",
+   "before": "2024-01-20",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 289
+  },
+  {
+   "after": "Apr 26, 2023",
+   "before": "2023-04-26",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 317
+  },
+  {
+   "after": "May 12, 2024",
+   "before": "2024-05-12",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 351
+  },
+  {
+   "after": "Jan 26, 2023",
+   "before": "2023-01-26",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 382
+  },
+  {
+   "after": "Sep 29, 2023",
+   "before": "2023-09-29",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 402
+  },
+  {
+   "after": "Feb 17, 2023",
+   "before": "2023-02-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 405
+  },
+  {
+   "after": "Aug 18, 2024",
+   "before": "2024-08-18",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 406
+  },
+  {
+   "after": "May 20, 2024",
+   "before": "2024-05-20",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 435
+  },
+  {
+   "after": "Nov 24, 2024",
+   "before": "2024-11-24",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 439
+  },
+  {
+   "after": "Feb 07, 2023",
+   "before": "2023-02-07",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 535
+  },
+  {
+   "after": "Oct 21, 2023",
+   "before": "2023-10-21",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 539
+  },
+  {
+   "after": "May 22, 2023",
+   "before": "2023-05-22",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 570
+  },
+  {
+   "after": "Mar 09, 2023",
+   "before": "2023-03-09",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 582
+  },
+  {
+   "after": "Oct 25, 2023",
+   "before": "2023-10-25",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 594
+  },
+  {
+   "after": "Apr 23, 2024",
+   "before": "2024-04-23",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 596
+  },
+  {
+   "after": "Jun 02, 2023",
+   "before": "2023-06-02",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 601
+  },
+  {
+   "after": "Oct 01, 2023",
+   "before": "2023-10-01",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 655
+  },
+  {
+   "after": "Jun 10, 2024",
+   "before": "2024-06-10",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 675
+  },
+  {
+   "after": "Jun 23, 2024",
+   "before": "2024-06-23",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 693
+  },
+  {
+   "after": "Jan 12, 2023",
+   "before": "2023-01-12",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 722
+  },
+  {
+   "after": "Sep 04, 2024",
+   "before": "2024-09-04",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 727
+  },
+  {
+   "after": "Jan 08, 2023",
+   "before": "2023-01-08",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 735
+  },
+  {
+   "after": "Mar 29, 2023",
+   "before": "2023-03-29",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 736
+  },
+  {
+   "after": "Oct 17, 2024",
+   "before": "2024-10-17",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 813
+  },
+  {
+   "after": "Apr 11, 2023",
+   "before": "2023-04-11",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 842
+  },
+  {
+   "after": "Mar 30, 2023",
+   "before": "2023-03-30",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 845
+  },
+  {
+   "after": "Apr 23, 2023",
+   "before": "2023-04-23",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 895
+  },
+  {
+   "after": "Mar 09, 2023",
+   "before": "2023-03-09",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 943
+  },
+  {
+   "after": "May 25, 2024",
+   "before": "2024-05-25",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 949
+  },
+  {
+   "after": "Oct 01, 2024",
+   "before": "2024-10-01",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 957
+  },
+  {
+   "after": "Oct 14, 2023",
+   "before": "2023-10-14",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 960
+  },
+  {
+   "after": "Apr 21, 2024",
+   "before": "2024-04-21",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1013
+  },
+  {
+   "after": "Jan 26, 2024",
+   "before": "2024-01-26",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1026
+  },
+  {
+   "after": "Sep 09, 2023",
+   "before": "2023-09-09",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1102
+  },
+  {
+   "after": "Mar 09, 2024",
+   "before": "2024-03-09",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1105
+  },
+  {
+   "after": "Nov 07, 2023",
+   "before": "2023-11-07",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1145
+  },
+  {
+   "after": "Oct 10, 2024",
+   "before": "2024-10-10",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1146
+  },
+  {
+   "after": "May 21, 2024",
+   "before": "2024-05-21",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1148
+  },
+  {
+   "after": "May 23, 2023",
+   "before": "2023-05-23",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1166
+  },
+  {
+   "after": "Mar 31, 2023",
+   "before": "2023-03-31",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1167
+  },
+  {
+   "after": "Nov 22, 2024",
+   "before": "2024-11-22",
+   "class": "DATE",
+   "col": 1,
+   "op": "date_reformat",
+   "row": 1188
+  },
+  {
+   "after": "usd",
+   "before": "USD",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 796
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 860
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 849
+  },
+  {
+   "after": "eur",
+   "before": "EUR",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 827
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 1033
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 874
+  },
+  {
+   "after": "usd",
+   "before": "USD",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 113
+  },
+  {
+   "after": "(GBP)",
+   "before": "GBP",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 447
+  },
+  {
+   "after": "usd",
+   "before": "USD",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 315
+  },
+  {
+   "after": "(Statler Hardware)",
+   "before": "Statler Hardware",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 548
+  },
+  {
+   "after": "TRAILHEAD SPORTS",
+   "before": "Trailhead Sports",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 922
+  },
+  {
+   "after": "PETIT MARCHÉ",
+   "before": "Petit Marché",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "case_label",
+   "row": 9
+  },
+  {
+   "after": "(Vela Cycles)",
+   "before": "Vela Cycles",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 672
+  },
+  {
+   "after": "(Orchard and Vine)",
+   "before": "Orchard and Vine",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 140
+  },
+  {
+   "after": "(Orchard and Vine)",
+   "before": "Orchard and Vine",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 586
+  },
+  {
+   "after": "(Vela Cycles)",
+   "before": "Vela Cycles",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 86
+  },
+  {
+   "after": "(Fjord Interiors)",
+   "before": "Fjord Interiors",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 759
+  },
+  {
+   "after": "(Café Norte)",
+   "before": "Café Norte",
+   "class": "CAT_AUTO",
+   "col": 4,
+   "op": "punct_label",
+   "row": 80
+  },
+  {
+   "after": "(grocery)",
+   "before": "grocery",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 166
+  },
+  {
+   "after": "(grocery)",
+   "before": "grocery",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 611
+  },
+  {
+   "after": "APPAREL",
+   "before": "apparel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 808
+  },
+  {
+   "after": "FUEL",
+   "before": "fuel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 626
+  },
+  {
+   "after": "(dining)",
+   "before": "dining",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 84
+  },
+  {
+   "after": "APPAREL",
+   "before": "apparel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 508
+  },
+  {
+   "after": "(dining)",
+   "before": "dining",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 454
+  },
+  {
+   "after": "FUEL",
+   "before": "fuel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "case_label",
+   "row": 177
+  },
+  {
+   "after": "(travel)",
+   "before": "travel",
+   "class": "CAT_AUTO",
+   "col": 5,
+   "op": "punct_label",
+   "row": 863
+  },
+  {
+   "after": "(refunded)",
+   "before": "refunded",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 1146
+  },
+  {
+   "after": "CHARGEBACK",
+   "before": "chargeback",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 241
+  },
+  {
+   "after": "PENDING",
+   "before": "pending",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 1099
+  },
+  {
+   "after": "(refunded)",
+   "before": "refunded",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 1168
+  },
+  {
+   "after": "(refunded)",
+   "before": "refunded",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 272
+  },
+  {
+   "after": "PENDING",
+   "before": "pending",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 240
+  },
+  {
+   "after": "CHARGEBACK",
+   "before": "chargeback",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "case_label",
+   "row": 414
+  },
+  {
+   "after": "(refunded)",
+   "before": "refunded",
+   "class": "CAT_AUTO",
+   "col": 6,
+   "op": "punct_label",
+   "row": 161
+  },
+  {
+   "after": "GBa",
+   "before": "GBP",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 308
+  },
+  {
+   "after": "GaP",
+   "before": "GBP",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 375
+  },
+  {
+   "after": "USa",
+   "before": "USD",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 628
+  },
+  {
+   "after": "EaR",
+   "before": "EUR",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 112
+  },
+  {
+   "after": "GBb",
+   "before": "GBP",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 402
+  },
+  {
+   "after": "Orchard aad Vine",
+   "before": "Orchard and Vine",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 0
+  },
+  {
+   "after": "Petit Marcha",
+   "before": "Petit Marché",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 81
+  },
+  {
+   "after": "Nordic Fjäal",
+   "before": "Nordic Fjäll",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 610
+  },
+  {
+   "after": "Nordia Fjäll",
+   "before": "Nordic Fjäll",
+   "class": "CAT_TYPO",
+   "col": 4,
+   "op": "typo_label",
+   "row": 1155
+  },
+  {
+   "after": "utiaities",
+   "before": "utilities",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 428
+  },
+  {
+   "after": "hardwaae",
+   "before": "hardware",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 251
+  },
+  {
+   "after": "utalities",
+   "before": "utilities",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 677
+  },
+  {
+   "after": "taavel",
+   "before": "travel",
+   "class": "CAT_TYPO",
+   "col": 5,
+   "op": "typo_label",
+   "row": 608
+  },
+  {
+   "after": "chargebbck",
+   "before": "chargeback",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 555
+  },
+  {
+   "after": "chaageback",
+   "before": "chargeback",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 794
+  },
+  {
+   "after": "chargebaak",
+   "before": "chargeback",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 8
+  },
+  {
+   "after": "refuaded",
+   "before": "refunded",
+   "class": "CAT_TYPO",
+   "col": 6,
+   "op": "typo_label",
+   "row": 424
+  },
+  {
+   "after": "36492.88",
+   "before": "4138.79",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 69
+  },
+  {
+   "after": "27207.62",
+   "before": "2896.29",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 266
+  },
+  {
+   "after": "-18429.00",
+   "before": "679.56",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 285
+  },
+  {
+   "after": "-459",
+   "before": "24",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 359
+  },
+  {
+   "after": "450",
+   "before": "40",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 470
+  },
+  {
+   "after": "-31248.49",
+   "before": "273.14",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 566
+  },
+  {
+   "after": "770",
+   "before": "16",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 645
+  },
+  {
+   "after": "33094.19",
+   "before": "4442.75",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 781
+  },
+  {
+   "after": "-523",
+   "before": "53",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 971
+  },
+  {
+   "after": "-30652.33",
+   "before": "2339.03",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 973
+  },
+  {
+   "after": "772",
+   "before": "83",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 987
+  },
+  {
+   "after": "-27090.81",
+   "before": "1224.77",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 991
+  },
+  {
+   "after": "-18928.77",
+   "before": "1278.65",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 1000
+  },
+  {
+   "after": "-21775.02",
+   "before": "2920.32",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 1034
+  },
+  {
+   "after": "25701.20",
+   "before": "2773.42",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 1098
+  },
+  {
+   "after": "616",
+   "before": "60",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 1110
+  },
+  {
+   "after": "-29015.09",
+   "before": "3122.34",
+   "class": "OUT",
+   "col": 2,
+   "op": "inject_outlier",
+   "row": 1135
+  }
+ ],
+ "seed": 1337,
+ "targets": {
+  "CAT_AUTO": 35,
+  "CAT_TYPO": 17,
+  "DATE": 54,
+  "DUP": 17,
+  "ENC": 36,
+  "MISS": 36,
+  "OUT": 17,
+  "TYPE": 64,
+  "WS": 78
+ },
+ "variant": 3
+}

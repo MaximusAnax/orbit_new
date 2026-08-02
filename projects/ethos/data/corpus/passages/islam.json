@@ -1,0 +1,254 @@
+[
+  {
+    "id": "quran-33-70",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 33:70",
+    "text": "O ye who believe! Guard your duty to Allah, and speak words straight to the point;",
+    "paraphrase": null,
+    "context_note": "Straight speech is joined to God-consciousness (taqwa): truthfulness is framed as part of piety itself, not mere social convention.",
+    "transcription_checked": true
+  },
+  {
+    "id": "muslim-2605-reconciliation",
+    "source_id": "sahih-muslim-ref",
+    "locator": "Sahih Muslim 2605",
+    "text": null,
+    "paraphrase": "Umm Kulthum reports that the Prophet permitted untruth in three settings only: to reconcile between people, in war, and between spouses to preserve affection. Jurists treat these as narrow, enumerated exceptions to a general and weighty duty of truthfulness.",
+    "context_note": "The key hadith complicating an absolute reading of Islamic truthfulness; the legal tradition confines it strictly and many scholars read it as permitting ambiguity rather than outright falsehood.",
+    "transcription_checked": false
+  },
+  {
+    "id": "quran-5-1-indentures",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 5:1",
+    "text": "O ye who believe! Fulfil your indentures. The beast of cattle is made lawful unto you (for food) except that which is announced unto you (herein), game being unlawful when ye are on the pilgrimage. Lo! Allah ordaineth that which pleaseth Him.",
+    "paraphrase": null,
+    "context_note": "The sura of contracts opens with the command to fulfil undertakings; the same verse states the lawfulness of cattle as food, so it anchors both covenant-keeping and dietary permission.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-16-91",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 16:91",
+    "text": "Fulfil the covenant of Allah when ye have covenanted, and break not your oaths after the asseveration of them, and after ye have made Allah surety over you. Lo! Allah knoweth what ye do.",
+    "paraphrase": null,
+    "context_note": "Oaths invoke God as guarantor, so breaking them wrongs God and not only the promisee; expiation for broken oaths is separately prescribed, marking their seriousness.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-5-32",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 5:32",
+    "text": "whosoever killeth a human being for other than manslaughter or corruption in the earth, it shall be as if he had killed all mankind, and whoso saveth the life of one, it shall be as if he had saved the life of all mankind.",
+    "paraphrase": null,
+    "context_note": "The verse magnifies a single life to the scale of humanity; its own exception clauses ('other than manslaughter or corruption') are where juristic debate about lawful killing begins.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-2-190",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 2:190",
+    "text": "Fight in the way of Allah against those who fight against you, but begin not hostilities. Lo! Allah loveth not aggressors.",
+    "paraphrase": null,
+    "context_note": "Fighting is permitted as response, with aggression expressly excluded; classical jurists build the conditions of lawful war on verses like this one.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-8-61",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 8:61",
+    "text": "And if they incline to peace, incline thou also to it, and trust in Allah. Lo! He, even He, is the Hearer, the Knower.",
+    "paraphrase": null,
+    "context_note": "When the enemy inclines to peace, peace must be answered; the verse checks any reading of jihad as perpetual war.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-17-33",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 17:33",
+    "text": "And slay not the life which Allah hath forbidden save with right. Whoso is slain wrongfully, We have given power unto his heir, but let him not commit excess in slaying. Lo! he will be helped.",
+    "paraphrase": null,
+    "context_note": "Life may be taken only 'with right', and even the wronged heir is commanded against excess; the verse founds both capital jurisdiction and its strict limits in Islamic law.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-5-45",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 5:45",
+    "text": "And We prescribed for them therein: The life for the life, and the eye for the eye, and the nose for the nose, and the ear for the ear, and the tooth for the tooth, and for wounds retaliation. But whoso forgoeth it (in the way of charity) it shall be expiation for him.",
+    "paraphrase": null,
+    "context_note": "Retaliation is bounded by strict equivalence, and forgoing it is praised as expiation — retribution permitted, mercy commended above it.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-4-29",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 4:29",
+    "text": "O ye who believe! Squander not your wealth among yourselves in vanity, except it be a trade by mutual consent, and kill not one another. Lo! Allah is ever Merciful unto you.",
+    "paraphrase": null,
+    "context_note": "The clause 'kill not one another' is read by classical exegesis to include killing oneself; God's mercy is given as the reason, framing life as entrusted rather than owned.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-6-38",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 6:38",
+    "text": "There is not an animal in the earth, nor a flying creature flying on two wings, but they are peoples like unto you. We have neglected nothing in the Book (of Our decrees). Then unto their Lord they will be gathered.",
+    "paraphrase": null,
+    "context_note": "Animals are called communities like humankind and are gathered to God; with the prophetic traditions on kindness in slaughter, this grounds Islamic animal ethics within a meat-permitting law.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-3-92",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 3:92",
+    "text": "Ye will not attain unto piety until ye spend of that which ye love. And whatsoever ye spend, Allah is Aware thereof.",
+    "paraphrase": null,
+    "context_note": "Piety is tied to giving what one loves, not surplus; alongside the obligatory zakat this makes generosity constitutive of righteousness, not supererogatory polish.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-2-177-excerpt",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 2:177",
+    "text": "and giveth wealth, for love of Him, to kinsfolk and to orphans and the needy and the wayfarer and to those who ask, and to set slaves free; and observeth proper worship and payeth the poor-due.",
+    "paraphrase": null,
+    "context_note": "From the 'righteousness is not turning your faces' verse: concrete giving to named categories of the vulnerable defines piety before ritual correctness.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-5-38",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 5:38",
+    "text": "As for the thief, both male and female, cut off their hands. It is the reward of their own deeds, an exemplary punishment from Allah. Allah is Mighty, Wise.",
+    "paraphrase": null,
+    "context_note": "The hadd penalty marks theft's gravity; juristic practice hedged it with strict thresholds, doubt-averting rules, and the famous suspension of the penalty in famine — severity in principle, restraint in application.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-2-275-excerpt",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 2:275",
+    "text": "That is because they say: Trade is just like usury; whereas Allah permitteth trading and forbiddeth usury.",
+    "paraphrase": null,
+    "context_note": "The categorical distinction between trade and riba is the foundation of Islamic finance; profit from exchange is lawful, guaranteed increase on a loan is not.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-2-280",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 2:280",
+    "text": "And if the debtor is in straitened circumstances, then (let there be) postponement to (the time of) ease; and that ye remit the debt as almsgiving would be better for you if ye did but know.",
+    "paraphrase": null,
+    "context_note": "The creditor's duties to the struggling debtor — postponement, and remission praised as better — show the usury ban's protective purpose.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-42-40",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 42:40",
+    "text": "The guerdon of an ill-deed is an ill the like thereof. But whosoever pardoneth and amendeth, his wage is the affair of Allah. Lo! He loveth not wrong-doers.",
+    "paraphrase": null,
+    "context_note": "Proportionate response is permitted, but pardon joined to setting things right is rewarded by God directly — the Qur'anic pattern of allowing justice while commending mercy.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-41-34",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 41:34",
+    "text": "The good deed and the evil deed are not alike. Repel the evil deed with one which is better, then lo! he, between whom and thee there was enmity (will become) as though he was a bosom friend.",
+    "paraphrase": null,
+    "context_note": "Answering evil with something better is presented as transformative, turning enemies to friends — the positive case for forgiveness beyond mere restraint.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-17-23-24",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 17:23–24",
+    "text": "Thy Lord hath decreed, that ye worship none save Him, and (that ye show) kindness to parents. If one of them or both of them attain old age with thee, say not ‘Fie’ unto them nor repulse them, but speak unto them a gracious word. And lower unto them the wing of submission through mercy, and say: My Lord! Have mercy on them both as they did care for me when I was little.",
+    "paraphrase": null,
+    "context_note": "Kindness to parents is decreed in the same breath as worship of God alone; even a syllable of contempt toward aged parents is forbidden, and prayer for them is commanded.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-17-32",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 17:32",
+    "text": "And come not near unto adultery. Lo! it is an abomination and an evil way.",
+    "paraphrase": null,
+    "context_note": "The command bars not only the act but approaching it; the law's protections of marriage begin well before betrayal is consummated.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-2-229-excerpt",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 2:229",
+    "text": "Divorce must be pronounced twice and then (a woman) must be retained in honour or released in kindness.",
+    "paraphrase": null,
+    "context_note": "Divorce is lawful but procedurally braked: staged pronouncements, waiting periods, and the standing command of honour or kindness govern the release.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-4-35",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 4:35",
+    "text": "And if ye fear a breach between them twain (the man and wife), appoint an arbiter from his folk and an arbiter from her folk. If they desire amendment Allah will make them of one mind. Lo! Allah is ever Knower, Aware.",
+    "paraphrase": null,
+    "context_note": "Arbitration from both families is prescribed before the bond is dissolved; ending a marriage is preceded by structured attempts at repair.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-49-12",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 49:12",
+    "text": "O ye who believe! Shun much suspicion; for lo! some suspicion is a crime. And spy not, neither backbite one another. Would one of you love to eat the flesh of his dead brother? Ye abhor that (so abhor the other)! And keep your duty (to Allah). Lo! Allah is Relenting, Merciful.",
+    "paraphrase": null,
+    "context_note": "Backbiting is likened to eating a dead brother's flesh — among the Qur'an's most visceral images — and suspicion and spying are barred as its roots.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-5-90",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 5:90",
+    "text": "O ye who believe! Strong drink and games of chance and idols and divining arrows are only an infamy of Satan's handiwork. Leave it aside in order that ye may succeed.",
+    "paraphrase": null,
+    "context_note": "The definitive prohibition of intoxicants, revealed after earlier verses had only discouraged them; the ban protects prayer, mind, and community.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-31-18",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 31:18",
+    "text": "Turn not thy cheek in scorn toward folk, nor walk with pertness in the land. Lo! Allah loveth not each braggart boaster.",
+    "paraphrase": null,
+    "context_note": "From Luqman's counsel to his son: arrogance in face and gait is condemned along with the boasting heart behind it.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-4-59",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 4:59",
+    "text": "O ye who believe! Obey Allah, and obey the messenger and those of you who are in authority; and if ye have a dispute concerning any matter, refer it to Allah and the messenger if ye are (in truth) believers in Allah and the Last Day. That is better and more seemly in the end.",
+    "paraphrase": null,
+    "context_note": "Obedience to those in authority is commanded, but disputes are referred back to God and the messenger — the textual hook for the juristic maxim that there is no obedience in sin.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-2-153",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 2:153",
+    "text": "O ye who believe! Seek help in steadfastness and prayer. Lo! Allah is with the steadfast.",
+    "paraphrase": null,
+    "context_note": "Sabr — steadfast patience — is the form courage takes in the Qur'an: endurance under trial with God's presence as its support.",
+    "transcription_checked": true
+  },
+  {
+    "id": "quran-3-139",
+    "source_id": "quran-pickthall",
+    "locator": "Qur'an 3:139",
+    "text": "Faint not nor grieve, for ye will overcome them if ye are (indeed) believers.",
+    "paraphrase": null,
+    "context_note": "Revealed after the setback at Uhud: courage is commanded as faith's refusal to collapse under defeat.",
+    "transcription_checked": true
+  }
+]

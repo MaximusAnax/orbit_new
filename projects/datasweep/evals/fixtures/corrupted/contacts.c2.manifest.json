@@ -1,0 +1,1062 @@
+{
+ "class_shares": {
+  "CAT_AUTO": 0.097561,
+  "CAT_TYPO": 0.04878,
+  "DATE": 0.146341,
+  "DUP": 0.04878,
+  "ENC": 0.097561,
+  "MISS": 0.097561,
+  "OUT": 0.04878,
+  "TYPE": 0.186992,
+  "WS": 0.227642
+ },
+ "column_truth": {
+  "signup_date": {
+   "date_order": "provable",
+   "format": "%Y/%m/%d",
+   "proof_row": null
+  },
+  "value": {
+   "agree": 0.984043,
+   "decisive": {
+    "COMMA": 6,
+    "DOT": 370
+   },
+   "mixed_conventions": false,
+   "number_convention": "DOT"
+  }
+ },
+ "columns": [
+  "name",
+  "email",
+  "city",
+  "country",
+  "zip",
+  "signup_date",
+  "age",
+  "value"
+ ],
+ "file": "contacts.c2.csv",
+ "golden": "contacts.csv",
+ "kinds": [
+  "text",
+  "text",
+  "categorical",
+  "categorical",
+  "digits",
+  "date",
+  "integer",
+  "float"
+ ],
+ "n_ops": 123,
+ "nullable_columns": [
+  "age",
+  "value"
+ ],
+ "op_rate": 0.0385,
+ "ops": [
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 359,
+   "source_row": 95
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 267,
+   "source_row": 37
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 302,
+   "source_row": 36
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 271,
+   "source_row": 44
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 205,
+   "source_row": 122
+  },
+  {
+   "after": null,
+   "before": null,
+   "class": "DUP",
+   "col": null,
+   "op": "duplicate_row",
+   "row": 238,
+   "source_row": 20
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 18
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 32
+  },
+  {
+   "after": "null",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 104
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 107
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 148
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 188
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 193
+  },
+  {
+   "after": "N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 207
+  },
+  {
+   "after": "#N/A",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 253
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 6,
+   "op": "sentinel_missing",
+   "row": 303
+  },
+  {
+   "after": "NA",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 306
+  },
+  {
+   "after": "NaN",
+   "before": null,
+   "class": "MISS",
+   "col": 7,
+   "op": "sentinel_missing",
+   "row": 347
+  },
+  {
+   "after": "TomÃ¡s KovÃ¡cs",
+   "before": "Tomás Kovács",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 43
+  },
+  {
+   "after": "MÃ¡laga",
+   "before": "Málaga",
+   "class": "ENC",
+   "col": 2,
+   "op": "mojibake_encode",
+   "row": 115
+  },
+  {
+   "after": "ZoÃ« Haddad",
+   "before": "Zoë Haddad",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 232
+  },
+  {
+   "after": "TomÃ¡s Marchetti",
+   "before": "Tomás Marchetti",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 240
+  },
+  {
+   "after": "BjÃ¶rn Marchetti",
+   "before": "Björn Marchetti",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 255
+  },
+  {
+   "after": "ThÃ©o FernÃ¡ndez",
+   "before": "Théo Fernández",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 262
+  },
+  {
+   "after": "RenÃ©e Ivanov",
+   "before": "Renée Ivanov",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 266
+  },
+  {
+   "after": "ZoÃ« Novak",
+   "before": "Zoë Novak",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 331
+  },
+  {
+   "after": "ChloÃ© SÃ¸rensen",
+   "before": "Chloé Sørensen",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 334
+  },
+  {
+   "after": "ZoÃ« Weiss",
+   "before": "Zoë Weiss",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 352
+  },
+  {
+   "after": "ZoÃ« FernÃ¡ndez",
+   "before": "Zoë Fernández",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 368
+  },
+  {
+   "after": "RenÃ©e Weiss",
+   "before": "Renée Weiss",
+   "class": "ENC",
+   "col": 0,
+   "op": "mojibake_encode",
+   "row": 387
+  },
+  {
+   "after": "  09492 ",
+   "before": "09492",
+   "class": "WS",
+   "col": 4,
+   "op": "pad_whitespace",
+   "row": 80
+  },
+  {
+   "after": "  Ingrid Fernández ",
+   "before": "Ingrid Fernández",
+   "class": "WS",
+   "col": 0,
+   "op": "pad_whitespace",
+   "row": 192
+  },
+  {
+   "after": "  8101.86 ",
+   "before": "8101.86",
+   "class": "WS",
+   "col": 7,
+   "op": "pad_whitespace",
+   "row": 217
+  },
+  {
+   "after": "  Dunmore ",
+   "before": "Dunmore",
+   "class": "WS",
+   "col": 2,
+   "op": "pad_whitespace",
+   "row": 295
+  },
+  {
+   "after": "  Uruguay ",
+   "before": "Uruguay",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 335
+  },
+  {
+   "after": "  Mexico ",
+   "before": "Mexico",
+   "class": "WS",
+   "col": 3,
+   "op": "pad_whitespace",
+   "row": 378
+  },
+  {
+   "after": "  aurora.costa388@example.net ",
+   "before": "aurora.costa388@example.net",
+   "class": "WS",
+   "col": 1,
+   "op": "pad_whitespace",
+   "row": 388
+  },
+  {
+   "after": " 2881.58 ",
+   "before": "2881.58",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_nbsp",
+   "row": 7
+  },
+  {
+   "after": " Lucia Weiss ",
+   "before": "Lucia Weiss",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_nbsp",
+   "row": 10
+  },
+  {
+   "after": " 6301.23 ",
+   "before": "6301.23",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_nbsp",
+   "row": 63
+  },
+  {
+   "after": " 2024-03-22 ",
+   "before": "2024-03-22",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 85
+  },
+  {
+   "after": " 2023-06-21 ",
+   "before": "2023-06-21",
+   "class": "WS",
+   "col": 5,
+   "op": "insert_nbsp",
+   "row": 88
+  },
+  {
+   "after": " 99812 ",
+   "before": "99812",
+   "class": "WS",
+   "col": 4,
+   "op": "insert_nbsp",
+   "row": 324
+  },
+  {
+   "after": " 7285.37 ",
+   "before": "7285.37",
+   "class": "WS",
+   "col": 7,
+   "op": "insert_nbsp",
+   "row": 396
+  },
+  {
+   "after": "freya.weiss85@example.net​",
+   "before": "freya.weiss85@example.net",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 85
+  },
+  {
+   "after": "emil.novak140@example.net​",
+   "before": "emil.novak140@example.net",
+   "class": "WS",
+   "col": 1,
+   "op": "insert_zero_width",
+   "row": 140
+  },
+  {
+   "after": "82​",
+   "before": "82",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_zero_width",
+   "row": 174
+  },
+  {
+   "after": "Aurora Ramírez​",
+   "before": "Aurora Ramírez",
+   "class": "WS",
+   "col": 0,
+   "op": "insert_zero_width",
+   "row": 218
+  },
+  {
+   "after": "64​",
+   "before": "64",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_zero_width",
+   "row": 290
+  },
+  {
+   "after": "83​",
+   "before": "83",
+   "class": "WS",
+   "col": 6,
+   "op": "insert_zero_width",
+   "row": 300
+  },
+  {
+   "after": "New Harbor​",
+   "before": "New Harbor",
+   "class": "WS",
+   "col": 2,
+   "op": "insert_zero_width",
+   "row": 392
+  },
+  {
+   "after": "New  Harbor",
+   "before": "New Harbor",
+   "class": "WS",
+   "col": 2,
+   "op": "double_internal_space",
+   "row": 8
+  },
+  {
+   "after": "New  Harbor",
+   "before": "New Harbor",
+   "class": "WS",
+   "col": 2,
+   "op": "double_internal_space",
+   "row": 29
+  },
+  {
+   "after": "Silver  Falls",
+   "before": "Silver Falls",
+   "class": "WS",
+   "col": 2,
+   "op": "double_internal_space",
+   "row": 69
+  },
+  {
+   "after": "New  Harbor",
+   "before": "New Harbor",
+   "class": "WS",
+   "col": 2,
+   "op": "double_internal_space",
+   "row": 75
+  },
+  {
+   "after": "New  Harbor",
+   "before": "New Harbor",
+   "class": "WS",
+   "col": 2,
+   "op": "double_internal_space",
+   "row": 126
+  },
+  {
+   "after": "Silver  Falls",
+   "before": "Silver Falls",
+   "class": "WS",
+   "col": 2,
+   "op": "double_internal_space",
+   "row": 194
+  },
+  {
+   "after": "New  Harbor",
+   "before": "New Harbor",
+   "class": "WS",
+   "col": 2,
+   "op": "double_internal_space",
+   "row": 396
+  },
+  {
+   "after": "8,838.63",
+   "before": "8838.63",
+   "class": "TYPE",
+   "col": 7,
+   "op": "thousands_sep",
+   "row": 21
+  },
+  {
+   "after": "3,783.87",
+   "before": "3783.87",
+   "class": "TYPE",
+   "col": 7,
+   "op": "thousands_sep",
+   "row": 136
+  },
+  {
+   "after": "4,542.77",
+   "before": "4542.77",
+   "class": "TYPE",
+   "col": 7,
+   "op": "thousands_sep",
+   "row": 147
+  },
+  {
+   "after": "1,712.34",
+   "before": "1712.34",
+   "class": "TYPE",
+   "col": 7,
+   "op": "thousands_sep",
+   "row": 264
+  },
+  {
+   "after": "9,324.90",
+   "before": "9324.90",
+   "class": "TYPE",
+   "col": 7,
+   "op": "thousands_sep",
+   "row": 321
+  },
+  {
+   "after": "2,745.32",
+   "before": "2745.32",
+   "class": "TYPE",
+   "col": 7,
+   "op": "thousands_sep",
+   "row": 340
+  },
+  {
+   "after": "4168,17",
+   "before": "4168.17",
+   "class": "TYPE",
+   "col": 7,
+   "op": "decimal_comma",
+   "row": 57
+  },
+  {
+   "after": "5760,34",
+   "before": "5760.34",
+   "class": "TYPE",
+   "col": 7,
+   "op": "decimal_comma",
+   "row": 61
+  },
+  {
+   "after": "8592,09",
+   "before": "8592.09",
+   "class": "TYPE",
+   "col": 7,
+   "op": "decimal_comma",
+   "row": 151
+  },
+  {
+   "after": "9086,15",
+   "before": "9086.15",
+   "class": "TYPE",
+   "col": 7,
+   "op": "decimal_comma",
+   "row": 224
+  },
+  {
+   "after": "1244,20",
+   "before": "1244.20",
+   "class": "TYPE",
+   "col": 7,
+   "op": "decimal_comma",
+   "row": 295
+  },
+  {
+   "after": "3410,83",
+   "before": "3410.83",
+   "class": "TYPE",
+   "col": 7,
+   "op": "decimal_comma",
+   "row": 304
+  },
+  {
+   "after": "€457.94",
+   "before": "457.94",
+   "class": "TYPE",
+   "col": 7,
+   "op": "currency_prefix",
+   "row": 11
+  },
+  {
+   "after": "€9734.07",
+   "before": "9734.07",
+   "class": "TYPE",
+   "col": 7,
+   "op": "currency_prefix",
+   "row": 97
+  },
+  {
+   "after": "€3994.39",
+   "before": "3994.39",
+   "class": "TYPE",
+   "col": 7,
+   "op": "currency_prefix",
+   "row": 145
+  },
+  {
+   "after": "€2850.86",
+   "before": "2850.86",
+   "class": "TYPE",
+   "col": 7,
+   "op": "currency_prefix",
+   "row": 248
+  },
+  {
+   "after": "€8707.04",
+   "before": "8707.04",
+   "class": "TYPE",
+   "col": 7,
+   "op": "currency_prefix",
+   "row": 330
+  },
+  {
+   "after": "€8638.28",
+   "before": "8638.28",
+   "class": "TYPE",
+   "col": 7,
+   "op": "currency_prefix",
+   "row": 383
+  },
+  {
+   "after": "'25",
+   "before": "25",
+   "class": "TYPE",
+   "col": 6,
+   "op": "leading_apostrophe",
+   "row": 46
+  },
+  {
+   "after": "'1407.19",
+   "before": "1407.19",
+   "class": "TYPE",
+   "col": 7,
+   "op": "leading_apostrophe",
+   "row": 68
+  },
+  {
+   "after": "'89",
+   "before": "89",
+   "class": "TYPE",
+   "col": 6,
+   "op": "leading_apostrophe",
+   "row": 160
+  },
+  {
+   "after": "'26990",
+   "before": "26990",
+   "class": "TYPE",
+   "col": 4,
+   "op": "leading_apostrophe",
+   "row": 265
+  },
+  {
+   "after": "'24664",
+   "before": "24664",
+   "class": "TYPE",
+   "col": 4,
+   "op": "leading_apostrophe",
+   "row": 392
+  },
+  {
+   "after": "2021/07/04",
+   "before": "2021-07-04",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 29
+  },
+  {
+   "after": "2022/07/09",
+   "before": "2022-07-09",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 43
+  },
+  {
+   "after": "2022/06/04",
+   "before": "2022-06-04",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 53
+  },
+  {
+   "after": "2023/06/23",
+   "before": "2023-06-23",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 62
+  },
+  {
+   "after": "2024/04/05",
+   "before": "2024-04-05",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 69
+  },
+  {
+   "after": "2023/11/29",
+   "before": "2023-11-29",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 76
+  },
+  {
+   "after": "2024/04/25",
+   "before": "2024-04-25",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 96
+  },
+  {
+   "after": "2023/09/28",
+   "before": "2023-09-28",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 103
+  },
+  {
+   "after": "2021/01/11",
+   "before": "2021-01-11",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 163
+  },
+  {
+   "after": "2022/05/14",
+   "before": "2022-05-14",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 171
+  },
+  {
+   "after": "2023/11/27",
+   "before": "2023-11-27",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 181
+  },
+  {
+   "after": "2023/09/13",
+   "before": "2023-09-13",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 189
+  },
+  {
+   "after": "2021/09/23",
+   "before": "2021-09-23",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 211
+  },
+  {
+   "after": "2022/10/24",
+   "before": "2022-10-24",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 263
+  },
+  {
+   "after": "2022/01/01",
+   "before": "2022-01-01",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 318
+  },
+  {
+   "after": "2023/08/16",
+   "before": "2023-08-16",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 338
+  },
+  {
+   "after": "2021/12/06",
+   "before": "2021-12-06",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 339
+  },
+  {
+   "after": "2021/10/18",
+   "before": "2021-10-18",
+   "class": "DATE",
+   "col": 5,
+   "op": "date_reformat",
+   "row": 383
+  },
+  {
+   "after": "(Ironwood)",
+   "before": "Ironwood",
+   "class": "CAT_AUTO",
+   "col": 2,
+   "op": "punct_label",
+   "row": 293
+  },
+  {
+   "after": "(Silver Falls)",
+   "before": "Silver Falls",
+   "class": "CAT_AUTO",
+   "col": 2,
+   "op": "punct_label",
+   "row": 137
+  },
+  {
+   "after": "(Coldspring)",
+   "before": "Coldspring",
+   "class": "CAT_AUTO",
+   "col": 2,
+   "op": "punct_label",
+   "row": 125
+  },
+  {
+   "after": "DUNMORE",
+   "before": "Dunmore",
+   "class": "CAT_AUTO",
+   "col": 2,
+   "op": "case_label",
+   "row": 82
+  },
+  {
+   "after": "QUARRYTOWN",
+   "before": "Quarrytown",
+   "class": "CAT_AUTO",
+   "col": 2,
+   "op": "case_label",
+   "row": 399
+  },
+  {
+   "after": "(Ironwood)",
+   "before": "Ironwood",
+   "class": "CAT_AUTO",
+   "col": 2,
+   "op": "punct_label",
+   "row": 134
+  },
+  {
+   "after": "(Uruguay)",
+   "before": "Uruguay",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 231
+  },
+  {
+   "after": "MEXICO",
+   "before": "Mexico",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 282
+  },
+  {
+   "after": "(Uruguay)",
+   "before": "Uruguay",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 180
+  },
+  {
+   "after": "MEXICO",
+   "before": "Mexico",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 22
+  },
+  {
+   "after": "PORTUGAL",
+   "before": "Portugal",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "case_label",
+   "row": 92
+  },
+  {
+   "after": "(Denmark)",
+   "before": "Denmark",
+   "class": "CAT_AUTO",
+   "col": 3,
+   "op": "punct_label",
+   "row": 224
+  },
+  {
+   "after": "Naw Harbor",
+   "before": "New Harbor",
+   "class": "CAT_TYPO",
+   "col": 2,
+   "op": "typo_label",
+   "row": 327
+  },
+  {
+   "after": "Brightwatar",
+   "before": "Brightwater",
+   "class": "CAT_TYPO",
+   "col": 2,
+   "op": "typo_label",
+   "row": 366
+  },
+  {
+   "after": "Duamore",
+   "before": "Dunmore",
+   "class": "CAT_TYPO",
+   "col": 2,
+   "op": "typo_label",
+   "row": 160
+  },
+  {
+   "after": "Fialand",
+   "before": "Finland",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 16
+  },
+  {
+   "after": "Fibland",
+   "before": "Finland",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 110
+  },
+  {
+   "after": "Cbnada",
+   "before": "Canada",
+   "class": "CAT_TYPO",
+   "col": 3,
+   "op": "typo_label",
+   "row": 314
+  },
+  {
+   "after": "483",
+   "before": "33",
+   "class": "OUT",
+   "col": 6,
+   "op": "inject_outlier",
+   "row": 76
+  },
+  {
+   "after": "-345",
+   "before": "79",
+   "class": "OUT",
+   "col": 6,
+   "op": "inject_outlier",
+   "row": 82
+  },
+  {
+   "after": "60062.76",
+   "before": "1079.62",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 109
+  },
+  {
+   "after": "48665.37",
+   "before": "5816.11",
+   "class": "OUT",
+   "col": 7,
+   "op": "inject_outlier",
+   "row": 141
+  },
+  {
+   "after": "593",
+   "before": "72",
+   "class": "OUT",
+   "col": 6,
+   "op": "inject_outlier",
+   "row": 296
+  },
+  {
+   "after": "481",
+   "before": "64",
+   "class": "OUT",
+   "col": 6,
+   "op": "inject_outlier",
+   "row": 387
+  }
+ ],
+ "seed": 1337,
+ "targets": {
+  "CAT_AUTO": 12,
+  "CAT_TYPO": 6,
+  "DATE": 18,
+  "DUP": 6,
+  "ENC": 12,
+  "MISS": 12,
+  "OUT": 6,
+  "TYPE": 23,
+  "WS": 28
+ },
+ "variant": 2
+}

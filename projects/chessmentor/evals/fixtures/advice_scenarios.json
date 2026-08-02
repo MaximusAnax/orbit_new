@@ -1,0 +1,914 @@
+{
+  "seed": 20260731,
+  "current_version_placeholder": "CURRENT",
+  "scenarios": [
+    {
+      "id": "as-01",
+      "description": "a single category carries all the lost win probability",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nd5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.3
+                },
+                {
+                  "ply": 19,
+                  "san": "Bg4",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.22
+                },
+                {
+                  "ply": 27,
+                  "san": "Rc8",
+                  "category": "positional_drift",
+                  "phase": "middlegame",
+                  "delta_w": 0.11
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "hung_piece",
+          "priority_score": 0.52,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        },
+        {
+          "rank": 2,
+          "category": "positional_drift",
+          "priority_score": 0.11,
+          "dominant_phase": "middlegame",
+          "advice_id": "positional-drift-middlegame"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-02",
+      "description": "six small hung pieces (0.72) lose to two huge missed tactics (0.90)",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 10,
+                  "san": "Ne4",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.12
+                },
+                {
+                  "ply": 12,
+                  "san": "Ne4",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.12
+                },
+                {
+                  "ply": 14,
+                  "san": "Ne4",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.12
+                },
+                {
+                  "ply": 16,
+                  "san": "Ne4",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.12
+                },
+                {
+                  "ply": 18,
+                  "san": "Ne4",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.12
+                },
+                {
+                  "ply": 20,
+                  "san": "Ne4",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.12
+                },
+                {
+                  "ply": 31,
+                  "san": "Qd2",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.45
+                },
+                {
+                  "ply": 35,
+                  "san": "Re1",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.45
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "missed_tactic",
+          "priority_score": 0.9,
+          "dominant_phase": "middlegame",
+          "advice_id": "missed-tactic-pattern-repetition"
+        },
+        {
+          "rank": 2,
+          "category": "hung_piece",
+          "priority_score": 0.72,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-03",
+      "description": "frequency-only ordering would put bad_trade first; delta_w says otherwise",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 9,
+                  "san": "Bxc6",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.11
+                },
+                {
+                  "ply": 11,
+                  "san": "Bxc6",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.11
+                },
+                {
+                  "ply": 13,
+                  "san": "Bxc6",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.11
+                },
+                {
+                  "ply": 15,
+                  "san": "Bxc6",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.11
+                },
+                {
+                  "ply": 17,
+                  "san": "Bxc6",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.11
+                },
+                {
+                  "ply": 29,
+                  "san": "Kg1",
+                  "category": "allowed_mate",
+                  "phase": "middlegame",
+                  "delta_w": 0.62
+                },
+                {
+                  "ply": 33,
+                  "san": "h3",
+                  "category": "positional_drift",
+                  "phase": "middlegame",
+                  "delta_w": 0.13
+                },
+                {
+                  "ply": 37,
+                  "san": "a4",
+                  "category": "positional_drift",
+                  "phase": "middlegame",
+                  "delta_w": 0.13
+                },
+                {
+                  "ply": 41,
+                  "san": "b3",
+                  "category": "positional_drift",
+                  "phase": "middlegame",
+                  "delta_w": 0.13
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "allowed_mate",
+          "priority_score": 0.62,
+          "dominant_phase": "middlegame",
+          "advice_id": "allowed-mate-king-safety"
+        },
+        {
+          "rank": 2,
+          "category": "bad_trade",
+          "priority_score": 0.55,
+          "dominant_phase": "middlegame",
+          "advice_id": "bad-trade-count-the-exchange"
+        },
+        {
+          "rank": 3,
+          "category": "positional_drift",
+          "priority_score": 0.39,
+          "dominant_phase": "middlegame",
+          "advice_id": "positional-drift-middlegame"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-04",
+      "description": "three categories where frequency-only ordering (3 > 2 > 1) is exactly backwards against the delta_w sums (0.41 > 0.40 > 0.39)",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nxe5",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.4
+                },
+                {
+                  "ply": 15,
+                  "san": "Nf3",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.21
+                },
+                {
+                  "ply": 19,
+                  "san": "Bd2",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.2
+                },
+                {
+                  "ply": 23,
+                  "san": "Rb1",
+                  "category": "allowed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.15
+                },
+                {
+                  "ply": 27,
+                  "san": "a3",
+                  "category": "allowed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.14
+                },
+                {
+                  "ply": 31,
+                  "san": "h4",
+                  "category": "allowed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "missed_tactic",
+          "priority_score": 0.41,
+          "dominant_phase": "middlegame",
+          "advice_id": "missed-tactic-pattern-repetition"
+        },
+        {
+          "rank": 2,
+          "category": "bad_trade",
+          "priority_score": 0.4,
+          "dominant_phase": "middlegame",
+          "advice_id": "bad-trade-count-the-exchange"
+        },
+        {
+          "rank": 3,
+          "category": "allowed_tactic",
+          "priority_score": 0.39,
+          "dominant_phase": "middlegame",
+          "advice_id": "allowed-tactic-opponent-threats"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-05",
+      "description": "equal delta_w sums (0.60); the category with more instances ranks first",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nd5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.2
+                },
+                {
+                  "ply": 13,
+                  "san": "Be3",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.2
+                },
+                {
+                  "ply": 15,
+                  "san": "Rc1",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.2
+                },
+                {
+                  "ply": 17,
+                  "san": "Qd3",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.3
+                },
+                {
+                  "ply": 19,
+                  "san": "Rf1",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "hung_piece",
+          "priority_score": 0.6,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        },
+        {
+          "rank": 2,
+          "category": "bad_trade",
+          "priority_score": 0.6,
+          "dominant_phase": "middlegame",
+          "advice_id": "bad-trade-count-the-exchange"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-06",
+      "description": "equal sums and counts; the more recent worst instance ranks first",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nd5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.25
+                },
+                {
+                  "ply": 41,
+                  "san": "Bg5",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.25
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "missed_tactic",
+          "priority_score": 0.25,
+          "dominant_phase": "middlegame",
+          "advice_id": "missed-tactic-pattern-repetition"
+        },
+        {
+          "rank": 2,
+          "category": "hung_piece",
+          "priority_score": 0.25,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-07",
+      "description": "equal sums, counts and plies across two games; the category whose worst instance is in the more recent game ranks first",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 21,
+                  "san": "Nd5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.25
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "game_id": 2,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 21,
+                  "san": "Bg5",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.25
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "bad_trade",
+          "priority_score": 0.25,
+          "dominant_phase": "middlegame",
+          "advice_id": "bad-trade-count-the-exchange"
+        },
+        {
+          "rank": 2,
+          "category": "hung_piece",
+          "priority_score": 0.25,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-08",
+      "description": "positional_drift concentrated in the endgame picks the endgame advice",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 61,
+                  "san": "Kf1",
+                  "category": "positional_drift",
+                  "phase": "endgame",
+                  "delta_w": 0.3
+                },
+                {
+                  "ply": 65,
+                  "san": "Rb2",
+                  "category": "positional_drift",
+                  "phase": "endgame",
+                  "delta_w": 0.28
+                },
+                {
+                  "ply": 21,
+                  "san": "h3",
+                  "category": "positional_drift",
+                  "phase": "middlegame",
+                  "delta_w": 0.11
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "positional_drift",
+          "priority_score": 0.69,
+          "dominant_phase": "endgame",
+          "advice_id": "positional-drift-make-a-plan"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-09",
+      "description": "the same category concentrated in the opening picks the opening advice",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 7,
+                  "san": "Qh5",
+                  "category": "positional_drift",
+                  "phase": "opening",
+                  "delta_w": 0.24
+                },
+                {
+                  "ply": 9,
+                  "san": "Qf3",
+                  "category": "positional_drift",
+                  "phase": "opening",
+                  "delta_w": 0.24
+                },
+                {
+                  "ply": 45,
+                  "san": "Rd4",
+                  "category": "positional_drift",
+                  "phase": "endgame",
+                  "delta_w": 0.14
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "positional_drift",
+          "priority_score": 0.62,
+          "dominant_phase": "opening",
+          "advice_id": "positional-drift-make-a-plan"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-10",
+      "description": "an imported game is out of the window unless include_imported is set",
+      "include_imported": false,
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nd5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "game_id": 2,
+          "source": "imported",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 13,
+                  "san": "Bg5",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.9
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "hung_piece",
+          "priority_score": 0.2,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-11",
+      "description": "a stockfish-only analysis is not a report basis; the game is skipped",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nd5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "game_id": 2,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "stockfish",
+              "analyst_version": "Stockfish 16",
+              "node_budget": 20000,
+              "moves": [
+                {
+                  "ply": 13,
+                  "san": "Bg5",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.9
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "hung_piece",
+          "priority_score": 0.2,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        }
+      ],
+      "expected_skipped": [
+        2
+      ]
+    },
+    {
+      "id": "as-12",
+      "description": "only the most recent two games enter the window",
+      "last_games": 2,
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nd5",
+                  "category": "allowed_mate",
+                  "phase": "middlegame",
+                  "delta_w": 0.95
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "game_id": 2,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 13,
+                  "san": "Bg5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "game_id": 3,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 15,
+                  "san": "Rc1",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "hung_piece",
+          "priority_score": 0.3,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        },
+        {
+          "rank": 2,
+          "category": "missed_tactic",
+          "priority_score": 0.2,
+          "dominant_phase": "middlegame",
+          "advice_id": "missed-tactic-pattern-repetition"
+        }
+      ],
+      "expected_skipped": []
+    },
+    {
+      "id": "as-13",
+      "description": "one game, two analyses: the report must use internal @ JUDGE_BUDGET, not the deeper stockfish re-analysis",
+      "games": [
+        {
+          "game_id": 1,
+          "source": "played",
+          "analyses": [
+            {
+              "analyst": "internal",
+              "analyst_version": "CURRENT",
+              "node_budget": 6000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nd5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.3
+                },
+                {
+                  "ply": 15,
+                  "san": "Bg5",
+                  "category": "hung_piece",
+                  "phase": "middlegame",
+                  "delta_w": 0.25
+                },
+                {
+                  "ply": 19,
+                  "san": "Rc1",
+                  "category": "bad_trade",
+                  "phase": "middlegame",
+                  "delta_w": 0.2
+                }
+              ]
+            },
+            {
+              "analyst": "stockfish",
+              "analyst_version": "Stockfish 16",
+              "node_budget": 20000,
+              "moves": [
+                {
+                  "ply": 11,
+                  "san": "Nd5",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.8
+                },
+                {
+                  "ply": 15,
+                  "san": "Bg5",
+                  "category": "missed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.7
+                },
+                {
+                  "ply": 19,
+                  "san": "Rc1",
+                  "category": "allowed_tactic",
+                  "phase": "middlegame",
+                  "delta_w": 0.6
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "rank": 1,
+          "category": "hung_piece",
+          "priority_score": 0.55,
+          "dominant_phase": "middlegame",
+          "advice_id": "hung-piece-board-vision"
+        },
+        {
+          "rank": 2,
+          "category": "bad_trade",
+          "priority_score": 0.2,
+          "dominant_phase": "middlegame",
+          "advice_id": "bad-trade-count-the-exchange"
+        }
+      ],
+      "expected_skipped": []
+    }
+  ]
+}

@@ -1,0 +1,592 @@
+{
+  "awards.json": [
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "MIA",
+      "fees_cents": 5600,
+      "id": "dlx_bus_nyc_mia",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 40000,
+      "program_id": "dlx",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "NYC",
+      "fees_cents": 5600,
+      "id": "dlx_bus_mia_nyc",
+      "kind": "flight",
+      "origin": "MIA",
+      "points_price": 40000,
+      "program_id": "dlx",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "MIA",
+      "fees_cents": 5600,
+      "id": "uax_bus_nyc_mia",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 95000,
+      "program_id": "uax",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "MIA",
+      "fees_cents": 50000,
+      "id": "dlx_saver_nyc_mia",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 20000,
+      "program_id": "dlx",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "NYC",
+      "fees_cents": 5600,
+      "id": "uax_bus_mia_nyc",
+      "kind": "flight",
+      "origin": "MIA",
+      "points_price": 95000,
+      "program_id": "uax",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "MIA",
+      "fees_cents": 8000,
+      "id": "alx_bus_nyc_mia",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 55000,
+      "program_id": "alx",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "NYC",
+      "fees_cents": 8000,
+      "id": "alx_bus_mia_nyc",
+      "kind": "flight",
+      "origin": "MIA",
+      "points_price": 55000,
+      "program_id": "alx",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    }
+  ],
+  "cards.json": [
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": true,
+      "id": "mrx_card",
+      "issuer": "Fixture Bank",
+      "name": "Mrx Card",
+      "program_id": "mrx",
+      "source_note": "eval fixture"
+    },
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": true,
+      "id": "mrx_premium",
+      "issuer": "Fixture Bank",
+      "name": "Mrx Premium",
+      "program_id": "mrx",
+      "source_note": "eval fixture"
+    },
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": true,
+      "id": "typx_card",
+      "issuer": "Fixture Bank",
+      "name": "Typx Card",
+      "program_id": "typx",
+      "source_note": "eval fixture"
+    }
+  ],
+  "cashouts.json": [
+    {
+      "cpp_milli": 600,
+      "id": "mrx_credit",
+      "increment": 1,
+      "method": "statement_credit",
+      "min_points": 1,
+      "program_id": "mrx",
+      "requires_card": null,
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "cpp_milli": 1538,
+      "id": "mrx_portal",
+      "increment": 1,
+      "method": "portal_travel",
+      "min_points": 1,
+      "program_id": "mrx",
+      "requires_card": "mrx_premium",
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "cpp_milli": 1000,
+      "id": "typx_credit",
+      "increment": 1,
+      "method": "statement_credit",
+      "min_points": 1,
+      "program_id": "typx",
+      "requires_card": null,
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "gazetteer.json": [
+    {
+      "airports": [
+        "JFK",
+        "EWR",
+        "LGA"
+      ],
+      "aliases": [
+        "nyc",
+        "new york",
+        "new york city"
+      ],
+      "city_code": "NYC",
+      "name": "New York"
+    },
+    {
+      "airports": [
+        "CDG",
+        "ORY"
+      ],
+      "aliases": [
+        "paris"
+      ],
+      "city_code": "PAR",
+      "name": "Paris"
+    },
+    {
+      "airports": [
+        "LHR",
+        "LGW"
+      ],
+      "aliases": [
+        "london"
+      ],
+      "city_code": "LON",
+      "name": "London"
+    },
+    {
+      "airports": [
+        "HND",
+        "NRT"
+      ],
+      "aliases": [
+        "tokyo"
+      ],
+      "city_code": "TYO",
+      "name": "Tokyo"
+    },
+    {
+      "airports": [
+        "ORD",
+        "MDW"
+      ],
+      "aliases": [
+        "chicago"
+      ],
+      "city_code": "CHI",
+      "name": "Chicago"
+    },
+    {
+      "airports": [
+        "FCO"
+      ],
+      "aliases": [
+        "rome"
+      ],
+      "city_code": "ROM",
+      "name": "Rome"
+    },
+    {
+      "airports": [
+        "MAD"
+      ],
+      "aliases": [
+        "madrid"
+      ],
+      "city_code": "MAD",
+      "name": "Madrid"
+    },
+    {
+      "airports": [
+        "LAX"
+      ],
+      "aliases": [
+        "los angeles"
+      ],
+      "city_code": "LAX",
+      "name": "Los Angeles"
+    },
+    {
+      "airports": [
+        "SFO"
+      ],
+      "aliases": [
+        "san francisco"
+      ],
+      "city_code": "SFO",
+      "name": "San Francisco"
+    },
+    {
+      "airports": [
+        "SIN"
+      ],
+      "aliases": [
+        "singapore"
+      ],
+      "city_code": "SIN",
+      "name": "Singapore"
+    },
+    {
+      "airports": [
+        "SYD"
+      ],
+      "aliases": [
+        "sydney"
+      ],
+      "city_code": "SYD",
+      "name": "Sydney"
+    },
+    {
+      "airports": [
+        "MIA"
+      ],
+      "aliases": [
+        "miami"
+      ],
+      "city_code": "MIA",
+      "name": "Miami"
+    },
+    {
+      "airports": [
+        "LIS"
+      ],
+      "aliases": [
+        "lisbon"
+      ],
+      "city_code": "LIS",
+      "name": "Lisbon"
+    },
+    {
+      "airports": [
+        "HKG"
+      ],
+      "aliases": [
+        "hong kong"
+      ],
+      "city_code": "HKG",
+      "name": "Hong Kong"
+    }
+  ],
+  "programs.json": [
+    {
+      "id": "mrx",
+      "kind": "bank",
+      "name": "MRX Points",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "typx",
+      "kind": "bank",
+      "name": "TYPX Points",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "dlx",
+      "kind": "airline",
+      "name": "DLX Miles",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "uax",
+      "kind": "airline",
+      "name": "UAX Miles",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "alx",
+      "kind": "airline",
+      "name": "ALX Miles",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "mbx",
+      "kind": "hotel",
+      "name": "MBX Hotel Points",
+      "source_note": "eval fixture"
+    }
+  ],
+  "reference_fares.json": [
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 150000,
+      "id": "rf_mia_nyc_bus_ow_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "MIA",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 280000,
+      "id": "rf_mia_nyc_bus_rt_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "MIA",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "MIA",
+      "fare_cents": 150000,
+      "id": "rf_nyc_mia_bus_ow_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "NYC",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "MIA",
+      "fare_cents": 280000,
+      "id": "rf_nyc_mia_bus_rt_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "NYC",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    }
+  ],
+  "transfers.json": [
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": 4800,
+      "fee_mcpp": 60,
+      "from_program": "mrx",
+      "id": "mrx__dlx",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "dlx",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": 9900,
+      "fee_mcpp": 60,
+      "from_program": "mrx",
+      "id": "mrx__uax",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "uax",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "mrx",
+      "id": "mrx__mbx",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "mbx",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "typx",
+      "id": "typx__uax",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 1,
+      "to_program": "uax",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "typx",
+      "id": "typx__mbx",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "mbx",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": 60000,
+      "bonus_to": 5000,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "mbx",
+      "id": "mbx__alx",
+      "increment_from": 3000,
+      "min_from": 3000,
+      "ratio_from": 3,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 2,
+      "to_program": "alx",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": 60000,
+      "bonus_to": 5000,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "mbx",
+      "id": "mbx__dlx",
+      "increment_from": 3000,
+      "min_from": 3000,
+      "ratio_from": 3,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 2,
+      "to_program": "dlx",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "valuations.json": [
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 2000,
+      "program_id": "mrx",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1800,
+      "program_id": "typx",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1000,
+      "program_id": "dlx",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1350,
+      "program_id": "uax",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1400,
+      "program_id": "alx",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 800,
+      "program_id": "mbx",
+      "source_note": "eval fixture"
+    }
+  ],
+  "version.json": {
+    "as_of": "2026-07-01",
+    "content_hash": "aa4182894b032e7f47322270e4bfa31868c24770f7f8e1ed82435977782a7259",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,1341 @@
+[
+  {
+    "id": "acc_01",
+    "group": "pure_formula",
+    "world": "small_a",
+    "opening": {
+      "mr": 130000
+    },
+    "transfers": [
+      {
+        "edge_id": "mr__fb",
+        "sent": 120000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_nyc_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      },
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_par_nyc",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 420000,
+      "cash_outlay_cents": 50200,
+      "points_cost_cents": 240000,
+      "net_value_cents": 129800,
+      "realized_cpp_milli": 3081,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mr__fb",
+          "sent": 120000,
+          "delivered": 120000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": []
+    },
+    "rationale": "One merged 1:1 transfer funds both one-ways. gross = 2 x 210000 = 420000c; outlay = 2 x 25100 = 50200c (no edge fee); V(H0) = 130000*2000//1000 = 260000c; H1 = 10,000 MR = 20000c and FB 0; points_cost = 240000c; net = 420000-50200-240000 = 129800c; pooled cpp = (420000-50200)*1000//120000 = 3081."
+  },
+  {
+    "id": "acc_02",
+    "group": "pure_formula",
+    "world": "small_a",
+    "opening": {
+      "ur": 100000
+    },
+    "transfers": [
+      {
+        "edge_id": "ur__fb",
+        "sent": 60000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_nyc_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 210000,
+      "cash_outlay_cents": 25100,
+      "points_cost_cents": 123000,
+      "net_value_cents": 61900,
+      "realized_cpp_milli": 3081,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "ur__fb",
+          "sent": 60000,
+          "delivered": 60000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": []
+    },
+    "rationale": "Single award. V(H0) = 100000*2050//1000 = 205000c; H1 = 40,000 UR = 82000c; points_cost = 123000c; net = 210000-25100-123000 = 61900c; cpp = (210000-25100)*1000//60000 = 3081."
+  },
+  {
+    "id": "acc_03",
+    "group": "pure_formula",
+    "world": "small_a",
+    "opening": {
+      "ur": 200000
+    },
+    "transfers": [],
+    "bookings": [
+      {
+        "kind": "book_portal",
+        "program_id": "ur",
+        "offer_id": null,
+        "cashout_id": "ur_portal",
+        "points": 140000,
+        "fees_cents": 0,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 210000,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 287000,
+      "net_value_cents": -77000,
+      "realized_cpp_milli": 1500,
+      "cash_received_cents": null,
+      "transfers": [],
+      "stranded": []
+    },
+    "rationale": "Portal point price = ceil(210000*1000/1500) = 140000 (increment 1). V(H0) = 410000c; H1 = 60,000 UR = 123000c; points_cost = 287000c; net = 210000-287000 = -77000c; cpp = 210000*1000//140000 = 1500 - exactly the portal rate, which is why the portal is a floor and not a maximiser."
+  },
+  {
+    "id": "acc_04",
+    "group": "pure_formula",
+    "world": "small_c",
+    "opening": {
+      "mrx": 150000
+    },
+    "transfers": [],
+    "bookings": [
+      {
+        "kind": "book_portal",
+        "program_id": "mrx",
+        "offer_id": null,
+        "cashout_id": "mrx_portal",
+        "points": 97530,
+        "fees_cents": 0,
+        "value_cents": 150000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 150000,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 195060,
+      "net_value_cents": -45060,
+      "realized_cpp_milli": 1537,
+      "cash_received_cents": null,
+      "transfers": [],
+      "stranded": []
+    },
+    "rationale": "Ceiling rounding: 150000*1000/1538 = 97529.26..., so the portal charges 97530 points. V(H0) = 300000c; H1 = 52,470 MRX = 104940c; points_cost = 195060c; net = -45060c; cpp = 150000*1000//97530 = 1537 (floor - one milli-cent below the 1538 headline rate, because the point price rounded up)."
+  },
+  {
+    "id": "acc_05",
+    "group": "pure_formula",
+    "world": "small_a",
+    "opening": {
+      "ur": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "ur__fb",
+        "sent": 60000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_nyc_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      },
+      {
+        "kind": "book_portal",
+        "program_id": "ur",
+        "offer_id": null,
+        "cashout_id": "ur_portal",
+        "points": 140000,
+        "fees_cents": 0,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 420000,
+      "cash_outlay_cents": 25100,
+      "points_cost_cents": 410000,
+      "net_value_cents": -15100,
+      "realized_cpp_milli": 1974,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "ur__fb",
+          "sent": 60000,
+          "delivered": 60000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": []
+    },
+    "rationale": "Award out (cpp 3081) plus portal back (cpp 1500). The pooled plan cpp is (420000-25100)*1000//200000 = 1974, not the average of 3081 and 1500 (2290) - FR-8 pools numerator and denominator. All 200,000 UR are consumed, so points_cost = V(H0) = 410000c and net = 420000-25100-410000 = -15100c."
+  },
+  {
+    "id": "acc_06",
+    "group": "pure_formula",
+    "world": "small_a",
+    "opening": {
+      "ur": 40000,
+      "mr": 40000
+    },
+    "transfers": [
+      {
+        "edge_id": "ur__fb",
+        "sent": 40000
+      },
+      {
+        "edge_id": "mr__fb",
+        "sent": 20000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_nyc_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 210000,
+      "cash_outlay_cents": 25100,
+      "points_cost_cents": 122000,
+      "net_value_cents": 62900,
+      "realized_cpp_milli": 3081,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "ur__fb",
+          "sent": 40000,
+          "delivered": 40000,
+          "fee_cents": 0
+        },
+        {
+          "edge_id": "mr__fb",
+          "sent": 20000,
+          "delivered": 20000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": []
+    },
+    "rationale": "Two currencies fund one award. V(H0) = 82000 + 80000 = 162000c; H1 = 20,000 MR = 40000c; points_cost = 122000c; net = 210000-25100-122000 = 62900c. Spending the cheaper MR last leaves the more valuable UR exhausted first - the split is priced by the portfolio delta, not by any per-currency rule."
+  },
+  {
+    "id": "acc_07",
+    "group": "pure_formula",
+    "world": "small_a",
+    "opening": {
+      "ur": 100000
+    },
+    "transfers": [
+      {
+        "edge_id": "ur__mb",
+        "sent": 60000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "mb",
+        "offer_id": "mb_stay_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 0,
+        "value_cents": 90000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 90000,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 123000,
+      "net_value_cents": -33000,
+      "realized_cpp_milli": 1500,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "ur__mb",
+          "sent": 60000,
+          "delivered": 60000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": []
+    },
+    "rationale": "Stay: 3 nights x 20,000 points and 3 x 30000c nightly reference. V(H0) = 205000c; H1 = 40,000 UR = 82000c; points_cost = 123000c; net = 90000-123000 = -33000c; cpp = 90000*1000//60000 = 1500."
+  },
+  {
+    "id": "acc_08",
+    "group": "pure_formula",
+    "world": "small_d",
+    "opening": {
+      "urd": 100000
+    },
+    "transfers": [],
+    "bookings": [
+      {
+        "kind": "redeem_cash",
+        "program_id": "urd",
+        "offer_id": null,
+        "cashout_id": "urd_credit",
+        "points": 100000,
+        "fees_cents": 0,
+        "value_cents": 100000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 100000,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 205000,
+      "net_value_cents": -105000,
+      "realized_cpp_milli": 1000,
+      "cash_received_cents": 100000,
+      "transfers": [],
+      "stranded": []
+    },
+    "rationale": "Straight liquidation at 1,000 mcpp: 100000*1000//1000 = 100000c received while the portfolio gives up 100000*2050//1000 = 205000c of baseline value, so net = -105000c. This is the arithmetic behind the below_baseline warning."
+  },
+  {
+    "id": "acc_09",
+    "group": "fee",
+    "world": "small_a",
+    "opening": {
+      "mr": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mr__dl",
+        "sent": 165000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 9900,
+      "points_cost_cents": 140250,
+      "net_value_cents": -150150,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mr__dl",
+          "sent": 165000,
+          "delivered": 165000,
+          "fee_cents": 9900
+        }
+      ],
+      "stranded": [
+        {
+          "program": "dl",
+          "points": 165000,
+          "value_cents": 189750
+        }
+      ]
+    },
+    "rationale": "The documented cap boundary: 165000 x 60 mcpp = 9900c = the $99 cap exactly, so ceil and cap agree. V(H0) = 400000c; H1 = 35,000 MR (70000c) + 165,000 DL (165000*1150//1000 = 189750c) = 259750c; points_cost = 140250c; net = -9900-140250 = -150150c. No booking, so realized cpp is null."
+  },
+  {
+    "id": "acc_10",
+    "group": "fee",
+    "world": "small_a",
+    "opening": {
+      "mr": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mr__dl",
+        "sent": 166000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 9900,
+      "points_cost_cents": 141100,
+      "net_value_cents": -151000,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mr__dl",
+          "sent": 166000,
+          "delivered": 166000,
+          "fee_cents": 9900
+        }
+      ],
+      "stranded": [
+        {
+          "program": "dl",
+          "points": 166000,
+          "value_cents": 190900
+        }
+      ]
+    },
+    "rationale": "One increment above the boundary: raw fee = ceil(166000*60/1000) = 9960c, capped back to 9900c. H1 = 34,000 MR (68000c) + 166,000 DL (190900c) = 258900c; points_cost = 141100c; net = -151000c."
+  },
+  {
+    "id": "acc_11",
+    "group": "fee",
+    "world": "small_a",
+    "opening": {
+      "mr": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mr__dl",
+        "sent": 164000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 9840,
+      "points_cost_cents": 139400,
+      "net_value_cents": -149240,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mr__dl",
+          "sent": 164000,
+          "delivered": 164000,
+          "fee_cents": 9840
+        }
+      ],
+      "stranded": [
+        {
+          "program": "dl",
+          "points": 164000,
+          "value_cents": 188600
+        }
+      ]
+    },
+    "rationale": "One increment below the boundary: fee = ceil(164000*60/1000) = 9840c, under the cap. H1 = 36,000 MR (72000c) + 164,000 DL (188600c) = 260600c; points_cost = 139400c; net = -149240c."
+  },
+  {
+    "id": "acc_12",
+    "group": "fee",
+    "world": "small_a",
+    "opening": {
+      "mr": 5000
+    },
+    "transfers": [
+      {
+        "edge_id": "mr__dl",
+        "sent": 2001
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 121,
+      "points_cost_cents": 1701,
+      "net_value_cents": -1822,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mr__dl",
+          "sent": 2001,
+          "delivered": 2001,
+          "fee_cents": 121
+        }
+      ],
+      "stranded": [
+        {
+          "program": "dl",
+          "points": 2001,
+          "value_cents": 2301
+        }
+      ]
+    },
+    "rationale": "Ceiling rounding on the fee: 2001*60/1000 = 120.06c rounds up to 121c. H1 = 2,999 MR (5998c) + 2,001 DL (2001*1150//1000 = 2301c) = 8299c; V(H0) = 10000c; points_cost = 1701c; net = -121-1701 = -1822c."
+  },
+  {
+    "id": "acc_13",
+    "group": "fee",
+    "world": "small_c",
+    "opening": {
+      "mrx": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mrx__uax",
+        "sent": 190000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "uax",
+        "offer_id": "uax_bus_nyc_mia",
+        "cashout_id": null,
+        "points": 95000,
+        "fees_cents": 5600,
+        "value_cents": 150000
+      },
+      {
+        "kind": "book_award",
+        "program_id": "uax",
+        "offer_id": "uax_bus_mia_nyc",
+        "cashout_id": null,
+        "points": 95000,
+        "fees_cents": 5600,
+        "value_cents": 150000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 300000,
+      "cash_outlay_cents": 21100,
+      "points_cost_cents": 380000,
+      "net_value_cents": -101100,
+      "realized_cpp_milli": 1520,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mrx__uax",
+          "sent": 190000,
+          "delivered": 190000,
+          "fee_cents": 9900
+        }
+      ],
+      "stranded": []
+    },
+    "rationale": "FR-7b merging: both one-ways are paid from UAX, so one transfer of 190,000 pays the cap once - ceil(190000*60/1000) = 11400c capped to 9900c. outlay = 9900 + 2 x 5600 = 21100c; V(H0) = 400000c; H1 = 10,000 MRX = 20000c; points_cost = 380000c; net = -101100c; pooled cpp = (300000-11200)*1000//190000 = 1520."
+  },
+  {
+    "id": "acc_14",
+    "group": "fee",
+    "world": "small_c",
+    "opening": {
+      "mrx": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mrx__uax",
+        "sent": 95000
+      },
+      {
+        "edge_id": "mrx__uax",
+        "sent": 95000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "uax",
+        "offer_id": "uax_bus_nyc_mia",
+        "cashout_id": null,
+        "points": 95000,
+        "fees_cents": 5600,
+        "value_cents": 150000
+      },
+      {
+        "kind": "book_award",
+        "program_id": "uax",
+        "offer_id": "uax_bus_mia_nyc",
+        "cashout_id": null,
+        "points": 95000,
+        "fees_cents": 5600,
+        "value_cents": 150000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 300000,
+      "cash_outlay_cents": 22600,
+      "points_cost_cents": 380000,
+      "net_value_cents": -102600,
+      "realized_cpp_milli": 1520,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mrx__uax",
+          "sent": 95000,
+          "delivered": 95000,
+          "fee_cents": 5700
+        },
+        {
+          "edge_id": "mrx__uax",
+          "sent": 95000,
+          "delivered": 95000,
+          "fee_cents": 5700
+        }
+      ],
+      "stranded": []
+    },
+    "rationale": "The counterfactual acc_13 exists to rule out: two unmerged transfers each pay ceil(95000*60/1000) = 5700c, i.e. 11400c total, 1500c worse than the merged 9900c. Everything else is identical, so net = -102600c. The engine must never emit this shape (one transfer step per edge), but the arithmetic must be right."
+  },
+  {
+    "id": "acc_15",
+    "group": "fee",
+    "world": "small_a",
+    "opening": {
+      "ur": 62000
+    },
+    "transfers": [
+      {
+        "edge_id": "ur__fb",
+        "sent": 22000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_eco_nyc_par",
+        "cashout_id": null,
+        "points": 22000,
+        "fees_cents": 22400,
+        "value_cents": 60000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 60000,
+      "cash_outlay_cents": 22400,
+      "points_cost_cents": 45100,
+      "net_value_cents": -7500,
+      "realized_cpp_milli": 1709,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "ur__fb",
+          "sent": 22000,
+          "delivered": 22000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": []
+    },
+    "rationale": "A zero-fee edge with heavy carrier charges: cpp = (60000-22400)*1000//22000 = 1709 looks respectable, but V(H0) = 127100c and H1 = 40,000 UR = 82000c give points_cost = 45100c, so net = 60000-22400-45100 = -7500c. High cpp, negative net - the conflict the ranking rule exists to resolve."
+  },
+  {
+    "id": "acc_16",
+    "group": "fee",
+    "world": "small_a",
+    "opening": {
+      "mr": 1000
+    },
+    "transfers": [
+      {
+        "edge_id": "mr__dl",
+        "sent": 1
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 1,
+      "points_cost_cents": 1,
+      "net_value_cents": -2,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mr__dl",
+          "sent": 1,
+          "delivered": 1,
+          "fee_cents": 1
+        }
+      ],
+      "stranded": [
+        {
+          "program": "dl",
+          "points": 1,
+          "value_cents": 1
+        }
+      ]
+    },
+    "rationale": "The smallest possible fee: 1 x 60 mcpp = 0.06c, which ceils to 1c. H1 = 999 MR (1998c) + 1 DL (1150//1000 = 1c) = 1999c against V(H0) = 2000c, so points_cost = 1c and net = -2c."
+  },
+  {
+    "id": "acc_17",
+    "group": "tier",
+    "world": "small_a",
+    "opening": {
+      "mb": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mb__fb",
+        "sent": 57000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 20900,
+      "net_value_cents": -20900,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mb__fb",
+          "sent": 57000,
+          "delivered": 19000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 19000,
+          "value_cents": 24700
+        }
+      ]
+    },
+    "rationale": "Below the first tier: delivered(57000) = 57000//3 + 5000*(57000//60000) = 19000 + 0 = 19000. H1 = 143,000 MB (114400c) + 19,000 FB (24700c) = 139100c against V(H0) = 160000c, so points_cost = 20900c."
+  },
+  {
+    "id": "acc_18",
+    "group": "tier",
+    "world": "small_a",
+    "opening": {
+      "mb": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mb__fb",
+        "sent": 60000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 15500,
+      "net_value_cents": -15500,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mb__fb",
+          "sent": 60000,
+          "delivered": 25000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 25000,
+          "value_cents": 32500
+        }
+      ]
+    },
+    "rationale": "Exactly one tier: delivered(60000) = 20000 + 5000 = 25000. Sending 3,000 more points than acc_17 delivers 6,000 more miles, which is why tier boundaries are explicit lattice candidates. points_cost = 160000 - (112000 + 32500) = 15500c."
+  },
+  {
+    "id": "acc_19",
+    "group": "tier",
+    "world": "small_a",
+    "opening": {
+      "mb": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mb__fb",
+        "sent": 120000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 31000,
+      "net_value_cents": -31000,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mb__fb",
+          "sent": 120000,
+          "delivered": 50000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 50000,
+          "value_cents": 65000
+        }
+      ]
+    },
+    "rationale": "Two tiers: delivered(120000) = 40000 + 10000 = 50000. H1 = 80,000 MB (64000c) + 50,000 FB (65000c) = 129000c; points_cost = 31000c."
+  },
+  {
+    "id": "acc_20",
+    "group": "tier",
+    "world": "small_a",
+    "opening": {
+      "mb": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mb__fb",
+        "sent": 63000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 16600,
+      "net_value_cents": -16600,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mb__fb",
+          "sent": 63000,
+          "delivered": 26000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 26000,
+          "value_cents": 33800
+        }
+      ]
+    },
+    "rationale": "Just past a boundary: delivered(63000) = 21000 + 5000 = 26000. The bonus is a step function, so the extra 3,000 points buy only 1,000 miles here."
+  },
+  {
+    "id": "acc_21",
+    "group": "tier",
+    "world": "small_a",
+    "opening": {
+      "mb": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mb__fb",
+        "sent": 180000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_nyc_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 210000,
+      "cash_outlay_cents": 25100,
+      "points_cost_cents": 124500,
+      "net_value_cents": 60400,
+      "realized_cpp_milli": 3081,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mb__fb",
+          "sent": 180000,
+          "delivered": 75000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 15000,
+          "value_cents": 19500
+        }
+      ]
+    },
+    "rationale": "Three tiers: delivered(180000) = 60000 + 15000 = 75000, of which 60,000 pay the award and 15,000 strand at FB's 1,300 mcpp = 19500c. H1 = 20,000 MB (16000c) + 15,000 FB (19500c) = 35500c; points_cost = 124500c; net = 210000-25100-124500 = 60400c."
+  },
+  {
+    "id": "acc_22",
+    "group": "tier",
+    "world": "small_a",
+    "opening": {
+      "mb": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mb__fb",
+        "sent": 117000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 36400,
+      "net_value_cents": -36400,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mb__fb",
+          "sent": 117000,
+          "delivered": 44000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 44000,
+          "value_cents": 57200
+        }
+      ]
+    },
+    "rationale": "One increment below the second boundary: delivered(117000) = 39000 + 5000 = 44000, six thousand miles short of what 120,000 delivers (acc_19)."
+  },
+  {
+    "id": "acc_23",
+    "group": "stranding",
+    "world": "small_a",
+    "opening": {
+      "ur": 100000
+    },
+    "transfers": [
+      {
+        "edge_id": "ur__fb",
+        "sent": 62000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_nyc_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 210000,
+      "cash_outlay_cents": 25100,
+      "points_cost_cents": 124500,
+      "net_value_cents": 60400,
+      "realized_cpp_milli": 3081,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "ur__fb",
+          "sent": 62000,
+          "delivered": 62000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 2000,
+          "value_cents": 2600
+        }
+      ]
+    },
+    "rationale": "Over-transferring by one 2,000 increment strands 2,000 FB miles worth 2000*1300//1000 = 2600c. net drops from acc_02's 61900c to 60400c - exactly the 1500c the 2,000 points lost by moving from 2,050 to 1,300 mcpp."
+  },
+  {
+    "id": "acc_24",
+    "group": "stranding",
+    "world": "small_a",
+    "opening": {
+      "mr": 100000
+    },
+    "transfers": [
+      {
+        "edge_id": "mr__fb",
+        "sent": 64000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_nyc_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 210000,
+      "cash_outlay_cents": 25100,
+      "points_cost_cents": 122800,
+      "net_value_cents": 62100,
+      "realized_cpp_milli": 3081,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mr__fb",
+          "sent": 64000,
+          "delivered": 64000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 4000,
+          "value_cents": 5200
+        }
+      ]
+    },
+    "rationale": "Two increments of waste from a 2,000 mcpp source: 4,000 FB miles = 5200c stranded. H1 = 36,000 MR (72000c) + 4,000 FB (5200c) = 77200c; points_cost = 122800c; net = 62100c."
+  },
+  {
+    "id": "acc_25",
+    "group": "stranding",
+    "world": "small_d",
+    "opening": {
+      "mrd": 50000
+    },
+    "transfers": [
+      {
+        "edge_id": "mrd__hild",
+        "sent": 20000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 20000,
+      "net_value_cents": -20000,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mrd__hild",
+          "sent": 20000,
+          "delivered": 40000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "hild",
+          "points": 40000,
+          "value_cents": 20000
+        }
+      ]
+    },
+    "rationale": "A 1:2 ratio doubles the point count and halves the value: 20,000 MRD (40000c of baseline) become 40,000 HILD worth 40000*500//1000 = 20000c. The stranded caveat's value is the *destination* valuation, so it reads 20000c, not the 40000c the points cost."
+  },
+  {
+    "id": "acc_26",
+    "group": "stranding",
+    "world": "small_d",
+    "opening": {
+      "mrd": 50000
+    },
+    "transfers": [
+      {
+        "edge_id": "mrd__hild",
+        "sent": 30000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "redeem_cash",
+        "program_id": "hild",
+        "offer_id": null,
+        "cashout_id": "hild_credit",
+        "points": 50000,
+        "fees_cents": 0,
+        "value_cents": 20000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 20000,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 55000,
+      "net_value_cents": -35000,
+      "realized_cpp_milli": 400,
+      "cash_received_cents": 20000,
+      "transfers": [
+        {
+          "edge_id": "mrd__hild",
+          "sent": 30000,
+          "delivered": 60000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "hild",
+          "points": 10000,
+          "value_cents": 5000
+        }
+      ]
+    },
+    "rationale": "hild_credit redeems in 1,000-point increments from 10,000, so 60,000 delivered HILD can all be redeemed - here only 50,000 are, leaving 10,000 stranded (5000c). cash received = 50000*400//1000 = 20000c; V(H0) = 100000c; H1 = 20,000 MRD (40000c) + 10,000 HILD (5000c) = 45000c."
+  },
+  {
+    "id": "acc_27",
+    "group": "stranding",
+    "world": "small_a",
+    "opening": {
+      "mb": 130000
+    },
+    "transfers": [
+      {
+        "edge_id": "mb__fb",
+        "sent": 129000
+      }
+    ],
+    "bookings": [],
+    "expected": {
+      "gross_value_cents": 0,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 34300,
+      "net_value_cents": -34300,
+      "realized_cpp_milli": null,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mb__fb",
+          "sent": 129000,
+          "delivered": 53000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "fb",
+          "points": 53000,
+          "value_cents": 68900
+        }
+      ]
+    },
+    "rationale": "Everything strands: delivered(129000) = 43000 + 10000 = 53000 miles with no booking to spend them on, worth 68900c against the 103200c of MB value given up (129000*800//1000). H1 = 1,000 MB (800c) + 53,000 FB (68900c) = 69700c."
+  },
+  {
+    "id": "acc_28",
+    "group": "stranding",
+    "world": "small_a",
+    "opening": {
+      "ur": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "ur__fb",
+        "sent": 62000
+      },
+      {
+        "edge_id": "ur__ac",
+        "sent": 72000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "fb",
+        "offer_id": "fb_bus_nyc_par",
+        "cashout_id": null,
+        "points": 60000,
+        "fees_cents": 25100,
+        "value_cents": 210000
+      },
+      {
+        "kind": "book_award",
+        "program_id": "ac",
+        "offer_id": "ac_bus_par_nyc",
+        "cashout_id": null,
+        "points": 70000,
+        "fees_cents": 12800,
+        "value_cents": 210000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 420000,
+      "cash_outlay_cents": 37900,
+      "points_cost_cents": 269100,
+      "net_value_cents": 113000,
+      "realized_cpp_milli": 2939,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "ur__fb",
+          "sent": 62000,
+          "delivered": 62000,
+          "fee_cents": 0
+        },
+        {
+          "edge_id": "ur__ac",
+          "sent": 72000,
+          "delivered": 72000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "ac",
+          "points": 2000,
+          "value_cents": 3000
+        },
+        {
+          "program": "fb",
+          "points": 2000,
+          "value_cents": 2600
+        }
+      ]
+    },
+    "rationale": "A cross-program round trip strands in two places: 2,000 FB (2600c) and 2,000 AC (3000c) - the same point count at different valuations. H1 = 66,000 UR (135300c) + 2,000 FB (2600c) + 2,000 AC (3000c) = 140900c; points_cost = 269100c; outlay = 25100 + 12800 = 37900c; net = 113000c; pooled cpp = (420000-37900)*1000//130000 = 2939."
+  },
+  {
+    "id": "acc_29",
+    "group": "stranding",
+    "world": "small_d",
+    "opening": {
+      "mrd": 30000
+    },
+    "transfers": [
+      {
+        "edge_id": "mrd__hild",
+        "sent": 30000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "redeem_cash",
+        "program_id": "hild",
+        "offer_id": null,
+        "cashout_id": "hild_credit",
+        "points": 54000,
+        "fees_cents": 0,
+        "value_cents": 21600
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 21600,
+      "cash_outlay_cents": 0,
+      "points_cost_cents": 57000,
+      "net_value_cents": -35400,
+      "realized_cpp_milli": 400,
+      "cash_received_cents": 21600,
+      "transfers": [
+        {
+          "edge_id": "mrd__hild",
+          "sent": 30000,
+          "delivered": 60000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "hild",
+          "points": 6000,
+          "value_cents": 3000
+        }
+      ]
+    },
+    "rationale": "Redeeming 54,000 of the 60,000 delivered HILD yields 21600c and strands 6,000 points (3000c). V(H0) = 60000c; H1 = 6,000 HILD = 3000c; points_cost = 57000c; net = -35400c; cpp = 21600*1000//54000 = 400, the option's own rate."
+  },
+  {
+    "id": "acc_30",
+    "group": "stranding",
+    "world": "small_c",
+    "opening": {
+      "mrx": 200000
+    },
+    "transfers": [
+      {
+        "edge_id": "mrx__mbx",
+        "sent": 141000
+      },
+      {
+        "edge_id": "mbx__alx",
+        "sent": 141000
+      }
+    ],
+    "bookings": [
+      {
+        "kind": "book_award",
+        "program_id": "alx",
+        "offer_id": "alx_bus_nyc_mia",
+        "cashout_id": null,
+        "points": 55000,
+        "fees_cents": 8000,
+        "value_cents": 150000
+      }
+    ],
+    "expected": {
+      "gross_value_cents": 150000,
+      "cash_outlay_cents": 8000,
+      "points_cost_cents": 279200,
+      "net_value_cents": -137200,
+      "realized_cpp_milli": 2581,
+      "cash_received_cents": null,
+      "transfers": [
+        {
+          "edge_id": "mrx__mbx",
+          "sent": 141000,
+          "delivered": 141000,
+          "fee_cents": 0
+        },
+        {
+          "edge_id": "mbx__alx",
+          "sent": 141000,
+          "delivered": 57000,
+          "fee_cents": 0
+        }
+      ],
+      "stranded": [
+        {
+          "program": "alx",
+          "points": 2000,
+          "value_cents": 2800
+        }
+      ]
+    },
+    "rationale": "A two-hop chain: 141,000 MRX -> 141,000 MBX -> delivered(141000) = 47000 + 5000*2 = 57000 ALX, of which 55,000 pay the award and 2,000 strand at 1,400 mcpp = 2800c. MBX ends at 0 so it raises no stranding caveat even though the plan transferred into it. V(H0) = 400000c; H1 = 59,000 MRX (118000c) + 2,000 ALX (2800c) = 120800c; points_cost = 279200c; net = 150000-8000-279200 = -137200c."
+  }
+]

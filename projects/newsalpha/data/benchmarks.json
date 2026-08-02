@@ -1,0 +1,4 @@
+{
+  "idx:CX": ["cx:BTC", "cx:ETH", "cx:SOL", "cx:XRP", "cx:ADA", "cx:AVAX", "cx:LINK", "cx:DOT"],
+  "idx:US": ["live_proxy: SPY"]
+}

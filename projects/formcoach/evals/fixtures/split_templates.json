@@ -1,0 +1,180 @@
+{
+  "note": "Hand-copied from SCOPE.md so M5 constraint 10 is checked against the eval's own table; a divergence between data/split_templates.json and this file is a failure, which is the intent.",
+  "day_to_split": {
+    "2": "full_body",
+    "3": "full_body",
+    "4": "upper_lower",
+    "5": "upper_lower_ppl",
+    "6": "ppl_x2"
+  },
+  "templates": [
+    {
+      "split": "full_body",
+      "days": [
+        2,
+        3
+      ],
+      "sessions": [
+        {
+          "name": "Full Body A",
+          "required_patterns": [
+            "squat",
+            "horizontal_push",
+            "horizontal_pull"
+          ]
+        },
+        {
+          "name": "Full Body B",
+          "required_patterns": [
+            "hinge",
+            "vertical_push",
+            "vertical_pull"
+          ]
+        },
+        {
+          "name": "Full Body C",
+          "required_patterns": [
+            "lunge",
+            "horizontal_push",
+            "vertical_pull"
+          ]
+        }
+      ]
+    },
+    {
+      "split": "upper_lower",
+      "days": [
+        4
+      ],
+      "sessions": [
+        {
+          "name": "Upper A",
+          "required_patterns": [
+            "horizontal_push",
+            "horizontal_pull",
+            "vertical_push"
+          ]
+        },
+        {
+          "name": "Lower A",
+          "required_patterns": [
+            "squat",
+            "hinge"
+          ]
+        },
+        {
+          "name": "Upper B",
+          "required_patterns": [
+            "vertical_push",
+            "vertical_pull",
+            "horizontal_pull"
+          ]
+        },
+        {
+          "name": "Lower B",
+          "required_patterns": [
+            "squat",
+            "hinge",
+            "lunge"
+          ]
+        }
+      ]
+    },
+    {
+      "split": "upper_lower_ppl",
+      "days": [
+        5
+      ],
+      "sessions": [
+        {
+          "name": "Upper",
+          "required_patterns": [
+            "horizontal_push",
+            "horizontal_pull",
+            "vertical_push"
+          ]
+        },
+        {
+          "name": "Lower",
+          "required_patterns": [
+            "squat",
+            "hinge"
+          ]
+        },
+        {
+          "name": "Push",
+          "required_patterns": [
+            "horizontal_push",
+            "vertical_push"
+          ]
+        },
+        {
+          "name": "Pull",
+          "required_patterns": [
+            "vertical_pull",
+            "horizontal_pull"
+          ]
+        },
+        {
+          "name": "Legs",
+          "required_patterns": [
+            "squat",
+            "hinge",
+            "lunge"
+          ]
+        }
+      ]
+    },
+    {
+      "split": "ppl_x2",
+      "days": [
+        6
+      ],
+      "sessions": [
+        {
+          "name": "Push A",
+          "required_patterns": [
+            "horizontal_push",
+            "vertical_push"
+          ]
+        },
+        {
+          "name": "Pull A",
+          "required_patterns": [
+            "vertical_pull",
+            "horizontal_pull"
+          ]
+        },
+        {
+          "name": "Legs A",
+          "required_patterns": [
+            "squat",
+            "hinge"
+          ]
+        },
+        {
+          "name": "Push B",
+          "required_patterns": [
+            "horizontal_push",
+            "vertical_push"
+          ]
+        },
+        {
+          "name": "Pull B",
+          "required_patterns": [
+            "horizontal_pull",
+            "vertical_pull"
+          ]
+        },
+        {
+          "name": "Legs B",
+          "required_patterns": [
+            "squat",
+            "hinge",
+            "lunge"
+          ]
+        }
+      ]
+    }
+  ]
+}

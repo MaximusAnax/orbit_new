@@ -1,0 +1,4965 @@
+{
+ "arrival_batches": {
+  "ev-deli-066-0": 4,
+  "ev-deli-067-0": 1,
+  "ev-deli-068-0": 2,
+  "ev-deli-068-1": 2,
+  "ev-deli-068-2": 2,
+  "ev-deli-069-0": 3,
+  "ev-deli-070-0": 0,
+  "ev-deli-070-1": 0,
+  "ev-deli-070-2": 0,
+  "ev-deli-071-0": 1,
+  "ev-deli-072-0": 2,
+  "ev-deli-073-0": 4,
+  "ev-deli-074-0": 0,
+  "ev-deli-074-1": 0,
+  "ev-deli-074-2": 0,
+  "ev-deli-075-0": 2,
+  "ev-deli-075-1": 2,
+  "ev-deli-076-0": 3,
+  "ev-earn-000-0": 0,
+  "ev-earn-000-1": 1,
+  "ev-earn-000-2": 1,
+  "ev-earn-001-0": 1,
+  "ev-earn-002-0": 2,
+  "ev-earn-003-0": 4,
+  "ev-earn-004-0": 0,
+  "ev-earn-004-1": 0,
+  "ev-earn-004-2": 0,
+  "ev-earn-005-0": 1,
+  "ev-earn-005-1": 1,
+  "ev-earn-006-0": 3,
+  "ev-earn-007-0": 4,
+  "ev-earn-008-0": 0,
+  "ev-earn-008-1": 0,
+  "ev-earn-008-2": 0,
+  "ev-earn-009-0": 2,
+  "ev-earn-010-0": 3,
+  "ev-earn-010-1": 3,
+  "ev-earn-010-2": 3,
+  "ev-earn-011-0": 4,
+  "ev-earn-012-0": 1,
+  "ev-earn-013-0": 2,
+  "ev-earn-014-0": 4,
+  "ev-earn-014-1": 4,
+  "ev-earn-014-2": 4,
+  "ev-earn-015-0": 0,
+  "ev-earn-015-1": 0,
+  "ev-earn-016-0": 1,
+  "ev-guid-017-0": 3,
+  "ev-guid-018-0": 4,
+  "ev-guid-018-1": 4,
+  "ev-guid-018-2": 4,
+  "ev-guid-019-0": 0,
+  "ev-guid-020-0": 2,
+  "ev-guid-020-1": 2,
+  "ev-guid-020-2": 2,
+  "ev-guid-021-0": 3,
+  "ev-guid-022-0": 4,
+  "ev-guid-023-0": 1,
+  "ev-guid-024-0": 2,
+  "ev-guid-024-1": 2,
+  "ev-guid-024-2": 2,
+  "ev-guid-025-0": 3,
+  "ev-guid-025-1": 4,
+  "ev-guid-026-0": 0,
+  "ev-guid-027-0": 1,
+  "ev-guid-028-0": 3,
+  "ev-guid-028-1": 3,
+  "ev-guid-028-2": 3,
+  "ev-guid-029-0": 4,
+  "ev-guid-030-0": 0,
+  "ev-guid-030-1": 0,
+  "ev-guid-030-2": 0,
+  "ev-hack-077-0": 4,
+  "ev-hack-078-0": 1,
+  "ev-hack-078-1": 1,
+  "ev-hack-078-2": 1,
+  "ev-hack-079-0": 2,
+  "ev-hack-080-0": 3,
+  "ev-hack-080-1": 3,
+  "ev-hack-080-2": 4,
+  "ev-hack-081-0": 0,
+  "ev-hack-082-0": 1,
+  "ev-hack-083-0": 2,
+  "ev-hack-084-0": 4,
+  "ev-hack-084-1": 4,
+  "ev-hack-084-2": 4,
+  "ev-hack-085-0": 0,
+  "ev-hack-085-1": 0,
+  "ev-hack-086-0": 1,
+  "ev-hack-087-0": 3,
+  "ev-hack-088-0": 4,
+  "ev-hack-088-1": 4,
+  "ev-hack-088-2": 4,
+  "ev-hack-089-0": 1,
+  "ev-list-056-0": 1,
+  "ev-list-057-0": 2,
+  "ev-list-058-0": 3,
+  "ev-list-058-1": 3,
+  "ev-list-058-2": 4,
+  "ev-list-059-0": 0,
+  "ev-list-060-0": 1,
+  "ev-list-060-1": 1,
+  "ev-list-060-2": 1,
+  "ev-list-061-0": 2,
+  "ev-list-062-0": 4,
+  "ev-list-063-0": 0,
+  "ev-list-064-0": 1,
+  "ev-list-064-1": 2,
+  "ev-list-064-2": 2,
+  "ev-list-065-0": 3,
+  "ev-list-065-1": 3,
+  "ev-mna-031-0": 2,
+  "ev-mna-032-0": 3,
+  "ev-mna-033-0": 4,
+  "ev-mna-034-0": 1,
+  "ev-mna-034-1": 1,
+  "ev-mna-034-2": 1,
+  "ev-mna-035-0": 2,
+  "ev-mna-035-1": 2,
+  "ev-mna-036-0": 3,
+  "ev-mna-037-0": 0,
+  "ev-mna-038-0": 1,
+  "ev-mna-038-1": 1,
+  "ev-mna-038-2": 1,
+  "ev-mna-039-0": 3,
+  "ev-mna-040-0": 4,
+  "ev-mna-040-1": 4,
+  "ev-mna-040-2": 4,
+  "ev-regu-041-0": 0,
+  "ev-regu-042-0": 2,
+  "ev-regu-043-0": 3,
+  "ev-regu-044-0": 4,
+  "ev-regu-044-1": 4,
+  "ev-regu-044-2": 4,
+  "ev-regu-045-0": 1,
+  "ev-regu-045-1": 1,
+  "ev-regu-046-0": 2,
+  "ev-regu-047-0": 3,
+  "ev-regu-048-0": 0,
+  "ev-regu-048-1": 0,
+  "ev-regu-048-2": 0,
+  "ev-regu-049-0": 1,
+  "ev-regu-050-0": 3,
+  "ev-regu-050-1": 3,
+  "ev-regu-050-2": 3,
+  "ev-regu-051-0": 4,
+  "ev-regu-052-0": 0,
+  "ev-regu-053-0": 2,
+  "ev-regu-054-0": 3,
+  "ev-regu-054-1": 3,
+  "ev-regu-054-2": 3,
+  "ev-regu-055-0": 4,
+  "ev-regu-055-1": 4,
+  "h-delist-venue-1": 1,
+  "h-earn-1": 3,
+  "h-hack-1": 2,
+  "h-list-caps-1": 2,
+  "h-list-venue-1": 0,
+  "h-list-venue-2": 1,
+  "h-list-venue-3": 1,
+  "h-mna-bid-1": 3,
+  "h-mna-denied-1": 3,
+  "h-mna-denied-2": 0,
+  "h-mna-denied-3": 1,
+  "h-mna-passive-1": 3,
+  "h-mna-rumor-1": 3,
+  "h-mna-sym-1": 1,
+  "h-mna-sym-2": 2,
+  "h-mna-sym-3": 2,
+  "h-mna-sym-4": 2,
+  "h-reg-caps-1": 2,
+  "ne-000": 0,
+  "ne-001": 1,
+  "ne-002": 2,
+  "ne-003": 3,
+  "ne-004": 4,
+  "ne-005": 0,
+  "ne-006": 1,
+  "ne-007": 2,
+  "ne-008": 3,
+  "ne-009": 4,
+  "ne-010": 0,
+  "ne-011": 1,
+  "ne-012": 2,
+  "ne-013": 3,
+  "ne-014": 4,
+  "ne-015": 0,
+  "ne-016": 0,
+  "ne-017": 1,
+  "ne-018": 2,
+  "ne-019": 3,
+  "ne-020": 4,
+  "ne-021": 0,
+  "ne-022": 1,
+  "ne-023": 2,
+  "ne-024": 3,
+  "ne-025": 4,
+  "ne-026": 0,
+  "ne-027": 1,
+  "ne-028": 2,
+  "ne-029": 3,
+  "t-aapl-1": 4,
+  "t-ape-1": 4,
+  "t-apple-1": 0,
+  "t-caps-1": 2,
+  "t-caps-2": 2,
+  "t-caps-3": 2,
+  "t-caps-4": 2,
+  "t-caps-5": 3,
+  "t-coin-1": 2,
+  "t-icp-1": 3,
+  "t-icp-2": 3,
+  "t-lower-1": 1,
+  "t-meta-1": 4,
+  "t-metaphor-1": 1,
+  "t-metaphor-2": 1,
+  "t-metaphor-3": 1,
+  "t-near-1": 0,
+  "t-near-ape-1": 4,
+  "t-near-link-1": 3,
+  "t-one-1": 1,
+  "t-quoted-1": 3,
+  "t-shell-1": 4
+ },
+ "as_of": "2026-05-08T07:00:00Z",
+ "asset_kinds": {
+  "cx:AAVE": "crypto",
+  "cx:ADA": "crypto",
+  "cx:ALGO": "crypto",
+  "cx:APE": "crypto",
+  "cx:APT": "crypto",
+  "cx:ARB": "crypto",
+  "cx:ATOM": "crypto",
+  "cx:AVAX": "crypto",
+  "cx:AXS": "crypto",
+  "cx:BCH": "crypto",
+  "cx:BTC": "crypto",
+  "cx:CHZ": "crypto",
+  "cx:CRV": "crypto",
+  "cx:DOGE": "crypto",
+  "cx:DOT": "crypto",
+  "cx:EGLD": "crypto",
+  "cx:EOS": "crypto",
+  "cx:ETC": "crypto",
+  "cx:ETH": "crypto",
+  "cx:FIL": "crypto",
+  "cx:FLOW": "crypto",
+  "cx:FTM": "crypto",
+  "cx:GRT": "crypto",
+  "cx:HBAR": "crypto",
+  "cx:ICP": "crypto",
+  "cx:INJ": "crypto",
+  "cx:LINK": "crypto",
+  "cx:LTC": "crypto",
+  "cx:MANA": "crypto",
+  "cx:MATIC": "crypto",
+  "cx:MKR": "crypto",
+  "cx:NEAR": "crypto",
+  "cx:ONE": "crypto",
+  "cx:PEPE": "crypto",
+  "cx:QNT": "crypto",
+  "cx:RUNE": "crypto",
+  "cx:SAND": "crypto",
+  "cx:SEI": "crypto",
+  "cx:SHIB": "crypto",
+  "cx:SOL": "crypto",
+  "cx:SUI": "crypto",
+  "cx:THETA": "crypto",
+  "cx:TON": "crypto",
+  "cx:TRX": "crypto",
+  "cx:UNI": "crypto",
+  "cx:USDC": "crypto",
+  "cx:USDT": "crypto",
+  "eq:AAPL": "equity",
+  "eq:ABBV": "equity",
+  "eq:ABNB": "equity",
+  "eq:ABT": "equity",
+  "eq:ACN": "equity",
+  "eq:ADBE": "equity",
+  "eq:ADI": "equity",
+  "eq:ADP": "equity",
+  "eq:ALL": "equity",
+  "eq:AMAT": "equity",
+  "eq:AMD": "equity",
+  "eq:AMGN": "equity",
+  "eq:AMZN": "equity",
+  "eq:AON": "equity",
+  "eq:APD": "equity",
+  "eq:ARM": "equity",
+  "eq:ASML": "equity",
+  "eq:AVGO": "equity",
+  "eq:BA": "equity",
+  "eq:BAC": "equity",
+  "eq:BKNG": "equity",
+  "eq:BLK": "equity",
+  "eq:BMY": "equity",
+  "eq:BNTX": "equity",
+  "eq:BP": "equity",
+  "eq:BRK.B": "equity",
+  "eq:BSX": "equity",
+  "eq:CB": "equity",
+  "eq:CDNS": "equity",
+  "eq:CHTR": "equity",
+  "eq:CI": "equity",
+  "eq:CMCSA": "equity",
+  "eq:CME": "equity",
+  "eq:COIN": "equity",
+  "eq:COST": "equity",
+  "eq:CRM": "equity",
+  "eq:CRWD": "equity",
+  "eq:CSCO": "equity",
+  "eq:CVS": "equity",
+  "eq:CVX": "equity",
+  "eq:DAL": "equity",
+  "eq:DASH": "equity",
+  "eq:DDOG": "equity",
+  "eq:DE": "equity",
+  "eq:DELL": "equity",
+  "eq:DHR": "equity",
+  "eq:DIS": "equity",
+  "eq:DUK": "equity",
+  "eq:EA": "equity",
+  "eq:ELV": "equity",
+  "eq:EOG": "equity",
+  "eq:EQIX": "equity",
+  "eq:F": "equity",
+  "eq:FI": "equity",
+  "eq:GE": "equity",
+  "eq:GILD": "equity",
+  "eq:GM": "equity",
+  "eq:GOOGL": "equity",
+  "eq:GS": "equity",
+  "eq:HD": "equity",
+  "eq:HLT": "equity",
+  "eq:HON": "equity",
+  "eq:HOOD": "equity",
+  "eq:HPQ": "equity",
+  "eq:IBM": "equity",
+  "eq:ICE": "equity",
+  "eq:INTC": "equity",
+  "eq:INTU": "equity",
+  "eq:ISRG": "equity",
+  "eq:ITW": "equity",
+  "eq:JNJ": "equity",
+  "eq:JPM": "equity",
+  "eq:KEY": "equity",
+  "eq:KLAC": "equity",
+  "eq:KO": "equity",
+  "eq:LCID": "equity",
+  "eq:LIN": "equity",
+  "eq:LLY": "equity",
+  "eq:LOW": "equity",
+  "eq:LRCX": "equity",
+  "eq:LYFT": "equity",
+  "eq:MA": "equity",
+  "eq:MAR": "equity",
+  "eq:MCD": "equity",
+  "eq:MCK": "equity",
+  "eq:MDLZ": "equity",
+  "eq:MDT": "equity",
+  "eq:META": "equity",
+  "eq:MMC": "equity",
+  "eq:MO": "equity",
+  "eq:MRK": "equity",
+  "eq:MRNA": "equity",
+  "eq:MSFT": "equity",
+  "eq:MSTR": "equity",
+  "eq:MU": "equity",
+  "eq:NDAQ": "equity",
+  "eq:NEE": "equity",
+  "eq:NET": "equity",
+  "eq:NFLX": "equity",
+  "eq:NKE": "equity",
+  "eq:NOW": "equity",
+  "eq:NVDA": "equity",
+  "eq:OKTA": "equity",
+  "eq:ORCL": "equity",
+  "eq:PANW": "equity",
+  "eq:PARA": "equity",
+  "eq:PEP": "equity",
+  "eq:PFE": "equity",
+  "eq:PG": "equity",
+  "eq:PGR": "equity",
+  "eq:PLD": "equity",
+  "eq:PLTR": "equity",
+  "eq:PM": "equity",
+  "eq:SCHW": "equity",
+  "eq:SHEL": "equity",
+  "eq:SNOW": "equity",
+  "eq:TJX": "equity",
+  "eq:TTWO": "equity",
+  "eq:UAL": "equity",
+  "eq:UBER": "equity",
+  "eq:V": "equity",
+  "eq:ZS": "equity"
+ },
+ "assets_used": [
+  "cx:AAVE",
+  "cx:ADA",
+  "cx:ALGO",
+  "cx:APE",
+  "cx:APT",
+  "cx:ARB",
+  "cx:ATOM",
+  "cx:AVAX",
+  "cx:AXS",
+  "cx:BCH",
+  "cx:BTC",
+  "cx:CHZ",
+  "cx:CRV",
+  "cx:DOGE",
+  "cx:DOT",
+  "cx:EGLD",
+  "cx:EOS",
+  "cx:ETC",
+  "cx:ETH",
+  "cx:FIL",
+  "cx:FLOW",
+  "cx:FTM",
+  "cx:GRT",
+  "cx:HBAR",
+  "cx:ICP",
+  "cx:INJ",
+  "cx:LINK",
+  "cx:LTC",
+  "cx:MANA",
+  "cx:MATIC",
+  "cx:MKR",
+  "cx:NEAR",
+  "cx:ONE",
+  "cx:PEPE",
+  "cx:QNT",
+  "cx:RUNE",
+  "cx:SAND",
+  "cx:SEI",
+  "cx:SHIB",
+  "cx:SOL",
+  "cx:SUI",
+  "cx:THETA",
+  "cx:TON",
+  "cx:TRX",
+  "cx:UNI",
+  "cx:USDC",
+  "cx:USDT",
+  "eq:AAPL",
+  "eq:ABBV",
+  "eq:ABNB",
+  "eq:ABT",
+  "eq:ACN",
+  "eq:ADBE",
+  "eq:ADI",
+  "eq:ADP",
+  "eq:ALL",
+  "eq:AMAT",
+  "eq:AMD",
+  "eq:AMGN",
+  "eq:AMZN",
+  "eq:AON",
+  "eq:APD",
+  "eq:ARM",
+  "eq:ASML",
+  "eq:AVGO",
+  "eq:BA",
+  "eq:BAC",
+  "eq:BKNG",
+  "eq:BLK",
+  "eq:BMY",
+  "eq:BNTX",
+  "eq:BP",
+  "eq:BRK.B",
+  "eq:BSX",
+  "eq:CB",
+  "eq:CDNS",
+  "eq:CHTR",
+  "eq:CI",
+  "eq:CMCSA",
+  "eq:CME",
+  "eq:COIN",
+  "eq:COST",
+  "eq:CRM",
+  "eq:CRWD",
+  "eq:CSCO",
+  "eq:CVS",
+  "eq:CVX",
+  "eq:DAL",
+  "eq:DASH",
+  "eq:DDOG",
+  "eq:DE",
+  "eq:DELL",
+  "eq:DHR",
+  "eq:DIS",
+  "eq:DUK",
+  "eq:EA",
+  "eq:ELV",
+  "eq:EOG",
+  "eq:EQIX",
+  "eq:F",
+  "eq:FI",
+  "eq:GE",
+  "eq:GILD",
+  "eq:GM",
+  "eq:GOOGL",
+  "eq:GS",
+  "eq:HD",
+  "eq:HLT",
+  "eq:HON",
+  "eq:HOOD",
+  "eq:HPQ",
+  "eq:IBM",
+  "eq:ICE",
+  "eq:INTC",
+  "eq:INTU",
+  "eq:ISRG",
+  "eq:ITW",
+  "eq:JNJ",
+  "eq:JPM",
+  "eq:KEY",
+  "eq:KLAC",
+  "eq:KO",
+  "eq:LCID",
+  "eq:LIN",
+  "eq:LLY",
+  "eq:LOW",
+  "eq:LRCX",
+  "eq:LYFT",
+  "eq:MA",
+  "eq:MAR",
+  "eq:MCD",
+  "eq:MCK",
+  "eq:MDLZ",
+  "eq:MDT",
+  "eq:META",
+  "eq:MMC",
+  "eq:MO",
+  "eq:MRK",
+  "eq:MRNA",
+  "eq:MSFT",
+  "eq:MSTR",
+  "eq:MU",
+  "eq:NDAQ",
+  "eq:NEE",
+  "eq:NET",
+  "eq:NFLX",
+  "eq:NKE",
+  "eq:NOW",
+  "eq:NVDA",
+  "eq:OKTA",
+  "eq:ORCL",
+  "eq:PANW",
+  "eq:PARA",
+  "eq:PEP",
+  "eq:PFE",
+  "eq:PG",
+  "eq:PGR",
+  "eq:PLD",
+  "eq:PLTR",
+  "eq:PM",
+  "eq:SCHW",
+  "eq:SHEL",
+  "eq:SNOW",
+  "eq:TJX",
+  "eq:TTWO",
+  "eq:UAL",
+  "eq:UBER",
+  "eq:V",
+  "eq:ZS"
+ ],
+ "counts": {
+  "articles": 223,
+  "events": 108,
+  "events_by_family": {
+   "dev": 32,
+   "val": 76
+  },
+  "events_by_type": {
+   "delisting": 12,
+   "earnings_surprise": 18,
+   "guidance_change": 14,
+   "hack_exploit": 14,
+   "listing": 14,
+   "mna": 20,
+   "regulatory_action": 16
+  },
+  "role_abstention": 4,
+  "role_decisions": 40,
+  "role_mna": 28,
+  "role_venue": 8,
+  "trap_link": 22,
+  "trap_mentions": 50,
+  "trap_no_link": 28
+ },
+ "day_zero": "2026-01-01",
+ "disjointness": {
+  "dev_trigger_ngrams": 97,
+  "inter_max": 0.3028,
+  "intra_min": 0.8219,
+  "shared_trigger_ngrams": 0,
+  "val_trigger_ngrams": 270
+ },
+ "events": [
+  {
+   "article_external_ids": [
+    "ev-earn-000-0",
+    "ev-earn-000-1",
+    "ev-earn-000-2"
+   ],
+   "attributes": {
+    "polarity": "beat",
+    "surprise_pct": 2.0
+   },
+   "event_date": "2026-04-11",
+   "event_type": "earnings_surprise",
+   "family": "dev",
+   "key": "ev-earn-000",
+   "links": [
+    {
+     "asset_id": "eq:ABBV",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-11T19:00:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-001-0"
+   ],
+   "attributes": {
+    "polarity": "beat"
+   },
+   "event_date": "2026-04-18",
+   "event_type": "earnings_surprise",
+   "family": "dev",
+   "key": "ev-earn-001",
+   "links": [
+    {
+     "asset_id": "eq:ABNB",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-18T09:07:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-002-0"
+   ],
+   "attributes": {
+    "polarity": "beat",
+    "surprise_pct": 8.4
+   },
+   "event_date": "2026-04-25",
+   "event_type": "earnings_surprise",
+   "family": "dev",
+   "key": "ev-earn-002",
+   "links": [
+    {
+     "asset_id": "eq:ABT",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-25T09:14:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-003-0"
+   ],
+   "attributes": {
+    "polarity": "beat"
+   },
+   "event_date": "2026-05-02",
+   "event_type": "earnings_surprise",
+   "family": "dev",
+   "key": "ev-earn-003",
+   "links": [
+    {
+     "asset_id": "eq:ACN",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-02T09:21:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-004-0",
+    "ev-earn-004-1",
+    "ev-earn-004-2"
+   ],
+   "attributes": {
+    "polarity": "miss",
+    "surprise_pct": 5.8
+   },
+   "event_date": "2026-04-13",
+   "event_type": "earnings_surprise",
+   "family": "dev",
+   "key": "ev-earn-004",
+   "links": [
+    {
+     "asset_id": "eq:ADI",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-13T19:28:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-005-0",
+    "ev-earn-005-1"
+   ],
+   "attributes": {
+    "polarity": "miss",
+    "surprise_pct": 8.5
+   },
+   "event_date": "2026-04-20",
+   "event_type": "earnings_surprise",
+   "family": "dev",
+   "key": "ev-earn-005",
+   "links": [
+    {
+     "asset_id": "eq:ADP",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-20T13:35:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-006-0"
+   ],
+   "attributes": {
+    "polarity": "beat"
+   },
+   "event_date": "2026-04-27",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-006",
+   "links": [
+    {
+     "asset_id": "eq:AMAT",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-27T09:42:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-007-0"
+   ],
+   "attributes": {
+    "polarity": "beat"
+   },
+   "event_date": "2026-05-04",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-007",
+   "links": [
+    {
+     "asset_id": "eq:AMD",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-04T09:49:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-008-0",
+    "ev-earn-008-1",
+    "ev-earn-008-2"
+   ],
+   "attributes": {
+    "polarity": "beat",
+    "surprise_pct": 8.6
+   },
+   "event_date": "2026-04-15",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-008",
+   "links": [
+    {
+     "asset_id": "eq:AMGN",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-15T19:56:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-009-0"
+   ],
+   "attributes": {
+    "polarity": "beat",
+    "surprise_pct": 2.3
+   },
+   "event_date": "2026-04-22",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-009",
+   "links": [
+    {
+     "asset_id": "eq:AMZN",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-22T09:03:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-010-0",
+    "ev-earn-010-1",
+    "ev-earn-010-2"
+   ],
+   "attributes": {
+    "polarity": "beat",
+    "surprise_pct": 5.0
+   },
+   "event_date": "2026-04-29",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-010",
+   "links": [
+    {
+     "asset_id": "eq:AON",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-29T19:10:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-011-0"
+   ],
+   "attributes": {
+    "polarity": "beat"
+   },
+   "event_date": "2026-05-06",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-011",
+   "links": [
+    {
+     "asset_id": "eq:APD",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-06T09:17:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-012-0"
+   ],
+   "attributes": {
+    "polarity": "miss",
+    "surprise_pct": 2.4
+   },
+   "event_date": "2026-04-17",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-012",
+   "links": [
+    {
+     "asset_id": "eq:ASML",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-17T09:24:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-013-0"
+   ],
+   "attributes": {
+    "polarity": "miss"
+   },
+   "event_date": "2026-04-25",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-013",
+   "links": [
+    {
+     "asset_id": "eq:AVGO",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-25T09:31:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-014-0",
+    "ev-earn-014-1",
+    "ev-earn-014-2"
+   ],
+   "attributes": {
+    "polarity": "miss",
+    "surprise_pct": 8.8
+   },
+   "event_date": "2026-05-02",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-014",
+   "links": [
+    {
+     "asset_id": "eq:BA",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-02T19:38:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-015-0",
+    "ev-earn-015-1"
+   ],
+   "attributes": {
+    "polarity": "miss",
+    "surprise_pct": 2.5
+   },
+   "event_date": "2026-04-13",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-015",
+   "links": [
+    {
+     "asset_id": "eq:BAC",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-13T13:45:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-earn-016-0"
+   ],
+   "attributes": {
+    "polarity": "miss"
+   },
+   "event_date": "2026-04-20",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "ev-earn-016",
+   "links": [
+    {
+     "asset_id": "eq:BKNG",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-20T09:52:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-017-0"
+   ],
+   "attributes": {
+    "polarity": "raise"
+   },
+   "event_date": "2026-04-27",
+   "event_type": "guidance_change",
+   "family": "dev",
+   "key": "ev-guid-017",
+   "links": [
+    {
+     "asset_id": "eq:BLK",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-27T09:59:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-018-0",
+    "ev-guid-018-1",
+    "ev-guid-018-2"
+   ],
+   "attributes": {
+    "polarity": "raise"
+   },
+   "event_date": "2026-05-04",
+   "event_type": "guidance_change",
+   "family": "dev",
+   "key": "ev-guid-018",
+   "links": [
+    {
+     "asset_id": "eq:BMY",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-04T19:06:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-019-0"
+   ],
+   "attributes": {
+    "polarity": "raise"
+   },
+   "event_date": "2026-04-15",
+   "event_type": "guidance_change",
+   "family": "dev",
+   "key": "ev-guid-019",
+   "links": [
+    {
+     "asset_id": "eq:BNTX",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-15T09:13:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-020-0",
+    "ev-guid-020-1",
+    "ev-guid-020-2"
+   ],
+   "attributes": {
+    "polarity": "cut"
+   },
+   "event_date": "2026-04-22",
+   "event_type": "guidance_change",
+   "family": "dev",
+   "key": "ev-guid-020",
+   "links": [
+    {
+     "asset_id": "eq:BP",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-22T19:20:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-021-0"
+   ],
+   "attributes": {
+    "polarity": "withdraw"
+   },
+   "event_date": "2026-04-29",
+   "event_type": "guidance_change",
+   "family": "dev",
+   "key": "ev-guid-021",
+   "links": [
+    {
+     "asset_id": "eq:BRK.B",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-29T09:27:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-022-0"
+   ],
+   "attributes": {
+    "polarity": "raise"
+   },
+   "event_date": "2026-05-06",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-022",
+   "links": [
+    {
+     "asset_id": "eq:BSX",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-06T09:34:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-023-0"
+   ],
+   "attributes": {
+    "polarity": "raise"
+   },
+   "event_date": "2026-04-17",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-023",
+   "links": [
+    {
+     "asset_id": "eq:CB",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-17T09:41:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-024-0",
+    "ev-guid-024-1",
+    "ev-guid-024-2"
+   ],
+   "attributes": {
+    "polarity": "raise"
+   },
+   "event_date": "2026-04-24",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-024",
+   "links": [
+    {
+     "asset_id": "eq:CDNS",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-24T19:48:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-025-0",
+    "ev-guid-025-1"
+   ],
+   "attributes": {
+    "polarity": "raise"
+   },
+   "event_date": "2026-05-01",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-025",
+   "links": [
+    {
+     "asset_id": "eq:CHTR",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-01T13:55:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-026-0"
+   ],
+   "attributes": {
+    "polarity": "cut"
+   },
+   "event_date": "2026-04-13",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-026",
+   "links": [
+    {
+     "asset_id": "eq:CI",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-13T09:02:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-027-0"
+   ],
+   "attributes": {
+    "polarity": "cut"
+   },
+   "event_date": "2026-04-20",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-027",
+   "links": [
+    {
+     "asset_id": "eq:CMCSA",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-20T09:09:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-028-0",
+    "ev-guid-028-1",
+    "ev-guid-028-2"
+   ],
+   "attributes": {
+    "polarity": "cut"
+   },
+   "event_date": "2026-04-27",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-028",
+   "links": [
+    {
+     "asset_id": "eq:CME",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-27T19:16:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-029-0"
+   ],
+   "attributes": {
+    "polarity": "cut"
+   },
+   "event_date": "2026-05-04",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-029",
+   "links": [
+    {
+     "asset_id": "eq:COST",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-04T09:23:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-guid-030-0",
+    "ev-guid-030-1",
+    "ev-guid-030-2"
+   ],
+   "attributes": {
+    "polarity": "withdraw"
+   },
+   "event_date": "2026-04-15",
+   "event_type": "guidance_change",
+   "family": "val",
+   "key": "ev-guid-030",
+   "links": [
+    {
+     "asset_id": "eq:CRWD",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-15T19:30:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-031-0"
+   ],
+   "attributes": {
+    "deal_value_usd": 530000000.0
+   },
+   "event_date": "2026-04-22",
+   "event_type": "mna",
+   "family": "dev",
+   "key": "ev-mna-031",
+   "links": [
+    {
+     "asset_id": "eq:CSCO",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:CVS",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-22T09:37:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-032-0"
+   ],
+   "attributes": {
+    "deal_value_usd": 640000000.0,
+    "premium_pct": 22.0
+   },
+   "event_date": "2026-04-29",
+   "event_type": "mna",
+   "family": "dev",
+   "key": "ev-mna-032",
+   "links": [
+    {
+     "asset_id": "eq:CVX",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:DASH",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-29T09:44:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-033-0"
+   ],
+   "attributes": {
+    "deal_value_usd": 750000000.0
+   },
+   "event_date": "2026-05-06",
+   "event_type": "mna",
+   "family": "val",
+   "key": "ev-mna-033",
+   "links": [
+    {
+     "asset_id": "eq:DE",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:DELL",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-05-06T09:51:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-034-0",
+    "ev-mna-034-1",
+    "ev-mna-034-2"
+   ],
+   "attributes": {
+    "deal_value_usd": 860000000.0,
+    "premium_pct": 24.0
+   },
+   "event_date": "2026-04-17",
+   "event_type": "mna",
+   "family": "val",
+   "key": "ev-mna-034",
+   "links": [
+    {
+     "asset_id": "eq:DHR",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:DIS",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-17T19:58:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-035-0",
+    "ev-mna-035-1"
+   ],
+   "attributes": {
+    "deal_value_usd": 900000000.0,
+    "premium_pct": 25.0
+   },
+   "event_date": "2026-04-24",
+   "event_type": "mna",
+   "family": "val",
+   "key": "ev-mna-035",
+   "links": [
+    {
+     "asset_id": "eq:DUK",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:ELV",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-24T13:05:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-036-0"
+   ],
+   "attributes": {
+    "deal_value_usd": 110000000.0
+   },
+   "event_date": "2026-05-01",
+   "event_type": "mna",
+   "family": "val",
+   "key": "ev-mna-036",
+   "links": [
+    {
+     "asset_id": "eq:EOG",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:EQIX",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-05-01T09:12:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-037-0"
+   ],
+   "attributes": {
+    "deal_value_usd": 220000000.0
+   },
+   "event_date": "2026-04-12",
+   "event_type": "mna",
+   "family": "val",
+   "key": "ev-mna-037",
+   "links": [
+    {
+     "asset_id": "eq:F",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:FI",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-12T09:19:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-038-0",
+    "ev-mna-038-1",
+    "ev-mna-038-2"
+   ],
+   "attributes": {
+    "deal_value_usd": 330000000.0,
+    "premium_pct": 28.0
+   },
+   "event_date": "2026-04-19",
+   "event_type": "mna",
+   "family": "val",
+   "key": "ev-mna-038",
+   "links": [
+    {
+     "asset_id": "eq:GE",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:GILD",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-19T19:26:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "rumored",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-039-0"
+   ],
+   "attributes": {
+    "deal_value_usd": 440000000.0,
+    "premium_pct": 29.0
+   },
+   "event_date": "2026-04-27",
+   "event_type": "mna",
+   "family": "val",
+   "key": "ev-mna-039",
+   "links": [
+    {
+     "asset_id": "eq:GM",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:GOOGL",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-27T09:33:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "rumored",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-mna-040-0",
+    "ev-mna-040-1",
+    "ev-mna-040-2"
+   ],
+   "attributes": {
+    "deal_value_usd": 550000000.0,
+    "premium_pct": 30.0
+   },
+   "event_date": "2026-05-04",
+   "event_type": "mna",
+   "family": "val",
+   "key": "ev-mna-040",
+   "links": [
+    {
+     "asset_id": "eq:HD",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:HON",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-05-04T19:40:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "rumored",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-041-0"
+   ],
+   "attributes": {
+    "agency": "FTC",
+    "polarity": "adverse"
+   },
+   "event_date": "2026-04-15",
+   "event_type": "regulatory_action",
+   "family": "dev",
+   "key": "ev-regu-041",
+   "links": [
+    {
+     "asset_id": "eq:HOOD",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-15T09:47:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-042-0"
+   ],
+   "attributes": {
+    "agency": "FTC",
+    "amount_usd": 700000000.0,
+    "polarity": "adverse"
+   },
+   "event_date": "2026-04-22",
+   "event_type": "regulatory_action",
+   "family": "dev",
+   "key": "ev-regu-042",
+   "links": [
+    {
+     "asset_id": "cx:AAVE",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-22T09:54:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-043-0"
+   ],
+   "attributes": {
+    "agency": "SEC",
+    "polarity": "adverse"
+   },
+   "event_date": "2026-04-29",
+   "event_type": "regulatory_action",
+   "family": "dev",
+   "key": "ev-regu-043",
+   "links": [
+    {
+     "asset_id": "eq:HPQ",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-29T09:01:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-044-0",
+    "ev-regu-044-1",
+    "ev-regu-044-2"
+   ],
+   "attributes": {
+    "agency": "FDA",
+    "polarity": "favorable"
+   },
+   "event_date": "2026-05-06",
+   "event_type": "regulatory_action",
+   "family": "dev",
+   "key": "ev-regu-044",
+   "links": [
+    {
+     "asset_id": "eq:IBM",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-06T19:08:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-045-0",
+    "ev-regu-045-1"
+   ],
+   "attributes": {
+    "agency": "SEC",
+    "polarity": "favorable"
+   },
+   "event_date": "2026-04-17",
+   "event_type": "regulatory_action",
+   "family": "dev",
+   "key": "ev-regu-045",
+   "links": [
+    {
+     "asset_id": "cx:ADA",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-17T13:15:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-046-0"
+   ],
+   "attributes": {
+    "agency": "FDA",
+    "polarity": "adverse"
+   },
+   "event_date": "2026-04-24",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-046",
+   "links": [
+    {
+     "asset_id": "cx:ALGO",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-24T09:22:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-047-0"
+   ],
+   "attributes": {
+    "agency": "FDA",
+    "polarity": "adverse"
+   },
+   "event_date": "2026-05-01",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-047",
+   "links": [
+    {
+     "asset_id": "eq:INTC",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-01T09:29:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-048-0",
+    "ev-regu-048-1",
+    "ev-regu-048-2"
+   ],
+   "attributes": {
+    "agency": "FDA",
+    "amount_usd": 460000000.0,
+    "polarity": "adverse"
+   },
+   "event_date": "2026-04-12",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-048",
+   "links": [
+    {
+     "asset_id": "cx:APT",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-12T19:36:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-049-0"
+   ],
+   "attributes": {
+    "agency": "FDA",
+    "amount_usd": 500000000.0,
+    "polarity": "adverse"
+   },
+   "event_date": "2026-04-19",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-049",
+   "links": [
+    {
+     "asset_id": "eq:INTU",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-19T09:43:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-050-0",
+    "ev-regu-050-1",
+    "ev-regu-050-2"
+   ],
+   "attributes": {
+    "agency": "FTC",
+    "amount_usd": 610000000.0,
+    "polarity": "adverse"
+   },
+   "event_date": "2026-04-26",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-050",
+   "links": [
+    {
+     "asset_id": "cx:ATOM",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-26T19:50:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-051-0"
+   ],
+   "attributes": {
+    "agency": "FTC",
+    "polarity": "favorable"
+   },
+   "event_date": "2026-05-03",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-051",
+   "links": [
+    {
+     "asset_id": "eq:ISRG",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-03T09:57:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-052-0"
+   ],
+   "attributes": {
+    "agency": "FTC",
+    "polarity": "favorable"
+   },
+   "event_date": "2026-04-15",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-052",
+   "links": [
+    {
+     "asset_id": "cx:AVAX",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-15T09:04:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-053-0"
+   ],
+   "attributes": {
+    "agency": "DOJ",
+    "polarity": "favorable"
+   },
+   "event_date": "2026-04-22",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-053",
+   "links": [
+    {
+     "asset_id": "eq:ITW",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-22T09:11:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-054-0",
+    "ev-regu-054-1",
+    "ev-regu-054-2"
+   ],
+   "attributes": {
+    "agency": "FDA",
+    "polarity": "favorable"
+   },
+   "event_date": "2026-04-29",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-054",
+   "links": [
+    {
+     "asset_id": "cx:AXS",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-29T19:18:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-regu-055-0",
+    "ev-regu-055-1"
+   ],
+   "attributes": {
+    "agency": "SEC",
+    "polarity": "favorable"
+   },
+   "event_date": "2026-05-06",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "ev-regu-055",
+   "links": [
+    {
+     "asset_id": "eq:JNJ",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-06T13:25:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-056-0"
+   ],
+   "attributes": {
+    "venue": "OKX"
+   },
+   "event_date": "2026-04-17",
+   "event_type": "listing",
+   "family": "dev",
+   "key": "ev-list-056",
+   "links": [
+    {
+     "asset_id": "cx:BCH",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-17T09:32:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-057-0"
+   ],
+   "attributes": {
+    "venue": "Bybit"
+   },
+   "event_date": "2026-04-24",
+   "event_type": "listing",
+   "family": "dev",
+   "key": "ev-list-057",
+   "links": [
+    {
+     "asset_id": "cx:BTC",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-24T09:39:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-058-0",
+    "ev-list-058-1",
+    "ev-list-058-2"
+   ],
+   "attributes": {
+    "venue": "Bitstamp"
+   },
+   "event_date": "2026-05-01",
+   "event_type": "listing",
+   "family": "dev",
+   "key": "ev-list-058",
+   "links": [
+    {
+     "asset_id": "cx:CHZ",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-01T19:46:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-059-0"
+   ],
+   "attributes": {
+    "venue": "Gemini"
+   },
+   "event_date": "2026-04-12",
+   "event_type": "listing",
+   "family": "dev",
+   "key": "ev-list-059",
+   "links": [
+    {
+     "asset_id": "cx:CRV",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-12T09:53:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-060-0",
+    "ev-list-060-1",
+    "ev-list-060-2"
+   ],
+   "attributes": {
+    "venue": "Binance"
+   },
+   "event_date": "2026-04-19",
+   "event_type": "listing",
+   "family": "dev",
+   "key": "ev-list-060",
+   "links": [
+    {
+     "asset_id": "cx:DOGE",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-19T19:00:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-061-0"
+   ],
+   "attributes": {
+    "venue": "Kraken"
+   },
+   "event_date": "2026-04-26",
+   "event_type": "listing",
+   "family": "val",
+   "key": "ev-list-061",
+   "links": [
+    {
+     "asset_id": "cx:DOT",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-26T09:07:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-062-0"
+   ],
+   "attributes": {
+    "venue": "OKX"
+   },
+   "event_date": "2026-05-03",
+   "event_type": "listing",
+   "family": "val",
+   "key": "ev-list-062",
+   "links": [
+    {
+     "asset_id": "cx:EGLD",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-03T09:14:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-063-0"
+   ],
+   "attributes": {
+    "venue": "S&P 500"
+   },
+   "event_date": "2026-04-14",
+   "event_type": "listing",
+   "family": "val",
+   "key": "ev-list-063",
+   "links": [
+    {
+     "asset_id": "eq:JPM",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-14T09:21:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-064-0",
+    "ev-list-064-1",
+    "ev-list-064-2"
+   ],
+   "attributes": {
+    "venue": "S&P 500"
+   },
+   "event_date": "2026-04-21",
+   "event_type": "listing",
+   "family": "val",
+   "key": "ev-list-064",
+   "links": [
+    {
+     "asset_id": "eq:KLAC",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-21T19:28:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-list-065-0",
+    "ev-list-065-1"
+   ],
+   "attributes": {
+    "venue": "S&P 500"
+   },
+   "event_date": "2026-04-29",
+   "event_type": "listing",
+   "family": "val",
+   "key": "ev-list-065",
+   "links": [
+    {
+     "asset_id": "eq:KO",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-29T13:35:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-066-0"
+   ],
+   "attributes": {
+    "venue": "Binance"
+   },
+   "event_date": "2026-05-06",
+   "event_type": "delisting",
+   "family": "dev",
+   "key": "ev-deli-066",
+   "links": [
+    {
+     "asset_id": "cx:EOS",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-06T09:42:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-067-0"
+   ],
+   "attributes": {
+    "venue": "Kraken"
+   },
+   "event_date": "2026-04-17",
+   "event_type": "delisting",
+   "family": "dev",
+   "key": "ev-deli-067",
+   "links": [
+    {
+     "asset_id": "cx:ETC",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-17T09:49:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-068-0",
+    "ev-deli-068-1",
+    "ev-deli-068-2"
+   ],
+   "attributes": {
+    "venue": "OKX"
+   },
+   "event_date": "2026-04-24",
+   "event_type": "delisting",
+   "family": "dev",
+   "key": "ev-deli-068",
+   "links": [
+    {
+     "asset_id": "cx:ETH",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-24T19:56:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-069-0"
+   ],
+   "attributes": {
+    "venue": "Bybit"
+   },
+   "event_date": "2026-05-01",
+   "event_type": "delisting",
+   "family": "dev",
+   "key": "ev-deli-069",
+   "links": [
+    {
+     "asset_id": "cx:FIL",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-01T09:03:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-070-0",
+    "ev-deli-070-1",
+    "ev-deli-070-2"
+   ],
+   "attributes": {
+    "venue": "Bitstamp"
+   },
+   "event_date": "2026-04-12",
+   "event_type": "delisting",
+   "family": "val",
+   "key": "ev-deli-070",
+   "links": [
+    {
+     "asset_id": "cx:FLOW",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-12T19:10:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-071-0"
+   ],
+   "attributes": {
+    "venue": "Gemini"
+   },
+   "event_date": "2026-04-19",
+   "event_type": "delisting",
+   "family": "val",
+   "key": "ev-deli-071",
+   "links": [
+    {
+     "asset_id": "cx:FTM",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-19T09:17:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-072-0"
+   ],
+   "attributes": {
+    "venue": "Binance"
+   },
+   "event_date": "2026-04-26",
+   "event_type": "delisting",
+   "family": "val",
+   "key": "ev-deli-072",
+   "links": [
+    {
+     "asset_id": "cx:GRT",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-26T09:24:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-073-0"
+   ],
+   "attributes": {
+    "venue": "Kraken"
+   },
+   "event_date": "2026-05-03",
+   "event_type": "delisting",
+   "family": "val",
+   "key": "ev-deli-073",
+   "links": [
+    {
+     "asset_id": "cx:HBAR",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-03T09:31:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-074-0",
+    "ev-deli-074-1",
+    "ev-deli-074-2"
+   ],
+   "attributes": {
+    "venue": "OKX"
+   },
+   "event_date": "2026-04-14",
+   "event_type": "delisting",
+   "family": "val",
+   "key": "ev-deli-074",
+   "links": [
+    {
+     "asset_id": "cx:INJ",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-14T19:38:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-075-0",
+    "ev-deli-075-1"
+   ],
+   "attributes": {
+    "venue": "S&P 500"
+   },
+   "event_date": "2026-04-21",
+   "event_type": "delisting",
+   "family": "val",
+   "key": "ev-deli-075",
+   "links": [
+    {
+     "asset_id": "eq:LIN",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-21T13:45:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-deli-076-0"
+   ],
+   "attributes": {
+    "venue": "S&P 500"
+   },
+   "event_date": "2026-04-28",
+   "event_type": "delisting",
+   "family": "val",
+   "key": "ev-deli-076",
+   "links": [
+    {
+     "asset_id": "eq:LLY",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-28T09:52:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-077-0"
+   ],
+   "attributes": {
+    "amount_usd": 600000000.0,
+    "vector": "bridge"
+   },
+   "event_date": "2026-05-05",
+   "event_type": "hack_exploit",
+   "family": "dev",
+   "key": "ev-hack-077",
+   "links": [
+    {
+     "asset_id": "cx:LINK",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-05T09:59:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-078-0",
+    "ev-hack-078-1",
+    "ev-hack-078-2"
+   ],
+   "attributes": {
+    "amount_usd": 710000000.0,
+    "vector": "smart contract"
+   },
+   "event_date": "2026-04-17",
+   "event_type": "hack_exploit",
+   "family": "dev",
+   "key": "ev-hack-078",
+   "links": [
+    {
+     "asset_id": "cx:LTC",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-17T19:06:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-079-0"
+   ],
+   "attributes": {
+    "amount_usd": 820000000.0,
+    "vector": "bridge"
+   },
+   "event_date": "2026-04-24",
+   "event_type": "hack_exploit",
+   "family": "dev",
+   "key": "ev-hack-079",
+   "links": [
+    {
+     "asset_id": "cx:MANA",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-24T09:13:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-080-0",
+    "ev-hack-080-1",
+    "ev-hack-080-2"
+   ],
+   "attributes": {
+    "amount_usd": 930000000.0,
+    "vector": "smart contract"
+   },
+   "event_date": "2026-05-01",
+   "event_type": "hack_exploit",
+   "family": "dev",
+   "key": "ev-hack-080",
+   "links": [
+    {
+     "asset_id": "cx:MATIC",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-01T19:20:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-081-0"
+   ],
+   "attributes": {
+    "amount_usd": 140000000.0,
+    "vector": "bridge"
+   },
+   "event_date": "2026-04-12",
+   "event_type": "hack_exploit",
+   "family": "dev",
+   "key": "ev-hack-081",
+   "links": [
+    {
+     "asset_id": "cx:MKR",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-12T09:27:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-082-0"
+   ],
+   "attributes": {
+    "amount_usd": 250000000.0,
+    "vector": "flash loan"
+   },
+   "event_date": "2026-04-19",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "ev-hack-082",
+   "links": [
+    {
+     "asset_id": "cx:PEPE",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-19T09:34:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-083-0"
+   ],
+   "attributes": {
+    "amount_usd": 360000000.0,
+    "vector": "hot wallet"
+   },
+   "event_date": "2026-04-26",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "ev-hack-083",
+   "links": [
+    {
+     "asset_id": "cx:QNT",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-26T09:41:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-084-0",
+    "ev-hack-084-1",
+    "ev-hack-084-2"
+   ],
+   "attributes": {
+    "amount_usd": 400000000.0,
+    "vector": "flash loan"
+   },
+   "event_date": "2026-05-03",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "ev-hack-084",
+   "links": [
+    {
+     "asset_id": "cx:RUNE",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-03T19:48:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-085-0",
+    "ev-hack-085-1"
+   ],
+   "attributes": {
+    "amount_usd": 510000000.0,
+    "vector": "hot wallet"
+   },
+   "event_date": "2026-04-14",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "ev-hack-085",
+   "links": [
+    {
+     "asset_id": "cx:SAND",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-14T13:55:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-086-0"
+   ],
+   "attributes": {
+    "amount_usd": 620000000.0,
+    "vector": "flash loan"
+   },
+   "event_date": "2026-04-21",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "ev-hack-086",
+   "links": [
+    {
+     "asset_id": "cx:SHIB",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-21T09:02:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-087-0"
+   ],
+   "attributes": {
+    "amount_usd": 730000000.0,
+    "vector": "hot wallet"
+   },
+   "event_date": "2026-04-28",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "ev-hack-087",
+   "links": [
+    {
+     "asset_id": "cx:SOL",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-28T09:09:00Z",
+   "origin": "generated",
+   "single_source_t3": true,
+   "stage": "confirmed",
+   "tier_class": "t3"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-088-0",
+    "ev-hack-088-1",
+    "ev-hack-088-2"
+   ],
+   "attributes": {
+    "amount_usd": 840000000.0,
+    "vector": "phishing"
+   },
+   "event_date": "2026-05-05",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "ev-hack-088",
+   "links": [
+    {
+     "asset_id": "eq:LRCX",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-05-05T19:16:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "ev-hack-089-0"
+   ],
+   "attributes": {
+    "amount_usd": 950000000.0,
+    "vector": "phishing"
+   },
+   "event_date": "2026-04-16",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "ev-hack-089",
+   "links": [
+    {
+     "asset_id": "eq:MA",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-16T09:23:00Z",
+   "origin": "generated",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-denied-1"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-12",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-denied-1",
+   "links": [
+    {
+     "asset_id": "eq:ADBE",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:OKTA",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-12T09:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "denied",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-denied-2"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-14",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-denied-2",
+   "links": [
+    {
+     "asset_id": "eq:CRM",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:DDOG",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-14T10:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "denied",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-denied-3"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-17",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-denied-3",
+   "links": [
+    {
+     "asset_id": "eq:PANW",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:ZS",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-17T11:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "denied",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-sym-1"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-19",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-sym-1",
+   "links": [
+    {
+     "asset_id": "eq:UAL",
+     "role": "mentioned"
+    },
+    {
+     "asset_id": "eq:DAL",
+     "role": "mentioned"
+    }
+   ],
+   "observed_at": "2026-04-19T09:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "rumored",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-sym-2"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-21",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-sym-2",
+   "links": [
+    {
+     "asset_id": "eq:MAR",
+     "role": "mentioned"
+    },
+    {
+     "asset_id": "eq:HLT",
+     "role": "mentioned"
+    }
+   ],
+   "observed_at": "2026-04-21T12:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-sym-3"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-23",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-sym-3",
+   "links": [
+    {
+     "asset_id": "eq:EA",
+     "role": "mentioned"
+    },
+    {
+     "asset_id": "eq:TTWO",
+     "role": "mentioned"
+    }
+   ],
+   "observed_at": "2026-04-23T14:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-sym-4"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-25",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-sym-4",
+   "links": [
+    {
+     "asset_id": "eq:LOW",
+     "role": "mentioned"
+    },
+    {
+     "asset_id": "eq:TJX",
+     "role": "mentioned"
+    }
+   ],
+   "observed_at": "2026-04-25T10:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "rumored",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-rumor-1"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-27",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-rumor-1",
+   "links": [
+    {
+     "asset_id": "eq:SNOW",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:NET",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-27T08:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "rumored",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-passive-1"
+   ],
+   "attributes": {
+    "deal_value_usd": 9400000000.0
+   },
+   "event_date": "2026-04-29",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-passive-1",
+   "links": [
+    {
+     "asset_id": "eq:UBER",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:LYFT",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-04-29T12:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "h-mna-bid-1"
+   ],
+   "attributes": {
+    "premium_pct": 22.0
+   },
+   "event_date": "2026-05-01",
+   "event_type": "mna",
+   "family": "val",
+   "key": "h-mna-bid-1",
+   "links": [
+    {
+     "asset_id": "eq:GS",
+     "role": "acquirer"
+    },
+    {
+     "asset_id": "eq:SCHW",
+     "role": "target"
+    }
+   ],
+   "observed_at": "2026-05-01T09:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "h-list-venue-1"
+   ],
+   "attributes": {
+    "venue": "Coinbase"
+   },
+   "event_date": "2026-04-13",
+   "event_type": "listing",
+   "family": "val",
+   "key": "h-list-venue-1",
+   "links": [
+    {
+     "asset_id": "cx:SUI",
+     "role": "subject"
+    },
+    {
+     "asset_id": "eq:COIN",
+     "role": "venue"
+    }
+   ],
+   "observed_at": "2026-04-13T13:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-list-venue-2"
+   ],
+   "attributes": {
+    "venue": "Coinbase"
+   },
+   "event_date": "2026-04-16",
+   "event_type": "listing",
+   "family": "val",
+   "key": "h-list-venue-2",
+   "links": [
+    {
+     "asset_id": "cx:SEI",
+     "role": "subject"
+    },
+    {
+     "asset_id": "eq:COIN",
+     "role": "venue"
+    }
+   ],
+   "observed_at": "2026-04-16T15:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-list-venue-3"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-18",
+   "event_type": "listing",
+   "family": "val",
+   "key": "h-list-venue-3",
+   "links": [
+    {
+     "asset_id": "eq:ARM",
+     "role": "subject"
+    },
+    {
+     "asset_id": "eq:NDAQ",
+     "role": "venue"
+    }
+   ],
+   "observed_at": "2026-04-18T11:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "h-delist-venue-1"
+   ],
+   "attributes": {
+    "venue": "NYSE"
+   },
+   "event_date": "2026-04-20",
+   "event_type": "delisting",
+   "family": "val",
+   "key": "h-delist-venue-1",
+   "links": [
+    {
+     "asset_id": "eq:LCID",
+     "role": "subject"
+    },
+    {
+     "asset_id": "eq:ICE",
+     "role": "venue"
+    }
+   ],
+   "observed_at": "2026-04-20T16:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-list-caps-1"
+   ],
+   "attributes": {},
+   "event_date": "2026-04-22",
+   "event_type": "listing",
+   "family": "val",
+   "key": "h-list-caps-1",
+   "links": [
+    {
+     "asset_id": "cx:NEAR",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-22T08:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "h-reg-caps-1"
+   ],
+   "attributes": {
+    "agency": "SEC",
+    "polarity": "adverse"
+   },
+   "event_date": "2026-04-24",
+   "event_type": "regulatory_action",
+   "family": "val",
+   "key": "h-reg-caps-1",
+   "links": [
+    {
+     "asset_id": "cx:ICP",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-24T14:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t1"
+  },
+  {
+   "article_external_ids": [
+    "h-hack-1"
+   ],
+   "attributes": {
+    "amount_usd": 47000000.0,
+    "vector": "bridge"
+   },
+   "event_date": "2026-04-26",
+   "event_type": "hack_exploit",
+   "family": "val",
+   "key": "h-hack-1",
+   "links": [
+    {
+     "asset_id": "cx:ARB",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-26T07:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  },
+  {
+   "article_external_ids": [
+    "h-earn-1"
+   ],
+   "attributes": {
+    "polarity": "beat",
+    "surprise_pct": 6.4
+   },
+   "event_date": "2026-04-28",
+   "event_type": "earnings_surprise",
+   "family": "val",
+   "key": "h-earn-1",
+   "links": [
+    {
+     "asset_id": "eq:META",
+     "role": "subject"
+    }
+   ],
+   "observed_at": "2026-04-28T13:30:00Z",
+   "origin": "hand",
+   "single_source_t3": false,
+   "stage": "confirmed",
+   "tier_class": "t2"
+  }
+ ],
+ "families": {
+  "ev-deli-066-0": "dev",
+  "ev-deli-067-0": "dev",
+  "ev-deli-068-0": "dev",
+  "ev-deli-068-1": "dev",
+  "ev-deli-068-2": "dev",
+  "ev-deli-069-0": "dev",
+  "ev-deli-070-0": "val",
+  "ev-deli-070-1": "val",
+  "ev-deli-070-2": "val",
+  "ev-deli-071-0": "val",
+  "ev-deli-072-0": "val",
+  "ev-deli-073-0": "val",
+  "ev-deli-074-0": "val",
+  "ev-deli-074-1": "val",
+  "ev-deli-074-2": "val",
+  "ev-deli-075-0": "val",
+  "ev-deli-075-1": "val",
+  "ev-deli-076-0": "val",
+  "ev-earn-000-0": "dev",
+  "ev-earn-000-1": "dev",
+  "ev-earn-000-2": "dev",
+  "ev-earn-001-0": "dev",
+  "ev-earn-002-0": "dev",
+  "ev-earn-003-0": "dev",
+  "ev-earn-004-0": "dev",
+  "ev-earn-004-1": "dev",
+  "ev-earn-004-2": "dev",
+  "ev-earn-005-0": "dev",
+  "ev-earn-005-1": "dev",
+  "ev-earn-006-0": "val",
+  "ev-earn-007-0": "val",
+  "ev-earn-008-0": "val",
+  "ev-earn-008-1": "val",
+  "ev-earn-008-2": "val",
+  "ev-earn-009-0": "val",
+  "ev-earn-010-0": "val",
+  "ev-earn-010-1": "val",
+  "ev-earn-010-2": "val",
+  "ev-earn-011-0": "val",
+  "ev-earn-012-0": "val",
+  "ev-earn-013-0": "val",
+  "ev-earn-014-0": "val",
+  "ev-earn-014-1": "val",
+  "ev-earn-014-2": "val",
+  "ev-earn-015-0": "val",
+  "ev-earn-015-1": "val",
+  "ev-earn-016-0": "val",
+  "ev-guid-017-0": "dev",
+  "ev-guid-018-0": "dev",
+  "ev-guid-018-1": "dev",
+  "ev-guid-018-2": "dev",
+  "ev-guid-019-0": "dev",
+  "ev-guid-020-0": "dev",
+  "ev-guid-020-1": "dev",
+  "ev-guid-020-2": "dev",
+  "ev-guid-021-0": "dev",
+  "ev-guid-022-0": "val",
+  "ev-guid-023-0": "val",
+  "ev-guid-024-0": "val",
+  "ev-guid-024-1": "val",
+  "ev-guid-024-2": "val",
+  "ev-guid-025-0": "val",
+  "ev-guid-025-1": "val",
+  "ev-guid-026-0": "val",
+  "ev-guid-027-0": "val",
+  "ev-guid-028-0": "val",
+  "ev-guid-028-1": "val",
+  "ev-guid-028-2": "val",
+  "ev-guid-029-0": "val",
+  "ev-guid-030-0": "val",
+  "ev-guid-030-1": "val",
+  "ev-guid-030-2": "val",
+  "ev-hack-077-0": "dev",
+  "ev-hack-078-0": "dev",
+  "ev-hack-078-1": "dev",
+  "ev-hack-078-2": "dev",
+  "ev-hack-079-0": "dev",
+  "ev-hack-080-0": "dev",
+  "ev-hack-080-1": "dev",
+  "ev-hack-080-2": "dev",
+  "ev-hack-081-0": "dev",
+  "ev-hack-082-0": "val",
+  "ev-hack-083-0": "val",
+  "ev-hack-084-0": "val",
+  "ev-hack-084-1": "val",
+  "ev-hack-084-2": "val",
+  "ev-hack-085-0": "val",
+  "ev-hack-085-1": "val",
+  "ev-hack-086-0": "val",
+  "ev-hack-087-0": "val",
+  "ev-hack-088-0": "val",
+  "ev-hack-088-1": "val",
+  "ev-hack-088-2": "val",
+  "ev-hack-089-0": "val",
+  "ev-list-056-0": "dev",
+  "ev-list-057-0": "dev",
+  "ev-list-058-0": "dev",
+  "ev-list-058-1": "dev",
+  "ev-list-058-2": "dev",
+  "ev-list-059-0": "dev",
+  "ev-list-060-0": "dev",
+  "ev-list-060-1": "dev",
+  "ev-list-060-2": "dev",
+  "ev-list-061-0": "val",
+  "ev-list-062-0": "val",
+  "ev-list-063-0": "val",
+  "ev-list-064-0": "val",
+  "ev-list-064-1": "val",
+  "ev-list-064-2": "val",
+  "ev-list-065-0": "val",
+  "ev-list-065-1": "val",
+  "ev-mna-031-0": "dev",
+  "ev-mna-032-0": "dev",
+  "ev-mna-033-0": "val",
+  "ev-mna-034-0": "val",
+  "ev-mna-034-1": "val",
+  "ev-mna-034-2": "val",
+  "ev-mna-035-0": "val",
+  "ev-mna-035-1": "val",
+  "ev-mna-036-0": "val",
+  "ev-mna-037-0": "val",
+  "ev-mna-038-0": "val",
+  "ev-mna-038-1": "val",
+  "ev-mna-038-2": "val",
+  "ev-mna-039-0": "val",
+  "ev-mna-040-0": "val",
+  "ev-mna-040-1": "val",
+  "ev-mna-040-2": "val",
+  "ev-regu-041-0": "dev",
+  "ev-regu-042-0": "dev",
+  "ev-regu-043-0": "dev",
+  "ev-regu-044-0": "dev",
+  "ev-regu-044-1": "dev",
+  "ev-regu-044-2": "dev",
+  "ev-regu-045-0": "dev",
+  "ev-regu-045-1": "dev",
+  "ev-regu-046-0": "val",
+  "ev-regu-047-0": "val",
+  "ev-regu-048-0": "val",
+  "ev-regu-048-1": "val",
+  "ev-regu-048-2": "val",
+  "ev-regu-049-0": "val",
+  "ev-regu-050-0": "val",
+  "ev-regu-050-1": "val",
+  "ev-regu-050-2": "val",
+  "ev-regu-051-0": "val",
+  "ev-regu-052-0": "val",
+  "ev-regu-053-0": "val",
+  "ev-regu-054-0": "val",
+  "ev-regu-054-1": "val",
+  "ev-regu-054-2": "val",
+  "ev-regu-055-0": "val",
+  "ev-regu-055-1": "val",
+  "h-delist-venue-1": "val",
+  "h-earn-1": "val",
+  "h-hack-1": "val",
+  "h-list-caps-1": "val",
+  "h-list-venue-1": "val",
+  "h-list-venue-2": "val",
+  "h-list-venue-3": "val",
+  "h-mna-bid-1": "val",
+  "h-mna-denied-1": "val",
+  "h-mna-denied-2": "val",
+  "h-mna-denied-3": "val",
+  "h-mna-passive-1": "val",
+  "h-mna-rumor-1": "val",
+  "h-mna-sym-1": "val",
+  "h-mna-sym-2": "val",
+  "h-mna-sym-3": "val",
+  "h-mna-sym-4": "val",
+  "h-reg-caps-1": "val",
+  "ne-000": "dev",
+  "ne-001": "val",
+  "ne-002": "dev",
+  "ne-003": "val",
+  "ne-004": "dev",
+  "ne-005": "val",
+  "ne-006": "dev",
+  "ne-007": "val",
+  "ne-008": "dev",
+  "ne-009": "val",
+  "ne-010": "dev",
+  "ne-011": "val",
+  "ne-012": "dev",
+  "ne-013": "val",
+  "ne-014": "dev",
+  "ne-015": "val",
+  "ne-016": "dev",
+  "ne-017": "val",
+  "ne-018": "dev",
+  "ne-019": "val",
+  "ne-020": "dev",
+  "ne-021": "val",
+  "ne-022": "dev",
+  "ne-023": "val",
+  "ne-024": "dev",
+  "ne-025": "val",
+  "ne-026": "dev",
+  "ne-027": "val",
+  "ne-028": "dev",
+  "ne-029": "val",
+  "t-aapl-1": "val",
+  "t-ape-1": "val",
+  "t-apple-1": "val",
+  "t-caps-1": "val",
+  "t-caps-2": "val",
+  "t-caps-3": "val",
+  "t-caps-4": "val",
+  "t-caps-5": "val",
+  "t-coin-1": "val",
+  "t-icp-1": "val",
+  "t-icp-2": "val",
+  "t-lower-1": "val",
+  "t-meta-1": "val",
+  "t-metaphor-1": "val",
+  "t-metaphor-2": "val",
+  "t-metaphor-3": "val",
+  "t-near-1": "val",
+  "t-near-ape-1": "val",
+  "t-near-link-1": "val",
+  "t-one-1": "val",
+  "t-quoted-1": "val",
+  "t-shell-1": "val"
+ },
+ "first_event_day": 100,
+ "jaccard_margins": {
+  "inter_max": 0.3028,
+  "intra_min": 0.8219
+ },
+ "last_event_day": 125,
+ "role_decisions": [
+  {
+   "asset_id": "eq:DE",
+   "event_key": "ev-mna-033",
+   "expected_role": "acquirer",
+   "id": "role-ev-mna-033-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:DELL",
+   "event_key": "ev-mna-033",
+   "expected_role": "target",
+   "id": "role-ev-mna-033-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:DHR",
+   "event_key": "ev-mna-034",
+   "expected_role": "acquirer",
+   "id": "role-ev-mna-034-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:DIS",
+   "event_key": "ev-mna-034",
+   "expected_role": "target",
+   "id": "role-ev-mna-034-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:DUK",
+   "event_key": "ev-mna-035",
+   "expected_role": "acquirer",
+   "id": "role-ev-mna-035-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:ELV",
+   "event_key": "ev-mna-035",
+   "expected_role": "target",
+   "id": "role-ev-mna-035-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:EOG",
+   "event_key": "ev-mna-036",
+   "expected_role": "acquirer",
+   "id": "role-ev-mna-036-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:EQIX",
+   "event_key": "ev-mna-036",
+   "expected_role": "target",
+   "id": "role-ev-mna-036-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:F",
+   "event_key": "ev-mna-037",
+   "expected_role": "acquirer",
+   "id": "role-ev-mna-037-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:FI",
+   "event_key": "ev-mna-037",
+   "expected_role": "target",
+   "id": "role-ev-mna-037-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:GE",
+   "event_key": "ev-mna-038",
+   "expected_role": "acquirer",
+   "id": "role-ev-mna-038-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:GILD",
+   "event_key": "ev-mna-038",
+   "expected_role": "target",
+   "id": "role-ev-mna-038-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:GM",
+   "event_key": "ev-mna-039",
+   "expected_role": "acquirer",
+   "id": "role-ev-mna-039-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:GOOGL",
+   "event_key": "ev-mna-039",
+   "expected_role": "target",
+   "id": "role-ev-mna-039-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:HD",
+   "event_key": "ev-mna-040",
+   "expected_role": "acquirer",
+   "id": "role-ev-mna-040-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:HON",
+   "event_key": "ev-mna-040",
+   "expected_role": "target",
+   "id": "role-ev-mna-040-target",
+   "kind": "mna_role"
+  },
+  {
+   "event_key": "ev-list-061",
+   "id": "role-ev-list-061-venue",
+   "kind": "venue",
+   "subject_asset_id": "cx:DOT",
+   "venue_asset_id": null
+  },
+  {
+   "event_key": "ev-list-062",
+   "id": "role-ev-list-062-venue",
+   "kind": "venue",
+   "subject_asset_id": "cx:EGLD",
+   "venue_asset_id": null
+  },
+  {
+   "event_key": "ev-list-063",
+   "id": "role-ev-list-063-venue",
+   "kind": "venue",
+   "subject_asset_id": "eq:JPM",
+   "venue_asset_id": null
+  },
+  {
+   "event_key": "ev-list-064",
+   "id": "role-ev-list-064-venue",
+   "kind": "venue",
+   "subject_asset_id": "eq:KLAC",
+   "venue_asset_id": null
+  },
+  {
+   "asset_id": "eq:ADBE",
+   "event_key": "h-mna-denied-1",
+   "expected_role": "acquirer",
+   "id": "role-h-mna-denied-1-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:OKTA",
+   "event_key": "h-mna-denied-1",
+   "expected_role": "target",
+   "id": "role-h-mna-denied-1-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:CRM",
+   "event_key": "h-mna-denied-2",
+   "expected_role": "acquirer",
+   "id": "role-h-mna-denied-2-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:DDOG",
+   "event_key": "h-mna-denied-2",
+   "expected_role": "target",
+   "id": "role-h-mna-denied-2-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:PANW",
+   "event_key": "h-mna-denied-3",
+   "expected_role": "acquirer",
+   "id": "role-h-mna-denied-3-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:ZS",
+   "event_key": "h-mna-denied-3",
+   "expected_role": "target",
+   "id": "role-h-mna-denied-3-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_ids": [
+    "eq:UAL",
+    "eq:DAL"
+   ],
+   "event_key": "h-mna-sym-1",
+   "id": "role-h-mna-sym-1-abstain",
+   "kind": "abstention"
+  },
+  {
+   "asset_ids": [
+    "eq:MAR",
+    "eq:HLT"
+   ],
+   "event_key": "h-mna-sym-2",
+   "id": "role-h-mna-sym-2-abstain",
+   "kind": "abstention"
+  },
+  {
+   "asset_ids": [
+    "eq:EA",
+    "eq:TTWO"
+   ],
+   "event_key": "h-mna-sym-3",
+   "id": "role-h-mna-sym-3-abstain",
+   "kind": "abstention"
+  },
+  {
+   "asset_ids": [
+    "eq:LOW",
+    "eq:TJX"
+   ],
+   "event_key": "h-mna-sym-4",
+   "id": "role-h-mna-sym-4-abstain",
+   "kind": "abstention"
+  },
+  {
+   "asset_id": "eq:SNOW",
+   "event_key": "h-mna-rumor-1",
+   "expected_role": "acquirer",
+   "id": "role-h-mna-rumor-1-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:NET",
+   "event_key": "h-mna-rumor-1",
+   "expected_role": "target",
+   "id": "role-h-mna-rumor-1-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:UBER",
+   "event_key": "h-mna-passive-1",
+   "expected_role": "acquirer",
+   "id": "role-h-mna-passive-1-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:LYFT",
+   "event_key": "h-mna-passive-1",
+   "expected_role": "target",
+   "id": "role-h-mna-passive-1-target",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:GS",
+   "event_key": "h-mna-bid-1",
+   "expected_role": "acquirer",
+   "id": "role-h-mna-bid-1-acquirer",
+   "kind": "mna_role"
+  },
+  {
+   "asset_id": "eq:SCHW",
+   "event_key": "h-mna-bid-1",
+   "expected_role": "target",
+   "id": "role-h-mna-bid-1-target",
+   "kind": "mna_role"
+  },
+  {
+   "event_key": "h-list-venue-1",
+   "id": "role-h-list-venue-1-venue",
+   "kind": "venue",
+   "subject_asset_id": "cx:SUI",
+   "venue_asset_id": "eq:COIN"
+  },
+  {
+   "event_key": "h-list-venue-2",
+   "id": "role-h-list-venue-2-venue",
+   "kind": "venue",
+   "subject_asset_id": "cx:SEI",
+   "venue_asset_id": "eq:COIN"
+  },
+  {
+   "event_key": "h-list-venue-3",
+   "id": "role-h-list-venue-3-venue",
+   "kind": "venue",
+   "subject_asset_id": "eq:ARM",
+   "venue_asset_id": "eq:NDAQ"
+  },
+  {
+   "event_key": "h-delist-venue-1",
+   "id": "role-h-delist-venue-1-venue",
+   "kind": "venue",
+   "subject_asset_id": "eq:LCID",
+   "venue_asset_id": "eq:ICE"
+  }
+ ],
+ "seed": 20260731,
+ "series_days": 252,
+ "trap_mentions": [
+  {
+   "asset_id": "eq:ADBE",
+   "category": "paren_ticker",
+   "collides_with": "eq:ADBE",
+   "end": 188,
+   "external_id": "h-mna-denied-1",
+   "id": "h-mna-denied-1#0",
+   "start": 182,
+   "surface": "(ADBE)"
+  },
+  {
+   "asset_id": "eq:CRM",
+   "category": "paren_ticker",
+   "collides_with": "eq:CRM",
+   "end": 191,
+   "external_id": "h-mna-denied-2",
+   "id": "h-mna-denied-2#1",
+   "start": 186,
+   "surface": "(CRM)"
+  },
+  {
+   "asset_id": "eq:COIN",
+   "category": "cashtag",
+   "collides_with": "eq:COIN",
+   "end": 143,
+   "external_id": "h-list-venue-2",
+   "id": "h-list-venue-2#2",
+   "start": 138,
+   "surface": "$COIN"
+  },
+  {
+   "asset_id": "eq:ARM",
+   "category": "all_caps_context",
+   "collides_with": "eq:ARM",
+   "end": 12,
+   "external_id": "h-list-venue-3",
+   "id": "h-list-venue-3#3",
+   "start": 0,
+   "surface": "ARM HOLDINGS"
+  },
+  {
+   "asset_id": "cx:NEAR",
+   "category": "all_caps_context",
+   "collides_with": "cx:NEAR",
+   "end": 13,
+   "external_id": "h-list-caps-1",
+   "id": "h-list-caps-1#4",
+   "start": 0,
+   "surface": "NEAR PROTOCOL"
+  },
+  {
+   "asset_id": "cx:ICP",
+   "category": "all_caps_context",
+   "collides_with": "cx:ICP",
+   "end": 50,
+   "external_id": "h-reg-caps-1",
+   "id": "h-reg-caps-1#5",
+   "start": 33,
+   "surface": "INTERNET COMPUTER"
+  },
+  {
+   "asset_id": null,
+   "category": "metaphor_adjacent",
+   "collides_with": "cx:NEAR",
+   "end": 288,
+   "external_id": "h-hack-1",
+   "id": "h-hack-1#6",
+   "start": 276,
+   "surface": "near the end"
+  },
+  {
+   "asset_id": "eq:META",
+   "category": "company_name",
+   "collides_with": "eq:META",
+   "end": 72,
+   "external_id": "h-earn-1",
+   "id": "h-earn-1#7",
+   "start": 58,
+   "surface": "Meta Platforms"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "cx:NEAR",
+   "end": 78,
+   "external_id": "t-near-1",
+   "id": "t-near-1#8",
+   "start": 66,
+   "surface": "near the end"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "cx:NEAR",
+   "end": 215,
+   "external_id": "t-near-1",
+   "id": "t-near-1#9",
+   "start": 203,
+   "surface": "near the end"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:AAPL",
+   "end": 52,
+   "external_id": "t-apple-1",
+   "id": "t-apple-1#10",
+   "start": 47,
+   "surface": "Apple"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:AAPL",
+   "end": 172,
+   "external_id": "t-apple-1",
+   "id": "t-apple-1#11",
+   "start": 167,
+   "surface": "apple"
+  },
+  {
+   "asset_id": null,
+   "category": "metaphor_adjacent",
+   "collides_with": "eq:SHEL",
+   "end": 185,
+   "external_id": "t-metaphor-1",
+   "id": "t-metaphor-1#12",
+   "start": 180,
+   "surface": "shell"
+  },
+  {
+   "asset_id": null,
+   "category": "metaphor_adjacent",
+   "collides_with": "eq:META",
+   "end": 182,
+   "external_id": "t-metaphor-2",
+   "id": "t-metaphor-2#13",
+   "start": 178,
+   "surface": "meta"
+  },
+  {
+   "asset_id": null,
+   "category": "metaphor_adjacent",
+   "collides_with": "eq:ORCL",
+   "end": 164,
+   "external_id": "t-metaphor-3",
+   "id": "t-metaphor-3#14",
+   "start": 158,
+   "surface": "oracle"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:V",
+   "end": 60,
+   "external_id": "t-lower-1",
+   "id": "t-lower-1#15",
+   "start": 56,
+   "surface": "visa"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:META",
+   "end": 160,
+   "external_id": "t-lower-1",
+   "id": "t-lower-1#16",
+   "start": 156,
+   "surface": "meta"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:ORCL",
+   "end": 230,
+   "external_id": "t-lower-1",
+   "id": "t-lower-1#17",
+   "start": 224,
+   "surface": "oracle"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:SHEL",
+   "end": 316,
+   "external_id": "t-lower-1",
+   "id": "t-lower-1#18",
+   "start": 311,
+   "surface": "shell"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:V",
+   "end": 368,
+   "external_id": "t-lower-1",
+   "id": "t-lower-1#19",
+   "start": 364,
+   "surface": "visa"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "cx:ONE",
+   "end": 41,
+   "external_id": "t-one-1",
+   "id": "t-one-1#20",
+   "start": 31,
+   "surface": "One of the"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "cx:ONE",
+   "end": 132,
+   "external_id": "t-one-1",
+   "id": "t-one-1#21",
+   "start": 120,
+   "surface": "At one point"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "cx:ONE",
+   "end": 236,
+   "external_id": "t-one-1",
+   "id": "t-one-1#22",
+   "start": 226,
+   "surface": "one of the"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:COIN",
+   "end": 78,
+   "external_id": "t-coin-1",
+   "id": "t-coin-1#23",
+   "start": 69,
+   "surface": "coin flip"
+  },
+  {
+   "asset_id": null,
+   "category": "common_word",
+   "collides_with": "eq:COIN",
+   "end": 189,
+   "external_id": "t-coin-1",
+   "id": "t-coin-1#24",
+   "start": 181,
+   "surface": "the coin"
+  },
+  {
+   "asset_id": null,
+   "category": "all_caps_common",
+   "collides_with": "cx:NEAR",
+   "end": 15,
+   "external_id": "t-caps-1",
+   "id": "t-caps-1#25",
+   "start": 11,
+   "surface": "NEAR"
+  },
+  {
+   "asset_id": null,
+   "category": "all_caps_common",
+   "collides_with": "cx:ONE",
+   "end": 3,
+   "external_id": "t-caps-2",
+   "id": "t-caps-2#26",
+   "start": 0,
+   "surface": "ONE"
+  },
+  {
+   "asset_id": null,
+   "category": "all_caps_common",
+   "collides_with": "cx:APE",
+   "end": 3,
+   "external_id": "t-caps-3",
+   "id": "t-caps-3#27",
+   "start": 0,
+   "surface": "APE"
+  },
+  {
+   "asset_id": null,
+   "category": "all_caps_common",
+   "collides_with": "eq:COIN",
+   "end": 4,
+   "external_id": "t-caps-4",
+   "id": "t-caps-4#28",
+   "start": 0,
+   "surface": "COIN"
+  },
+  {
+   "asset_id": null,
+   "category": "all_caps_common",
+   "collides_with": "cx:NEAR",
+   "end": 4,
+   "external_id": "t-caps-5",
+   "id": "t-caps-5#29",
+   "start": 0,
+   "surface": "NEAR"
+  },
+  {
+   "asset_id": null,
+   "category": "quoted_product",
+   "collides_with": "eq:ALL",
+   "end": 66,
+   "external_id": "t-quoted-1",
+   "id": "t-quoted-1#30",
+   "start": 61,
+   "surface": "\"ALL\""
+  },
+  {
+   "asset_id": null,
+   "category": "quoted_product",
+   "collides_with": "eq:KEY",
+   "end": 93,
+   "external_id": "t-quoted-1",
+   "id": "t-quoted-1#31",
+   "start": 88,
+   "surface": "\"KEY\""
+  },
+  {
+   "asset_id": null,
+   "category": "acronym",
+   "collides_with": "cx:ICP",
+   "end": 92,
+   "external_id": "t-icp-1",
+   "id": "t-icp-1#32",
+   "start": 89,
+   "surface": "ICP"
+  },
+  {
+   "asset_id": null,
+   "category": "acronym",
+   "collides_with": "cx:ICP",
+   "end": 157,
+   "external_id": "t-icp-1",
+   "id": "t-icp-1#33",
+   "start": 154,
+   "surface": "ICP"
+  },
+  {
+   "asset_id": null,
+   "category": "acronym",
+   "collides_with": "cx:ICP",
+   "end": 48,
+   "external_id": "t-icp-2",
+   "id": "t-icp-2#34",
+   "start": 45,
+   "surface": "ICP"
+  },
+  {
+   "asset_id": "cx:NEAR",
+   "category": "context_alias",
+   "collides_with": "cx:NEAR",
+   "end": 54,
+   "external_id": "t-near-link-1",
+   "id": "t-near-link-1#35",
+   "start": 41,
+   "surface": "NEAR Protocol"
+  },
+  {
+   "asset_id": "cx:NEAR",
+   "category": "context_alias",
+   "collides_with": "cx:NEAR",
+   "end": 156,
+   "external_id": "t-near-link-1",
+   "id": "t-near-link-1#36",
+   "start": 147,
+   "surface": "NEAR were"
+  },
+  {
+   "asset_id": "cx:APE",
+   "category": "context_alias",
+   "collides_with": "cx:APE",
+   "end": 78,
+   "external_id": "t-near-ape-1",
+   "id": "t-near-ape-1#37",
+   "start": 69,
+   "surface": "APE token"
+  },
+  {
+   "asset_id": "cx:NEAR",
+   "category": "context_alias",
+   "collides_with": "cx:NEAR",
+   "end": 165,
+   "external_id": "t-near-ape-1",
+   "id": "t-near-ape-1#38",
+   "start": 156,
+   "surface": "NEAR were"
+  },
+  {
+   "asset_id": "cx:APE",
+   "category": "context_alias",
+   "collides_with": "cx:APE",
+   "end": 52,
+   "external_id": "t-ape-1",
+   "id": "t-ape-1#39",
+   "start": 40,
+   "surface": "APE treasury"
+  },
+  {
+   "asset_id": "cx:APE",
+   "category": "context_alias",
+   "collides_with": "cx:APE",
+   "end": 122,
+   "external_id": "t-ape-1",
+   "id": "t-ape-1#40",
+   "start": 114,
+   "surface": "APE vote"
+  },
+  {
+   "asset_id": "eq:META",
+   "category": "context_alias",
+   "collides_with": "eq:META",
+   "end": 55,
+   "external_id": "t-meta-1",
+   "id": "t-meta-1#41",
+   "start": 44,
+   "surface": "Meta shares"
+  },
+  {
+   "asset_id": "eq:META",
+   "category": "context_alias",
+   "collides_with": "eq:META",
+   "end": 142,
+   "external_id": "t-meta-1",
+   "id": "t-meta-1#42",
+   "start": 128,
+   "surface": "Meta Platforms"
+  },
+  {
+   "asset_id": "eq:ORCL",
+   "category": "context_alias",
+   "collides_with": "eq:ORCL",
+   "end": 222,
+   "external_id": "t-meta-1",
+   "id": "t-meta-1#43",
+   "start": 211,
+   "surface": "Oracle Corp"
+  },
+  {
+   "asset_id": "eq:COIN",
+   "category": "cashtag",
+   "collides_with": "eq:COIN",
+   "end": 277,
+   "external_id": "t-meta-1",
+   "id": "t-meta-1#44",
+   "start": 272,
+   "surface": "$COIN"
+  },
+  {
+   "asset_id": "eq:ORCL",
+   "category": "context_alias",
+   "collides_with": "eq:ORCL",
+   "end": 56,
+   "external_id": "t-shell-1",
+   "id": "t-shell-1#45",
+   "start": 45,
+   "surface": "Oracle Corp"
+  },
+  {
+   "asset_id": "eq:SHEL",
+   "category": "context_alias",
+   "collides_with": "eq:SHEL",
+   "end": 141,
+   "external_id": "t-shell-1",
+   "id": "t-shell-1#46",
+   "start": 132,
+   "surface": "Shell plc"
+  },
+  {
+   "asset_id": "eq:SHEL",
+   "category": "context_alias",
+   "collides_with": "eq:SHEL",
+   "end": 258,
+   "external_id": "t-shell-1",
+   "id": "t-shell-1#47",
+   "start": 249,
+   "surface": "Shell plc"
+  },
+  {
+   "asset_id": "eq:AAPL",
+   "category": "exchange_prefix",
+   "collides_with": "eq:AAPL",
+   "end": 61,
+   "external_id": "t-aapl-1",
+   "id": "t-aapl-1#48",
+   "start": 49,
+   "surface": "NASDAQ: AAPL"
+  },
+  {
+   "asset_id": "eq:AAPL",
+   "category": "exchange_prefix",
+   "collides_with": "eq:AAPL",
+   "end": 162,
+   "external_id": "t-aapl-1",
+   "id": "t-aapl-1#49",
+   "start": 150,
+   "surface": "NASDAQ: AAPL"
+  }
+ ],
+ "truth_links": [
+  {
+   "asset_id": "eq:ABBV",
+   "event_key": "ev-earn-000",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ABNB",
+   "event_key": "ev-earn-001",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ABT",
+   "event_key": "ev-earn-002",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ACN",
+   "event_key": "ev-earn-003",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ADI",
+   "event_key": "ev-earn-004",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ADP",
+   "event_key": "ev-earn-005",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:AMAT",
+   "event_key": "ev-earn-006",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:AMD",
+   "event_key": "ev-earn-007",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:AMGN",
+   "event_key": "ev-earn-008",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:AMZN",
+   "event_key": "ev-earn-009",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:AON",
+   "event_key": "ev-earn-010",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:APD",
+   "event_key": "ev-earn-011",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ASML",
+   "event_key": "ev-earn-012",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:AVGO",
+   "event_key": "ev-earn-013",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BA",
+   "event_key": "ev-earn-014",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BAC",
+   "event_key": "ev-earn-015",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BKNG",
+   "event_key": "ev-earn-016",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BLK",
+   "event_key": "ev-guid-017",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BMY",
+   "event_key": "ev-guid-018",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BNTX",
+   "event_key": "ev-guid-019",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BP",
+   "event_key": "ev-guid-020",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BRK.B",
+   "event_key": "ev-guid-021",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:BSX",
+   "event_key": "ev-guid-022",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:CB",
+   "event_key": "ev-guid-023",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:CDNS",
+   "event_key": "ev-guid-024",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:CHTR",
+   "event_key": "ev-guid-025",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:CI",
+   "event_key": "ev-guid-026",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:CMCSA",
+   "event_key": "ev-guid-027",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:CME",
+   "event_key": "ev-guid-028",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:COST",
+   "event_key": "ev-guid-029",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:CRWD",
+   "event_key": "ev-guid-030",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:CSCO",
+   "event_key": "ev-mna-031",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:CVS",
+   "event_key": "ev-mna-031",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:CVX",
+   "event_key": "ev-mna-032",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:DASH",
+   "event_key": "ev-mna-032",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:DE",
+   "event_key": "ev-mna-033",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:DELL",
+   "event_key": "ev-mna-033",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:DHR",
+   "event_key": "ev-mna-034",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:DIS",
+   "event_key": "ev-mna-034",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:DUK",
+   "event_key": "ev-mna-035",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:ELV",
+   "event_key": "ev-mna-035",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:EOG",
+   "event_key": "ev-mna-036",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:EQIX",
+   "event_key": "ev-mna-036",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:F",
+   "event_key": "ev-mna-037",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:FI",
+   "event_key": "ev-mna-037",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:GE",
+   "event_key": "ev-mna-038",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:GILD",
+   "event_key": "ev-mna-038",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:GM",
+   "event_key": "ev-mna-039",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:GOOGL",
+   "event_key": "ev-mna-039",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:HD",
+   "event_key": "ev-mna-040",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:HON",
+   "event_key": "ev-mna-040",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:HOOD",
+   "event_key": "ev-regu-041",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:AAVE",
+   "event_key": "ev-regu-042",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:HPQ",
+   "event_key": "ev-regu-043",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:IBM",
+   "event_key": "ev-regu-044",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:ADA",
+   "event_key": "ev-regu-045",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:ALGO",
+   "event_key": "ev-regu-046",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:INTC",
+   "event_key": "ev-regu-047",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:APT",
+   "event_key": "ev-regu-048",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:INTU",
+   "event_key": "ev-regu-049",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:ATOM",
+   "event_key": "ev-regu-050",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ISRG",
+   "event_key": "ev-regu-051",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:AVAX",
+   "event_key": "ev-regu-052",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ITW",
+   "event_key": "ev-regu-053",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:AXS",
+   "event_key": "ev-regu-054",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:JNJ",
+   "event_key": "ev-regu-055",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:BCH",
+   "event_key": "ev-list-056",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:BTC",
+   "event_key": "ev-list-057",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:CHZ",
+   "event_key": "ev-list-058",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:CRV",
+   "event_key": "ev-list-059",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:DOGE",
+   "event_key": "ev-list-060",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:DOT",
+   "event_key": "ev-list-061",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:EGLD",
+   "event_key": "ev-list-062",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:JPM",
+   "event_key": "ev-list-063",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:KLAC",
+   "event_key": "ev-list-064",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:KO",
+   "event_key": "ev-list-065",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:EOS",
+   "event_key": "ev-deli-066",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:ETC",
+   "event_key": "ev-deli-067",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:ETH",
+   "event_key": "ev-deli-068",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:FIL",
+   "event_key": "ev-deli-069",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:FLOW",
+   "event_key": "ev-deli-070",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:FTM",
+   "event_key": "ev-deli-071",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:GRT",
+   "event_key": "ev-deli-072",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:HBAR",
+   "event_key": "ev-deli-073",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:INJ",
+   "event_key": "ev-deli-074",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:LIN",
+   "event_key": "ev-deli-075",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:LLY",
+   "event_key": "ev-deli-076",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:LINK",
+   "event_key": "ev-hack-077",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:LTC",
+   "event_key": "ev-hack-078",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:MANA",
+   "event_key": "ev-hack-079",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:MATIC",
+   "event_key": "ev-hack-080",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:MKR",
+   "event_key": "ev-hack-081",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:PEPE",
+   "event_key": "ev-hack-082",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:QNT",
+   "event_key": "ev-hack-083",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:RUNE",
+   "event_key": "ev-hack-084",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:SAND",
+   "event_key": "ev-hack-085",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:SHIB",
+   "event_key": "ev-hack-086",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:SOL",
+   "event_key": "ev-hack-087",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:LRCX",
+   "event_key": "ev-hack-088",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:MA",
+   "event_key": "ev-hack-089",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ADBE",
+   "event_key": "h-mna-denied-1",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:OKTA",
+   "event_key": "h-mna-denied-1",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:CRM",
+   "event_key": "h-mna-denied-2",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:DDOG",
+   "event_key": "h-mna-denied-2",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:PANW",
+   "event_key": "h-mna-denied-3",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:ZS",
+   "event_key": "h-mna-denied-3",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:UAL",
+   "event_key": "h-mna-sym-1",
+   "role": "mentioned"
+  },
+  {
+   "asset_id": "eq:DAL",
+   "event_key": "h-mna-sym-1",
+   "role": "mentioned"
+  },
+  {
+   "asset_id": "eq:MAR",
+   "event_key": "h-mna-sym-2",
+   "role": "mentioned"
+  },
+  {
+   "asset_id": "eq:HLT",
+   "event_key": "h-mna-sym-2",
+   "role": "mentioned"
+  },
+  {
+   "asset_id": "eq:EA",
+   "event_key": "h-mna-sym-3",
+   "role": "mentioned"
+  },
+  {
+   "asset_id": "eq:TTWO",
+   "event_key": "h-mna-sym-3",
+   "role": "mentioned"
+  },
+  {
+   "asset_id": "eq:LOW",
+   "event_key": "h-mna-sym-4",
+   "role": "mentioned"
+  },
+  {
+   "asset_id": "eq:TJX",
+   "event_key": "h-mna-sym-4",
+   "role": "mentioned"
+  },
+  {
+   "asset_id": "eq:SNOW",
+   "event_key": "h-mna-rumor-1",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:NET",
+   "event_key": "h-mna-rumor-1",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:UBER",
+   "event_key": "h-mna-passive-1",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:LYFT",
+   "event_key": "h-mna-passive-1",
+   "role": "target"
+  },
+  {
+   "asset_id": "eq:GS",
+   "event_key": "h-mna-bid-1",
+   "role": "acquirer"
+  },
+  {
+   "asset_id": "eq:SCHW",
+   "event_key": "h-mna-bid-1",
+   "role": "target"
+  },
+  {
+   "asset_id": "cx:SUI",
+   "event_key": "h-list-venue-1",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:COIN",
+   "event_key": "h-list-venue-1",
+   "role": "venue"
+  },
+  {
+   "asset_id": "cx:SEI",
+   "event_key": "h-list-venue-2",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:COIN",
+   "event_key": "h-list-venue-2",
+   "role": "venue"
+  },
+  {
+   "asset_id": "eq:ARM",
+   "event_key": "h-list-venue-3",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:NDAQ",
+   "event_key": "h-list-venue-3",
+   "role": "venue"
+  },
+  {
+   "asset_id": "eq:LCID",
+   "event_key": "h-delist-venue-1",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:ICE",
+   "event_key": "h-delist-venue-1",
+   "role": "venue"
+  },
+  {
+   "asset_id": "cx:NEAR",
+   "event_key": "h-list-caps-1",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:ICP",
+   "event_key": "h-reg-caps-1",
+   "role": "subject"
+  },
+  {
+   "asset_id": "cx:ARB",
+   "event_key": "h-hack-1",
+   "role": "subject"
+  },
+  {
+   "asset_id": "eq:META",
+   "event_key": "h-earn-1",
+   "role": "subject"
+  }
+ ]
+}

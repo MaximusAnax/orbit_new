@@ -1,0 +1,693 @@
+{
+  "awards.json": [
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "PAR",
+      "fees_cents": 25100,
+      "id": "fb_bus_nyc_par",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 60000,
+      "program_id": "fb",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "NYC",
+      "fees_cents": 25100,
+      "id": "fb_bus_par_nyc",
+      "kind": "flight",
+      "origin": "PAR",
+      "points_price": 60000,
+      "program_id": "fb",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "PAR",
+      "fees_cents": 12800,
+      "id": "ac_bus_nyc_par",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 70000,
+      "program_id": "ac",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "PAR",
+      "fees_cents": 90000,
+      "id": "fb_saver_nyc_par",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 30000,
+      "program_id": "fb",
+      "round_trip": false,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "business",
+      "city": null,
+      "destination": "PAR",
+      "fees_cents": 50200,
+      "id": "fb_rt_nyc_par",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 125000,
+      "program_id": "fb",
+      "round_trip": true,
+      "seats_available": 4,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "economy",
+      "city": null,
+      "destination": "PAR",
+      "fees_cents": 22400,
+      "id": "fb_eco_nyc_par",
+      "kind": "flight",
+      "origin": "NYC",
+      "points_price": 22000,
+      "program_id": "fb",
+      "round_trip": false,
+      "seats_available": 6,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": "economy",
+      "city": null,
+      "destination": "NYC",
+      "fees_cents": 22400,
+      "id": "fb_eco_par_nyc",
+      "kind": "flight",
+      "origin": "PAR",
+      "points_price": 22000,
+      "program_id": "fb",
+      "round_trip": false,
+      "seats_available": 6,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    },
+    {
+      "bookable_until": null,
+      "cabin": null,
+      "city": "PAR",
+      "destination": null,
+      "fees_cents": 0,
+      "id": "mb_stay_par",
+      "kind": "stay",
+      "origin": null,
+      "points_price": 20000,
+      "program_id": "mb",
+      "round_trip": null,
+      "seats_available": null,
+      "source_note": "eval fixture",
+      "travel_window_end": "2026-10-31",
+      "travel_window_start": "2026-10-01"
+    }
+  ],
+  "cards.json": [
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": true,
+      "id": "ur_premium",
+      "issuer": "Fixture Bank",
+      "name": "Ur Premium",
+      "program_id": "ur",
+      "source_note": "eval fixture"
+    },
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": false,
+      "id": "ur_basic",
+      "issuer": "Fixture Bank",
+      "name": "Ur Basic",
+      "program_id": "ur",
+      "source_note": "eval fixture"
+    },
+    {
+      "annual_fee_cents": 0,
+      "enables_transfer": true,
+      "id": "mr_premium",
+      "issuer": "Fixture Bank",
+      "name": "Mr Premium",
+      "program_id": "mr",
+      "source_note": "eval fixture"
+    }
+  ],
+  "cashouts.json": [
+    {
+      "cpp_milli": 1000,
+      "id": "ur_credit",
+      "increment": 1,
+      "method": "statement_credit",
+      "min_points": 1,
+      "program_id": "ur",
+      "requires_card": null,
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "cpp_milli": 1500,
+      "id": "ur_portal",
+      "increment": 1,
+      "method": "portal_travel",
+      "min_points": 1,
+      "program_id": "ur",
+      "requires_card": "ur_premium",
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "cpp_milli": 600,
+      "id": "mr_credit",
+      "increment": 1,
+      "method": "statement_credit",
+      "min_points": 1,
+      "program_id": "mr",
+      "requires_card": null,
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "cpp_milli": 600,
+      "id": "mr_deposit",
+      "increment": 1000,
+      "method": "bank_deposit",
+      "min_points": 1000,
+      "program_id": "mr",
+      "requires_card": null,
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "cpp_milli": 1000,
+      "id": "mr_portal",
+      "increment": 1,
+      "method": "portal_travel",
+      "min_points": 1,
+      "program_id": "mr",
+      "requires_card": "mr_premium",
+      "source_note": "eval fixture",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "gazetteer.json": [
+    {
+      "airports": [
+        "JFK",
+        "EWR",
+        "LGA"
+      ],
+      "aliases": [
+        "nyc",
+        "new york",
+        "new york city"
+      ],
+      "city_code": "NYC",
+      "name": "New York"
+    },
+    {
+      "airports": [
+        "CDG",
+        "ORY"
+      ],
+      "aliases": [
+        "paris"
+      ],
+      "city_code": "PAR",
+      "name": "Paris"
+    },
+    {
+      "airports": [
+        "LHR",
+        "LGW"
+      ],
+      "aliases": [
+        "london"
+      ],
+      "city_code": "LON",
+      "name": "London"
+    },
+    {
+      "airports": [
+        "HND",
+        "NRT"
+      ],
+      "aliases": [
+        "tokyo"
+      ],
+      "city_code": "TYO",
+      "name": "Tokyo"
+    },
+    {
+      "airports": [
+        "ORD",
+        "MDW"
+      ],
+      "aliases": [
+        "chicago"
+      ],
+      "city_code": "CHI",
+      "name": "Chicago"
+    },
+    {
+      "airports": [
+        "FCO"
+      ],
+      "aliases": [
+        "rome"
+      ],
+      "city_code": "ROM",
+      "name": "Rome"
+    },
+    {
+      "airports": [
+        "MAD"
+      ],
+      "aliases": [
+        "madrid"
+      ],
+      "city_code": "MAD",
+      "name": "Madrid"
+    },
+    {
+      "airports": [
+        "LAX"
+      ],
+      "aliases": [
+        "los angeles"
+      ],
+      "city_code": "LAX",
+      "name": "Los Angeles"
+    },
+    {
+      "airports": [
+        "SFO"
+      ],
+      "aliases": [
+        "san francisco"
+      ],
+      "city_code": "SFO",
+      "name": "San Francisco"
+    },
+    {
+      "airports": [
+        "SIN"
+      ],
+      "aliases": [
+        "singapore"
+      ],
+      "city_code": "SIN",
+      "name": "Singapore"
+    },
+    {
+      "airports": [
+        "SYD"
+      ],
+      "aliases": [
+        "sydney"
+      ],
+      "city_code": "SYD",
+      "name": "Sydney"
+    },
+    {
+      "airports": [
+        "MIA"
+      ],
+      "aliases": [
+        "miami"
+      ],
+      "city_code": "MIA",
+      "name": "Miami"
+    },
+    {
+      "airports": [
+        "LIS"
+      ],
+      "aliases": [
+        "lisbon"
+      ],
+      "city_code": "LIS",
+      "name": "Lisbon"
+    },
+    {
+      "airports": [
+        "HKG"
+      ],
+      "aliases": [
+        "hong kong"
+      ],
+      "city_code": "HKG",
+      "name": "Hong Kong"
+    }
+  ],
+  "programs.json": [
+    {
+      "id": "ur",
+      "kind": "bank",
+      "name": "Ultimate Rewards",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "mr",
+      "kind": "bank",
+      "name": "Membership Rewards",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "fb",
+      "kind": "airline",
+      "name": "Flying Blue",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "ac",
+      "kind": "airline",
+      "name": "Aeroplan",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "dl",
+      "kind": "airline",
+      "name": "Delta SkyMiles",
+      "source_note": "eval fixture"
+    },
+    {
+      "id": "mb",
+      "kind": "hotel",
+      "name": "Bonvoy",
+      "source_note": "eval fixture"
+    }
+  ],
+  "reference_fares.json": [
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "PAR",
+      "fare_cents": 210000,
+      "id": "rf_nyc_par_bus_ow_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "NYC",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "PAR",
+      "fare_cents": 400000,
+      "id": "rf_nyc_par_bus_rt_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "NYC",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "economy",
+      "city": null,
+      "dest_city": "PAR",
+      "fare_cents": 60000,
+      "id": "rf_nyc_par_eco_ow_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "NYC",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "economy",
+      "city": null,
+      "dest_city": "PAR",
+      "fare_cents": 110000,
+      "id": "rf_nyc_par_eco_rt_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "NYC",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 210000,
+      "id": "rf_par_nyc_bus_ow_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "PAR",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "business",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 400000,
+      "id": "rf_par_nyc_bus_rt_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "PAR",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "economy",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 60000,
+      "id": "rf_par_nyc_eco_ow_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "PAR",
+      "round_trip": false,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": "economy",
+      "city": null,
+      "dest_city": "NYC",
+      "fare_cents": 110000,
+      "id": "rf_par_nyc_eco_rt_2026_10",
+      "kind": "flight",
+      "month": "2026-10",
+      "origin_city": "PAR",
+      "round_trip": true,
+      "source_note": "eval fixture"
+    },
+    {
+      "cabin": null,
+      "city": "PAR",
+      "dest_city": null,
+      "fare_cents": 30000,
+      "id": "rf_stay_par_2026_10",
+      "kind": "stay",
+      "month": "2026-10",
+      "origin_city": null,
+      "round_trip": null,
+      "source_note": "eval fixture"
+    }
+  ],
+  "transfers.json": [
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "ur",
+      "id": "ur__fb",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "fb",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "ur",
+      "id": "ur__ac",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "ac",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "ur",
+      "id": "ur__mb",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "mb",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "mr",
+      "id": "mr__fb",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "fb",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": 9900,
+      "fee_mcpp": 60,
+      "from_program": "mr",
+      "id": "mr__dl",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "dl",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": null,
+      "bonus_to": null,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "mr",
+      "id": "mr__mb",
+      "increment_from": 2000,
+      "min_from": 2000,
+      "ratio_from": 1,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 0,
+      "to_program": "mb",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "bonus_per_from": 60000,
+      "bonus_to": 5000,
+      "fee_cap_cents": null,
+      "fee_mcpp": 0,
+      "from_program": "mb",
+      "id": "mb__fb",
+      "increment_from": 3000,
+      "min_from": 3000,
+      "ratio_from": 3,
+      "ratio_to": 1,
+      "source_note": "eval fixture",
+      "time_days": 2,
+      "to_program": "fb",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "valuations.json": [
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 2050,
+      "program_id": "ur",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 2000,
+      "program_id": "mr",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1300,
+      "program_id": "fb",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1500,
+      "program_id": "ac",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 1150,
+      "program_id": "dl",
+      "source_note": "eval fixture"
+    },
+    {
+      "as_of": "2026-07-01",
+      "cpp_milli": 800,
+      "program_id": "mb",
+      "source_note": "eval fixture"
+    }
+  ],
+  "version.json": {
+    "as_of": "2026-07-01",
+    "content_hash": "e60482d5535a11bbda1840b19a82813e3f132b7d8859b2e4bf7803d3e12ea1b4",
+    "version": "1.0.0"
+  }
+}

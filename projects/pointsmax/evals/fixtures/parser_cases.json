@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "p_01",
+    "group": "plain",
+    "text": "business class NYC to Paris in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_02",
+    "group": "plain",
+    "text": "round-trip business NYC to Paris in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": true,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_03",
+    "group": "plain",
+    "text": "one-way economy New York to London in November",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "economy",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_04",
+    "group": "plain",
+    "text": "first class Chicago to Rome in December",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "CHI",
+        "dest_city": "ROM",
+        "cabin": "first",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-12-01",
+        "travel_window_end": "2026-12-31"
+      }
+    }
+  },
+  {
+    "id": "p_05",
+    "group": "plain",
+    "text": "premium economy San Francisco to Tokyo in November",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "SFO",
+        "dest_city": "TYO",
+        "cabin": "premium_economy",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_06",
+    "group": "plain",
+    "text": "round trip first class Los Angeles to Sydney in December for 2",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "LAX",
+        "dest_city": "SYD",
+        "cabin": "first",
+        "round_trip": true,
+        "passengers": 2,
+        "travel_window_start": "2026-12-01",
+        "travel_window_end": "2026-12-31"
+      }
+    }
+  },
+  {
+    "id": "p_07",
+    "group": "plain",
+    "text": "economy Miami to Madrid in November",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "MIA",
+        "dest_city": "MAD",
+        "cabin": "economy",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_08",
+    "group": "plain",
+    "text": "business Lisbon to New York in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "LIS",
+        "dest_city": "NYC",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_09",
+    "group": "plain",
+    "text": "coach Chicago to Rome in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "CHI",
+        "dest_city": "ROM",
+        "cabin": "economy",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_10",
+    "group": "plain",
+    "text": "biz NYC to Tokyo in November",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "TYO",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_11",
+    "group": "plain",
+    "text": "PE Paris to New York in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "PAR",
+        "dest_city": "NYC",
+        "cabin": "premium_economy",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_12",
+    "group": "plain",
+    "text": "return business Rome to Chicago in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "ROM",
+        "dest_city": "CHI",
+        "cabin": "business",
+        "round_trip": true,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_13",
+    "group": "plain",
+    "text": "roundtrip economy Madrid to Miami in November",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "MAD",
+        "dest_city": "MIA",
+        "cabin": "economy",
+        "round_trip": true,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_14",
+    "group": "plain",
+    "text": "Singapore to Hong Kong in October in business",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "SIN",
+        "dest_city": "HKG",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_15",
+    "group": "plain",
+    "text": "one way business Sydney to Los Angeles in December",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "SYD",
+        "dest_city": "LAX",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-12-01",
+        "travel_window_end": "2026-12-31"
+      }
+    }
+  },
+  {
+    "id": "p_16",
+    "group": "plain",
+    "text": "business class New York to Paris in October for 3 people",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 3,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_17",
+    "group": "plain",
+    "text": "economy New York to London in October for two",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "economy",
+        "round_trip": false,
+        "passengers": 2,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_18",
+    "group": "plain",
+    "text": "business Chicago to Rome in October party of 4",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "CHI",
+        "dest_city": "ROM",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 4,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_19",
+    "group": "plain",
+    "text": "round-trip premium economy Tokyo to San Francisco in November",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "TYO",
+        "dest_city": "SFO",
+        "cabin": "premium_economy",
+        "round_trip": true,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_20",
+    "group": "plain",
+    "text": "first Paris to New York in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "PAR",
+        "dest_city": "NYC",
+        "cabin": "first",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_21",
+    "group": "plain",
+    "text": "business class from New York to Lisbon in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LIS",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_22",
+    "group": "plain",
+    "text": "economy to Paris from New York in November",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "economy",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_23",
+    "group": "plain",
+    "text": "business NYC to PAR in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_24",
+    "group": "plain",
+    "text": "economy JFK to CDG in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "economy",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_25",
+    "group": "plain",
+    "text": "round-trip business class New York City to Paris in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": true,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_26",
+    "group": "alias",
+    "text": "business nyc to paris in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_27",
+    "group": "alias",
+    "text": "business new york to paris in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_28",
+    "group": "alias",
+    "text": "business new york city to paris in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_29",
+    "group": "alias",
+    "text": "business EWR to CDG in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_30",
+    "group": "alias",
+    "text": "business LGA to ORY in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "PAR",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_31",
+    "group": "alias",
+    "text": "business ORD to FCO in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "CHI",
+        "dest_city": "ROM",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_32",
+    "group": "alias",
+    "text": "business MDW to FCO in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "CHI",
+        "dest_city": "ROM",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_33",
+    "group": "alias",
+    "text": "business HND to SFO in november",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "TYO",
+        "dest_city": "SFO",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_34",
+    "group": "alias",
+    "text": "business NRT to SFO in november",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "TYO",
+        "dest_city": "SFO",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_35",
+    "group": "alias",
+    "text": "business LHR to JFK in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "LON",
+        "dest_city": "NYC",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_36",
+    "group": "alias",
+    "text": "business LGW to EWR in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "LON",
+        "dest_city": "NYC",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_37",
+    "group": "alias",
+    "text": "business hong kong to singapore in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "HKG",
+        "dest_city": "SIN",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_38",
+    "group": "alias",
+    "text": "business los angeles to sydney in december",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "LAX",
+        "dest_city": "SYD",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-12-01",
+        "travel_window_end": "2026-12-31"
+      }
+    }
+  },
+  {
+    "id": "p_39",
+    "group": "alias",
+    "text": "business san francisco to tokyo in november",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "SFO",
+        "dest_city": "TYO",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_40",
+    "group": "alias",
+    "text": "business lisbon to madrid in october",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "LIS",
+        "dest_city": "MAD",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_41",
+    "group": "month",
+    "text": "business NYC to London in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_42",
+    "group": "month",
+    "text": "business NYC to London in October",
+    "today": "2026-11-15",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2027-10-01",
+        "travel_window_end": "2027-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_43",
+    "group": "month",
+    "text": "business NYC to London in October",
+    "today": "2026-10-05",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-10-01",
+        "travel_window_end": "2026-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_44",
+    "group": "month",
+    "text": "business NYC to London in March",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2027-03-01",
+        "travel_window_end": "2027-03-31"
+      }
+    }
+  },
+  {
+    "id": "p_45",
+    "group": "month",
+    "text": "business NYC to London in March",
+    "today": "2027-02-01",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2027-03-01",
+        "travel_window_end": "2027-03-31"
+      }
+    }
+  },
+  {
+    "id": "p_46",
+    "group": "month",
+    "text": "business NYC to London in January",
+    "today": "2026-12-20",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2027-01-01",
+        "travel_window_end": "2027-01-31"
+      }
+    }
+  },
+  {
+    "id": "p_47",
+    "group": "month",
+    "text": "business NYC to London in December",
+    "today": "2026-01-10",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-12-01",
+        "travel_window_end": "2026-12-31"
+      }
+    }
+  },
+  {
+    "id": "p_48",
+    "group": "month",
+    "text": "business NYC to London in 2027-05",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2027-05-01",
+        "travel_window_end": "2027-05-31"
+      }
+    }
+  },
+  {
+    "id": "p_49",
+    "group": "month",
+    "text": "business NYC to London in October 2028",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2028-10-01",
+        "travel_window_end": "2028-10-31"
+      }
+    }
+  },
+  {
+    "id": "p_50",
+    "group": "month",
+    "text": "business NYC to London in June",
+    "today": "2026-06-30",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "flight",
+        "origin_city": "NYC",
+        "dest_city": "LON",
+        "cabin": "business",
+        "round_trip": false,
+        "passengers": 1,
+        "travel_window_start": "2026-06-01",
+        "travel_window_end": "2026-06-30"
+      }
+    }
+  },
+  {
+    "id": "p_51",
+    "group": "intent",
+    "text": "turn everything into cash",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "cash",
+        "cash_programs": null,
+        "cash_max_points": null
+      }
+    }
+  },
+  {
+    "id": "p_52",
+    "group": "intent",
+    "text": "cash out my points",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "cash",
+        "cash_programs": null,
+        "cash_max_points": null
+      }
+    }
+  },
+  {
+    "id": "p_53",
+    "group": "intent",
+    "text": "a week at a hotel in Paris in December",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "stay",
+        "city": "PAR",
+        "nights": 7,
+        "travel_window_start": "2026-12-01",
+        "travel_window_end": "2026-12-31"
+      }
+    }
+  },
+  {
+    "id": "p_54",
+    "group": "intent",
+    "text": "5 nights in Tokyo in November",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "stay",
+        "city": "TYO",
+        "nights": 5,
+        "travel_window_start": "2026-11-01",
+        "travel_window_end": "2026-11-30"
+      }
+    }
+  },
+  {
+    "id": "p_55",
+    "group": "intent",
+    "text": "statement credit please",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "goal",
+      "spec": {
+        "kind": "cash",
+        "cash_programs": null,
+        "cash_max_points": null
+      }
+    }
+  },
+  {
+    "id": "p_56",
+    "group": "negative",
+    "text": "business class somewhere warm",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "error",
+      "missing": [
+        "dest_city",
+        "origin_city",
+        "travel_month"
+      ],
+      "ambiguous": []
+    }
+  },
+  {
+    "id": "p_57",
+    "group": "negative",
+    "text": "next spring",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "error",
+      "missing": [
+        "dest_city",
+        "origin_city",
+        "travel_month"
+      ],
+      "ambiguous": []
+    }
+  },
+  {
+    "id": "p_58",
+    "group": "negative",
+    "text": "fly to Paris",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "error",
+      "missing": [
+        "origin_city",
+        "travel_month"
+      ],
+      "ambiguous": []
+    }
+  },
+  {
+    "id": "p_59",
+    "group": "negative",
+    "text": "hotel in Paris",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "error",
+      "missing": [
+        "nights",
+        "travel_month"
+      ],
+      "ambiguous": []
+    }
+  },
+  {
+    "id": "p_60",
+    "group": "negative",
+    "text": "business New York to Paris to London in October",
+    "today": "2026-07-31",
+    "truth": {
+      "outcome": "error",
+      "missing": [],
+      "ambiguous": [
+        "cities"
+      ]
+    }
+  }
+]

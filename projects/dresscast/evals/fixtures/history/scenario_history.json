@@ -1,0 +1,21 @@
+{
+  "description": "Wear history planted before every scenario run (EVALS.md §4). Offsets are days before the scenario's own date, so one file serves all 15 scenario days. The `days_ago: 1` entries are what HC-8 blocks and what the variety term penalises hardest.",
+  "small": [
+    {"days_ago": 1, "items": ["b5-oxford", "p4-jeans", "f3-boots", "m3-thick", "o3-coat"]},
+    {"days_ago": 2, "items": ["b3-polo", "p3-chinos", "f2-sneakers"]},
+    {"days_ago": 3, "items": ["b1-tee", "p1-shorts", "f1-sandals"]},
+    {"days_ago": 5, "items": ["b4-ssshirt", "p5-thick", "f3-boots", "m1-thin"]},
+    {"days_ago": 9, "items": ["b2-lstee", "p2-skirt", "f2-sneakers", "m2-fleece"]}
+  ],
+  "medium": [
+    {"days_ago": 1, "items": ["m013", "m038", "m058", "m021", "m031"]},
+    {"days_ago": 2, "items": ["m009", "m040", "m055"]},
+    {"days_ago": 3, "items": ["m002", "m045", "m057"]},
+    {"days_ago": 5, "items": ["m011", "m039", "m053", "m019"]},
+    {"days_ago": 9, "items": ["m005", "m041", "m059", "m025"]}
+  ],
+  "edge": [
+    {"days_ago": 1, "items": ["e-b3", "e-p1", "e-f1", "e-m2"]},
+    {"days_ago": 3, "items": ["e-b1", "e-p4", "e-f1"]}
+  ]
+}

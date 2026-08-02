@@ -1,0 +1,174 @@
+{
+  "footer": "This is information, not investment advice. NewsAlpha describes evidence and uncertainty; it does not recommend trades.",
+
+  "trigger_summaries": {
+    "earnings_surprise.subject.beat": "reported quarterly results above expectations",
+    "earnings_surprise.subject.miss": "reported quarterly results below expectations",
+    "guidance_change.subject.raise": "raised its forward guidance",
+    "guidance_change.subject.cut": "cut its forward guidance",
+    "guidance_change.subject.withdraw": "withdrew its forward guidance",
+    "mna.target.*": "was named as the target of an acquisition approach",
+    "mna.target.*|rumored": "was reported, without confirmation, as an acquisition target",
+    "mna.target.*|denied": "was reported as an acquisition target and the report has since been denied",
+    "mna.acquirer.*": "was named as the acquirer in an acquisition approach",
+    "mna.acquirer.*|rumored": "was reported, without confirmation, as a prospective acquirer",
+    "regulatory_action.subject.adverse": "was named in an adverse regulatory action",
+    "regulatory_action.subject.favorable": "received a favorable regulatory outcome",
+    "listing.subject.*": "was announced for listing on a new venue",
+    "listing.subject.*|rumored": "was reported, without confirmation, as a candidate for listing on a new venue",
+    "delisting.subject.*": "was announced for removal from a venue",
+    "hack_exploit.subject.*": "was reported to have suffered an exploit or breach"
+  },
+
+  "attribute_labels": {
+    "polarity": "polarity",
+    "surprise_pct": "surprise",
+    "premium_pct": "premium",
+    "deal_value_usd": "deal value",
+    "amount_usd": "amount",
+    "agency": "agency",
+    "venue": "venue",
+    "vector": "vector"
+  },
+
+  "falsifiers": {
+    "earnings_surprise": "a restatement, a one-off item that explains the surprise, or a guidance revision in the opposite direction",
+    "guidance_change": "management walking the revision back, or a segment disclosure that contradicts it",
+    "mna": "a formal denial by either party, a competing approach, or a regulatory block",
+    "regulatory_action": "an appeal, a stay of the order, or a settlement on materially different terms",
+    "listing": "the venue postponing or reversing the listing, or trading opening with very thin depth",
+    "delisting": "the venue reinstating the pair, or a migration path that preserves access",
+    "hack_exploit": "recovery of the funds, a credible reimbursement plan, or the loss proving smaller than first reported"
+  },
+
+  "already_priced_note": "Most of the announcement move was already in the price before the first bar this signal can be measured from; the band above covers only what came after that point. ",
+
+  "templates": [
+    {
+      "id": "earnings-subject-bullish",
+      "event_type": "earnings_surprise",
+      "direction": "bullish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["analyst estimate revisions over the next two weeks", "whether the surprise came from revenue or from one-off items", "the next quarter's guidance", "insider transaction filings"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "earnings-subject-bearish",
+      "event_type": "earnings_surprise",
+      "direction": "bearish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["analyst estimate revisions over the next two weeks", "whether the shortfall was demand-driven or margin-driven", "the next quarter's guidance", "any change in the buyback pace"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "guidance-subject-bullish",
+      "event_type": "guidance_change",
+      "direction": "bullish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["whether the revision is demand-led or cost-led", "consensus estimates catching up over the following week", "segment-level detail in the next filing"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "guidance-subject-bearish",
+      "event_type": "guidance_change",
+      "direction": "bearish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["whether the revision is demand-led or cost-led", "analyst downgrades over the following week", "management commentary at the next conference", "any change in the cost programme"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "mna-bullish",
+      "event_type": "mna",
+      "direction": "bullish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["a definitive agreement, or a denial", "the 8-K or equivalent filing", "a competing approach at a higher price", "antitrust review timelines"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "mna-bearish",
+      "event_type": "mna",
+      "direction": "bearish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["a definitive agreement, or a further denial", "the 8-K or equivalent filing", "the size and financing mix of the consideration", "antitrust review timelines"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "regulatory-subject-bullish",
+      "event_type": "regulatory_action",
+      "direction": "bullish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["the written order or decision text", "whether other jurisdictions follow", "venues restoring access or products"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "regulatory-subject-bearish",
+      "event_type": "regulatory_action",
+      "direction": "bearish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["the complaint or order text and the remedies sought", "whether other regulators open parallel actions", "venues restricting access or products", "the company's response and any provision taken"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "listing-subject-bullish",
+      "event_type": "listing",
+      "direction": "bullish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["the venue's own notice and the exact go-live time", "order-book depth in the first sessions", "whether other venues follow"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "listing-subject-bearish",
+      "event_type": "listing",
+      "direction": "bearish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["the venue's own notice and the exact go-live time", "order-book depth in the first sessions", "whether the listing is postponed"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "delisting-subject-bearish",
+      "event_type": "delisting",
+      "direction": "bearish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["the venue's notice and the effective date", "where remaining liquidity concentrates", "whether the issuer contests the removal"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "delisting-subject-bullish",
+      "event_type": "delisting",
+      "direction": "bullish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["the venue's notice and the effective date", "where remaining liquidity concentrates", "whether the removal is reversed"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "hack-subject-bearish",
+      "event_type": "hack_exploit",
+      "direction": "bearish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["an official post-mortem naming the vector", "a reimbursement or treasury backstop plan", "TVL and exchange-deposit outflows", "whether the stolen funds move or are frozen"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    },
+    {
+      "id": "hack-subject-bullish",
+      "event_type": "hack_exploit",
+      "direction": "bullish",
+      "what_happened": "{asset_name} ({asset_symbol}) {trigger_summary} ({stage}).{attributes_summary}{evidence_block}",
+      "why_it_matters": "{prior_rationale} {announcement_context} Grounding: {source_note}.",
+      "what_to_watch": ["an official post-mortem naming the vector", "a reimbursement or treasury backstop plan", "whether the stolen funds are recovered"],
+      "uncertainty_note": "Confidence {confidence} at the {stage} stage, from {corroboration} independent source(s) over a {horizon_bars}-bar horizon. {already_priced_note}What would change this reading: {falsifier}."
+    }
+  ]
+}

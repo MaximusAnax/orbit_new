@@ -1,0 +1,851 @@
+{
+  "cases": [
+    {
+      "id": "windchill_-30C_20kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=-30C v=20km/h, cell -43",
+      "inputs": {
+        "temp_c": -30.0,
+        "wind_kmh": 20.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -43.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 0.6215*-30 - 11.37*20^0.16 + 0.3965*-30*20^0.16 = -43.097; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -43"
+    },
+    {
+      "id": "windchill_-25C_50kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=-25C v=50km/h, cell -42",
+      "inputs": {
+        "temp_c": -25.0,
+        "wind_kmh": 50.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -42.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 0.6215*-25 - 11.37*50^0.16 + 0.3965*-25*50^0.16 = -42.215; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -42"
+    },
+    {
+      "id": "windchill_-20C_10kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=-20C v=10km/h, cell -27",
+      "inputs": {
+        "temp_c": -20.0,
+        "wind_kmh": 10.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -27.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 0.6215*-20 - 11.37*10^0.16 + 0.3965*-20*10^0.16 = -27.207; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -27"
+    },
+    {
+      "id": "windchill_-15C_30kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=-15C v=30km/h, cell -26",
+      "inputs": {
+        "temp_c": -15.0,
+        "wind_kmh": 30.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -26.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 0.6215*-15 - 11.37*30^0.16 + 0.3965*-15*30^0.16 = -26.044; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -26"
+    },
+    {
+      "id": "windchill_-10C_20kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=-10C v=20km/h, cell -18",
+      "inputs": {
+        "temp_c": -10.0,
+        "wind_kmh": 20.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -18.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 0.6215*-10 - 11.37*20^0.16 + 0.3965*-10*20^0.16 = -17.861; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -18"
+    },
+    {
+      "id": "windchill_-10C_40kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=-10C v=40km/h, cell -21",
+      "inputs": {
+        "temp_c": -10.0,
+        "wind_kmh": 40.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -21.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 0.6215*-10 - 11.37*40^0.16 + 0.3965*-10*40^0.16 = -20.765; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -21"
+    },
+    {
+      "id": "windchill_-5C_10kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=-5C v=10km/h, cell -9",
+      "inputs": {
+        "temp_c": -5.0,
+        "wind_kmh": 10.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -9.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 0.6215*-5 - 11.37*10^0.16 + 0.3965*-5*10^0.16 = -9.288; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -9"
+    },
+    {
+      "id": "windchill_-5C_30kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=-5C v=30km/h, cell -13",
+      "inputs": {
+        "temp_c": -5.0,
+        "wind_kmh": 30.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -13.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 0.6215*-5 - 11.37*30^0.16 + 0.3965*-5*30^0.16 = -12.997; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -13"
+    },
+    {
+      "id": "windchill_0C_10kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=0C v=10km/h, cell -3",
+      "inputs": {
+        "temp_c": 0.0,
+        "wind_kmh": 10.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -3.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 - 11.37*10^0.16 = -3.315; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -3"
+    },
+    {
+      "id": "windchill_0C_20kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=0C v=20km/h, cell -5",
+      "inputs": {
+        "temp_c": 0.0,
+        "wind_kmh": 20.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -5.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 - 11.37*20^0.16 = -5.242; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -5"
+    },
+    {
+      "id": "windchill_0C_30kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=0C v=30km/h, cell -6",
+      "inputs": {
+        "temp_c": 0.0,
+        "wind_kmh": 30.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -6.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 - 11.37*30^0.16 = -6.473; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -6"
+    },
+    {
+      "id": "windchill_0C_50kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=0C v=50km/h, cell -8",
+      "inputs": {
+        "temp_c": 0.0,
+        "wind_kmh": 50.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -8.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 - 11.37*50^0.16 = -8.142; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -8"
+    },
+    {
+      "id": "windchill_5C_20kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=5C v=20km/h, cell 1",
+      "inputs": {
+        "temp_c": 5.0,
+        "wind_kmh": 20.0,
+        "humidity_pct": 60.0
+      },
+      "expected": 1.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 3.1075 - 11.37*20^0.16 + 1.9825*20^0.16 = 1.067; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell 1"
+    },
+    {
+      "id": "windchill_5C_40kmh",
+      "family": "wind_chill_chart",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Environment Canada / US NWS wind chill chart (JAG/TI 2001); chart cells are the formula rounded to the nearest whole degree: T=5C v=40km/h, cell -1",
+      "inputs": {
+        "temp_c": 5.0,
+        "wind_kmh": 40.0,
+        "humidity_pct": 60.0
+      },
+      "expected": -1.0,
+      "tolerance": 0.5,
+      "rationale": "13.12 + 3.1075 - 11.37*40^0.16 + 1.9825*40^0.16 = -0.711; T <= 10 C so ramp_cold = 1 and feels == WCT; chart cell -1"
+    },
+    {
+      "id": "steadman_30C_70rh",
+      "family": "steadman_at",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Steadman (1984) apparent temperature, non-radiant form, as published by the Australian Bureau of Meteorology: T=30C rh=70% v=10km/h",
+      "inputs": {
+        "temp_c": 30.0,
+        "wind_kmh": 10.0,
+        "humidity_pct": 70.0
+      },
+      "expected": 33.8,
+      "tolerance": 0.5,
+      "rationale": "e = 0.70*6.105*exp(17.27*30/267.7) = 29.601; 30 + 9.768 - 1.944 - 4 = 33.824; T >= 26 C so ramp_heat = 1 and feels == AT"
+    },
+    {
+      "id": "steadman_35C_20rh",
+      "family": "steadman_at",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Steadman (1984) apparent temperature, non-radiant form, as published by the Australian Bureau of Meteorology: T=35C rh=20% v=10km/h",
+      "inputs": {
+        "temp_c": 35.0,
+        "wind_kmh": 10.0,
+        "humidity_pct": 20.0
+      },
+      "expected": 32.8,
+      "tolerance": 0.5,
+      "rationale": "e = 0.20*6.105*exp(17.27*35/272.7) = 11.203; 35 + 3.697 - 1.944 - 4 = 32.753; T >= 26 C so ramp_heat = 1 and feels == AT"
+    },
+    {
+      "id": "steadman_28C_60rh",
+      "family": "steadman_at",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Steadman (1984) apparent temperature, non-radiant form, as published by the Australian Bureau of Meteorology: T=28C rh=60% v=5km/h",
+      "inputs": {
+        "temp_c": 28.0,
+        "wind_kmh": 5.0,
+        "humidity_pct": 60.0
+      },
+      "expected": 30.5,
+      "tolerance": 0.5,
+      "rationale": "e = 0.60*6.105*exp(17.27*28/265.7) = 22.606; 28 + 7.460 - 0.972 - 4 = 30.488; T >= 26 C so ramp_heat = 1 and feels == AT"
+    },
+    {
+      "id": "steadman_32C_50rh",
+      "family": "steadman_at",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Steadman (1984) apparent temperature, non-radiant form, as published by the Australian Bureau of Meteorology: T=32C rh=50% v=15km/h",
+      "inputs": {
+        "temp_c": 32.0,
+        "wind_kmh": 15.0,
+        "humidity_pct": 50.0
+      },
+      "expected": 32.9,
+      "tolerance": 0.5,
+      "rationale": "e = 0.50*6.105*exp(17.27*32/269.7) = 23.690; 32 + 7.818 - 2.917 - 4 = 32.901; T >= 26 C so ramp_heat = 1 and feels == AT"
+    },
+    {
+      "id": "steadman_26C_80rh",
+      "family": "steadman_at",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Steadman (1984) apparent temperature, non-radiant form, as published by the Australian Bureau of Meteorology: T=26C rh=80% v=0km/h",
+      "inputs": {
+        "temp_c": 26.0,
+        "wind_kmh": 0.0,
+        "humidity_pct": 80.0
+      },
+      "expected": 30.8,
+      "tolerance": 0.5,
+      "rationale": "e = 0.80*6.105*exp(17.27*26/263.7) = 26.809; 26 + 8.847 - 0 - 4 = 30.847; T >= 26 C so ramp_heat = 1 and feels == AT"
+    },
+    {
+      "id": "steadman_34C_40rh",
+      "family": "steadman_at",
+      "kind": "feels_like",
+      "truth_kind": "external",
+      "source": "Steadman (1984) apparent temperature, non-radiant form, as published by the Australian Bureau of Meteorology: T=34C rh=40% v=20km/h",
+      "inputs": {
+        "temp_c": 34.0,
+        "wind_kmh": 20.0,
+        "humidity_pct": 40.0
+      },
+      "expected": 33.1,
+      "tolerance": 0.5,
+      "rationale": "e = 0.40*6.105*exp(17.27*34/271.7) = 21.199; 34 + 6.996 - 3.889 - 4 = 33.107; T >= 26 C so ramp_heat = 1 and feels == AT"
+    },
+    {
+      "id": "lipschitz_cold_edge_45kmh",
+      "family": "ramp_continuity",
+      "kind": "lipschitz",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md FR-5 ramp definition \u2014 hand-computed",
+      "inputs": {
+        "t1": 10.0,
+        "t2": 10.1,
+        "wind_kmh": 45.0,
+        "humidity_pct": 60.0
+      },
+      "expected": 3.0,
+      "tolerance": 0.0,
+      "rationale": "feels(10.0) = 5.7193 (full wind chill), feels(10.1) = 5.9605 (ramp_cold 0.975); |df/dT| = 0.2412/0.1 = 2.412 <= 3. This is the worst case in the suite and the reason FR-5 fades rather than switches: revision 1's step gave 44 here"
+    },
+    {
+      "id": "lipschitz_cold_edge_top_45kmh",
+      "family": "ramp_continuity",
+      "kind": "lipschitz",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md FR-5 ramp definition \u2014 hand-computed",
+      "inputs": {
+        "t1": 13.9,
+        "t2": 14.0,
+        "wind_kmh": 45.0,
+        "humidity_pct": 60.0
+      },
+      "expected": 3.0,
+      "tolerance": 0.0,
+      "rationale": "feels(13.9) = 13.8272 (ramp_cold 0.025), feels(14.0) = 14.0 (ramp_cold 0); |df/dT| = 0.1728/0.1 = 1.728 <= 3"
+    },
+    {
+      "id": "lipschitz_heat_edge_55rh",
+      "family": "ramp_continuity",
+      "kind": "lipschitz",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md FR-5 ramp definition \u2014 hand-computed",
+      "inputs": {
+        "t1": 25.9,
+        "t2": 26.0,
+        "wind_kmh": 8.0,
+        "humidity_pct": 55.0
+      },
+      "expected": 3.0,
+      "tolerance": 0.0,
+      "rationale": "feels(25.9) = 26.3663 (ramp_heat 0.95), feels(26.0) = 26.5267 (ramp_heat 1); |df/dT| = 0.1604/0.1 = 1.604 <= 3, matching D4's 1.49 class. The bound is humidity-dependent: the AT delta itself grows with rh, so at rh 100 the same probe measures 4.37 (recorded in REVIEW.md)"
+    },
+    {
+      "id": "zero_wind_delta_below_threshold",
+      "family": "ramp_continuity",
+      "kind": "feels_like",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md FR-5 ramp definition \u2014 hand-computed",
+      "inputs": {
+        "temp_c": -5.0,
+        "wind_kmh": 4.8,
+        "humidity_pct": 50.0
+      },
+      "expected": -5.0,
+      "tolerance": 1e-09,
+      "rationale": "v <= 4.8 km/h so wind_delta is 0 by definition; feels == T"
+    },
+    {
+      "id": "zero_wind_delta_above_ramp",
+      "family": "ramp_continuity",
+      "kind": "feels_like",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md FR-5 ramp definition \u2014 hand-computed",
+      "inputs": {
+        "temp_c": 14.0,
+        "wind_kmh": 45.0,
+        "humidity_pct": 60.0
+      },
+      "expected": 14.0,
+      "tolerance": 1e-09,
+      "rationale": "T >= 14 C so ramp_cold = 0; the wind delta is faded out entirely"
+    },
+    {
+      "id": "zero_heat_delta_below_ramp",
+      "family": "ramp_continuity",
+      "kind": "feels_like",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md FR-5 ramp definition \u2014 hand-computed",
+      "inputs": {
+        "temp_c": 24.0,
+        "wind_kmh": 5.0,
+        "humidity_pct": 90.0
+      },
+      "expected": 24.0,
+      "tolerance": 1e-09,
+      "rationale": "T <= 24 C so ramp_heat = 0; the humid AT delta is faded out entirely"
+    },
+    {
+      "id": "preset_tshirt",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: t-shirt",
+      "inputs": {
+        "category": "tshirt"
+      },
+      "expected": 0.08,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists t-shirt at 0.08 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_long_sleeve_tee",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: long-sleeve tee",
+      "inputs": {
+        "category": "long_sleeve_tee"
+      },
+      "expected": 0.12,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists long-sleeve tee at 0.12 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_polo",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: polo",
+      "inputs": {
+        "category": "polo"
+      },
+      "expected": 0.17,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists polo at 0.17 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_shirt_short_sleeve",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: short-sleeve shirt",
+      "inputs": {
+        "category": "shirt_short_sleeve"
+      },
+      "expected": 0.19,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists short-sleeve shirt at 0.19 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_shirt_long_sleeve",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: long-sleeve shirt",
+      "inputs": {
+        "category": "shirt_long_sleeve"
+      },
+      "expected": 0.25,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists long-sleeve shirt at 0.25 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_flannel_shirt",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: flannel shirt",
+      "inputs": {
+        "category": "flannel_shirt"
+      },
+      "expected": 0.34,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists flannel shirt at 0.34 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_sweater_thin",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: thin sweater",
+      "inputs": {
+        "category": "sweater_thin"
+      },
+      "expected": 0.25,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists thin sweater at 0.25 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_sweater_thick",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: thick sweater",
+      "inputs": {
+        "category": "sweater_thick"
+      },
+      "expected": 0.36,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists thick sweater at 0.36 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_blazer",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: suit jacket / blazer",
+      "inputs": {
+        "category": "blazer"
+      },
+      "expected": 0.36,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists suit jacket / blazer at 0.36 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_thermal_top",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: long underwear top",
+      "inputs": {
+        "category": "thermal_top"
+      },
+      "expected": 0.2,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists long underwear top at 0.2 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_trousers_thin",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: thin trousers",
+      "inputs": {
+        "category": "trousers_thin"
+      },
+      "expected": 0.15,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists thin trousers at 0.15 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_trousers_thick",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: thick trousers",
+      "inputs": {
+        "category": "trousers_thick"
+      },
+      "expected": 0.24,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists thick trousers at 0.24 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_shorts",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: walking shorts",
+      "inputs": {
+        "category": "shorts"
+      },
+      "expected": 0.08,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists walking shorts at 0.08 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_dress_light",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: light dress",
+      "inputs": {
+        "category": "dress_light"
+      },
+      "expected": 0.23,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists light dress at 0.23 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "preset_boots",
+      "family": "garment_presets",
+      "kind": "preset",
+      "truth_kind": "external",
+      "source": "ASHRAE Standard 55 garment insulation table: boots, hosiery included",
+      "inputs": {
+        "category": "boots"
+      },
+      "expected": 0.1,
+      "tolerance": 0.0,
+      "rationale": "ASHRAE 55 lists boots, hosiery included at 0.1 clo; SCOPE.md D1 transcribes it verbatim"
+    },
+    {
+      "id": "ensemble_1",
+      "family": "ensemble_regression",
+      "kind": "ensemble",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D2 (McCullough/ASHRAE ensemble regression) \u2014 hand-computed",
+      "inputs": {
+        "clos": []
+      },
+      "expected": 0.0,
+      "tolerance": 1e-09,
+      "rationale": "the empty ensemble is defined as 0 clo (D2), not the 0.161 intercept"
+    },
+    {
+      "id": "ensemble_2",
+      "family": "ensemble_regression",
+      "kind": "ensemble",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D2 (McCullough/ASHRAE ensemble regression) \u2014 hand-computed",
+      "inputs": {
+        "clos": [
+          0.08
+        ]
+      },
+      "expected": 0.2278,
+      "tolerance": 1e-09,
+      "rationale": "0.835*0.08 + 0.161 = 0.0668 + 0.161 = 0.2278"
+    },
+    {
+      "id": "ensemble_3",
+      "family": "ensemble_regression",
+      "kind": "ensemble",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D2 (McCullough/ASHRAE ensemble regression) \u2014 hand-computed",
+      "inputs": {
+        "clos": [
+          0.08,
+          0.08,
+          0.02
+        ]
+      },
+      "expected": 0.3113,
+      "tolerance": 1e-09,
+      "rationale": "0.835*0.18 + 0.161 = 0.1503 + 0.161 = 0.3113 (EVALS.md 5.2 floor)"
+    },
+    {
+      "id": "ensemble_4",
+      "family": "ensemble_regression",
+      "kind": "ensemble",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D2 (McCullough/ASHRAE ensemble regression) \u2014 hand-computed",
+      "inputs": {
+        "clos": [
+          0.25,
+          0.24,
+          0.1
+        ]
+      },
+      "expected": 0.65365,
+      "tolerance": 1e-09,
+      "rationale": "0.835*0.59 + 0.161 = 0.49265 + 0.161 = 0.65365 (DATA_MODEL 6, 15:00)"
+    },
+    {
+      "id": "ensemble_5",
+      "family": "ensemble_regression",
+      "kind": "ensemble",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D2 (McCullough/ASHRAE ensemble regression) \u2014 hand-computed",
+      "inputs": {
+        "clos": [
+          0.25,
+          0.36,
+          0.6,
+          0.24,
+          0.1
+        ]
+      },
+      "expected": 1.45525,
+      "tolerance": 1e-09,
+      "rationale": "0.835*1.55 + 0.161 = 1.29425 + 0.161 = 1.45525 (DATA_MODEL 6, 07:00)"
+    },
+    {
+      "id": "ensemble_6",
+      "family": "ensemble_regression",
+      "kind": "ensemble",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D2 (McCullough/ASHRAE ensemble regression) \u2014 hand-computed",
+      "inputs": {
+        "clos": [
+          0.34,
+          0.36,
+          0.36,
+          0.7,
+          0.24,
+          0.15,
+          0.1
+        ]
+      },
+      "expected": 2.03975,
+      "tolerance": 1e-09,
+      "rationale": "0.835*2.25 + 0.161 = 1.87875 + 0.161 = 2.03975 (EVALS.md 5.2 ceiling)"
+    },
+    {
+      "id": "required_definitional",
+      "family": "required_clo_anchors",
+      "kind": "required_clo",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D3 (heat-balance-lite required insulation) \u2014 hand-computed",
+      "inputs": {
+        "feels_c": 21.0,
+        "met": 1.0
+      },
+      "expected": 0.997,
+      "tolerance": 0.001,
+      "rationale": "(34-21)/(7.66*1.0) - 0.70 = 1.697128 - 0.70 = 0.997128"
+    },
+    {
+      "id": "required_spec_22c",
+      "family": "required_clo_anchors",
+      "kind": "required_clo",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D3 (heat-balance-lite required insulation) \u2014 hand-computed",
+      "inputs": {
+        "feels_c": 22.0,
+        "met": 1.1
+      },
+      "expected": 0.724,
+      "tolerance": 0.001,
+      "rationale": "(34-22)/(7.66*1.1) - 0.70 = 1.424163 - 0.70 = 0.724163"
+    },
+    {
+      "id": "required_clamp_low",
+      "family": "required_clo_anchors",
+      "kind": "required_clo",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D3 (heat-balance-lite required insulation) \u2014 hand-computed",
+      "inputs": {
+        "feels_c": 40.0,
+        "met": 1.6
+      },
+      "expected": 0.0,
+      "tolerance": 0.001,
+      "rationale": "(34-40)/12.256 - 0.70 = -1.190 clamps to 0.0"
+    },
+    {
+      "id": "required_clamp_high",
+      "family": "required_clo_anchors",
+      "kind": "required_clo",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D3 (heat-balance-lite required insulation) \u2014 hand-computed",
+      "inputs": {
+        "feels_c": -40.0,
+        "met": 1.6
+      },
+      "expected": 4.5,
+      "tolerance": 0.001,
+      "rationale": "(34+40)/12.256 - 0.70 = 5.338 clamps to 4.5"
+    },
+    {
+      "id": "required_met_1_6",
+      "family": "required_clo_anchors",
+      "kind": "required_clo",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D3 (heat-balance-lite required insulation) \u2014 hand-computed",
+      "inputs": {
+        "feels_c": 10.0,
+        "met": 1.6
+      },
+      "expected": 1.258,
+      "tolerance": 0.001,
+      "rationale": "(34-10)/(7.66*1.6) - 0.70 = 1.958225 - 0.70 = 1.258225"
+    },
+    {
+      "id": "required_met_2_2",
+      "family": "required_clo_anchors",
+      "kind": "required_clo",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D3 (heat-balance-lite required insulation) \u2014 hand-computed",
+      "inputs": {
+        "feels_c": 10.0,
+        "met": 2.2
+      },
+      "expected": 0.724,
+      "tolerance": 0.001,
+      "rationale": "(34-10)/(7.66*2.2) - 0.70 = 1.424163 - 0.70 = 0.724163"
+    },
+    {
+      "id": "required_met_1_2",
+      "family": "required_clo_anchors",
+      "kind": "required_clo",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D3 (heat-balance-lite required insulation) \u2014 hand-computed",
+      "inputs": {
+        "feels_c": 10.0,
+        "met": 1.2
+      },
+      "expected": 1.911,
+      "tolerance": 0.001,
+      "rationale": "(34-10)/(7.66*1.2) - 0.70 = 2.610966 - 0.70 = 1.910966"
+    },
+    {
+      "id": "required_windproof2_attenuation",
+      "family": "required_clo_anchors",
+      "kind": "required_clo_config",
+      "truth_kind": "spec_pinning",
+      "source": "SCOPE.md D3 (heat-balance-lite required insulation) \u2014 hand-computed; SCOPE.md D4 wind attenuation {1.0, 0.6, 0.3}",
+      "inputs": {
+        "temp_c": 6.0,
+        "wind_kmh": 15.0,
+        "humidity_pct": 70.0,
+        "windproofness": 2,
+        "met": 1.6
+      },
+      "expected": 1.585,
+      "tolerance": 0.001,
+      "rationale": "windproofness 2 attenuates 15 km/h to 4.5 km/h, at or below the 4.8 km/h wind-chill threshold, so feels == 6.0 and (34-6)/12.256 - 0.70 = 2.284595 - 0.70 = 1.584595"
+    },
+    {
+      "id": "calibration_definition_1clo",
+      "family": "external_calibration",
+      "kind": "required_clo",
+      "truth_kind": "external",
+      "source": "SCOPE.md D3 residual table: published clo/temperature anchors",
+      "inputs": {
+        "feels_c": 21.0,
+        "met": 1.0
+      },
+      "expected": 1.0,
+      "tolerance": 0.3,
+      "rationale": "the definition of 1 clo (Gagge, Burton & Bazett 1941): a resting person comfortable at 21 C; model gives 0.997, residual -0.003"
+    },
+    {
+      "id": "calibration_ashrae55_winter_zone",
+      "family": "external_calibration",
+      "kind": "required_clo",
+      "truth_kind": "external",
+      "source": "SCOPE.md D3 residual table: published clo/temperature anchors",
+      "inputs": {
+        "feels_c": 21.75,
+        "met": 1.1
+      },
+      "expected": 1.0,
+      "tolerance": 0.3,
+      "rationale": "ASHRAE 55 winter comfort-zone centre, 1.0 clo ensemble; model gives 0.754, residual -0.246 (SCOPE.md D3 states why this is not simultaneously satisfiable with the definitional anchor)"
+    },
+    {
+      "id": "calibration_ashrae55_summer_zone",
+      "family": "external_calibration",
+      "kind": "required_clo",
+      "truth_kind": "external",
+      "source": "SCOPE.md D3 residual table: published clo/temperature anchors",
+      "inputs": {
+        "feels_c": 24.5,
+        "met": 1.1
+      },
+      "expected": 0.5,
+      "tolerance": 0.3,
+      "rationale": "ASHRAE 55 summer comfort-zone centre, 0.5 clo ensemble; model gives 0.427, residual -0.073"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "embedder_id": "spectral-v1",
+  "theta_verify": 0.800034,
+  "theta_enroll": 0.544407,
+  "score_scale": 1024.0,
+  "feature_norms": [
+    {
+      "mean": 4.951153,
+      "scale": 0.004222
+    },
+    {
+      "mean": 0.076833,
+      "scale": 0.100113
+    },
+    {
+      "mean": 0.782526,
+      "scale": 0.024231
+    },
+    {
+      "mean": 476.302344,
+      "scale": 2.29174
+    },
+    {
+      "mean": 1353.436495,
+      "scale": 12.56585
+    },
+    {
+      "mean": -13.910762,
+      "scale": 0.201804
+    },
+    {
+      "mean": 680.09252,
+      "scale": 3.580529
+    },
+    {
+      "mean": 829.38911,
+      "scale": 34.519789
+    },
+    {
+      "mean": 0.497531,
+      "scale": 0.018445
+    },
+    {
+      "mean": 0.676189,
+      "scale": 0.202947
+    },
+    {
+      "mean": 0.449545,
+      "scale": 0.013203
+    },
+    {
+      "mean": 0.219704,
+      "scale": 0.010118
+    },
+    {
+      "mean": 0.081725,
+      "scale": 0.003699
+    },
+    {
+      "mean": 0.070787,
+      "scale": 0.005157
+    },
+    {
+      "mean": 0.054854,
+      "scale": 0.004481
+    },
+    {
+      "mean": 0.033366,
+      "scale": 0.001806
+    }
+  ],
+  "screening": {
+    "enroll_min_duration_s": 3.0,
+    "enroll_max_duration_s": 30.0,
+    "consent_min_duration_s": 5.0,
+    "consent_max_duration_s": 60.0,
+    "clipping_level": 0.999,
+    "max_clipping_fraction": 0.005,
+    "min_snr_db": 15.0,
+    "min_voiced_ratio": 0.4,
+    "voiced_nac_threshold": 0.5,
+    "voiced_energy_margin_db": 6.0
+  },
+  "unit_duration_ms": 180,
+  "consent_grace_days": 30,
+  "provenance": "evals/fixtures/calibrate.py, corpus seed 20260731, dev split = the 12 dev speakers of evals/fixtures/labels.json (D01-D12, disjoint from every eval speaker) plus their siblings. Scoring: s = 1 - d^2/1024 (REVIEW.md deviation 3). feature_norms: mean = dev enrollment population mean; scale = robust within sd (sqrt((max_speaker^2+pooled^2)/2) over dev clean takes) / sqrt(clip(F-1, 0.05, 16.0)). theta_verify = dev impostor max 0.643883 (over 216 comparisons) + 0.6 * gap to dev clean genuine consent min 0.904135 (over 12); margin 0.260252. theta_enroll = dev pure-set LOO min 0.552971 - 0.1 * gap to dev mixed-set LOO max 0.467333 (over 12 mixed sets); margin 0.085638."
+}

@@ -1,0 +1,2530 @@
+{
+ "description": "Hand-authored labelled transition pairs for M2 (EVALS.md \u00a73/\u00a74). Labels follow published DJ guidance -- Camelot compatibility, the +-6%/+-8% pitch-fader range, energy continuity, and the ~2 dB just-noticeable loudness difference -- and are deliberately mixed so no single component predicts the label. Feature values are stored here, so the ground truth is self-contained. Authoring invariant: after any edit, bpm_only_auc must stay <= 0.80 (EVALS.md \u00a74).",
+ "labels": [
+  "seamless",
+  "workable",
+  "clash"
+ ],
+ "cases": [
+  {
+   "id": "p001",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.5
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.74,
+    "loudness_db": -6.0
+   },
+   "rationale": "same key, same tempo, a whisker of energy: the safest mix there is"
+  },
+  {
+   "id": "p002",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.71,
+    "loudness_db": -6.8
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 125.5,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.76,
+    "loudness_db": -6.3
+   },
+   "rationale": "8A->9A adjacent fifth at +1.2%: the textbook harmonic step up"
+  },
+  {
+   "id": "p003",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 126.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 127.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.74,
+    "loudness_db": -6.2
+   },
+   "rationale": "relative major at +0.8%: all seven tones shared, mood opens up"
+  },
+  {
+   "id": "p004",
+   "label": "seamless",
+   "from": {
+    "camelot": "9B",
+    "bpm": 128.0,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.66,
+    "loudness_db": -7.5
+   },
+   "to": {
+    "camelot": "10B",
+    "bpm": 128.0,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "rationale": "adjacent fifth on the major side with tempo locked"
+  },
+  {
+   "id": "p005",
+   "label": "seamless",
+   "from": {
+    "camelot": "12A",
+    "bpm": 174.0,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.88,
+    "loudness_db": -5.0
+   },
+   "to": {
+    "camelot": "1A",
+    "bpm": 175.0,
+    "key_pc": 8,
+    "mode": 0,
+    "energy": 0.9,
+    "loudness_db": -4.6
+   },
+   "rationale": "12A->1A wraparound at dnb tempo, +0.6%"
+  },
+  {
+   "id": "p006",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 122.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.4
+   },
+   "to": {
+    "camelot": "7A",
+    "bpm": 121.0,
+    "key_pc": 2,
+    "mode": 0,
+    "energy": 0.64,
+    "loudness_db": -7.9
+   },
+   "rationale": "adjacent fourth, -0.8%, gentle energy dip"
+  },
+  {
+   "id": "p007",
+   "label": "seamless",
+   "from": {
+    "camelot": "5A",
+    "bpm": 120.0,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.6,
+    "loudness_db": -8.0
+   },
+   "to": {
+    "camelot": "5B",
+    "bpm": 121.5,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.63,
+    "loudness_db": -7.6
+   },
+   "rationale": "relative major at +1.2%"
+  },
+  {
+   "id": "p008",
+   "label": "seamless",
+   "from": {
+    "camelot": "3A",
+    "bpm": 96.0,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.52,
+    "loudness_db": -9.5
+   },
+   "to": {
+    "camelot": "3A",
+    "bpm": 96.5,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.55,
+    "loudness_db": -9.1
+   },
+   "rationale": "same key half a percent apart: inaudible tempo move"
+  },
+  {
+   "id": "p009",
+   "label": "seamless",
+   "from": {
+    "camelot": "11A",
+    "bpm": 128.0,
+    "key_pc": 6,
+    "mode": 0,
+    "energy": 0.84,
+    "loudness_db": -5.4
+   },
+   "to": {
+    "camelot": "12A",
+    "bpm": 129.0,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.87,
+    "loudness_db": -5.0
+   },
+   "rationale": "adjacent fifth at +0.8% near the top of the house range"
+  },
+  {
+   "id": "p010",
+   "label": "seamless",
+   "from": {
+    "camelot": "8B",
+    "bpm": 124.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.7,
+    "loudness_db": -6.9
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 125.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.6
+   },
+   "rationale": "diagonal: six shared tones plus a mode flip, tempo locked"
+  },
+  {
+   "id": "p011",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 88.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.55,
+    "loudness_db": -9.0
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 176.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.5
+   },
+   "rationale": "the canonical half-time move: an 88 BPM groove into 176 BPM dnb in the same key"
+  },
+  {
+   "id": "p012",
+   "label": "seamless",
+   "from": {
+    "camelot": "9A",
+    "bpm": 87.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.58,
+    "loudness_db": -8.6
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 174.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.2
+   },
+   "rationale": "half-time again, same key: doubling is a beatmatch, the feel changes"
+  },
+  {
+   "id": "p013",
+   "label": "seamless",
+   "from": {
+    "camelot": "7A",
+    "bpm": 90.0,
+    "key_pc": 2,
+    "mode": 0,
+    "energy": 0.5,
+    "loudness_db": -9.8
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 180.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.64,
+    "loudness_db": -8.0
+   },
+   "rationale": "half-time into an adjacent fifth: standard hip-hop into drum-and-bass"
+  },
+  {
+   "id": "p014",
+   "label": "seamless",
+   "from": {
+    "camelot": "6B",
+    "bpm": 172.0,
+    "key_pc": 10,
+    "mode": 1,
+    "energy": 0.86,
+    "loudness_db": -5.2
+   },
+   "to": {
+    "camelot": "6B",
+    "bpm": 86.5,
+    "key_pc": 10,
+    "mode": 1,
+    "energy": 0.74,
+    "loudness_db": -6.6
+   },
+   "rationale": "double-time in reverse: 172 down to 86.5 is the same grid halved"
+  },
+  {
+   "id": "p015",
+   "label": "seamless",
+   "from": {
+    "camelot": "10A",
+    "bpm": 126.0,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.75,
+    "loudness_db": -6.2
+   },
+   "to": {
+    "camelot": "11A",
+    "bpm": 127.0,
+    "key_pc": 6,
+    "mode": 0,
+    "energy": 0.79,
+    "loudness_db": -5.8
+   },
+   "rationale": "adjacent fifth, +0.8%, energy building gently"
+  },
+  {
+   "id": "p016",
+   "label": "seamless",
+   "from": {
+    "camelot": "4A",
+    "bpm": 118.0,
+    "key_pc": 5,
+    "mode": 0,
+    "energy": 0.55,
+    "loudness_db": -8.4
+   },
+   "to": {
+    "camelot": "4B",
+    "bpm": 118.5,
+    "key_pc": 8,
+    "mode": 1,
+    "energy": 0.58,
+    "loudness_db": -8.0
+   },
+   "rationale": "relative major with tempo effectively identical"
+  },
+  {
+   "id": "p017",
+   "label": "seamless",
+   "from": {
+    "camelot": "2A",
+    "bpm": 140.0,
+    "key_pc": 3,
+    "mode": 0,
+    "energy": 0.8,
+    "loudness_db": -5.8
+   },
+   "to": {
+    "camelot": "2A",
+    "bpm": 141.0,
+    "key_pc": 3,
+    "mode": 0,
+    "energy": 0.82,
+    "loudness_db": -5.5
+   },
+   "rationale": "same key at +0.7%"
+  },
+  {
+   "id": "p018",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.8
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 127.7,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.73,
+    "loudness_db": -6.5
+   },
+   "rationale": "adjacent fifth at +3.0%: inside the CDJ range, still a clean beatmatch"
+  },
+  {
+   "id": "p019",
+   "label": "seamless",
+   "from": {
+    "camelot": "8B",
+    "bpm": 122.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.66,
+    "loudness_db": -7.3
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 125.7,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.8
+   },
+   "rationale": "relative minor at +3.0%"
+  },
+  {
+   "id": "p020",
+   "label": "seamless",
+   "from": {
+    "camelot": "1B",
+    "bpm": 125.0,
+    "key_pc": 11,
+    "mode": 1,
+    "energy": 0.72,
+    "loudness_db": -6.4
+   },
+   "to": {
+    "camelot": "12B",
+    "bpm": 128.75,
+    "key_pc": 4,
+    "mode": 1,
+    "energy": 0.76,
+    "loudness_db": -6.0
+   },
+   "rationale": "wraparound adjacent fifth at +3.0% with a 0.4 dB level match"
+  },
+  {
+   "id": "p021",
+   "label": "seamless",
+   "from": {
+    "camelot": "11B",
+    "bpm": 120.0,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.62,
+    "loudness_db": -7.8
+   },
+   "to": {
+    "camelot": "11B",
+    "bpm": 123.6,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.65,
+    "loudness_db": -7.4
+   },
+   "rationale": "same key at +3.0%: a fader nudge, nothing more"
+  },
+  {
+   "id": "p022",
+   "label": "seamless",
+   "from": {
+    "camelot": "7B",
+    "bpm": 118.0,
+    "key_pc": 5,
+    "mode": 1,
+    "energy": 0.58,
+    "loudness_db": -8.2
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 121.5,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.62,
+    "loudness_db": -7.8
+   },
+   "rationale": "adjacent fifth at +3.0%"
+  },
+  {
+   "id": "p023",
+   "label": "seamless",
+   "from": {
+    "camelot": "5B",
+    "bpm": 128.0,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.82,
+    "loudness_db": -5.6
+   },
+   "to": {
+    "camelot": "5A",
+    "bpm": 131.8,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.85,
+    "loudness_db": -5.2
+   },
+   "rationale": "relative minor at +3.0%"
+  },
+  {
+   "id": "p024",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 120.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 124.8,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.8
+   },
+   "rationale": "same key at +4.0%: audible on a pitch fader but well inside range"
+  },
+  {
+   "id": "p025",
+   "label": "seamless",
+   "from": {
+    "camelot": "9A",
+    "bpm": 124.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.1
+   },
+   "to": {
+    "camelot": "9B",
+    "bpm": 128.9,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.71,
+    "loudness_db": -6.7
+   },
+   "rationale": "relative major at +4.0%"
+  },
+  {
+   "id": "p026",
+   "label": "seamless",
+   "from": {
+    "camelot": "10B",
+    "bpm": 122.0,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.64,
+    "loudness_db": -7.6
+   },
+   "to": {
+    "camelot": "11B",
+    "bpm": 126.9,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.66,
+    "loudness_db": -7.4
+   },
+   "rationale": "adjacent fifth at +4.0% with almost no level change"
+  },
+  {
+   "id": "p027",
+   "label": "seamless",
+   "from": {
+    "camelot": "6A",
+    "bpm": 96.0,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.48,
+    "loudness_db": -10.0
+   },
+   "to": {
+    "camelot": "6A",
+    "bpm": 99.8,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.5,
+    "loudness_db": -9.7
+   },
+   "rationale": "same key at +4.0% at hip-hop tempo"
+  },
+  {
+   "id": "p028",
+   "label": "seamless",
+   "from": {
+    "camelot": "12B",
+    "bpm": 174.0,
+    "key_pc": 4,
+    "mode": 1,
+    "energy": 0.9,
+    "loudness_db": -4.4
+   },
+   "to": {
+    "camelot": "12A",
+    "bpm": 174.5,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.92,
+    "loudness_db": -4.2
+   },
+   "rationale": "relative minor at dnb tempo, tempo locked"
+  },
+  {
+   "id": "p029",
+   "label": "seamless",
+   "from": {
+    "camelot": "1A",
+    "bpm": 175.0,
+    "key_pc": 8,
+    "mode": 0,
+    "energy": 0.86,
+    "loudness_db": -4.8
+   },
+   "to": {
+    "camelot": "2A",
+    "bpm": 176.0,
+    "key_pc": 3,
+    "mode": 0,
+    "energy": 0.88,
+    "loudness_db": -4.5
+   },
+   "rationale": "adjacent fifth at +0.6%"
+  },
+  {
+   "id": "p030",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 124.5,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.82,
+    "loudness_db": -5.8
+   },
+   "rationale": "relative major with a real +0.12 energy lift: the drop after a breakdown"
+  },
+  {
+   "id": "p031",
+   "label": "seamless",
+   "from": {
+    "camelot": "9A",
+    "bpm": 128.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.78,
+    "loudness_db": -5.8
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 127.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.66,
+    "loudness_db": -7.0
+   },
+   "rationale": "adjacent fourth stepping the energy down 0.12 to open a second act"
+  },
+  {
+   "id": "p032",
+   "label": "seamless",
+   "from": {
+    "camelot": "3B",
+    "bpm": 100.0,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.44,
+    "loudness_db": -10.4
+   },
+   "to": {
+    "camelot": "3A",
+    "bpm": 100.5,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.47,
+    "loudness_db": -10.0
+   },
+   "rationale": "relative minor at indie tempo"
+  },
+  {
+   "id": "p033",
+   "label": "seamless",
+   "from": {
+    "camelot": "4B",
+    "bpm": 116.0,
+    "key_pc": 8,
+    "mode": 1,
+    "energy": 0.56,
+    "loudness_db": -8.6
+   },
+   "to": {
+    "camelot": "5B",
+    "bpm": 117.0,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.59,
+    "loudness_db": -8.2
+   },
+   "rationale": "adjacent fifth at +0.9%"
+  },
+  {
+   "id": "p034",
+   "label": "seamless",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.71,
+    "loudness_db": -6.7
+   },
+   "to": {
+    "camelot": "7B",
+    "bpm": 124.6,
+    "key_pc": 5,
+    "mode": 1,
+    "energy": 0.73,
+    "loudness_db": -6.4
+   },
+   "rationale": "diagonal down a fourth with the mode flip, tempo locked"
+  },
+  {
+   "id": "p035",
+   "label": "seamless",
+   "from": {
+    "camelot": "10A",
+    "bpm": 172.0,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.88,
+    "loudness_db": -4.6
+   },
+   "to": {
+    "camelot": "10B",
+    "bpm": 173.0,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.9,
+    "loudness_db": -4.3
+   },
+   "rationale": "relative major at dnb tempo"
+  },
+  {
+   "id": "p036",
+   "label": "seamless",
+   "from": {
+    "camelot": "2B",
+    "bpm": 126.0,
+    "key_pc": 6,
+    "mode": 1,
+    "energy": 0.74,
+    "loudness_db": -6.3
+   },
+   "to": {
+    "camelot": "1B",
+    "bpm": 125.0,
+    "key_pc": 11,
+    "mode": 1,
+    "energy": 0.71,
+    "loudness_db": -6.6
+   },
+   "rationale": "adjacent fourth across the wraparound at -0.8%"
+  },
+  {
+   "id": "p037",
+   "label": "seamless",
+   "from": {
+    "camelot": "6A",
+    "bpm": 94.0,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.46,
+    "loudness_db": -10.6
+   },
+   "to": {
+    "camelot": "7A",
+    "bpm": 94.5,
+    "key_pc": 2,
+    "mode": 0,
+    "energy": 0.49,
+    "loudness_db": -10.2
+   },
+   "rationale": "adjacent fifth at hip-hop tempo"
+  },
+  {
+   "id": "p038",
+   "label": "seamless",
+   "from": {
+    "camelot": "5A",
+    "bpm": 121.0,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.61,
+    "loudness_db": -8.0
+   },
+   "to": {
+    "camelot": "4A",
+    "bpm": 120.0,
+    "key_pc": 5,
+    "mode": 0,
+    "energy": 0.58,
+    "loudness_db": -8.4
+   },
+   "rationale": "adjacent fourth, -0.8%, small dip"
+  },
+  {
+   "id": "p039",
+   "label": "seamless",
+   "from": {
+    "camelot": "11B",
+    "bpm": 127.0,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.8,
+    "loudness_db": -5.5
+   },
+   "to": {
+    "camelot": "12B",
+    "bpm": 128.0,
+    "key_pc": 4,
+    "mode": 1,
+    "energy": 0.84,
+    "loudness_db": -5.1
+   },
+   "rationale": "adjacent fifth at +0.8% pushing towards the peak"
+  },
+  {
+   "id": "p040",
+   "label": "seamless",
+   "from": {
+    "camelot": "9B",
+    "bpm": 123.0,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.65,
+    "loudness_db": -7.4
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 123.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.1
+   },
+   "rationale": "relative minor with the tempo identical"
+  },
+  {
+   "id": "p041",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "11B",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.6,
+    "loudness_db": -9.0
+   },
+   "rationale": "parallel major/minor: same tonic but only 4/7 tones, and a 2 dB step down"
+  },
+  {
+   "id": "p042",
+   "label": "workable",
+   "from": {
+    "camelot": "5A",
+    "bpm": 126.0,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.6
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 126.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.62,
+    "loudness_db": -8.6
+   },
+   "rationale": "parallel key with a -0.10 energy step: an advanced move, not a safe one"
+  },
+  {
+   "id": "p043",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.2
+   },
+   "to": {
+    "camelot": "10A",
+    "bpm": 124.5,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.6,
+    "loudness_db": -9.0
+   },
+   "rationale": "+2 semitone energy boost with the energy actually dropping: mixed signals"
+  },
+  {
+   "id": "p044",
+   "label": "workable",
+   "from": {
+    "camelot": "8B",
+    "bpm": 122.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.66,
+    "loudness_db": -7.5
+   },
+   "to": {
+    "camelot": "10B",
+    "bpm": 122.0,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.74,
+    "loudness_db": -6.4
+   },
+   "rationale": "+2 boost done properly, but the key gap still needs EQ work"
+  },
+  {
+   "id": "p045",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.8
+   },
+   "to": {
+    "camelot": "6A",
+    "bpm": 124.0,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.66,
+    "loudness_db": -8.0
+   },
+   "rationale": "-2 energy drop: the same distance downhill, which DJs rate lower"
+  },
+  {
+   "id": "p046",
+   "label": "workable",
+   "from": {
+    "camelot": "12B",
+    "bpm": 128.0,
+    "key_pc": 4,
+    "mode": 1,
+    "energy": 0.8,
+    "loudness_db": -5.6
+   },
+   "to": {
+    "camelot": "10B",
+    "bpm": 128.0,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.74,
+    "loudness_db": -6.8
+   },
+   "rationale": "-2 drop at peak tempo"
+  },
+  {
+   "id": "p047",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.9
+   },
+   "to": {
+    "camelot": "3A",
+    "bpm": 124.4,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.74,
+    "loudness_db": -6.4
+   },
+   "rationale": "+1 semitone lift: harmonically rough but a real end-of-track trick"
+  },
+  {
+   "id": "p048",
+   "label": "workable",
+   "from": {
+    "camelot": "8B",
+    "bpm": 126.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.68,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "3B",
+    "bpm": 126.0,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.72,
+    "loudness_db": -6.6
+   },
+   "rationale": "semitone lift on the major side"
+  },
+  {
+   "id": "p049",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "2A",
+    "bpm": 124.0,
+    "key_pc": 3,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.6
+   },
+   "rationale": "tritone clash but everything else is perfect: survivable with EQ and a short blend"
+  },
+  {
+   "id": "p050",
+   "label": "workable",
+   "from": {
+    "camelot": "9B",
+    "bpm": 126.0,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.66,
+    "loudness_db": -7.2
+   },
+   "to": {
+    "camelot": "3B",
+    "bpm": 126.5,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.68,
+    "loudness_db": -7.0
+   },
+   "rationale": "tritone on the major side, tempo and level matched"
+  },
+  {
+   "id": "p051",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 124.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.75,
+    "loudness_db": -16.0
+   },
+   "rationale": "relative key, tempo locked, but a 9 dB level jump: harmonically ideal, sonically jarring"
+  },
+  {
+   "id": "p052",
+   "label": "workable",
+   "from": {
+    "camelot": "9A",
+    "bpm": 122.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.64,
+    "loudness_db": -6.0
+   },
+   "to": {
+    "camelot": "9B",
+    "bpm": 122.5,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.68,
+    "loudness_db": -15.0
+   },
+   "rationale": "relative major with a 9 dB drop into a much quieter master"
+  },
+  {
+   "id": "p053",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.6
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 124.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.52,
+    "loudness_db": -8.6
+   },
+   "rationale": "adjacent fifth but a -0.20 energy cliff: the floor notices"
+  },
+  {
+   "id": "p054",
+   "label": "workable",
+   "from": {
+    "camelot": "10B",
+    "bpm": 126.0,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.8,
+    "loudness_db": -5.4
+   },
+   "to": {
+    "camelot": "11B",
+    "bpm": 126.0,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.6,
+    "loudness_db": -8.4
+   },
+   "rationale": "adjacent fifth with the energy falling 0.20 and 3 dB of level"
+  },
+  {
+   "id": "p055",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 129.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.62,
+    "loudness_db": -8.6
+   },
+   "rationale": "same key at +4.0% and -0.08 energy: fine on a long blend"
+  },
+  {
+   "id": "p056",
+   "label": "workable",
+   "from": {
+    "camelot": "9A",
+    "bpm": 120.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.62,
+    "loudness_db": -7.8
+   },
+   "to": {
+    "camelot": "10A",
+    "bpm": 124.8,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.5,
+    "loudness_db": -9.6
+   },
+   "rationale": "adjacent fifth at +4.0% with a -0.12 energy step"
+  },
+  {
+   "id": "p057",
+   "label": "workable",
+   "from": {
+    "camelot": "5B",
+    "bpm": 118.0,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.58,
+    "loudness_db": -8.2
+   },
+   "to": {
+    "camelot": "6B",
+    "bpm": 122.7,
+    "key_pc": 10,
+    "mode": 1,
+    "energy": 0.44,
+    "loudness_db": -10.4
+   },
+   "rationale": "adjacent fifth at +4.0%, energy down 0.14"
+  },
+  {
+   "id": "p058",
+   "label": "workable",
+   "from": {
+    "camelot": "8B",
+    "bpm": 124.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 129.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.55,
+    "loudness_db": -9.2
+   },
+   "rationale": "relative minor at +4.0% with a -0.15 energy step"
+  },
+  {
+   "id": "p059",
+   "label": "workable",
+   "from": {
+    "camelot": "7A",
+    "bpm": 122.0,
+    "key_pc": 2,
+    "mode": 0,
+    "energy": 0.6,
+    "loudness_db": -8.0
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 126.9,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.48,
+    "loudness_db": -11.0
+   },
+   "rationale": "adjacent fifth at +4.0%, energy -0.12, level -3 dB"
+  },
+  {
+   "id": "p060",
+   "label": "workable",
+   "from": {
+    "camelot": "11A",
+    "bpm": 126.0,
+    "key_pc": 6,
+    "mode": 0,
+    "energy": 0.76,
+    "loudness_db": -6.0
+   },
+   "to": {
+    "camelot": "11A",
+    "bpm": 133.6,
+    "key_pc": 6,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.6
+   },
+   "rationale": "same key at +6.0%: the outer edge of the CDJ range, still beatmatchable"
+  },
+  {
+   "id": "p061",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 120.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.66,
+    "loudness_db": -7.4
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 127.2,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.6,
+    "loudness_db": -8.4
+   },
+   "rationale": "relative major at +6.0%"
+  },
+  {
+   "id": "p062",
+   "label": "workable",
+   "from": {
+    "camelot": "9A",
+    "bpm": 124.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.8
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 131.4,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.64,
+    "loudness_db": -7.8
+   },
+   "rationale": "adjacent fourth at +6.0%"
+  },
+  {
+   "id": "p063",
+   "label": "workable",
+   "from": {
+    "camelot": "6B",
+    "bpm": 118.0,
+    "key_pc": 10,
+    "mode": 1,
+    "energy": 0.56,
+    "loudness_db": -8.6
+   },
+   "to": {
+    "camelot": "7B",
+    "bpm": 125.1,
+    "key_pc": 5,
+    "mode": 1,
+    "energy": 0.5,
+    "loudness_db": -9.8
+   },
+   "rationale": "adjacent fifth at +6.0% with the energy easing off"
+  },
+  {
+   "id": "p064",
+   "label": "workable",
+   "from": {
+    "camelot": "12A",
+    "bpm": 170.0,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.86,
+    "loudness_db": -4.8
+   },
+   "to": {
+    "camelot": "12A",
+    "bpm": 180.2,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.82,
+    "loudness_db": -5.4
+   },
+   "rationale": "same key at +6.0% at dnb tempo: a long pitch ride"
+  },
+  {
+   "id": "p065",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "9B",
+    "bpm": 131.4,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.62,
+    "loudness_db": -8.2
+   },
+   "rationale": "diagonal at +6.0%: two things asking for attention at once"
+  },
+  {
+   "id": "p066",
+   "label": "workable",
+   "from": {
+    "camelot": "4A",
+    "bpm": 100.0,
+    "key_pc": 5,
+    "mode": 0,
+    "energy": 0.48,
+    "loudness_db": -10.0
+   },
+   "to": {
+    "camelot": "4B",
+    "bpm": 106.0,
+    "key_pc": 8,
+    "mode": 1,
+    "energy": 0.42,
+    "loudness_db": -11.2
+   },
+   "rationale": "relative major at +6.0% at indie tempo"
+  },
+  {
+   "id": "p067",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 120.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 129.6,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.66,
+    "loudness_db": -7.6
+   },
+   "rationale": "same key at +8.0%: past the CDJ default, doable on a Technics"
+  },
+  {
+   "id": "p068",
+   "label": "workable",
+   "from": {
+    "camelot": "9A",
+    "bpm": 124.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.2
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 133.9,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.64,
+    "loudness_db": -7.8
+   },
+   "rationale": "same key at +8.0%"
+  },
+  {
+   "id": "p069",
+   "label": "workable",
+   "from": {
+    "camelot": "8B",
+    "bpm": 122.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.66,
+    "loudness_db": -7.4
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 131.8,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.62,
+    "loudness_db": -8.0
+   },
+   "rationale": "relative minor at +8.0%: harmony carries what the tempo cannot"
+  },
+  {
+   "id": "p070",
+   "label": "workable",
+   "from": {
+    "camelot": "10A",
+    "bpm": 118.0,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.6,
+    "loudness_db": -8.2
+   },
+   "to": {
+    "camelot": "11A",
+    "bpm": 127.4,
+    "key_pc": 6,
+    "mode": 0,
+    "energy": 0.56,
+    "loudness_db": -8.8
+   },
+   "rationale": "adjacent fifth at +8.0%"
+  },
+  {
+   "id": "p071",
+   "label": "workable",
+   "from": {
+    "camelot": "7B",
+    "bpm": 96.0,
+    "key_pc": 5,
+    "mode": 1,
+    "energy": 0.44,
+    "loudness_db": -10.8
+   },
+   "to": {
+    "camelot": "7B",
+    "bpm": 103.7,
+    "key_pc": 5,
+    "mode": 1,
+    "energy": 0.4,
+    "loudness_db": -11.4
+   },
+   "rationale": "same key at +8.0% at hip-hop tempo"
+  },
+  {
+   "id": "p072",
+   "label": "workable",
+   "from": {
+    "camelot": "1A",
+    "bpm": 126.0,
+    "key_pc": 8,
+    "mode": 0,
+    "energy": 0.74,
+    "loudness_db": -6.4
+   },
+   "to": {
+    "camelot": "1B",
+    "bpm": 136.1,
+    "key_pc": 11,
+    "mode": 1,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "rationale": "relative major at +8.0%"
+  },
+  {
+   "id": "p073",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.6
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.47,
+    "loudness_db": -9.1
+   },
+   "rationale": "same key, tempo locked, but the energy falls 0.25: the floor empties"
+  },
+  {
+   "id": "p074",
+   "label": "workable",
+   "from": {
+    "camelot": "9B",
+    "bpm": 126.0,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.78,
+    "loudness_db": -5.8
+   },
+   "to": {
+    "camelot": "9B",
+    "bpm": 126.0,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.53,
+    "loudness_db": -8.4
+   },
+   "rationale": "same key with a -0.25 energy collapse"
+  },
+  {
+   "id": "p075",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -5.0
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 124.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -11.0
+   },
+   "rationale": "adjacent fifth, energy matched, but 6 dB of level to ride"
+  },
+  {
+   "id": "p076",
+   "label": "workable",
+   "from": {
+    "camelot": "5A",
+    "bpm": 122.0,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.64,
+    "loudness_db": -4.5
+   },
+   "to": {
+    "camelot": "6A",
+    "bpm": 122.5,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.66,
+    "loudness_db": -10.5
+   },
+   "rationale": "adjacent fifth with a 6 dB level jump between masters"
+  },
+  {
+   "id": "p077",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "11B",
+    "bpm": 128.9,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.64,
+    "loudness_db": -8.4
+   },
+   "rationale": "parallel key at +4.0%: two advanced moves stacked"
+  },
+  {
+   "id": "p078",
+   "label": "workable",
+   "from": {
+    "camelot": "3A",
+    "bpm": 174.0,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.88,
+    "loudness_db": -4.4
+   },
+   "to": {
+    "camelot": "3B",
+    "bpm": 174.0,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.68,
+    "loudness_db": -7.4
+   },
+   "rationale": "relative major but a -0.20 energy step and 3 dB at dnb tempo"
+  },
+  {
+   "id": "p079",
+   "label": "workable",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "6A",
+    "bpm": 129.0,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.64,
+    "loudness_db": -8.2
+   },
+   "rationale": "-2 drop at +4.0%"
+  },
+  {
+   "id": "p080",
+   "label": "workable",
+   "from": {
+    "camelot": "2B",
+    "bpm": 128.0,
+    "key_pc": 6,
+    "mode": 1,
+    "energy": 0.82,
+    "loudness_db": -5.2
+   },
+   "to": {
+    "camelot": "4B",
+    "bpm": 128.0,
+    "key_pc": 8,
+    "mode": 1,
+    "energy": 0.74,
+    "loudness_db": -6.6
+   },
+   "rationale": "+2 boost with the energy going the other way"
+  },
+  {
+   "id": "p081",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.8
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 141.4,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.74,
+    "loudness_db": -6.4
+   },
+   "rationale": "perfect key, but a 14% tempo gap: nobody calls that a beatmatch"
+  },
+  {
+   "id": "p082",
+   "label": "clash",
+   "from": {
+    "camelot": "9A",
+    "bpm": 120.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.66,
+    "loudness_db": -7.4
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 138.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.0
+   },
+   "rationale": "same key at +15%: harmony cannot rescue the grid"
+  },
+  {
+   "id": "p083",
+   "label": "clash",
+   "from": {
+    "camelot": "8B",
+    "bpm": 100.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.5,
+    "loudness_db": -9.6
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 118.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.54,
+    "loudness_db": -9.0
+   },
+   "rationale": "same key at +18%"
+  },
+  {
+   "id": "p084",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -7.0
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 145.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.6
+   },
+   "rationale": "adjacent fifth at +17%: still a tempo cliff"
+  },
+  {
+   "id": "p085",
+   "label": "clash",
+   "from": {
+    "camelot": "5A",
+    "bpm": 96.0,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.46,
+    "loudness_db": -10.4
+   },
+   "to": {
+    "camelot": "5B",
+    "bpm": 116.0,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.5,
+    "loudness_db": -9.8
+   },
+   "rationale": "relative major at +21%"
+  },
+  {
+   "id": "p086",
+   "label": "clash",
+   "from": {
+    "camelot": "10A",
+    "bpm": 128.0,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.8,
+    "loudness_db": -5.4
+   },
+   "to": {
+    "camelot": "11A",
+    "bpm": 152.0,
+    "key_pc": 6,
+    "mode": 0,
+    "energy": 0.82,
+    "loudness_db": -5.0
+   },
+   "rationale": "adjacent fifth at +19%"
+  },
+  {
+   "id": "p087",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 122.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.2
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 152.5,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.7,
+    "loudness_db": -6.9
+   },
+   "rationale": "relative key at +25%: the folded ratio is no better"
+  },
+  {
+   "id": "p088",
+   "label": "clash",
+   "from": {
+    "camelot": "12A",
+    "bpm": 90.0,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.44,
+    "loudness_db": -11.0
+   },
+   "to": {
+    "camelot": "12B",
+    "bpm": 112.0,
+    "key_pc": 4,
+    "mode": 1,
+    "energy": 0.48,
+    "loudness_db": -10.2
+   },
+   "rationale": "relative major at +24%"
+  },
+  {
+   "id": "p089",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -5.0
+   },
+   "to": {
+    "camelot": "2A",
+    "bpm": 124.0,
+    "key_pc": 3,
+    "mode": 0,
+    "energy": 0.37,
+    "loudness_db": -13.0
+   },
+   "rationale": "tritone clash, energy down 0.35 and 8 dB quieter: three problems at once"
+  },
+  {
+   "id": "p090",
+   "label": "clash",
+   "from": {
+    "camelot": "9B",
+    "bpm": 126.0,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.78,
+    "loudness_db": -4.6
+   },
+   "to": {
+    "camelot": "3B",
+    "bpm": 126.5,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.33,
+    "loudness_db": -14.6
+   },
+   "rationale": "tritone with a -0.45 energy collapse and a 10 dB level drop"
+  },
+  {
+   "id": "p091",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.0
+   },
+   "to": {
+    "camelot": "4A",
+    "bpm": 124.0,
+    "key_pc": 5,
+    "mode": 0,
+    "energy": 0.4,
+    "loudness_db": -12.0
+   },
+   "rationale": "four wheel steps apart, energy -0.30, level -6 dB"
+  },
+  {
+   "id": "p092",
+   "label": "clash",
+   "from": {
+    "camelot": "8B",
+    "bpm": 128.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.82,
+    "loudness_db": -5.0
+   },
+   "to": {
+    "camelot": "2B",
+    "bpm": 128.0,
+    "key_pc": 6,
+    "mode": 1,
+    "energy": 0.42,
+    "loudness_db": -13.0
+   },
+   "rationale": "tritone on the major side with the floor falling out"
+  },
+  {
+   "id": "p093",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -5.4
+   },
+   "to": {
+    "camelot": "5B",
+    "bpm": 124.4,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.35,
+    "loudness_db": -13.4
+   },
+   "rationale": "nine steps with a letter swap - not the parallel - plus an energy cliff"
+  },
+  {
+   "id": "p094",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 122.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -5.8
+   },
+   "to": {
+    "camelot": "1B",
+    "bpm": 122.0,
+    "key_pc": 11,
+    "mode": 1,
+    "energy": 0.3,
+    "loudness_db": -14.0
+   },
+   "rationale": "five steps with a letter swap and a -0.38 energy cliff"
+  },
+  {
+   "id": "p095",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -5.2
+   },
+   "to": {
+    "camelot": "3A",
+    "bpm": 124.0,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.3,
+    "loudness_db": -14.2
+   },
+   "rationale": "the semitone lift attempted over a -0.40 energy cliff and 9 dB"
+  },
+  {
+   "id": "p096",
+   "label": "clash",
+   "from": {
+    "camelot": "6A",
+    "bpm": 120.0,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.62,
+    "loudness_db": -6.0
+   },
+   "to": {
+    "camelot": "12A",
+    "bpm": 120.0,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.24,
+    "loudness_db": -15.0
+   },
+   "rationale": "tritone with the energy halved and 9 dB of level"
+  },
+  {
+   "id": "p097",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.4
+   },
+   "to": {
+    "camelot": "2A",
+    "bpm": 131.4,
+    "key_pc": 3,
+    "mode": 0,
+    "energy": 0.5,
+    "loudness_db": -11.4
+   },
+   "rationale": "tritone at +6% with -0.20 energy: nothing to hold on to"
+  },
+  {
+   "id": "p098",
+   "label": "clash",
+   "from": {
+    "camelot": "9A",
+    "bpm": 126.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.74,
+    "loudness_db": -6.0
+   },
+   "to": {
+    "camelot": "3A",
+    "bpm": 133.6,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.54,
+    "loudness_db": -11.0
+   },
+   "rationale": "tritone at +6% with a -0.20 energy step"
+  },
+  {
+   "id": "p099",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -5.4
+   },
+   "to": {
+    "camelot": "10A",
+    "bpm": 131.4,
+    "key_pc": 11,
+    "mode": 0,
+    "energy": 0.37,
+    "loudness_db": -13.4
+   },
+   "rationale": "+2 boost at +6% but the energy falls 0.35 and 8 dB"
+  },
+  {
+   "id": "p100",
+   "label": "clash",
+   "from": {
+    "camelot": "8B",
+    "bpm": 120.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.66,
+    "loudness_db": -6.0
+   },
+   "to": {
+    "camelot": "10B",
+    "bpm": 127.2,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.31,
+    "loudness_db": -14.0
+   },
+   "rationale": "+2 boost undone by a -0.35 energy cliff"
+  },
+  {
+   "id": "p101",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.4
+   },
+   "to": {
+    "camelot": "12A",
+    "bpm": 139.0,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.45,
+    "loudness_db": -12.4
+   },
+   "rationale": "four steps apart at +12%: the tempo is already gone"
+  },
+  {
+   "id": "p102",
+   "label": "clash",
+   "from": {
+    "camelot": "7A",
+    "bpm": 118.0,
+    "key_pc": 2,
+    "mode": 0,
+    "energy": 0.6,
+    "loudness_db": -7.4
+   },
+   "to": {
+    "camelot": "1A",
+    "bpm": 133.0,
+    "key_pc": 8,
+    "mode": 0,
+    "energy": 0.36,
+    "loudness_db": -13.4
+   },
+   "rationale": "tritone at +13%"
+  },
+  {
+   "id": "p103",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.0
+   },
+   "to": {
+    "camelot": "2A",
+    "bpm": 149.0,
+    "key_pc": 3,
+    "mode": 0,
+    "energy": 0.4,
+    "loudness_db": -12.0
+   },
+   "rationale": "tritone at +20% with a -0.30 energy step"
+  },
+  {
+   "id": "p104",
+   "label": "clash",
+   "from": {
+    "camelot": "9B",
+    "bpm": 122.0,
+    "key_pc": 7,
+    "mode": 1,
+    "energy": 0.66,
+    "loudness_db": -6.6
+   },
+   "to": {
+    "camelot": "3A",
+    "bpm": 146.0,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.34,
+    "loudness_db": -13.6
+   },
+   "rationale": "clash across a 20% tempo gap"
+  },
+  {
+   "id": "p105",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.85,
+    "loudness_db": -4.0
+   },
+   "to": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.2,
+    "loudness_db": -16.0
+   },
+   "rationale": "same key and tempo, but a club banger into a bedroom demo: -0.65 energy, 12 dB"
+  },
+  {
+   "id": "p106",
+   "label": "clash",
+   "from": {
+    "camelot": "9A",
+    "bpm": 126.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.88,
+    "loudness_db": -4.2
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 126.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.25,
+    "loudness_db": -15.2
+   },
+   "rationale": "same key, -0.63 energy and 11 dB: the classic playlist lurch"
+  },
+  {
+   "id": "p107",
+   "label": "clash",
+   "from": {
+    "camelot": "8B",
+    "bpm": 122.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.8,
+    "loudness_db": -4.6
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 122.5,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.22,
+    "loudness_db": -16.6
+   },
+   "rationale": "same key, energy 0.80 into 0.22: mastered-to-the-wall into an acoustic take"
+  },
+  {
+   "id": "p108",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.86,
+    "loudness_db": -4.0
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 125.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.24,
+    "loudness_db": -15.0
+   },
+   "rationale": "adjacent fifth cannot save a -0.62 energy fall and 11 dB"
+  },
+  {
+   "id": "p109",
+   "label": "clash",
+   "from": {
+    "camelot": "10B",
+    "bpm": 128.0,
+    "key_pc": 2,
+    "mode": 1,
+    "energy": 0.84,
+    "loudness_db": -4.4
+   },
+   "to": {
+    "camelot": "11B",
+    "bpm": 128.0,
+    "key_pc": 9,
+    "mode": 1,
+    "energy": 0.26,
+    "loudness_db": -15.4
+   },
+   "rationale": "adjacent fifth with the loudest master in the set into the quietest"
+  },
+  {
+   "id": "p110",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.82,
+    "loudness_db": -4.2
+   },
+   "to": {
+    "camelot": "8B",
+    "bpm": 124.0,
+    "key_pc": 0,
+    "mode": 1,
+    "energy": 0.28,
+    "loudness_db": -15.8
+   },
+   "rationale": "relative key, tempo locked, and still unlistenable across a 0.54 energy gap"
+  },
+  {
+   "id": "p111",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 174.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.9,
+    "loudness_db": -4.4
+   },
+   "to": {
+    "camelot": "6A",
+    "bpm": 96.0,
+    "key_pc": 7,
+    "mode": 0,
+    "energy": 0.4,
+    "loudness_db": -11.4
+   },
+   "rationale": "-2 drop and 174 into 96: the fold does not reach, 81% apart"
+  },
+  {
+   "id": "p112",
+   "label": "clash",
+   "from": {
+    "camelot": "12B",
+    "bpm": 176.0,
+    "key_pc": 4,
+    "mode": 1,
+    "energy": 0.92,
+    "loudness_db": -4.2
+   },
+   "to": {
+    "camelot": "6B",
+    "bpm": 100.0,
+    "key_pc": 10,
+    "mode": 1,
+    "energy": 0.44,
+    "loudness_db": -11.0
+   },
+   "rationale": "tritone across a tempo gap the octave fold cannot close"
+  },
+  {
+   "id": "p113",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 88.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.52,
+    "loudness_db": -9.4
+   },
+   "to": {
+    "camelot": "2A",
+    "bpm": 124.0,
+    "key_pc": 3,
+    "mode": 0,
+    "energy": 0.72,
+    "loudness_db": -6.4
+   },
+   "rationale": "tritone and 41% apart: neither the ratio nor its double lands"
+  },
+  {
+   "id": "p114",
+   "label": "clash",
+   "from": {
+    "camelot": "3A",
+    "bpm": 96.0,
+    "key_pc": 10,
+    "mode": 0,
+    "energy": 0.48,
+    "loudness_db": -10.2
+   },
+   "to": {
+    "camelot": "9A",
+    "bpm": 132.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.68,
+    "loudness_db": -7.0
+   },
+   "rationale": "tritone at 37% apart"
+  },
+  {
+   "id": "p115",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 124.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.7,
+    "loudness_db": -6.8
+   },
+   "to": {
+    "camelot": "4A",
+    "bpm": 96.0,
+    "key_pc": 5,
+    "mode": 0,
+    "energy": 0.44,
+    "loudness_db": -10.6
+   },
+   "rationale": "four steps apart with a 23% tempo drop"
+  },
+  {
+   "id": "p116",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 174.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.88,
+    "loudness_db": -4.6
+   },
+   "to": {
+    "camelot": "1B",
+    "bpm": 124.0,
+    "key_pc": 11,
+    "mode": 1,
+    "energy": 0.62,
+    "loudness_db": -8.4
+   },
+   "rationale": "letter-swap clash across the dnb/house gap the fold cannot bridge"
+  },
+  {
+   "id": "p117",
+   "label": "clash",
+   "from": {
+    "camelot": "9A",
+    "bpm": 172.0,
+    "key_pc": 4,
+    "mode": 0,
+    "energy": 0.86,
+    "loudness_db": -4.8
+   },
+   "to": {
+    "camelot": "3B",
+    "bpm": 122.0,
+    "key_pc": 1,
+    "mode": 1,
+    "energy": 0.58,
+    "loudness_db": -8.8
+   },
+   "rationale": "clash across the same gap"
+  },
+  {
+   "id": "p118",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 128.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.78,
+    "loudness_db": -5.6
+   },
+   "to": {
+    "camelot": "5B",
+    "bpm": 92.0,
+    "key_pc": 3,
+    "mode": 1,
+    "energy": 0.46,
+    "loudness_db": -10.4
+   },
+   "rationale": "letter-swap clash at 28% apart"
+  },
+  {
+   "id": "p119",
+   "label": "clash",
+   "from": {
+    "camelot": "11A",
+    "bpm": 126.0,
+    "key_pc": 6,
+    "mode": 0,
+    "energy": 0.76,
+    "loudness_db": -6.0
+   },
+   "to": {
+    "camelot": "5A",
+    "bpm": 90.0,
+    "key_pc": 0,
+    "mode": 0,
+    "energy": 0.42,
+    "loudness_db": -11.0
+   },
+   "rationale": "tritone at 29% apart"
+  },
+  {
+   "id": "p120",
+   "label": "clash",
+   "from": {
+    "camelot": "8A",
+    "bpm": 96.0,
+    "key_pc": 9,
+    "mode": 0,
+    "energy": 0.46,
+    "loudness_db": -10.6
+   },
+   "to": {
+    "camelot": "12A",
+    "bpm": 130.0,
+    "key_pc": 1,
+    "mode": 0,
+    "energy": 0.74,
+    "loudness_db": -6.2
+   },
+   "rationale": "four steps apart, 35% up, and a +0.28 energy jolt"
+  }
+ ]
+}

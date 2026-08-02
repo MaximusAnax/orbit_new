@@ -1,0 +1,31 @@
+{
+ "id": "exact_02",
+ "suite": "exact",
+ "n": 10,
+ "seed": 42002,
+ "clusters": [
+  "hiphop",
+  "dnb"
+ ],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:d18b1f5b1871dc41fa339acb2857459bbacdd9ed",
+  "meta:c0967db59e9d6a240669c497fe1b207e0c01bc47",
+  "meta:de17d6994a78d366b128eb33ff7c1dca115de790",
+  "meta:e299f84cc1a1d4d1737c95cfbd3c536caff5f316",
+  "meta:9813e492f8ed57dc35c0010d8397a7104d77afef",
+  "meta:6c28d2983aad2275adf82e0995099781a40e4fb2",
+  "meta:399c6fd34ec7d160081b23d6635ce00e01d70678",
+  "meta:977f6ce9517e32b1881e5d191f2a2f649daf999b",
+  "meta:12ef30929e3d0724218378368f9641663ffb689e",
+  "meta:3dc58a48f0ae5031eaf63c6850e1f70878b1315c"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "plain",
+  "search_seed": 42002
+ }
+}

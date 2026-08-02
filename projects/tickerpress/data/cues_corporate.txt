@@ -1,0 +1,319 @@
+# TickerPress — corporate / finance cue lexicon (FR-6 `window_cues`, `doc_cues`).
+#
+# General finance- and business-news vocabulary. Authored BEFORE the eval corpus
+# (SCOPE D19, the lexicon freeze protocol) and hashed into
+# evals/fixtures/lexicon_manifest.json. Entries are matched case-folded on whole
+# tokens; a multi-word entry matches as a token sequence.
+#
+# Do NOT add vocabulary that identifies an individual fixture article: an entry
+# occurring in exactly one base article fails gate M6_lex. Entries that occur in
+# no fixture article are fine — this is meant to be general vocabulary.
+#
+# Lines beginning with '#' and blank lines are ignored.
+
+# --- corporate structure and people
+company
+companies
+corporate
+corporation
+firm
+business
+businesses
+conglomerate
+subsidiary
+unit
+division
+headquarters
+spokesperson
+spokeswoman
+spokesman
+executive
+executives
+chief executive
+chief financial officer
+ceo
+cfo
+coo
+cto
+chairman
+chairwoman
+chair
+board
+boardroom
+director
+directors
+management
+founder
+cofounder
+president
+vice president
+employee
+employees
+staff
+workforce
+workers
+hiring
+layoffs
+job cuts
+restructuring
+reorganization
+headcount
+
+# --- markets and instruments
+market
+markets
+stock
+stocks
+share
+shares
+shareholder
+shareholders
+investor
+investors
+trading
+trader
+traders
+exchange
+nasdaq
+nyse
+ticker
+index
+benchmark
+premarket
+session
+close
+opening bell
+closing bell
+rally
+selloff
+volatility
+volume
+short sellers
+options
+futures contract
+bond
+bonds
+yield
+equity
+equities
+securities
+listing
+delisting
+ipo
+public offering
+spinoff
+buyback
+repurchase
+dividend
+payout
+split
+
+# --- results and guidance
+earnings
+earnings call
+results
+quarter
+quarterly
+fiscal
+fiscal year
+revenue
+revenues
+sales
+profit
+profits
+net income
+loss
+losses
+margin
+margins
+guidance
+outlook
+forecast
+forecasts
+estimate
+estimates
+consensus
+beat
+beats
+missed
+topped
+per share
+eps
+free cash flow
+cash flow
+balance sheet
+operating income
+gross margin
+top line
+bottom line
+backlog
+bookings
+subscribers
+customers
+users
+average selling price
+
+# --- analysts and valuation
+analyst
+analysts
+research note
+coverage
+rating
+upgraded
+downgraded
+valuation
+market capitalization
+market cap
+multiple
+premium
+discount
+stake
+holding
+holdings
+portfolio
+fund
+hedge fund
+asset manager
+institutional
+
+# --- deals
+acquisition
+acquire
+acquired
+acquiring
+merger
+merge
+takeover
+bid
+deal
+transaction
+divest
+divestiture
+sale of
+joint venture
+partnership
+alliance
+investment
+funding round
+valued at
+all cash
+all stock
+
+# --- regulation and legal
+regulator
+regulators
+regulatory
+antitrust
+competition authority
+commission
+securities and exchange commission
+sec
+ftc
+doj
+justice department
+lawsuit
+sued
+suit
+litigation
+settlement
+settled
+fine
+fined
+penalty
+penalties
+probe
+investigation
+subpoena
+compliance
+filing
+filings
+disclosure
+prospectus
+annual report
+patent
+patents
+injunction
+appeal
+court
+ruling
+verdict
+consent decree
+
+# --- operations
+factory
+plant
+facility
+facilities
+production
+manufacturing
+supply chain
+supplier
+suppliers
+shipment
+shipments
+inventory
+logistics
+distribution
+retail
+retailer
+stores
+storefront
+capacity
+output
+recall
+recalled
+product
+products
+launch
+launched
+unveiled
+rollout
+platform
+service
+services
+software
+hardware
+chip
+chips
+semiconductor
+cloud
+subscription
+pricing
+price increase
+tariff
+tariffs
+import duties
+export
+imports
+
+# --- macro and money
+economy
+economic
+inflation
+interest rates
+federal reserve
+central bank
+gdp
+recession
+growth
+demand
+consumer demand
+spending
+budget
+capital
+capex
+debt
+credit
+loan
+loans
+refinancing
+bankruptcy
+chapter 11
+liquidity
+solvency
+billion
+million
+trillion
+percent
+year over year
+quarter over quarter

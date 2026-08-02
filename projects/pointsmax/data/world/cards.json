@@ -1,0 +1,137 @@
+[
+  {
+    "id": "chase_sapphire_reserve",
+    "issuer": "Chase",
+    "name": "Sapphire Reserve",
+    "program_id": "chase_ur",
+    "enables_transfer": true,
+    "annual_fee_cents": 79500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "chase_sapphire_preferred",
+    "issuer": "Chase",
+    "name": "Sapphire Preferred",
+    "program_id": "chase_ur",
+    "enables_transfer": true,
+    "annual_fee_cents": 9500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "chase_ink_business_preferred",
+    "issuer": "Chase",
+    "name": "Ink Business Preferred",
+    "program_id": "chase_ur",
+    "enables_transfer": true,
+    "annual_fee_cents": 9500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "chase_freedom_unlimited",
+    "issuer": "Chase",
+    "name": "Freedom Unlimited",
+    "program_id": "chase_ur",
+    "enables_transfer": false,
+    "annual_fee_cents": 0,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "amex_platinum",
+    "issuer": "Amex",
+    "name": "The Platinum Card",
+    "program_id": "amex_mr",
+    "enables_transfer": true,
+    "annual_fee_cents": 89500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "amex_business_platinum",
+    "issuer": "Amex",
+    "name": "Business Platinum Card",
+    "program_id": "amex_mr",
+    "enables_transfer": true,
+    "annual_fee_cents": 89500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "amex_gold",
+    "issuer": "Amex",
+    "name": "American Express Gold Card",
+    "program_id": "amex_mr",
+    "enables_transfer": true,
+    "annual_fee_cents": 32500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "amex_green",
+    "issuer": "Amex",
+    "name": "American Express Green Card",
+    "program_id": "amex_mr",
+    "enables_transfer": true,
+    "annual_fee_cents": 15000,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "amex_blue_business_plus",
+    "issuer": "Amex",
+    "name": "Blue Business Plus",
+    "program_id": "amex_mr",
+    "enables_transfer": true,
+    "annual_fee_cents": 0,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "citi_premier",
+    "issuer": "Citi",
+    "name": "Strata Premier",
+    "program_id": "citi_typ",
+    "enables_transfer": true,
+    "annual_fee_cents": 9500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "citi_double_cash",
+    "issuer": "Citi",
+    "name": "Double Cash",
+    "program_id": "citi_typ",
+    "enables_transfer": false,
+    "annual_fee_cents": 0,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "capital_one_venture_x",
+    "issuer": "Capital One",
+    "name": "Venture X",
+    "program_id": "capital_one",
+    "enables_transfer": true,
+    "annual_fee_cents": 39500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "capital_one_venture",
+    "issuer": "Capital One",
+    "name": "Venture Rewards",
+    "program_id": "capital_one",
+    "enables_transfer": true,
+    "annual_fee_cents": 9500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "bilt_mastercard",
+    "issuer": "Bilt",
+    "name": "Bilt World Elite Mastercard",
+    "program_id": "bilt_rewards",
+    "enables_transfer": true,
+    "annual_fee_cents": 0,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  },
+  {
+    "id": "bilt_mastercard_reserve",
+    "issuer": "Bilt",
+    "name": "Bilt Reserve",
+    "program_id": "bilt_rewards",
+    "enables_transfer": true,
+    "annual_fee_cents": 49500,
+    "source_note": "display metadata only; annual fee never enters an objective"
+  }
+]

@@ -1,0 +1,96 @@
+[
+  {
+    "name": "unresolvable_passage_ref",
+    "gate": "C8",
+    "description": "A position cites a passage id that no passage file defines.",
+    "ops": [{"op": "set_field", "collection": "positions", "id": "divorce--christianity", "field": "passages", "value": [{"passage_id": "kjv-matthew-99-99", "role": "core", "note": null}]}]
+  },
+  {
+    "name": "quote_95_words",
+    "gate": "C6",
+    "description": "A quoted passage of 95 words, five over the anti-proof-texting cap.",
+    "ops": [{"op": "set_field", "collection": "passages", "id": "kjv-matthew-5-37", "field": "text", "value": "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen"}]
+  },
+  {
+    "name": "position_without_reading",
+    "gate": "C3",
+    "description": "A position with an empty further-reading list.",
+    "ops": [{"op": "set_field", "collection": "positions", "id": "honesty_and_deception--christianity", "field": "further_reading", "value": []}]
+  },
+  {
+    "name": "pd_source_null_translator",
+    "gate": "C4",
+    "description": "A public-domain source used for quotation with no named translator or author.",
+    "ops": [
+      {"op": "set_field", "collection": "sources", "id": "bible-kjv", "field": "translator", "value": null},
+      {"op": "set_field", "collection": "sources", "id": "bible-kjv", "field": "author", "value": null}
+    ]
+  },
+  {
+    "name": "locator_violates_scheme",
+    "gate": "C5",
+    "description": "A chapter_verse locator that does not match its source's anchored regex.",
+    "ops": [{"op": "set_field", "collection": "passages", "id": "kjv-matthew-5-37", "field": "locator", "value": "somewhere in Matthew"}]
+  },
+  {
+    "name": "topic_with_5_positions",
+    "gate": "C7",
+    "description": "A topic left with five positions, one under the floor of six.",
+    "ops": [{"op": "delete_where", "collection": "positions", "where": {"topic_id": "divorce"}, "keep": 5}]
+  },
+  {
+    "name": "nine_traditions",
+    "gate": "C7",
+    "description": "One of the ten traditions removed from traditions.json.",
+    "ops": [{"op": "delete_where", "collection": "traditions", "where": {"id": "stoicism"}, "keep": 0}]
+  },
+  {
+    "name": "loader_folds_endash",
+    "gate": "C1",
+    "description": "A locator whose en dash a normalizing loader would fold to a hyphen; C1's byte-preserving comparison is what catches the difference, and the envelope sentinel ban is exercised in the same artefact.",
+    "ops": [{"op": "set_field", "collection": "passages", "id": "kjv-matthew-5-37", "field": "context_note", "value": "Sentinels [[I:quote:C1]] must never appear in corpus content."}]
+  },
+  {
+    "name": "passage_core_in_9_positions",
+    "gate": "C11",
+    "description": "One passage made the sole core reference of nine positions.",
+    "ops": [{"op": "set_where", "collection": "positions", "where": {"tradition_id": "christianity"}, "field": "passages", "value": [{"passage_id": "kjv-matthew-5-37", "role": "core", "note": null}]}]
+  },
+  {
+    "name": "all_forbidden_topic",
+    "gate": "C12",
+    "description": "Every position on one topic reduced to the same stance.",
+    "ops": [{"op": "set_where", "collection": "positions", "where": {"topic_id": "divorce"}, "field": "stance", "value": "forbidden"}]
+  },
+  {
+    "name": "templated_summaries",
+    "gate": "C13",
+    "description": "Two positions on one topic given a name-substituted template summary.",
+    "ops": [
+      {"op": "set_field", "collection": "positions", "id": "divorce--christianity", "field": "summary", "value": "This tradition treats divorce as a grave matter, permitted only where the marriage bond has already been broken by serious fault, and it counsels patience, counsel and repair before any separation is contemplated at all."},
+      {"op": "set_field", "collection": "positions", "id": "divorce--islam", "field": "summary", "value": "This tradition treats divorce as a grave matter, permitted only where the marriage bond has already been broken by serious fault, and it counsels patience, counsel and repair before any separation is contemplated at all."}
+    ]
+  },
+  {
+    "name": "no_complicating_passages",
+    "gate": "C14",
+    "description": "Every complicating passage reference in the corpus demoted to supporting, so no position cuts against its own summary.",
+    "ops": [{"op": "set_role", "collection": "positions", "from": "complicating", "to": "supporting"}]
+  },
+  {
+    "name": "paraphrase_only_corpus",
+    "gate": "C15",
+    "description": "The King James source demoted to reference_only and all of its passages turned into curated paraphrases, so the positions resting on them no longer quote anything.",
+    "ops": [
+      {"op": "set_where", "collection": "sources", "where": {"id": "bible-kjv"}, "field": "license", "value": "reference_only"},
+      {"op": "set_where", "collection": "passages", "where": {"source_id": "bible-kjv"}, "field": "paraphrase", "value": "A curated paraphrase standing in for the passage, with no public-domain translation quoted."},
+      {"op": "set_where", "collection": "passages", "where": {"source_id": "bible-kjv"}, "field": "text", "value": null}
+    ]
+  },
+  {
+    "name": "one_reading_per_tradition",
+    "gate": "C16",
+    "description": "Every Christian position pointed at the same single further-reading entry.",
+    "ops": [{"op": "set_where", "collection": "positions", "where": {"tradition_id": "christianity"}, "field": "further_reading", "value": [{"author": "Sissela Bok", "title": "Lying: Moral Choice in Public and Private Life", "year": 1978, "kind": "book", "url": null, "note": null}]}]
+  }
+]

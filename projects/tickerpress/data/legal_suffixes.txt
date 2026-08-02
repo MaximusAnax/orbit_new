@@ -1,0 +1,84 @@
+# TickerPress — legal-form suffixes stripped when generating a short-name alias
+# (SCOPE FR-1). Derived from the ISO 20275 "Entity Legal Forms" vocabulary plus
+# the two structural words newswire style routinely carries (Holdings, Group).
+#
+# Matching is case-insensitive on whole tokens; a trailing '.' on the token is
+# ignored, so both "Inc" and "Inc." strip. Suffixes are stripped repeatedly from
+# the END of the name ("Tesla, Inc." -> "Tesla"; "Alphabet Inc." -> "Alphabet";
+# "Shell PLC" -> "Shell"). '#' comments and blank lines are ignored.
+
+inc
+inc.
+incorporated
+corp
+corp.
+corporation
+co
+co.
+company
+companies
+ltd
+ltd.
+limited
+llc
+l.l.c.
+lc
+llp
+l.l.p.
+lp
+l.p.
+plc
+p.l.c.
+sa
+s.a.
+sas
+s.a.s.
+sarl
+s.a.r.l.
+nv
+n.v.
+bv
+b.v.
+ag
+a.g.
+se
+gmbh
+mbh
+kg
+kgaa
+ab
+publ
+as
+asa
+oy
+oyj
+aps
+spa
+s.p.a.
+srl
+s.r.l.
+kk
+k.k.
+pte
+pty
+pt
+tbk
+bhd
+sdn
+sdn.
+ojsc
+pjsc
+jsc
+ooo
+zao
+holding
+holdings
+group
+groups
+trust
+partners
+partnership
+ventures
+enterprises
+international
+worldwide

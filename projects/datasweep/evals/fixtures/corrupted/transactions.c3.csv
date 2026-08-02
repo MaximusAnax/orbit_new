@@ -1,0 +1,1201 @@
+txn_id,date,amount,currency,merchant,category,status,code
+1032,2023-09-20,1803.68,GBP,Orchard aad Vine,apparel,refunded,2
+1972,2024-11-13,1645.96,  USD ,Kestrel Outfitters,,pending,2
+2022,2024-03-01,4157.44,EUR,Delta Pharmacy,dining,paid,93
+2915,2023-05-12,2646.17,USD,Trailhead Sports,fuel,pending,10
+3734,2024-02-14,44.44,USD,Kestrel Outfitters,hardware,paid,58
+3884,2023-01-11,"2,625.28",USD,Blue Harbor Goods,travel,chargeback,46
+4159,2024-04-28,1068.17,EUR,Northwind Supply,dining,chargeback,96
+4373,2023-01-26,4208.23,GBP,Delta Pharmacy,apparel,pending,1
+5187,2023-06-04,3944.93,EUR,Café Norte,fuel,chargebaak,88
+5504,2024-02-11,4740.38,EUR,PETIT MARCHÉ,dining,chargeback,10
+6794,2023-07-31,4518.89,EUR,Blue Harbor Goods,grocery,pending,87
+10187,2024-11-07,242.49,EUR,Orchard and Vine,dining,paid,82
+13219,2024-05-23,482.84,GBP,Trailhead Sports,utilities,chargeback,97
+13470,2024-08-13,760.36,GBP,Blue Harbor Goods,apparel,refunded,96
+13697,2024-04-08,3007.41,EUR,Nordic Fjäll,travel,refunded,97
+14303,2024-07-06,3069.47,USD,Delta Pharmacy,utilities,chargeback,45
+14666,2024-07-28,4648.58,GBP,Delta Pharmacy,dining,refunded,4
+16100,2023-10-19,2152.30,GBP,Statler Hardware,utilities,refunded,90
+16474,2024-11-26,3941.43,GBP,Northwind Supply,apparel,pending,
+16574,2023-07-11,881.37,EUR,Café Norte,apparel,chargeback,NA
+17593,2023-03-23,627.02,GBP,Kestrel Outfitters,apparel,pending,25
+17794,"Feb 17, 2023",664.36,USD,Northwind Supply,travel,pending,90
+20330,2024-01-04,4717.20,EUR,Statler Hardware,fuel,chargeback,6
+22036,2023-01-11,2129.12,EUR,Northwind Supply,utilities,refunded,85
+22366,2024-10-27,3244.85,EUR,Café Norte,utilities,refunded,49
+'22495,2024-05-27,3527.89,EUR,Trailhead Sports,travel,pending,81
+23194,2024-09-12,1044.07,USD,Café Norte,fuel,chargeback,25
+24287,2024-07-04,2093.46,EUR,Vela Cycles,dining,refunded,59
+25132,"Feb 13, 2024",970.92,USD,Nordic Fjäll,fuel,chargeback,
+25425,2024-11-07,1308.58,GBP,Northwind Supply,dining,pending,99
+26690,2024-06-02,42.37,GBP,Statler Hardware,fuel,pending,94
+26834,2024-01-14,485.07,USD,Delta Pharmacy,hardware,chargeback,63
+27535,2024-02-14,3012.58,USD,Vela Cycles,fuel,paid,27
+28869,2024-07-11,2502.30,GBP,Vela Cycles,dining,refunded,
+28996,2023-09-07,1739.48,USD,Trailhead Sports,fuel,pending,80
+30508,2024-04-08,4195.34,GBP,Nordic Fjäll,,refunded,70
+30968,2023-11-23,1860.50,USD,Fjord Interiors,utilities,paid,68
+31027,2024-03-24,255.71,USD,Trailhead Sports,utilities,refunded,25
+33309,2024-06-23,1846.61,GBP,Delta Pharmacy,grocery,paid,74
+34643,2024-01-03,1527.36,USD,Petit Marché,apparel,refunded,35
+34649,2024-11-20,4660.30,USD,Café Norte,,paid,68
+ 36020 ,2024-07-10,€4357.88,GBP,Orchard and Vine,hardware,chargeback,
+36784,2024-09-16,4418.73,GBP,Blue Harbor Goods,grocery,pending,28
+37346,2024-01-09,999.58,USD,Kestrel Outfitters,grocery,paid,87
+37380,2024-07-19,902.57,GBP,Café Norte,dining,chargeback,86
+38370,2023-06-01,2942.53,EUR,Orchard and Vine,,refunded,86
+38806,"Jan 04, 2024",2032.03,GBP,Blue Harbor Goods,,paid,35
+38932,2023-07-14,383.22,USD,Blue Harbor Goods,,paid,12
+39209,2023-01-16,3463.46​,GBP,Northwind Supply​,utilities,pending,95
+40870,2024-04-12,1088.02,USD,Orchard and Vine,apparel,chargeback,52
+40905,2023-04-16,4781.71,GBP,Café Norte,,chargeback,94
+41397,2024-09-22,3284.63,EUR,Northwind Supply,grocery,chargeback,21
+42833,2024-11-26,1024.38,GBP,Fjord Interiors,dining,chargeback,58
+44733,2023-03-27,3884.98,GBP,Delta Pharmacy,fuel,chargeback,22
+45790,2024-01-29,3988.26,USD,Statler Hardware,fuel,refunded,68
+47052,"Feb 21, 2023",118.12,EUR,Vela Cycles,hardware,pending,9
+47613,2023-07-06,727.30,USD,Petit Marché,grocery,paid,90
+49276,2023-03-23,1310.54,USD,Blue Harbor Goods,fuel,paid,82
+49495,2023-07-15,1000.62,EUR,Nordic Fjäll,dining,pending,22
+51151,2023-12-05,241.44,GBP,Northwind Supply,dining,refunded,50
+52205,2023-09-20,2400.05,USD,Kestrel Outfitters,grocery,paid,61
+52790,2024-02-08,81.83,USD,Northwind Supply,apparel,refunded,31
+53042,2023-02-01,4763.46,GBP,Petit Marché,dining,refunded,59
+54387,2024-05-15,2893.35,USD,Blue Harbor Goods,dining,paid,40
+'58391,2023-08-19,1895.77,GBP,Kestrel Outfitters,grocery,pending,21
+59209,2023-02-28,1416.00,GBP,Café Norte,fuel,pending,81
+59643,2023-04-13,4054.18,USD,Blue Harbor Goods,utilities,refunded,37
+59840,2024-09-15,4082.07,GBP,Kestrel Outfitters,fuel,chargeback,80
+59889,2023-03-16,4332.54,GBP,CafÃ© Norte,,chargeback,15
+60143,2024-05-27,36492.88,EUR,Delta Pharmacy,grocery,pending,94
+60377,2023-07-24,1873.70,EUR,Petit Marché,hardware,refunded,86
+67932,2023-08-12,3832.28,GBP,Vela Cycles,dining,chargeback,66
+68949,"Jul 18, 2023",864.55,GBP,Kestrel Outfitters,apparel,refunded,68
+69278,2023-02-21,3210.90,USD,Petit Marché,fuel,chargeback,93
+69577,2023-10-07,1151.63,EUR,Fjord Interiors,travel,pending,88
+'71443,2023-05-30,4540.30,EUR,Nordic Fjäll,dining,paid,
+71583,2024-09-24,2469.41,EUR,Blue Harbor Goods,utilities,chargeback,31
+71696,"Aug 16, 2024",3905.43,USD,Blue Harbor Goods,dining,paid,36
+73097,2023-11-15,3871.57,GBP,Kestrel Outfitters,apparel,pending,50
+75638,2024-02-03,2819.35,EUR,Kestrel Outfitters,hardware,pending,37
+76225,2024-06-07,3565.73,GBP,(Café Norte),grocery,refunded,69
+76343,2024-07-13,4129.07,USD,Petit Marcha,,pending,24
+76713,2024-05-01,730.79,EUR,Trailhead Sports,grocery,chargeback,76
+77139,2024-10-19,4435.44,GBP,Blue Harbor Goods,grocery,paid,16
+78450,2023-06-07,941.32,GBP,Trailhead Sports,(dining),refunded,null
+80720,2024-08-31,57.06,USD,Kestrel Outfitters,travel,refunded,3
+81480,2023-01-15,4509.75,EUR,(Vela Cycles),fuel,pending,
+81564,2024-11-05,1198.49,GBP,Nordic FjÃ¤ll,travel,pending,61
+82160,2023-08-07,2583.27,USD,Kestrel Outfitters,apparel,pending,97
+83443,2023-09-25,1434.52,GBP,Statler Hardware,utilities,chargeback,90
+83564,2024-07-13,3880.17,EUR,Northwind Supply,dining,refunded,98
+83849,2023-08-01,666.80,EUR,Kestrel Outfitters,fuel,paid,38
+ 84290 ,2024-11-09,3444.96,USD,Northwind Supply,grocery,paid,35
+84964,2023-07-15,3051.29,EUR,Orchard and Vine,hardware,pending,20
+85926,2024-04-16,696.36,USD,Northwind Supply,utilities,chargeback,78
+88062,2023-12-18,4408.63,GBP,Statler Hardware,apparel,paid,17
+88852,2024-04-28,1146.71,USD,Petit Marché,hardware,pending,95
+90030,2024-03-04,739.27,EUR,Kestrel Outfitters,grocery,refunded,80
+90191,2024-01-20,3791.29,EUR,Petit Marché,apparel,paid,65
+91164,2023-11-27,779.77,USD,Vela Cycles,hardware,pending,11
+91224,2023-10-14,2411.25,GBP,Petit Marché,utilities,chargeback,75
+91435,2024-09-16,4319.00,EUR,Kestrel  Outfitters,grocery,refunded,53
+92818,2023-10-04,2113.92,USD,Northwind Supply,fuel,chargeback,46
+96569,2024-06-21,2876.83,GBP,Trailhead Sports,hardware,paid,50
+97155,2023-02-12,€4365.63,USD,Fjord Interiors,grocery,paid,62
+97514,2024-08-16,596.13,USD,Petit Marché,travel,paid,39
+98013,2024-06-16,1058.35,GBP,Trailhead Sports,travel,pending,92
+98078,2024-03-05,1938.09,USD,Nordic Fjäll,hardware,refunded,71
+98440,2024-05-30,130.57,USD,Vela Cycles,apparel,pending,25
+99926,2023-04-06,1961.09,EUR,Northwind Supply,apparel,chargeback,57
+100225,2024-02-18,4243.11,GBP,Vela Cycles,utilities,paid,89
+101981,"Feb 19, 2023",130.51,EUR,Northwind Supply,fuel,pending,23
+102111,2023-10-17,2589.06,EaR,Statler Hardware,dining,paid,69
+102178,2023-02-07,3787.10,usd,Café Norte,dining,refunded,93
+102274,2023-07-15,104.12,EUR,Northwind Supply,dining,pending,40
+103008,2024-04-04,"2,106.83",GBP,Orchard and Vine,utilities,refunded,25
+103170,2024-06-03,131.18,EUR,Delta Pharmacy,grocery,pending,16
+103598,2023-09-09,4088.56,EUR,Trailhead Sports,grocery,refunded,9
+104799,2024-06-06,2490.69,GBP,Café Norte,utilities,paid,
+105357,2023-04-19,"3139,55",USD,Kestrel Outfitters,utilities,chargeback,34
+105706,2023-04-28,€4478.26,USD,Petit Marché,fuel,paid,84
+106066,2024-05-23,907.85,EUR,Petit Marché,hardware,chargeback,32
+106301,2023-09-02,2493.67,EUR,Statler Hardware,grocery,refunded,42
+107179,2023-09-12,2019.67,USD,Vela Cycles,utilities,paid,4
+107335,2024-04-29,2497.45,USD,Petit Marché,fuel,paid,50
+108076,2024-04-15,3580.75,USD,Café Norte,hardware,chargeback,61
+108473,2024-03-21,1299.15,USD,Delta Pharmacy,grocery,refunded,80
+109015,2024-03-07,2148.09,EUR,Petit Marché,travel,refunded,28
+109097,2024-05-03,626.04,GBP,Kestrel Outfitters,apparel,paid,6
+110417,"Jan 10, 2024",2197.04,EUR,Blue Harbor Goods,travel,refunded,73
+110839,"Jul 07, 2023",1043.14,USD,Statler Hardware,apparel,paid,51
+111086,2023-07-17,4490.77,USD,Vela Cycles,hardware,paid,51
+111426,2023-02-11,2922.50,USD,Trailhead Sports,utilities,pending,4
+111612,2023-02-28,82.82,GBP,Statler Hardware,,paid,10
+112195,2024-04-13,2302.66,USD,Blue Harbor Goods,travel,refunded,41
+113075,2023-07-26,1201.98,GBP,Trailhead Sports,apparel,paid,NaN
+114237,2024-02-10,"67,55",USD,Petit Marché,utilities,chargeback,20
+114383,2024-02-03,789.14,EUR,Petit MarchÃ©,fuel,chargeback,4
+114900,2024-05-05,4128.69,EUR,Blue Harbor Goods,grocery,paid,62
+118428,2024-06-28,2668.09,GBP,Fjord Interiors,travel,paid,85
+118614,2024-11-02,276.62,USD,(Orchard and Vine),travel,refunded,87
+120490,2023-03-07,561.84,EUR,Northwind Supply,hardware,refunded,48
+120902,2023-11-28,"2831,17",USD,Café Norte,apparel,refunded,16
+123325,2024-08-21,559.94,EUR,Trailhead Sports,fuel,paid,44
+123496,2023-06-17,2303.44,EUR,Fjord Interiors,fuel,chargeback,97
+124199,2024-09-16,2774.08,USD,Vela Cycles,travel,pending,28
+124257,2024-02-20,3516.73,USD,Fjord Interiors,grocery,refunded,54
+125213,2024-08-10,4213.80,USD,Nordic Fjäll,hardware,refunded,95
+125286,2023-04-10,3026.42,GBP,Statler Hardware,grocery,paid,9
+125708,2023-06-01,2644.47,GBP,Northwind Supply,dining,pending,27
+127017,2023-06-28,3716.82,GBP,Delta Pharmacy,utilities,refunded,11
+127196,2024-01-31,2606.02,GBP,Orchard and Vine,utilities,refunded,23
+129609,2023-05-25,4045.42,USD,Nordic FjÃ¤ll,hardware,refunded,57
+129825,2023-01-12,289.47,GBP,Trailhead Sports,travel,refunded,63
+131697,2023-12-13,753.91,GBP,Petit Marché,apparel,pending,55
+132821,2023-01-02,2979.98,USD,Nordic Fjäll,utilities,paid,58
+133153,2024-05-20,4789.36,EUR,Kestrel Outfitters,fuel,paid,95
+133166,2023-03-22,1503.80,GBP,Fjord Interiors,apparel,chargeback,13
+133945,2024-03-28,2326.31,GBP,Statler Hardware,hardware,paid,33
+135648,"Jun 27, 2023",640.50,GBP,Orchard and Vine,,chargeback,48
+136819,2024-01-28,296.23,EUR,Northwind Supply,apparel,paid,86
+137421,2023-11-14,3239.93,EUR,Northwind Supply,hardware,(refunded),17
+138052,2024-07-28,"2010,23",GBP,Blue Harbor Goods,fuel,chargeback,47
+138108,2023-09-17,2636.68,USD,Blue Harbor Goods,utilities,chargeback,39
+140296,2023-03-28,3655.96,GBP,Petit MarchÃ©,hardware,chargeback,79
+142843,2024-01-19,1825.49,EUR,Northwind Supply,dining,chargeback,81
+142925,2024-09-18,2382.46,USD,Vela Cycles,(grocery),pending,95
+143176,2024-02-16,4692.72,EUR,Blue Harbor Goods,hardware,refunded,26
+143692,2023-12-29,€4293.35,EUR,Petit Marché,apparel,chargeback,24
+143877,2023-03-04,3395.81,USD,Blue Harbor Goods,dining,pending,85
+143968,2024-09-08,4746.52,EUR,Trailhead Sports,fuel,refunded,88
+144676,2023-06-04,1473.71,USD,Vela Cycles,apparel,pending,44
+146438,2023-12-05,775.69,USD,Café  Norte,travel,pending,
+148217,2024-07-12,3628.50,EUR,Nordic Fjäll,fuel,chargeback,96
+148847,2024-04-23,728.61,GBP,Petit Marché,hardware,paid,37
+149633,"May 03, 2024",1225.45,USD,Petit MarchÃ©,utilities,refunded,39
+149811,2024-06-03,3863.58,GBP,Fjord Interiors,grocery,refunded,74
+150808,2024-08-20,1654.53,USD,Petit Marché,FUEL,pending,12
+152131,2023-12-02,378.11,USD,Delta Pharmacy,utilities,paid,81
+153836,2023-01-03,4605.55,USD,Trailhead Sports,dining,paid,22
+155007,2024-10-19,495.98,USD,Delta Pharmacy,apparel,pending,82
+155677,2023-08-28,2013.22,EUR,Statler Hardware,hardware,paid,26
+156338,2023-07-27,3089.06,EUR,Fjord Interiors,null,refunded,80
+158930,2023-12-19,€1329.79,GBP,Statler Hardware,travel,refunded,46
+159972,2023-09-17,553.42,USD,Petit Marché,utilities,paid,16
+161043,2023-08-01,4650.16,GBP,Orchard and Vine,hardware,pending,57
+163382,2024-10-09,4764.97,EUR,Delta Pharmacy,travel,chargeback,89
+163761,2023-11-22,3617.35,GBP,Trailhead Sports,utilities,pending,93
+164225,2023-06-17,244.14,USD,Delta Pharmacy,apparel,paid,67
+164756,2023-07-11,2490.00,GBP,Northwind Supply,,refunded,2
+165407,2024-09-24,4325.81,EUR,Orchard and Vine,fuel,refunded,24
+169391,2024-08-17,2046.90,USD,Kestrel Outfitters,travel,paid,32
+169566,2024-01-23,2528.02,GBP,Café Norte,travel,chargeback,55
+169800,2024-07-14,3496.82,GBP,Orchard and Vine,grocery,paid,28
+170530,2023-10-31,578.58,USD,Blue Harbor Goods,dining,paid,41
+170736,2024-11-02,1150.03,USD,Café Norte,dining,paid,
+170957,2024-06-14,1398.38,EUR, Northwind Supply ,fuel,paid,72
+172798,2023-12-02,974.34,GBP,Blue Harbor Goods,hardware,pending,93
+173467,2023-10-04,3362.18,USD,Vela Cycles,utilities,paid,44
+173486,2023-12-01,2245.49,EUR,Petit Marché,hardware,chargeback,1
+173986,2024-03-08,1489.84,USD,Orchard and Vine,travel,chargeback,73
+174753,2024-11-24,4293.21,GBP,Petit Marché,travel,paid,37
+174902,2024-06-11,419.42,GBP,Nordic Fjäll,apparel,pending,96
+176296,2024-01-08,4393.98,USD,Vela Cycles,grocery,chargeback,78
+176795,2023-03-22,2041.33,USD,Orchard and Vine,apparel,paid,62
+178669,2024-07-01,1884.08,GBP,Blue Harbor Goods,hardware,chargeback,10
+178800,2023-05-27,4731.53,EUR,Delta Pharmacy,grocery,refunded,69
+179752,2023-11-03,1566.99,EUR,Orchard and Vine,grocery,chargeback,13
+180297,"Feb 17, 2024",4693.10,EUR,Trailhead Sports,fuel,pending,58
+180926,2023-07-28,4586.51,USD,Nordic Fjäll,hardware,paid,
+181371,2023-11-25,4489.28,EUR,Northwind Supply,hardware,refunded,11
+181797,2023-11-02,4240.94,GBP,Orchard and Vine,hardware,refunded,1
+183029,2024-09-28,1932.91,USD,Trailhead Sports,dining,paid,28
+183376,2023-01-06,3965.39,GBP,Vela Cycles,hardware,paid,#N/A
+184986,2024-04-20,1520.02,GBP,Blue Harbor Goods,utilities,chargeback,52
+185067,2024-10-17,647.25,EUR,Kestrel Outfitters,travel,pending,56
+187057,2024-03-08,4535.35,GBP,Orchard and Vine,hardware,pending,31
+187488,2023-05-19,2183.86,USD,Vela Cycles,grocery,paid,28
+188598,2023-07-29,4120.89,USD,Delta Pharmacy,grocery,chargeback,35
+190590,2023-01-16,"694,84",EUR,Nordic Fjäll,utilities,pending,28
+190611,2023-03-31,3786.80,USD,Fjord Interiors,hardware,pending,17
+191406,2024-07-21,885.95,GBP,Vela Cycles,fuel,pending,67
+191958,2024-11-23,2138.19,GBP,Blue Harbor Goods,fuel,chargeback,25
+191980,2023-12-21,2486.56,GBP,Trailhead Sports,dining,refunded,86
+192213,2024-04-05,2128.30,GBP,Orchard and Vine,apparel,chargeback,
+193461,2024-07-31,1554.04,EUR,Fjord Interiors,fuel,paid,19
+194968,2024-04-20,609.72,EUR,Northwind Supply,apparel,refunded,78
+195779,2024-06-08,3765.75,EUR,Northwind Supply,grocery,refunded,45
+196345,2024-04-13,2047.59,GBP,Blue Harbor Goods,grocery,paid,73
+196462,2023-04-29,4522.27,USD,Petit Marché,utilities,paid,72
+197837,2023-04-14,2098.12,GBP,Statler Hardware,hardware,pending,2
+198231,2024-03-27,132.52,USD,Delta Pharmacy,grocery,pending,27
+198407,2024-03-19,3285.90,EUR,Statler Hardware,grocery,paid,13
+201025,2024-05-16,1455.96,USD,Fjord Interiors,utilities, pending ,4
+201063,2023-07-28,363.79,EUR,Statler Hardware,fuel,pending,84
+205770,2023-11-09,4777.32,EUR,Vela Cycles,fuel,refunded,24
+207858,2024-04-18,3474.82,EUR,Vela Cycles,dining,paid,90
+208081,2023-12-16,458.52,USD,Kestrel Outfitters,travel,refunded,null
+208340,2023-12-23,€2763.55,USD,Café Norte,dining,chargeback,88
+209478,2023-08-19,3496.92,GBP,Statler Hardware,dining,refunded,96
+210413,2024-02-19,836.08,GBP,Blue Harbor Goods,apparel,PENDING,77
+211532,2023-09-15,2028.02,USD,Kestrel  Outfitters,fuel,CHARGEBACK,19
+211865,2024-04-29,2216.44,USD,Kestrel Outfitters,hardware,paid,12
+212319,2023-10-09,1800.35,GBP,Nordic Fjäll,,pending,51
+213163,2023-12-06,2115.05,USD,Trailhead Sports,hardware,pending,89
+213198,2023-12-17,"4,568.63",GBP,Orchard and Vine,utilities,refunded,15
+213417,2024-06-03,3077.08,GBP,Blue Harbor Goods,utilities,pending,85
+214501,2024-08-30,884.97,EUR,Café Norte,dining,refunded,71
+214796,2024-09-08,467.09,EUR,Fjord Interiors,grocery,paid,66
+214978,2024-08-06,3535.87,USD,Trailhead Sports,utilities,refunded,81
+215168,2023-05-20,3138.65,EUR,Petit Marché,utilities,chargeback,43
+216485,2023-10-30,3686.43,EUR,Orchard and Vine,hardwaae,paid,71
+218178,2023-04-09,2282.92,GBP,Orchard and Vine,grocery,chargeback,
+218225,2024-07-07,4531.21,GBP,Vela Cycles,dining,pending,58
+218768,2023-03-17,2988.18,GBP,Delta Pharmacy,fuel,paid,73
+218921,2023-05-30,1122.32,EUR,Café Norte,dining,chargeback,66
+220504,2023-12-30,3976.08,EUR,Fjord Interiors,travel,chargeback,46
+220660,2023-12-17,3166.31,GBP,Northwind Supply,hardware,pending,70
+220683,2023-03-26,2670.36,GBP,Blue Harbor Goods,grocery,refunded,58
+221064,2024-03-24,"1139,92",EUR,Vela Cycles,utilities,chargeback,88
+223910,2023-08-23,3292.99,GBP,Trailhead Sports,apparel,refunded,84
+225851,2023-04-24,2735.00,USD,Orchard and Vine,apparel,paid,10
+226020,2024-09-28,4503.18,EUR,Vela Cycles,grocery,pending,71
+226576,2023-03-23,2818.49,USD,Delta Pharmacy,apparel,chargeback,15
+226901,2023-05-10,4794.19,GBP,Petit Marché,dining,chargeback,90
+226995​,2024-07-19,64.50,GBP,Vela Cycles,dining,refunded,44
+228040,2023-05-25,27207.62,EUR,Fjord Interiors,dining,refunded,50
+228064,2023-04-16,2954.66,USD,Fjord Interiors,grocery,refunded,79
+228085,2024-05-25,1799.78,USD,Delta Pharmacy,grocery,paid,39
+228151,2024-01-02,'3335.53,GBP,Blue Harbor Goods,travel,paid,87
+229160,2024-06-25,4457.67,GBP,Delta Pharmacy,utilities,refunded,77
+229490,2024-08-12,111.63,GBP,Northwind Supply,grocery,chargeback,10
+230477,2023-10-14,3862.24,GBP,Vela Cycles,travel,(refunded),7
+231366,2024-05-30,4296.58,USD,Northwind Supply,apparel,chargeback,70
+232081,2024-08-31,1616.00,GBP,Northwind Supply,fuel,pending,13
+233078,2024-11-16,'3977.45,GBP,Fjord Interiors,travel,paid,63
+233420,"Feb 16, 2023",2714.45, USD ,Orchard and Vine,hardware,refunded,39
+234046,2024-01-06,1925.24,EUR,Nordic Fjäll,fuel,chargeback,96
+235004,2023-01-26,4066.38,EUR,Orchard and Vine,apparel,paid,7
+235324,2024-09-27,2667.81,EUR,Trailhead Sports,dining,paid,29
+236540,2023-11-27,2634.31,USD,Vela Cycles,apparel,pending,45
+237137,2023-06-25,2975.74,EUR,Trailhead Sports,grocery,paid,79
+238387,2024-02-29,"1,254.87",GBP,Delta Pharmacy,hardware,paid,43
+238561,2024-05-01,2789.89,EUR,Petit Marché,grocery,chargeback,56
+238587,2024-05-20,4563.56,GBP,Delta Pharmacy,grocery,chargeback,23
+239620,2023-12-19,-18429.00,EUR,Kestrel  Outfitters,utilities,chargeback,55
+239890,2023-11-12,"4132,03",GBP,Café Norte,utilities,chargeback,57
+240265,2024-05-28,2286.10,EUR,Fjord Interiors,null,pending,42
+240499,2024-05-19,2357.68,USD,Nordic Fjäll,N/A,chargeback,88
+241788,"Jan 20, 2024",1078.25,EUR,Kestrel Outfitters,dining,pending,80
+243385,2023-10-08,903.64,EUR,Vela Cycles,fuel,chargeback,21
+243448,2024-10-09,220.69,EUR,Blue Harbor Goods,grocery,pending,92
+243665,2023-11-05,"271,68",GBP,Blue Harbor Goods,travel,chargeback,78
+  244157 ,2023-12-14,2979.50,GBP,  Nordic Fjäll ,travel,chargeback,15
+246428,2023-04-25,1941.82,USD,Orchard and Vine,apparel,chargeback,85
+247386,2024-07-12,128.16,EUR,Nordic Fjäll,travel,chargeback,61
+247580,2023-01-18,4381.38,EUR,Fjord Interiors,apparel,refunded,7
+247997,2023-07-10,2771.67,EUR,Statler Hardware,utilities,paid,11
+248066,2024-04-30,3440.20,GBP,Petit Marché,fuel,pending,64
+249037,2024-09-27,3801.11,USD,Vela Cycles,hardware,paid,2
+249185,2023-05-24,3551.47,USD,Fjord Interiors,apparel,refunded,3
+249453,2024-01-10,4502.21,EUR,Blue Harbor Goods,apparel,paid,50
+251246,2024-01-05,2322.07,GBP,Trailhead Sports,travel,chargeback,16
+251622,2023-06-11,1661.13,EUR,Kestrel Outfitters,fuel,chargeback,22
+252035,2024-11-27,1517.29,EUR,Vela Cycles,hardware,refunded,46
+252242,2024-05-17,"2190,97",USD,Statler  Hardware,travel,pending,12
+252662,2024-11-25,927.74,USD,Kestrel Outfitters,grocery,chargeback,77
+255776,2023-04-06,913.32,EUR,Northwind Supply,dining,pending,19
+256503,2023-10-24,750.07,GBa,Kestrel Outfitters,travel,chargeback,78
+257124,2023-04-26,4436.05,USD,Orchard and Vine,dining,pending,58
+257709,2023-10-25,2355.42,EUR,Fjord Interiors,fuel,paid,29
+257808,2024-01-21,35.17,EUR,Statler  Hardware,#N/A,chargeback,71
+257966,2023-03-17,2012.15,EUR,Orchard and Vine,hardware,refunded,13
+258739,2024-10-14,4021.56,GBP,Fjord Interiors,fuel,chargeback,48
+261308,2024-05-18,1026.63,USD,Nordic FjÃ¤ll,grocery,chargeback,64
+262361,2024-03-17,3785.52,usd,Nordic Fjäll,travel,chargeback,64
+264086,2023-11-22,1775.84,USD,Northwind Supply,apparel,chargeback,14
+268820,"Apr 26, 2023",4021.09,EUR,Petit Marché,apparel,paid,7
+269508,2024-05-25,4209.42,EUR,Blue Harbor Goods,utilities,pending,60
+269742,2023-04-27,104.20,USD,Trailhead Sports,,refunded,15
+270910,2023-11-20,3660.67,GBP,Blue Harbor Goods,travel,pending,99
+271550,2024-11-09,2487.32,GBP,Nordic Fjäll,hardware,chargeback,26
+272366,2023-08-22,2045.51,USD,Vela Cycles,travel,pending,58
+272935,2024-04-18,1552.47,GBP,Statler Hardware,fuel,chargeback,95
+273808,2023-09-23,4080.35,GBP,Trailhead Sports,grocery,paid,NA
+274314,2023-11-14,2874.83,EUR,Kestrel Outfitters,utilities,pending,20
+274424,2023-04-15,4330.99,USD,Blue Harbor Goods,dining,pending,68
+274486,2024-11-26,4220.91,GBP,Café Norte,utilities,pending,34
+275423,2024-04-16,1447.87,USD,Orchard and Vine,apparel,chargeback,89
+275893,2023-06-18,925.43,USD,Northwind Supply,dining,chargeback,28
+276833,2023-02-22,2459.72,USD,Northwind Supply,utilities,paid,58
+276869,2024-11-15,2671.05,USD,Café Norte,travel,refunded,42
+277551,2023-02-05,414.86,  EUR ,Nordic Fjäll,hardware,paid,60
+277873,2023-01-31,714.04,GBP,Delta Pharmacy,hardware,paid,47
+278768,2023-08-13,2879.86,EUR,Petit Marché,fuel,paid,81
+279770,2024-05-24,886.17,GBP,Fjord Interiors,hardware,pending,63
+280281,2024-03-24,2470.86,EUR,Orchard and Vine,hardware,paid,18
+280868,2023-08-17,1381.23,EUR,Nordic FjÃ¤ll,utilities,paid,66
+280924,2023-07-30,2895.31,USD,Delta Pharmacy,grocery,paid,6
+281955,2024-10-31,2365.74,USD,Delta Pharmacy,travel,chargeback,53
+282109,2023-10-03,1237.62,EUR,Blue Harbor Goods,utilities,refunded,76
+284578,2023-08-13,482.21,USD,Vela Cycles,,refunded,
+284848,2023-11-05,3898.36,GBP,Orchard and Vine,fuel,paid,54
+284851,2024-07-26,3004.15,GBP,Petit Marché,apparel,pending,72
+285127,2024-11-01,895.76,GBP,Blue Harbor Goods,hardware,chargeback,24
+286043,2023-04-29,3349.88,USD,Northwind Supply,dining,chargeback,8
+286392,2024-04-18,1968.14,USD,Trailhead Sports,,pending,64
+289419,2023-06-06,1220.61,GBP,Nordic Fjäll,hardware,paid,79
+290067,2024-10-30,370.92,EUR,Vela Cycles,apparel,chargeback,68
+290366,2023-12-10,386.83,USD,Petit Marché,hardware,chargeback,26
+290445,2024-03-21,1285.83,USD,Kestrel Outfitters,fuel,pending,48
+290617,"May 12, 2024",4160.25,EUR,Vela Cycles,dining,chargeback,31
+291260,2023-08-27,1663.15,EUR,Trailhead Sports,utilities,refunded,78
+292172,2024-06-18,1349.48,EUR,Vela Cycles,travel,chargeback,20
+293275,2024-09-22,748.17,USD,Fjord Interiors,travel,paid,91
+293372,2024-03-31,2837.02,EUR,Blue Harbor Goods,grocery,paid,
+293874,2023-07-04,1142.70,USD,Nordic Fjäll,travel,paid,23
+294057,2024-07-23,2268.24,USD,Trailhead Sports,,paid,38
+'294084,2024-11-07,1714.42,GBP,Delta  Pharmacy,travel,pending,84
+294395,2023-11-13,4099.58,EUR,Northwind Supply,utilities,chargeback,-459
+294799,2024-05-11,4347.53,GBP,Fjord Interiors,NA,paid,30
+296658,2024-05-29,770.50,GBP,CafÃ© Norte,utilities,pending,66
+298758,2023-09-06,1487.59,EUR,Kestrel Outfitters,utilities,paid,99
+299328,2023-06-06,729.26,GBP,Blue Harbor Goods,utilities,pending,87
+299629,2024-11-22,4636.26,USD,Trailhead Sports,hardware,paid,35
+299832,2024-08-10,975.21,USD,Trailhead Sports,apparel,chargeback,53
+299854,2023-05-30,1619.40,USD,Delta Pharmacy,grocery,refunded,87
+301425,2023-12-02,4157.29,USD,Delta Pharmacy,fuel,pending,94
+302518,2023-06-01,4487.13,USD,Trailhead Sports,travel,chargeback,51
+302896,2024-05-15,1315.10,GBP,Kestrel Outfitters,utilities,chargeback,  70 
+303373,2023-04-16,3905.25,USD,Petit Marché,hardware,paid,66
+304986,2023-05-01,1401.41,USD,Nordic Fjäll,travel,refunded,64
+305712,2023-08-05,4645.23,EUR,Fjord Interiors,hardware,pending,33
+306482,2024-02-18,645.33,USD,Kestrel Outfitters,travel,pending,69
+308436,2023-08-13,1044.69,EUR,Northwind Supply,utilities,pending,24
+309743,2024-08-17,3955.06,GaP,Blue Harbor Goods,travel,chargeback,37
+309981,2023-03-16,1131.77,GBP,Northwind Supply,apparel,chargeback,83
+310858,2023-07-05,2242.50,EUR,Petit Marché,grocery,paid,47
+311004,2024-01-27,1401.99,EUR,Petit Marché,dining,pending,
+312684,2023-01-12,1892.35,EUR,Kestrel Outfitters,utilities,paid,34
+313906,2023-11-30,1211.98,EUR,Trailhead Sports,grocery,refunded,99
+316471,2023-05-06,3339.84,GBP,Statler Hardware,dining,pending,77
+318981,"Jan 26, 2023",2790.96,EUR,Vela Cycles,utilities,chargeback,70
+319164,2023-02-11,1257.96,GBP​,Nordic Fjäll,utilities,paid,36
+319262,2023-08-09,1514.50,EUR,Trailhead Sports,apparel,pending,51
+325352,2024-04-22,2478.69,GBP,Blue Harbor Goods,dining,refunded,77
+326408,2023-10-27,569.98,EUR,Café Norte,dining,refunded,43
+326918,2024-03-05,1518.86,USD,Café Norte,,refunded,3
+327383,2023-08-31,2532.03,GBP,Blue Harbor Goods,grocery,refunded,70
+329644,2024-03-31,3445.42,GBP,Trailhead Sports,apparel,chargeback,38
+332194,2024-07-18,4175.32,USD,Orchard and Vine,fuel,refunded,47
+333564,2024-10-16,779.01,EUR,Statler Hardware,travel,pending, 28 
+334111,2023-01-06,1814.36,EUR,Café Norte,dining,refunded,36
+335598,2023-09-25,405.16,EUR,Petit Marché,utilities,refunded,54
+336220,2023-11-18,2747.91,USD,Kestrel Outfitters,utilities,pending,null
+336971,2024-11-06,2278.80,USD,Orchard  and Vine,travel,pending,94
+338565,2024-02-15,3859.19,GBP,Blue Harbor Goods,hardware,pending,54
+339605,2023-10-20,413.80,GBP,Fjord Interiors,dining,chargeback,65
+340480,2023-10-12,293.34,USD,Fjord Interiors,apparel,paid,11
+341613,2024-08-06,460.92,EUR,Blue Harbor Goods,travel,pending,90
+342144,2024-11-26,776.82,USD,Petit Marché,grocery,paid,48
+343412,2024-06-05,2882.23,USD,Trailhead Sports,fuel,chargeback,99
+345329,"Sep 29, 2023",1466.93,GBb,Kestrel Outfitters,utilities,refunded,57
+346124,2023-04-04,136.94,USD,Statler Hardware,grocery,pending,58
+346719,2023-04-04,3296.93,GBP,Nordic Fjäll,dining,pending,22
+346788,"Feb 17, 2023",302.76,USD,Blue Harbor Goods,travel,chargeback,NaN
+347695,"Aug 18, 2024",112.72,GBP,Kestrel Outfitters,utilities,refunded,6
+349116,2023-03-29,2411.28,EUR,Kestrel Outfitters,hardware,refunded,85
+349253,2023-05-12,387.86,USD,Nordic Fjäll,travel,paid,1
+350097,2024-06-04,"1,538.72",GBP,Trailhead Sports,grocery,refunded,98
+350357,2023-03-13,158.97,USD,Nordic Fjäll,fuel,paid,55
+352476,2024-02-26,3175.69,USD,Nordic Fjäll,dining,chargeback,20
+353030,2024-03-09,4206.57,GBP,Northwind Supply,grocery,pending,81
+354124,2024-09-15,1468.10,USD,Trailhead Sports,grocery,paid,61
+354624,2023-08-22,2634.70,USD,Statler Hardware,dining,CHARGEBACK,95
+355634,2024-06-18,4400.39,EUR,Kestrel Outfitters,fuel,chargeback,46
+355827,2024-11-26,1864.98,GBP,Delta Pharmacy,#N/A,pending,35
+356600,2023-09-29,256.25,EUR,Petit MarchÃ©,fuel,pending,45
+357761,2024-06-30,2338.03,USD,Statler Hardware,apparel,pending,71
+358244,2024-05-14,1083.62,EUR,Café Norte,grocery,refunded,66
+359095,2024-04-02,1220.72,GBP,Delta Pharmacy,grocery,pending,52
+359699,2023-11-24,1097.44,EUR,Orchard and Vine,apparel,chargeback,71
+362284,2023-04-05,2527.26,GBP,Statler Hardware,grocery,refunded,3
+362382,2023-09-26,3039.44,USD,Petit Marché,apparel,paid,94
+364859,2024-07-14,2275.89,USD,Nordic Fjäll,apparel,refuaded,34
+365093​,2023-04-26,3842.57,USD,Orchard and Vine,grocery,chargeback,53
+367338,2024-07-15,1809.57,EUR,Statler Hardware,utilities,pending,10
+368647,2023-04-16,1776.71,USD,Fjord Interiors,travel,refunded,59
+368776,2023-08-16,2459.97,EUR,Statler Hardware,utiaities,refunded,88
+368946,2023-07-07,121.51,GBP,Kestrel Outfitters,NaN,refunded,47
+368989,2023-01-15,3409.72,GBP,Café Norte,hardware,chargeback,14
+369373,2024-07-07,3350.32,EUR,Blue Harbor Goods,utilities,chargeback,32
+369429,2023-03-01,826.27,USD,Orchard  and Vine,dining,refunded,73
+369603,2024-03-15,3221.02,GBP,Delta Pharmacy,apparel,pending,83
+370238,2024-09-16,919.39,USD,Northwind Supply,hardware,chargeback,61
+370882,"May 20, 2024",4350.68,GBP,Blue Harbor Goods,grocery,refunded,
+370925,2024-01-21,2311.03,GBP,Vela Cycles,fuel,paid,41
+371076,2024-08-06,2132.50,GBP,Statler Hardware,apparel,paid,69
+371204,2024-01-21,4084.59,EUR,Petit Marché,dining,paid,62
+372769,"Nov 24, 2024",3838.51,USD,Trailhead Sports,utilities,paid,79
+372855,2023-06-26,3755.07,GBP,Northwind Supply,apparel,refunded,19
+373239,2024-10-06,3498.52,USD,Statler Hardware,travel,pending,10
+373954,2023-08-25,3659.98,GBP,Fjord Interiors,hardware,chargeback,55
+374084,2024-05-05,4545.28,EUR,Delta Pharmacy,utilities,refunded,39
+374587,2023-04-01,2083.69,GBP,Trailhead Sports,grocery,pending,25
+374922,2024-01-03,462.53,USD,Petit Marché,dining,paid,26
+375469,2023-07-26,4360.00,USD,Delta Pharmacy,utilities,pending,26
+376692,2023-02-05,432.85,(GBP),Petit MarchÃ©,hardware,paid,82
+377538,2024-03-20,772.11,USD,Blue Harbor Goods,dining, paid ,22
+378121,2024-05-22,3221.62,GBP,Fjord Interiors,fuel,pending,98
+378374,2024-06-14,483.36,USD,Northwind Supply,travel,pending,81
+379986,2023-04-03,1406.46,USD,Delta Pharmacy,apparel,paid,75
+380315,2024-10-06,2568.19,EUR,Delta Pharmacy,utilities,pending,6
+380865,2024-02-28,3910.84,  EUR ,Delta Pharmacy,travel,refunded,56
+381124,2023-07-18,'217.80,GBP,Northwind Supply,(dining),chargeback,3
+382145,2023-03-10,31.86,EUR,Vela Cycles,apparel,refunded,68
+382928,2023-05-13,2380.83,EUR,Delta Pharmacy,hardware,pending,17
+383208,2023-12-31,4587.44,USD,Petit MarchÃ©,hardware,pending,51
+383304,2024-07-07,3681.45,EUR,Delta Pharmacy,utilities,chargeback,73
+383433,2023-08-16,473.11,EUR,Delta Pharmacy,,paid,1
+386338,2023-10-16,9.14,EUR,Café Norte,travel,chargeback,52
+386795,2023-12-04,2690.07,EUR,Statler Hardware,,pending,75
+387483,2023-03-08,3688.82,USD,Northwind Supply,null,pending,
+389020,2023-11-22,4595.73,USD,Statler Hardware,dining,chargeback,80
+389720,2024-11-06,4033.44,EUR,Vela Cycles,apparel,pending,44
+389756,2023-12-13,1145.54,EUR,Vela Cycles,grocery,paid,4
+389802,2023-05-28,1500.47,USD,Vela Cycles,apparel,chargeback,49
+389912,2023-09-13,1907.82, EUR ,Statler Hardware,dining,refunded,22
+390529,2024-02-11,1219.79,EUR,Statler Hardware,dining,paid,94
+392709,2024-09-21,1539.22,USD,Trailhead Sports,dining,pending,7
+393017,2023-09-05,995.00,EUR,Nordic Fjäll,hardware,refunded,450
+393358,2024-01-08,2228.85,GBP,Café Norte,travel,chargeback,42
+394636,2024-03-12,3944.43,USD,Petit Marché,dining,chargeback,4
+395065,2023-06-15,"4,281.01",GBP,Statler Hardware,grocery,paid,53
+396202,2024-10-11,14.21,EUR,Fjord Interiors,dining,pending,29
+398140,2023-02-14,4328.86,GBP,Vela Cycles,travel,pending,52
+399487,2024-10-03,4068.93,EUR,Vela Cycles,utilities,pending,9
+399614,2024-11-12,2886.16,USD,Café Norte,hardware,paid,23
+400483,2024-03-11,872.07,USD,Statler Hardware,utilities,pending,31
+400574​,2023-04-21,2164.04,USD,Blue Harbor Goods,dining,pending,84
+401410,2024-09-05,3029.21,GBP,Statler Hardware,fuel,pending,55
+402541,2023-07-13,1889.13,GBP,Northwind Supply,hardware,paid,81
+402549,2024-01-24,286.87,EUR,Petit Marché,fuel,chargeback,21
+403476,2023-01-19,4350.19,USD,Nordic Fjäll,apparel,pending,51
+403507,2024-05-27,754.50,USD,Blue Harbor Goods,apparel,paid,6
+404568,2024-08-05,4383.84,EUR,Trailhead Sports,utilities,pending,
+405319,2023-09-18,3524.14,EUR,Blue Harbor Goods,grocery,pending,2
+406367,2023-08-06,507.25,USD,Orchard and Vine,hardware, pending ,34
+407087,2023-03-26,283.03,GBP,Petit Marché,travel,refunded,12
+407272,2023-06-25,620.19,GBP,Vela Cycles,hardware,paid,62
+407366,2023-07-04,2333.15,EUR,Delta Pharmacy,travel,chargeback,43
+407990,2024-01-23,2662.45,GBP,Fjord Interiors,apparel,chargeback,69
+408992,2024-02-01,2980.09,EUR,Fjord Interiors,travel,refunded,88
+409477,2023-02-09,1071.70,GBP,Fjord Interiors,utilities,refunded,3
+409689,2024-11-04,4613.56,GBP,Nordic Fjäll,hardware,paid,36
+413201,2024-10-05,3415.91,GBP,Orchard and Vine,travel,chargeback,63
+414718,2023-09-08,1008.82,GBP,Kestrel Outfitters,grocery,refunded,35
+415092,2023-02-01,577.68,EUR,Kestrel Outfitters,apparel,chargeback,54
+415475,2024-01-16,454.05,USD,Orchard and Vine,travel,paid,25
+415787,2024-03-25,2275.06,GBP,Nordic Fjäll,,paid,69
+416636,2023-05-06,€3947.32,EUR,Blue Harbor Goods,dining,pending,74
+418763,2024-02-13,2518.03,EUR,Northwind Supply,apparel,pending,46
+419986,2023-12-14,3069.25,GBP,Blue Harbor Goods,dining,chargeback,87
+420400,2023-01-01,1480.35,GBP,Petit Marché,travel,pending,53
+420615,2023-05-03,3148.31,EUR,Delta Pharmacy,travel,pending,56
+420699,2024-01-25,4290.62,GBP,Statler Hardware,grocery,pending,15
+420837,2023-03-30,584.54,GBP,Trailhead Sports,travel,paid,
+420915,2024-04-30,2952.91,USD,Fjord Interiors,hardware,pending,24
+421109,2023-04-28,902.00,USD,Orchard and Vine,APPAREL,pending,30
+422318,2023-04-29,4414.81,USD,Blue Harbor Goods,fuel,refunded,21
+422867,2024-11-03,'3029.92,USD,Nordic Fjäll,fuel,paid,20
+423877,2023-04-07,44.94,GBP,CafÃ© Norte,utilities,refunded,70
+424319,2024-09-17,2114.26,USD,Nordic Fjäll,dining,pending,8
+424771,2023-11-14,794.10,EUR,Northwind Supply,hardware,chargeback,17
+425738,2023-03-10,4029.80,USD,Orchard and Vine,fuel,chargeback,90
+425768,2023-11-17,3008.21,EUR,Kestrel Outfitters,grocery,pending,98
+426309,2024-07-09,1043.76,USD,Petit Marché,utilities,chargeback,5
+427133,2023-06-02,2932.08,EUR,Nordic Fjäll,grocery,paid,64
+428534,2024-06-01,86.55,GBP,Vela Cycles,fuel,refunded,96
+430766,2023-10-01,3164.86,USD,Blue Harbor Goods,dining,pending,60
+431466,2023-04-02,318.42,USD,Delta Pharmacy,fuel,refunded,44
+431814,2024-02-28,4563.70,GBP,Delta Pharmacy,grocery,paid,13
+432018,2024-03-08,456.01,GBP,Café Norte,grocery,refunded,86
+433236,2023-01-18,2029.75,GBP,Nordic Fjäll,,chargeback,70
+433920,2023-10-24,3132.06,EUR,Statler Hardware,apparel,chargeback,1
+435964,2023-10-05,2173.76,EUR,Trailhead Sports,apparel,paid,87
+437911,2023-06-07,2738.53,EUR,Café Norte,apparel,chargeback,30
+439725,2024-11-21,2809.16,USD,Trailhead Sports,dining,pending,44
+439834,2024-04-08,"1641,14",USD,Trailhead Sports,grocery,chargeback,24
+440573,2023-05-14,2867.32,GBP,Northwind Supply,dining,pending,29
+440643,2024-09-17,3863.68,USD,Petit Marché,fuel,refunded,37
+441905,2024-08-12,2902.87,GBP,Café Norte,apparel,refunded,82
+442464,2023-09-21,2925.80,USD,Nordic Fjäll,hardware,refunded,18
+442539,2023-08-26,3925.35,USD,Vela Cycles,hardware,refunded,66
+443544,2023-08-29,299.48,GBP,Blue Harbor Goods,fuel,paid,2
+444096,"Feb 07, 2023",4771.99,USD,Northwind Supply,hardware,chargeback,77
+447216,2023-01-14,3559.42,USD,Café Norte,apparel,chargeback,8
+447533,2023-04-23,398.96,EUR,Blue Harbor Goods,hardware,refunded,94
+448165,2023-08-08,1706.41,EUR,Vela Cycles,travel,refunded,88
+449457,"Oct 21, 2023",866.54,USD,Delta  Pharmacy,fuel,chargeback,59
+450788,2024-10-06,4766.54,EUR,Delta Pharmacy,dining,chargeback,30
+451186,2023-10-22,3249.88,GBP,Delta Pharmacy,dining,paid,52
+452202,2024-10-17,"2,781.86",USD,Kestrel Outfitters,hardware,paid,29
+453386,2023-07-17,2245.23,USD,Nordic Fjäll,grocery,chargeback,83
+'454015,2024-10-16,3346.66,USD,Statler Hardware,apparel,paid,  37 
+455007,2023-11-25,1610.17,USD,Vela Cycles,travel,pending,3
+456615,2024-07-04,454.23,EUR,Delta Pharmacy,dining,pending,94
+456738,2024-07-20,3007.47,USD,Northwind Supply,grocery,refunded,
+456744,2023-12-04,2734.37,EUR,(Statler Hardware),fuel,paid,25
+458169,2024-06-14,13.99,USD,Northwind Supply,travel,refunded,
+458637,2023-07-09,3283.29,USD,Blue Harbor Goods,grocery,paid,58
+458751,2024-08-18,4064.56,GBP,Kestrel Outfitters,utilities,paid,30
+459355,2023-12-17,1442.70,GBP,Nordic  Fjäll,dining,pending,30
+459512,2024-01-20,4796.66,GBP,CafÃ© Norte,hardware,paid,52
+460403,2023-07-10,4059.60,USD,Orchard and Vine,grocery,chargeback,30
+460531,2024-09-05,2083.32,GBP,Nordic Fjäll,grocery,chargebbck,23
+461254,2023-04-07,1119.55,EUR,Vela Cycles,apparel,chargeback,36
+461350,2023-03-22,1708.51,EUR,Orchard and Vine,travel,refunded,44
+461614,2024-07-06,3498.16,GBP,Nordic Fjäll,hardware,chargeback,50
+462120,2024-04-03,2897.66,EUR,Kestrel Outfitters,apparel,pending,6
+462404,2023-12-07,3044.59,USD,Café Norte,dining,paid,61
+464711,2023-07-25,2102.78,EUR,Café Norte,utilities,chargeback,
+465771,2023-07-18,3008.52,USD,Fjord Interiors,dining,pending,6
+466122,2023-09-29,817.73,USD,Fjord Interiors,fuel,pending,81
+466954,2023-12-23,2315.91,USD,Café Norte,travel,paid,1
+467457,2024-09-17,1591.83,EUR,Trailhead Sports,hardware,paid,
+467770,2024-04-04,-31248.49,EUR,Statler Hardware,,refunded,81
+469586,2024-04-18,657.09,USD,Delta Pharmacy,fuel,chargeback,29
+470423,2024-08-17,4492.74,EUR,Café Norte,dining,chargeback,NA
+470985,2024-09-19,3707.26,USD,Kestrel Outfitters,utilities,refunded,31
+471046,"May 22, 2023",1053.60,GBP,Nordic Fjäll,travel,paid,88
+471435,2024-05-03,2368.88,EUR,Petit Marché,apparel,chargeback,25
+472022,2023-06-01,"246,97",GBP,Petit Marché,fuel,chargeback,70
+473573,2023-05-28,1907.95,EUR,Statler Hardware,hardware,paid,18
+474770,2024-06-24,2398.72,USD,Fjord Interiors,grocery,pending,23
+476885,2023-06-01,978.38,EUR,Trailhead Sports,fuel,pending,22
+477208,2023-01-18,1949.87,GBP,Orchard and Vine,,paid,87
+478590,2024-11-08,2074.57,EUR,Kestrel Outfitters,apparel,paid,18
+478785,2023-12-09,1119.20,GBP,Statler Hardware,dining,pending,24
+479905,2024-07-02,4346.55,USD,Petit Marché,grocery,pending,76
+482591,2023-06-17,1278.87,EUR,Northwind Supply,hardware,pending,51
+483192,2023-08-11,980.37,EUR,Nordic Fjäll,travel,chargeback,16
+483606,"Mar 09, 2023",3197.85,GBP,Statler Hardware,apparel,paid,62
+483786,2024-07-05,4287.62,USD,Fjord Interiors,travel,chargeback,91
+484230,2024-03-03,3833.12,GBP,Northwind Supply,,chargeback,16
+485701,2023-06-12,4690.73,EUR,Statler Hardware,grocery,chargeback,85
+486125,2023-06-03,3172.95,EUR,(Orchard and Vine),grocery,refunded,52
+487614,2024-09-10,1544.98,GBP,Blue Harbor Goods,fuel,paid,86
+488844,2023-06-20,4146.07,GBP,Trailhead Sports,apparel,chargeback,43
+489206,2023-06-28,2370.09,GBP,Orchard and Vine,,paid,68
+489436,2023-01-30,1597.00,GBP,Statler Hardware,dining,paid,77
+489906,2024-04-25,588.12,USD,Orchard and Vine,hardware,refunded,72
+490339,2023-07-22,1341.34,USD,Café Norte,dining,refunded,96
+491262,2024-04-20,4114.82,GBP,Statler Hardware,travel,refunded,8
+493370,"Oct 25, 2023",3913.03,USD,Delta  Pharmacy,fuel,refunded,56
+493488,2023-06-29,4799.85,GBP,Orchard and Vine,utilities,pending,47
+494488,"Apr 23, 2024",2411.09,USD,Blue Harbor Goods,apparel,chargeback,52
+494883,2023-06-16,585.72,GBP,Northwind Supply,dining,pending,88
+496865,2024-11-15,1661.06,EUR,Fjord Interiors,dining,chargeback,85
+499068,2023-07-05,1355.29,USD,Nordic Fjäll,fuel,paid,56
+279770,2024-05-24,886.17,GBP,Fjord Interiors,hardware,pending,63
+501959,"Jun 02, 2023",286.51,GBP,Orchard and Vine,apparel,paid,35
+502040,2023-11-04,3080.95,USD,Orchard and Vine,apparel,pending,
+503045,2024-07-27,1660.64,GBP,Nordic Fjäll,utilities,chargeback,68
+503209,2023-08-17,506.88,USD,Trailhead Sports,hardware,pending,59
+503574,2023-11-02,351.93,USD,Vela Cycles,grocery,pending,
+504971,2024-08-12,2812.08,GBP,Blue Harbor Goods,apparel,chargeback,92
+505936,2023-03-20,585.03,GBP,Trailhead Sports,grocery,pending,12
+506120,2024-01-01,3488.80,EUR,Nordic Fjäll,taavel,refunded,7
+507564,2023-10-28,€1093.92,GBP,Delta Pharmacy,hardware,chargeback,53
+'507829,2024-09-17,4283.67,USD,Nordic Fjäal,apparel,pending,77
+509356,2023-11-17,3838.84,USD,Orchard and Vine,(grocery),refunded,16
+509414,2023-12-26,2132.13,USD,Delta Pharmacy,hardware,pending,84
+510587,2024-10-13,2763.83,GBP,Vela Cycles,grocery,pending,1
+511630,2024-08-23,2672.80, GBP ,Blue Harbor Goods,travel,refunded,2
+512603,2023-08-29,2545.31,GBP,Vela Cycles,dining,paid,12
+513045,2024-07-07,4092.80,USD,Northwind Supply,apparel,chargeback,NaN
+514405,2023-09-23,1969.57,USD,Petit Marché,hardware,paid,82
+514433,2024-09-22,889.43,GBP,Fjord Interiors,,pending,13
+515996,2023-11-05,2150.35,USD,Statler Hardware,apparel,paid,54
+516064,2023-02-24,4473.67,GBP,Delta Pharmacy,fuel,chargeback,31
+516450,2023-11-04,1001.32,USD,Nordic Fjäll,dining,refunded,77
+516898,2024-10-26,4610.45,USD,Blue Harbor Goods,dining,refunded,89
+517265,2024-06-14,144.42,EUR,Northwind Supply,,chargeback,37
+  517708 ,2024-01-31,1750.22,EUR,Vela Cycles,null,paid,38
+520501,2023-05-21,3999.58,GBP,Orchard and Vine,travel,paid,20
+522134,2023-04-02,3548.68,USD,Fjord Interiors,FUEL,paid,1
+524871,2023-04-12,263.75,GBP,Delta Pharmacy,grocery,pending,
+525081,2023-09-02,3672.95,USa,Petit Marché,dining,paid,62
+525728,2023-12-24,1988.62,USD,Blue Harbor Goods,utilities,refunded,94
+526312,2023-08-19,1248.69,GBP,Fjord Interiors,dining,chargeback,1
+530733,2024-09-20,246.65,USD,Kestrel Outfitters,hardware,paid,53
+531333,2024-03-18,2062.57,EUR,Vela Cycles,fuel,pending,79
+534301,2023-10-23,4698.55,USD,Vela Cycles,utilities,paid,56
+534628,2024-11-29,1819.35,GBP,Trailhead Sports,,paid,21
+535123,2024-04-14,1938.47,GBP,Kestrel Outfitters,hardware,chargeback,39
+535762,2023-05-28,968.70,EUR,Nordic Fjäll,travel,pending,60
+536827,2023-07-20,€2132.12,EUR,Fjord Interiors,utilities,pending,75
+536932,2024-10-04,3837.45,GBP,Vela Cycles,hardware,refunded,15
+537547,2024-10-21,366.40,GBP,Nordic Fjäll,apparel,refunded,57
+537576,2024-10-06,500.72,USD,Kestrel Outfitters,hardware,paid,67
+540361,2023-12-01,419.93,USD,Café Norte,dining,paid​,80
+540558,2023-01-14,4234.12,GBP,Orchard and Vine,hardware,paid,21
+541799,2023-05-14,317.40,EUR,Orchard and Vine,grocery,paid,
+542216,2024-11-28,3730.05​,GBP,Delta Pharmacy,utilities,chargeback,98
+542669,2023-06-01,737.52,USD,Nordic Fjäll,apparel,paid,770
+543134,2024-06-03,3469.20,GBP,Statler Hardware,hardware,refunded,29
+544069,2023-08-04,751.06,USD,Petit Marché,grocery,refunded,91
+545357,2024-10-26,1259.09,GBP,Northwind Supply,grocery,chargeback,13
+546666,2023-07-18,3603.83,USD,Trailhead Sports,travel,paid,7
+'548922,2024-06-15,4338.19,USD,Orchard and Vine,dining,refunded,
+548956,2024-01-26,1809.87,GBP,Orchard and Vine,hardware,paid,42
+549061,2023-02-24,4281.42,USD,Delta Pharmacy,dining,pending,84
+550813,2023-12-20,2514.66,USD,Café Norte,travel,paid,61
+550826,2023-02-22,3465.33,USD,Vela Cycles,dining,paid,59
+551471,"Oct 01, 2023",3775.84,EUR,Delta Pharmacy,utilities,chargeback,85
+552630,2024-08-06,2397.96,GBP,Orchard and Vine,fuel,chargeback,6
+553117,2023-11-01,2099.07,EUR,Café Norte,hardware,pending,42
+554637,2024-05-15,1487.65,EUR,Orchard and Vine,apparel,chargeback,14
+555298,2023-10-17,1263.72,USD,Café Norte,grocery,paid,25
+555624,2024-06-19,444.00,EUR,Nordic FjÃ¤ll,fuel,pending,
+556111,2023-09-06,3533.82,GBP,Fjord Interiors,grocery,chargeback,76
+558117,2024-01-21,2261.22,EUR,Nordic Fjäll,dining,pending,50
+558944,2023-09-13,1793.80,EUR,Statler Hardware,utilities,paid,7
+560033,2024-01-19,4588.05,USD,Delta Pharmacy,apparel,refunded,28
+560037,2023-07-22,4117.18,USD,Café Norte,,paid,3
+560386,2023-09-23,627.31,EUR,Kestrel Outfitters,fuel,paid,25
+561373,2023-05-04,1250.48,USD,Northwind  Supply,dining,refunded,53
+562808,2023-03-03,2487.55,GBP,Kestrel Outfitters,hardware,paid,50
+563281,2023-02-10,2645.18,USD,Kestrel Outfitters,dining,paid,81
+564255,2024-01-12,3229.97,USD,Orchard and Vine,utilities,chargeback,11
+564862,2024-12-01,50.33,EUR,Petit Marché,travel,refunded,14
+565503,2023-12-07,4592.54,GBP,(Vela Cycles),travel,pending,
+566196,2024-06-27,4438.39,GBP,Fjord Interiors,utilities,refunded,49
+566580,2023-11-20,4677.70,GBP,Nordic Fjäll,travel,refunded,55
+567293,"Jun 10, 2024",493.82,EUR,Petit Marché,hardware,paid,38
+569274,2023-02-24,479.05,EUR,Kestrel Outfitters,utilities,refunded,
+569314,2024-04-25,3705.47,EUR,Blue Harbor Goods,utalities,paid,95
+570037,2023-03-05,3902.54,EUR,Petit MarchÃ©,fuel,paid,56
+570441,2024-04-18,4663.90,USD,Orchard and Vine,travel,chargeback,3
+571113,2024-02-09,896.90,USD,Northwind Supply,fuel,paid,15
+572651,2024-04-08,826.14,EUR,Nordic Fjäll,fuel,chargeback,61
+572816,2023-05-31,3394.78,EUR,Vela Cycles,fuel,refunded,
+573055,2023-09-11,2890.70,GBP,Statler Hardware,dining,pending,64
+573607,2023-09-30,3588.07,GBP,Fjord Interiors,fuel,pending,24
+573721,2024-07-10,294.08,USD,Nordic Fjäll,fuel,pending,88
+574073,2023-07-18,1115.04,GBP,Fjord Interiors,travel,refunded,47
+574861,2023-09-15,1043.56,GBP,Blue Harbor Goods,grocery,chargeback,47
+575552,2024-08-04,4056.32,GBP,Orchard and Vine,dining,chargeback,
+575716,2023-06-15,726.67,GBP,Café Norte,utilities,pending,53
+575866,2024-02-15,4182.50,USD,Northwind Supply,fuel,refunded,71
+576782,2024-09-10,2408.73,EUR,Northwind Supply,hardware,paid,20
+577139,2024-09-06,2977.00,GBP,Orchard and Vine,travel,pending,16
+577328,"Jun 23, 2024",3296.18,GBP,Kestrel Outfitters,utilities,paid,89
+577385,2023-02-14,2430.51,USD,Café Norte,fuel,refunded,70
+578318,2023-01-05,495.66,USD,Vela Cycles,utilities,paid,71
+578819,2024-01-11,3539.34,EUR,Statler Hardware,travel,refunded,16
+579813,2023-11-03,2939.80,GBP,Café Norte,utilities,refunded,88
+581423,2023-11-17,1843.74,EUR,Vela Cycles,,paid,87
+583001,2024-10-29,814.32,EUR,Kestrel Outfitters,grocery,pending,25
+585044,2023-11-13,427.45,EUR,Orchard and Vine,travel,chargeback,47
+586341,2023-04-26,1265.00,GBP,Trailhead Sports,grocery,paid,85
+587223,2023-12-03,2103.76,EUR,Statler Hardware,travel,pending,47
+587510,2024-01-11,901.14,GBP,Blue Harbor Goods,utilities,paid,35
+587771,2023-01-09,2947.25,USD,Statler Hardware,fuel,paid,
+590655,2023-04-06,2314.07,USD,Vela Cycles,grocery,refunded,48
+592562,2023-08-13, 4643.21 ,GBP,Northwind Supply,travel, chargeback ,79
+592914,2023-07-25,3702.22,GBP,Delta Pharmacy,hardware,refunded,96
+593741,2023-11-10,4013.69,GBP,Blue Harbor Goods,fuel,paid,25
+593904,2023-10-24,1828.62,USD,Kestrel Outfitters,hardware,pending,76
+593994,2023-10-14,1782.98,EUR,Petit Marché,utilities,refunded,83
+595276,2023-03-20,4559.66,GBP,Statler Hardware,apparel,refunded,52
+595780,2024-07-09,913.81,EUR,Petit MarchÃ©,hardware,chargeback,3
+596064,2024-02-24​,4204.45,GBP,Orchard and Vine,utilities,refunded,73
+596078,2024-07-26,4651.73,GBP,Trailhead Sports,apparel,refunded,89
+597648,2023-09-29,2343.15,GBP,Petit Marché,hardware,paid,29
+597769,2023-03-18,3938.51,GBP,Blue Harbor Goods,hardware,paid,98
+352476,2024-02-26,3175.69,USD,Nordic Fjäll,dining,chargeback,20
+599361,2023-09-16,1060.83,GBP,Delta Pharmacy,grocery,pending,92
+599869,2023-12-21,4291.74,USD,Statler Hardware,grocery,pending,17
+599877,2024-07-18,1844.83,GBP,Vela Cycles,travel,chargeback,76
+600979,2024-01-20,2295.49,EUR,Nordic FjÃ¤ll,grocery,paid,32
+602056,"Jan 12, 2023",1422.90,USD,Fjord Interiors,dining,refunded,12
+605748,2023-10-09,3024.74,EUR,Petit Marché,travel,paid,70
+610034,2024-07-25,3168.65,EUR,Statler Hardware,apparel,refunded,74
+611443,2023-04-03,4440.22,USD,Delta Pharmacy,utilities,chargeback,89
+611480,2024-06-08,3498.23,GBP,Fjord Interiors,grocery,chargeback,42
+612910,"Sep 04, 2024",1001.79,EUR,Petit Marché,fuel,refunded,68
+613183,2023-03-13,172.18,USD,Statler  Hardware,travel,pending,65
+614622,2024-06-04,3594.01,EUR,Vela Cycles,utilities,chargeback,40
+614823,2023-01-07,4520.88,EUR,Vela Cycles,hardware,pending,86
+614970,2024-11-18, 2978.70 ,GBP,Trailhead Sports,apparel,paid,3
+616081,2023-10-25,1591.77,EUR,Kestrel Outfitters,travel,refunded,6
+618780,2024-11-20,3369.59,EUR,Kestrel Outfitters,hardware,paid,91
+618959,2024-04-08,1387.62,USD,Fjord Interiors,apparel,pending,11
+619047,"Jan 08, 2023",3058.45,EUR,Nordic Fjäll,travel,paid,98
+621916,"Mar 29, 2023",2477.36,GBP,Statler Hardware,fuel,chargeback,86
+622524,2023-01-27,3365.06,EUR,Café Norte,fuel,chargeback,8
+623374,2024-07-18,1280.14,USD,Trailhead Sports,travel,pending,#N/A
+623797,2024-01-30,4187.89,EUR,Nordic Fjäll,travel,chargeback,62
+82160,2023-08-07,2583.27,USD,Kestrel Outfitters,apparel,pending,97
+625410,2023-03-04,1280.12,GBP,Kestrel Outfitters,apparel,pending,1
+626488,2024-07-24,783.70,GBP,Kestrel Outfitters,dining,paid,77
+627338,2023-08-29,4053.93,USD,Delta Pharmacy,hardware,pending,24
+628579,2023-06-07,1748.02,GBP,Statler Hardware,apparel,chargeback,29
+628715,2023-02-20,2236.75,EUR,Blue Harbor Goods,travel,refunded,43
+629053,2024-07-19,2736.34,EUR,Blue Harbor Goods,fuel,chargeback,34
+629392,2023-11-04,2728.41,USD,Northwind Supply,apparel,pending,37
+630697,2024-01-17,3505.32,USD,Petit Marché,hardware,paid,2
+631489,2023-08-28,651.07,EUR,Café Norte,grocery,chargeback,25
+631572,2023-02-01,290.05,EUR,Trailhead Sports,fuel,refunded,7
+632377,2023-02-24,711.13,GBP,Statler Hardware,hardware,paid,47
+633191,2024-03-26,247.88,GBP,Vela Cycles,fuel,refunded,50
+633295,2024-07-10,"3,260.22",USD,Fjord Interiors,hardware,pending,58
+635203,2024-02-17,1467.55,EUR,Vela Cycles,,refunded,26
+462404,2023-12-07,3044.59,USD,Café Norte,dining,paid,61
+636052,2024-07-08,3574.73,USD,Delta Pharmacy,dining,pending,92
+636350,2023-03-18,2517.33,USD,Blue Harbor Goods,dining,pending,56
+636905,2024-11-06,1533.63,USD,Vela Cycles,,pending,83
+637038,2024-08-08,940.82,EUR,(Fjord Interiors),utilities,refunded,
+639260,2024-08-07,438.72,EUR,Fjord Interiors,utilities,paid,47
+639720,2024-02-22,3743.66,USD,Orchard and Vine,hardware,pending,8
+639856,2024-08-21,847.00,GBP,Café Norte,apparel,chargeback,52
+640737,2023-06-24,1543.13,USD,Café Norte,utilities,pending,null
+642382,2024-06-24,799.20,EUR,Northwind Supply,apparel,pending,85
+643388,2023-06-03,321.29,GBP,Orchard and Vine,fuel,chargeback,1
+644145,2023-12-07,500.91,USD,Vela Cycles,travel,paid,17
+644943,2024-09-11,1123.38,EUR,Petit MarchÃ©,travel,refunded,53
+647723,2024-01-15,3580.49,USD,Café Norte,dining,chargeback,99
+647760,2024-05-27,4748.56,EUR,Café Norte,travel,chargeback,33
+648241,2023-04-21,1899.11,EUR,Delta Pharmacy,utilities,refunded,61
+648332,2023-01-27,4256.88,EUR,Café Norte,travel,chargeback,92
+648564,2024-09-23,2528.88,EUR,Fjord Interiors,travel,paid,46
+648788,2023-01-18,2267.38,GBP,Orchard and Vine,hardware,chargeback,37
+649734,2023-09-03,3358.85,EUR,Fjord Interiors,apparel,paid,41
+649779,2023-12-27,1642.79,USD,CafÃ© Norte,travel,refunded,67
+650275,2023-11-28,863.56,EUR,Vela Cycles,apparel,pending,32
+650955,2024-05-25,624.25,USD,Northwind Supply,travel,refunded,25
+651005,2023-10-29,1674.09,USD,Delta Pharmacy,travel,chargeback,1
+651488,2024-10-05,1539.33,EUR,Vela Cycles,apparel,paid,94
+652569,2023-08-09,"4352,45",EUR,Statler Hardware,travel,pending,16
+652570,2023-07-04,33094.19,EUR,Fjord Interiors,travel,paid,75
+653341,2024-06-13,1197.23,EUR,Petit Marché,apparel,pending,8
+655485,2024-08-09,4152.53,  USD ,Kestrel Outfitters,apparel,refunded,56
+655660, 2024-01-09 ,3836.42,GBP,Café Norte,grocery,paid,81
+656121,2023-05-05,1969.93,GBP,Trailhead Sports,apparel,paid,
+656257,2023-04-26,1505.21,EUR,Northwind Supply,apparel,chargeback,4
+656310,2023-09-16,4426.05,USD,Orchard and Vine,travel,pending,94
+656380,2023-10-22,2534.27,EUR,Café Norte,travel,refunded,85
+656993,2024-05-13,3278.00,GBP,Trailhead Sports,fuel,pending,
+657779,2023-04-27,1677.99,EUR,Orchard and Vine,grocery,refunded,6
+657999,2023-10-13,3146.49,USD,Northwind Supply,hardware,pending,38
+658086,2024-05-21,1107.29,GBP,Kestrel Outfitters​,grocery,paid,60
+659222,2023-09-02,471.12,USD,Delta Pharmacy,dining,chargeback,15
+659547,2023-01-26,3106.75,GBP,Delta Pharmacy,fuel,chaageback,76
+659993,2023-09-02,€4071.87,EUR,Petit MarchÃ©,travel,paid,56
+662141,2023-09-26,973.67,usd,Trailhead Sports,grocery,paid,90
+663179,2023-02-03,460.42,GBP,Fjord Interiors,grocery,chargeback,15
+663443,2023-09-16,435.88,USD,Fjord Interiors,apparel,pending,16
+663491,2023-10-28,333.04,EUR,Blue Harbor Goods,,refunded,
+664307,2023-12-29,1740.72, GBP ,Café Norte,hardware,chargeback,29
+664607,2023-08-29,"2,804.69",GBP,Kestrel Outfitters,grocery,paid,79
+664619,2024-06-26,1075.96,GBP,Petit Marché,travel,refunded,27
+664821,2023-07-26,1005.81,EUR,Delta Pharmacy,grocery,refunded,39
+665137,2024-03-10,3693.17,GBP,Trailhead Sports,utilities,chargeback,86
+665976,2024-02-18,3424.49,EUR,Northwind Supply,utilities,pending,89
+666682,2024-03-14,194.68,USD,Statler Hardware,fuel,refunded,68
+668545,2023-09-11,1106.53,USD,Delta Pharmacy,,paid,51
+669226,2023-05-26,3042.97,EUR,Orchard and Vine,APPAREL,paid,24
+669792,2023-01-27,1438.85,EUR,Nordic FjÃ¤ll,null,paid,93
+669844,2023-04-07,2311.50,EUR,Blue Harbor Goods,travel,pending,12
+670557,2024-02-17,1867.10,USD,Orchard and Vine,dining,chargeback,41
+671167,2024-06-17,2766.85,GBP,Café Norte,hardware,refunded,49
+672082,"Oct 17, 2024",3744.48,GBP,Fjord Interiors,,pending,48
+674415,2023-12-09,3018.79,EUR,Café Norte,fuel,paid,7
+674881,2024-03-08,4413.46,EUR,Orchard and Vine,dining,pending,12
+674971,2024-10-25,3002.81,EUR,Fjord Interiors,utilities,paid,78
+678016,2023-07-21,4151.38,GBP,Blue Harbor Goods,dining,refunded,'55
+678451,2023-04-09,3637.08,GBP,Nordic Fjäll,apparel,paid,99
+678701,2024-08-15,"3,501.70",USD,Orchard and Vine,apparel,pending,10
+679376,2023-09-06,4375.39,GBP,  Blue Harbor Goods ,fuel,refunded,23
+679690,2023-06-27,2955.28,USD,Blue Harbor Goods,grocery,refunded,43
+679713,2024-01-02,1857.90,GBP,Café Norte,dining,paid,50
+680883,2023-10-30,4596.32,EUR,Vela Cycles,travel,refunded,25
+681876,2023-12-04,679.05,EUR,Nordic Fjäll,  travel ,refunded,58
+683698,2024-10-07,260.15,USD,Café Norte,hardware,pending,33
+684403,2024-03-25,392.79,EUR,Kestrel Outfitters,travel,paid,#N/A
+684435,2023-02-27,2479.13,eur,Café Norte,hardware,chargeback,91
+684458,2023-12-16,3170.99,USD,Statler Hardware,dining,refunded,88
+685502,2023-08-17,4470.12,EUR,Fjord Interiors,grocery,chargeback,44
+686511,2024-10-23,3645.31,USD,Fjord Interiors,hardware,chargeback,37
+687592,2024-01-17,3950.47,USD​,Vela Cycles,travel,paid,19
+689576,2023-07-30,3090.56,GBP,Northwind Supply,utilities,pending,76
+689772,2023-02-12,2213.70,EUR,Vela Cycles,hardware,refunded,79
+690869,2024-01-08,3062.84,USD,Blue Harbor Goods,hardware,chargeback,5
+691110,2023-09-09,1381.58,EUR,Vela Cycles,apparel,refunded,22
+691505,2024-03-12,1719.13,EUR,Trailhead Sports,hardware,refunded,60
+693827,2023-09-08,431.04,USD,Nordic Fjäll,dining,refunded,99
+693838,2024-04-17,1240.93,USD,Kestrel Outfitters,hardware,refunded,2
+694133,2024-03-26,2111.75,GBP,Delta Pharmacy,dining,chargeback,31
+696163,2024-10-16,328.78,EUR,Statler Hardware,,refunded,77
+696758,2023-02-24,1928.63,GBP,Orchard and Vine,dining,chargeback,68
+697441,"Apr 11, 2023",4520.49,USD,Delta Pharmacy,grocery,refunded,13
+698572,2024-10-23,2959.89,USD,Fjord Interiors,hardware,pending,35
+701562,2024-08-03,1973.11,USD,Blue Harbor Goods,fuel,refunded,89
+701692,"Mar 30, 2023",4250.13,USD,Delta Pharmacy,utilities,paid,27
+702139,2023-07-23,3784.22,GBP,Nordic Fjäll,grocery,refunded,50
+703209,2024-09-14,1271.37,EUR,Statler Hardware,travel,refunded,42
+704896,2023-04-23,1051.11,GBP,Delta Pharmacy,dining,chargeback,
+705160,2024-08-04,2631.58,eur,Delta Pharmacy,apparel,refunded,36
+706132,2023-12-27,1683.76,GBP,Statler Hardware,utilities,paid,57
+707730,2023-09-08,2803.42,EUR,Nordic Fjäll,dining,refunded,5
+710477,2024-07-05,2169.06,GBP,Fjord Interiors,apparel,refunded,82
+711121,2024-07-24,301.20,EUR,Blue Harbor Goods,fuel,paid,42
+711318,2024-03-15,3009.55,USD,Petit Marché,utilities,paid,26
+713307,2024-07-14,787.47,EUR,Vela Cycles,utilities,chargeback,41
+713363,2024-09-14,4025.24,GBP,Trailhead Sports,utilities,chargeback,36
+90191,2024-01-20,3791.29,EUR,Petit Marché,apparel,paid,65
+234046,2024-01-06,1925.24,EUR,Nordic Fjäll,fuel,chargeback,96
+715380,2024-03-17,2493.20,GBP,Kestrel Outfitters,fuel,pending,86
+716279,2024-01-24,76.26,eur,Trailhead Sports,grocery,chargeback,87
+716359,2023-06-04,780.04,USD,Vela Cycles,travel,paid,34
+716479,2024-08-22,2815.41,USD,Trailhead Sports,N/A,pending,16
+718760,2023-11-22,"2793,87",GBP,Delta Pharmacy,(travel),pending,72
+720329,2023-03-19,2139.55,GBP,Statler Hardware,travel,chargeback,27
+'720557,2023-12-03,540.55,EUR,Petit Marché,grocery,paid,92
+720649,2023-03-06,3462.39,USD,Blue Harbor Goods,,pending,73
+720751,2023-12-21,2906.30,USD,Blue Harbor Goods,hardware,pending,76
+721539,2024-10-15,3247.56,GBP,Northwind Supply,travel,chargeback,32
+ 721645 ,2023-04-20,2761.29,USD,Northwind Supply,utilities,pending,93
+721833,2024-03-28,1819.85,EUR,Trailhead Sports,fuel,chargeback,60
+721890,2024-04-14,2749.27,EUR,Trailhead Sports,hardware,pending,40
+723669,2024-08-12,4769.08,EUR,Trailhead Sports,utilities,refunded,82
+724065,2023-02-18,2719.58,EUR,Blue Harbor Goods,,pending,66
+724144,2024-08-19,2360.72,(GBP),Blue Harbor Goods,grocery,pending,98
+725741,2024-02-07,990.44,GBP,Petit Marché,dining,chargeback,67
+728720,2024-09-01,3647.23,USD,Petit MarchÃ©,apparel,paid,53
+729556,2023-09-08,44.96,USD,Delta Pharmacy,hardware,chargeback,46
+420699,2024-01-25,4290.62,GBP,Statler Hardware,grocery,pending,15
+730870,2024-08-11,1246.51,EUR,Petit Marché,dining,chargeback,91
+732900,2024-06-28,2190.28,USD,Trailhead Sports,hardware,pending,63
+733791,2023-07-18,293.49,GBP,Statler Hardware,fuel,chargeback,
+734130,2023-01-15,2510.91,USD,Vela Cycles,utilities,pending,8
+737748,2024-06-06,3174.10,EUR,Nordic Fjäll,grocery,paid,58
+738884,2024-04-06,1383.83,EUR,Café Norte,travel,refunded,72
+740679,  2023-06-19 ,1675.79,USD,Café Norte,travel,refunded,52
+740899,2024-08-23,3153.05,GBP,Orchard and Vine,utilities,chargeback,32
+741255,2024-11-11,776.71,USD,Statler Hardware,hardware,paid,89
+741901,2024-10-13,304.71,GBP,Petit Marché,utilities,pending,44
+741988,2024-01-29,3203.29,EUR​,Blue Harbor Goods,grocery,pending,12
+742162,2023-05-14,2200.49,USD,Orchard and Vine,grocery,paid,37
+742906,2024-01-06,1717.74,USD,Statler Hardware,utilities,refunded,28
+743536,2024-05-10,1917.70,GBP,Northwind Supply,fuel,chargeback,8
+745967,2023-08-03,2866.65,GBP,Statler Hardware,grocery,paid,9
+747040,2023-04-15,1120.49,EUR,Northwind Supply,travel,paid,63
+747220,"Apr 23, 2023",4381.77,EUR,Nordic Fjäll,fuel,refunded,52
+749132,2023-01-07,2984.38,EUR,Statler Hardware,hardware,paid,82
+749271,2023-04-24,2349.21,GBP,Vela Cycles,travel,refunded,
+750144,2023-01-27,4440.83​,EUR,Trailhead Sports,fuel,pending,52
+750289,2024-01-02,3386.42,USD,Café Norte,grocery,refunded,77
+750313,2023-11-19​,2320.03,USD,Trailhead Sports,grocery,pending,
+750334,2023-12-01,2058.49,USD,Orchard and Vine,fuel,chargeback,37
+750945,2023-10-24,4730.92,USD,Café Norte,utilities,chargeback,70
+752014,2023-02-15,783.63,GBP,Café Norte,grocery,chargeback,40
+753229,2023-05-24,2032.48,GBP,Trailhead Sports,hardware,refunded,91
+754984,2024-02-24,3151.58,USD,Northwind Supply,fuel,refunded,83
+756607,2024-11-08,3425.79,USD,Café Norte,dining,pending,17
+757245,2024-06-18,3988.49,GBP,Northwind Supply,travel,refunded,38
+757982,2024-07-17,1629.45,EUR,Orchard and Vine,utilities,chargeback,52
+759607,2023-07-03,654.34,GBP,Nordic Fjäll,apparel,refunded,79
+761134,2023-11-04,"2,380.50",EUR,Blue Harbor Goods,grocery,chargeback,5
+762092,2023-06-05,2064.90,GBP,Fjord Interiors,dining,refunded,2
+763012,2024-08-02,4414.87,EUR,Fjord Interiors,utilities,pending,68
+763228,2023-08-18,1167.76,USD,Nordic Fjäll,grocery,pending,65
+763554,2023-07-24,2176.79,GBP,Café Norte,apparel,refunded,95
+763817,2023-04-18,4353.15,EUR,Kestrel Outfitters,utilities,chargeback,53
+152131,2023-12-02,378.11,USD,Delta Pharmacy,utilities,paid,81
+766282,2023-12-13,2374.75,EUR,Café Norte,utilities,refunded,1
+767291,2024-05-01,2663.75,GBP,Fjord Interiors,hardware,paid,82
+  767362 ,2024-03-05,2211.13,GBP,Delta Pharmacy,dining,chargeback,23
+'767738,2024-07-02,4608.68,EUR,Café Norte,apparel,chargeback,35
+768518,2024-01-24,20.88,USD,Petit Marché,grocery,paid,98
+771887,2023-09-06,2520.37,GBP,TRAILHEAD SPORTS,utilities,pending,38
+772701,2024-03-03,4777.16,GBP,Orchard and Vine,,pending,73
+773297,2023-12-13,2140.52,EUR,Statler Hardware,fuel,chargeback,35
+774103,2023-12-07,3818.34,GBP,Trailhead Sports,apparel,chargeback,30
+775158,2024-08-26,3747.89,GBP,Vela Cycles,dining,chargeback,37
+775307,2024-11-13,"4228,95",USD,Orchard and Vine,grocery,refunded,90
+776312,2024-04-23,1721.27,GBP,Nordic Fjäll,utilities,pending,46
+776681,2023-06-06,4094.63,EUR,Kestrel Outfitters,grocery,pending,11
+776807,2024-03-20,3190.27,GBP,Trailhead Sports,travel,paid,62
+777203,2024-02-28,3158.22,GBP,Orchard and Vine,dining,paid,84
+782040,2024-08-27,1081.18,GBP,Blue Harbor Goods,dining,paid,71
+783843,2024-02-27,"1,213.75",EUR,Nordic Fjäll,fuel,pending,96
+785302,2023-10-22,4308.20,GBP,Northwind Supply,travel,chargeback,7
+785488,2023-07-04,3207.55,EUR,Kestrel Outfitters,hardware,paid,37
+788523,2023-10-22,€2270.24,USD,Nordic Fjäll,dining,refunded,9
+789059,2023-11-29,1392.59,EUR,Café Norte,dining,pending,1
+792263,2023-11-23,4556.58,GBP,Delta Pharmacy,fuel,chargeback,37
+792408,2023-06-21,4149.79,EUR,Northwind Supply,fuel,chargeback,91
+792629,2023-09-15,634.38,GBP,Fjord Interiors,utilities,pending,
+795316,2024-08-30,1092.27,GBP,Statler Hardware,dining,chargeback,18
+796036,2024-05-06,2889.75,USD,Nordic Fjäll,dining,chargeback,83
+796083,"Mar 09, 2023",€1519.35,USD,Statler Hardware,utilities,paid,28
+796663,2023-06-18,68.22,USD,CafÃ© Norte,grocery,pending,71
+797846,2023-10-25,560.80,USD,Statler Hardware,fuel,paid,60
+798594,2024-08-22,  2735.17 ,GBP,Statler Hardware,hardware,pending,90
+801429,2024-03-26,130.08,EUR,CafÃ© Norte,grocery,refunded,5
+802102,2023-07-11,587.93,USD,Vela Cycles,dining,paid,39
+802163,"May 25, 2024",4421.75,EUR,Trailhead Sports,dining,chargeback,52
+802219,2023-12-29,1699.82,EUR,Café Norte,hardware,pending,19
+483786,2024-07-05,4287.62,USD,Fjord Interiors,travel,chargeback,91
+805025,2023-12-02,1663.10,GBP,Vela Cycles,dining,refunded,60
+805563,2023-09-01,4189.22,EUR,Trailhead Sports,utilities,paid,38
+805813,2023-07-29,"4,459.24",EUR,Delta Pharmacy,utilities,chargeback,93
+806853,2024-04-18,4055.86,GBP,Statler Hardware,fuel,paid,69
+809217,2024-01-09,3737.63,GBP,  Delta Pharmacy ,hardware,pending,66
+809583,"Oct 01, 2024",4435.46,GBP,Kestrel Outfitters,fuel,paid,69
+809665,2024-09-20,1807.10,GBP,Orchard and Vine,apparel,paid,80
+811361,2024-01-24,226.72,USD,Statler Hardware,hardware,chargeback,37
+811713,"Oct 14, 2023",1879.76,EUR,Kestrel Outfitters,travel,chargeback,95
+811856,  2023-11-08 ,2666.94,USD,Fjord Interiors,hardware,paid,67
+811931,2024-10-11,4649.64,GBP,Café Norte,fuel,pending,56
+812493,2024-04-09,378.85,EUR,Nordic FjÃ¤ll,apparel, pending ,63
+812595,2024-05-04,2465.18,GBP,Delta Pharmacy,utilities,pending​,30
+813739,2023-06-08,168.41,USD,Blue Harbor Goods,dining,refunded,81
+813922,2024-07-23,1871.09,USD,Fjord Interiors,dining,chargeback,14
+814739,2024-03-27,807.18,EUR,Northwind Supply,grocery,paid,60
+817564,2023-11-03,3896.84,GBP,Café Norte,grocery,refunded,25
+818417,2023-06-30,852.11,USD,Vela Cycles,hardware,chargeback,13
+818529,2024-01-01,2454.62,EUR,CafÃ© Norte,fuel,refunded,18
+820408,2024-04-23,217.09​,USD,Petit MarchÃ©,apparel,pending,-523
+820826,2024-01-07,1662.31,EUR,Nordic Fjäll,dining,refunded,
+820933,2023-03-01,-30652.33,EUR,Kestrel Outfitters,dining,paid,10
+821569,2024-09-22,1151.43,USD,Northwind Supply,fuel,refunded,9
+821972,2024-03-05,4043.35,EUR,Trailhead Sports,,refunded,52
+822682,2024-10-17,"4244,11",EUR,Kestrel Outfitters,dining,pending,38
+824219,2024-06-17,4237.46,USD,Trailhead Sports,travel,chargeback,99
+824764,2024-09-16,415.68,GBP,Blue Harbor Goods,grocery,pending,72
+824861,2024-11-25,4460.38,GBP,Orchard  and Vine,#N/A,paid,41
+825178,2024-11-30,2117.80,EUR,Petit Marché,utilities,refunded,37
+827963,2024-02-14,1500.73,USD,Trailhead Sports,apparel,chargeback,23
+829574,2024-08-18,3310.56,USD,Vela Cycles,#N/A,refunded,20
+829647,2023-08-05,2738.34,USD,Statler Hardware,fuel,refunded,28
+831473,2024-09-05,1952.14,EUR,Kestrel Outfitters,apparel,chargeback,59
+52790,2024-02-08,81.83,USD,Northwind Supply,apparel,refunded,31
+832202,2024-10-05,858.07,EUR,Café Norte,grocery,paid,72
+832586,2023-10-22,1660.15,GBP,Delta Pharmacy,,paid,772
+832889,2024-05-31,2176.35,GBP,Blue Harbor Goods,fuel,pending,64
+833502,2024-01-30,962.34,EUR,Petit Marché,fuel,paid,82
+834742,2023-10-04,4206.35,GBP,Delta Pharmacy,travel,refunded,18
+835177,2024-01-28,-27090.81,USD,Kestrel Outfitters,fuel,refunded,21
+835601,2024-07-14,1644.07,GBP,Petit Marché,fuel,refunded,55
+836998,2023-08-22,€1969.95,GBP,Blue Harbor Goods,hardware,refunded,58
+837563,2023-04-28,268.26,GBP,Fjord Interiors,travel,pending,33
+193461,2024-07-31,1554.04,EUR,Fjord Interiors,fuel,paid,19
+839180​,2023-04-30,2858.20,USD,Trailhead Sports,apparel,pending,36
+840774,2024-05-29,3178.39,USD,Northwind Supply,fuel,pending,26
+841191,2023-04-15,1804.33,GBP,Vela Cycles,travel,paid,56
+841374,2024-01-17,3450.06,EUR,Northwind Supply,,pending,58
+841637,2024-09-29,-18928.77,EUR,Northwind Supply,grocery,refunded,71
+842484,2024-04-15,3974.64,GBP,Orchard and Vine,travel,chargeback,47
+842513,2024-11-04,3864.00,GBP,Trailhead Sports,apparel,chargeback,56
+843310,2024-10-15,4435.65,EUR,Delta Pharmacy,dining,paid,25
+847541,2023-11-20,3835.39,EUR,Kestrel Outfitters,travel,chargeback,12
+847739,2024-09-08,930.16,EUR,Trailhead Sports,utilities,refunded,66
+847855,2024-09-11,'2296.57,EUR,Fjord Interiors,apparel,refunded,38
+851859,2024-03-04,1804.51,USD,Nordic Fjäll,fuel,refunded,67
+853405,2023-08-04,4553.87,GBP,Trailhead Sports,grocery,pending,70
+474770,2024-06-24,2398.72,USD,Fjord Interiors,grocery,pending,23
+854679,2023-11-29,2686.24,USD,Nordic Fjäll,fuel,pending,85
+856346,2024-05-21,1798.58,EUR,Fjord Interiors,hardware,chargeback,73
+857115,2023-11-24,3312.51,EUR,Petit Marché,,refunded,78
+857588,"Apr 21, 2024",1854.43,EUR,Blue Harbor Goods,dining,paid,92
+858133,2023-10-26,4005.98,EUR,Trailhead Sports,hardware,chargeback,76
+858766,2024-09-05,3810.42,USD,Café Norte,,pending,40
+859824,2023-01-24,1474.64,USD,Nordic FjÃ¤ll,utilities,pending,45
+860610,2024-10-11,3489.06,GBP,Fjord Interiors,dining,pending,74
+861196,2024-05-16,91.26,EUR,Delta Pharmacy,travel,paid,67
+861813,2024-08-10,91.99,GBP,Trailhead Sports,apparel,refunded,60
+864098,2024-02-01,2493.99,GBP,Petit Marché,hardware,refunded,29
+864446,2023-03-21,1908.20,GBP,Petit Marché,utilities,chargeback,58
+864504,2023-11-27,2394.95,GBP,Café Norte,utilities,refunded,58
+864835,2024-04-21,16.64,EUR,Statler Hardware,dining,chargeback,46
+866647,2024-01-05,1954.16,EUR,Nordic Fjäll,dining,refunded,11
+866952,2024-09-04,1252.63,GBP,Statler Hardware,grocery,refunded,45
+868353,"Jan 26, 2024",141.00,EUR,Trailhead Sports,,pending,68
+868432,2024-04-30,1181.45,USD,Petit MarchÃ©,,paid,34
+868797,2023-03-02,4726.87,USD,Statler Hardware,apparel,pending,30
+869621,2023-08-19,343.85,GBP,Vela Cycles,apparel,chargeback,51
+869785,2023-11-01,4535.36,EUR,Statler Hardware,null,chargeback,1
+870324,2024-06-25,1240.73,EUR,Fjord Interiors,fuel,refunded,80
+872070,2024-04-28,4388.18,  USD ,Trailhead  Sports,travel,refunded,85
+872296,2024-09-17,3202.48,(GBP),Kestrel Outfitters,dining,pending,42
+872459,2023-01-31,-21775.02,GBP,Statler Hardware,fuel,pending,97
+872893,2023-06-03,2489.03,GBP,Northwind Supply,grocery,chargeback,92
+873573,2023-06-24,4342.22,EUR,Orchard and Vine,fuel,paid,62
+873916,2024-05-18,"1,981.56",EUR,Petit Marché,travel,pending,75
+874786,2024-11-13,2370.94,USD,Petit Marché,,chargeback,97
+874962,2023-12-15,1407.73,EUR,Nordic FjÃ¤ll,grocery,chargeback,73
+875286,2024-03-05,4391.92,EUR,Trailhead Sports,utilities,refunded,96
+876148,2023-10-31,2460.07,EUR,Nordic Fjäll,travel,refunded,
+876499,2024-04-05,2577.74,GBP,Café Norte,grocery,  pending ,62
+877311,2024-03-17,2931.66,EUR,Petit MarchÃ©,apparel,paid,41
+878250,2023-02-20,3710.93,USD,Fjord Interiors,apparel,paid,43
+40905,2023-04-16,4781.71,GBP,Café Norte,,chargeback,94
+878862,2024-06-04,2898.20,EUR,Orchard and Vine​,fuel,chargeback,66
+878921,2024-10-30,548.93,USD,Café Norte,fuel,refunded,56
+879072,2024-02-21,3177.29,GBP,Orchard and Vine,apparel,pending,90
+881039,2023-06-11,1919.46,GBP,Petit Marché,dining,refunded,81
+881807,2023-05-08,210.60,GBP,Vela Cycles,utilities,refunded,90
+881810,2024-03-27,4458.43,GBP,Vela Cycles,utilities,pending,50
+881880,2023-04-01,"3,593.21",GBP,Northwind Supply,hardware,pending,33
+883130,2023-10-25,270.76,USD,Delta Pharmacy,apparel,refunded,85
+885135,2024-08-05,2722.15,USD,Statler Hardware,#N/A,chargeback,N/A
+886130,2024-11-02,1748.04,USD,Kestrel Outfitters,NaN,pending,37
+886273,2023-10-04,4544.82,USD,Orchard and Vine,travel,pending,96
+886524,2024-03-09,1674.05,EUR,Statler Hardware,apparel,chargeback,81
+108076,2024-04-15,3580.75,USD,Café Norte,hardware,chargeback,61
+887297,2023-09-21,1217.81,EUR,Fjord Interiors,apparel,paid,
+887873,2024-06-26,2056.03,USD,Petit Marché,dining,refunded,76
+888328,2023-09-20,3764.17,GBP, Petit Marché ,utilities,chargeback,#N/A
+889414,  2023-05-30 ,3310.66,GBP,Delta Pharmacy,grocery,chargeback,77
+890188,2024-07-24,3140.45,EUR,Nordic Fjäll,dining,chargeback,65
+891612,2023-06-28,4357.15,EUR,Trailhead Sports,grocery,refunded,90
+892075,2023-07-11,2357.90,EUR,Kestrel Outfitters,apparel,paid,79
+892133,2023-10-27,367.82,USD,Nordic FjÃ¤ll,hardware,chargeback,44
+892684,2023-12-15,1085.48,GBP,Northwind Supply,apparel,refunded,55
+893244,2024-10-13,31.36,EUR,Fjord Interiors,dining,chargeback,62
+895244,2023-04-22,2330.78,GBP,Café Norte,grocery,pending,
+895512,2023-10-30,3372.65,USD,Nordic Fjäll,dining,chargeback,47
+897358,2023-06-28,3541.61,GBP,Northwind Supply,dining,refunded,44
+898503,2024-04-20,2645.63,EUR,Nordic Fjäll,travel,pending,33
+899430,2024-02-07,4263.42,GBP,Northwind Supply,apparel,refunded,49
+900412,2023-10-29,3391.82,USD,Fjord Interiors,grocery,pending,46
+900599,2023-09-24,2665.08,GBP,Blue Harbor Goods,grocery,paid,24
+901350,2024-11-11,169.60,USD,Fjord  Interiors,utilities,paid,38
+901685,2023-08-07,324.83,EUR,Northwind Supply,dining,pending,17
+901851,2023-06-16,3472.07,EUR,Fjord Interiors,dining,pending,41
+901883,2024-05-10,3508.72,GBP,Petit Marché,apparel,chargeback,8
+905504,2023-11-18,2981.55,EUR,Kestrel Outfitters,apparel,refunded,72
+907677,2024-01-10,4098.28,GBP,Fjord Interiors,grocery,paid,19
+908006,2023-09-15,4068.82,EUR,Northwind Supply,travel,pending,91
+908159,2023-11-20,"3,225.63",USD,Nordic Fjäll,,paid,64
+909253,2024-11-07,4504.79,GBP,Fjord Interiors,dining,refunded,64
+909899,2023-01-17,4231.01, EUR ,Orchard and Vine,apparel,pending,98
+910011,2023-10-13,174.66,USD,Fjord Interiors,utilities,pending,19
+910161,2023-07-31,793.76,GBP,Nordic Fjäll,grocery,paid,47
+910889,2024-03-31,67.51,GBP,Fjord Interiors,,refunded,85
+912240,2023-12-19,2752.31,EUR,Orchard and Vine,dining,chargeback,48
+913225,2024-01-27,4145.49,GBP,Northwind Supply,dining,paid,41
+913668,2024-05-20,1350.10,EUR,CafÃ© Norte,hardware,chargeback,19
+913731,2024-01-27,2599.61,GBP,Kestrel Outfitters,fuel,refunded,
+913928,2024-06-04,2773.79,GBP,Trailhead Sports,travel,refunded,8
+191980,2023-12-21,2486.56,GBP,Trailhead Sports,dining,refunded,86
+916659,2023-02-28,4504.17,EUR,Kestrel Outfitters,hardware,paid,20
+917948,2024-09-03,350.11,USD,Trailhead Sports,apparel,paid,60
+918505,2023-04-20,4091.19,GBP,Fjord Interiors,dining,chargeback,9
+918894,2024-06-05,25701.20,USD,Petit Marché,travel,paid,18
+920257,2023-02-20,1868.13,EUR,Kestrel Outfitters,utilities,PENDING,73
+920487,2023-11-25,4614.91,GBP,Delta Pharmacy,fuel,chargeback,17
+920634,2024-01-17,3526.23,EUR,Kestrel Outfitters,hardware,chargeback,87
+920888,"Sep 09, 2023",3142.65,EUR,Delta Pharmacy,apparel,chargeback,58
+921449,2023-07-06,770.13,USD,Statler Hardware,grocery,refunded,89
+921830,2024-08-16,2084.86,EUR,Orchard and Vine,,paid,80
+922727,"Mar 09, 2024",3783.80,GBP,Café Norte,utilities,pending,
+922915,2023-08-21,1856.17,GBP,Orchard and Vine,dining,pending,37
+923034,2023-08-27,1883.92,EUR,Trailhead Sports,utilities,pending,98
+923807,2024-03-02,931.15,USD,Blue Harbor Goods,dining,refunded,#N/A
+923939,2024-10-23,1575.51,USD,Nordic Fjäll,apparel,refunded,26
+924599,2023-06-24,3520.48,GBP,Kestrel Outfitters,hardware,refunded,616
+924916,2023-06-26,3766.36,EUR,Delta Pharmacy,dining,refunded,73
+924984,2024-03-31,2818.82,USD,Orchard and Vine,hardware,pending,58
+925545,2023-08-02,1550.77,USD,Fjord Interiors,utilities,chargeback,58
+925825,2024-06-07,1718.29,EUR,Petit Marché,utilities,refunded,13
+926097,2023-05-20,1497.63,GBP,Nordic Fjäll,fuel,refunded,47
+927570,2024-05-04,1437.85,EUR,Fjord Interiors,apparel,paid,44
+928658,2024-02-25,4406.63,EUR,Orchard and Vine,fuel,pending,18
+929268,2023-10-09,3464.85,USD,Fjord Interiors,grocery,chargeback,64
+929580,2023-07-25,2003.77,GBP,Statler Hardware,grocery,paid,39
+929927,2023-01-28,2472.56,GBP,Blue Harbor Goods,utilities,paid,53
+929928,2023-05-25,119.46,EUR,Petit Marché,grocery,refunded,85
+931590,2024-01-22,62.65,EUR,Northwind Supply,,refunded,'93
+933430,2023-04-25,2409.44,GBP,Fjord Interiors,fuel,pending,4
+933566,2024-06-18,2767.33,USD,Orchard  and Vine,fuel,pending,15
+935363,2024-09-25,4211.75,USD,Nordic Fjäll,travel,chargeback,80
+935449,2024-02-09,1048.68,EUR,Statler Hardware,grocery,refunded,68
+936236,2023-05-22,966.00,USD,Orchard and Vine,apparel,paid,28
+937962,2024-07-12,579.73,USD,Northwind Supply,apparel,chargeback,67
+937970,2024-05-24,2326.00,EUR,Vela Cycles,NA,refunded,3
+939088,2023-04-21,2159.15,USD,Northwind Supply,grocery,chargeback,88
+939318,2023-06-19,1459.08,EUR,Fjord Interiors,dining,refunded,5
+940037,2023-02-23,€2127.49,USD,Kestrel Outfitters,utilities,pending,69
+940202,2023-07-08,€3778.81,USD,Café Norte,fuel,chargeback,N/A
+942117,2024-08-19,3602.04,USD,Fjord Interiors,fuel,refunded,34
+942390,2024-08-28,-29015.09,USD,Delta Pharmacy,travel,pending,40
+943904,2024-10-22,4255.45,GBP,Vela Cycles,grocery,chargeback,6
+945582,2023-05-01,667.12,USD,Orchard and Vine,grocery,pending,99
+948061,2023-04-16,3590.65,EUR,CafÃ© Norte,fuel,paid,70
+948233,2024-01-05,4530.19,EUR,Northwind Supply,grocery,chargeback,8
+948885,2023-12-27,1485.94,USD,Blue Harbor Goods,dining,refunded,94
+951422,2023-05-10,1540.13,GBP,Kestrel Outfitters,fuel,chargeback,
+951689,2023-11-17,"1005,68",USD,Nordic FjÃ¤ll,,refunded,12
+951698,2023-06-12,437.57,USD,Delta Pharmacy,apparel,chargeback,72
+953663,2023-03-01,3726.51,EUR,Trailhead Sports,hardware,chargeback,11
+954388,"Nov 07, 2023",1854.40,GBP,Petit Marché,hardware,pending,79
+954675,"Oct 10, 2024",494.59,GBP,Nordic Fjäll,utilities,(refunded),67
+956115,2023-10-19,2561.82,USD,Kestrel Outfitters,travel,paid,57
+956624,"May 21, 2024",3262.59,GBP,Fjord Interiors,fuel,pending,45
+959381,2023-07-28,3420.37,EUR,Kestrel Outfitters,utilities,paid,7
+960940,2024-05-18, 965.60 ,GBP,Blue Harbor Goods,apparel,paid,75
+964268,2024-03-20,1550.22,USD,Delta Pharmacy,hardware,refunded,32
+964273,2024-11-06,766.25,GBP,Delta Pharmacy,dining,refunded,81
+965221,2023-05-07,1388.04,GBP,Café Norte,utilities,refunded,
+966424,2023-09-20,4784.93,EUR,Statler Hardware,travel,chargeback,13
+966602,2024-08-20,2353.56,EUR,Nordia Fjäll,apparel,chargeback,5
+966894,2024-06-28,3855.94,GBP,Blue Harbor Goods,travel,pending,74
+967265,2023-12-20,1238.54,EUR,Delta Pharmacy,dining,refunded,73
+969000,2024-02-24,1365.79,GBP,Northwind Supply,grocery,pending,88
+969015,2024-08-08,4575.49,GBP,Vela Cycles,dining,chargeback,34
+969384,2024-01-08,386.79,USD,Vela Cycles,travel,refunded,10
+971888,2024-08-17,3293.36,EUR,Petit Marché,utilities,refunded,35
+972812,2024-04-29,1863.28,USD,Petit Marché,apparel,chargeback,5
+973429,2023-09-11,2436.23,EUR,Vela Cycles,apparel,refunded,30
+973705,2023-03-18,32.19,GBP,Northwind Supply,fuel,paid,97
+975019,2023-05-19,1979.09,GBP,Delta Pharmacy,travel,chargeback,35
+975555,"May 23, 2023",590.54,GBP,Kestrel Outfitters,hardware,paid,
+975620,"Mar 31, 2023",2906.50,GBP,Northwind Supply,fuel,paid,11
+977919,2023-08-12,40.23,EUR,Statler Hardware,apparel,(refunded),3
+979059,2024-01-19,3143.53​,USD,Statler Hardware,travel,pending,6
+979408,2024-04-19,72.80,USD,Kestrel Outfitters,grocery,paid,20
+979910,2024-08-09,546.73,EUR,Vela Cycles,apparel,refunded,61
+980245,2023-06-26,4758.31,EUR,Trailhead Sports,null,refunded,87
+980771,2024-07-17,1646.15,USD,Vela Cycles,apparel,refunded,79
+981302,2024-11-02,3381.53,EUR,Café Norte,fuel,chargeback,64
+10187,2024-11-07,242.49,EUR,Orchard and Vine,dining,paid,82
+983547,2024-08-14,30.83,EUR,Northwind Supply,utilities,paid,#N/A
+983836,2023-07-26,2094.77,GBP,Café Norte,utilities,chargeback,86
+984285,2023-06-01,2264.24,GBP,Statler Hardware,dining,pending,26
+984775,2024-06-07,1916.14,GBP,Trailhead Sports,travel,refunded,46
+985054,2024-10-13,832.71,USD,Café Norte,hardware,refunded,81
+985597,2023-10-10,3124.25,GBP,Delta Pharmacy,utilities,chargeback,37
+985691,2024-07-12,527.78,USD,Café Norte,fuel,pending,59
+986888,2023-04-09,4307.44,GBP,Vela Cycles,dining,pending,29
+987743,2023-03-24,641.22,EUR,Fjord Interiors,hardware,paid,96
+988287,2024-07-03,2615.44,EUR,Kestrel Outfitters,fuel,chargeback,56
+988855,2024-08-06,140.09,GBP,Nordic Fjäll,fuel,refunded,75
+989438,2024-08-29,2913.09,USD,Nordic Fjäll,apparel,paid,97
+991672,"Nov 22, 2024",3573.55,GBP,Vela Cycles,hardware,paid,31
+992489,2023-03-16,551.96,USD,Trailhead Sports,utilities,paid,56
+993528,2023-07-27,4009.95,GBP,Orchard and Vine,fuel,pending,69
+993595,2023-11-30,3049.22,USD,Kestrel Outfitters,  dining ,refunded,79
+993884,2024-05-21,177.52,EUR,Café Norte,apparel,chargeback,54
+994444,2024-08-05,1043.92,GBP,Fjord Interiors,fuel,paid,29
+994798,2023-12-29,€1933.32,EUR,Vela Cycles,hardware,paid,26
+995103,2023-06-22,2414.70,USD,Orchard and Vine,grocery,pending,26
+995929,2024-11-10,3907.34,EUR,Kestrel Outfitters,utilities,pending,3
+996536,2023-07-14,227.72,USD,Blue  Harbor Goods,grocery,paid,19
+998520,2023-12-03,1223.40,EUR,Statler Hardware,utilities,refunded,
+485701,2023-06-12,4690.73,EUR,Statler Hardware,grocery,chargeback,85

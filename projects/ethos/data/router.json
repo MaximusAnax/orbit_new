@@ -1,0 +1,8 @@
+{
+  "k1": 1.5,
+  "b": 0.75,
+  "w_phrase": 2.0,
+  "tau": 0.0,
+  "kappa": 0.30,
+  "tuning_note": "Swept 2026-08-01 over tau in {0, 0.5, 1, 2, 4, 6, 8} x kappa in {0.00..0.40 step 0.05, then 0.26..0.32 step 0.01}. The selection tier was the direct+colloquial half of routing_questions.json only (168 questions); every tau <= 2.0 at kappa = 0.30 leaves that tier identical (0.946, one abstention), so tau is set to the value that abstains on nothing by score alone. That is the honest outcome of C20's composition rather than a slack threshold: >= 25 of the 40 out-of-scope questions out-score the median in-scope direct question, so a score floor cannot separate them at any setting that keeps in-scope coverage, and the IDF-weighted coverage floor kappa is the operative signal (SCOPE D10). Both signals remain implemented and gated. Measured at the chosen point: M1-direct 0.990, M1-coll 0.875, M1b 0.764, M1b' 0.646, M1gap 0.118, M1c 0.950, M1d 0.900, M2a 0.850, M2a_near 0.846, M2b 0.023."
+}

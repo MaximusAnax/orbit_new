@@ -1,0 +1,20 @@
+[
+  {
+    "name": "broken_corpus_word_swap",
+    "gate": "M3",
+    "description": "One word changed in a committed quote. The composer and the verifier would still agree with each other — only a reader that resolves the printed answer against the raw files can see it.",
+    "ops": [{"op": "set_field", "collection": "passages", "id": "kjv-matthew-5-37", "field": "text", "value": "But let your conversation be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil."}]
+  },
+  {
+    "name": "broken_corpus_locator_mutation",
+    "gate": "M3",
+    "description": "An en dash in a committed locator folded to an ASCII hyphen — the exact silent normalization FR-1 layer 2 exists to forbid.",
+    "ops": [{"op": "set_field", "collection": "passages", "id": "ketubot-16b-bride", "field": "locator", "value": "Ketubot 16b-17a"}]
+  },
+  {
+    "name": "broken_corpus_translator_year",
+    "gate": "M3",
+    "description": "A translation year changed in sources.json, so every printed source line derived from it is wrong.",
+    "ops": [{"op": "set_field", "collection": "sources", "id": "bible-kjv", "field": "translation_year", "value": 1612}]
+  }
+]

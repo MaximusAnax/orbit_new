@@ -1,0 +1,722 @@
+[
+  {
+    "id": "honesty_and_deception--judaism",
+    "topic_id": "honesty_and_deception",
+    "tradition_id": "judaism",
+    "stance": "context_dependent",
+    "summary": "Lying is forbidden by the Holiness Code and truth is called God's own seal — yet the rabbis rule with Hillel that every bride is praised as beautiful, and enumerate narrow settings where speech may bend for the sake of peace. The tradition holds a strong presumption of truthfulness with codified, bounded exceptions serving shalom.",
+    "reasoning": [
+      {
+        "text": "The Holiness Code forbids lying and false dealing as breaches of communal holiness.",
+        "passage_id": "jps-leviticus-19-11"
+      },
+      {
+        "text": "The Hillel–Shammai debate over praising the bride fixes the tradition's considered exception: kind speech for another's joy and for peace.",
+        "passage_id": "ketubot-16b-bride"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-leviticus-19-11",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "ketubot-16b-bride",
+        "role": "complicating",
+        "note": "the bride case"
+      }
+    ],
+    "intra_tradition_note": "Later halakhah (Bava Metzia 23b–24a) permits deviation from truth in named matters — modesty, hospitality's protection, and peace — each read narrowly.",
+    "further_reading": [
+      {
+        "author": "Joseph Telushkin",
+        "title": "A Code of Jewish Ethics, vol. 1: You Shall Be Holy",
+        "year": 2006,
+        "kind": "book",
+        "url": null,
+        "note": "chapters on truth and permitted exceptions"
+      }
+    ],
+    "curator_note": "Drafted from Leviticus 19 (JPS 1917) and Ketubot 16b–17a."
+  },
+  {
+    "id": "promise_keeping_and_oaths--judaism",
+    "topic_id": "promise_keeping_and_oaths",
+    "tradition_id": "judaism",
+    "stance": "obligatory",
+    "summary": "He shall not break his word: a vow binds by Torah law, and the entire tractates of Nedarim and Shevuot exist to take spoken commitment seriously. Precisely because the obligation is so heavy, the rabbis built formal release procedures and the tradition discourages vowing at all — better not to vow than to vow and fail.",
+    "reasoning": [
+      {
+        "text": "The Torah's law of vows makes the spoken word binding in itself.",
+        "passage_id": "jps-numbers-30-3"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-numbers-30-3",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Kol Nidre and hatarat nedarim release vows under strict conditions — mechanisms that presuppose, rather than undermine, the vow's default force; obligations to other people are not released by them.",
+    "further_reading": [
+      {
+        "author": "Louis Jacobs",
+        "title": "The Jewish Religion: A Companion",
+        "year": 1995,
+        "kind": "book",
+        "url": null,
+        "note": "entries on vows and oaths"
+      }
+    ],
+    "curator_note": "Drafted from Numbers 30 (JPS 1917) with Nedarim in view."
+  },
+  {
+    "id": "killing_and_self_defense--judaism",
+    "topic_id": "killing_and_self_defense",
+    "tradition_id": "judaism",
+    "stance": "context_dependent",
+    "summary": "Bloodshed defaces the image of God, and saving a single life outweighs almost the whole Torah — which is exactly why the tradition obligates defense: if one comes to slay you, forestall him. The rodef principle makes stopping a pursuer a duty, bounded by necessity; excess force returns the defender to the status of shedder of blood.",
+    "reasoning": [
+      {
+        "text": "Genesis grounds the prohibition of murder in the divine image borne by every person.",
+        "passage_id": "jps-genesis-9-6"
+      },
+      {
+        "text": "The Torah's burglar provision, generalized by the Talmud, makes defense lawful and calibrated.",
+        "passage_id": "jps-exodus-22-1"
+      },
+      {
+        "text": "The rodef rule turns defense of self and others into obligation with a built-in limit of least force.",
+        "passage_id": "sanhedrin-72a-rodef"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-genesis-9-6",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "jps-exodus-22-1",
+        "role": "supporting",
+        "note": null
+      },
+      {
+        "passage_id": "sanhedrin-72a-rodef",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "J. David Bleich",
+        "title": "Contemporary Halakhic Problems, vol. I",
+        "year": 1977,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Genesis 9, Exodus 22 (JPS 1917), Sanhedrin 72a."
+  },
+  {
+    "id": "capital_punishment--judaism",
+    "topic_id": "capital_punishment",
+    "tradition_id": "judaism",
+    "stance": "contested",
+    "summary": "The Torah prescribes death for murder on the ground of the divine image itself — and the rabbis who inherited that law fenced it with procedures so demanding that a court executing once in seventy years was called destructive. Akiba would have abolished it in practice; Simeon ben Gamaliel warned this would multiply murderers. Both voices are canonical.",
+    "reasoning": [
+      {
+        "text": "Genesis 9:6 grounds capital jurisdiction over murder in the sanctity it avenges.",
+        "passage_id": "jps-genesis-9-6"
+      },
+      {
+        "text": "The Mishnah preserves the rabbis' own dispute over whether the penalty should ever be carried out.",
+        "passage_id": "makkot-7a-sanhedrin"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-genesis-9-6",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "makkot-7a-sanhedrin",
+        "role": "complicating",
+        "note": "the rabbinic near-abolition"
+      }
+    ],
+    "intra_tradition_note": "Halakhic capital procedure (two warned witnesses, no circumstantial evidence) made execution practically impossible; modern Jewish movements divide over the state penalty largely along these inherited lines.",
+    "further_reading": [
+      {
+        "author": "Beth A. Berkowitz",
+        "title": "Execution and Invention: Death Penalty Discourse in Early Rabbinic and Christian Cultures",
+        "year": 2006,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Genesis 9 (JPS 1917) and Makkot 7a."
+  },
+  {
+    "id": "suicide_and_self_harm--judaism",
+    "topic_id": "suicide_and_self_harm",
+    "tradition_id": "judaism",
+    "stance": "forbidden",
+    "summary": "Your blood of your lives will I require: the tradition reads God's claim in Genesis as extending to one's own life, so self-destruction is forbidden and 'choose life' is the covenant's standing command. Yet halakhah long ago softened its practical face — the person who dies by their own hand is presumed to have acted under unbearable duress, and mourning rites are observed in full.",
+    "reasoning": [
+      {
+        "text": "God requires an accounting for one's own blood, removing life from the sphere of private disposal.",
+        "passage_id": "jps-genesis-9-5"
+      },
+      {
+        "text": "'Choose life' is the tradition's summary imperative, the root of pikuach nefesh.",
+        "passage_id": "jps-deuteronomy-30-19"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-genesis-9-5",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "jps-deuteronomy-30-19",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Cases like Saul's death and the martyrs of Masada generated a literature of exceptions under persecution; mainstream halakhah treats them as extremity, not precedent, and modern practice presumes diminished capacity in order to mourn fully.",
+    "further_reading": [
+      {
+        "author": "Fred Rosner",
+        "title": "Modern Medicine and Jewish Ethics",
+        "year": 1986,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Genesis 9:5 and Deuteronomy 30 (JPS 1917), with Semachot 2 for the mourning practice."
+  },
+  {
+    "id": "euthanasia_and_end_of_life--judaism",
+    "topic_id": "euthanasia_and_end_of_life",
+    "tradition_id": "judaism",
+    "stance": "forbidden",
+    "summary": "Life is of infinite worth and none of it is ours to end: hastening a dying person's death, even by moving a pillow, is shedding blood in the codes. But the deathbed of Rabbi Hanina ben Teradion taught a second rule — an impediment to dying may be removed. Halakhah therefore forbids euthanasia while permitting, in many rulings, the withholding of obstacles that merely prolong the act of dying.",
+    "reasoning": [
+      {
+        "text": "'Choose life' sets the default duty of preservation from which any exception must be argued.",
+        "passage_id": "jps-deuteronomy-30-19"
+      },
+      {
+        "text": "The Teradion narrative separates hastening death, refused, from removing what artificially delays it, permitted.",
+        "passage_id": "avodah-zarah-18a-teradion"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-deuteronomy-30-19",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "avodah-zarah-18a-teradion",
+        "role": "complicating",
+        "note": "the goses distinction"
+      }
+    ],
+    "intra_tradition_note": "Contemporary poskim divide over ventilator withdrawal and terminal sedation; the shared premises are the infinite worth of life and the goses distinction.",
+    "further_reading": [
+      {
+        "author": "Fred Rosner",
+        "title": "Modern Medicine and Jewish Ethics",
+        "year": 1986,
+        "kind": "book",
+        "url": null,
+        "note": "end-of-life chapters"
+      }
+    ],
+    "curator_note": "Drafted from Deuteronomy 30 (JPS 1917) and Avodah Zarah 18a."
+  },
+  {
+    "id": "animals_and_diet--judaism",
+    "topic_id": "animals_and_diet",
+    "tradition_id": "judaism",
+    "stance": "permitted",
+    "summary": "Meat is permitted within the discipline of kashrut, but the animal is never mere material: the righteous man regards the life of his beast, the laboring ox may not be muzzled, and relieving an animal's suffering overrides rabbinic Sabbath rules. Tza'ar ba'alei chayim — the ban on causing needless pain to creatures — is held by most authorities to be Torah law.",
+    "reasoning": [
+      {
+        "text": "Care for one's animal is a mark of righteousness in the wisdom literature.",
+        "passage_id": "jps-proverbs-12-10"
+      },
+      {
+        "text": "The unmuzzled ox is the Torah's paradigm of consideration owed to working animals.",
+        "passage_id": "jps-deuteronomy-25-4"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-proverbs-12-10",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "jps-deuteronomy-25-4",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "A minority strand from Rav Kook forward treats vegetarianism as an ideal deferred; mainstream practice affirms permitted meat under kashrut's constraints.",
+    "further_reading": [
+      {
+        "author": "Roberta Kalechofsky (ed.)",
+        "title": "Judaism and Animal Rights: Classical and Contemporary Responses",
+        "year": 1992,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Proverbs 12 and Deuteronomy 25 (JPS 1917)."
+  },
+  {
+    "id": "theft_and_property--judaism",
+    "topic_id": "theft_and_property",
+    "tradition_id": "judaism",
+    "stance": "forbidden",
+    "summary": "Ye shall not steal — and in the same breath, do not oppress and do not hold the worker's wages overnight. Rabbinic law widens theft into a family of wrongs: robbery, fraud, misleading pricing, even stealing another's goodwill by deception. Restitution plus a penalty is the thief's path back; the law protects the poor seller and the day laborer as sharply as the propertied.",
+    "reasoning": [
+      {
+        "text": "Robbery and wage-delay are condemned together, making economic oppression a species of theft.",
+        "passage_id": "jps-leviticus-19-13"
+      },
+      {
+        "text": "The Holiness Code's triad — stealing, false dealing, lying — binds property wrongs to dishonesty generally.",
+        "passage_id": "jps-leviticus-19-11"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-leviticus-19-13",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "jps-leviticus-19-11",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Halakhah distinguishes gezel (open robbery) from geneivah (stealth), treating the latter as graver because it adds deception of the owner to the loss; and while hunger explains a thief in the wisdom literature, it never cancels the obligation of restitution.",
+    "further_reading": [
+      {
+        "author": "Joseph Telushkin",
+        "title": "A Code of Jewish Ethics, vol. 2: Love Your Neighbor as Yourself",
+        "year": 2009,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Leviticus 19 (JPS 1917) with Bava Kamma's laws of restitution in view."
+  },
+  {
+    "id": "usury_and_lending--judaism",
+    "topic_id": "usury_and_lending",
+    "tradition_id": "judaism",
+    "stance": "forbidden",
+    "summary": "Lending to the needy is a duty, and taking interest from one's brother is forbidden — the creditor may not even carry himself as a creditor toward the poor. The ban binds lender, borrower, witnesses, and scribe alike. Aimed at protecting the vulnerable within the covenant community, it was later routed around for commerce by the heter iska, while interest-free lending societies kept the ideal alive.",
+    "reasoning": [
+      {
+        "text": "The Exodus law forbids the creditor's posture and interest toward the poor of the covenant.",
+        "passage_id": "jps-exodus-22-24"
+      },
+      {
+        "text": "Deuteronomy's brother/foreigner distinction confines and thereby defines the ban's communal purpose.",
+        "passage_id": "jps-deuteronomy-23-20-21"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-exodus-22-24",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "jps-deuteronomy-23-20-21",
+        "role": "complicating",
+        "note": "the brother/foreigner line"
+      }
+    ],
+    "intra_tradition_note": "The heter iska recasts a loan as investment partnership, permitting commercial finance; free-loan funds (gemachim) remain the tradition's ideal for lending to persons.",
+    "further_reading": [
+      {
+        "author": "Hillel Gamoran",
+        "title": "Jewish Law in Transition: How Economic Forces Overcame the Prohibition Against Lending on Interest",
+        "year": 2008,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Exodus 22 and Deuteronomy 23 (JPS 1917)."
+  },
+  {
+    "id": "forgiveness_and_revenge--judaism",
+    "topic_id": "forgiveness_and_revenge",
+    "tradition_id": "judaism",
+    "stance": "context_dependent",
+    "summary": "Vengeance and the grudge are forbidden outright — but forgiveness in Judaism runs through repentance. The offender must seek out the person wronged and appease them; the Day of Atonement itself does not cover wrongs between people until that work is done. The wronged party should be gracious to a sincere penitent, yet forgiveness is not owed to the unrepentant, and some wrongs lie beyond any human's right to forgive on another's behalf.",
+    "reasoning": [
+      {
+        "text": "Leviticus forbids revenge and grudge-bearing in the verse that commands neighbor-love.",
+        "passage_id": "jps-leviticus-19-18"
+      },
+      {
+        "text": "Atonement between people requires appeasement of the injured party first — ritual cannot shortcut repair.",
+        "passage_id": "yoma-85b-atonement"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-leviticus-19-18",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "yoma-85b-atonement",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Louis E. Newman",
+        "title": "Repentance: The Meaning and Practice of Teshuvah",
+        "year": 2010,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Leviticus 19 (JPS 1917) and Yoma 85b, with Maimonides' Laws of Repentance in view."
+  },
+  {
+    "id": "duties_to_parents--judaism",
+    "topic_id": "duties_to_parents",
+    "tradition_id": "judaism",
+    "stance": "obligatory",
+    "summary": "Honor and reverence of parents are separate Torah commands, and the Talmud makes them concrete: feed, clothe, escort; do not contradict in public, do not take their seat. The gentile Dama, who lost a fortune rather than wake his father, is the rabbis' chosen exemplar. The duty has limits — a parent's command to transgress is void — but its default is lifelong, personal, and material.",
+    "reasoning": [
+      {
+        "text": "The Holiness Code commands reverence of mother and father at its opening.",
+        "passage_id": "jps-leviticus-19-3"
+      },
+      {
+        "text": "Kiddushin specifies honor into maintenance and deference, with Dama as exemplar and transgression as the limit.",
+        "passage_id": "kiddushin-31b-honor"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-leviticus-19-3",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "kiddushin-31b-honor",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Gerald Blidstein",
+        "title": "Honor Thy Father and Mother: Filial Responsibility in Jewish Law and Ethics",
+        "year": 1975,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Leviticus 19 (JPS 1917) and Kiddushin 31b."
+  },
+  {
+    "id": "marriage_and_fidelity--judaism",
+    "topic_id": "marriage_and_fidelity",
+    "tradition_id": "judaism",
+    "stance": "forbidden",
+    "summary": "Adultery is forbidden from Sinai, and Malachi names the deeper wrong: treachery against the wife of thy youth, thy companion, the wife of thy covenant — with God as witness between them. Marriage in halakhah is effected by contract (the ketubah) yet described as covenant; faithfulness is owed not only as rule-keeping but as loyalty to a partner God has witnessed.",
+    "reasoning": [
+      {
+        "text": "Malachi casts infidelity as covenant-treachery witnessed by God, not private failure.",
+        "passage_id": "jps-malachi-2-14"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-malachi-2-14",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Michael L. Satlow",
+        "title": "Jewish Marriage in Antiquity",
+        "year": 2001,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Malachi 2 (JPS 1917) with the ketubah tradition in view."
+  },
+  {
+    "id": "divorce--judaism",
+    "topic_id": "divorce",
+    "tradition_id": "judaism",
+    "stance": "permitted",
+    "summary": "The Torah legislates divorce rather than forbidding it: the get, written and delivered, dissolves the bond, and Hillel's school allowed it on broad grounds. Yet the tractate that regulates it closes with the altar shedding tears for the divorce of the wife of one's youth. Divorce is lawful, sometimes commanded — and mourned even when right.",
+    "reasoning": [
+      {
+        "text": "Deuteronomy institutes the bill of divorcement, framing all later Jewish divorce law.",
+        "passage_id": "jps-deuteronomy-24-1"
+      },
+      {
+        "text": "The altar's tears record the tradition's grief at the lawful dissolution.",
+        "passage_id": "gittin-90b-altar"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-deuteronomy-24-1",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "gittin-90b-altar",
+        "role": "complicating",
+        "note": "lawful yet mourned"
+      }
+    ],
+    "intra_tradition_note": "The get remains in the husband's hand in traditional law, generating the agunah problem and modern rabbinic remedies — a live intra-tradition struggle.",
+    "further_reading": [
+      {
+        "author": "Judith Hauptman",
+        "title": "Rereading the Rabbis: A Woman's Voice",
+        "year": 1998,
+        "kind": "book",
+        "url": null,
+        "note": "chapter on divorce"
+      }
+    ],
+    "curator_note": "Drafted from Deuteronomy 24 (JPS 1917) and Gittin 90b."
+  },
+  {
+    "id": "hospitality_and_strangers--judaism",
+    "topic_id": "hospitality_and_strangers",
+    "tradition_id": "judaism",
+    "stance": "obligatory",
+    "summary": "Love of the stranger is commanded more often than any other duty in the Torah, always with the same reason: you were strangers in Egypt. The stranger is to be as the home-born. And from Abraham running from God's own presence to greet three travelers, the rabbis drew their startling ranking — hospitality to wayfarers is greater than receiving the Shechinah.",
+    "reasoning": [
+      {
+        "text": "The stranger is to be loved as oneself, with Israel's own estrangement as the command's memory.",
+        "passage_id": "jps-leviticus-19-34"
+      },
+      {
+        "text": "Abraham's example ranks hospitality above communion with God himself.",
+        "passage_id": "shabbat-127a-hospitality"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-leviticus-19-34",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "shabbat-127a-hospitality",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Joseph Telushkin",
+        "title": "A Code of Jewish Ethics, vol. 2: Love Your Neighbor as Yourself",
+        "year": 2009,
+        "kind": "book",
+        "url": null,
+        "note": "on hakhnasat orchim"
+      }
+    ],
+    "curator_note": "Drafted from Leviticus 19 (JPS 1917) and Shabbat 127a."
+  },
+  {
+    "id": "speech_and_gossip--judaism",
+    "topic_id": "speech_and_gossip",
+    "tradition_id": "judaism",
+    "stance": "forbidden",
+    "summary": "Thou shalt not go up and down as a talebearer: lashon hara — derogatory speech even when true — is forbidden, and the tradition ranks it among the gravest wrongs, likened to killing three: speaker, listener, and subject. The psalmist's counsel to guard the tongue became, in the Chofetz Chaim's hands, a detailed legal code of when speech about others is and is not permitted.",
+    "reasoning": [
+      {
+        "text": "The Torah forbids talebearing among the people in the Holiness Code itself.",
+        "passage_id": "jps-leviticus-19-16"
+      },
+      {
+        "text": "Guarding tongue and lips is the psalm's condition for desiring life.",
+        "passage_id": "jps-psalm-34-14"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-leviticus-19-16",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "jps-psalm-34-14",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "Speech required to protect someone from concrete harm (to'elet) is not merely permitted but obligatory — the codified exception that proves the rule.",
+    "further_reading": [
+      {
+        "author": "Joseph Telushkin",
+        "title": "Words That Hurt, Words That Heal",
+        "year": 1996,
+        "kind": "book",
+        "url": null,
+        "note": null
+      }
+    ],
+    "curator_note": "Drafted from Leviticus 19 and Psalm 34 (JPS 1917), with Chofetz Chaim's code in view."
+  },
+  {
+    "id": "pride_and_humility--judaism",
+    "topic_id": "pride_and_humility",
+    "tradition_id": "judaism",
+    "stance": "discouraged",
+    "summary": "Every one proud in heart is an abomination — the rabbis compared arrogance to idolatry, the self enthroned in God's place — and the prophet's summary of the whole law ends in walking humbly with God. Yet Jewish moral teaching keeps a measured self-regard: Moses, the humblest of men, still led. Humility is truthful scale, not self-erasure.",
+    "reasoning": [
+      {
+        "text": "Pride of heart is already abomination before any act follows.",
+        "passage_id": "jps-proverbs-16-5"
+      },
+      {
+        "text": "Micah's triad crowns justice and mercy with humble walking before God.",
+        "passage_id": "jps-micah-6-8"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "jps-micah-6-8",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "jps-proverbs-16-5",
+        "role": "supporting",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Alan Morinis",
+        "title": "Everyday Holiness: The Jewish Spiritual Path of Mussar",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": "the humility chapter"
+      }
+    ],
+    "curator_note": "Drafted from Micah 6 and Proverbs 16 (JPS 1917)."
+  },
+  {
+    "id": "envy_and_contentment--judaism",
+    "topic_id": "envy_and_contentment",
+    "tradition_id": "judaism",
+    "stance": "discouraged",
+    "summary": "Who is rich? He that rejoiceth in his portion. Ben Zoma's mishnah relocates wealth from possession to disposition, and the sages warn that jealousy, lust, and ambition drive a person from the world. Coveting is banned at Sinai; the Mussar masters treat envy as a trait to be trained out by gratitude practices, not merely an impulse to be suppressed.",
+    "reasoning": [
+      {
+        "text": "Ben Zoma defines the rich as those content with their portion, inverting the envious measure.",
+        "passage_id": "aboth-4-1-rich"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "aboth-4-1-rich",
+        "role": "core",
+        "note": null
+      }
+    ],
+    "intra_tradition_note": "The tradition distinguishes destructive envy from kinat soferim, the rivalry of scholars that increases wisdom — emulation aimed at growth rather than begrudging.",
+    "further_reading": [
+      {
+        "author": "Alan Morinis",
+        "title": "Everyday Holiness: The Jewish Spiritual Path of Mussar",
+        "year": 2007,
+        "kind": "book",
+        "url": null,
+        "note": "on envy and gratitude"
+      }
+    ],
+    "curator_note": "Drafted from Aboth 4:1 (Taylor) and Exodus 20's coveting ban."
+  },
+  {
+    "id": "judging_others--judaism",
+    "topic_id": "judging_others",
+    "tradition_id": "judaism",
+    "stance": "context_dependent",
+    "summary": "Judge every man in the scale of merit — the benefit of the doubt is a codified duty, owed most strongly to the ordinarily decent. And yet judgment itself is commanded: in righteousness shalt thou judge thy neighbour, without favor to poor or mighty. The tradition thus trains two capacities at once: charitable interpretation of persons and unflinching judgment of deeds.",
+    "reasoning": [
+      {
+        "text": "Joshua ben Perachiah's maxim makes favorable judgment a standing obligation.",
+        "passage_id": "aboth-1-6-merit"
+      },
+      {
+        "text": "Leviticus commands righteous judgment without partiality in either direction.",
+        "passage_id": "jps-leviticus-19-15"
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "aboth-1-6-merit",
+        "role": "core",
+        "note": null
+      },
+      {
+        "passage_id": "jps-leviticus-19-15",
+        "role": "complicating",
+        "note": "judgment commanded"
+      }
+    ],
+    "intra_tradition_note": null,
+    "further_reading": [
+      {
+        "author": "Joseph Telushkin",
+        "title": "A Code of Jewish Ethics, vol. 1: You Shall Be Holy",
+        "year": 2006,
+        "kind": "book",
+        "url": null,
+        "note": "on judging favorably"
+      }
+    ],
+    "curator_note": "Drafted from Aboth 1:6 (Taylor) and Leviticus 19:15 (JPS 1917)."
+  }
+]

@@ -1,0 +1,34 @@
+{
+ "id": "exact_03",
+ "suite": "exact",
+ "n": 11,
+ "seed": 1302211,
+ "clusters": [
+  "house",
+  "hiphop"
+ ],
+ "anchors": {
+  "start": null,
+  "end": null
+ },
+ "tracks": [
+  "meta:5cb7c8b2cb24ce678df3e08abe4a02512d36eea2",
+  "meta:827900c62b63b9656d67c0fc372028605c00e311",
+  "meta:f6497cd9d957d3d6ab2a3dd1ed539399a7ef75b9",
+  "meta:6647bba1ca8b6f09ae1ac97a71548e8c2a2ed6ce",
+  "meta:cb9206edfb51932825b9eb9cc6c1b84894c0d9d2",
+  "meta:c0231095606696b3ba999c7048d15615b2888df6",
+  "meta:cb474904dd81826970c3e42bf98e62b6f13f1118",
+  "meta:e352f000175187b45be3cdfa898e48ba312d9d98",
+  "meta:b0ce66f3dd970cf6d03b32feb4548bad4d020226",
+  "meta:dd4f07374c217f2befc037440526338454b92118",
+  "meta:981bfda346d6836dc91e46cf4fe8fd964c9a6900"
+ ],
+ "planted_order": null,
+ "detail": {
+  "kind": "plain",
+  "search_seed": 1302211,
+  "greedy_bound": 0.952976,
+  "depth_target": 0.954
+ }
+}

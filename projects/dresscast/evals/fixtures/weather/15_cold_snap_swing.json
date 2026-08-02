@@ -1,0 +1,255 @@
+{
+  "date": "2026-03-03",
+  "location_name": "home",
+  "lat": 40.71,
+  "lon": -74.01,
+  "timezone": "America/New_York",
+  "hours": [
+    {
+      "seq": 0,
+      "hour": 0,
+      "temp_c": 2.7,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 1,
+      "hour": 1,
+      "temp_c": 1.5,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 2,
+      "hour": 2,
+      "temp_c": 0.5,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 3,
+      "hour": 3,
+      "temp_c": -0.3,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 4,
+      "hour": 4,
+      "temp_c": -0.8,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 5,
+      "hour": 5,
+      "temp_c": -1.0,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 6,
+      "hour": 6,
+      "temp_c": -0.8,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 7,
+      "hour": 7,
+      "temp_c": -0.3,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.3
+    },
+    {
+      "seq": 8,
+      "hour": 8,
+      "temp_c": 0.5,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 1.0
+    },
+    {
+      "seq": 9,
+      "hour": 9,
+      "temp_c": 1.5,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 1.6
+    },
+    {
+      "seq": 10,
+      "hour": 10,
+      "temp_c": 2.7,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 2.1
+    },
+    {
+      "seq": 11,
+      "hour": 11,
+      "temp_c": 4.0,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 2.5
+    },
+    {
+      "seq": 12,
+      "hour": 12,
+      "temp_c": 5.3,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 2.7
+    },
+    {
+      "seq": 13,
+      "hour": 13,
+      "temp_c": 6.5,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 2.8
+    },
+    {
+      "seq": 14,
+      "hour": 14,
+      "temp_c": 7.5,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 2.7
+    },
+    {
+      "seq": 15,
+      "hour": 15,
+      "temp_c": 8.3,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 2.5
+    },
+    {
+      "seq": 16,
+      "hour": 16,
+      "temp_c": 8.8,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 2.1
+    },
+    {
+      "seq": 17,
+      "hour": 17,
+      "temp_c": 9.0,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 1.6
+    },
+    {
+      "seq": 18,
+      "hour": 18,
+      "temp_c": 8.8,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 1.0
+    },
+    {
+      "seq": 19,
+      "hour": 19,
+      "temp_c": 8.3,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.3
+    },
+    {
+      "seq": 20,
+      "hour": 20,
+      "temp_c": 7.5,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 21,
+      "hour": 21,
+      "temp_c": 6.5,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 22,
+      "hour": 22,
+      "temp_c": 5.3,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    },
+    {
+      "seq": 23,
+      "hour": 23,
+      "temp_c": 4.0,
+      "wind_kmh": 9.0,
+      "humidity_pct": 68.0,
+      "precip_prob": 0.05,
+      "precip_mmh": 0.0,
+      "uv_index": 0.0
+    }
+  ],
+  "scenario": "15_cold_snap_swing",
+  "shape": "diurnal",
+  "swing": true,
+  "occasion": "work",
+  "description": "-1 to 9 C, dry, light wind.",
+  "designed_to_catch": "a swing that starts against the wardrobe ceiling and ends well inside the band"
+}

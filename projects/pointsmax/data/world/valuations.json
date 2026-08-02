@@ -1,0 +1,116 @@
+[
+  {
+    "program_id": "chase_ur",
+    "cpp_milli": 2050,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "amex_mr",
+    "cpp_milli": 2000,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "citi_typ",
+    "cpp_milli": 1800,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "capital_one",
+    "cpp_milli": 1850,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "bilt_rewards",
+    "cpp_milli": 2050,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "flying_blue",
+    "cpp_milli": 1300,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "aeroplan",
+    "cpp_milli": 1500,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "united_mileageplus",
+    "cpp_milli": 1350,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "delta_skymiles",
+    "cpp_milli": 1150,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "alaska_mp",
+    "cpp_milli": 1400,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "ana_mileage_club",
+    "cpp_milli": 1400,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "virgin_atlantic",
+    "cpp_milli": 1300,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "avianca_lifemiles",
+    "cpp_milli": 1350,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "british_avios",
+    "cpp_milli": 1300,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "turkish_miles",
+    "cpp_milli": 1300,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "marriott_bonvoy",
+    "cpp_milli": 800,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "hyatt",
+    "cpp_milli": 1700,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "hilton_honors",
+    "cpp_milli": 500,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  },
+  {
+    "program_id": "ihg_rewards",
+    "cpp_milli": 500,
+    "as_of": "2026-07-01",
+    "source_note": "modeled on Frequent Miler RRV / TPG valuations, 2026-07"
+  }
+]

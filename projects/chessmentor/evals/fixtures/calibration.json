@@ -1,0 +1,1283 @@
+{
+  "seed": 20260731,
+  "generated_at": "2026-08-01T00:00:00Z",
+  "engine_version": "0.1.0",
+  "judge_node_budget": 6000,
+  "games_per_adjacent_pair": 24,
+  "games_per_skip_pair": 10,
+  "acpl_games_per_level": 24,
+  "fit_model": "wls-quadratic-gaps (gap_k = a + b*k + c*k^2); see docs/REVIEW.md B2",
+  "acpl_fit_model": "log-quadratic in elo, committed anchors; see docs/REVIEW.md B7",
+  "matches": [
+    {
+      "low": 1,
+      "high": 2,
+      "games": 24,
+      "points_high": 18.0,
+      "smoothed_score_high": 0.74,
+      "terminations": [
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        63,
+        65,
+        54,
+        63,
+        63,
+        63,
+        63,
+        63,
+        82,
+        70,
+        76,
+        63,
+        63,
+        63,
+        63,
+        63,
+        63,
+        63,
+        63,
+        68,
+        63,
+        63,
+        63,
+        86
+      ]
+    },
+    {
+      "low": 1,
+      "high": 3,
+      "games": 10,
+      "points_high": 8.0,
+      "smoothed_score_high": 0.7727272727272727,
+      "terminations": [
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        63,
+        79,
+        63,
+        81,
+        63,
+        63,
+        63,
+        72,
+        63,
+        63
+      ]
+    },
+    {
+      "low": 2,
+      "high": 3,
+      "games": 24,
+      "points_high": 17.0,
+      "smoothed_score_high": 0.7,
+      "terminations": [
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        63,
+        63,
+        63,
+        73,
+        109,
+        63,
+        70,
+        63,
+        65,
+        63,
+        63,
+        125,
+        99,
+        70,
+        80,
+        87,
+        71,
+        121,
+        42,
+        63,
+        64,
+        81,
+        63,
+        63
+      ]
+    },
+    {
+      "low": 2,
+      "high": 4,
+      "games": 10,
+      "points_high": 9.0,
+      "smoothed_score_high": 0.8636363636363636,
+      "terminations": [
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        63,
+        63,
+        92,
+        63,
+        63,
+        63,
+        63,
+        63,
+        92,
+        67
+      ]
+    },
+    {
+      "low": 3,
+      "high": 4,
+      "games": 24,
+      "points_high": 14.0,
+      "smoothed_score_high": 0.58,
+      "terminations": [
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win"
+      ],
+      "plies": [
+        87,
+        63,
+        63,
+        86,
+        50,
+        52,
+        110,
+        47,
+        67,
+        63,
+        63,
+        44,
+        63,
+        63,
+        63,
+        63,
+        63,
+        73,
+        88,
+        107,
+        63,
+        87,
+        60,
+        71
+      ]
+    },
+    {
+      "low": 3,
+      "high": 5,
+      "games": 10,
+      "points_high": 9.0,
+      "smoothed_score_high": 0.8636363636363636,
+      "terminations": [
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win"
+      ],
+      "plies": [
+        26,
+        65,
+        63,
+        63,
+        58,
+        49,
+        63,
+        63,
+        46,
+        63
+      ]
+    },
+    {
+      "low": 4,
+      "high": 5,
+      "games": 24,
+      "points_high": 17.0,
+      "smoothed_score_high": 0.7,
+      "terminations": [
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        63,
+        63,
+        70,
+        63,
+        82,
+        63,
+        63,
+        63,
+        63,
+        101,
+        63,
+        63,
+        30,
+        63,
+        87,
+        78,
+        63,
+        63,
+        63,
+        114,
+        72,
+        63,
+        65,
+        79
+      ]
+    },
+    {
+      "low": 4,
+      "high": 6,
+      "games": 10,
+      "points_high": 7.0,
+      "smoothed_score_high": 0.6818181818181818,
+      "terminations": [
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "natural:checkmate"
+      ],
+      "plies": [
+        65,
+        61,
+        59,
+        63,
+        50,
+        55,
+        63,
+        62,
+        63,
+        35
+      ]
+    },
+    {
+      "low": 5,
+      "high": 6,
+      "games": 24,
+      "points_high": 22.0,
+      "smoothed_score_high": 0.9,
+      "terminations": [
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        63,
+        63,
+        63,
+        63,
+        63,
+        63,
+        54,
+        67,
+        82,
+        63,
+        88,
+        51,
+        63,
+        59,
+        63,
+        63,
+        63,
+        63,
+        61,
+        63,
+        36,
+        63,
+        86,
+        63
+      ]
+    },
+    {
+      "low": 5,
+      "high": 7,
+      "games": 10,
+      "points_high": 9.0,
+      "smoothed_score_high": 0.8636363636363636,
+      "terminations": [
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        56,
+        64,
+        92,
+        59,
+        24,
+        63,
+        112,
+        63,
+        63,
+        63
+      ]
+    },
+    {
+      "low": 6,
+      "high": 7,
+      "games": 24,
+      "points_high": 18.0,
+      "smoothed_score_high": 0.74,
+      "terminations": [
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        85,
+        63,
+        63,
+        63,
+        63,
+        106,
+        68,
+        65,
+        22,
+        51,
+        80,
+        90,
+        63,
+        95,
+        64,
+        63,
+        74,
+        41,
+        63,
+        99,
+        126,
+        98,
+        86,
+        63
+      ]
+    },
+    {
+      "low": 6,
+      "high": 8,
+      "games": 10,
+      "points_high": 9.0,
+      "smoothed_score_high": 0.8636363636363636,
+      "terminations": [
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win"
+      ],
+      "plies": [
+        24,
+        63,
+        63,
+        33,
+        40,
+        94,
+        63,
+        55,
+        58,
+        63
+      ]
+    },
+    {
+      "low": 7,
+      "high": 8,
+      "games": 24,
+      "points_high": 18.0,
+      "smoothed_score_high": 0.74,
+      "terminations": [
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        18,
+        63,
+        70,
+        63,
+        63,
+        53,
+        53,
+        63,
+        63,
+        32,
+        63,
+        63,
+        60,
+        63,
+        63,
+        63,
+        62,
+        63,
+        63,
+        77,
+        63,
+        35,
+        63,
+        63
+      ]
+    },
+    {
+      "low": 7,
+      "high": 9,
+      "games": 10,
+      "points_high": 10.0,
+      "smoothed_score_high": 0.9545454545454546,
+      "terminations": [
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        46,
+        31,
+        64,
+        63,
+        63,
+        63,
+        63,
+        35,
+        63,
+        85
+      ]
+    },
+    {
+      "low": 8,
+      "high": 9,
+      "games": 24,
+      "points_high": 20.0,
+      "smoothed_score_high": 0.82,
+      "terminations": [
+        "natural:checkmate",
+        "adjudicated:win",
+        "natural:checkmate",
+        "natural:checkmate",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        40,
+        73,
+        45,
+        56,
+        48,
+        63,
+        63,
+        63,
+        102,
+        78,
+        63,
+        65,
+        63,
+        63,
+        63,
+        73,
+        63,
+        63,
+        72,
+        63,
+        63,
+        63,
+        63,
+        80
+      ]
+    },
+    {
+      "low": 8,
+      "high": 10,
+      "games": 10,
+      "points_high": 7.0,
+      "smoothed_score_high": 0.6818181818181818,
+      "terminations": [
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        29,
+        63,
+        63,
+        63,
+        69,
+        71,
+        63,
+        83,
+        63,
+        63
+      ]
+    },
+    {
+      "low": 9,
+      "high": 10,
+      "games": 24,
+      "points_high": 18.0,
+      "smoothed_score_high": 0.74,
+      "terminations": [
+        "natural:checkmate",
+        "adjudicated:win",
+        "natural:checkmate",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win",
+        "adjudicated:win"
+      ],
+      "plies": [
+        48,
+        63,
+        62,
+        63,
+        63,
+        63,
+        78,
+        63,
+        63,
+        63,
+        63,
+        63,
+        63,
+        63,
+        63,
+        86,
+        63,
+        83,
+        63,
+        63,
+        95,
+        67,
+        96,
+        88
+      ]
+    }
+  ],
+  "elo_fit": [
+    {
+      "level_id": 1,
+      "elo_internal": 400.0,
+      "stderr": 0.0
+    },
+    {
+      "level_id": 2,
+      "elo_internal": 522.1950600201783,
+      "stderr": 48.72802686341237
+    },
+    {
+      "level_id": 3,
+      "elo_internal": 653.67232563814,
+      "stderr": 76.99565059584474
+    },
+    {
+      "level_id": 4,
+      "elo_internal": 792.8883786164143,
+      "stderr": 93.30601231280498
+    },
+    {
+      "level_id": 5,
+      "elo_internal": 938.2998007175304,
+      "stderr": 105.30414560360148
+    },
+    {
+      "level_id": 6,
+      "elo_internal": 1088.3631737040173,
+      "stderr": 117.68109182328602
+    },
+    {
+      "level_id": 7,
+      "elo_internal": 1241.535079338404,
+      "stderr": 130.976080619702
+    },
+    {
+      "level_id": 8,
+      "elo_internal": 1396.2720993832202,
+      "stderr": 143.29964902303084
+    },
+    {
+      "level_id": 9,
+      "elo_internal": 1551.0308156009944,
+      "stderr": 154.24703634521808
+    },
+    {
+      "level_id": 10,
+      "elo_internal": 1704.267809754256,
+      "stderr": 169.92713903512444
+    }
+  ],
+  "gap_fit": [
+    {
+      "low": 1,
+      "high": 2,
+      "gap": 122.19506002017829,
+      "stderr": 71.04782411505279
+    },
+    {
+      "low": 2,
+      "high": 3,
+      "gap": 131.47726561796173,
+      "stderr": 64.22115856837372
+    },
+    {
+      "low": 3,
+      "high": 4,
+      "gap": 139.21605297827432,
+      "stderr": 62.075103766691164
+    },
+    {
+      "low": 4,
+      "high": 5,
+      "gap": 145.41142210111605,
+      "stderr": 64.18002728093415
+    },
+    {
+      "low": 5,
+      "high": 6,
+      "gap": 150.0633729864869,
+      "stderr": 79.88700084504529
+    },
+    {
+      "low": 6,
+      "high": 7,
+      "gap": 153.1719056343868,
+      "stderr": 68.30614089259987
+    },
+    {
+      "low": 7,
+      "high": 8,
+      "gap": 154.73702004481606,
+      "stderr": 70.99466707885166
+    },
+    {
+      "low": 8,
+      "high": 9,
+      "gap": 154.75871621777424,
+      "stderr": 74.61126829161154
+    },
+    {
+      "low": 9,
+      "high": 10,
+      "gap": 153.23699415326155,
+      "stderr": 70.81794124423061
+    }
+  ],
+  "elo_fit_free": [
+    {
+      "level_id": 1,
+      "elo_internal": 400.0,
+      "stderr": 0.0
+    },
+    {
+      "level_id": 2,
+      "elo_internal": 551.7945619712746,
+      "stderr": 71.04782411505279
+    },
+    {
+      "level_id": 3,
+      "elo_internal": 691.2312112766497,
+      "stderr": 83.06231992496515
+    },
+    {
+      "level_id": 4,
+      "elo_internal": 788.3619877454961,
+      "stderr": 99.37200720070582
+    },
+    {
+      "level_id": 5,
+      "elo_internal": 892.1385278901265,
+      "stderr": 113.67276444607666
+    },
+    {
+      "level_id": 6,
+      "elo_internal": 1086.623850499936,
+      "stderr": 127.94994487959207
+    },
+    {
+      "level_id": 7,
+      "elo_internal": 1250.617389301527,
+      "stderr": 139.00122252007748
+    },
+    {
+      "level_id": 8,
+      "elo_internal": 1438.8894274988181,
+      "stderr": 151.3727185978141
+    },
+    {
+      "level_id": 9,
+      "elo_internal": 1623.7923026212752,
+      "stderr": 166.71403633654145
+    },
+    {
+      "level_id": 10,
+      "elo_internal": 1730.6324878992855,
+      "stderr": 171.66693418073092
+    }
+  ],
+  "gap_model": [
+    {
+      "low": 1,
+      "high": 2,
+      "gap": 122.1950600201783,
+      "stderr": 48.72802686341237
+    },
+    {
+      "low": 2,
+      "high": 3,
+      "gap": 131.47726561796176,
+      "stderr": 30.2838782850151
+    },
+    {
+      "low": 3,
+      "high": 4,
+      "gap": 139.21605297827432,
+      "stderr": 24.77701766045651
+    },
+    {
+      "low": 4,
+      "high": 5,
+      "gap": 145.41142210111605,
+      "stderr": 27.157239214349886
+    },
+    {
+      "low": 5,
+      "high": 6,
+      "gap": 150.06337298648688,
+      "stderr": 29.103124256542355
+    },
+    {
+      "low": 6,
+      "high": 7,
+      "gap": 153.1719056343869,
+      "stderr": 28.065334731009848
+    },
+    {
+      "low": 7,
+      "high": 8,
+      "gap": 154.73702004481598,
+      "stderr": 26.289985424181037
+    },
+    {
+      "low": 8,
+      "high": 9,
+      "gap": 154.75871621777426,
+      "stderr": 31.231832202400398
+    },
+    {
+      "low": 9,
+      "high": 10,
+      "gap": 153.23699415326163,
+      "stderr": 48.42199859031962
+    }
+  ],
+  "pair_residuals": [
+    {
+      "low": 1,
+      "high": 2,
+      "observed_delta": 181.70334870406327,
+      "model_delta": 122.1950600201783,
+      "sigma": 80.84183222103678,
+      "z": 0.7361076196439748
+    },
+    {
+      "low": 1,
+      "high": 3,
+      "observed_delta": 212.591566816902,
+      "model_delta": 253.67232563814005,
+      "sigma": 131.08636495962762,
+      "z": -0.31338697074932415
+    },
+    {
+      "low": 2,
+      "high": 3,
+      "observed_delta": 147.19071411783773,
+      "model_delta": 131.47726561796176,
+      "sigma": 77.38005505945067,
+      "z": 0.20306845850398283
+    },
+    {
+      "low": 2,
+      "high": 4,
+      "observed_delta": 320.6529384932666,
+      "model_delta": 270.69331859623605,
+      "sigma": 160.07722816333077,
+      "z": 0.31209698262675767
+    },
+    {
+      "low": 3,
+      "high": 4,
+      "observed_delta": 56.07148126601469,
+      "model_delta": 139.21605297827432,
+      "sigma": 71.84557746211793,
+      "z": -1.1572677769358777
+    },
+    {
+      "low": 3,
+      "high": 5,
+      "observed_delta": 320.6529384932666,
+      "model_delta": 284.6274750793904,
+      "sigma": 160.07722816333077,
+      "z": 0.22505051984732344
+    },
+    {
+      "low": 4,
+      "high": 5,
+      "observed_delta": 147.19071411783773,
+      "model_delta": 145.41142210111605,
+      "sigma": 77.38005505945067,
+      "z": 0.022994194244946753
+    },
+    {
+      "low": 4,
+      "high": 6,
+      "observed_delta": 132.3972876165697,
+      "model_delta": 295.47479508760296,
+      "sigma": 117.94304443279223,
+      "z": -1.3826801593540354
+    },
+    {
+      "low": 5,
+      "high": 6,
+      "observed_delta": 381.69700377572997,
+      "model_delta": 150.06337298648688,
+      "sigma": 118.19998652992777,
+      "z": 1.9596756107124798
+    },
+    {
+      "low": 5,
+      "high": 7,
+      "observed_delta": 320.6529384932666,
+      "model_delta": 303.23527862087377,
+      "sigma": 160.07722816333077,
+      "z": 0.1088078552598448
+    },
+    {
+      "low": 6,
+      "high": 7,
+      "observed_delta": 181.70334870406327,
+      "model_delta": 153.17190563438686,
+      "sigma": 80.84183222103678,
+      "z": 0.35292919873050477
+    },
+    {
+      "low": 6,
+      "high": 8,
+      "observed_delta": 320.6529384932666,
+      "model_delta": 307.90892567920287,
+      "sigma": 160.07722816333077,
+      "z": 0.07961165345179964
+    },
+    {
+      "low": 7,
+      "high": 8,
+      "observed_delta": 181.70334870406327,
+      "model_delta": 154.73702004481598,
+      "sigma": 80.84183222103678,
+      "z": 0.33356899415040814
+    },
+    {
+      "low": 7,
+      "high": 9,
+      "observed_delta": 528.8877178935678,
+      "model_delta": 309.4957362625903,
+      "sigma": 263.72866482500166,
+      "z": 0.8318852324094389
+    },
+    {
+      "low": 8,
+      "high": 9,
+      "observed_delta": 263.4165389121642,
+      "model_delta": 154.75871621777426,
+      "sigma": 92.2986827578069,
+      "z": 1.1772413153447665
+    },
+    {
+      "low": 8,
+      "high": 10,
+      "observed_delta": 132.3972876165697,
+      "model_delta": 307.9957103710359,
+      "sigma": 117.94304443279223,
+      "z": -1.4888408519463634
+    },
+    {
+      "low": 9,
+      "high": 10,
+      "observed_delta": 181.70334870406327,
+      "model_delta": 153.23699415326163,
+      "sigma": 80.84183222103678,
+      "z": 0.35212406459281215
+    }
+  ],
+  "acpl": [
+    {
+      "level_id": 1,
+      "mean": 219.70078425136396,
+      "std": 29.954381829133958,
+      "n_games": 24,
+      "n_moves": 762
+    },
+    {
+      "level_id": 2,
+      "mean": 195.2222468162652,
+      "std": 60.63290814701215,
+      "n_games": 24,
+      "n_moves": 776
+    },
+    {
+      "level_id": 3,
+      "mean": 191.36068056402837,
+      "std": 64.98566079642767,
+      "n_games": 24,
+      "n_moves": 795
+    },
+    {
+      "level_id": 4,
+      "mean": 181.23263813775134,
+      "std": 45.68748602118537,
+      "n_games": 24,
+      "n_moves": 783
+    },
+    {
+      "level_id": 5,
+      "mean": 139.12189682504268,
+      "std": 36.813102629728945,
+      "n_games": 24,
+      "n_moves": 719
+    },
+    {
+      "level_id": 6,
+      "mean": 109.74959324434008,
+      "std": 40.25356293284436,
+      "n_games": 24,
+      "n_moves": 718
+    },
+    {
+      "level_id": 7,
+      "mean": 101.04351156287622,
+      "std": 56.99963172971175,
+      "n_games": 24,
+      "n_moves": 742
+    },
+    {
+      "level_id": 8,
+      "mean": 71.06875941423708,
+      "std": 38.11670138901443,
+      "n_games": 24,
+      "n_moves": 613
+    },
+    {
+      "level_id": 9,
+      "mean": 56.50226891262319,
+      "std": 28.33341837535859,
+      "n_games": 24,
+      "n_moves": 660
+    },
+    {
+      "level_id": 10,
+      "mean": 49.26368636264585,
+      "std": 34.610892676299756,
+      "n_games": 24,
+      "n_moves": 676
+    }
+  ],
+  "acpl_smoothed": [
+    {
+      "level_id": 1,
+      "mean": 223.68235187112248,
+      "std": 42.13402648676002
+    },
+    {
+      "level_id": 2,
+      "mean": 205.61595125046486,
+      "std": 44.8452002980865
+    },
+    {
+      "level_id": 3,
+      "mean": 185.038666929792,
+      "std": 46.92164584098884
+    },
+    {
+      "level_id": 4,
+      "mean": 162.74021317497392,
+      "std": 48.02557776205037
+    },
+    {
+      "level_id": 5,
+      "mean": 139.71804360401458,
+      "std": 47.890957392566754
+    },
+    {
+      "level_id": 6,
+      "mean": 117.0382504747432,
+      "std": 46.386142426572796
+    },
+    {
+      "level_id": 7,
+      "mean": 95.68406869806059,
+      "std": 43.554141862608255
+    },
+    {
+      "level_id": 8,
+      "mean": 76.42864097779652,
+      "std": 39.613592425915144
+    },
+    {
+      "level_id": 9,
+      "mean": 59.7597659943161,
+      "std": 34.916814430765086
+    },
+    {
+      "level_id": 10,
+      "mean": 45.86670378131942,
+      "std": 29.877523411639114
+    }
+  ],
+  "acpl_fit_coefficients": {
+    "mean_log_quadratic": [
+      5.593022465288488,
+      -0.00027911537828283895,
+      -4.4468337837433325e-07
+    ],
+    "std_log_quadratic": [
+      3.3999687288218476,
+      0.001114095024759565,
+      -6.546943399380186e-07
+    ]
+  },
+  "levels_sha256": "730098f5d33c6577758f5c7a993909b0fe0de8a46a755ac2ddaecb71a54388b4"
+}

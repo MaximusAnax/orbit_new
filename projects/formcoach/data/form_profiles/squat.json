@@ -1,0 +1,68 @@
+{
+  "id": "squat_v1",
+  "exercise_id": "barbell-back-squat",
+  "primary_signal": "mid_hip.y",
+  "direction": "down_up",
+  "min_rep_duration_s": 0.8,
+  "prominence_frac": 0.15,
+  "smoothing_window_frac": 0.25,
+  "required_keypoints": {
+    "side_left": ["left_shoulder", "right_shoulder", "left_hip", "right_hip",
+                  "left_knee", "right_knee", "left_ankle", "right_ankle"],
+    "side_right": ["left_shoulder", "right_shoulder", "left_hip", "right_hip",
+                   "left_knee", "right_knee", "left_ankle", "right_ankle"],
+    "front": ["left_shoulder", "right_shoulder", "left_hip", "right_hip",
+              "left_knee", "right_knee", "left_ankle", "right_ankle"]
+  },
+  "rules": [
+    {
+      "fault_id": "insufficient_depth",
+      "views": ["side_left", "side_right"],
+      "feature": "depth_ratio",
+      "feature_keypoints": ["left_hip", "right_hip", "left_knee", "right_knee"],
+      "phase": "bottom",
+      "comparator": "gt",
+      "threshold": 0.03,
+      "severity": "major",
+      "cue": "Sit down another few centimetres - the hip crease must drop below the top of the knee.",
+      "citation": "Powerlifting depth standard: hip crease below the top of the knee."
+    },
+    {
+      "fault_id": "excessive_trunk_lean",
+      "views": ["side_left", "side_right"],
+      "feature": "trunk_lean_deg",
+      "feature_keypoints": ["left_shoulder", "right_shoulder", "left_hip", "right_hip"],
+      "phase": "bottom",
+      "comparator": "gt",
+      "threshold": 55.0,
+      "severity": "moderate",
+      "cue": "Keep your chest up out of the hole - brace hard and drive your upper back into the bar.",
+      "citation": "Escamilla 2001; Fry, Smith & Schilling 2003 (squat trunk kinematics)."
+    },
+    {
+      "fault_id": "knee_valgus",
+      "views": ["front"],
+      "feature": "fppa_deg",
+      "feature_keypoints": ["left_hip", "right_hip", "left_knee", "right_knee",
+                            "left_ankle", "right_ankle"],
+      "phase": "bottom",
+      "comparator": "gt",
+      "threshold": 12.0,
+      "severity": "major",
+      "cue": "Screw your feet into the floor and push your knees out over your toes on the way up.",
+      "citation": "Munro, Herrington & Carolan 2012 (FPPA norms; single-leg task context - tunable)."
+    },
+    {
+      "fault_id": "lateral_shift",
+      "views": ["front"],
+      "feature": "lateral_shift_frac",
+      "feature_keypoints": ["left_hip", "right_hip", "left_ankle", "right_ankle"],
+      "phase": "bottom",
+      "comparator": "gt",
+      "threshold": 0.15,
+      "severity": "minor",
+      "cue": "Load both feet evenly and stand up through the middle instead of drifting to one side.",
+      "citation": null
+    }
+  ]
+}

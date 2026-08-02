@@ -1,0 +1,62 @@
+{
+ "S1": {
+  "entries": 90,
+  "day0_cohort": 12,
+  "stream": 78,
+  "capture_rate_per_day": 0.2137,
+  "materialized_days": 365,
+  "materialized_density": 1.0,
+  "max_calendar_gap": 1,
+  "pinned": 8,
+  "m6_cohort": 32,
+  "m6_gems": 8,
+  "m6_duds": 6,
+  "l_bound": 116,
+  "m5_worst_case_gap": 40
+ },
+ "S2": {
+  "entries": 92,
+  "day0_cohort": 40,
+  "stream": 52,
+  "capture_rate_per_day": 0.1425,
+  "materialized_days": 365,
+  "materialized_density": 1.0,
+  "max_calendar_gap": 1,
+  "pinned": 4,
+  "m6_cohort": 53,
+  "m6_gems": 13,
+  "m6_duds": 10,
+  "l_bound": 146,
+  "m5_worst_case_gap": 36
+ },
+ "S3": {
+  "entries": 6,
+  "day0_cohort": 6,
+  "stream": 0,
+  "capture_rate_per_day": 0.0,
+  "materialized_days": 60,
+  "materialized_density": 1.0,
+  "max_calendar_gap": 1,
+  "pinned": 1,
+  "m6_cohort": 6,
+  "m6_gems": 1,
+  "m6_duds": 1,
+  "l_bound": 107,
+  "m5_worst_case_gap": 33
+ },
+ "S4": {
+  "entries": 43,
+  "day0_cohort": 12,
+  "stream": 31,
+  "capture_rate_per_day": 0.0849,
+  "materialized_days": 153,
+  "materialized_density": 0.4192,
+  "max_calendar_gap": 4,
+  "pinned": 2,
+  "m6_cohort": 20,
+  "m6_gems": 5,
+  "m6_duds": 4,
+  "l_bound": 131,
+  "m5_worst_case_gap": 40
+ }
+}

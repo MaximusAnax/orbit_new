@@ -1,0 +1,277 @@
+{
+  "patterns": [
+    {
+      "id": "earn-beat-estimates",
+      "event_type": "earnings_surprise",
+      "triggers": ["beat estimates", "beat expectations", "beat analyst estimates", "topped estimates", "topped expectations", "exceeded estimates", "exceeded expectations"],
+      "required_context": [],
+      "attribute_extractors": {"surprise_pct": "(\\d{1,3}(?:\\.\\d+)?)\\s?%"},
+      "polarity": "beat",
+      "real_world_example": "Nvidia beat estimates as data-center revenue more than tripled",
+      "notes": "Most common wire phrasing for a positive earnings surprise. surprise_pct is read from any percentage in the trigger sentence, which in earnings copy is the surprise or growth figure."
+    },
+    {
+      "id": "earn-above-consensus",
+      "event_type": "earnings_surprise",
+      "triggers": ["above consensus", "ahead of consensus", "better than expected", "stronger than expected"],
+      "required_context": ["earnings", "profit", "revenue", "results", "eps", "quarter"],
+      "attribute_extractors": {"surprise_pct": "(\\d{1,3}(?:\\.\\d+)?)\\s?%"},
+      "polarity": "beat",
+      "real_world_example": "Alphabet's cloud revenue came in above consensus for the third straight quarter",
+      "notes": "required_context keeps 'better than expected' from firing on non-earnings copy (weather, traffic, turnout)."
+    },
+    {
+      "id": "earn-miss-estimates",
+      "event_type": "earnings_surprise",
+      "triggers": ["missed estimates", "missed expectations", "missed analyst estimates", "fell short of estimates", "fell short of expectations", "trailed estimates"],
+      "required_context": [],
+      "attribute_extractors": {"surprise_pct": "(\\d{1,3}(?:\\.\\d+)?)\\s?%"},
+      "polarity": "miss",
+      "real_world_example": "Tesla missed estimates on both revenue and margins in the fourth quarter",
+      "notes": "Negative counterpart of earn-beat-estimates."
+    },
+    {
+      "id": "earn-below-consensus",
+      "event_type": "earnings_surprise",
+      "triggers": ["below consensus", "short of consensus", "worse than expected", "weaker than expected"],
+      "required_context": ["earnings", "profit", "revenue", "results", "eps", "quarter"],
+      "attribute_extractors": {"surprise_pct": "(\\d{1,3}(?:\\.\\d+)?)\\s?%"},
+      "polarity": "miss",
+      "real_world_example": "Intel's data-center sales landed below consensus as server demand cooled",
+      "notes": "Negative counterpart of earn-above-consensus."
+    },
+
+    {
+      "id": "guid-raise",
+      "event_type": "guidance_change",
+      "triggers": ["raised its guidance", "raised guidance", "raised its full-year guidance", "raised its outlook", "lifted its outlook", "lifted its guidance", "boosted its forecast", "increased its full-year forecast"],
+      "required_context": [],
+      "attribute_extractors": {},
+      "polarity": "raise",
+      "real_world_example": "Walmart raised its full-year guidance after a strong back-to-school quarter",
+      "notes": "Management forecast revision upward; polarity is fixed by the verb, not extracted."
+    },
+    {
+      "id": "guid-cut",
+      "event_type": "guidance_change",
+      "triggers": ["cut its guidance", "cut guidance", "cut its outlook", "lowered its outlook", "lowered its guidance", "slashed its forecast", "trimmed its outlook", "reduced its full-year forecast"],
+      "required_context": [],
+      "attribute_extractors": {},
+      "polarity": "cut",
+      "real_world_example": "Nike cut its full-year guidance, citing softer demand in China",
+      "notes": "Downward revision. Distinct trigger strings from guid-withdraw so the two never both fire on one clause."
+    },
+    {
+      "id": "guid-withdraw",
+      "event_type": "guidance_change",
+      "triggers": ["withdrew its guidance", "withdrew guidance", "withdrew its forecast", "suspended its outlook", "suspended its guidance", "pulled its forecast", "pulled its full-year outlook"],
+      "required_context": [],
+      "attribute_extractors": {},
+      "polarity": "withdraw",
+      "real_world_example": "Boeing withdrew its guidance for the year as the 737 inspection widened",
+      "notes": "Withdrawal is a stronger negative than a cut: management no longer stands behind any number."
+    },
+
+    {
+      "id": "mna-agree-acquire",
+      "event_type": "mna",
+      "triggers": ["agreed to acquire", "agreed to buy", "will acquire", "has agreed to purchase", "to acquire"],
+      "required_context": [],
+      "attribute_extractors": {"deal_value_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)", "premium_pct": "(\\d{1,3}(?:\\.\\d+)?)\\s?%\\s+premium"},
+      "polarity": null,
+      "real_world_example": "Microsoft agreed to acquire Activision Blizzard for $68.7 billion",
+      "notes": "Active-voice acquisition frame. Role resolution reads the asset before the trigger as acquirer."
+    },
+    {
+      "id": "mna-passive-acquired",
+      "event_type": "mna",
+      "triggers": ["to be acquired by", "acquired by", "being acquired by", "to be bought by", "bought by"],
+      "required_context": [],
+      "attribute_extractors": {"deal_value_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)", "premium_pct": "(\\d{1,3}(?:\\.\\d+)?)\\s?%\\s+premium"},
+      "polarity": null,
+      "real_world_example": "Hess to be acquired by Chevron in an all-stock deal",
+      "notes": "Passive frame: the asset following 'by' is the acquirer, the asset before the trigger is the target."
+    },
+    {
+      "id": "mna-takeover-bid",
+      "event_type": "mna",
+      "triggers": ["takeover bid", "tender offer", "buyout offer", "unsolicited offer", "bid for", "offer for"],
+      "required_context": [],
+      "attribute_extractors": {"deal_value_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)", "premium_pct": "(\\d{1,3}(?:\\.\\d+)?)\\s?%\\s+premium"},
+      "polarity": null,
+      "real_world_example": "Elliott launched a takeover bid for Citrix at a 30% premium",
+      "notes": "'bid/offer for X' resolves X as the target directly (FR-5 additional resolver)."
+    },
+    {
+      "id": "mna-merger",
+      "event_type": "mna",
+      "triggers": ["merger", "merger talks", "merger of equals", "to merge with", "combination with"],
+      "required_context": [],
+      "attribute_extractors": {"deal_value_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)", "premium_pct": "(\\d{1,3}(?:\\.\\d+)?)\\s?%\\s+premium"},
+      "polarity": null,
+      "real_world_example": "Live Nation and Ticketmaster announced a merger of equals",
+      "notes": "Symmetric constructions land here; FR-5's fallback assigns every party role=mentioned and emits no signal."
+    },
+
+    {
+      "id": "reg-adverse-enforcement",
+      "event_type": "regulatory_action",
+      "triggers": ["sued", "filed suit against", "filed charges against", "brought an enforcement action against", "opened an investigation into", "issued a cease-and-desist", "subpoenaed"],
+      "required_context": [],
+      "attribute_extractors": {"agency": "\\b(SEC|CFTC|DOJ|FTC|FDA|FCA|ESMA|OCC|FINRA|CMA)\\b", "amount_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)"},
+      "polarity": "adverse",
+      "real_world_example": "The SEC sued Ripple Labs over unregistered securities sales",
+      "notes": "Enforcement opening. Reputational penalties dominate the fine itself (Karpoff, Lee & Martin 2008)."
+    },
+    {
+      "id": "reg-adverse-penalty",
+      "event_type": "regulatory_action",
+      "triggers": ["fined", "penalized", "banned", "ordered to pay", "revoked the license of", "rejected the application"],
+      "required_context": [],
+      "attribute_extractors": {"agency": "\\b(SEC|CFTC|DOJ|FTC|FDA|FCA|ESMA|OCC|FINRA|CMA)\\b", "amount_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)"},
+      "polarity": "adverse",
+      "real_world_example": "Binance was fined $4.3 billion in a settlement with US authorities",
+      "notes": "Concluded adverse action with a quantified penalty."
+    },
+    {
+      "id": "reg-favorable-approval",
+      "event_type": "regulatory_action",
+      "triggers": ["approved", "granted approval to", "cleared", "authorized", "won approval"],
+      "required_context": ["SEC", "CFTC", "DOJ", "FTC", "FDA", "regulator", "regulatory", "commission", "authority", "watchdog"],
+      "attribute_extractors": {"agency": "\\b(SEC|CFTC|DOJ|FTC|FDA|FCA|ESMA|OCC|FINRA|CMA)\\b"},
+      "polarity": "favorable",
+      "real_world_example": "The SEC approved the first spot bitcoin exchange-traded funds",
+      "notes": "required_context is mandatory here: 'approved' alone fires on board approvals, budget approvals and product reviews."
+    },
+    {
+      "id": "reg-favorable-relief",
+      "event_type": "regulatory_action",
+      "triggers": ["dropped its case against", "dismissed the case against", "granted a license to", "settled without penalty", "closed its investigation into"],
+      "required_context": [],
+      "attribute_extractors": {"agency": "\\b(SEC|CFTC|DOJ|FTC|FDA|FCA|ESMA|OCC|FINRA|CMA)\\b", "amount_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)"},
+      "polarity": "favorable",
+      "real_world_example": "The CFTC closed its investigation into the exchange without further action",
+      "notes": "Removal of a regulatory overhang is a favorable event even with no new permission granted."
+    },
+
+    {
+      "id": "list-available-on",
+      "event_type": "listing",
+      "triggers": ["is now available on", "now available on", "available for trading on", "begins trading on", "will begin trading on", "goes live on"],
+      "required_context": [],
+      "attribute_extractors": {"venue": "\\b(Coinbase|Binance|Kraken|Bitstamp|Gemini|OKX|Bybit|Upbit|Bitfinex|NYSE|Nasdaq|Cboe)\\b"},
+      "polarity": null,
+      "real_world_example": "Chainlink is now available on Coinbase for trading",
+      "notes": "Exchange-listing announcement; the venue lexicon consumes the venue span before subject resolution (FR-5)."
+    },
+    {
+      "id": "list-to-list",
+      "event_type": "listing",
+      "triggers": ["will list", "has listed", "listed on", "to list", "adds support for", "will add support for", "added to its listing roadmap"],
+      "required_context": [],
+      "attribute_extractors": {"venue": "\\b(Coinbase|Binance|Kraken|Bitstamp|Gemini|OKX|Bybit|Upbit|Bitfinex|NYSE|Nasdaq|Cboe)\\b"},
+      "polarity": null,
+      "real_world_example": "Binance will list Sui in its innovation zone on Thursday",
+      "notes": "Venue-first phrasing of the same event."
+    },
+    {
+      "id": "list-index-add",
+      "event_type": "listing",
+      "triggers": ["will join the S&P 500", "joins the S&P 500", "added to the S&P 500", "will join the Nasdaq-100", "added to the Nasdaq-100"],
+      "required_context": [],
+      "attribute_extractors": {"venue": "\\b(S&P 500|Nasdaq-100)\\b"},
+      "polarity": null,
+      "real_world_example": "Uber will join the S&P 500 before the open on Friday",
+      "notes": "Equity index inclusion. Post-entry drift is at the noise floor; the prior is minor by kind (FR-3 kind resolution)."
+    },
+
+    {
+      "id": "delist-removed",
+      "event_type": "delisting",
+      "triggers": ["delisted", "will delist", "has delisted", "to delist", "delisting"],
+      "required_context": [],
+      "attribute_extractors": {"venue": "\\b(Coinbase|Binance|Kraken|Bitstamp|Gemini|OKX|Bybit|Upbit|Bitfinex|NYSE|Nasdaq|Cboe)\\b"},
+      "polarity": null,
+      "real_world_example": "Coinbase delisted three privacy tokens for users in the United Kingdom",
+      "notes": "Direct delisting phrasing."
+    },
+    {
+      "id": "delist-remove-support",
+      "event_type": "delisting",
+      "triggers": ["will remove support for", "removing support for", "removal from", "suspend trading in", "suspended trading in", "halt trading of"],
+      "required_context": [],
+      "attribute_extractors": {"venue": "\\b(Coinbase|Binance|Kraken|Bitstamp|Gemini|OKX|Bybit|Upbit|Bitfinex|NYSE|Nasdaq|Cboe)\\b"},
+      "polarity": null,
+      "real_world_example": "Kraken will remove support for the pair at the end of the month",
+      "notes": "Support-removal phrasing used by most exchanges' own notices."
+    },
+    {
+      "id": "delist-index-remove",
+      "event_type": "delisting",
+      "triggers": ["removed from the S&P 500", "will be removed from the S&P 500", "dropped from the S&P 500", "removed from the Nasdaq-100"],
+      "required_context": [],
+      "attribute_extractors": {"venue": "\\b(S&P 500|Nasdaq-100)\\b"},
+      "polarity": null,
+      "real_world_example": "Lincoln National will be removed from the S&P 500 at the next rebalance",
+      "notes": "Equity index deletion, the mirror of list-index-add."
+    },
+
+    {
+      "id": "hack-exploited",
+      "event_type": "hack_exploit",
+      "triggers": ["was exploited", "exploited", "drained", "bridge hack", "funds stolen", "stolen in an exploit"],
+      "required_context": [],
+      "attribute_extractors": {"amount_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)", "vector": "\\b(bridge|smart contract|private key|oracle|flash loan|hot wallet|phishing|reentrancy|validator)\\b"},
+      "polarity": null,
+      "real_world_example": "Ronin bridge hacked for $625 million in crypto's biggest exploit",
+      "notes": "metaphor_stoplists covers growth hack / hackathon / life hack so figurative usage never fires."
+    },
+    {
+      "id": "hack-breach",
+      "event_type": "hack_exploit",
+      "triggers": ["security breach", "suffered a hack", "was hacked", "attackers stole", "siphoned"],
+      "required_context": [],
+      "attribute_extractors": {"amount_usd": "(\\$\\s?[0-9][0-9,.]*\\s?(?:billion|million|bn|mn)?)", "vector": "\\b(bridge|smart contract|private key|oracle|flash loan|hot wallet|phishing|reentrancy|validator)\\b"},
+      "polarity": null,
+      "real_world_example": "Curve Finance suffered a hack after a compiler bug hit several pools",
+      "notes": "Breach phrasing, including custodial and exchange incidents."
+    }
+  ],
+
+  "negation_cues": ["denied", "denies", "denying", "rejected", "rejects", "ruled out", "rules out", "no longer", "refuted", "dismissed reports", "has no plans", "not in talks", "never in talks", "walked away from"],
+
+  "hedge_cues": ["reportedly", "in talks", "sources say", "according to sources", "people familiar", "rumored", "rumours", "rumors", "considering", "exploring", "is said to", "said to be", "weighing", "may acquire", "could acquire"],
+
+  "historical_guards": ["anniversary", "since the", "years ago", "back in", "at the time"],
+
+  "metaphor_stoplists": {
+    "hack_exploit": ["growth hack", "hackathon", "life hack", "hack day", "hacked together", "hacking away", "productivity hack"],
+    "mna": ["merger of ideas", "merger of styles", "merging traffic"],
+    "listing": ["listing agent", "property listing", "job listing", "listing price of the home"],
+    "delisting": ["listing agent", "property listing"],
+    "regulatory_action": ["approved the minutes", "approved the budget", "board approved", "approved by the board", "approved by both boards", "shareholders approved"],
+    "earnings_surprise": ["beat the heat", "beat the traffic"],
+    "guidance_change": ["guidance counselor", "parental guidance"]
+  },
+
+  "venue_lexicon": {
+    "Coinbase": "eq:COIN",
+    "Binance": null,
+    "Kraken": null,
+    "Bitstamp": null,
+    "Gemini": null,
+    "OKX": null,
+    "Bybit": null,
+    "Upbit": null,
+    "Bitfinex": null,
+    "Nasdaq": "eq:NDAQ",
+    "NYSE": "eq:ICE",
+    "Cboe": "eq:CBOE",
+    "S&P 500": null,
+    "Nasdaq-100": null
+  },
+
+  "abbreviations": ["Inc.", "Corp.", "Co.", "Ltd.", "L.P.", "plc.", "U.S.", "U.K.", "U.N.", "E.U.", "Mr.", "Mrs.", "Ms.", "Dr.", "Prof.", "Sr.", "Jr.", "St.", "No.", "vs.", "etc.", "e.g.", "i.e.", "approx.", "est.", "a.m.", "p.m.", "Q1.", "Q2.", "Q3.", "Q4.", "Fig.", "Sec.", "Reg."],
+
+  "forbidden_lexicon": ["buy", "sell", "short it", "you should", "act now", "guaranteed", "can't lose", "cannot lose", "sure thing", "must buy", "must sell", "must own", "load up", "get in now", "get out now", "don't miss", "strong buy", "no brainer", "easy money", "free money", "double your money", "to the moon", "back up the truck", "bet the farm", "go long", "go short", "dump it", "sell everything", "take profits", "we recommend", "i recommend", "our recommendation", "trade this", "you must"]
+}

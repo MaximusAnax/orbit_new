@@ -1,0 +1,4493 @@
+{
+  "cases": [
+    {
+      "id": "g01",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: a neutral core with at most one accent reads as deliberate",
+      "rationale": "All-neutral navy/gray/white core with a single blue accent shirt; nothing competes.",
+      "items": [
+        {
+          "name": "navy-coat",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-sweater",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-shirt",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "charcoal-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "charcoal",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-boots",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g02",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: a neutral core with at most one accent reads as deliberate",
+      "rationale": "Neutral core plus one burgundy knit: a single accent against neutrals.",
+      "items": [
+        {
+          "name": "burgundy-knit",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "burgundy",
+              "hue": 350.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-shirt",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-shoes",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-coat",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g03",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "the stylists' rule of three colours",
+      "rationale": "Two analogous accents (rust and mustard) with three neutrals; one hue family.",
+      "items": [
+        {
+          "name": "rust-shirt",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "rust",
+              "hue": 20.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "mustard-scarf-knit",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "mustard",
+              "hue": 50.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "olive-trousers",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "beige-jacket",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g04",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "the stylists' rule of three colours",
+      "rationale": "Blue and cobalt sit 15 degrees apart: a monochrome-blue outfit over denim.",
+      "items": [
+        {
+          "name": "blue-shirt",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "cobalt-sweater",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "cobalt",
+              "hue": 235.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "denim-jeans",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "denim",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-jacket",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g05",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: a neutral core with at most one accent reads as deliberate",
+      "rationale": "Single green accent, everything else neutral; the accent is the only statement.",
+      "items": [
+        {
+          "name": "green-tee",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "beige-chinos",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-overshirt",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g06",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "the stylists' rule of three colours",
+      "rationale": "Teal and blue are analogous; two neutrals carry the rest.",
+      "items": [
+        {
+          "name": "teal-knit",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "teal",
+              "hue": 180.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "blue-shirt",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-shoes",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g07",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: a neutral core with at most one accent reads as deliberate",
+      "rationale": "One pink accent against a stone/white/navy base.",
+      "items": [
+        {
+          "name": "pink-shirt",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "pink",
+              "hue": 330.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "stone-chinos",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "stone",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-blazer",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g08",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "the stylists' rule of three colours",
+      "rationale": "Red and burgundy are ten degrees apart: one colour story, two depths.",
+      "items": [
+        {
+          "name": "burgundy-sweater",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "burgundy",
+              "hue": 350.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "red-scarf-knit",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "red",
+              "hue": 0.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "charcoal-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "charcoal",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-boots",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-coat",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g09",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: a neutral core with at most one accent reads as deliberate",
+      "rationale": "Complementary blue and rust used sparingly against neutrals still reads well.",
+      "items": [
+        {
+          "name": "rust-knit",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "rust",
+              "hue": 20.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "denim-jeans",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "denim",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "beige-jacket",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g10",
+      "label": "good",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: a neutral core with at most one accent reads as deliberate",
+      "rationale": "Olive, khaki and brown are all neutrals in capsule practice; a single green tee lifts it.",
+      "items": [
+        {
+          "name": "green-tee",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "olive-jacket",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "khaki-trousers",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "khaki",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "cream-cap-knit",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "cream",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g11",
+      "label": "good",
+      "decided_by": "formality_spread",
+      "source": "menswear dress codes: every element of an outfit sits at the same code",
+      "rationale": "Business: suit trousers, dress shirt, blazer and oxfords all sit at code 4.",
+      "items": [
+        {
+          "name": "white-dress-shirt",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "charcoal-suit-trousers",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "charcoal",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-blazer",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-oxfords",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g12",
+      "label": "good",
+      "decided_by": "formality_spread",
+      "source": "menswear dress codes: every element of an outfit sits at the same code",
+      "rationale": "Smart casual held at code 3 throughout.",
+      "items": [
+        {
+          "name": "blue-oxford-shirt",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "stone-chinos",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "stone",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-loafers",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-knit",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g13",
+      "label": "good",
+      "decided_by": "formality_spread",
+      "source": "menswear dress codes: every element of an outfit sits at the same code",
+      "rationale": "Weekend casual held at code 2 throughout.",
+      "items": [
+        {
+          "name": "white-tee",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "denim-jeans",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "denim",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-hoodie",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g14",
+      "label": "good",
+      "decided_by": "formality_spread",
+      "source": "menswear dress codes: every element of an outfit sits at the same code",
+      "rationale": "Business casual with one step of movement (code 3 to 4), which reads as intentional.",
+      "items": [
+        {
+          "name": "white-dress-shirt",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-trousers",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-loafers",
+          "formality": 3,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-blazer",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g15",
+      "label": "good",
+      "decided_by": "formality_spread",
+      "source": "menswear dress codes: every element of an outfit sits at the same code",
+      "rationale": "Outdoor kit held at code 2: shell, fleece, technical trousers, boots.",
+      "items": [
+        {
+          "name": "olive-shell",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-fleece",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-trousers",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g16",
+      "label": "good",
+      "decided_by": "formality_spread",
+      "source": "menswear dress codes: every element of an outfit sits at the same code",
+      "rationale": "Formal, code 5 throughout.",
+      "items": [
+        {
+          "name": "white-dress-shirt",
+          "formality": 5,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-suit-trousers",
+          "formality": 5,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-suit-jacket",
+          "formality": 5,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-oxfords",
+          "formality": 5,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g17",
+      "label": "good",
+      "decided_by": "formality_spread",
+      "source": "menswear dress codes: every element of an outfit sits at the same code",
+      "rationale": "Athleisure held at code 1-2, which is a code in its own right.",
+      "items": [
+        {
+          "name": "gray-tee",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-joggers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-track-top",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g18",
+      "label": "good",
+      "decided_by": "formality_spread",
+      "source": "menswear dress codes: every element of an outfit sits at the same code",
+      "rationale": "Code 3 with a single code-4 coat: one step, and the coat is the dressiest element.",
+      "items": [
+        {
+          "name": "navy-knit",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "camel-coat",
+          "formality": 4,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g19",
+      "label": "good",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: one material story head to toe",
+      "rationale": "Every piece is tailored: the outfit tells one story.",
+      "items": [
+        {
+          "name": "white-dress-shirt",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-suit-trousers",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-suit-jacket",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-oxfords",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g20",
+      "label": "good",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: one material story head to toe",
+      "rationale": "Every piece is outdoor kit; nothing is borrowed from another wardrobe.",
+      "items": [
+        {
+          "name": "olive-shell",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "beige-fleece",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-trousers",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-beanie-knit",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g21",
+      "label": "good",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: one material story head to toe",
+      "rationale": "A single preppy register across four pieces.",
+      "items": [
+        {
+          "name": "blue-oxford-shirt",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "stone-chinos",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "stone",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-loafers",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-knit",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g22",
+      "label": "good",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: one material story head to toe",
+      "rationale": "Minimalist register throughout: unbranded, unpatterned, neutral.",
+      "items": [
+        {
+          "name": "white-tee",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-trousers",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-overshirt",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g23",
+      "label": "good",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: one material story head to toe",
+      "rationale": "Classic register throughout, with one shared secondary tag.",
+      "items": [
+        {
+          "name": "white-shirt",
+          "formality": 3,
+          "style_tags": [
+            "classic",
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-knit",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g24",
+      "label": "good",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: one material story head to toe",
+      "rationale": "Sporty register throughout, one accent colour.",
+      "items": [
+        {
+          "name": "teal-track-top",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "teal",
+              "hue": 180.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-joggers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-tee",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g25",
+      "label": "good",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: one material story head to toe",
+      "rationale": "Streetwear register throughout, all neutral.",
+      "items": [
+        {
+          "name": "black-hoodie",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "denim-jeans",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "denim",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "olive-parka",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g26",
+      "label": "good",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: one material story head to toe",
+      "rationale": "Four classic pieces plus one that shares the register; nothing is an outlier.",
+      "items": [
+        {
+          "name": "cream-knit",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "cream",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-loafers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-coat",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-shirt",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b01",
+      "label": "bad",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: more than one saturated colour fighting for attention",
+      "rationale": "Red, yellow, green and blue all at once; four saturated colours competing.",
+      "items": [
+        {
+          "name": "red-shirt",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "red",
+              "hue": 0.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "yellow-knit",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "yellow",
+              "hue": 60.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "green-trousers",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "blue-jacket",
+          "formality": 3,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "label": "bad",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: more than one saturated colour fighting for attention",
+      "rationale": "Orange top with a lime bottom and a magenta jacket.",
+      "items": [
+        {
+          "name": "orange-tee",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "orange",
+              "hue": 30.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "lime-shorts",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "lime",
+              "hue": 90.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "magenta-jacket",
+          "formality": 3,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "magenta",
+              "hue": 310.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "teal-trainers",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "teal",
+              "hue": 180.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-cap-knit",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b03",
+      "label": "bad",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: more than one saturated colour fighting for attention",
+      "rationale": "Purple, mustard and emerald in one outfit; every pair fights.",
+      "items": [
+        {
+          "name": "purple-shirt",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "purple",
+              "hue": 280.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "mustard-trousers",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "mustard",
+              "hue": 50.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "emerald-jacket",
+          "formality": 3,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "emerald",
+              "hue": 150.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 3,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "label": "bad",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: more than one saturated colour fighting for attention",
+      "rationale": "Pink with lime and cobalt: three unrelated saturated hues.",
+      "items": [
+        {
+          "name": "pink-knit",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "pink",
+              "hue": 330.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "lime-trousers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "lime",
+              "hue": 90.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "cobalt-jacket",
+          "formality": 3,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "cobalt",
+              "hue": 235.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "label": "bad",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: more than one saturated colour fighting for attention",
+      "rationale": "Red, green and orange together read as accidental, not deliberate.",
+      "items": [
+        {
+          "name": "red-knit",
+          "formality": 2,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "red",
+              "hue": 0.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "green-trousers",
+          "formality": 3,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "orange-jacket",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "orange",
+              "hue": 30.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-boots",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "label": "bad",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: more than one saturated colour fighting for attention",
+      "rationale": "Yellow, teal and magenta: three colours, no relationship between any pair.",
+      "items": [
+        {
+          "name": "yellow-shirt",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "yellow",
+              "hue": 60.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "teal-trousers",
+          "formality": 3,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "teal",
+              "hue": 180.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "magenta-knit",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "magenta",
+              "hue": 310.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-cap-knit",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "label": "bad",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: more than one saturated colour fighting for attention",
+      "rationale": "Blue, mustard and red, each at full saturation.",
+      "items": [
+        {
+          "name": "blue-shirt",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "mustard-knit",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "mustard",
+              "hue": 50.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "red-trousers",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "red",
+              "hue": 0.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-loafers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "label": "bad",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: more than one saturated colour fighting for attention",
+      "rationale": "Emerald, purple and orange; the eye has nowhere to rest.",
+      "items": [
+        {
+          "name": "emerald-knit",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "emerald",
+              "hue": 150.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "purple-trousers",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "purple",
+              "hue": 280.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "orange-jacket",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "orange",
+              "hue": 30.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "label": "bad",
+      "decided_by": "hue_family_count",
+      "source": "the stylists' rule of three colours, counted across every colour on the outfit",
+      "rationale": "Every main colour is a neutral, but the trims add red, green, blue and yellow: five colour families on one outfit.",
+      "items": [
+        {
+          "name": "navy-shirt-red-trim",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "red",
+              "hue": 0.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "gray-knit-green-trim",
+          "formality": 3,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "black-trousers-blue-trim",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers-yellow-trim",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "yellow",
+              "hue": 60.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "label": "bad",
+      "decided_by": "hue_family_count",
+      "source": "the stylists' rule of three colours, counted across every colour on the outfit",
+      "rationale": "Neutral mains, but four different accent families across the pieces.",
+      "items": [
+        {
+          "name": "beige-jacket-orange-trim",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "orange",
+              "hue": 30.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "white-tee-teal-print",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "teal",
+              "hue": 180.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "denim-jeans-pink-stitch",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "denim",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "pink",
+              "hue": 330.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots-lime-laces",
+          "formality": 3,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "lime",
+              "hue": 90.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "label": "bad",
+      "decided_by": "hue_family_count",
+      "source": "the stylists' rule of three colours, counted across every colour on the outfit",
+      "rationale": "Six colour families once the trims are counted; the mains hide the problem.",
+      "items": [
+        {
+          "name": "black-coat-red-lining",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "red",
+              "hue": 0.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "gray-knit-mustard-trim",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "mustard",
+              "hue": 50.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "navy-trousers-emerald-tape",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "emerald",
+              "hue": 150.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers-purple-sole",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "purple",
+              "hue": 280.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "olive-cap-cobalt-logo",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "cobalt",
+              "hue": 235.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "label": "bad",
+      "decided_by": "hue_family_count",
+      "source": "the stylists' rule of three colours, counted across every colour on the outfit",
+      "rationale": "Neutral mains with four unrelated accent families.",
+      "items": [
+        {
+          "name": "charcoal-shirt-lime-buttons",
+          "formality": 3,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "charcoal",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "lime",
+              "hue": 90.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "stone-chinos-red-belt-loop",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "stone",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "red",
+              "hue": 0.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "brown-loafers-blue-trim",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "cream-knit-magenta-cuff",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "cream",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "magenta",
+              "hue": 310.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "label": "bad",
+      "decided_by": "hue_family_count",
+      "source": "the stylists' rule of three colours, counted across every colour on the outfit",
+      "rationale": "The mains are all neutral and the accents span rust, green, teal and purple.",
+      "items": [
+        {
+          "name": "khaki-jacket-rust-trim",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "khaki",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "rust",
+              "hue": 20.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "white-shirt-green-check",
+          "formality": 2,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "navy-jeans-teal-stitch",
+          "formality": 2,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "teal",
+              "hue": 180.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "gray-boots-purple-laces",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "purple",
+              "hue": 280.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "label": "bad",
+      "decided_by": "hue_family_count",
+      "source": "the stylists' rule of three colours, counted across every colour on the outfit",
+      "rationale": "Five accent families on four garments.",
+      "items": [
+        {
+          "name": "black-shell-orange-zip",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "orange",
+              "hue": 30.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "beige-fleece-blue-panel",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "olive-trousers-yellow-tab",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "yellow",
+              "hue": 60.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers-emerald-flash",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "emerald",
+              "hue": 150.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "label": "bad",
+      "decided_by": "formality_spread",
+      "source": "dress-code mismatch: athletic and tailored elements in the same outfit",
+      "rationale": "Running shoes with suit trousers and a suit jacket: codes 1 and 5 in one outfit.",
+      "items": [
+        {
+          "name": "white-running-shoes",
+          "formality": 1,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "charcoal-suit-trousers",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "charcoal",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-suit-jacket",
+          "formality": 5,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-dress-shirt",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b16",
+      "label": "bad",
+      "decided_by": "formality_spread",
+      "source": "dress-code mismatch: athletic and tailored elements in the same outfit",
+      "rationale": "A dress shirt and oxfords with athletic joggers.",
+      "items": [
+        {
+          "name": "white-dress-shirt",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-joggers",
+          "formality": 1,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-oxfords",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-blazer",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b17",
+      "label": "bad",
+      "decided_by": "formality_spread",
+      "source": "dress-code mismatch: athletic and tailored elements in the same outfit",
+      "rationale": "Beach sandals under a business suit.",
+      "items": [
+        {
+          "name": "beige-sandals",
+          "formality": 1,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-suit-trousers",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-dress-shirt",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-suit-jacket",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b18",
+      "label": "bad",
+      "decided_by": "formality_spread",
+      "source": "dress-code mismatch: athletic and tailored elements in the same outfit",
+      "rationale": "A formal coat over gym kit.",
+      "items": [
+        {
+          "name": "black-formal-coat",
+          "formality": 5,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-gym-tee",
+          "formality": 1,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-shorts",
+          "formality": 1,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b19",
+      "label": "bad",
+      "decided_by": "formality_spread",
+      "source": "dress-code mismatch: athletic and tailored elements in the same outfit",
+      "rationale": "Tailored trousers and oxfords with a hoodie and a track top.",
+      "items": [
+        {
+          "name": "black-oxfords",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "charcoal-trousers",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "charcoal",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-hoodie",
+          "formality": 1,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-track-top",
+          "formality": 1,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b20",
+      "label": "bad",
+      "decided_by": "formality_spread",
+      "source": "dress-code mismatch: athletic and tailored elements in the same outfit",
+      "rationale": "Evening jacket with cargo shorts and trainers.",
+      "items": [
+        {
+          "name": "black-evening-jacket",
+          "formality": 5,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "olive-cargo-shorts",
+          "formality": 1,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-dress-shirt",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b21",
+      "label": "bad",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: an outfit assembled from four unrelated registers",
+      "rationale": "Four pieces at the same code but from four different wardrobes.",
+      "items": [
+        {
+          "name": "navy-track-top",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-work-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "denim-jeans",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "denim",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "teal-camp-shirt",
+          "formality": 2,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "teal",
+              "hue": 180.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b22",
+      "label": "bad",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: an outfit assembled from four unrelated registers",
+      "rationale": "Nothing shares a register, and the two colours in play do not agree either.",
+      "items": [
+        {
+          "name": "gray-hoodie",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "olive-chinos",
+          "formality": 2,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "rust-overshirt",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "rust",
+              "hue": 20.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "blue-loafers",
+          "formality": 2,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b23",
+      "label": "bad",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: an outfit assembled from four unrelated registers",
+      "rationale": "Every piece is code 3 and every piece belongs to a different story.",
+      "items": [
+        {
+          "name": "white-shirt",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-cargo-trousers",
+          "formality": 3,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "purple-knit",
+          "formality": 3,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "purple",
+              "hue": 280.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-derbies",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b24",
+      "label": "bad",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: an outfit assembled from four unrelated registers",
+      "rationale": "Four unrelated registers at code 2, with a green/orange pair on top.",
+      "items": [
+        {
+          "name": "green-tee",
+          "formality": 2,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "orange-shorts",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "orange",
+              "hue": 30.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "beige-blazer",
+          "formality": 2,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b25",
+      "label": "bad",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: an outfit assembled from four unrelated registers",
+      "rationale": "A tailored jacket, technical trousers, a skate shoe and a knit that share nothing.",
+      "items": [
+        {
+          "name": "navy-blazer",
+          "formality": 3,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-technical-trousers",
+          "formality": 3,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-skate-shoes",
+          "formality": 3,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "magenta-knit",
+          "formality": 3,
+          "style_tags": [
+            "casualwear"
+          ],
+          "colors": [
+            {
+              "name": "magenta",
+              "hue": 310.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b26",
+      "label": "bad",
+      "decided_by": "tag_cohesion",
+      "source": "workwear/uniform convention: an outfit assembled from four unrelated registers",
+      "rationale": "Same code throughout, four registers, and a mustard/blue pair with no relationship.",
+      "items": [
+        {
+          "name": "mustard-knit",
+          "formality": 2,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "mustard",
+              "hue": 50.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "blue-joggers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-overshirt",
+          "formality": 2,
+          "style_tags": [
+            "streetwear"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x01",
+      "label": "borderline",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: defensible but not obviously right",
+      "rationale": "One complementary pair (blue and rust) plus one step of formality: defensible.",
+      "items": [
+        {
+          "name": "blue-shirt",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "rust-knit",
+          "formality": 2,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "rust",
+              "hue": 20.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 3,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x02",
+      "label": "borderline",
+      "decided_by": "tag_cohesion",
+      "source": "capsule-wardrobe practice: defensible but not obviously right",
+      "rationale": "Three pieces share a register, one does not, and the palette is clean.",
+      "items": [
+        {
+          "name": "white-shirt",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "stone-chinos",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "stone",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-knit",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-trainers",
+          "formality": 3,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x03",
+      "label": "borderline",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: defensible but not obviously right",
+      "rationale": "Green and teal are close but not adjacent; the rest is neutral.",
+      "items": [
+        {
+          "name": "green-knit",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "teal-shirt",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "teal",
+              "hue": 180.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "beige-chinos",
+          "formality": 2,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "beige",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 2,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x04",
+      "label": "borderline",
+      "decided_by": "formality_spread",
+      "source": "capsule-wardrobe practice: defensible but not obviously right",
+      "rationale": "A two-step formality range that some would defend as a smart-casual mix.",
+      "items": [
+        {
+          "name": "white-dress-shirt",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "denim-jeans",
+          "formality": 2,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "denim",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "brown-loafers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-blazer",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x05",
+      "label": "borderline",
+      "decided_by": "tag_cohesion",
+      "source": "capsule-wardrobe practice: defensible but not obviously right",
+      "rationale": "Two registers, evenly split, on a neutral palette.",
+      "items": [
+        {
+          "name": "gray-hoodie",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-trainers",
+          "formality": 2,
+          "style_tags": [
+            "sporty"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "olive-chinos",
+          "formality": 2,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "olive",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "navy-overshirt",
+          "formality": 2,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x06",
+      "label": "borderline",
+      "decided_by": "hue_family_count",
+      "source": "capsule-wardrobe practice: defensible but not obviously right",
+      "rationale": "Exactly three accent families: at the limit of the rule of three, not over it.",
+      "items": [
+        {
+          "name": "navy-jacket-red-trim",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "red",
+              "hue": 0.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "white-shirt-green-check",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "gray-trousers-blue-stitch",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            },
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "accent"
+            }
+          ]
+        },
+        {
+          "name": "brown-boots",
+          "formality": 3,
+          "style_tags": [
+            "outdoorsy"
+          ],
+          "colors": [
+            {
+              "name": "brown",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x07",
+      "label": "borderline",
+      "decided_by": "hue_zone",
+      "source": "capsule-wardrobe practice: defensible but not obviously right",
+      "rationale": "One clashing pair against three neutrals: noticeable, not ruinous.",
+      "items": [
+        {
+          "name": "mustard-knit",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "mustard",
+              "hue": 50.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "green-shirt",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "green",
+              "hue": 120.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "charcoal-trousers",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "charcoal",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "black-boots",
+          "formality": 3,
+          "style_tags": [
+            "classic"
+          ],
+          "colors": [
+            {
+              "name": "black",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x08",
+      "label": "borderline",
+      "decided_by": "formality_spread",
+      "source": "capsule-wardrobe practice: defensible but not obviously right",
+      "rationale": "One step of formality and only half the pieces sharing a register.",
+      "items": [
+        {
+          "name": "navy-blazer",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "navy",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "gray-trousers",
+          "formality": 4,
+          "style_tags": [
+            "tailored"
+          ],
+          "colors": [
+            {
+              "name": "gray",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "white-sneakers",
+          "formality": 3,
+          "style_tags": [
+            "minimal"
+          ],
+          "colors": [
+            {
+              "name": "white",
+              "hue": null,
+              "neutral": true,
+              "role": "main"
+            }
+          ]
+        },
+        {
+          "name": "blue-shirt",
+          "formality": 3,
+          "style_tags": [
+            "preppy"
+          ],
+          "colors": [
+            {
+              "name": "blue",
+              "hue": 220.0,
+              "neutral": false,
+              "role": "main"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
