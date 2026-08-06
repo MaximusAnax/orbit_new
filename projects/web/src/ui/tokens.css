@@ -1,0 +1,172 @@
+/* Design tokens.
+ *
+ * One system, twelve identities: every project shares the same neutrals, type
+ * scale and spacing, and contributes only an accent hue. Components read
+ * --accent, which the shell rebinds per project, so a screen written once looks
+ * native everywhere.
+ *
+ * Semantic colours (ok / warn / bad) are deliberately separate from the accent —
+ * these apps report gate results, review decisions and refusals, and state must
+ * never be confusable with branding.
+ */
+
+:root {
+  /* neutrals — warm-biased, so they sit with the accents rather than fighting them */
+  --paper: #f6f4f0;
+  --surface: #fdfcfa;
+  --surface-2: #efece4;
+  --rule: #e0dcd2;
+  --rule-strong: #c8c2b4;
+  --ink: #1a1915;
+  --ink-2: #58544a;
+  --ink-3: #8b8578;
+
+  /* semantic — never used for decoration */
+  --ok: #2f6b4c;
+  --ok-bg: #e5efe8;
+  --warn: #8a6516;
+  --warn-bg: #f6eeda;
+  --bad: #9c3c2f;
+  --bad-bg: #f6e5e1;
+  --info-bg: #e6ecf2;
+
+  /* per-project accent; the shell overrides these two */
+  --accent: #8a661b;
+  --accent-ink: #ffffff;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-data: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+
+  --radius: 3px;
+  --shadow: 0 1px 2px rgb(26 25 21 / 0.06), 0 4px 12px rgb(26 25 21 / 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #16150f;
+    --surface: #1e1c16;
+    --surface-2: #272319;
+    --rule: #332f25;
+    --rule-strong: #453f32;
+    --ink: #efebe1;
+    --ink-2: #a9a293;
+    --ink-3: #7d7667;
+
+    --ok: #74c199;
+    --ok-bg: #1b2e24;
+    --warn: #d7a94f;
+    --warn-bg: #2b2416;
+    --bad: #e08975;
+    --bad-bg: #2e1d19;
+    --info-bg: #1b2129;
+
+    --accent: #d9ac4d;
+    --accent-ink: #17150f;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 12px rgb(0 0 0 / 0.3);
+  }
+}
+
+/* The viewer's toggle must beat the OS preference in both directions. */
+:root[data-theme="dark"] {
+  --paper: #16150f;
+  --surface: #1e1c16;
+  --surface-2: #272319;
+  --rule: #332f25;
+  --rule-strong: #453f32;
+  --ink: #efebe1;
+  --ink-2: #a9a293;
+  --ink-3: #7d7667;
+  --ok: #74c199;
+  --ok-bg: #1b2e24;
+  --warn: #d7a94f;
+  --warn-bg: #2b2416;
+  --bad: #e08975;
+  --bad-bg: #2e1d19;
+  --info-bg: #1b2129;
+  --accent-ink: #17150f;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 12px rgb(0 0 0 / 0.3);
+}
+
+:root[data-theme="light"] {
+  --paper: #f6f4f0;
+  --surface: #fdfcfa;
+  --surface-2: #efece4;
+  --rule: #e0dcd2;
+  --rule-strong: #c8c2b4;
+  --ink: #1a1915;
+  --ink-2: #58544a;
+  --ink-3: #8b8578;
+  --ok: #2f6b4c;
+  --ok-bg: #e5efe8;
+  --warn: #8a6516;
+  --warn-bg: #f6eeda;
+  --bad: #9c3c2f;
+  --bad-bg: #f6e5e1;
+  --info-bg: #e6ecf2;
+  --accent-ink: #ffffff;
+  --shadow: 0 1px 2px rgb(26 25 21 / 0.06), 0 4px 12px rgb(26 25 21 / 0.04);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0; }
+
+a { color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Numbers that line up in columns must be tabular. */
+.num,
+td.num,
+.mono {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+}
