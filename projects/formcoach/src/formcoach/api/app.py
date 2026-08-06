@@ -184,6 +184,15 @@ def _register(app: FastAPI) -> None:
             ],
         )
 
+    @app.get("/programs", response_model=list[S.ProgramOut], tags=["programs"])
+    def list_programs(service: FormCoachService = Service) -> list[S.ProgramOut]:
+        """Every program, newest first.
+
+        The CLI always knew which program it meant; a UI has to discover one,
+        and without this it could only probe ids until a 404 came back.
+        """
+        return [S.ProgramOut(**p.model_dump()) for p in service.list_programs()]
+
     @app.get(
         "/programs/{program_id}",
         response_model=S.ProgramOut,

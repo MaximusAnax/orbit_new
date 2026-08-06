@@ -1,0 +1,149 @@
+/* GrailTrader. Everything is prefixed gt- so nothing here can reach into
+   another project's screen; colour comes only from the shared tokens, and
+   --ok / --bad are reserved for money moving up or down. */
+
+.gt-asof { min-width: 15rem; }
+.gt-asof .field { gap: 0.15rem; }
+.gt-asof .field-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--ink-3); font-family: var(--font-data); }
+.gt-asof .field-hint { max-width: 22rem; }
+
+.gt-muted { color: var(--ink-3); }
+
+/* holdings table ---------------------------------------------------------- */
+.gt-piece { display: flex; flex-direction: column; gap: 0.1rem; }
+.gt-piece-label { font-weight: 600; }
+.gt-piece-sub { font-size: 0.76rem; color: var(--ink-3); }
+
+.gt-method { display: flex; flex-direction: column; gap: 0.2rem; }
+.gt-method code { font-size: 0.76rem; color: var(--ink-2); }
+.gt-method-line { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+.gt-method-note { font-size: 0.74rem; color: var(--ink-3); }
+
+.gt-sample { display: flex; flex-direction: column; gap: 0.1rem; align-items: flex-end; }
+.gt-sample-sub { font-size: 0.72rem; color: var(--ink-3); white-space: nowrap; }
+
+.gt-call-cell { display: inline-flex; align-items: center; gap: var(--s-2); }
+.gt-call-conf { font-size: 0.78rem; color: var(--ink-3); }
+
+.gt-legend { font-size: 0.78rem; color: var(--ink-3); line-height: 1.55;
+  padding: var(--s-3) var(--s-4); border-top: 1px solid var(--rule); background: var(--surface-2); }
+
+/* the call ---------------------------------------------------------------- */
+.gt-call { display: flex; flex-direction: column; gap: var(--s-4); }
+.gt-call-head { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+.gt-call-head h3 { font-size: 1.05rem; font-family: var(--font-display); }
+
+.gt-call-metrics { display: grid; gap: 1px; background: var(--rule);
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+.gt-metric { background: var(--surface-2); padding: var(--s-3); display: flex; flex-direction: column; gap: 0.1rem; }
+.gt-metric-label { font-size: 0.72rem; color: var(--ink-3); }
+.gt-metric-value { font-size: 1.05rem; font-weight: 600; }
+.gt-metric-sub { font-size: 0.72rem; color: var(--ink-3); line-height: 1.4; }
+
+.gt-conf-none { font-size: 0.82rem; color: var(--ink-2); background: var(--surface-2);
+  padding: var(--s-3); border-radius: var(--radius); border-left: 2px solid var(--rule-strong); }
+
+.gt-sub { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--ink-3); font-family: var(--font-data); margin-bottom: var(--s-2); }
+
+.gt-why { display: flex; flex-direction: column; }
+.gt-flag { font-size: 0.86rem; color: var(--ink-2); line-height: 1.55; background: var(--info-bg);
+  padding: var(--s-3); border-radius: var(--radius); }
+.gt-drivers { display: flex; flex-direction: column; gap: var(--s-3); }
+
+.gt-driver { border: 1px solid var(--rule); border-left: 2px solid var(--accent);
+  border-radius: var(--radius); padding: var(--s-3); display: flex; flex-direction: column; gap: var(--s-2); }
+.gt-driver-head { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+.gt-driver-head h4 { font-size: 0.92rem; text-transform: capitalize; }
+.gt-driver-scope { font-size: 0.85rem; text-transform: capitalize; }
+.gt-driver-scope .mono { font-size: 0.76rem; color: var(--ink-3); text-transform: none; }
+.gt-driver-attrs { color: var(--ink-2); }
+.gt-driver-when { font-size: 0.76rem; color: var(--ink-3); font-family: var(--font-data); }
+.gt-driver-note { margin: 0; font-family: var(--font-display); font-size: 0.92rem; line-height: 1.5;
+  padding-left: var(--s-3); border-left: 2px solid var(--rule-strong); color: var(--ink-2); }
+.gt-driver-targets { font-size: 0.76rem; color: var(--ink-3); display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.gt-target { color: var(--ink-2); background: var(--surface-2); padding: 0.05rem 0.3rem; border-radius: 2px; }
+
+.gt-prior { background: var(--surface-2); border-radius: var(--radius); padding: var(--s-3);
+  display: flex; flex-direction: column; gap: var(--s-2); }
+.gt-prior-head { display: flex; align-items: baseline; gap: var(--s-2); flex-wrap: wrap; }
+.gt-prior-head code { font-size: 0.76rem; }
+.gt-prior-dir { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;
+  font-family: var(--font-data); }
+.gt-prior-nums { font-size: 0.76rem; color: var(--ink-2); }
+.gt-prior-why { font-size: 0.85rem; line-height: 1.55; color: var(--ink); }
+.gt-prior-source { font-size: 0.76rem; line-height: 1.5; color: var(--ink-3); }
+
+.gt-driver-refs { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.74rem; }
+.gt-driver-refs a { color: var(--accent); }
+
+.gt-mods { display: flex; flex-direction: column; }
+.gt-mod-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s-2); }
+.gt-mod { display: grid; grid-template-columns: minmax(8rem, 32%) auto; gap: 0 var(--s-3); align-items: baseline; }
+.gt-mod-label { font-size: 0.8rem; color: var(--ink-2); font-weight: 600; }
+.gt-mod-value { font-size: 0.86rem; font-weight: 600; }
+.gt-mod-scope { font-size: 0.72rem; color: var(--ink-3); font-weight: 400; }
+.gt-mod-note { grid-column: 2; font-size: 0.74rem; color: var(--ink-3); line-height: 1.45; }
+
+.gt-rendered summary { font-size: 0.8rem; color: var(--accent); cursor: pointer; }
+.gt-rendered pre { margin-top: var(--s-2); white-space: pre-wrap; font-family: var(--font-data);
+  font-size: 0.76rem; line-height: 1.6; color: var(--ink-2); background: var(--surface-2);
+  padding: var(--s-3); border-radius: var(--radius); overflow-x: auto; }
+
+.gt-disclaimer { font-size: 0.76rem; line-height: 1.5; color: var(--ink-2); background: var(--warn-bg);
+  padding: var(--s-3); border-radius: var(--radius); }
+
+/* the index --------------------------------------------------------------- */
+.gt-index { display: flex; flex-direction: column; gap: var(--s-4); }
+.gt-index-head { display: flex; align-items: baseline; justify-content: space-between;
+  gap: var(--s-3); flex-wrap: wrap; }
+.gt-stratum { font-size: 0.8rem; color: var(--ink-2); }
+.gt-index-change { font-size: 1.05rem; font-weight: 600; }
+.gt-index-change-sub { font-size: 0.74rem; color: var(--ink-3); font-weight: 400; }
+
+.gt-spark { width: 100%; height: auto; display: block; overflow: visible; }
+.gt-spark-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.gt-spark-fill { fill: var(--accent); opacity: 0.08; stroke: none; }
+.gt-spark-dot { fill: var(--accent); }
+.gt-spark-bar { fill: var(--ink-3); opacity: 0.45; }
+.gt-spark-bar.fenced { fill: var(--warn); opacity: 0.6; }
+.gt-spark-floorzone { fill: var(--bad); opacity: 0.12; }
+.gt-spark-floor { stroke: var(--bad); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.gt-spark-none { font-size: 0.82rem; color: var(--ink-3); }
+.gt-spark-key { font-size: 0.74rem; color: var(--ink-3); line-height: 1.5; }
+
+.gt-fenced summary { font-size: 0.8rem; color: var(--accent); cursor: pointer; }
+.gt-fenced-list { list-style: none; margin: var(--s-2) 0 0; padding: 0;
+  display: flex; flex-direction: column; gap: var(--s-1); }
+.gt-fenced-list li { display: flex; align-items: baseline; gap: var(--s-2); flex-wrap: wrap;
+  font-size: 0.8rem; padding-bottom: var(--s-1); border-bottom: 1px dashed var(--rule); }
+.gt-fenced-list li .num { font-weight: 600; min-width: 5rem; }
+.gt-fenced-meta { color: var(--ink-3); font-size: 0.75rem; }
+.gt-fenced-list code { font-size: 0.7rem; color: var(--ink-3); margin-left: auto; }
+.gt-fenced-more, .gt-fenced-none { font-size: 0.76rem; color: var(--ink-3); margin-top: var(--s-2); }
+.gt-fenced-note { font-size: 0.76rem; color: var(--ink-2); line-height: 1.55; margin-top: var(--s-2);
+  background: var(--surface-2); padding: var(--s-3); border-radius: var(--radius); }
+
+/* the tape ---------------------------------------------------------------- */
+.gt-tape { list-style: none; margin: 0; padding: 0; }
+.gt-tape-row { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; gap: var(--s-3);
+  align-items: baseline; padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--rule); }
+.gt-tape-row:last-child { border-bottom: none; }
+.gt-tape-date { font-size: 0.78rem; color: var(--ink-3); }
+.gt-tape-what { font-size: 0.87rem; display: flex; flex-direction: column; gap: 0.15rem; }
+.gt-tape-title { display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap;
+  text-transform: capitalize; }
+.gt-tape-what code { font-size: 0.74rem; color: var(--ink-3); text-transform: none; }
+.gt-tape-note { font-size: 0.78rem; color: var(--ink-3); text-transform: none; line-height: 1.45; }
+.gt-tape-tags { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; justify-content: flex-end; }
+.gt-tape-age { font-size: 0.72rem; color: var(--ink-3); white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .gt-tape-row { grid-template-columns: 1fr; }
+  .gt-tape-tags { justify-content: flex-start; }
+}
+
+.gt-foot { font-size: 0.76rem; color: var(--ink-3); line-height: 1.6; }
+.gt-foot code { color: var(--ink-2); }

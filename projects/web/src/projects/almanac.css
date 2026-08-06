@@ -1,0 +1,137 @@
+/* Almanac — a page that should read like a commonplace book: one passage set in
+   the display face, and beneath it the scheduler's reasoning in small data type.
+   Everything here is composition on top of the kit; no colour is literal. */
+
+.cards { display: flex; flex-direction: column; gap: var(--s-4); }
+
+/* the card ---------------------------------------------------------------- */
+
+.quote-card {
+  display: flex; flex-direction: column; gap: var(--s-3);
+  background: var(--paper); border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent); border-radius: var(--radius);
+  padding: var(--s-5) var(--s-5) var(--s-4);
+}
+
+.qc-head { display: flex; align-items: center; justify-content: space-between;
+  gap: var(--s-3); flex-wrap: wrap; }
+.qc-marks { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+.qc-date { font-size: 0.76rem; color: var(--ink-3); }
+
+.qc-text { margin: 0; font-family: var(--font-display); font-size: 1.32rem; line-height: 1.45;
+  color: var(--ink); text-wrap: pretty; max-width: 46ch; }
+.quote-card .qc-text::before { content: "“"; }
+.quote-card .qc-text::after { content: "”"; }
+
+.qc-cite { display: flex; align-items: baseline; gap: var(--s-2); flex-wrap: wrap;
+  font-size: 0.84rem; color: var(--ink-2); }
+.qc-author { font-weight: 600; }
+.qc-author::before { content: "— "; color: var(--ink-3); }
+.qc-source { color: var(--ink-3); font-style: italic; }
+.qc-source-none { font-style: normal; font-family: var(--font-data); font-size: 0.72rem;
+  color: var(--warn); background: var(--warn-bg); padding: 0.05rem 0.35rem; border-radius: var(--radius); }
+.qc-url { font-size: 0.78rem; }
+
+.qc-label { display: block; font-family: var(--font-data); font-size: 0.66rem;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); }
+.qc-label + * { margin-top: var(--s-1); }
+
+.qc-note { font-size: 0.88rem; color: var(--ink-2); background: var(--surface-2);
+  border-radius: var(--radius); padding: var(--s-3); }
+
+.qc-tags { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+.tag { font-size: 0.72rem; color: var(--ink-3); }
+
+.qc-prompt { border-top: 1px dashed var(--rule); padding-top: var(--s-3); }
+.qc-prompt-text { font-family: var(--font-display); font-size: 1rem; line-height: 1.5;
+  color: var(--ink); max-width: 56ch; margin-bottom: var(--s-1); }
+
+/* the reasoning ----------------------------------------------------------- */
+
+.qc-why { display: flex; flex-direction: column; gap: var(--s-3);
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: var(--s-4); }
+.qc-why-lede { font-size: 0.86rem; color: var(--ink-2); max-width: 74ch; }
+.qc-why .facts { font-size: 0.86rem; }
+
+.fine { font-size: 0.76rem; color: var(--ink-3); line-height: 1.5; }
+.fine code, code.mono { font-size: 0.72rem; }
+
+/* attribution ------------------------------------------------------------- */
+
+.flags { display: flex; flex-direction: column; gap: var(--s-2); }
+.flag { display: flex; gap: var(--s-3); align-items: flex-start;
+  background: var(--bad-bg); border-radius: var(--radius); padding: var(--s-3); }
+.flag-body { display: flex; flex-direction: column; gap: var(--s-1);
+  font-size: 0.82rem; color: var(--ink-2); }
+.flag-origin { color: var(--ink-3); }
+.flag a { font-size: 0.76rem; word-break: break-all; }
+
+/* reflection -------------------------------------------------------------- */
+
+.reflect { display: flex; flex-direction: column; gap: var(--s-3);
+  border-top: 1px solid var(--rule); padding-top: var(--s-3); }
+
+.grades { border: 0; margin: 0; padding: 0; display: grid; gap: var(--s-2);
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.grades legend { padding: 0; margin-bottom: var(--s-2); }
+
+.grade { position: relative; display: flex; flex-direction: column; gap: 0.1rem;
+  padding: var(--s-3); cursor: pointer; background: var(--surface-2);
+  border: 1px solid var(--rule); border-radius: var(--radius); }
+.grade input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.grade:hover { border-color: var(--rule-strong); }
+.grade:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.grade.on { border-color: var(--accent); background: var(--surface); }
+.grade-name { font-weight: 600; font-size: 0.88rem; text-transform: capitalize; }
+.grade-blurb { font-size: 0.78rem; color: var(--ink-2); }
+.grade-effect { font-size: 0.74rem; color: var(--ink-3); margin-top: var(--s-1); }
+.grade.on .grade-effect { color: var(--accent); }
+
+.reflect-actions { display: flex; align-items: center; gap: var(--s-3); flex-wrap: wrap; }
+
+.reflected { display: flex; flex-direction: column; gap: var(--s-2);
+  border-top: 1px solid var(--rule); padding-top: var(--s-3); font-size: 0.86rem; }
+.reflected-text { color: var(--ink-2); font-style: italic; }
+
+/* draw -------------------------------------------------------------------- */
+
+.draw { display: flex; align-items: flex-end; gap: var(--s-3); flex-wrap: wrap;
+  border-top: 1px solid var(--rule); padding-top: var(--s-4); }
+.draw .field { flex: 1 1 18rem; }
+.draw .error-note { flex-basis: 100%; }
+
+/* capacity ---------------------------------------------------------------- */
+
+.meters, .histogram, .listing, .history, .journal {
+  display: flex; flex-direction: column; gap: var(--s-2); }
+.advisory { font-size: 0.82rem; color: var(--ink-2); background: var(--warn-bg);
+  border-radius: var(--radius); padding: var(--s-3); max-width: 70ch; }
+.listing p, .journal p { font-size: 0.82rem; color: var(--ink-2); }
+
+/* library ----------------------------------------------------------------- */
+
+.filters { display: grid; gap: var(--s-3);
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); align-items: end; }
+.filter-foot { display: flex; align-items: center; gap: var(--s-3); flex-wrap: wrap; }
+.check { display: flex; align-items: center; gap: var(--s-2); font-size: 0.85rem;
+  color: var(--ink-2); cursor: pointer; }
+
+/* an Async inside a filter must not open a full-height loading block */
+.filter-async .state { padding: var(--s-2) 0; align-items: flex-start; text-align: left; }
+.filter-async .state-title { font-size: 0.8rem; font-weight: 500; }
+
+.lib-table { display: flex; flex-direction: column; gap: var(--s-2); min-width: 0; }
+/* the library is long by design; keep the schedule pane in view beside it */
+.lib-table .table-wrap { max-height: 34rem; overflow: auto; }
+.lib-table .table th { position: sticky; top: 0; z-index: 1; }
+.row-text { display: block; font-family: var(--font-display); font-size: 0.92rem;
+  line-height: 1.4; color: var(--ink); }
+.row-cite { display: block; font-size: 0.74rem; color: var(--ink-3); margin-top: 0.1rem; }
+
+.detail { display: flex; flex-direction: column; gap: var(--s-3); min-width: 0; }
+.detail-text { margin: 0; font-family: var(--font-display); font-size: 1.05rem;
+  line-height: 1.45; color: var(--ink); }
+.detail-actions { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.detail .facts { font-size: 0.84rem; }
+.detail .table { font-size: 0.82rem; }

@@ -1,0 +1,80 @@
+/* flowlist — the comparison is the product, so the styling exists to make two
+   orderings visually commensurable: same bar scale, same tone vocabulary
+   (ok = seamless, warn = workable, bad = cliff) in the strips, the tables and
+   the component meters. */
+
+/* page controls ------------------------------------------------------------ */
+.page-actions .field { min-width: 8rem; }
+.seed-input { width: 5.5rem; }
+
+/* seam strips -------------------------------------------------------------- */
+.strips { display: flex; flex-direction: column; gap: var(--s-3); }
+
+.strip { display: flex; flex-direction: column; gap: var(--s-1); }
+.strip-label { font-family: var(--font-data); font-size: 0.68rem; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--ink-3);
+  display: flex; justify-content: space-between; gap: var(--s-2); }
+.strip-scale { text-transform: none; letter-spacing: 0; }
+.strip-empty { font-size: 0.83rem; color: var(--ink-3); font-style: italic;
+  padding: var(--s-3) 0 var(--s-1); }
+
+/* The dashed rule sits at the seamless threshold, so a bar's height is readable
+   as "clears 0.70" rather than as an unlabelled quantity. */
+.strip-bars { position: relative; display: flex; align-items: flex-end; gap: 3px;
+  height: 3.25rem; padding: var(--s-1); background: var(--paper);
+  border: 1px solid var(--rule); border-radius: var(--radius); }
+.strip-bars::after { content: ""; position: absolute; left: 0; right: 0;
+  bottom: calc(var(--s-1) + (100% - 2 * var(--s-1)) * 0.7);
+  border-top: 1px dashed var(--rule-strong); pointer-events: none; }
+
+.seam-bar { flex: 1 1 0; min-width: 0; height: 100%; padding: 0; border: none;
+  background: none; cursor: pointer; display: flex; align-items: flex-end;
+  border-radius: 2px; }
+.seam-bar:hover .seam-fill { filter: brightness(1.15); }
+.seam-bar:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.seam-bar.selected { background: var(--surface-2); }
+
+.seam-fill { display: block; width: 100%; border-radius: 2px 2px 0 0;
+  background: var(--ink-3); transition: height 200ms ease; }
+.seam-bar.tone-ok .seam-fill { background: var(--ok); }
+.seam-bar.tone-warn .seam-fill { background: var(--warn); }
+.seam-bar.tone-bad .seam-fill { background: var(--bad); }
+
+/* tables ------------------------------------------------------------------- */
+.tk { display: flex; flex-direction: column; gap: 0.05rem; }
+.tk-title { font-weight: 550; }
+.tk-artist { font-size: 0.77rem; color: var(--ink-3); }
+
+.was { display: inline-flex; align-items: baseline; gap: 0.35rem; justify-content: flex-end; }
+.move { font-size: 0.72rem; color: var(--accent); font-family: var(--font-data); }
+.move.stay { color: var(--ink-3); }
+
+.seam { display: flex; flex-direction: column; gap: 0.05rem; }
+.seam-score { font-weight: 600; font-variant-numeric: tabular-nums; }
+.seam-rel { font-size: 0.73rem; color: var(--ink-3); }
+.seam-none { font-size: 0.73rem; color: var(--ink-3); font-style: italic; }
+
+/* one seam, argued --------------------------------------------------------- */
+.seam-detail { display: flex; flex-direction: column; gap: var(--s-4); }
+
+.seam-head { display: flex; align-items: baseline; justify-content: space-between;
+  gap: var(--s-4); flex-wrap: wrap; padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--rule); }
+.seam-pair { display: flex; align-items: baseline; gap: var(--s-2); flex-wrap: wrap;
+  font-family: var(--font-display); font-size: 1.05rem; }
+.seam-arrow { color: var(--ink-3); }
+.seam-track { font-weight: 600; }
+.seam-total { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }
+
+.seam-note { color: var(--ink-3); font-size: 0.83rem; }
+
+.components { display: grid; gap: var(--s-3); grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }
+.components .meter-label { font-size: 0.78rem; }
+.weight { color: var(--ink-3); font-size: 0.72rem; }
+
+.seam-flags { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  .seam-total { font-size: 1.25rem; }
+  .strip-bars { height: 2.5rem; }
+}

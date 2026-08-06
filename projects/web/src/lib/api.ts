@@ -26,19 +26,52 @@ export class ApiError extends Error {
   }
 }
 
+/**
+ * Pull the documented error code and message out of a failure body.
+ *
+ * These projects return their catalogued errors at the top level —
+ * `{code, message, detail}` — where `detail` is an extra payload, NOT the
+ * FastAPI wrapper. Descending into `detail` first therefore threw away the real
+ * code and produced "Request failed (422)". Top level wins; the FastAPI shapes
+ * (`detail` as a string, or as a nested error object) are the fallbacks.
+ */
 function messageFrom(status: number, body: unknown): { code: string; message: string } {
-  if (body && typeof body === "object") {
-    const b = body as Record<string, unknown>;
-    // FastAPI puts our structured errors under `detail`.
-    const d = (b.detail ?? b) as Record<string, unknown> | string;
-    if (typeof d === "string") return { code: `http_${status}`, message: d };
-    if (d && typeof d === "object") {
-      const code = (d.error ?? d.code ?? `http_${status}`) as string;
-      const message = (d.message ?? d.detail ?? d.error ?? `Request failed (${status})`) as string;
-      return { code: String(code), message: String(message) };
+  const fallback = { code: `http_${status}`, message: `Request failed (${status})` };
+  if (!body || typeof body !== "object") return fallback;
+  const b = body as Record<string, unknown>;
+
+  const pick = (o: Record<string, unknown>): { code: string; message: string } | null => {
+    // `error` may itself be the envelope — dresscast returns {error: {code, message}}.
+    if (o.error && typeof o.error === "object") {
+      const inner = pick(o.error as Record<string, unknown>);
+      if (inner) return inner;
+    }
+    const rawCode = o.code ?? o.error;
+    const code = typeof rawCode === "string" || typeof rawCode === "number" ? String(rawCode) : undefined;
+    const rawMessage = o.message ?? (typeof o.detail === "string" ? o.detail : undefined) ?? code;
+    const message = typeof rawMessage === "string" ? rawMessage : undefined;
+    return code || message
+      ? { code: code ?? fallback.code, message: message ?? fallback.message }
+      : null;
+  };
+
+  const top = pick(b);
+  if (top) return top;
+
+  if (typeof b.detail === "string") return { code: fallback.code, message: b.detail };
+  if (b.detail && typeof b.detail === "object") {
+    const nested = pick(b.detail as Record<string, unknown>);
+    if (nested) return nested;
+  }
+  // FastAPI validation errors: detail is an array of {loc, msg, type}.
+  if (Array.isArray(b.detail) && b.detail.length) {
+    const first = b.detail[0] as { msg?: string; loc?: unknown[] };
+    if (first?.msg) {
+      const where = Array.isArray(first.loc) ? first.loc.slice(1).join(".") : "";
+      return { code: "validation_error", message: where ? `${where}: ${first.msg}` : first.msg };
     }
   }
-  return { code: `http_${status}`, message: `Request failed (${status})` };
+  return fallback;
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {

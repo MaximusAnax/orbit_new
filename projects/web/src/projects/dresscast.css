@@ -1,0 +1,117 @@
+/* DressCast. Two shapes carry the product: the outfit list (a stack of layers,
+   read top-down like you dress) and the day strip (demand vs. what you have on,
+   hour by hour). Everything else is the shared kit. */
+
+.dc-controls { display: flex; gap: var(--s-3); align-items: flex-end; flex-wrap: wrap; }
+.dc-controls .field { min-width: 8.5rem; }
+
+/* the day ----------------------------------------------------------------- */
+.dc-arche { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.dc-arche-run { display: inline-flex; align-items: baseline; gap: var(--s-2); font-size: 0.8rem;
+  background: var(--surface-2); border-radius: var(--radius); padding: 0.18rem 0.5rem; }
+.dc-arche-run .num { color: var(--ink-3); font-size: 0.74rem; }
+.dc-arche-run strong { font-weight: 600; }
+
+.dc-advisories { display: flex; flex-direction: column; gap: var(--s-2); margin: 0; padding: 0; list-style: none; }
+.dc-advisories li { display: flex; gap: var(--s-2); align-items: baseline; font-size: 0.87rem; color: var(--ink-2); }
+
+/* the outfit -------------------------------------------------------------- */
+.outfit { display: flex; flex-direction: column; gap: 1px; margin: 0; padding: 0; list-style: none;
+  background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+.outfit-item { display: grid; grid-template-columns: 5.5rem 1fr; gap: var(--s-3);
+  padding: var(--s-3) var(--s-4); background: var(--surface); align-items: baseline; }
+.outfit-item.missing { color: var(--bad); }
+
+.dc-slot { font-family: var(--font-data); font-size: 0.64rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-3); padding-top: 0.2rem; }
+.dc-piece { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+.dc-piece-name { display: inline-flex; align-items: center; gap: var(--s-2); font-weight: 600; font-size: 0.95rem; }
+.dc-piece-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2);
+  font-size: 0.75rem; color: var(--ink-3); }
+.dc-piece-why { font-size: 0.8rem; color: var(--ink-2); font-style: italic; }
+
+.dc-swatches { display: inline-flex; gap: 2px; flex: none; }
+.dc-swatch { width: 0.62rem; height: 0.62rem; border-radius: 50%; display: inline-block;
+  box-shadow: inset 0 0 0 1px var(--rule-strong); }
+.dc-swatch.accent { border-radius: 2px; }
+
+/* why --------------------------------------------------------------------- */
+.dc-why { display: flex; flex-direction: column; gap: var(--s-4); min-width: 0; }
+.dc-scores { display: flex; flex-direction: column; gap: var(--s-2); }
+.dc-weight { color: var(--ink-3); font-size: 0.72rem; }
+
+.dc-reasons { display: flex; flex-direction: column; gap: var(--s-3); margin: 0; padding: 0; list-style: none; }
+.dc-reason { display: grid; grid-template-columns: 6.5rem 1fr; gap: var(--s-3);
+  align-items: baseline; font-size: 0.87rem; }
+.dc-reason > .pill { justify-self: start; }
+
+.dc-gaps { display: flex; flex-direction: column; gap: var(--s-2); margin: 0; padding: var(--s-3);
+  list-style: none; background: var(--warn-bg); color: var(--warn); border-radius: var(--radius);
+  font-size: 0.83rem; }
+.dc-gaps code { color: inherit; }
+
+/* the plan ---------------------------------------------------------------- */
+.dc-plan { display: flex; flex-direction: column; gap: var(--s-3); padding-top: var(--s-3);
+  border-top: 1px solid var(--rule); }
+.dc-h3 { font-size: 0.98rem; }
+.dc-plan-lede { font-size: 0.86rem; color: var(--ink-2); max-width: 72ch; }
+
+.dc-strip-wrap { display: flex; flex-direction: column; gap: var(--s-2); }
+.dc-strip { display: flex; gap: 2px; overflow-x: auto; padding-bottom: var(--s-1);
+  align-items: flex-end; }
+.dc-col { display: flex; flex-direction: column; align-items: stretch; gap: 2px;
+  flex: 1 1 0; min-width: 2.1rem; }
+
+.dc-rain { height: 4px; border-radius: 2px; background: var(--ink-3); }
+.dc-rain.required { background: var(--warn); }
+
+.dc-bar { position: relative; height: 6.5rem; display: flex; flex-direction: column-reverse;
+  background: var(--surface-2); border-radius: 2px; overflow: hidden; }
+.dc-worn { display: block; background: var(--accent); }
+.dc-worn.off { background: var(--warn); }
+/* Carried, not worn — hatched so "in the bag" never reads as "on your back". */
+.dc-carried { display: block; opacity: 0.5;
+  background: repeating-linear-gradient(45deg, var(--accent) 0 2px, transparent 2px 5px); }
+.dc-target { position: absolute; left: 0; right: 0; border-top: 2px dashed var(--ink); }
+
+.dc-change { text-align: center; font-size: 0.6rem; color: var(--ink-3); min-height: 0.85rem; line-height: 1; }
+.dc-hour { text-align: center; font-size: 0.68rem; color: var(--ink-2); }
+.dc-feels { text-align: center; font-size: 0.68rem; color: var(--ink-3); }
+
+.dc-legend { display: flex; flex-wrap: wrap; gap: var(--s-3); margin: 0; padding: 0; list-style: none;
+  font-size: 0.74rem; color: var(--ink-3); }
+.dc-legend li { display: inline-flex; align-items: center; gap: 0.35rem; }
+.dc-key { width: 0.7rem; height: 0.7rem; border-radius: 2px; display: inline-block; }
+.dc-key.worn { background: var(--accent); }
+.dc-key.carried { opacity: 0.5;
+  background: repeating-linear-gradient(45deg, var(--accent) 0 2px, transparent 2px 5px); }
+.dc-key.target { height: 0; border-top: 2px dashed var(--ink); border-radius: 0; }
+.dc-key.rain { background: var(--warn); height: 0.35rem; }
+
+.dc-segs { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none;
+  border-left: 2px solid var(--rule-strong); }
+.dc-seg { display: grid; grid-template-columns: minmax(7rem, 9rem) 1fr; gap: var(--s-3);
+  padding: var(--s-3) 0 var(--s-3) var(--s-4); position: relative; }
+.dc-seg + .dc-seg { border-top: 1px solid var(--rule); }
+.dc-seg::before { content: ""; position: absolute; left: calc(-2px - 0.22rem); top: calc(var(--s-3) + 0.35rem);
+  width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent); }
+.dc-seg-when { display: flex; flex-direction: column; gap: 0.1rem; font-size: 0.85rem; font-weight: 600; }
+.dc-seg-feels { font-weight: 400; font-size: 0.75rem; color: var(--ink-3); }
+.dc-seg-body { display: flex; flex-direction: column; gap: var(--s-2); min-width: 0; }
+.dc-seg-wear { display: flex; flex-wrap: wrap; gap: var(--s-1); }
+.dc-seg-carry { font-size: 0.8rem; color: var(--ink-3); }
+
+/* commit ------------------------------------------------------------------ */
+.dc-commit { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3);
+  padding-top: var(--s-3); border-top: 1px solid var(--rule); }
+.dc-logged { font-size: 0.86rem; color: var(--ok); max-width: 60ch; }
+
+/* closet ------------------------------------------------------------------ */
+.dc-dirty { font-size: 0.78rem; color: var(--ink-3); }
+.dc-occ { font-size: 0.8rem; color: var(--ink-2); }
+
+@media (max-width: 640px) {
+  .outfit-item { grid-template-columns: 1fr; gap: var(--s-1); }
+  .dc-reason { grid-template-columns: 1fr; gap: var(--s-1); }
+  .dc-seg { grid-template-columns: 1fr; }
+}
