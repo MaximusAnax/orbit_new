@@ -534,7 +534,7 @@ from turning any gate vacuous.
 
 ## 6. How the suite runs
 
-Mirrors `orbit-backend/evals/` and the sibling projects:
+Mirrors the sibling projects:
 
 - **`evals/metrics.py`** — `MetricResult(name, value, gate, passed,
   detail)`, `EvalReport`, pair-universe construction, the frozen

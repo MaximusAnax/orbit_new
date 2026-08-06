@@ -1,8 +1,7 @@
 # Projects — Engineering Conventions
 
 These conventions bind every project under `projects/`. They exist so that twelve
-independently useful products feel like one codebase. The existing Orbit app
-(`orbit-backend/`, `orbit-ios/`) predates them and is not governed by this file.
+independently useful products feel like one codebase.
 
 ## Cross-cutting decisions (locked with the owner, 2026-07-31)
 
@@ -15,7 +14,7 @@ independently useful products feel like one codebase. The existing Orbit app
    by tests and evals, and (b) a live adapter that activates only when credentials
    are configured. Evals must run hermetically — no network, no wall-clock
    dependence, seeded randomness.
-4. **Layout:** new projects live in `projects/<slug>/`; Orbit stays where it is.
+4. **Layout:** each project lives in `projects/<slug>/`.
 
 ## Per-project layout
 
@@ -69,7 +68,7 @@ modules (`engine.py` instead of `engine/`), but the layering must stay visible.
 
 ## Evals
 
-Every project ships an eval suite modeled on `orbit-backend/evals/`:
+Every project ships an eval suite in the same shape:
 
 - **Metrics measure the hard part.** Each project's EVALS.md names the one or two
   capabilities the product lives or dies on, and the metrics quantify those —
@@ -100,8 +99,13 @@ Every project ships an eval suite modeled on `orbit-backend/evals/`:
 cd projects
 uv sync --all-packages         # install every workspace member (plain `uv sync` installs only the root)
 uv run pytest <slug>/          # one project's tests + eval gates
-uv run pytest                  # everything
+uv run python verify_all.py    # everything, one project at a time
 uv run <slug> --help           # the project's CLI entry point
 uv run python <slug>/evals/run.py   # scorecard
 uv run ruff check .            # lint
 ```
+
+Projects must be collected separately. Each ships an `evals` package containing
+`test_gates.py`, so pointing pytest at several projects at once collides on the
+module name (`import file mismatch`). `verify_all.py` runs them one at a time,
+which is why it is the workspace-wide entry point.

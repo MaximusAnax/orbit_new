@@ -572,7 +572,7 @@ blocks that. And all three are gamed by an engine that shouts on clean data —
 
 ## 6. How the suite runs
 
-Mirrors `orbit-backend/evals/` and the sibling projects:
+Mirrors the sibling projects:
 
 - **`evals/metrics.py`** — `MetricResult(name, value, gate, passed, detail)`,
   `EvalReport`, the manifest-matching logic, the op→class map, the

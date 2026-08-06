@@ -15,7 +15,7 @@
    documented refusal, revocation and enrollment-drift must bite immediately,
    and the audit chain must detect every tampering class it claims to detect
    (and be explicit about the one it cannot). This is safety-critical,
-   deterministic behavior — gated at 100 %, like Orbit's safety gates and the
+   deterministic behavior — gated at 100 %, like the workspace’s other safety gates and the
    workspace quality bar demand.
 
 Everything else (WAV plumbing, CRUD, CLI wiring, HA delivery formatting,

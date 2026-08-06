@@ -611,7 +611,7 @@ against `expected.json`.
 
 ## 6. How the suite runs
 
-Mirrors `orbit-backend/evals/`:
+Follows the workspace eval convention:
 
 - **`evals/metrics.py`** (≈ 450 lines) — `MetricResult(name, value, gate,
   baseline, margin, passed, detail)`, `EvalReport`, the independent checker
