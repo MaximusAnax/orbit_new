@@ -26,3 +26,8 @@ orbit-backend/data/
 
 # verification harness output
 projects/verify_report.json
+
+# Web demo
+projects/web/node_modules/
+projects/web/dist/
+projects/web/.demo-data/
