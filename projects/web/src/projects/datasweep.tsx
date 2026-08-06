@@ -388,6 +388,7 @@ export default function DataSweep() {
               ref={fileInput}
               type="file"
               accept=".csv,.tsv,.xlsx,.xls"
+              aria-label="Choose a spreadsheet to clean"
               hidden
               onChange={(e) => {
                 const file = e.target.files?.[0];

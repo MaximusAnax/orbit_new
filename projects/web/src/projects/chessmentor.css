@@ -7,12 +7,18 @@
   overflow: hidden; user-select: none; }
 .board.thinking { opacity: 0.75; pointer-events: none; }
 
+/* Board squares are one of the few places a literal colour is right — a
+   chessboard has a conventional look that shouldn't drift with the accent.
+   They still get both themes, via local tokens so each is a deliberate choice. */
+.board { --sq-light: #ece5d6; --sq-dark: #b6a183; }
+@media (prefers-color-scheme: dark) { .board { --sq-light: #cdc3ad; --sq-dark: #8a765a; } }
+:root[data-theme="dark"] .board { --sq-light: #cdc3ad; --sq-dark: #8a765a; }
+:root[data-theme="light"] .board { --sq-light: #ece5d6; --sq-dark: #b6a183; }
+
 .square { position: relative; display: flex; align-items: center; justify-content: center;
   border: none; padding: 0; cursor: pointer; font-size: clamp(1.5rem, 4.2vw, 2.5rem); line-height: 1; }
-.square.light { background: #ece5d6; }
-.square.dark { background: #b6a183; }
-:root[data-theme="dark"] .square.light, html:not([data-theme="light"]) .square.light { background: #d8cfbc; }
-:root[data-theme="dark"] .square.dark, html:not([data-theme="light"]) .square.dark { background: #9c8768; }
+.square.light { background: var(--sq-light); }
+.square.dark { background: var(--sq-dark); }
 .square:disabled { cursor: default; }
 .square.last { box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent); }
 .square.selected { box-shadow: inset 0 0 0 3px var(--accent); }

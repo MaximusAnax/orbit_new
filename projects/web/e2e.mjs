@@ -152,6 +152,51 @@ const STORIES = {
   },
 };
 
+/**
+ * Structural accessibility checks, run on every screen after its story.
+ *
+ * Not a substitute for a full audit, but these catch the failures that actually
+ * happen when building fast: a control with no accessible name, an input with no
+ * label, an image with no alt text, a heading level skipped.
+ */
+const A11Y = () => {
+  const problems = [];
+  const name = (el) =>
+    (el.getAttribute("aria-label") ||
+      el.getAttribute("title") ||
+      (el.getAttribute("aria-labelledby") &&
+        document.getElementById(el.getAttribute("aria-labelledby"))?.textContent) ||
+      el.textContent ||
+      "").trim();
+
+  document.querySelectorAll("button, a[href], [role=tab], [role=button]").forEach((el) => {
+    if (!name(el)) problems.push("control with no accessible name: " + el.outerHTML.slice(0, 70));
+  });
+  document.querySelectorAll("input, select, textarea").forEach((el) => {
+    // A visually hidden input driven by a labelled control is a valid pattern.
+    if (el.type === "hidden" || el.hidden) return;
+    const labelled =
+      el.closest("label") ||
+      (el.id && document.querySelector('label[for="' + el.id + '"]')) ||
+      el.getAttribute("aria-label") ||
+      el.getAttribute("aria-labelledby");
+    if (!labelled) problems.push("unlabelled field: " + el.outerHTML.slice(0, 70));
+  });
+  document.querySelectorAll("img").forEach((el) => {
+    if (!el.hasAttribute("alt")) problems.push("image with no alt: " + el.src.slice(0, 60));
+  });
+  const levels = [...document.querySelectorAll("h1,h2,h3,h4,h5,h6")].map((h) =>
+    Number(h.tagName[1]),
+  );
+  for (let i = 1; i < levels.length; i++) {
+    if (levels[i] - levels[i - 1] > 1) {
+      problems.push("heading level jumps h" + levels[i - 1] + " to h" + levels[i]);
+      break;
+    }
+  }
+  return problems.slice(0, 4);
+};
+
 const wanted = process.argv.slice(2);
 const names = wanted.length ? wanted : Object.keys(STORIES);
 
@@ -177,12 +222,19 @@ for (const name of names) {
 
   try {
     const out = await story(page, shot);
+    const a11y = await page.evaluate(A11Y);
     // A console error means the screen is lying about working.
-    results.push({ name, ...out, errors: errors.length, ok: out.ok && errors.length === 0,
-                   errorText: errors.slice(0, 2) });
+    results.push({
+      name,
+      ...out,
+      errors: errors.length,
+      ok: out.ok && errors.length === 0 && a11y.length === 0,
+      errorText: errors.slice(0, 2),
+      a11y,
+    });
   } catch (err) {
     results.push({ name, ok: false, note: String(err.message).split("\n")[0].slice(0, 120),
-                   errors: errors.length, errorText: errors.slice(0, 2) });
+                   errors: errors.length, errorText: errors.slice(0, 2), a11y: [] });
   }
   await page.close();
 }
@@ -191,7 +243,7 @@ await browser.close();
 
 let failed = 0;
 for (const r of results) {
-  const { name, ok, note, errorText, ...rest } = r;
+  const { name, ok, note, errorText, a11y, ...rest } = r;
   if (!ok) failed++;
   const detail = Object.entries(rest)
     .filter(([k]) => k !== "errors")
@@ -199,6 +251,7 @@ for (const r of results) {
     .join(" ");
   console.log(`${ok ? "PASS" : "FAIL"}  ${name.padEnd(12)} ${detail}${note ? `  (${note})` : ""}`);
   if (errorText?.length) errorText.forEach((e) => console.log(`        console: ${e}`));
+  if (a11y?.length) a11y.forEach((a) => console.log(`        a11y: ${a}`));
 }
 console.log(`\n${results.length - failed}/${results.length} stories passed`);
 process.exit(failed ? 1 : 0);
