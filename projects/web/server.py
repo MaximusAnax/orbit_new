@@ -17,6 +17,8 @@ from __future__ import annotations
 import argparse
 import importlib
 import sys
+from collections.abc import AsyncIterator
+from contextlib import AsyncExitStack, asynccontextmanager
 from pathlib import Path
 from typing import Any
 
@@ -53,7 +55,28 @@ def _factory_module(slug: str) -> str:
 
 
 def build_app() -> FastAPI:
-    app = FastAPI(title="Projects", docs_url="/api/docs", openapi_url="/api/openapi.json")
+    # Starlette does not run a mounted sub-application's lifespan, so projects
+    # that build their service there (flowlist, newsalpha, tickerpress) would
+    # serve requests with a None service. The parent lifespan enters each child's
+    # lifespan context to start and stop them properly.
+    mounted_apps: list[tuple[str, FastAPI]] = []
+
+    @asynccontextmanager
+    async def lifespan(_: FastAPI) -> AsyncIterator[None]:
+        async with AsyncExitStack() as stack:
+            for slug, sub in mounted_apps:
+                try:
+                    await stack.enter_async_context(sub.router.lifespan_context(sub))
+                except Exception as exc:
+                    print(f"  ! {slug} lifespan failed: {type(exc).__name__}: {exc}", file=sys.stderr)
+            yield
+
+    app = FastAPI(
+        title="Projects",
+        docs_url="/api/docs",
+        openapi_url="/api/openapi.json",
+        lifespan=lifespan,
+    )
 
     # The UI dev server runs on a different origin; in the built app it is same-origin.
     app.add_middleware(
@@ -73,6 +96,7 @@ def build_app() -> FastAPI:
             module = importlib.import_module(_factory_module(slug))
             sub = module.create_app()
             app.mount(f"/api/{slug}", sub)
+            mounted_apps.append((slug, sub))
             routes = len([r for r in sub.routes if getattr(r, "methods", None)])
             mounted.append({**project, "routes": routes})
         except Exception as exc:  # a broken project must not take the demo down

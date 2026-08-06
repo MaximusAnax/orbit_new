@@ -7,11 +7,13 @@ documented 4xx codes by a single exception handler.
 """
 
 import os
+import shutil
+import tempfile
 from collections.abc import Callable, Iterator
 from pathlib import Path
 from typing import Annotated
 
-from fastapi import Depends, FastAPI, Query, Request, Response, status
+from fastapi import Depends, FastAPI, File, Query, Request, Response, UploadFile, status
 from fastapi.responses import FileResponse, JSONResponse
 
 from .. import __version__
@@ -130,6 +132,39 @@ def create_app(
     @app.post("/profile", response_model=ProfileResult)
     def profile(body: CleanRequest, service: Service) -> ProfileResult:
         return service.profile_file(body.path, policy_path=body.policy_path, sheet=body.sheet)
+
+    # -- upload (FR-1) -----------------------------------------------------
+    # ``/clean`` and ``/profile`` take a server-side path, which suits the CLI:
+    # the file is already on the machine. A browser cannot supply one, so these
+    # stage the upload to a temp file and hand the existing service that path —
+    # the engine and its guarantees are untouched.
+
+    def _stage(upload: UploadFile) -> Path:
+        suffix = Path(upload.filename or "upload.csv").suffix or ".csv"
+        staged = Path(tempfile.mkdtemp(prefix="datasweep-upload-")) / (
+            Path(upload.filename or "upload").name or f"upload{suffix}"
+        )
+        with staged.open("wb") as fh:
+            shutil.copyfileobj(upload.file, fh)
+        return staged
+
+    @app.post("/uploads/clean", response_model=Run, status_code=status.HTTP_201_CREATED)
+    async def clean_upload(
+        service: Service,
+        file: Annotated[UploadFile, File()],
+        sheet: Annotated[str | None, Query()] = None,
+    ) -> Run:
+        staged = _stage(file)
+        return service.clean_file(str(staged), force=True, sheet=sheet)
+
+    @app.post("/uploads/profile", response_model=ProfileResult)
+    async def profile_upload(
+        service: Service,
+        file: Annotated[UploadFile, File()],
+        sheet: Annotated[str | None, Query()] = None,
+    ) -> ProfileResult:
+        staged = _stage(file)
+        return service.profile_file(str(staged), sheet=sheet)
 
     # -- runs (FR-12) ------------------------------------------------------
 

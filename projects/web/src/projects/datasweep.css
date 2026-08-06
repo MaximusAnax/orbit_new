@@ -1,0 +1,44 @@
+.dropzone { display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--s-2); padding: var(--s-7) var(--s-4); min-height: 11rem; cursor: pointer;
+  border: 2px dashed var(--rule-strong); border-radius: var(--radius); background: var(--paper);
+  transition: border-color 120ms, background 120ms; text-align: center; }
+.dropzone:hover, .dropzone.dragging { border-color: var(--accent); background: var(--surface-2); }
+.dropzone-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; }
+.dropzone-hint { font-size: 0.85rem; color: var(--ink-3); }
+
+.run-view { display: flex; flex-direction: column; gap: var(--s-4); }
+.tabs-wrap { padding: 0 var(--s-4); }
+.tab-body { padding: var(--s-4); }
+
+.issue-list { display: flex; flex-direction: column; gap: var(--s-3); }
+.issue { display: flex; flex-direction: column; gap: var(--s-2); padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--rule); }
+.issue:last-child { border-bottom: none; padding-bottom: 0; }
+.issue-head { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; }
+.issue-klass { font-weight: 600; font-size: 0.92rem; }
+.issue-count { font-size: 0.78rem; color: var(--ink-3); margin-left: auto; }
+
+.found { display: flex; align-items: center; gap: var(--s-2); flex-wrap: wrap; font-size: 0.83rem; }
+.found-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--ink-3); font-family: var(--font-data); }
+.found-value { display: inline-flex; align-items: baseline; gap: 0.35rem; background: var(--warn-bg);
+  color: var(--warn); padding: 0.12rem 0.4rem; border-radius: 2px; }
+.found-row { font-size: 0.68rem; opacity: 0.75; }
+.found-more { font-size: 0.75rem; color: var(--ink-3); }
+
+.issue-shape { font-size: 0.8rem; color: var(--ok); }
+.issue-rule { font-size: 0.72rem; color: var(--ink-3); align-self: flex-start; }
+
+.issue-proof { font-size: 0.83rem; color: var(--ink-2); font-style: italic; }
+
+.review-queue { display: flex; flex-direction: column; gap: var(--s-3); }
+.review-done { font-size: 0.86rem; color: var(--ok); }
+.review-item { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4);
+  padding: var(--s-3); background: var(--warn-bg); border-radius: var(--radius); flex-wrap: wrap; }
+.review-item.decided { background: var(--surface-2); opacity: 0.75; }
+.review-body { display: flex; flex-direction: column; gap: var(--s-1); flex: 1; min-width: 14rem; }
+.review-desc { font-size: 0.9rem; font-weight: 500; }
+.review-meta { display: flex; gap: var(--s-3); flex-wrap: wrap; font-size: 0.76rem; color: var(--ink-2); }
+.review-actions { display: flex; gap: var(--s-2); }
+
+.renamed { font-size: 0.78rem; color: var(--ink-3); font-style: italic; }
