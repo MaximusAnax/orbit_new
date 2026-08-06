@@ -568,7 +568,7 @@ measurement (§2).
 
 ## 6. How the suite runs
 
-Mirrors `orbit-backend/evals/` and the sibling projects:
+Mirrors the sibling projects:
 
 - **`evals/simulate.py`** — the day-by-day driver: builds a memory-repo
   service with `FixedClock`, applies the scenario's capture stream, usage

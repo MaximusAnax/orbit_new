@@ -1,75 +1,46 @@
-# Orbit
+# Projects
 
-Personal AI memory for relationships — capture events by voice, review proposed profile updates, recall people before you meet them, discover connections in your network.
+A monorepo of twelve independent products. Each was scoped — requirements, data
+model, evaluation plan — and reviewed by adversarial critics before any code was
+written, then built engine-first and verified against enforced quality gates.
 
-**Primary user:** Abdoul (single-user)
-
-## Stack
-
-- **Backend:** Python, FastAPI, Supabase (Postgres + pgvector + Auth + Storage)
-- **iOS:** Swift, SwiftUI
-- **AI:** Cloud transcription + structured LLM extraction pipeline
-
-## Docs
-
-| Document | Purpose |
-|----------|---------|
-| [overview.md](overview.md) | Vision, principles, product constitution |
-| [product_design_document.md](product_design_document.md) | Data model & UX flows |
-| [technical_design_document.md](technical_design_document.md) | Implementation spec |
-| [AGENTS.md](AGENTS.md) | Guide for coding agents |
-
-## Repo layout
-
-```
-orbit-backend/     API + extraction pipeline
-orbit-ios/         iOS app
-supabase/          Database migrations
-.cursor/orbit-skills/   Agent skills
-```
+Full detail: [projects/README.md](projects/README.md).
+Engineering rules: [projects/CONVENTIONS.md](projects/CONVENTIONS.md).
 
 ## Quick start
 
-### Prerequisites
+```bash
+cd projects
+uv sync --all-packages          # install all twelve
+uv run ethos ask "what do I owe my aging parents?"
+uv run python verify_all.py     # run every test, gate, linter and CLI
+```
+
+Each project is a local CLI with an optional REST API. No accounts, no API keys,
+no network on the default path — each keeps its own SQLite database under your
+home directory.
+
+## The twelve
+
+| Project | What it does |
+|---------|--------------|
+| [formcoach](projects/formcoach/) | Science-based training programs; form review from pose keypoints |
+| [flowlist](projects/flowlist/) | Reorders a playlist so consecutive tracks transition seamlessly |
+| [chessmentor](projects/chessmentor/) | Opponent that calibrates to your level and coaches your weaknesses |
+| [datasweep](projects/datasweep/) | Background, non-destructive cleaner for messy tabular files |
+| [ethos](projects/ethos/) | Moral questions answered across ten traditions, with real citations |
+| [voicekin](projects/voicekin/) | Consent-gated personal voice profiles for smart-home speech |
+| [tickerpress](projects/tickerpress/) | Tracks watchlist companies across finance news, deduped and ranked |
+| [newsalpha](projects/newsalpha/) | News-driven decision support across equities and crypto |
+| [pointsmax](projects/pointsmax/) | Highest-value redemption path for credit-card points |
+| [grailtrader](projects/grailtrader/) | Buy/sell/hold guidance for second-hand designer clothing |
+| [dresscast](projects/dresscast/) | Weather-aware outfits assembled from your catalogued wardrobe |
+| [almanac](projects/almanac/) | Quote bank with spaced resurfacing and application prompts |
+
+All twelve pass verification in a single sweep: **4,518 tests, 242 enforced eval
+gates**, lint and CLI clean.
+
+## Requirements
 
 - Python 3.11+
-- [Supabase CLI](https://supabase.com/docs/guides/cli)
-- Xcode 15+ (for iOS)
-
-### Backend
-
-```bash
-cd orbit-backend
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env   # fill Supabase + OpenAI keys
-uvicorn app.main:app --reload --port 8000
-```
-
-### Database
-
-```bash
-supabase start
-supabase db reset
-```
-
-### Try it without Xcode
-
-With the backend running (`AUTH_DISABLED=true` in `orbit-backend/.env`):
-
-Open **http://127.0.0.1:8000/playground/** — Capture → Review → Recall in the browser.
-
-API docs remain at http://127.0.0.1:8000/docs
-
-
-### Tests
-
-```bash
-cd orbit-backend && pytest
-```
-
-## Core invariants
-
-- Events save immediately; profile changes require explicit proposal review
-- `fact` and `relationship_state` are append-only
-- Extraction never writes live facts — only `profile_update_proposal`
+- [uv](https://docs.astral.sh/uv/)

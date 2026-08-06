@@ -2,8 +2,7 @@
 
 Twelve independent products, each scoped (requirements, data model, eval plan) and
 adversarially reviewed before implementation. Engineering rules:
-[CONVENTIONS.md](CONVENTIONS.md). The pre-existing Orbit app lives at the repo root
-(`orbit-backend/`, `orbit-ios/`) and is not part of this workspace.
+[CONVENTIONS.md](CONVENTIONS.md).
 
 ## Status
 

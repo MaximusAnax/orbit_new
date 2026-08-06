@@ -421,7 +421,7 @@ Results, against the *current* fixtures:
 
 ## 6. How the suite runs
 
-Mirrors `orbit-backend/evals/`:
+Follows the workspace eval convention:
 
 - **`evals/metrics.py`** — `MetricResult(name, value, gate, passed, detail)`,
   `EvalReport`, AUC/ratio helpers, the live baseline implementations
