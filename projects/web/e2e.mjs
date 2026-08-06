@@ -16,7 +16,9 @@ import { mkdirSync } from "node:fs";
 
 const BASE = process.env.BASE ?? "http://127.0.0.1:8077";
 const SHOTS = process.env.SHOTS === "1";
-const SHOT_DIR = "/tmp/shots";
+const SHOT_DIR = process.env.SHOT_DIR ?? "/tmp/shots";
+/** Both themes are designed, so both get verified: THEME=dark node e2e.mjs */
+const THEME = process.env.THEME ?? "light";
 const DEMO_CSV = "/home/user/orbit_new/projects/web/.demo-data/demo_sales.csv";
 
 if (SHOTS) mkdirSync(SHOT_DIR, { recursive: true });
@@ -197,6 +199,30 @@ const A11Y = () => {
   return problems.slice(0, 4);
 };
 
+/**
+ * Layout and theme checks.
+ *
+ * Horizontal page scroll is the classic responsive failure — wide tables and
+ * code blocks must scroll inside their own container, never push the body. And
+ * a screen that only reads well in one theme is half-built, so every screen is
+ * also loaded dark and re-audited.
+ */
+const OVERFLOW = () => {
+  const doc = document.documentElement;
+  const overflowing = doc.scrollWidth > doc.clientWidth + 1;
+  if (!overflowing) return null;
+  const culprits = [];
+  document.querySelectorAll("*").forEach((el) => {
+    const r = el.getBoundingClientRect();
+    if (r.width > doc.clientWidth + 1 && r.width > 0) {
+      const style = getComputedStyle(el);
+      if (style.overflowX === "auto" || style.overflowX === "scroll") return;
+      culprits.push((el.className || el.tagName).toString().slice(0, 40));
+    }
+  });
+  return { by: doc.scrollWidth - doc.clientWidth, culprits: culprits.slice(0, 3) };
+};
+
 const wanted = process.argv.slice(2);
 const names = wanted.length ? wanted : Object.keys(STORIES);
 
@@ -209,7 +235,10 @@ for (const name of names) {
     results.push({ name, ok: false, note: "no story defined" });
     continue;
   }
-  const page = await browser.newPage({ viewport: { width: 1280, height: 1000 } });
+  const page = await browser.newPage({
+    viewport: { width: 1280, height: 1000 },
+    colorScheme: THEME === "dark" ? "dark" : "light",
+  });
   const errors = [];
   page.on("console", (m) => {
     if (m.type() === "error") errors.push(m.text().slice(0, 200));
@@ -223,18 +252,33 @@ for (const name of names) {
   try {
     const out = await story(page, shot);
     const a11y = await page.evaluate(A11Y);
+    const wide = await page.evaluate(OVERFLOW);
+
+    // Narrow viewport: the same page must not push the body sideways.
+    await page.setViewportSize({ width: 420, height: 900 });
+    await page.waitForTimeout(300);
+    const narrow = await page.evaluate(OVERFLOW);
+    if (SHOTS && process.env.NARROW === "1") {
+      await page.screenshot({ path: `${SHOT_DIR}/${name}-narrow.png`, fullPage: true });
+    }
+
+    const layout = [];
+    if (wide) layout.push(`overflows by ${wide.by}px at 1280 (${wide.culprits.join(", ")})`);
+    if (narrow) layout.push(`overflows by ${narrow.by}px at 420 (${narrow.culprits.join(", ")})`);
+
     // A console error means the screen is lying about working.
     results.push({
       name,
       ...out,
       errors: errors.length,
-      ok: out.ok && errors.length === 0 && a11y.length === 0,
+      ok: out.ok && errors.length === 0 && a11y.length === 0 && layout.length === 0,
       errorText: errors.slice(0, 2),
       a11y,
+      layout,
     });
   } catch (err) {
     results.push({ name, ok: false, note: String(err.message).split("\n")[0].slice(0, 120),
-                   errors: errors.length, errorText: errors.slice(0, 2), a11y: [] });
+                   errors: errors.length, errorText: errors.slice(0, 2), a11y: [], layout: [] });
   }
   await page.close();
 }
@@ -243,7 +287,7 @@ await browser.close();
 
 let failed = 0;
 for (const r of results) {
-  const { name, ok, note, errorText, a11y, ...rest } = r;
+  const { name, ok, note, errorText, a11y, layout, ...rest } = r;
   if (!ok) failed++;
   const detail = Object.entries(rest)
     .filter(([k]) => k !== "errors")
@@ -252,6 +296,7 @@ for (const r of results) {
   console.log(`${ok ? "PASS" : "FAIL"}  ${name.padEnd(12)} ${detail}${note ? `  (${note})` : ""}`);
   if (errorText?.length) errorText.forEach((e) => console.log(`        console: ${e}`));
   if (a11y?.length) a11y.forEach((a) => console.log(`        a11y: ${a}`));
+  if (layout?.length) layout.forEach((l) => console.log(`        layout: ${l}`));
 }
 console.log(`\n${results.length - failed}/${results.length} stories passed`);
 process.exit(failed ? 1 : 0);

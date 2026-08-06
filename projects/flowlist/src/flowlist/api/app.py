@@ -11,12 +11,12 @@ allowed to read a clock (CONVENTIONS 3).
 
 from __future__ import annotations
 
-import threading
-from collections.abc import AsyncIterator, Iterator
+from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 from datetime import UTC, datetime
 from typing import Annotated
 
+import anyio
 from fastapi import Depends, FastAPI, Query, Request, Response
 from fastapi.responses import JSONResponse, PlainTextResponse
 
@@ -88,16 +88,24 @@ def _now() -> datetime:
     return datetime.now(UTC)
 
 
-def get_repository(request: Request) -> Iterator[Repository]:
+async def get_repository(request: Request) -> AsyncIterator[Repository]:
     """Repository dependency; tests override it with an in-memory backend.
 
-    Holds the app-level lock for the whole request: FastAPI runs sync handlers
-    on threadpool worker threads, and the shared SQLite connection must not
-    interleave two requests' transactions (the connection itself is opened
-    with ``check_same_thread=False`` — see ``store.sqlite``).  Whole-request
+    Holds the app-level lock for the whole request: the shared SQLite connection
+    must not interleave two requests' transactions (it is opened with
+    ``check_same_thread=False`` — see ``store.sqlite``).  Whole-request
     serialization is the right granularity for a single-user local tool.
+
+    The lock is an ``anyio.Lock`` and this dependency is async on purpose. As a
+    *sync* generator dependency it ran on a threadpool worker, and FastAPI runs
+    the post-yield half through a separate ``run_in_threadpool`` call that need
+    not land on the same worker.  A ``threading.RLock`` is owner-bound, so the
+    release raised ``RuntimeError: cannot release un-acquired lock`` and the lock
+    stayed held for the life of the process — every later request hung.  Running
+    in the event loop keeps acquire and release on one task, and an async lock
+    yields to the loop instead of blocking a worker while it waits.
     """
-    with request.app.state.repository_lock:
+    async with request.app.state.repository_lock:
         yield request.app.state.repository
 
 
@@ -151,7 +159,7 @@ def create_app(
         lifespan=lifespan,
     )
     app.state.repository = store
-    app.state.repository_lock = threading.RLock()
+    app.state.repository_lock = anyio.Lock()
     app.state.catalog_path = catalog_path
 
     @app.exception_handler(FlowlistError)

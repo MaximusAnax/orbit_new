@@ -435,11 +435,11 @@ export default function Flowlist() {
   useEffect(() => {
     if (seeded.current || !playlists.data || playlists.data.length > 0) return;
     seeded.current = true;
+    // Only reload the list: selecting the new id here would enable the view
+    // query while that reload is still in flight, and two concurrent requests
+    // is precisely what wedges this API.
     void seedDemo.run().then((r) => {
-      if (r) {
-        setChosen(r.playlist.id);
-        playlists.reload();
-      }
+      if (r) playlists.reload();
     });
     // Runs once, when the list is known to be empty.
     // eslint-disable-next-line react-hooks/exhaustive-deps

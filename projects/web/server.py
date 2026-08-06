@@ -54,6 +54,23 @@ def _factory_module(slug: str) -> str:
     return _FACTORY_MODULE.get(slug, f"{slug}.api.app")
 
 
+def _factory_kwargs(slug: str) -> dict[str, Any]:
+    """Arguments a project's ``create_app()`` needs to find its real database.
+
+    Most projects default to the same path their CLI uses, so the seeded data is
+    already visible. flowlist's factory instead falls back to ``:memory:``, which
+    silently gives the demo an empty database that dies with the process — its
+    CLI default lives in ``flowlist.store.DEFAULT_DB_PATH``.
+    """
+    if slug == "flowlist":
+        from flowlist.store import DEFAULT_DB_PATH
+
+        path = Path(DEFAULT_DB_PATH).expanduser()
+        path.parent.mkdir(parents=True, exist_ok=True)
+        return {"db_path": str(path)}
+    return {}
+
+
 def build_app() -> FastAPI:
     # Starlette does not run a mounted sub-application's lifespan, so projects
     # that build their service there (flowlist, newsalpha, tickerpress) would
@@ -94,7 +111,7 @@ def build_app() -> FastAPI:
         slug = project["slug"]
         try:
             module = importlib.import_module(_factory_module(slug))
-            sub = module.create_app()
+            sub = module.create_app(**_factory_kwargs(slug))
             app.mount(f"/api/{slug}", sub)
             mounted_apps.append((slug, sub))
             routes = len([r for r in sub.routes if getattr(r, "methods", None)])
