@@ -3,8 +3,10 @@
 import type { ComponentType } from "react";
 import Ethos from "./ethos";
 import DataSweep from "./datasweep";
+import ChessMentor from "./chessmentor";
 
 export const SCREENS: Record<string, ComponentType> = {
   ethos: Ethos,
   datasweep: DataSweep,
+  chessmentor: ChessMentor,
 };
