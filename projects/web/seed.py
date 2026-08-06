@@ -32,6 +32,19 @@ SLUGS = [
 ]
 
 
+_BOX = str.maketrans("", "", "│╭╮╯╰─")
+
+
+def _reason(output: str) -> str:
+    """Pull the meaningful error out of Typer's boxed output."""
+    lines = [ln.translate(_BOX).strip() for ln in output.splitlines()]
+    lines = [ln for ln in lines if ln and ln not in {"{", "}"}]
+    for line in lines:
+        if line.lower().startswith("error") or "Error:" in line:
+            return line[:150]
+    return lines[-1][:150] if lines else "no output"
+
+
 def run(args: list[str], timeout: int = 900) -> tuple[bool, str]:
     """Run one project CLI command inside the workspace."""
     env = {**os.environ, "HOME": str(DEMO_HOME)}
@@ -40,7 +53,9 @@ def run(args: list[str], timeout: int = 900) -> tuple[bool, str]:
             ["uv", "run", *args], cwd=PROJECTS_DIR, env=env,
             capture_output=True, text=True, timeout=timeout,
         )
-        return proc.returncode == 0, (proc.stdout + proc.stderr)[-600:]
+        if proc.returncode == 0:
+            return True, ""
+        return False, _reason(proc.stdout + proc.stderr)
     except subprocess.TimeoutExpired:
         return False, f"timed out after {timeout}s"
     except OSError as exc:
@@ -70,6 +85,54 @@ def demo_playlist() -> Path:
                     "Energy", "Loudness", "Duration (ms)"])
         w.writerows(rows)
     return path
+
+
+def demo_forecasts(days: int = 5) -> int:
+    """Write hourly forecasts for today onward into dresscast's fixture directory.
+
+    The offline weather adapter reads a file per date, and the committed fixtures
+    are dated for the eval scenarios — so a demo opened on any other day has no
+    forecast. These days deliberately swing (cold morning, warm afternoon, rain on
+    day two) because a flat day makes the layering engine look like it does nothing.
+    """
+    import datetime as dt
+    import math
+
+    out_dir = DEMO_HOME / ".dresscast" / "weather"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    # Each day: (dawn low °C, afternoon high °C, wind km/h, rain probability, mm/h)
+    shapes = [
+        (8.0, 19.0, 11.0, 0.05, 0.0),
+        (11.0, 16.0, 26.0, 0.80, 1.8),
+        (3.0, 9.0, 18.0, 0.15, 0.0),
+        (14.0, 27.0, 8.0, 0.00, 0.0),
+        (6.0, 21.0, 13.0, 0.10, 0.0),
+    ]
+    today = dt.date.today()
+    for offset in range(days):
+        low, high, wind, prob, mmh = shapes[offset % len(shapes)]
+        date = today + dt.timedelta(days=offset)
+        hours = []
+        for hour in range(24):
+            # Coldest around 05:00, warmest around 15:00.
+            phase = math.cos((hour - 15) / 24 * 2 * math.pi)
+            temp = low + (high - low) * (phase + 1) / 2
+            wet = prob if 12 <= hour <= 18 else prob * 0.25
+            hours.append({
+                "seq": hour, "hour": hour,
+                "temp_c": round(temp, 1),
+                "wind_kmh": round(wind + (3.0 if 12 <= hour <= 18 else 0.0), 1),
+                "humidity_pct": round(78.0 - (temp - low) * 1.5, 1),
+                "precip_prob": round(wet, 2),
+                "precip_mmh": round(mmh if 12 <= hour <= 18 else 0.0, 2),
+                "uv_index": round(max(0.0, 6.0 * phase), 1) if 7 <= hour <= 19 else 0.0,
+            })
+        (out_dir / f"{date.isoformat()}.json").write_text(json.dumps({
+            "date": date.isoformat(), "location_name": "home",
+            "lat": 40.71, "lon": -74.01, "timezone": "America/New_York",
+            "hours": hours,
+        }, indent=1), encoding="utf-8")
+    return days
 
 
 def demo_messy_csv() -> Path:
@@ -117,17 +180,32 @@ def seed_chessmentor() -> list[list[str]]:
 
 
 def seed_dresscast() -> list[list[str]]:
+    """A wardrobe with real layering range, so a cold morning into a warm afternoon
+    has something to work with. Categories are D1 presets (engine/models.py)."""
+    # Occasions must come from DEFAULT_OCCASIONS; non-neutral colours need an
+    # explicit hue (`name:degrees`) so the compatibility rules can reason about them.
     wardrobe = [
-        ("merino-base", "base_layer", "charcoal"), ("oxford-shirt", "shirt", "white"),
-        ("flannel-shirt", "shirt", "forest"), ("merino-crew", "mid_layer", "oatmeal"),
-        ("field-jacket", "light_jacket", "olive"), ("rain-shell", "rain_shell", "navy"),
-        ("wool-overcoat", "heavy_coat", "charcoal"), ("chinos", "trousers", "stone"),
-        ("dark-jeans", "trousers", "indigo"), ("wool-trousers", "trousers", "charcoal"),
-        ("leather-boots", "shoes", "brown"), ("white-sneakers", "shoes", "white"),
-        ("wool-scarf", "accessory", "rust"), ("knit-beanie", "accessory", "charcoal"),
+        ("merino-tee", "tshirt", "charcoal", "casual"),
+        ("oxford-shirt", "shirt_long_sleeve", "white", "work,formal"),
+        ("flannel-shirt", "flannel_shirt", "forest:140", "casual,outdoor"),
+        ("merino-crew", "sweater_thin", "oatmeal:40", "work,casual"),
+        ("cable-knit", "sweater_thick", "cream:45", "casual,outdoor"),
+        ("navy-blazer", "blazer", "navy:220", "work,formal"),
+        ("field-jacket", "light_jacket", "olive:90", "casual,outdoor"),
+        ("rain-shell", "rain_shell", "slate:210", "casual,work,outdoor"),
+        ("wool-overcoat", "wool_coat", "charcoal", "work,formal"),
+        ("chinos", "trousers_thin", "stone:35", "work,casual"),
+        ("dark-jeans", "jeans", "indigo:230", "casual"),
+        ("wool-trousers", "trousers_thick", "charcoal", "work,formal"),
+        ("leather-boots", "boots", "brown:30", "casual,work,outdoor"),
+        ("white-sneakers", "sneakers", "white", "casual,sport"),
+        ("wool-scarf", "scarf", "rust:20", "casual,work"),
+        ("compact-umbrella", "umbrella", "black", "work,casual"),
     ]
-    cmds = [["dresscast", "add", "--name", n, "--category", c, "--color", col]
-            for n, c, col in wardrobe]
+    demo_forecasts()
+    cmds = [["dresscast", "add", "--name", n, "--category", c,
+             "--colors", col, "--occasions", occ]
+            for n, c, col, occ in wardrobe]
     cmds.append(["dresscast", "brief"])
     return cmds
 
@@ -179,7 +257,9 @@ def seed_datasweep() -> list[list[str]]:
 def seed_formcoach() -> list[list[str]]:
     return [["formcoach", "init"],
             ["formcoach", "profile", "set", "--goal", "hypertrophy",
-             "--experience", "intermediate", "--days", "4"],
+             "--experience", "intermediate", "--days", "4",
+             "-e", "barbell", "-e", "dumbbell", "-e", "machine",
+             "-m", "chest", "-m", "lats"],
             ["formcoach", "profile", "ack-disclaimer"],
             ["formcoach", "program", "new", "--seed", "20260731"]]
 
